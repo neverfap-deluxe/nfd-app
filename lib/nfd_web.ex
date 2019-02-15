@@ -50,6 +50,15 @@ defmodule NfdWeb do
     end
   end
 
+  def mailer_view do
+    quote do
+      use Phoenix.View, root: "lib/nfd_web/templates",
+                        namespace: NfdWeb
+      use Phoenix.HTML
+    end
+  end
+
+
   def router do
     quote do
       use Phoenix.Router

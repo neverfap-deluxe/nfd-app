@@ -3,8 +3,13 @@ defmodule Nfd.Users.User do
   use Pow.Ecto.Schema
   use Pow.Extension.Ecto.Schema,
     extensions: [PowResetPassword, PowEmailConfirmation]
+  use PowAssent.Ecto.Schema
 
   schema "users" do
+    has_many :user_identities,
+      Nfd.UserIdentities.UserIdentity,
+      on_delete: :delete_all
+
     pow_user_fields()
 
     timestamps()

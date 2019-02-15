@@ -1,5 +1,6 @@
 defmodule NfdWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :nfd
+  # use NfdWeb.Endpoint, otp_app: :nfd
 
   socket "/socket", NfdWeb.UserSocket,
     websocket: true,
@@ -42,14 +43,28 @@ defmodule NfdWeb.Endpoint do
     key: "_nfd_key",
     signing_salt: "vsK5HnrP" # "secret"
 
-  plug Pow.Plug.Session, otp_app: :nfd
+  plug Pow.Plug.Session, 
+    otp_app: :nfd,
+    repo: Nfd.Repo, # not sure
+    user: Nfd.Users.User, # not sure
+    web_module: NfdWeb # not sure
 
   # Web Plugs
   plug NfdWeb.Router
 
-  plug NfdWeb.Pow.Plug.Session,
-    repo: Nfd.Repo,
-    user: Nfd.Users.User,
-    web_module: NfdWeb
   
+  # This is what the instruction says when generating POW Assent templates, but it doesn't seem to be working?
+
+  # Please set `web_module: NfdWeb` in your configuration.
+  # defmodule NfdWeb.Endpoint do
+
+  #   # ...
+
+  #   plug NfdWeb.Pow.Plug.Session,
+  #     repo: Nfd.Repo,
+  #     user: Nfd.Users.User,
+  #     web_module: NfdWeb
+
+  #   # ...
+  # end
 end
