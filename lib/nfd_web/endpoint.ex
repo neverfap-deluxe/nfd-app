@@ -44,7 +44,12 @@ defmodule NfdWeb.Endpoint do
 
   plug Pow.Plug.Session, otp_app: :nfd
 
+  # Web Plugs
   plug NfdWeb.Router
 
+  plug NfdWeb.Pow.Plug.Session,
+    repo: Nfd.Repo,
+    user: Nfd.Users.User,
+    web_module: NfdWeb
   
 end

@@ -1,6 +1,7 @@
 defmodule NfdWeb.Router do
   use NfdWeb, :router
   use Pow.Phoenix.Router
+  use Pow.Extension.Phoenix.Router, otp_app: :nfd
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -24,6 +25,7 @@ defmodule NfdWeb.Router do
     pipe_through :browser
 
     pow_routes()
+    pow_extension_routes()
   end
 
 

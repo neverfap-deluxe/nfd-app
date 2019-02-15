@@ -35,5 +35,6 @@ import_config "#{Mix.env()}.exs"
 
 config :nfd, :pow,
   user: Nfd.Users.User,
-  repo: Nfd.Repo
-
+  repo: Nfd.Repo,
+  extensions: [PowResetPassword, PowEmailConfirmation],
+  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks
