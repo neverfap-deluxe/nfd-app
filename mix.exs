@@ -47,6 +47,8 @@ defmodule Nfd.MixProject do
       # user authentication
       {:pow, "~> 1.0.1"},
       {:pow_assent, "~> 0.1.0-rc.2"},
+      {:swoosh, "~> 0.21"},
+      {:gen_smtp, "~> 0.12"},
       {:certifi, "~> 2.4"},
       {:ssl_verify_fun, "~> 1.1"}
     ]
