@@ -1,0 +1,5 @@
+<div class="homepage">
+  <%= partial "header.html", assigns %>
+
+  <h1 class="homepage__title">NeverFap Deluxe</h1>
+</div>
