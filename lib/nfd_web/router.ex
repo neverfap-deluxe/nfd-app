@@ -19,7 +19,7 @@ defmodule NfdWeb.Router do
 
   pipeline :not_authenticated do
     plug Pow.Plug.RequireNotAuthenticated,
-      error_handler: MyAppWeb.AuthErrorHandler
+      error_handler: NfdWeb.AuthErrorHandler
   end
 
   scope "/" do
@@ -33,16 +33,19 @@ defmodule NfdWeb.Router do
   scope "/", NfdWeb do
     pipe_through [:browser, :not_authenticated]
 
+    get "/", RegistrationController, :index
+    get "/account", RegistrationController, :account
+
     get "/signup", RegistrationController, :new, as: :signup
     post "/signup", RegistrationController, :create, as: :signup
     get "/login", SessionController, :new, as: :login
     post "/login", SessionController, :create, as: :login
-
-    get "/", PageController, :index
   end
 
   scope "/", NfdWeb do
     pipe_through [:browser, :protected]
+
+    get "/hub", PageController, :hub
 
     delete "/logout", SessionController, :delete, as: :logout
   end

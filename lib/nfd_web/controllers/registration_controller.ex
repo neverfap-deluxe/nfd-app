@@ -1,6 +1,21 @@
 defmodule NfdWeb.RegistrationController do
   use NfdWeb, :controller
 
+  def index(conn, _params) do
+    IO.puts('index yo')
+    conn 
+      |> redirect(to: Routes.registration_path(conn, :account))
+  end
+
+  def account(conn, _params) do
+
+    IO.puts('woah')
+
+    changeset = Pow.Plug.change_user(conn)
+
+    render(conn, "account.html", changeset: changeset)
+  end
+
   def new(conn, _params) do
     # We'll leverage `Pow.Plug`, but you can also follow the classic Phoenix way:
     # changeset = MyApp.Users.User.changeset(%MyApp.Users.User{}, %{})
@@ -23,10 +38,10 @@ defmodule NfdWeb.RegistrationController do
       {:ok, user, conn} ->
         conn
         |> put_flash(:info, "Welcome!")
-        |> redirect(to: Routes.page_path(conn, :index))
+        |> redirect(to: Routes.page_path(conn, :hub))
 
       {:error, changeset, conn} ->
-        render(conn, "new.html", changeset: changeset)
+        render(conn, "account.html", changeset: changeset)
     end
   end
 end

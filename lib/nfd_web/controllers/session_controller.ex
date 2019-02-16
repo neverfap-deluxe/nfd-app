@@ -14,7 +14,7 @@ defmodule NfdWeb.SessionController do
       {:ok, conn} ->
         conn
         |> put_flash(:info, "Welcome back!")
-        |> redirect(to: Routes.page_path(conn, :index))
+        |> redirect(to: Routes.page_path(conn, :hub))
 
       {:error, conn} ->
         changeset = Pow.Plug.change_user(conn, conn.params["user"])
@@ -28,6 +28,6 @@ defmodule NfdWeb.SessionController do
   def delete(conn, _params) do
     {:ok, conn} = Pow.Plug.clear_authenticated_user(conn)
 
-    redirect(conn, to: Routes.page_path(conn, :index))
+    redirect(conn, to: Routes.page_path(conn, :hub))
   end
 end

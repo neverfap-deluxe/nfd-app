@@ -2,9 +2,12 @@ defmodule NfdWeb.PageController do
   use NfdWeb, :controller
 
   def index(conn, _params) do
-
-    changeset = Pow.Plug.change_user(conn)
-
-    render(conn, "index.html", changeset: changeset)
+    render(conn, "hub.html")
+      # |> redirect(to: Routes.page_path(conn, :hub))
   end
+
+  def hub(conn, _params) do
+    render(conn, "hub.html")
+  end
+
 end

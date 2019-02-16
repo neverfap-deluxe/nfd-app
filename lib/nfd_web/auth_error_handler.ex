@@ -13,7 +13,7 @@ defmodule NfdWeb.AuthErrorHandler do
   def call(conn, :already_authenticated) do
     conn
     |> put_flash(:error, "You're already authenticated")
-    |> redirect(to: Routes.page_path(conn, :index))
+    |> redirect(to: Routes.page_path(conn, :hub))
   end
 end
 
