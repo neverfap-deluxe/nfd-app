@@ -15,3 +15,85 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
   color: white;
 }
+
+.homepage__title {
+  box-shadow: -5px 5px 0px 0px black;
+
+  color: white;
+  border: 4px solid white;
+  background: black;
+
+  padding: 1rem;      
+
+  text-align: center;  
+  font-size: 2.3rem;
+  line-height: 4rem;
+
+  transition: box-shadow 6s;
+}
+
+.homepage__title:hover {
+  box-shadow: -30px 30px 0px 0px black;
+}
+
+
+.homepage__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  height: 80vh;
+
+  .homepage__main__left {
+    background: white;
+    border: 1px solid black;
+    flex: 1;
+  }
+  .homepage__main__middle {
+    flex: 0;
+  }
+  .homepage__main__right {
+    background: white;
+    flex: 1;
+  }
+}
+
+
+@media screen and (min-width: 420px) {
+  .homepage__main {
+
+    .homepage__main__left {
+    }
+    .homepage__main__middle {
+    }  
+    .homepage__main__right {
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .homepage__main {
+    width: 700px;
+    flex-direction: row;
+
+    .homepage__main__left {
+    }
+    .homepage__main__middle {
+      flex: 0.1;
+    }  
+    .homepage__main__right {
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .homepage__main {
+
+    .homepage__main__left {
+
+    }
+    .homepage__main__right {
+      
+    }
+  }
+}

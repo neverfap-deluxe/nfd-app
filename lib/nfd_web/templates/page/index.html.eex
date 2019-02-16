@@ -1,5 +1,25 @@
 <div class="homepage">
-  <%= partial "header.html", assigns %>
+  <!-- <%= partial "header.html", assigns %> -->
 
-  <h1 class="homepage__title">NeverFap Deluxe</h1>
+
+  <div class="homepage__main">
+    <div class="homepage__main__left">
+      <h1 class="homepage__title">NeverFap Deluxe +</h1>
+      <p>left</p>
+    </div>
+    <div class="homepage__main__middle"></div>
+    <div class="homepage__main__right">
+      <p>Right</p>
+    </div>
+  </div>
+
+  <div class="homepage__login">
+    <div class="homepage__login__button">
+      <%= link "Sign up", to: Routes.pow_registration_path(@conn, :new) %>
+    </div>
+    <div class="homepage__login__button">
+      <%= link "Sign in", to: Routes.pow_session_path(@conn, :new) %>
+    </div>
+  </div>
+
 </div>

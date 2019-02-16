@@ -1,6 +1,5 @@
 defmodule NfdWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :nfd
-  # use NfdWeb.Endpoint, otp_app: :nfd
 
   socket "/socket", NfdWeb.UserSocket,
     websocket: true,
@@ -52,7 +51,6 @@ defmodule NfdWeb.Endpoint do
   # Web Plugs
   plug NfdWeb.Router
 
-  
   # This is what the instruction says when generating POW Assent templates, but it doesn't seem to be working?
 
   # Please set `web_module: NfdWeb` in your configuration.
