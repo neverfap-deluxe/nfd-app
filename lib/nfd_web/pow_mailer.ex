@@ -1,14 +1,15 @@
 defmodule NfdWeb.PowMailer do
   use Pow.Phoenix.Mailer
-  use Swoosh.Mailer, otp_app: :my_app
 
   require Logger
 
   import Swoosh.Email
 
   def cast(%{user: user, subject: subject, text: text, html: html}) do
+    # Build email struct to be used in `process/1`
+
     %Swoosh.Email{}
-    |> to({"", user.email})
+    |> to({"yolololo", user.email})
     |> from({"NeverFap Deluxe", "admin@neverfapdeluxe.com"})
     |> subject(subject)
     |> html_body(html)
@@ -16,19 +17,8 @@ defmodule NfdWeb.PowMailer do
   end
 
   def process(email) do
-    deliver(email)
-  end
+    Nfd.SwooshMailer.deliver(email)
 
-
-  # def cast(%{user: user, subject: subject, text: text, html: html, assigns: _assigns}) do
-  #   # Build email struct to be used in `process/1`
-
-  #   %{to: user.email, subject: subject, text: text, html: html}
-  # end
-
-  # def process(email) do
-  #   # Send email
-
-  #   Logger.debug("E-mail sent: #{inspect email}")
-  # end
+    Logger.debug("E-mail sent: #{inspect email}")
+  end  
 end

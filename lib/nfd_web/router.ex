@@ -17,10 +17,10 @@ defmodule NfdWeb.Router do
       error_handler: Pow.Phoenix.PlugErrorHandler
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
+  pipeline :not_authenticated do
+    plug Pow.Plug.RequireNotAuthenticated,
+      error_handler: MyAppWeb.AuthErrorHandler
   end
-
 
   scope "/" do
     pipe_through :browser
@@ -30,9 +30,13 @@ defmodule NfdWeb.Router do
     pow_assent_routes()
   end
 
-
   scope "/", NfdWeb do
-    pipe_through :browser
+    pipe_through [:browser, :not_authenticated]
+
+    get "/signup", RegistrationController, :new, as: :signup
+    post "/signup", RegistrationController, :create, as: :signup
+    get "/login", SessionController, :new, as: :login
+    post "/login", SessionController, :create, as: :login
 
     get "/", PageController, :index
   end
@@ -40,9 +44,12 @@ defmodule NfdWeb.Router do
   scope "/", NfdWeb do
     pipe_through [:browser, :protected]
 
-    # Add your protected routes here
+    delete "/logout", SessionController, :delete, as: :logout
   end
 
+  pipeline :api do
+    plug :accepts, ["json"]
+  end
 
   # Other scopes may use custom stacks.
   # scope "/api", NfdWeb do

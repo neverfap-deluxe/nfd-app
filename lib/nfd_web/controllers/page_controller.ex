@@ -2,6 +2,9 @@ defmodule NfdWeb.PageController do
   use NfdWeb, :controller
 
   def index(conn, _params) do
-    render(conn, "index.html")
+
+    changeset = Pow.Plug.change_user(conn)
+
+    render(conn, "index.html", changeset: changeset)
   end
 end

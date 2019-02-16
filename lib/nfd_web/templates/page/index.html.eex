@@ -1,25 +1,69 @@
 <div class="homepage">
   <!-- <%= partial "header.html", assigns %> -->
 
-
-  <div class="homepage__main">
-    <div class="homepage__main__left">
-      <h1 class="homepage__title">NeverFap Deluxe +</h1>
-      <p>left</p>
-    </div>
-    <div class="homepage__main__middle"></div>
-    <div class="homepage__main__right">
-      <p>Right</p>
-    </div>
-  </div>
-
-  <div class="homepage__login">
+  <!-- <div class="homepage__login">
     <div class="homepage__login__button">
       <%= link "Sign up", to: Routes.pow_registration_path(@conn, :new) %>
     </div>
     <div class="homepage__login__button">
       <%= link "Sign in", to: Routes.pow_session_path(@conn, :new) %>
     </div>
+  </div> -->
+
+  <div class="homepage__main">
+
+    <div class="homepage__main__left">
+      <span><h1 class="homepage__title">NeverFap Deluxe +</h1></span>
+
+      <div class="homepage__main__description homepage__main__left__bottom"> 
+        <p class="homepage__main__description__initial">Join the NeverFap Deluxe community and receive access to a wide range of free and premium services!</p>
+
+        <ul> 
+          <li>Free access to </li>
+          <li>Access to paid audio courses and guided meditations.</li>
+          <li>Access to paid audio courses and guided meditations.</li>
+        </ul>
+      </div>
+
+    </div>
+    
+    <div class="homepage__main__middle"></div>
+
+    <div class="homepage__main__right">
+      <span><h2 class="homepage__title right__background">Sign up!</h2></span>
+
+      <div class="homepage__main__right__bottom right__background">
+        <div class="form__container">
+          <%= form_for @changeset, Routes.signup_path(@conn, :create), fn f -> %>
+            <%= if @changeset.action do %>
+              <div class="alert alert-danger">
+                <p>Oops, something went wrong! Please check the errors below.</p>
+              </div>
+            <% end %>
+          
+            <%= label f, @changeset.data.__struct__.pow_user_id_field(), class: "form__label" %>
+            <%= text_input f, @changeset.data.__struct__.pow_user_id_field() %>
+            <%= error_tag f, @changeset.data.__struct__.pow_user_id_field() %>
+          
+            <%= label f, :password, class: "form__label" %>
+            <%= password_input f, :password %>
+            <%= error_tag f, :password %>
+          
+            <%= label f, :confirm_password, class: "form__label" %>
+            <%= password_input f, :confirm_password %>
+            <%= error_tag f, :confirm_password %>
+          
+            <div>
+              <%= submit "Register" %>
+            </div>
+          <% end %>
+        </div>
+    
+        <span><%= link "Sign in", to: Routes.pow_session_path(@conn, :new) %></span>
+      </div>
+      
+    </div> <!-- form container -->
+    
   </div>
 
 </div>

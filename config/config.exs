@@ -58,3 +58,8 @@ config :nfd, :pow_assent,
           strategy: PowAssent.Strategy.Twitter
         ]
       ]
+
+# Mailer setup
+config :nfd, Nfd.SwooshMailer,
+  adapter: Swoosh.Adapters.Mailgun,
+  api_key: "key-4df520f1907c048f529c25b69ee4f027"
