@@ -1,17 +1,6 @@
 defmodule NfdWeb.RegistrationController do
   use NfdWeb, :controller
 
-  def index(conn, _params) do
-    # user = Pow.Plug.current_user()
-
-    # if user do
-
-    # end
-
-    conn 
-      |> redirect(to: Routes.registration_path(conn, :account))
-  end
-
   def account(conn, _params) do
 
     IO.puts('woah')
@@ -43,7 +32,7 @@ defmodule NfdWeb.RegistrationController do
       {:ok, user, conn} ->
         conn
         |> put_flash(:info, "Welcome!")
-        |> redirect(to: Routes.page_path(conn, :hub))
+        |> redirect(to: Routes.page_path(conn, :dashboard))
 
       {:error, changeset, conn} ->
         render(conn, "account.html", changeset: changeset)

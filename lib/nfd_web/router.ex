@@ -33,7 +33,6 @@ defmodule NfdWeb.Router do
   scope "/", NfdWeb do
     pipe_through [:browser, :not_authenticated]
 
-    # get "/", RegistrationController, :index
     get "/account", RegistrationController, :account
 
     get "/signup", RegistrationController, :new, as: :signup
@@ -45,7 +44,8 @@ defmodule NfdWeb.Router do
   scope "/", NfdWeb do
     pipe_through [:browser, :protected]
 
-    get "/", PageController, :hub
+    get "/", PageController, :dashboard
+    get "/profile", PageController, :profile
 
     delete "/logout", SessionController, :delete, as: :logout
   end

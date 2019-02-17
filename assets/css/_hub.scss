@@ -1,18 +1,42 @@
 .hub {
-  .hub__sidebar {
-    width: 2rem;
-    height: 100vh;
-    
-    background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
-    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
-    background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
-    background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
-    background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
-    color: white;
-    
+  display: flex;
+  flex-direction: column;
+
+  .hub__bottom {
+    display: flex;
   }
+}
+
+.hub__dashboard, .hub__profile {
+  padding: 4rem;
+  width: 100%;
+
+  background: rgb(230, 229, 229);
+
+  .hub__main__title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .hub__main__area {
+    display: flex;
+    flex-direction: column;
+    
+    padding: 3rem;
+    background: white;
+    
+    p {
+      font-size: 1.2rem;
+    }  
+
+    h3 {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.hub__main__audio {
+  
 }
 
 @media screen and (min-width: 420px) {

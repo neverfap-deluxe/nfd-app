@@ -1,3 +1,11 @@
-<header>
+<header class="hub__header">
+  <h1 class="hub__header__logo">NeverFap Deluxe +</h1>
+
+  <div class="hub__header__buttons">
+    <%= link to: Routes.page_path(@conn, :profile), class: "hub__header__button" do %>
+      <i class="fas fa-user-circle"></i>
+    <% end %>
+  </div>
 
 </header>
+  

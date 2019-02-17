@@ -1,0 +1,9 @@
+<div class="hub__sidebar">
+  <div class="hub__sidebar__buttons">
+    
+    <%= link to: Routes.page_path(@conn, :dashboard), class: "hub__sidebar__button" do %>
+      <i class="fas fa-home"></i>
+    <% end %>
+
+  </div>
+</div>

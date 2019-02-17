@@ -1,0 +1,14 @@
+<div class="hub__profile">
+  <h2 class="hub__main__title">Profile</h2>
+  
+  <div class="hub__main__area">
+
+    <h3>Account options</h3>
+
+    <%= link "Reset password", to: Routes.pow_reset_password_reset_password_path(@conn, :new) %>
+
+    <%= link "Logout", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "hub__header__logout" %>
+
+    <p>TODO: Delete account</p>
+  </div>
+</div>

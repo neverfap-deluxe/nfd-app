@@ -4,18 +4,25 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>NeverFap Deluxe</title>
+    <title>NeverFap Deluxe | Hub</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
   </head>
 
   <body>
+    
+    <div class="hub">
+      <%= partial "header.html", assigns %>
+      
+      <main role="main" class="hub__bottom">
+        <%= partial "sidebar.html", assigns %>
 
-    <main role="main" class="main">
-      <%= render @view_module, @view_template, assigns %>
-    </main>
+        <%= render @view_module, @view_template, assigns %>
+      </main>
+    </div>
 
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
