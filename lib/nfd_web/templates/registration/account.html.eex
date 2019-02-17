@@ -1,38 +1,41 @@
-<div class="homepage">
+<div class="account">
   <!-- <%= partial "header.html", assigns %> -->
 
-  <!-- <div class="homepage__login">
-    <div class="homepage__login__button">
+  <!-- <div class="account__login">
+    <div class="account__login__button">
       <%= link "Sign up", to: Routes.pow_registration_path(@conn, :new) %>
     </div>
-    <div class="homepage__login__button">
+    <div class="account__login__button">
       <%= link "Sign in", to: Routes.pow_session_path(@conn, :new) %>
     </div>
   </div> -->
 
-  <div class="homepage__main">
+  <div class="account__main">
 
-    <div class="homepage__main__left">
-      <span><h1 class="homepage__title">NeverFap Deluxe +</h1></span>
+    <div class="account__main__left">
+      <span><h1 class="account__title account__title__left">NeverFap Deluxe community</h1></span>
 
-      <div class="homepage__main__description homepage__main__left__bottom"> 
-        <p class="homepage__main__description__initial">Join the NeverFap Deluxe community and receive access to a wide range of free and premium services!</p>
+      <div class="account__main__description account__main__left__bottom"> 
+        <p class="account__main__description__initial">Join the NeverFap Deluxe community and receive access to our guided audio meditations!</p>
+        <p class=""></p>
 
         <ul> 
-          <li>Free access to </li>
-          <li>Access to paid audio courses and guided meditations.</li>
-          <li>Access to paid audio courses and guided meditations.</li>
+          <li>It's FREE to create an account.</li>
+          <li>Guided meditations require a one-time purchase.</li>
         </ul>
       </div>
 
+      <!-- <div class="account__main__return">
+        <a href="">Back to main site.</a>
+      </div> -->
     </div>
     
-    <div class="homepage__main__middle"></div>
+    <div class="account__main__middle"></div>
 
-    <div class="homepage__main__right">
-      <span><h2 class="homepage__title right__background">Sign up!</h2></span>
+    <div class="account__main__right">
+      <span><h2 class="account__title right__background">Register / Login</h2></span>
 
-      <div class="homepage__main__right__bottom right__background">
+      <div class="account__main__right__bottom right__background">
         <div class="form__container">
           <%= form_for @changeset, Routes.signup_path(@conn, :create), fn f -> %>
             <!-- <%= if @changeset.action do %>

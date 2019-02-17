@@ -1,4 +1,4 @@
-.homepage {
+.account {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +15,7 @@
   // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
 }
 
-.homepage__title {
+.account__title {
   border: 4px solid black;
 
   padding: 1rem;      
@@ -27,17 +27,21 @@
   margin-bottom: 1rem;
 }
 
+.account__title__left {
+  // text-shadow: -2px 2px 0px cyan;
+}
+
 .right__background {
   background: white;
 }
 
-.homepage__main__left__bottom, .homepage__main__right__bottom {
+.account__main__left__bottom, .account__main__right__bottom {
   border: 4px solid black;
   padding: 1rem;
 }
 
-.homepage__main__description {
-  .homepage__main__description__initial {
+.account__main__description {
+  .account__main__description__initial {
     padding: 0.8rem;
     border: 1px solid black;
   }
@@ -51,24 +55,28 @@
   }
 }
 
-.homepage__main {
+.account__main__return {
+  display: flex;
+}
+
+.account__main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 95%;
   height: 80vh;
 
-  .homepage__main__left {
+  .account__main__left {
     background: white;
     flex: 1;
     padding: 1rem;
     border: 5px solid black;
   }
-  .homepage__main__middle {
+  .account__main__middle {
     // flex: 0;
     flex: 0.1;
   }
-  .homepage__main__right {
+  .account__main__right {
     flex: 1;
     padding: 1rem;
     border: 5px solid white;
@@ -77,41 +85,41 @@
 
 
 @media screen and (min-width: 420px) {
-  .homepage__main {
+  .account__main {
     width: 80%;
     height: 80vh;
   
-    .homepage__main__left {
+    .account__main__left {
     }
-    .homepage__main__middle {
+    .account__main__middle {
     }  
-    .homepage__main__right {
+    .account__main__right {
     }
   }
 }
 
 @media screen and (min-width: 768px) {
-  .homepage__main {
+  .account__main {
     width: 700px;
     flex-direction: row;
 
-    .homepage__main__left {
+    .account__main__left {
     }
-    .homepage__main__middle {
+    .account__main__middle {
       flex: 0.1;
     }  
-    .homepage__main__right {
+    .account__main__right {
     }
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .homepage__main {
+  .account__main {
 
-    .homepage__main__left {
+    .account__main__left {
 
     }
-    .homepage__main__right {
+    .account__main__right {
       
     }
   }

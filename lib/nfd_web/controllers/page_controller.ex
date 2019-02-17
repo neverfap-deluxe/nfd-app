@@ -11,4 +11,12 @@ defmodule NfdWeb.PageController do
     render(conn, "profile.html")
   end
 
+  def profile_delete_confirmation(conn, _params) do
+    render(conn, "profile.html")
+  end
+
+  def profile_delete_confirmation(conn, _params) do
+    render(conn, "profile.html")
+  end
+
 end
