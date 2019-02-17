@@ -6,7 +6,7 @@ defmodule NfdWeb.AuthErrorHandler do
   def call(conn, :not_authenticated) do
     conn
     |> put_flash(:error, "You've to be authenticated first")
-    |> redirect(to: Routes.login_path(conn, :new))
+    |> redirect(to: Routes.registration_path(conn, :account))
   end
 
   @spec call(Conn.t(), atom()) :: Conn.t()

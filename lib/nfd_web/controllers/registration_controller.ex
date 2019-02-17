@@ -2,7 +2,12 @@ defmodule NfdWeb.RegistrationController do
   use NfdWeb, :controller
 
   def index(conn, _params) do
-    IO.puts('index yo')
+    # user = Pow.Plug.current_user()
+
+    # if user do
+
+    # end
+
     conn 
       |> redirect(to: Routes.registration_path(conn, :account))
   end
