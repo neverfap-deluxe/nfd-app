@@ -37,7 +37,7 @@
 
       <div class="account__main__right__bottom right__background">
         <div class="form__container">
-          <%= form_for @changeset, Routes.signup_path(@conn, :create), fn f -> %>
+          <%= form_for @changeset, Routes.registration_path(@conn, :create), fn f -> %>
             <!-- <%= if @changeset.action do %>
               <div class="alert alert-danger">
                 <p>Oops, something went wrong! Please check the errors below.</p>
@@ -68,7 +68,7 @@
           <% end %>
         </div>
     
-        <span><%= link "Sign in", to: Routes.pow_session_path(@conn, :new) %></span>
+        <span><%= link "Sign in", to: Routes.session_path(@conn, :new) %></span>
       </div>
       
     </div> <!-- form container -->

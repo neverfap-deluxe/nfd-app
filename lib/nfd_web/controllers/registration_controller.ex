@@ -2,12 +2,18 @@ defmodule NfdWeb.RegistrationController do
   use NfdWeb, :controller
 
   def account(conn, _params) do
-
-    IO.puts('woah')
-
     changeset = Pow.Plug.change_user(conn)
 
     render(conn, "account.html", changeset: changeset)
+  end
+
+  def confirm_email_begin(conn, _params) do
+
+    current_user = Pow.Plug.current_user(conn)
+
+    conn
+      |> put_flash(:user_email, current_user.email)
+      |> render("confirm_email_begin.html")
   end
 
   def new(conn, _params) do
@@ -31,9 +37,9 @@ defmodule NfdWeb.RegistrationController do
     |> case do
       {:ok, user, conn} ->
         conn
-        |> put_flash(:info, "Welcome!")
-        |> redirect(to: Routes.page_path(conn, :dashboard))
-
+        |> put_flash(:user_email, user.email)
+        |> redirect(to: Routes.registration_path(conn, :confirm_email_begin))
+        
       {:error, changeset, conn} ->
         render(conn, "account.html", changeset: changeset)
     end

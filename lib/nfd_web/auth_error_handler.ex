@@ -11,9 +11,20 @@ defmodule NfdWeb.AuthErrorHandler do
 
   @spec call(Conn.t(), atom()) :: Conn.t()
   def call(conn, :already_authenticated) do
-    conn
-    |> put_flash(:error, "You're already authenticated")
-    |> redirect(to: Routes.page_path(conn, :dashboard))
+
+    current_user = Pow.Plug.current_user(conn)
+
+    IO.inspect(current_user.unconfirmed_email)
+
+    if (current_user.unconfirmed_email) do
+      conn
+        |> put_flash(:info, "Welcome back!")
+        |> redirect(to: Routes.page_path(conn, :dashboard))  
+    else 
+      conn
+        |> put_flash(:user_email, current_user.email)
+        |> redirect(to: Routes.registration_path(conn, :confirm_email_begin))
+    end
   end
 end
 
