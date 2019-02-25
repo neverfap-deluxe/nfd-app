@@ -19,7 +19,7 @@ defmodule NfdWeb.AuthErrorHandler do
     if (current_user.unconfirmed_email) do
       conn
         |> put_flash(:info, "Welcome back!")
-        |> redirect(to: Routes.page_path(conn, :dashboard))  
+        |> redirect(to: Routes.dashboard_path(conn, :dashboard))  
     else 
       conn
         |> put_flash(:user_email, current_user.email)

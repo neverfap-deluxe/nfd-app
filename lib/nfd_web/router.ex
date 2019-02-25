@@ -24,6 +24,22 @@ defmodule NfdWeb.Router do
 
   scope "/" do
     pipe_through :browser
+    get "/", PageController, :home
+
+    get "/about", PageController, :about
+    get "/contact", PageController, :contact
+  
+    get "/articles", PageController, :articles
+    get "/articles/:article_id", PageController, :article
+    get "/practices", PageController, :practices
+    get "/practices/:practice_id", PageController, :practice
+    get "/courses", PageController, :courses
+    get "/courses/:course_id", PageController, :course
+    get "/podcasts", PageController, :podcasts
+    get "/podcasts/:course_id", PageController, :podcast
+
+    get "/disclaimer", PageController, :disclaimer
+    get "/privacy", PageController, :privacy
 
     pow_routes() # Because I'm using custom routes defined below, this isn't needed.
     pow_extension_routes()
@@ -44,9 +60,8 @@ defmodule NfdWeb.Router do
   scope "/", NfdWeb do
     pipe_through [:browser, :protected]
 
-    get "/", PageController, :dashboard
-    get "/dashboard", PageController, :dashboard
-    get "/profile", PageController, :profile
+    get "/dashboard", DashboardController, :dashboard
+    get "/profile", DashboardController, :profile
     get "confirm_email_begin", RegistrationController, :confirm_email_begin
 
     delete "/logout", SessionController, :delete, as: :logout

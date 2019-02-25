@@ -26,7 +26,8 @@ config :nfd, NfdWeb.Endpoint,
       "-o",
       Path.expand("../lib/nfd_web/templates/email/lost_password.html.eex"),
       cd: Path.expand("../assets", __DIR__)
-    ],
+    ]
+
     # node: [
     #   "node_modules/.bin/mjml npx mjml",
     #   "--watch",

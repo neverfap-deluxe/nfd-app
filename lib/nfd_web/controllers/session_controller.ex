@@ -14,7 +14,7 @@ defmodule NfdWeb.SessionController do
       {:ok, conn} ->
         conn
         |> put_flash(:info, "Welcome back!")
-        |> redirect(to: Routes.page_path(conn, :dashboard))
+        |> redirect(to: Routes.dashboard_path(conn, :dashboard))
 
       {:error, conn} ->
         changeset = Pow.Plug.change_user(conn, conn.params["user"])
