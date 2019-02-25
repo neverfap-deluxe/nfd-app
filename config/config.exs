@@ -20,7 +20,8 @@ config :nfd, NfdWeb.Endpoint,
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
-  metadata: [:request_id]
+  metadata: [:request_id],
+  level: :debug
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
@@ -61,5 +62,22 @@ config :nfd, :pow_assent,
 
 # Mailer setup
 config :nfd, Nfd.SwooshMailer,
-  adapter: Swoosh.Adapters.Mailgun,
-  api_key: "key-4df520f1907c048f529c25b69ee4f027"
+  adapter: Swoosh.Adapters.AmazonSES,
+  region: "us-east-1",
+  access_key: System.get_env("AWS_ACCESS_KEY"),
+  secret: System.get_env("AWS_SECRET_KEY")
+
+
+# Cron setup
+# config :nfd, Nfd.Scheduler,
+#   jobs: [
+#     28 day challenge
+#     Every minute
+#     {"* * * * *",      {Heartbeat, :send, []}},
+#     Every 15 minutes
+#     {"*/15 * * * *",   fn -> System.cmd("rm", ["/tmp/tmp_"]) end},
+#     Runs on 18, 20, 22, 0, 2, 4, 6:
+#     {"0 18-6/2 * * *", fn -> :mnesia.backup('/var/backup/mnesia') end},
+#     Runs every midnight:
+#     {"@daily",         {Backup, :backup, []}}
+#   ]

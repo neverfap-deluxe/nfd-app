@@ -1,0 +1,85 @@
+<mjml>
+  <mj-head>
+    <mj-title>NeverFap Deluxe | Account Verified</mj-title>
+  </mj-head>
+  <mj-body>
+
+    <!-- Navbar -->
+    <mj-section background-color="#ef6451">
+      <mj-column>
+        <mj-navbar ico-padding="0" hamburger="hamburger" ico-color="#ffffff">
+          <mj-navbar-link	href="https://neverfapdeluxe.com/" color="#ffffff">Home</mj-navbar-link>
+          <mj-navbar-link	href="https://neverfapdeluxe.com/guide" color="#ffffff">Guide</mj-navbar-link>
+          <mj-navbar-link	href="https://neverfapdeluxe.com/articles" color="#ffffff">Articles</mj-navbar-link>
+          <mj-navbar-link	href="https://neverfapdeluxe.com/practices" color="#ffffff">Practices</mj-navbar-link>
+          <mj-navbar-link	href="https://neverfapdeluxe.com/courses" color="#ffffff">Courses</mj-navbar-link>
+        </mj-navbar>
+      </mj-column>
+    </mj-section>
+
+    <!-- Header -->
+    <mj-section 
+      background-size="cover"
+      background-repeat="no-repeat"
+      background-color="linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%)">
+      <mj-column border="5px solid white">
+        <mj-text 
+          align="center"
+          color="#fff"
+          container-background-color="black"
+          font-size="40px"
+          font-family="Helvetica Neue">NeverFap Deluxe</mj-text>
+      </mj-column>
+    </mj-section>
+
+
+    <!-- Intro text -->
+    <mj-section background-color="#fafafa">
+      <mj-column width="400px">
+        <mj-text font-size="25px" font-family="Helvetica Neue" padding-bottom="20px">
+          Account Verified
+        </mj-text>
+        <mj-text line-height="23px">
+          Welcome to NeverFap Deluxe!
+        </mj-text>
+        <mj-text line-height="23px">
+          There is a wealth of content for you to explore on NeverFap Deluxe, designed specifically to help you overcome your porn addiction.
+        </mj-text>
+        <!-- <mj-button 
+          background-color="#F45E43"
+          border-radius="0px"
+          href="https://neverfapdeluxe.com/">Visit the website</mj-button>
+      </mj-column> -->
+    </mj-section>
+
+    <!-- Link buttons -->
+    <mj-section background-color="#fbfbfb">
+      <mj-column>
+        <mj-button width="120px" background-color="white" color="black" border="5px solid black" border-radius="0px" href="https://neverfapdeluxe.com/articles">Articles</mj-button>
+      </mj-column>
+      <mj-column>
+        <mj-button width="120px" background-color="white" color="black" border="5px solid black" border-radius="0px" href="https://neverfapdeluxe.com/practices">Practices</mj-button>
+      </mj-column>
+      <mj-column>
+        <mj-button width="120px" background-color="white" color="black" border="5px solid black" border-radius="0px" href="https://neverfapdeluxe.com/guides">Guides</mj-button>
+      </mj-column>
+    </mj-section>
+
+    <!-- Social media buttons -->
+    <mj-section background-color="#fbfbfb">
+      <mj-column>
+        <mj-social font-size="15px" icon-size="30px" mode="horizontal">
+          <mj-social-element name="facebook" href="https://mjml.io/">
+            Facebook
+          </mj-social-element>
+          <mj-social-element name="google" href="https://mjml.io/">
+            Google
+          </mj-social-element>
+          <mj-social-element  name="twitter" href="https://mjml.io/">
+            Twitter
+          </mj-social-element>
+        </mj-social>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

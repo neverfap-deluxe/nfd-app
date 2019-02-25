@@ -50,7 +50,14 @@ defmodule Nfd.MixProject do
       {:swoosh, "~> 0.21"},
       {:gen_smtp, "~> 0.12"},
       {:certifi, "~> 2.4", override: true},
-      {:ssl_verify_fun, "~> 1.1"}
+      {:ssl_verify_fun, "~> 1.1"},
+
+      # stripe
+      {:stripity_stripe, "~> 2.0.0"},
+
+      {:quantum, "~> 2.3"},
+      {:timex, "~> 3.0"},
+   
     ]
   end
 

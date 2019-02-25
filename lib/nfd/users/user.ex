@@ -12,6 +12,8 @@ defmodule Nfd.Users.User do
 
     pow_user_fields()
 
+    has_many :courses, Nfd.Content.Course
+
     timestamps()
   end
 

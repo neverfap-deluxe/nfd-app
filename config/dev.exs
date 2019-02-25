@@ -18,6 +18,32 @@ config :nfd, NfdWeb.Endpoint,
       "development",
       "--watch-stdin",
       cd: Path.expand("../assets", __DIR__)
+    ],
+
+    # watch email template changes
+    node: [
+      "node_modules/.bin/mjml",
+      "--watch",
+      "lost_password.mjml",
+      "-o",
+      "../../lib/nfd_web/templates/email/lost_password.html.eex",
+      cd: Path.expand("../assets/email_templates", __DIR__)
+    ],
+    node: [
+      "node_modules/.bin/mjml",
+      "--watch",
+      "email_verification.mjml",
+      "-o",
+      "../../lib/nfd_web/templates/email/email_verification.html.eex",
+      cd: Path.expand("../assets/email_templates", __DIR__)
+    ],
+    node: [
+      "node_modules/.bin/mjml",
+      "--watch",
+      "account_verified.mjml",
+      "-o",
+      "../../lib/nfd_web/templates/email/account_verified.html.eex",
+      cd: Path.expand("../assets/email_templates", __DIR__)
     ]
   ]
 

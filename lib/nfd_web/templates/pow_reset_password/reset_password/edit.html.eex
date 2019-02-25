@@ -20,5 +20,10 @@
   </div>
 <% end %>
 
+<%= if @changeset.data.unconfirmed_email do %>
+  <div>
+    <p>Click the link in the confirmation email to change your email to <%= @changeset.data.unconfirmed_email %></span>.</p>
+  </div>
+<% end %>
 
 <span><%= link "Sign in", to: Routes.pow_session_path(@conn, :new) %></span>

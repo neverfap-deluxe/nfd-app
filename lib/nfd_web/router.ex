@@ -33,6 +33,9 @@ defmodule NfdWeb.Router do
   scope "/", NfdWeb do
     pipe_through [:browser, :not_authenticated]
 
+
+
+
     get "/account", RegistrationController, :account
 
     get "/signup", RegistrationController, :new, as: :signup
