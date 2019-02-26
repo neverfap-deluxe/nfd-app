@@ -1,6 +1,6 @@
 <mjml>
   <mj-head>
-    <mj-title>NeverFap Deluxe | Account Verified</mj-title>
+    <mj-title>NeverFap Deluxe | Email Subscription Confirmation Success</mj-title>
   </mj-head>
   <mj-body>
 
@@ -8,11 +8,11 @@
     <mj-section background-color="#ef6451">
       <mj-column>
         <mj-navbar ico-padding="0" hamburger="hamburger" ico-color="#ffffff">
-          <mj-navbar-link	href="https://neverfapdeluxe.com/" color="#ffffff">Home</mj-navbar-link>
-          <mj-navbar-link	href="https://neverfapdeluxe.com/guide" color="#ffffff">Guide</mj-navbar-link>
-          <mj-navbar-link	href="https://neverfapdeluxe.com/articles" color="#ffffff">Articles</mj-navbar-link>
-          <mj-navbar-link	href="https://neverfapdeluxe.com/practices" color="#ffffff">Practices</mj-navbar-link>
-          <mj-navbar-link	href="https://neverfapdeluxe.com/courses" color="#ffffff">Courses</mj-navbar-link>
+            <mj-navbar-link	href="https://neverfapdeluxe.com/" color="#ffffff">Home</mj-navbar-link>
+            <mj-navbar-link	href="https://neverfapdeluxe.com/guide" color="#ffffff">Guide</mj-navbar-link>
+            <mj-navbar-link	href="https://neverfapdeluxe.com/articles" color="#ffffff">Articles</mj-navbar-link>
+            <mj-navbar-link	href="https://neverfapdeluxe.com/practices" color="#ffffff">Practices</mj-navbar-link>
+            <mj-navbar-link	href="https://neverfapdeluxe.com/courses" color="#ffffff">Courses</mj-navbar-link>
         </mj-navbar>
       </mj-column>
     </mj-section>
@@ -37,19 +37,15 @@
     <mj-section background-color="#fafafa">
       <mj-column width="400px">
         <mj-text font-size="25px" font-family="Helvetica Neue" padding-bottom="20px">
-          Account Verified
+          Email Subscription Confirmation Success
         </mj-text>
         <mj-text line-height="23px">
           Welcome to NeverFap Deluxe!
         </mj-text>
         <mj-text line-height="23px">
-          There is a wealth of content for you to explore on NeverFap Deluxe, designed specifically to help you overcome your porn addiction.
+          Thank you for subscribing! I'll try my best to keep you updated :)
         </mj-text>
-        <!-- <mj-button 
-          background-color="#F45E43"
-          border-radius="0px"
-          href="https://neverfapdeluxe.com/">Visit the website</mj-button>
-      </mj-column> -->
+      </mj-column>
     </mj-section>
 
     <!-- Link buttons -->
@@ -69,13 +65,10 @@
     <mj-section background-color="#fbfbfb">
       <mj-column>
         <mj-social font-size="15px" icon-size="30px" mode="horizontal">
-          <mj-social-element name="facebook" href="https://mjml.io/">
+          <mj-social-element name="facebook" href="https://facebook.com/">
             Facebook
           </mj-social-element>
-          <mj-social-element name="google" href="https://mjml.io/">
-            Google
-          </mj-social-element>
-          <mj-social-element  name="twitter" href="https://mjml.io/">
+          <mj-social-element  name="twitter" href="https://twitter.com/NeverFapDeluxe/">
             Twitter
           </mj-social-element>
         </mj-social>

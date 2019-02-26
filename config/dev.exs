@@ -19,33 +19,6 @@ config :nfd, NfdWeb.Endpoint,
       "--watch-stdin",
       cd: Path.expand("../assets", __DIR__)
     ],
-    node: [
-      "node_modules/.bin/mjml-cli",
-      "--watch",
-      Path.expand("../assets/email_templates/lost_password.mjml", __DIR__),
-      "-o",
-      Path.expand("../lib/nfd_web/templates/email/lost_password.html.eex"),
-      cd: Path.expand("../assets", __DIR__)
-    ]
-
-    # node: [
-    #   "node_modules/.bin/mjml npx mjml",
-    #   "--watch",
-    #   "email_verification.mjml",
-    #   "-o",
-    #   "../../lib/nfd_web/templates/email/email_verification.html.eex",
-    #   cd: Path.expand("../assets/email_templates", __DIR__)
-    # ],
-    # node: [
-    #   "npx mjml",
-    #   "--watch",
-    #   "account_verified.mjml",
-    #   "-o",
-    #   "../../lib/nfd_web/templates/email/account_verified.html.eex",
-    #   cd: Path.expand("../assets/email_templates", __DIR__)
-    # ]
-
-    # watch email template changes
   ]
 
 # ## SSL Support

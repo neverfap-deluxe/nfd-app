@@ -11,7 +11,6 @@
 
 {{ partial "links/accountInfo.html" . }}
 
-
 <div class="single__wrapper">
   <div class="single__content" >
     <p>While everyone is seemingly aware of the NoFap movement, and while there are thousands of support groups and networks, no one actually seems to be able to  effectively explain how to achieve NoFap with any sort of consistency.</p>

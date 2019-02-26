@@ -5,11 +5,13 @@
     "deploy": "webpack --mode production",
     "watch": "webpack --mode development --watch",
     
-    "mjml": "npm run -s mjml-lost-password & npm run -s mjml-email-verification & npm run -s mjml-email-subscription-verification & npm run -s mjml-account-verified",
-    "mjml-lost-password": "npx mjml --watch ./email_templates/lost_password.mjml -o ../lib/nfd_web/templates/email/lost_password.html.eex",
-    "mjml-account-verified": "npx mjml --watch ./email_templates/account_verified.mjml -o ../lib/nfd_web/templates/email/account_verified.html.eex",
-    "mjml-email-verification": "npx mjml --watch ./email_templates/email_verification.mjml -o ../lib/nfd_web/templates/email/email_verification.html.eex",
-    "mjml-email-subscription-verification": "npx mjml --watch ./email_templates/email_subscription_verification.mjml -o ../lib/nfd_web/templates/email/email_subscription_verification.html.eex"
+    "emw": "npm run -s mjml-email-confirmation-success & npm run -s mjml-email-confirmation & npm run -s mjml-reset-password & npm run -s mjml-email-subscription-confirmation & npm run -s mjml-email-subscription-confirmation-success",
+
+    "mjml-email-confirmation-success": "npx mjml --watch ./email_templates/email_confirmation_success.mjml -o ../lib/nfd_web/templates/email/email_confirmation_success.html.eex",
+    "mjml-email-confirmation": "npx mjml --watch ./email_templates/email_confirmation.mjml -o ../lib/nfd_web/templates/pow_email_confirmation/mailer/email_confirmation.html.eex",
+    "mjml-reset-password": "npx mjml --watch ./email_templates/reset_password.mjml -o ../lib/nfd_web/templates/pow_reset_password/mailer/reset_password.html.eex",
+    "mjml-email-subscription-confirmation": "npx mjml --watch ./email_templates/email_subscription_confirmation.mjml -o ../lib/nfd_web/templates/email/email_subscription_confirmation.html.eex",
+    "mjml-email-subscription-confirmation-success": "npx mjml --watch ./email_templates/email_subscription_confirmation_success.mjml -o ../lib/nfd_web/templates/email/email_subscription_confirmation_success.html.eex"
   },
   "dependencies": {
     "mjml": "^4.4.0-beta.1",

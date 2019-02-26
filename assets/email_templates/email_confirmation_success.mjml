@@ -37,17 +37,13 @@
     <mj-section background-color="#fafafa">
       <mj-column width="400px">
         <mj-text font-size="25px" font-family="Helvetica Neue" padding-bottom="20px">
-          Email Verification
+          Account Verified
         </mj-text>
         <mj-text line-height="23px">
-          Thank you for creating an account with NeverFap Deluxe. It's one of the most positive things you can do for your porn addiction.
-        </mj-text>
-
-        <mj-text line-height="23px">
-          Please click on the link below to verify your email.
+          Welcome to NeverFap Deluxe!
         </mj-text>
         <mj-text line-height="23px">
-          
+          There is a wealth of content for you to explore on NeverFap Deluxe, designed specifically to help you overcome your porn addiction.
         </mj-text>
         <mj-button 
           background-color="#F45E43"
@@ -73,13 +69,10 @@
     <mj-section background-color="#fbfbfb">
       <mj-column>
         <mj-social font-size="15px" icon-size="30px" mode="horizontal">
-          <mj-social-element name="facebook" href="https://mjml.io/">
+          <mj-social-element name="facebook" href="https://facebook.com/">
             Facebook
           </mj-social-element>
-          <mj-social-element name="google" href="https://mjml.io/">
-            Google
-          </mj-social-element>
-          <mj-social-element  name="twitter" href="https://mjml.io/">
+          <mj-social-element  name="twitter" href="https://twitter.com/NeverFapDeluxe/">
             Twitter
           </mj-social-element>
         </mj-social>
