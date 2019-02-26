@@ -5,8 +5,8 @@
 
   <div class="single__content">
     <p>A complete list of all of the contextual articles here on my amazingly useful website, NeverFap Deluxe!</p>
-    <p>If instead if you're looking for a more structured approach towards addressing your porn addiction, then I recommend checking out our <a href="/courses" class="Link" => >NeverFap Deluxe Courses</a> section!</p>
-    <p>If however you were interested in browsing the complete list of mental health practices here on NeverFap Deluxe, please check out the suitably-named <a class="Link" =>  href="/practices">NeverFap Deluxe Practices</a> page.</p>
+    <p>If instead if you're looking for a more structured approach towards addressing your porn addiction, then I recommend checking out our <a class="link" href="/courses">NeverFap Deluxe Courses</a> section!</p>
+    <p>If however you were interested in browsing the complete list of mental health practices here on NeverFap Deluxe, please check out the suitably-named <a class="link" href="/practices">NeverFap Deluxe Practices</a> page.</p>
     <p>You may sort articles by latest or category.</p>
   </div>
 </div>
@@ -22,15 +22,15 @@
   </div>
   
   <div class="posts__off posts--guide" id="articles_latest_posts">
-    <!-- <%= partial "articles_latest.html", %{ "page" . "tag_type" "context") %> -->
+    <!-- <%#= partial "articles_latest.html", %{ "page" . "tag_type" "context") %> -->
   </div>
 
   <div class="posts__on posts--guide" id="articles_latest_plain_posts">
-    <!-- <%= partial "articles_latest_plain_text.html", %{ "page" . "tag_type" "context") %> -->
+    <!-- <%#= partial "articles_latest_plain_text.html", %{ "page" . "tag_type" "context") %> -->
   </div>
 
   <div class="posts__off posts--guide" id="articles_category_posts">
-    <!-- <%= partial "articles_category.html", %{ "page" . "tag_type" "context") %> -->
+    <!-- <%#= partial "articles_category.html", %{ "page" . "tag_type" "context") %> -->
   </div>
 </div>
 

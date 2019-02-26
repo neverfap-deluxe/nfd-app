@@ -22,9 +22,9 @@
     <%= @item["content"] %>
   </div>
 
-  <%= partial "shareButtons.html" . %>
+  <%= partial "shareButtons.html", assigns %>
   
-  <%= partial "next_prev_buttons.html" . %>
+  <%= partial "next_prev_buttons.html", assigns %>
 </div>
 
 <%= partial "links-boxInfo.html", assigns %>
@@ -33,7 +33,7 @@
   <div class="single__content">
 
     <h2>Latest Posts</h2>
-    <%= partial "latest_posts.html" . %>    
+    <%= partial "latest_posts.html", assigns %>    
   </div>
 </div>
 

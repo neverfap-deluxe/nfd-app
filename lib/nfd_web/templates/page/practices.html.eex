@@ -5,8 +5,8 @@
 
     <div class="single__content">
       <p>A complete list of all of the mental health practices here on NeverFap Deluxe. Yipee!</p>
-      <p>If instead if you're looking for a more structured approach towards addressing your porn addiction, then I recommend checking out our <a href="/courses" class="Link" => >NeverFap Deluxe Courses</a> section!</p>
-      <p>If however you were searching for a complete list of all our contextual articles on the website, please check out the impeccably arranged <a class="Link" =>  href="/articles">NeverFap Deluxe Articles</a> page.</p>
+      <p>If instead if you're looking for a more structured approach towards addressing your porn addiction, then I recommend checking out our <a href="/courses" class="link" => >NeverFap Deluxe Courses</a> section!</p>
+      <p>If however you were searching for a complete list of all our contextual articles on the website, please check out the impeccably arranged <a class="link" =>  href="/articles">NeverFap Deluxe Articles</a> page.</p>
       <p>You may sort practices by latest or category.</p>
     </div>
   
@@ -23,15 +23,15 @@
     </div>
     
     <div class="posts__off posts--guide" id="practices_latest_posts">
-      <!-- <%= partial "articles_latest.html", %{ "page" . "tag_type" "practice") %> -->
+      <!-- <%#= partial "articles_latest.html", %{ "page" . "tag_type" "practice") %> -->
     </div>
 
     <div class="posts__on posts--guide" id="practices_latest_plain_posts">
-      <!-- <%= partial "articles_latest_plain_text.html", %{ "page" . "tag_type" "practice") %> -->
+      <!-- <%#= partial "articles_latest_plain_text.html", %{ "page" . "tag_type" "practice") %> -->
     </div>
   
     <div class="posts__off posts--guide" id="practices_category_posts">
-      <!-- <%= partial "articles_category.html", %{ "page" . "tag_type" "practice") %> -->
+      <!-- <%#= partial "articles_category.html", %{ "page" . "tag_type" "practice") %> -->
     </div>
   </div>
 

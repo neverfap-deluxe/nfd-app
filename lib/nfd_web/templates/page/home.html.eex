@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <%= partial "head.html" . %>
+  <%= partial "head.html", assigns %>
   <body>
     <%=/*  <%= partial "links-accountInfo.html", assigns %>  */%>
     <div class="homepage__content">
       <div class="homepage__hero">
-        <%= partial "header.html" . %>
+        <%= partial "header.html", assigns %>
         <h1 class="homepage__hero__title">NeverFap <span class="deluxe__font">Deluxe</span></h1>
         <h2 class="homepage__hero__title__secondary">The Comprehensive NoFap Companion.</h2>
       </div>
@@ -137,10 +137,10 @@
           <h3 class="button__click button__off" id="latest">Latest</h3>
         </div>
         <div class="post__on" id="popular__posts">
-          <%= partial "homepage/introduction_posts.html" . %>
+          <%= partial "homepage/introduction_posts.html", assigns %>
         </div>
         <div class="post__off" id="latest__posts">
-          <%= partial "latest_posts.html" . %>
+          <%= partial "latest_posts.html", assigns %>
         </div>
       </div>
 
@@ -226,7 +226,7 @@
       </div>
 
     </div>
-    <%= partial "footer.html" . %>
+    <%= partial "footer.html", assigns %>
   </body>
   <script src='/js/homepage.js'></script>
 </html>

@@ -28,14 +28,14 @@
       <%= @item["content"] %>
     </div>
     
-    <%= partial "next_prev_buttons.html" . %>
+    <%= partial "next_prev_buttons.html", assigns %>
   </div>
 
   <%= partial "links-boxInfo.html", assigns %>
     
   <div class="single__wrapper">
     <h2>Latest Posts</h2>
-    <%= partial "latest_posts.html" . %>  
+    <%= partial "latest_posts.html", assigns %>  
   </div>
 
   <%= partial "links-accountInfo.html", assigns %>
