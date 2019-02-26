@@ -6,11 +6,11 @@
       tldr;
     </h3></span>
 
-    <%= if @item["Tldr1"] do %><p class="homepage__process__text homepage__process__text--practice"><%= @item["Tldr1"] %></p><% end %>
-    <%= if @item["Tldr2"] do %><p class="homepage__process__text homepage__process__text--practice"><%= @item["Tldr2"] %></p><% end %>
-    <%= if @item["Tldr3"] do %><p class="homepage__process__text homepage__process__text--practice"><%= @item["Tldr3"] %></p><% end %>
-    <%= if @item["Tldr4"] do %><p class="homepage__process__text homepage__process__text--practice"><%= @item["Tldr4"] %></p><% end %>
-    <%= if @item["Tldr5"] do %><p class="homepage__process__text homepage__process__text--practice"><%= @item["Tldr5"] %></p><% end %>
+    <%= if @item["Tldr1"] do %><p class="homepage__process__text homepage__process__text--practice"><%= raw @item["Tldr1"] %></p><% end %>
+    <%= if @item["Tldr2"] do %><p class="homepage__process__text homepage__process__text--practice"><%= raw @item["Tldr2"] %></p><% end %>
+    <%= if @item["Tldr3"] do %><p class="homepage__process__text homepage__process__text--practice"><%= raw @item["Tldr3"] %></p><% end %>
+    <%= if @item["Tldr4"] do %><p class="homepage__process__text homepage__process__text--practice"><%= raw @item["Tldr4"] %></p><% end %>
+    <%= if @item["Tldr5"] do %><p class="homepage__process__text homepage__process__text--practice"><%= raw @item["Tldr5"] %></p><% end %>
   </div>
   <span><span class="homepage__process__link"><%= @item["date"] %></span></span>
 </div>
@@ -19,7 +19,7 @@
 
 <div class="single__wrapper">
   <div class="single__content">
-    <%= @item["content"] %>
+    <%= raw @item["content"] %>
   </div>
 
   <%= partial "shareButtons.html", assigns %>

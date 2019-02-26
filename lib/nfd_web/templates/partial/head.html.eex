@@ -3,10 +3,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-  <meta name="author" content="<%= Application.get_env(:ac, :website_name) %>">
+  <meta name="author" content="<%= Application.get_env(:ac, :website_author) %>">
   <meta name="keywords" content="<%= Application.get_env(:ac, :website_keywords) %>">
   <meta name="robots" content="noodp"/>
-  <link rel="canonical" href="<%= .Permalink %>" />
+  <link rel="canonical" href="<%= item.permalink %>" />
 
   <%= if @conn.assigns["meta_title"] do %>
     <title><%= @meta_title %> </title>
@@ -93,27 +93,27 @@
           "headline" : "<%= if eq .Section "courses" %><%= "NeverFap Deluxe Courses |"%><%= else if eq .Section "articles"%><%= "NeverFap Deluxe Articles |"%><%= else if eq .Section "practices"%><%= "NeverFap Deluxe Practices |"%><%= else %><%= "NeverFap Deluxe |"%><% end %> <%= @item["title"] %>",
           "description" : "<%= .Description %>", 
           "inLanguage" : "en-US",
-          "author" : "<%= .Site.Author.name %>",
-          "creator" : "<%= .Site.Author.name %>",
-          "publisher": "<%= .Site.Author.name %>",
-          "accountablePerson" : "<%= .Site.Author.name %>",
-          "copyrightHolder" : "<%= .Site.Author.name %>",
+          "author" : "<%= Application.get_env(:ac, :website_author) %>",
+          "creator" : "<%= Application.get_env(:ac, :website_author) %>",
+          "publisher": "<%= Application.get_env(:ac, :website_author) %>",
+          "accountablePerson" : "<%= Application.get_env(:ac, :website_author) %>",
+          "copyrightHolder" : "<%= Application.get_env(:ac, :website_author) %>",
           "copyrightYear" : "<%= .Date.Format "2006" %>",
           "datePublished": "<%= time .Date %>",
           "dateModified" : "<%= .Date %>",
-          "url" : "<%= .Permalink %>",
-          "keywords" : [ <%= if isset .Params "tags" %><%= range .Params.tags %>"<%= . %>",<% end %><% end %> ]
-          "genre": "<%= range .Params.categories %><%= . %><% end %>",
+          "url" : "<%= .permalink %>",
+          "keywords" : [ <%= if isset @item "tags" %><%= range @item["tags"] %>"<%= . %>",<% end %><% end %> ]
+          "genre": "<%= range @item["categories"] %><%= . %><% end %>",
         }
       <%= else %>
         {
           "@context": "http://schema.org",
           "@type": "WebSite",
-          "url": "<%= .Permalink %>",
+          "url": "<%= .permalink %>",
           "name": "<%= if eq .Section "courses" %><%= "NeverFap Deluxe Courses |"%><%= else if eq .Section "articles"%><%= "NeverFap Deluxe Articles |"%><%= else if eq .Section "practices"%><%= "NeverFap Deluxe Practices |"%><%= else %><%= "NeverFap Deluxe |"%><% end %> <%= @item["title"] %>",
           "author": {
             "@type": "Person",
-            "name": "<%= .Site.Author.name %>"
+            "name": "<%= Application.get_env(:ac, :website_author) %>"
           },
           "description": "<%= .Description %>",
         }

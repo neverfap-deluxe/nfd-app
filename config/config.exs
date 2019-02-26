@@ -10,7 +10,7 @@ use Mix.Config
 config :nfd,
   ecto_repos: [Nfd.Repo],
   base_url: "https://neverfapdeluxe.com/",
-  author: "Julius Reade",
+  website_author: "Julius Reade",
   website_name: "",
   website_keywords: "",
   website_description: "",

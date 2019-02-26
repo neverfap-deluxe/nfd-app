@@ -2,7 +2,6 @@
 <html>
   <%= partial "head.html", assigns %>
   <body>
-    <%=/*  <%= partial "links-accountInfo.html", assigns %>  */%>
     <div class="homepage__content">
       <div class="homepage__hero">
         <%= partial "header.html", assigns %>
@@ -50,7 +49,7 @@
         </p>
       </div>
 
-      <%= partial "links-boxLink.html", %{ "Title" => "Guide" "Text" => "Check out our NeverFap Deluxe Guide!" "Link" =>  "/guide" %>
+      <%= partial "links-boxLink.html", %{ "Title" => "Guide", "Text" => "Check out our NeverFap Deluxe Guide!", "Link" =>  "/guide" } %>
 
       <div class="homepage__section">
         <h1 style="margin-top: 2.5rem; margin-bottom: 3rem;">The porn addiction recovery process is simple.</h1>
@@ -59,7 +58,7 @@
           <span><h3 class="homepage__process__title">
             Read the articles.
           </h3></span>
-          <%=/*  <p class="homepage__process__text">Find out exactly which skills you will need to learn.</p>  */%>
+          <%#  <p class="homepage__process__text">Find out exactly which skills you will need to learn.</p>  %>
           <p class="homepage__process__text">Understand exactly why NeverFap works.</p> <!-- Understand the skills required to help you overcome porn addiction, and understand exactly how and why they work in precise detail. -->
         </div>
         <span><a class="homepage__process__link" href="/articles">Link to articles.</a></span>
@@ -68,7 +67,7 @@
           <span><h3 class="homepage__process__title">
             Practice the exercises.
           </h3></span>
-          <%=/*  <p class="homepage__process__text">Practice these skills on a daily basis.</p>  */%>
+          <%#  <p class="homepage__process__text">Practice these skills on a daily basis.</p>  %>
           <p class="homepage__process__text">Develop healthy coping mechanisms with daily practice.</p>
         </div>
         <span><a class="homepage__process__link" href="/articles">Link to exercises.</a></span>
@@ -77,7 +76,7 @@
           <span><h3 class="homepage__process__title">
             Complete the courses.
           </h3></span>
-          <%=/*  <p class="homepage__process__text">Practice these skills on a daily basis.</p>  */%>
+          <%#  <p class="homepage__process__text">Practice these skills on a daily basis.</p>  %>
           <p class="homepage__process__text">Learn new skills based on proven pathways.</p>
         </div>
         <span><a class="homepage__process__link" href="/articles">Link to courses.</a></span>
@@ -87,7 +86,7 @@
         <p style="margin-bottom: 2rem;">Check out the NeverFap Deluxe Guide for <u>further instruction</u>!</p>
       </div>
 
-      <%= partial "links-boxLink.html", %{ "Title" => "Guide" "Text" => "You should definitely click on me. Pleeeease." "Link" =>  "/guide" %>
+      <%= partial "links-boxLink.html", %{ "Title" => "Guide", "Text" => "You should definitely click on me. Pleeeease.", "Link" => "/guide" } %>
 
       <div class="homepage__section">
         <h3 style="margin-top: 2.5rem; margin-bottom: 3rem;">Furthermore, all of these articles and practices have been organised into...</h3>
@@ -101,7 +100,7 @@
         </ul>
       </div>
 
-      <%= partial "links-boxLink.html", %{ "Title" => "Principles" "Text" => "Learn more about The Five Fundamental Principles of NeverFap." "Link" =>  "/articles/the-five-fundamental-principles-of-neverfap" %>
+      <%= partial "links-boxLink.html", %{ "Title" => "Principles", "Text" => "Learn more about The Five Fundamental Principles of NeverFap.", "Link" =>  "/articles/the-five-fundamental-principles-of-neverfap" } %>
 
       <div class="homepage__section">
         <h3>Hooray!</h3>
@@ -246,7 +245,7 @@
 
 
 
-      <%=/*  <div class="homepage__hero">
+      <%#  <div class="homepage__hero">
         <h1 class="homepage__hero__title">Here's how it works.</h1>
         <h2 class="homepage__hero__title__secondary">There is one simple rule to overcoming porn addiction.</h2>
       </div>
@@ -262,5 +261,5 @@
           <span class="five__principles__item__wrapper"><li class="five__principles__item">Change the way you think about sex and women.</li></span>
           <span class="five__principles__item__wrapper"><li class="five__principles__item">Commit to long-term thinking.</li></span>
         </ul>
-      </div>  */%>
+      </div>  %>
 

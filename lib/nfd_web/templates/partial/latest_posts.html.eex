@@ -1,39 +1,39 @@
 <div class="posts">
   <%= range first 10 .Site.RegularPages %>
-    <a class="post" href="<%=.Permalink%>">
+    <a class="post" href="<%= article['permalink'] %>">
       <div class="post__left">
         <div class="post__five__principles">
-          <%= if in .Params.categories "introduction" %>
+          <%= if in @item["categories"] "introduction" %>
             <div class="post__five__principles__item  post__five__principles__item--introduction">
               Introduction
             </div>
-          <%= else if in .Params.categories "choice-over-mind" %>
+          <%= else if in @item["categories"] "choice-over-mind" %>
             <div class="post__five__principles__item  post__five__principles__item--choice-over-mind">
               Choice over mind
             </div>
-          <%= else if in .Params.categories "balance-over-reward" %> 
+          <%= else if in @item["categories"] "balance-over-reward" %> 
             <div class="post__five__principles__item  post__five__principles__item--balance-over-reward">
               Balance over reward
             </div>
-          <%= else if in .Params.categories "struggle-over-none" %> 
+          <%= else if in @item["categories"] "struggle-over-none" %> 
             <div class="post__five__principles__item  post__five__principles__item--struggle-over-none">
               Struggle over none
             </div>
-          <%= else if in .Params.categories "awareness-over-all" %> 
+          <%= else if in @item["categories"] "awareness-over-all" %> 
             <div class="post__five__principles__item  post__five__principles__item--awareness-over-all">
               Awareness over all
             </div>
-          <%= else if in .Params.categories "uncondition-over-judgement" %> 
+          <%= else if in @item["categories"] "uncondition-over-judgement" %> 
             <div class="post__five__principles__item post__five__principles__item--uncondition-over-judgement">
                 Uncondition over judgement
             </div>
           <% end %>
         </div>
-        <h5 class="post__date"><%=@item["date"]%></h5>
-        <h4 class="post__title"><%=.LinkTitle%></h4>    
+        <h5 class="post__date"><%= @item["date"] %></h5>
+        <h4 class="post__title"><%= @item["title"] %></h4>    
       </div>
       <!-- <div class="post__right">
-        <img class="post__image" src="<%= .Params.image %>" />      
+        <img class="post__image" src="<%= @item['image'] %>" />      
       </div> -->
     </a>
   <% end %>

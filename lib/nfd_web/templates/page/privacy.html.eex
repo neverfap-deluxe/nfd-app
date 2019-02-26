@@ -1,7 +1,7 @@
 <div class="single__wrapper">    
   <h1 class="single__title"><%= @item["title"] %></h1>
   <div class="single__content">
-    <%= @item["content"] %>
+    <%= raw @item["content"] %>
   </div>
 
   <div class="homepage__hero homepage__guide__wrapper">
@@ -10,4 +10,3 @@
 </div>
 
 <%= partial "links-accountInfo.html", assigns %>
-

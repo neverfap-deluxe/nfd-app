@@ -1,0 +1,23 @@
+<%= Enum.map(@items, fn(item) -> %>
+  <%= if item["category"] == @course_type do %>
+    <div class="homepage__process single__homepage__process">    
+      <a href="<%= item.permalink %>"><h3 class="homepage__process__title--courses">
+        <div class="five__principles__list__page">
+          <span><li class="five__principles__item__page five__principles__item__page--courses"><%= item["title"] %></li></span>
+        </div>
+      </h3></a>
+
+      <div class="homepage__process__text homepage__process__text--practice">
+        <b>Overview</b>
+        <%= item["overview"] %>
+      </div>
+      <div class="homepage__process__text homepage__process__text--practice">
+        <b>What you will learn</b>
+        <%= if item["learn1"] do %><p><%= item["learn1"] %></p><% end %>
+        <%= if item["learn2"] do %><p><%= item["learn2"] %></p><% end %>
+        <%= if item["learn3"] do %><p><%= item["learn3"] %></p><% end %>
+      </div>
+    </div>
+    <span><a href="<%= item.permalink %>" class="homepage__process__link homepage__process__link--courses">Link To Course</a></span>  
+  <% end %>
+<% end ) %>

@@ -42,7 +42,7 @@
               <div class="alert alert-danger">
                 <p>Oops, something went wrong! Please check the errors below.</p>
               </div>
-            <% end %> -->
+            <%# end %> -->
 
             <div class="error__label__combo">
               <%= label f, @changeset.data.__struct__.pow_user_id_field(), class: "form__label" %>

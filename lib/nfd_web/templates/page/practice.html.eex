@@ -1,43 +1,36 @@
+<div class="single__wrapper practices__wrapper">
 
-  <!-- <div class="single__hero">
-    <h1 class="single__hero__title"><%= @item["title"] %></h1>
-  </div> -->
+  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>
 
-  <div class="single__wrapper practices__wrapper">
-
-    <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>
-
-    <div class="homepage__process single__homepage__process">
-      <div class="homepage__process__title__container">
-        <span><h3 class="homepage__process__title">tldr;</h3></span>
-        <span><h3 class="homepage__process__subtitle"><%= .Params.Category %></h3></span>
-      </div>
-
-      <%= if .Params.What %><div class="homepage__process__text homepage__process__text--practice"><b>What</b><p><%= .Params.What %></p></div><% end %>
-      <%= if .Params.How %><div class="homepage__process__text homepage__process__text--practice"><b>How</b><p><%= .Params.How %></p></div><% end %>
-      <%= if .Params.When %><div class="homepage__process__text homepage__process__text--practice"><b>When</b><p><%= .Params.When %></p></div><% end %>
-      <%= if .Params.Duration %><div class="homepage__process__text homepage__process__text--practice"><b>Duration</b><p><%= .Params.Duration %></p></div><% end %>
+  <div class="homepage__process single__homepage__process">
+    <div class="homepage__process__title__container">
+      <span><h3 class="homepage__process__title">tldr;</h3></span>
+      <span><h3 class="homepage__process__subtitle"><%= @item["category"] %></h3></span>
     </div>
-    <span><span class="homepage__process__link"><%= @item["date"] %></span></span>  
+
+    <%= if @item["what"] do %><div class="homepage__process__text homepage__process__text--practice"><b>What</b><p><%= raw @item["what"] %></p></div><% end %>
+    <%= if @item["how"] do %><div class="homepage__process__text homepage__process__text--practice"><b>How</b><p><%= raw @item["how"] %></p></div><% end %>
+    <%= if @item["when"] do %><div class="homepage__process__text homepage__process__text--practice"><b>When</b><p><%= raw @item["when"] %></p></div><% end %>
+    <%= if @item["duration"] do %><div class="homepage__process__text homepage__process__text--practice"><b>Duration</b><p><%= raw @item["duration"] %></p></div><% end %>
   </div>
+  <span><span class="homepage__process__link"><%= @item["date"] %></span></span>  
+</div>
 
-  <%= partial "links-accountInfo.html", assigns %>
+<%= partial "links-accountInfo.html", assigns %>
 
-  <div class="single__wrapper">
-    <div class="single__content">
-      <%= @item["content"] %>
-    </div>
-    
-    <%= partial "next_prev_buttons.html", assigns %>
+<div class="single__wrapper">
+  <div class="single__content">
+    <%= raw @item["content"] %>
   </div>
+  
+  <%= partial "next_prev_buttons.html", assigns %>
+</div>
 
-  <%= partial "links-boxInfo.html", assigns %>
-    
-  <div class="single__wrapper">
-    <h2>Latest Posts</h2>
-    <%= partial "latest_posts.html", assigns %>  
-  </div>
+<%= partial "links-boxInfo.html", assigns %>
+  
+<div class="single__wrapper">
+  <h2>Latest Posts</h2>
+  <%= partial "latest_posts.html", assigns %>  
+</div>
 
-  <%= partial "links-accountInfo.html", assigns %>
-
-<% end %>
+<%= partial "links-accountInfo.html", assigns %>
