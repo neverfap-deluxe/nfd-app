@@ -1,0 +1,72 @@
+
+<!-- <div class="homepage__hero homepage__guide__wrapper">
+  <h1 class="homepage__hero__title"><%= @item["title"] %></h1>
+</div> -->
+<div class="single__wrapper">   
+  <h2 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <div class="single__content">
+    <p>Here you'll find our NeverFap Deluxe Courses!</p>
+    <p>These courses have been structured around the written content on this website, in order to provide you with the most efficient way forward with your porn recovery.</p>
+    <p>Much like the written content, these courses have been designed around <a class="Link" =>  href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles Of NeverFap</a>.</p>
+    <p>These structured courses are the recommended approach towards consuming the information on this website, and I hope you find them useful as a porn recovery resource.</p>
+  </div>
+</div>
+
+<%= partial "links-accountInfo.html", assigns %>
+
+<div class="single__wrapper">   
+  <div class="single__content">
+    <%=/*  <h2>NeverFap Deluxe Courses</h2>  */%>
+    <p>In total there are six courses.</p>
+    <p>It is recommended that you start with the Introduction course, and that you work your way down the list from <b>Choice over mind</b> to <b>Uncondition over judgement</b>.</p>
+
+  </div>
+  <!-- <%=/*  Introduction */%> -->
+  <!-- <%= partial "courses/course_box.html", %{ "page" . "course_type" "introduction") %> -->
+  
+  <!-- <%=/*  Choice over mind  */%> -->
+  <!-- <%= partial "courses/course_box.html", %{ "page" . "course_type" "choice-over-mind") %> -->
+  
+  <!-- <%=/*  Balance over reward  */%> -->
+  <!-- <%= partial "courses/course_box.html", %{ "page" . "course_type" "balance-over-reward") %> -->
+
+  <!-- <%=/*  Awareness over all  */%> -->
+  <!-- <%= partial "courses/course_box.html", %{ "page" . "course_type" "awareness-over-all") %> -->
+
+  <!-- <%=/*  Struggle over none  */%> -->
+  <!-- <%= partial "courses/course_box.html", %{ "page" . "course_type" "struggle-over-none") %> -->
+
+  <!-- <%=/*  Uncondition over judgement  */%> -->
+  <!-- <%= partial "courses/course_box.html", %{ "page" . "course_type" "uncondition-over-judgement") %> -->
+</div>
+
+<%= partial "links-boxInfo.html", assigns %>
+
+<div class="single__wrapper">   
+  <div class="single__content">
+    <h2>Audio Courses</h2>
+    <p>In addition to the written content on this website, we also offer structured audio courses which have been designed to provide you with a linear pathway towards developing the skills to address your porn addiction.</p>
+    <p>Much like the written content, these courses have been designed around The Five Fundamental Principles Of NeverFap, in order to help you learn new skills in the most efficient way possible.</p>
+    <p>In order to sign up for the courses, you first need to <a class="Link" =>  href="/accounts">create an account</a> on our NeverFap Deluxe Community website.</p>
+    <p>Pricing is available on the NeverFap Deluxe Community Website.</p>
+  </div>
+</div>
+
+
+<%=/*  <p>To begin here are just a few of the skills you will learn from our courses:</p>
+    
+<div class="five__principles__guide">
+  <div class="five__principles__guide__item">Learn to value your mental health above all.</div>
+  <div class="five__principles__guide__item">Develop the ability to quiet and focus your mind.</div>
+  <div class="five__principles__guide__item">Accept yourself and others unconditionally.</div>
+  <div class="five__principles__guide__item">Change the way you think about sex and women.</div>
+  <div class="five__principles__guide__item">Commit to long-term thinking.</div>
+</div>
+
+<div class="five__principles__guide--mobile">
+  <h3>Learn to value your mental health above all.</h3>
+  <h3>Develop the ability to quiet and focus your mind.</h3>
+  <h3>Accept yourself and others unconditionally.</h3>
+  <h3>Change the way you think about sex and women.</h3>
+  <h3>Commit to long-term thinking.</h3>
+</div>  */%>

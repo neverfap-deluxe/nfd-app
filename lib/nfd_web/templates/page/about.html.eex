@@ -1,5 +1,5 @@
 <div class="single__wrapper">   
-  <h2 class="single__title">{{ .Title }} <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
+  <h2 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
   <div class="single__content" style="margin-bottom: 0;">
 
     <p>Welcome to NeverFap Deluxe.</p>
@@ -9,7 +9,7 @@
   </div>
 </div>
 
-{{ partial "links/accountInfo.html" . }}
+<%= partial "links-accountInfo.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content" >
@@ -32,9 +32,7 @@
   </div>
 </div>
 
-
-
-{{ partial "links/boxLink.html" (dict "Title" "Guide" "Text" "Check out our NeverFap Deluxe Guide!" "Link" "/guide" )}}
+<%= partial "links-boxLink.html", %{ "Title" => "Guide", "Text" => "Check out our NeverFap Deluxe Guide!", "Link" => "/guide" } %>
 
 <div class="single__wrapper">
   <div class="single__content">
@@ -58,7 +56,7 @@
   </div>
 </div>
 
-{{ partial "links/boxInfo.html" . }}
+<%= partial "links-boxInfo.html", assigns %>
 
 <div class="single__wrapper" id="contact__form">   
   <h2 class="single__title">Contact <img src="/images/logo.png" class="logo__square" alt=""/></h2>
@@ -69,9 +67,9 @@
     <form class="form" action="https://formspree.io/julius_dott@hotmail.com" method="POST">  
       <!-- <h4 class="form__title">THE FORM</h4> -->
     <div class="form__input__container">
-      <input class="form__input" type="text" placeholder="Name" name='name'/>
+      <input class="form__input" type="Text" => placeholder="Name" name='name'/>
       <input class="form__input" type="email" placeholder="Email" name='_replyTo'/>
-      <textarea class="form__input form__textarea" type="text" placeholder="Message" name='message'></textarea>
+      <textarea class="form__input form__textarea" type="Text" => placeholder="Message" name='message'></textarea>
     </div>
   
     <div class="form__submission__container">

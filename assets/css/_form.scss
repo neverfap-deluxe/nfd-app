@@ -1,47 +1,114 @@
-.form__container {
+.form__wrapper {
+  display: flex;
+  width: 100%;
 
-  .form__label {
-    color: black;
-    font-size: 1.2rem;
-    margin-right: 1rem;
-  }
-
-  .help-block {
-    font-size: 1.2rem;
-    margin: 0;
-    margin-bottom: 0.5rem;
-  }
-
-  .error__label__combo {
+  .form__success {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+
+    margin-top: 1rem;
   }
-}
+
+  .form {
+    position: relative;
+    background: white;
+    margin-top: 1rem;
+    border: 4px solid black;
+    
+    min-height: 20rem;    
+    width: 100%;
+
+    padding-left: 2rem;
+    padding-right: 2rem;
 
 
-@media screen and (min-width: 420px) {
-  .form__container {
+    .form__title {
+      font-size: 1.7rem;
+      margin-top: 4rem;
+    }
 
-    .form__label {
-      
+    .form__title__secondary {
+      text-align: center;
+    }
+    
+    .form__input__container {
+      margin-top: 2rem;
+
+      .form__input {
+        font-weight: 900;
+        height: 2.8rem;
+        padding-left: 1.4rem;
+        min-width: calc(100% - 1.4rem);
+
+        border: 2px solid black;
+  
+        margin-bottom: 0.6rem;
+      }
+
+      .form__textarea {
+        height: 300px;
+        padding-top: 1rem;
+      }
+    }
+
+    .form__submission__container {
+      width: 100%;
+
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+
+      .form__button {
+        font-weight: 900;        
+
+        height: 2.8rem;
+        width: 100%;
+
+        margin-top: 1rem;
+  
+        border: 2px solid black;
+        padding: 0.2rem;
+        
+        box-shadow: -3px 3px 0px 0px black;
+        cursor: pointer;
+      }
+
+      .form__button:focus {
+        outline: 0;
+      }
+
+      .form__button:hover {
+        box-shadow: -6px 6px 0px 0px black;
+      }
+
+  
+      .form__button__faded__false {
+        background: white;
+        opacity: 0.5;
+        cursor: default;
+      }
+
+      .form__button__faded__true {
+        background: rgb(0, 255, 106);
+        opacity: 1;
+        cursor: pointer;
+        transition: box-shadow　.3s;        
+      }
+        
+      .form__button__faded__true:hover {
+        box-shadow: -6px 6px 0px 0px black;
+      }
     }
   }
 }
 
-@media screen and (min-width: 768px) {
-  .form__container {
-
-    .form__label {
-      
+@media screen and (min-width: 480px) {
+  .form__wrapper {
+    .form {
+      // width: 350px;
     }
   }
 }
 
-@media screen and (min-width: 1280px) {
-  .form__container {
 
-    .form__label {
-      
-    }
-  }
-}

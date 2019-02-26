@@ -12,7 +12,7 @@ defmodule Nfd.Users.User do
 
     pow_user_fields()
 
-    # has_many :courses, Nfd.Content.Course
+    # has_many :courses, Nfd@item["content"].Course
 
     timestamps()
   end

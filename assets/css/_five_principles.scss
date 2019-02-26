@@ -1,0 +1,274 @@
+@mixin principle__wrapper() {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+}
+
+@mixin principle__item() {
+  list-style: none;
+  font-size: 1.5rem;
+
+  border-bottom: 5px solid black;
+  margin-bottom: 1.8rem;
+  
+  position: relative;
+  left: 1rem;
+  display: inline-block;
+  transform: scale(1) rotate(-2deg) skew(-20deg);
+  z-index: 300; // was -1
+  
+  background: none;
+}
+
+@mixin principle__item__before() {
+  content: "";
+  position: absolute;
+  left: -5%;
+  bottom: -1px;
+  width: 110%;
+  height: 16px;
+  background-color: yellow;
+  z-index: -1;
+}
+
+
+
+
+
+// MAIN
+.five__principles__list__main {
+  @include principle__wrapper();
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+
+  .five__principles__item__main {
+    @include principle__item();
+  }
+
+  .five__principles__item__main::before {
+    @include principle__item__before();
+  }
+
+  .five__principles__item__main__judgement {
+    @include principle__item();
+    font-size: 1.2rem;
+  }
+
+  .five__principles__item__main__judgement::before {
+    @include principle__item__before();
+  }
+}
+
+
+
+// PAGE CATEGORY
+.five__principles__list__page {
+  @include principle__wrapper();
+  padding-left: 0.6rem;
+
+  .five__principles__item__page {
+    @include principle__item();
+    left: 0rem;
+  }
+  
+  .five__principles__item__page::before {
+    @include principle__item__before();
+  }  
+}
+
+
+
+// HOMEPAGE HERO
+.homepage__hero__principle__wrapper {
+  @include principle__wrapper();
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  padding-top: 5px;
+  background: white;
+}
+
+.homepage__hero__principle__item {
+  @include principle__item();
+
+  color: rgb(21, 21, 21);
+  font-size: 1.3rem;
+  top: .7rem;
+  left: .2rem;
+}  
+
+.homepage__hero__principle__item::before {
+  @include principle__item__before();
+}
+
+
+
+// PRINCIPLES GUIDE
+.five__principles__guide {
+  margin-top: 0.5rem!important;
+
+  // margin-top: 2.5rem!important;
+  // margin-bottom: 2.5rem!important;
+  display: none;
+  padding: 0;
+
+  .five__principles__guide__item {
+    @include principle__item();
+    width: 90%;
+    font-size: 1rem;
+    margin-top: 1rem;
+    border-bottom: 5px solid rgba(255,46,182,1);
+  }  
+
+  .five__principles__guide__item::before {
+    @include principle__item__before();
+    width: 100%;
+    background-color: cyan;
+    height: 8px;
+  }
+}
+
+.five__principles__guide--mobile {
+  display: block;
+  margin: 0;
+  padding: 0;
+
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+
+  h3 {
+    border: 3px solid black;
+    padding: 0.6rem;
+  }
+}
+
+// POST PRINCIPLE
+.post__five__principles {
+  position: absolute;
+  right: 0.5rem;
+  top: 1.5rem;
+  
+  .post__five__principles__item {
+    @include principle__item();
+    left: -0.5rem;
+    top: -0.5rem;
+    // font-size: 1.35rem;
+    font-size: 1.15rem;
+    height: 26px;
+  }
+
+  .post__five__principles__item::before {
+    @include principle__item__before();
+    background-color: rgba(255,46,182,1);
+  }
+
+  .post__five__principles__item--introduction {
+    color: rgb(0, 255, 0);
+  }
+
+  .post__five__principles__item--choice-over-mind {
+    color: yellow;
+  }
+
+  .post__five__principles__item--balance-over-reward {
+    color: cyan;
+  }
+
+  .post__five__principles__item--struggle-over-none {
+    color: rgb(255, 203, 106); 
+  }
+
+  .post__five__principles__item--awareness-over-all {
+    // color: rgb(116, 101, 255); 
+    color: white; 
+  }
+
+  .post__five__principles__item--uncondition-over-judgement {
+    color: rgb(44, 255, 157); 
+    font-size: 0.9rem!important;
+  }
+}
+
+@media screen and (min-width: 420px) {
+
+  .five__principles__list__page {
+    .five__principles__item__page {
+      font-size: 1.6rem;
+    }
+  }
+
+  .five__principles__guide--mobile {
+    display: none;
+  }
+  
+  .five__principles__guide {
+    display: block;
+    .five__principles__guide__item {
+      width: initial;
+      font-size: 1.1rem!important;
+    }  
+  }
+
+  .five__principles__list__main {
+    .five__principles__item__main__judgement {
+      @include principle__item();
+      font-size: 1.5rem;
+    }
+  }
+
+  .post__five__principles {
+    right: 1rem;
+  }
+
+  .homepage__hero__principle__item {
+    top: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  .five__principles__list__page {
+    .five__principles__item__page {
+    }
+  }
+
+  .post__five__principles {
+    .post__five__principles__item--uncondition-over-judgement {
+      font-size: 1.15rem!important;
+
+    }
+  }
+
+  .homepage__hero__principle__item {
+    top: 0.4rem;
+    font-size: 1.9rem;
+  }
+
+  .five__principles__guide {
+    .five__principles__guide__item {
+      width: initial;
+      font-size: 1.4rem!important;
+    }  
+  }
+
+  .five__principles__list__main {
+
+    .five__principles__item__main {
+      font-size: 1.75rem;
+      margin-bottom: 2.1rem;
+    }  
+    .five__principles__item__main__judgement {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+
+@media screen and (min-width: 1280px) {
+  .five__principles__guide {
+  }
+}

@@ -1,40 +1,40 @@
 <div class="single__wrapper practices__wrapper">
-  <h1 class="single__title">{{ .Title }} <img src="/images/logo.png" class="logo__square" alt=""/></h1>
+  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>
 
   <div class="homepage__process single__homepage__process">
     <span><h3 class="homepage__process__title">
       tldr;
     </h3></span>
 
-    {{ if .Params.Tldr1 }}<p class="homepage__process__text homepage__process__text--practice">{{ .Params.Tldr1 | safeHTML }}</p>{{ end }}
-    {{ if .Params.Tldr2 }}<p class="homepage__process__text homepage__process__text--practice">{{ .Params.Tldr2 | safeHTML }}</p>{{ end }}
-    {{ if .Params.Tldr3 }}<p class="homepage__process__text homepage__process__text--practice">{{ .Params.Tldr3 | safeHTML }}</p>{{ end }}
-    {{ if .Params.Tldr4 }}<p class="homepage__process__text homepage__process__text--practice">{{ .Params.Tldr4 | safeHTML }}</p>{{ end }}
-    {{ if .Params.Tldr5 }}<p class="homepage__process__text homepage__process__text--practice">{{ .Params.Tldr5 | safeHTML }}</p>{{ end }}
+    <%= if @item["Tldr1"] do %><p class="homepage__process__text homepage__process__text--practice"><%= @item["Tldr1"] %></p><% end %>
+    <%= if @item["Tldr2"] do %><p class="homepage__process__text homepage__process__text--practice"><%= @item["Tldr2"] %></p><% end %>
+    <%= if @item["Tldr3"] do %><p class="homepage__process__text homepage__process__text--practice"><%= @item["Tldr3"] %></p><% end %>
+    <%= if @item["Tldr4"] do %><p class="homepage__process__text homepage__process__text--practice"><%= @item["Tldr4"] %></p><% end %>
+    <%= if @item["Tldr5"] do %><p class="homepage__process__text homepage__process__text--practice"><%= @item["Tldr5"] %></p><% end %>
   </div>
-  <span><span class="homepage__process__link">{{ .Date.Format "2006-01-02" }}</span></span>
+  <span><span class="homepage__process__link"><%= @item["date"] %></span></span>
 </div>
 
-{{ partial "links/accountInfo.html" . }}
+<%= partial "links-accountInfo.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content">
-    {{ .Content }}
+    <%= @item["content"] %>
   </div>
 
-  {{ partial "shareButtons.html" . }}
+  <%= partial "shareButtons.html" . %>
   
-  {{ partial "next_prev_buttons.html" . }}
+  <%= partial "next_prev_buttons.html" . %>
 </div>
 
-{{ partial "links/boxInfo.html" . }}
+<%= partial "links-boxInfo.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content">
 
     <h2>Latest Posts</h2>
-    {{ partial "latest_posts.html" . }}    
+    <%= partial "latest_posts.html" . %>    
   </div>
 </div>
 
-{{ partial "links/accountInfo.html" . }}
+<%= partial "links-accountInfo.html", assigns %>

@@ -1,0 +1,10 @@
+.similar__practices__link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.similar__practices__link:hover {
+  border-bottom: none!important;
+  color: lighten(rgba(255,46,182,1), 20%);
+}

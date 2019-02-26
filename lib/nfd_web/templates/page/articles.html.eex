@@ -1,22 +1,17 @@
 
 <div class="single__wrapper">   
   
-  <h2 class="single__title">{{ .Title }} <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <h2 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
 
   <div class="single__content">
     <p>A complete list of all of the contextual articles here on my amazingly useful website, NeverFap Deluxe!</p>
-    <p>If instead if you're looking for a more structured approach towards addressing your porn addiction, then I recommend checking out our <a href="/courses" class="link">NeverFap Deluxe Courses</a> section!</p>
-    <p>If however you were interested in browsing the complete list of mental health practices here on NeverFap Deluxe, please check out the suitably-named <a class="link" href="/practices">NeverFap Deluxe Practices</a> page.</p>
+    <p>If instead if you're looking for a more structured approach towards addressing your porn addiction, then I recommend checking out our <a href="/courses" class="Link" => >NeverFap Deluxe Courses</a> section!</p>
+    <p>If however you were interested in browsing the complete list of mental health practices here on NeverFap Deluxe, please check out the suitably-named <a class="Link" =>  href="/practices">NeverFap Deluxe Practices</a> page.</p>
     <p>You may sort articles by latest or category.</p>
   </div>
 </div>
 
-{{ partial "links/accountInfo.html" . }}
-
-{{/*  <div class="single__wrapper">   
-  <div class="single__content">
-  </div>
-</div>  */}}
+<%= partial "links-accountInfo.html", assigns %>
 
 <div class="single__wrapper">
   <h3 class="popular__latest__options__title">Articles</h3>
@@ -27,15 +22,15 @@
   </div>
   
   <div class="posts__off posts--guide" id="articles_latest_posts">
-    {{ partial "articles_latest.html" (dict "page" . "tag_type" "context") }}
+    <!-- <%= partial "articles_latest.html", %{ "page" . "tag_type" "context") %> -->
   </div>
 
   <div class="posts__on posts--guide" id="articles_latest_plain_posts">
-    {{ partial "articles_latest_plain_text.html" (dict "page" . "tag_type" "context") }}
+    <!-- <%= partial "articles_latest_plain_text.html", %{ "page" . "tag_type" "context") %> -->
   </div>
 
   <div class="posts__off posts--guide" id="articles_category_posts">
-    {{ partial "articles_category.html" (dict "page" . "tag_type" "context") }}
+    <!-- <%= partial "articles_category.html", %{ "page" . "tag_type" "context") %> -->
   </div>
 </div>
 

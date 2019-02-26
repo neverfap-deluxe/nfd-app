@@ -1,4 +1,4 @@
-defmodule PageJson do
+defmodule NfdWeb.PageJson do
   use Tesla
 
   # plug Tesla.Middleware.BaseUrl, "https://netlify.neverfapdeluxe.com"
@@ -6,7 +6,7 @@ defmodule PageJson do
   plug Tesla.Middleware.JSON
 
   def home() do
-    get("/")
+    get("/index.json")
   end
 
   def article(article_name) do

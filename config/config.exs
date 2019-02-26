@@ -11,6 +11,11 @@ config :nfd,
   ecto_repos: [Nfd.Repo],
   base_url: "https://neverfapdeluxe.com/",
   author: "Julius Reade",
+  website_name: "",
+  website_keywords: "",
+  website_description: "",
+  website_logo_png: "",
+  website_alt_image: "",
   language_code: "en-us",
   google_analytics: "UA-132863786-1"
 
@@ -30,12 +35,18 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+config :ecto, json_library: Jason
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
 
 # CUSTOM CONFIG 
+
+config :tesla, adapter: Tesla.Adapter.Hackney
+
+config :phoenix, :format_encoders,
+  json: Jason
 
 config :nfd, :pow,
   user: Nfd.Users.User,
@@ -78,11 +89,11 @@ config :nfd, Nfd.SwooshMailer,
 #   jobs: [
 #     28 day challenge
 #     Every minute
-#     {"* * * * *",      {Heartbeat, :send, []}},
+#     {"* * * * *",      {Heartbeat, :send, []%>,
 #     Every 15 minutes
 #     {"*/15 * * * *",   fn -> System.cmd("rm", ["/tmp/tmp_"]) end},
 #     Runs on 18, 20, 22, 0, 2, 4, 6:
 #     {"0 18-6/2 * * *", fn -> :mnesia.backup('/var/backup/mnesia') end},
 #     Runs every midnight:
-#     {"@daily",         {Backup, :backup, []}}
+#     {"@daily",         {Backup, :backup, []%>
 #   ]

@@ -1,0 +1,167 @@
+.account__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 5px solid cyan;
+  border-bottom: 5px solid cyan;
+  // padding-top: 2rem;
+  // border-bottom: 5px solid cyan;
+
+  min-height: 3rem;
+
+  // width: 100vw;
+
+  .account__info__title {
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+    padding: 1rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+  }
+
+  .account__info__button--patreon {
+    // background: rgb(249, 104, 84);
+
+    // .account__info__button__text {
+    //   color: white!important;
+    //   font-weight: 900!important;
+    // }
+  }
+
+  .account__info__button--link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .account__info__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    height: 2.6rem;
+    min-width: 6.5rem;
+
+    margin-bottom: 1rem;
+
+    cursor: pointer;
+
+    margin-right: 0.6rem;
+    box-shadow: -5px 5px 0px 0px cyan;
+
+    transition: box-shadow .3s;
+    .account__info__button__text {  
+      color: black;
+      font-size: 0.9rem; 
+    }
+  }
+
+  .account__info__button:hover {
+    box-shadow: -8px 8px 0px 0px rgb(249, 104, 84);
+
+    // background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+    // background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+    // background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+    // background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+    // background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+    // background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
+  }
+
+  .account__info__button:hover .account__info__button__text {
+    // color: rgb(249, 104, 84);
+    // color: white;
+  }
+}
+
+.account__buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 160px;
+
+  margin-top: 1rem;
+  margin-right: 1rem;
+
+  .account__patreon__button__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background: rgb(249, 104, 84);
+    box-sizing: border-box;
+    width: initial;
+    height: 2.25rem;
+
+    padding: 0.3rem;
+    // padding: 0.8rem;
+    margin: 0!important;
+    cursor: pointer;
+  
+    .account__patreon__button__logo {
+      width: 27px;
+      height: 27px;
+
+      position: relative;
+      left: 0rem;
+    }
+  
+    .account__patreon__button__text {
+      color: white;
+      margin: 0;
+      font-size: 0.69rem;
+      position: relative;
+      letter-spacing: 0.5px;
+      // top: 0.05rem;
+      right: 0.27rem;
+      font-family: 'Lato, sans-serif';
+      font-weight: 700;
+    }
+  }  
+
+  .account__patreon__button__container:hover {
+    opacity: 0.9;
+  }
+}
+
+.account__patreon__button__text--display {
+  display: none;
+  font-size: 0.75rem;
+}
+
+@media screen and (min-width: 420px) {
+  .account__patreon__button__text--display {
+    display: inline;
+  }
+
+  .account__buttons {
+    margin-top: 0;
+    flex-direction: row;
+
+    .account__patreon__button__container {
+      width: 11.5rem;
+    }
+  }
+
+  .account__info {
+    .account__info__button {
+      margin-bottom: 0;
+    }
+    .account__info__title {
+      padding: 1rem;
+      margin-right: 1rem;      
+    }
+  }  
+  
+}
+
+
+@media screen and (min-width: 768px) {
+
+}
+
+// @media screen and (min-width: 1280px) {
+
+// }

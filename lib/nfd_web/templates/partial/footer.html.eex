@@ -9,6 +9,6 @@
   <ul class="footer__links">
     <a class="footer__link__wrapper" href="/privacy"><li class="footer__link">Privacy</li></a>
     <a class="footer__link__wrapper" href="/disclaimer"><li class="footer__link">Disclaimer</li></a>
-    {{/*  <a class="footer__link__wrapper" href="/contact"><li class="footer__link">Contact</li></a>  */}}
+    <!-- <%=/*  <a class="footer__link__wrapper" href="/contact"><li class="footer__link">Contact</li></a>  */%> -->
   </ul>
 </footer>

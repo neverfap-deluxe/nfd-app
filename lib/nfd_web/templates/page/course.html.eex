@@ -1,0 +1,56 @@
+
+<div class="single__wrapper courses">
+  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>    
+  
+  <div class="homepage__process single__homepage__process">    
+    <div class="homepage__process__text homepage__process__text--practice">
+      <b>Overview</b>
+      <%= .Params.Overview %>
+    </div>
+    <div class="homepage__process__text homepage__process__text--practice">
+      <b>What you will learn</b>
+      <%= if @item["Learn1"] do %><p><%= @item["Learn1"] %></p><% end %>
+      <%= if @item["Learn2"] do %><p><%= @item["Learn2"] %></p><% end %>
+      <%= if @item["Learn3"] do %><p><%= @item["Learn3"] %></p><% end %>
+    </div>
+  </div>
+  <span><span class="homepage__process__link homepage__process__link--courses--single">Course <%= @item["Number"] %> of six.</span></span>  
+
+  <div class="single__content">
+    <%= @item["content"] %>
+  </div>
+
+  <%=/*  TODO: Once I think of a list for each course.  */%>
+  <%=/*  <div class="five__principles__guide">
+    <div class="five__principles__guide__item">Learn to value your mental health above all.</div>
+    <div class="five__principles__guide__item">Develop the ability to quiet and focus your mind.</div>
+    <div class="five__principles__guide__item">Accept yourself and others unconditionally.</div>
+    <div class="five__principles__guide__item">Change the way you think about sex and women.</div>
+    <div class="five__principles__guide__item">Commit to long-term thinking.</div>
+  </div>
+
+  <div class="five__principles__guide--mobile">
+    <h3>Learn to value your mental health above all.</h3>
+    <h3>Develop the ability to quiet and focus your mind.</h3>
+    <h3>Accept yourself and others unconditionally.</h3>
+    <h3>Change the way you think about sex and women.</h3>
+    <h3>Commit to long-term thinking.</h3>
+  </div>  */%>
+
+</div>
+
+<%= partial "links-accountInfo.html", assigns %>
+
+<div class="single__wrapper">
+  <h2>Course Articles</h2>
+  <p>These articles have been written to help you better understand what the <%= @item["title"] %> means, as well as how it will help you overcome your porn addiction.</p>
+  <%= partial "courses/courses_articles_by_category.html", %{ "page" . "category_type" .Params.category) %>
+
+  <h2>Course Practices</h2>
+  <p>These practices entail the exercises you will perform in order to improve skills related to <%= @item["title"] %>. They should be performed in a specific order.</p>
+
+  <%= partial "courses/courses_practices_by_category.html", %{ "page" . "category_type" .Params.category) %>
+</div>
+
+<%= partial "links-boxInfo.html", assigns %>
+

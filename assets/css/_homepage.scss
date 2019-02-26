@@ -1,0 +1,484 @@
+.homepage__content {
+  h1 {
+    font-size: 3rem;
+    line-height: 4.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+  p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;  
+  }
+
+  .account__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-bottom: 5px solid cyan;
+    padding-top: 0;
+    // padding-bottom: 3rem;
+  }
+}
+
+.homepage__hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+
+  background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+  background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
+  color: white;
+
+  .header {
+    position: relative;
+    top: -2.13rem;
+
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+
+    background: initial;
+
+    .header__links {
+      top: 0;
+      border-right: none;
+      border-left: none;
+      
+      .header__link__wrapper {
+        position: relative;
+        border-bottom: 5px solid white;
+        // background: grey;
+
+        transition: .1s ease-in;
+        .header__link {
+          color: white;
+        }
+      }
+
+      #link__premium {
+        // border-bottom: 5px solid rgb(0, 255, 0);        
+        .header__link {
+          // border-bottom: none!important;
+        }
+      }
+
+      .header__link__wrapper:hover {
+        background: lighten(orange, 10%);
+        box-shadow: -5px 5px 0px 0px cyan;
+      }  
+
+      // .header__link__wrapper:hover .header__link {
+      //   color: cyan;
+      // }
+
+      #link__guide:hover .header__link__wrapper--guide {
+        font-size: 0.95rem;
+      }
+
+      // .header__link__wrapper--guide--good-choice {
+      //   display: none;
+      // }
+
+      .header__link__wrapper--guide {
+        display: none;
+        position: absolute;
+        // top: -0.6rem;
+        top: -1.8rem;
+        left: 3.9rem;
+        width: 7rem;
+        transform: rotate(-20deg);
+        font-size: 0.85rem;
+        transition: .1s ease-out;
+
+        color: cyan;
+        text-decoration: underline;
+        text-decoration-color: cyan;
+      } 
+
+      .header__link__wrapper:hover .header__link {
+        // color: black;
+      }
+    }
+  }
+
+  .homepage__hero__title {
+    box-shadow: -5px 5px 0px 0px black;
+
+    color: white;
+    border: 4px solid white;
+    background: black;
+
+    padding: 1rem;      
+
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+
+    text-align: center;  
+    font-size: 2.9rem;
+    line-height: 4rem;
+
+    transition: box-shadow 6s;
+  }
+
+  .homepage__hero__title:hover {
+    box-shadow: -30px 30px 0px 0px black;
+  }
+
+  .homepage__hero__title:hover + .homepage__hero__title__secondary {
+    font-size: 2.3rem;
+  }
+
+  .homepage__hero__title__secondary {
+    width: 95%;
+    font-size: 2.1rem;
+    text-align: center;
+    position: relative;
+    top: 0.5rem;
+    transition: font-size 6s;
+  }
+
+  .deluxe__font {
+    font-size: 3.3rem;
+  }
+}
+
+.homepage__recovered__porn__addict__list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  padding-left: 0;
+
+  .homepage__recovered__porn__addict__item__lead {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    // border-bottom: 1px solid black;
+    display: inline-block;
+
+    text-decoration-line: underline;
+    text-decoration-color: black;
+  }
+
+  .homepage__recovered__porn__addict__item {
+    // font-size: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    margin-bottom: 0.4rem;
+    display: inline-block;
+    margin-left: 0.3rem;
+    margin-bottom: 0.8rem;
+    // color: rgba(255,46,182,1);
+    // text-decoration-line: underline;
+    // text-decoration-color: cyan;
+    // border-bottom: 2px solid cyan;
+  }
+
+  .homepage__recovered__porn__addict__spacer {
+    margin-top: 2rem;
+  }
+
+  // .homepage__recovered__porn__addict__item::before {
+  //   content: "";
+  //   position: absolute;
+  //   // left: -5%;
+  //   bottom: -1px;
+  //   height: 2px;
+  //   // background-color: rgb(255, 187, 0);
+  //   opacity: 0.4;
+  //   z-index: -1;  
+  // }
+
+  .orange__item::before {
+    background-color: rgb(255, 187, 0);
+  }
+
+  .pink__item::before {
+    background-color: rgb(247, 0, 255);
+  }
+
+  .cyan__item::before {
+    background-color: rgb(0, 247, 255);
+  }
+
+}
+
+.homepage__guide__wrapper {
+  height: 400px!important;
+
+  .homepage__guide {
+    box-shadow: -5px 5px 0px 0px cyan;
+
+    color: white;
+    border: 4px solid white;
+    background: none;
+
+    padding: 1rem;
+    font-size: 1.2rem;      
+    cursor: pointer;
+
+    transition: .3s box-shadow;
+  }
+
+  .homepage__guide:hover {
+    box-shadow: -10px 10px 0px 0px black;
+    bottom: -5px;
+    left: -5px;
+  }
+
+  .homepage__guide:focus {
+    outline: 0;
+  }
+}
+
+.homepage__section {
+  margin: 1rem;
+}
+
+.homepage__process__link {
+  color: black;
+  background: white;
+  padding: 0.45rem;
+  border: 5px solid cyan;   
+  box-shadow: -5px 5px 0px 0px rgba(255,46,182,1);
+  transition: box-shadow .2s, color .2s;
+
+  font-size: 1rem;
+
+  position: relative;
+  top: -4.2rem;
+  left: 0rem;
+  // left: 50%;
+  // transform: translateX(-50%);
+  // right: initial;
+}
+
+.homepage__process__link:hover {
+  box-shadow: -8px 8px 0px 0px black;
+  color: rgba(255,46,182,1);
+}
+
+.homepage__process {
+  display: flex;
+  flex-direction: column;
+
+  // border: 5px solid black;
+
+  // height: 9rem;
+
+  margin-bottom: 4rem;
+
+  background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+  background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
+
+  padding: 1.5rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+
+  max-width: 500px;
+
+  .homepage__process__title__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+  .homepage__process__title {
+    font-size: 2rem;
+    line-height: 2.2rem;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+
+    color: black;
+    background: white;
+    padding: 0.5rem;
+    // border: 3px solid cyan;   
+    box-shadow: -3px 3px 0px 0px black;
+  }
+
+
+  .homepage__process__subtitle {
+    font-size: 1rem;
+    line-height: 2rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    color: black;
+    background: white;
+    padding: 0.5rem;
+    box-shadow: -3px 3px 0px 0px cyan;
+  }
+
+  .homepage__process__text {
+    margin-top: 0rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    line-height: 1.6rem!important;
+    color: white;
+
+    color: black;
+    background: white;
+    
+    padding: 1.1rem;
+    // padding-top: 0.7rem;
+    // padding-bottom: 0.55rem;
+
+    line-height: 1.5rem;
+    // padding-left: 0.5rem;
+    box-shadow: -5px 5px 0 0 #000;
+  }
+
+  .homepage__process__text--practice {
+
+    b {
+      display: block;
+      font-size: 1.3rem;
+      text-decoration: underline;
+      text-decoration-color: cyan;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 1rem!important;
+      line-height: 1.5rem;
+    }
+  }
+
+}
+
+@media screen and (min-width: 420px) {
+  .homepage__hero {
+    .homepage__hero__title__secondary {
+      margin-right: 0.6rem;
+      margin-left: 0.6rem;
+      font-size: 2.2rem;
+      line-height: 3.6rem;
+    }
+
+    .header {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+
+      top: -0.2rem;
+
+      .header__links {
+      }
+    }
+  }
+
+  .homepage__section {
+    margin: 2rem;
+  }    
+
+  .homepage__process {
+    .homepage__process__subtitle {
+      font-size: 1.4rem;
+    }
+  }
+
+  .homepage__process__link {
+    position: relative;
+    top: -4.2rem;
+    left: -1.5rem;
+    right: 0rem;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  
+  .homepage__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .homepage__recovered__porn__addict__list {
+    padding-left: 5px;
+
+    .homepage__recovered__porn__item {
+      margin-left: 1.4rem;
+    }
+
+    .homepage__recovered__porn__addict__spacer {
+      margin-top: 1.5rem;
+    }
+  }
+
+  .homepage__guide__wrapper {
+    .homepage__guide {
+      font-size: 1.6rem;
+    }
+  }
+
+  .homepage__hero {
+    .homepage__hero__title {
+      // animation: homepage__hero__title 6s forwards;
+    }
+    .homepage__hero__title__secondary {
+      margin: 0 auto;
+      width: 700px;
+      // animation: homepage__hero__title__secondary 6s forwards;
+    }
+
+    .header {
+      .header__links {
+        .header__link__wrapper--guide {
+          display: block;
+        }    
+      }
+    }
+  }
+
+  .homepage__section {
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }  
+}
+
+@media screen and (min-width: 1280px) {
+  .homepage__hero {
+    .homepage__hero__title__secondary {
+      margin: 0 auto;
+      width: 900px;
+    }
+  }
+}
+
+
+@keyframes homepage__hero__title {  
+  100% {
+    box-shadow: -15px 15px 0px 0px black;
+  }
+}
+
+@keyframes homepage__hero__title__secondary {
+  100% {
+    font-size: 2.25rem;
+  }
+}
