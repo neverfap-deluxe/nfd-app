@@ -1,0 +1,14 @@
+{{ $tag := .tag_type }}
+<div class="index__container posts">
+  <!-- <ul class="five__principles__list__page">
+    <span><li class="five__principles__item__page">Latest</li></span>
+  </ul> -->
+  <!-- <h3>Introduction</h3> -->
+  <div class="articles__list">
+    {{ range .page.Site.RegularPages }}
+      {{ if in .Params.tags $tag }}
+        <span><a class="link articles__link" href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a></span>
+      {{ end }}
+    {{ end }}
+  </div>
+</div>

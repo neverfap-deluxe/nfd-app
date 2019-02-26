@@ -1,0 +1,24 @@
+{{ $category := .course_type }}
+{{ range (where .page.Site.Pages "Section" "courses") }}
+  {{ if eq .Params.category $category }}
+    <div class="homepage__process single__homepage__process">    
+      <a href="{{ .Permalink }}"><h3 class="homepage__process__title--courses">
+        <div class="five__principles__list__page">
+          <span><li class="five__principles__item__page five__principles__item__page--courses">{{ .Title }}</li></span>
+        </div>
+      </h3></a>
+
+      <div class="homepage__process__text homepage__process__text--practice">
+        <b>Overview</b>
+        {{ .Params.Overview }}
+      </div>
+      <div class="homepage__process__text homepage__process__text--practice">
+        <b>What you will learn</b>
+        {{ if .Params.Learn1 }}<p>{{ .Params.Learn1 }}</p>{{ end }}
+        {{ if .Params.Learn2 }}<p>{{ .Params.Learn2 }}</p>{{ end }}
+        {{ if .Params.Learn3 }}<p>{{ .Params.Learn3 }}</p>{{ end }}
+      </div>
+    </div>
+    <span><a href="{{ .Permalink }}" class="homepage__process__link homepage__process__link--courses">Link To Course</a></span>  
+  {{ end }}
+{{ end }}

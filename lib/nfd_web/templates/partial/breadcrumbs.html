@@ -1,0 +1,8 @@
+<div class="breadcrumbs">
+  <a href="/">Home</a>
+  {{ range (split .URL "/") }}
+      {{ if gt (len . ) 0 }}
+          <span class="breadcrumbs__slash">/</span> <a href="/{{ . }}">{{ humanize . }}</a>
+      {{ end }}
+  {{ end }}
+</div>

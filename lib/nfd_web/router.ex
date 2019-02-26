@@ -14,7 +14,7 @@ defmodule NfdWeb.Router do
 
   pipeline :protected do
     plug Pow.Plug.RequireAuthenticated,
-      error_handler: NfdWeb.AuthErrorHandler # Pow.Phoenix.PlugErrorHandler
+      error_handler: Pow.Phoenix.PlugErrorHandler  # NfdWeb.AuthErrorHandler
   end
 
   pipeline :not_authenticated do
@@ -24,6 +24,15 @@ defmodule NfdWeb.Router do
 
   scope "/" do
     pipe_through :browser
+
+    pow_routes() # Because I'm using custom routes defined below, this isn't needed.
+    pow_extension_routes()
+    pow_assent_routes()
+  end
+
+  scope "/", NfdWeb do
+    pipe_through [:browser, :not_authenticated]
+
     get "/", PageController, :home
 
     get "/about", PageController, :about
@@ -41,20 +50,12 @@ defmodule NfdWeb.Router do
     get "/disclaimer", PageController, :disclaimer
     get "/privacy", PageController, :privacy
 
-    pow_routes() # Because I'm using custom routes defined below, this isn't needed.
-    pow_extension_routes()
-    pow_assent_routes()
-  end
-
-  scope "/", NfdWeb do
-    pipe_through [:browser, :not_authenticated]
-
     get "/account", RegistrationController, :account
 
-    get "/signup", RegistrationController, :new
-    post "/signup", RegistrationController, :create
-    get "/login", SessionController, :new
-    post "/login", SessionController, :create
+    # get "/signup", RegistrationController, :new
+    # post "/signup", RegistrationController, :create
+    # get "/login", SessionController, :new
+    # post "/login", SessionController, :create
   end
 
   scope "/", NfdWeb do

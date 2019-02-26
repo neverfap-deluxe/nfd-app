@@ -1,0 +1,106 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {{ .Hugo.Generator }}
+
+  <meta name="author" content="{{ .Site.Author.name }}">
+  <meta name="description" content="{{ .Description }}"/>
+  <meta name="robots" content="noodp"/>
+  <link rel="canonical" href="{{ .Permalink }}" />
+
+  <!-- Emoji CSS -->
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+  <!-- favicon.ico -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- SCSS -->
+  {{ $style := resources.Get "sass/index.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
+  <link rel="stylesheet" href="/css/normalize.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Parisienne|Montserrat|Noto+Sans" rel="stylesheet">
+
+
+  <!-- Open Graph Schema -->
+  {{ if .IsPage }}
+    <script type="application/ld+json">
+      {{ if eq .Section "post" }}
+        {
+          "@context" : "http://schema.org",
+          "@type" : "BlogPosting",
+          "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "{{ .Site.BaseURL }}"
+          },
+          "articleSection" : "{{ .Section }}",
+          "name" : "{{ if eq .Section "courses" }}{{ "NeverFap Deluxe Courses |"}}{{ else if eq .Section "articles"}}{{ "NeverFap Deluxe Articles |"}}{{ else if eq .Section "practices"}}{{ "NeverFap Deluxe Practices |"}}{{ else }}{{ "NeverFap Deluxe |"}}{{ end }} {{ .Title }}",
+          "headline" : "{{ if eq .Section "courses" }}{{ "NeverFap Deluxe Courses |"}}{{ else if eq .Section "articles"}}{{ "NeverFap Deluxe Articles |"}}{{ else if eq .Section "practices"}}{{ "NeverFap Deluxe Practices |"}}{{ else }}{{ "NeverFap Deluxe |"}}{{ end }} {{ .Title }}",
+          "description" : "{{ .Description }}", 
+          "inLanguage" : "en-US",
+          "author" : "{{ .Site.Author.name }}",
+          "creator" : "{{ .Site.Author.name }}",
+          "publisher": "{{ .Site.Author.name }}",
+          "accountablePerson" : "{{ .Site.Author.name }}",
+          "copyrightHolder" : "{{ .Site.Author.name }}",
+          "copyrightYear" : "{{ .Date.Format "2006" }}",
+          "datePublished": "{{ time .Date }}",
+          "dateModified" : "{{ .Date }}",
+          "url" : "{{ .Permalink }}",
+          "keywords" : [ {{ if isset .Params "tags" }}{{ range .Params.tags }}"{{ . }}",{{ end }}{{ end }} ]
+          "genre": "{{ range .Params.categories }}{{ . }}{{ end }}",
+        }
+      {{ else }}
+        {
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "url": "{{ .Permalink }}",
+          "name": "{{ if eq .Section "courses" }}{{ "NeverFap Deluxe Courses |"}}{{ else if eq .Section "articles"}}{{ "NeverFap Deluxe Articles |"}}{{ else if eq .Section "practices"}}{{ "NeverFap Deluxe Practices |"}}{{ else }}{{ "NeverFap Deluxe |"}}{{ end }} {{ .Title }}",
+          "author": {
+            "@type": "Person",
+            "name": "{{ .Site.Author.name }}"
+          },
+          "description": "{{ .Description }}",
+        }
+      {{ end }}
+    </script>
+  {{ end }}
+
+  <title>{{ if eq .Section "courses" }}{{ "NeverFap Deluxe Courses |"}}{{ else if eq .Section "articles"}}{{ "NeverFap Deluxe Articles |"}}{{ else if eq .Section "practices"}}{{ "NeverFap Deluxe Practices |"}}{{ else }}{{ "NeverFap Deluxe |"}}{{ end }} {{ .Title }}</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132863786-1"></script>
+  <script>
+    if (document.location.hostname.search("neverfapdeluxe.com") !== -1) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-132863786-1');
+    }
+  </script>
+
+  <!-- Internal Templates -->
+  {{/* template "_internal/google_analytics_async.html" . */}}
+  {{/* template "_internal/opengraph.html" . */}}
+  {{ template "_internal/twitter_cards.html" . }}
+</head>
+

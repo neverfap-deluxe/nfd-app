@@ -1,0 +1,22 @@
+
+<div class="single__next__prev">
+  {{ if .PrevInSection }}
+    {{ if .PrevInSection.Title }}
+      <div class="button__wrapper">
+        <a class="button button__black_and_white" href="{{.PrevInSection.Permalink}}">Previous Post | <span>{{ .PrevInSection.Title }}</span></a>
+      </div>
+    {{ else }}
+      <div style="width: 300px;"></div>
+    {{ end }}
+  {{ end }}
+
+  {{ if .NextInSection }}
+    {{ if .NextInSection.Title }}
+      <div class="button__wrapper">
+        <a class="button button__black_and_white" href="{{.NextInSection.Permalink}}">Next Post | <span>{{ .NextInSection.Title }}</span></a>
+      </div>
+    {{ else }}
+      <div style="width: 300px;"></div>  
+    {{ end }}
+  {{ end }}
+</div>

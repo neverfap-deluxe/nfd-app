@@ -4,6 +4,7 @@ defmodule NfdWeb.PageController do
   plug :put_layout, "general.html"
 
   def home(conn, _params) do
+    
     render(conn, "home.html")
   end
 

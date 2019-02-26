@@ -8,7 +8,12 @@
 use Mix.Config
 
 config :nfd,
-  ecto_repos: [Nfd.Repo]
+  ecto_repos: [Nfd.Repo],
+  base_url: "https://neverfapdeluxe.com/",
+  author: "Julius Reade",
+  language_code: "en-us",
+  google_analytics: "UA-132863786-1"
+
 
 # Configures the endpoint
 config :nfd, NfdWeb.Endpoint,

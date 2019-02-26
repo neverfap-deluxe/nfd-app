@@ -1,0 +1,12 @@
+{{ $category := .category_type }}
+<div class="index__container posts">
+  <div class="articles__list">
+    {{ range .page.Site.RegularPages }}
+      {{ if in .Params.categories $category }}
+        {{ if in .Params.tags "practice" }}
+          <span><a class="link articles__link" href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a></span>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </div>
+</div>
