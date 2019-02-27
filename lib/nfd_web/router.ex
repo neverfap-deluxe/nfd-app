@@ -14,12 +14,7 @@ defmodule NfdWeb.Router do
 
   pipeline :protected do
     plug Pow.Plug.RequireAuthenticated,
-      error_handler: Pow.Phoenix.PlugErrorHandler  # NfdWeb.AuthErrorHandler
-  end
-
-  pipeline :not_authenticated do
-    plug Pow.Plug.RequireNotAuthenticated,
-      error_handler: NfdWeb.AuthErrorHandler
+      error_handler: Pow.Phoenix.PlugErrorHandler
   end
 
   scope "/" do
@@ -31,7 +26,7 @@ defmodule NfdWeb.Router do
   end
 
   scope "/", NfdWeb do
-    pipe_through [:browser, :not_authenticated]
+    pipe_through :browser
 
     get "/", PageController, :home
 
@@ -40,23 +35,18 @@ defmodule NfdWeb.Router do
   
     get "/guide", PageController, :guide
     get "/articles", PageController, :articles
-    get "/articles/:article_id", PageController, :article
+    get "/articles/:slug", PageController, :article
     get "/practices", PageController, :practices
-    get "/practices/:practice_id", PageController, :practice
+    get "/practices/:slug", PageController, :practice
     get "/courses", PageController, :courses
-    get "/courses/:course_id", PageController, :course
-    get "/podcasts", PageController, :podcasts
-    get "/podcasts/:course_id", PageController, :podcast
+    get "/courses/:slug", PageController, :course
+    get "/podcast", PageController, :podcasts
+    get "/podcast/:slug", PageController, :podcast
 
     get "/disclaimer", PageController, :disclaimer
     get "/privacy", PageController, :privacy
 
-    get "/account", RegistrationController, :account
-
-    # get "/signup", RegistrationController, :new
-    # post "/signup", RegistrationController, :create
-    # get "/login", SessionController, :new
-    # post "/login", SessionController, :create
+    get "/neverfap-deluxe-account", PageController, :account
   end
 
   scope "/", NfdWeb do

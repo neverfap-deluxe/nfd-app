@@ -138,9 +138,9 @@
     box-shadow: -30px 30px 0px 0px black;
   }
 
-  .homepage__hero__title:hover + .homepage__hero__title__secondary {
-    font-size: 2.3rem;
-  }
+  // .homepage__hero__title:hover + .homepage__hero__title__secondary {
+  //   font-size: 2.3rem;
+  // }
 
   .homepage__hero__title__secondary {
     width: 95%;
@@ -148,7 +148,6 @@
     text-align: center;
     position: relative;
     top: 0.5rem;
-    transition: font-size 6s;
   }
 
   .deluxe__font {
@@ -436,12 +435,11 @@
 
   .homepage__hero {
     .homepage__hero__title {
-      // animation: homepage__hero__title 6s forwards;
+
     }
     .homepage__hero__title__secondary {
       margin: 0 auto;
       width: 700px;
-      // animation: homepage__hero__title__secondary 6s forwards;
     }
 
     .header {
@@ -467,18 +465,5 @@
       margin: 0 auto;
       width: 900px;
     }
-  }
-}
-
-
-@keyframes homepage__hero__title {  
-  100% {
-    box-shadow: -15px 15px 0px 0px black;
-  }
-}
-
-@keyframes homepage__hero__title__secondary {
-  100% {
-    font-size: 2.25rem;
   }
 }

@@ -1,0 +1,127 @@
+.login__top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 5px solid cyan;
+  border-bottom: 5px solid cyan;
+  // padding-top: 2rem;
+  // border-bottom: 5px solid cyan;
+
+  min-height: 3rem;
+
+  // width: 100vw;
+
+  .login__top__title {
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+    padding: 0!important;
+  }
+
+  .login__top__button--link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .login__top__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    height: 2.6rem;
+    min-width: 6.5rem;
+
+    margin-bottom: 1rem;
+
+    cursor: pointer;
+
+    margin-right: 0.6rem;
+    box-shadow: -5px 5px 0px 0px cyan;
+
+    transition: box-shadow .3s;
+    .login__top__button__text {  
+      color: black;
+      font-size: 0.9rem; 
+    }  
+  }
+  
+  .login__top__button:hover {
+    box-shadow: -8px 8px 0px 0px rgb(249, 104, 84);
+  }
+
+  .login__top__button__register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid black;
+      height: 2.6rem;
+      min-width: 6.5rem;
+  
+      margin-bottom: 1rem;
+  
+      cursor: pointer;
+  
+      margin-right: 0.6rem;
+      box-shadow: -5px 5px 0px 0px cyan;
+  
+      transition: box-shadow .3s;
+      .login__top__button__text {  
+        color: black;
+        font-size: 0.9rem; 
+      }
+    }    
+    
+    a:hover {
+      box-shadow: -8px 8px 0px 0px rgb(249, 104, 84);
+    }
+  }
+}
+
+.account__buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 160px;
+
+  margin-top: 1rem;
+  margin-right: 1rem;
+
+}
+
+@media screen and (min-width: 420px) {
+  .account__buttons {
+    margin-top: 0;
+    flex-direction: row;
+
+    .account__patreon__button__container {
+      width: 11.5rem;
+    }
+  }
+
+  .login__top {
+    .login__top__button {
+      margin-bottom: 0;
+    }
+    .login__top__title {
+      padding: 1rem;
+      margin-right: 1rem;      
+    }
+  }  
+  
+}
+
+
+@media screen and (min-width: 768px) {
+
+}
+
+// @media screen and (min-width: 1280px) {
+
+// }

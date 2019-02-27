@@ -7,10 +7,6 @@ defmodule NfdWeb.PageAPI do
 
   # Single Page Data
 
-  def home() do
-    get("/index.json")
-  end
-
   def article(article_name) do
     get("/articles/" <> article_name <> "/index.json")
   end
@@ -35,6 +31,21 @@ defmodule NfdWeb.PageAPI do
     get("/courses/courses_page/index.json")
   end
 
+  def podcast(podcast_name) do
+    get("/podcasts/" <> podcast_name <> "/index.json")
+  end
+
+  def podcasts() do
+    get("/podcasts/podcasts_page/index.json")
+  end
+
+
+  # Pages
+
+  def home() do
+    get("/index.json")
+  end
+
   def guide() do
     get("/guide/index.json")
   end
@@ -53,6 +64,10 @@ defmodule NfdWeb.PageAPI do
 
   def privacy() do
     get("/privacy/index.json")
+  end
+
+  def account() do
+    get("/account/index.json")
   end
 
 

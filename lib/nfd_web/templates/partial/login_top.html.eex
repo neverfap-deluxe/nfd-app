@@ -1,0 +1,23 @@
+<div class="login__top box__info">  
+  <div class="account__buttons">
+    <span class="login__top__button__register">
+        <%= link to: Routes.pow_registration_path(@conn, :new) do %>
+        <div class="login__top__button__text">
+          Register
+        </div>
+      <% end %>
+    </span>
+
+    <span class="login__top__button__register">
+      <%= link to: Routes.pow_session_path(@conn, :new) do %>
+        <div class="login__top__button__text">
+          Sign in
+        </div>
+      <% end %>  
+      </span>
+
+    <p class="login__top__title login__top__title--login-top">Register or login for additional access to NeverFap Deluxe! </p>
+
+  </div>
+</div>
+  

@@ -244,7 +244,7 @@
 
 
 
-      <%#  <div class="homepage__hero">
+      <!-- <div class="homepage__hero">
         <h1 class="homepage__hero__title">Here's how it works.</h1>
         <h2 class="homepage__hero__title__secondary">There is one simple rule to overcoming porn addiction.</h2>
       </div>
@@ -260,5 +260,5 @@
           <span class="five__principles__item__wrapper"><li class="five__principles__item">Change the way you think about sex and women.</li></span>
           <span class="five__principles__item__wrapper"><li class="five__principles__item">Commit to long-term thinking.</li></span>
         </ul>
-      </div>  %>
+      </div>  -->
 

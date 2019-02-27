@@ -59,6 +59,8 @@ defmodule Nfd.MixProject do
 
       {:quantum, "~> 2.3"},
       {:timex, "~> 3.0"},
+
+      {:distillery, "~> 2.0"},
    
     ]
   end

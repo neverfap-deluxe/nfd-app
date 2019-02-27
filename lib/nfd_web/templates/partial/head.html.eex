@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
   <meta name="author" content="<%= Application.get_env(:nfd, :website_author) %>">
-  <meta name="keywords" content="<%= Application.get_env(:nfd, :website_keywords) %>">
+  <meta name="keywords" content='<%= @conn.assigns["item"]["tags"] %>'>
   <meta name="robots" content="noodp"/>
   <!-- Will need to check this -->
   <link rel="canonical" href='<%= @conn.assigns["item"]["permalink"] %>' />
@@ -18,9 +18,9 @@
   <% end %>
 
   <%= if @conn.assigns["item"] do %>
-    <meta name="description" content="<%= @meta_description %>">
-    <meta property="og:description" content="<%= @meta_description %>">   
-    <meta name="twitter:description" content="<%= @meta_description %>">    
+    <meta name="description" content='<%= @conn.assigns["item"]["description"] %>'>
+    <meta property="og:description" content='<%= @conn.assigns["item"]["description"] %>'>
+    <meta name="twitter:description" content='<%= @conn.assigns["item"]["description"] %>'>
     <meta name="twitter:image:alt" content='<%= @conn.assigns["item"]["title"] %>'>
   <% else %>
     <meta name="description" content="<%= Application.get_env(:nfd, :website_description) %>">

@@ -1,3 +1,81 @@
+.accounts__wrapper {
+
+  padding-top: 4rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  
+  height: 145vh;
+
+  background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+  background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
+
+  .accounts__wrapper__title {
+    box-shadow: -5px 5px 0px 0px black;
+
+    color: white;
+    border: 4px solid white;
+    background: black;
+
+    padding: 1rem;      
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+
+    margin-top: 2rem;
+
+    text-align: center;  
+    font-size: 1.6rem;
+    transition: box-shadow 6s;
+  }
+
+  .header {
+    background: white;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+
+    .header__links {
+      .header__link__wrapper {
+        .header__link {
+          color: black;
+        }
+
+        .header__link:hover { 
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.accounts__text__container {
+  // width: 100%;
+  background: white;
+  padding: 0.5rem;
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
+
+  .account__main__description__initial {
+    color: black;
+  }
+
+  ul { 
+    margin-top: 1.5rem;
+    li {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.form__wrapper--full-width {
+  width: 100%;
+}
 .form__wrapper {
   display: flex;
   width: 100%;
@@ -11,13 +89,14 @@
     margin-top: 1rem;
   }
 
-  .form {
+  .form, form {
     position: relative;
     background: white;
     margin-top: 1rem;
-    border: 4px solid black;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
     
-    min-height: 20rem;    
+    // min-height: 20rem;    
     width: 100%;
 
     padding-left: 2rem;
@@ -36,14 +115,23 @@
     .form__input__container {
       margin-top: 2rem;
 
-      .form__input {
-        font-weight: 900;
-        height: 2.8rem;
-        padding-left: 1.4rem;
-        min-width: calc(100% - 1.4rem);
+      label {
+        display: block;
+        margin-top: 0.4rem;
+        margin-bottom: 0.1rem;
+      }
 
+      .form__input, 
+      #user_email, 
+      #user_password,
+      #user_confirm_password {
+        font-weight: 900;
+        font-size: 1rem;
+        height: 2.8rem;
+        width: 100%;
         border: 2px solid black;
-  
+        box-sizing: border-box;
+        padding-left: 0.8rem;
         margin-bottom: 0.6rem;
       }
 
@@ -59,8 +147,9 @@
       margin-top: 0.5rem;
       margin-bottom: 1.5rem;
 
-      .form__button {
-        font-weight: 900;        
+      .form__button, button {
+        font-weight: 900;   
+        font-size: 1rem;     
 
         height: 2.8rem;
         width: 100%;
@@ -68,21 +157,25 @@
         margin-top: 1rem;
   
         border: 2px solid black;
-        padding: 0.2rem;
+        // padding: 0.2rem;
         
         box-shadow: -3px 3px 0px 0px black;
         cursor: pointer;
+        transition: .1s;
       }
 
-      .form__button:focus {
+      .form__button:focus, button:focus {
         outline: 0;
       }
 
-      .form__button:hover {
+      .form__button:hover, button:hover {
         box-shadow: -6px 6px 0px 0px black;
       }
-
   
+      .form__extra {
+        margin-top: 1rem;
+      }
+
       .form__button__faded__false {
         background: white;
         opacity: 0.5;
@@ -103,11 +196,36 @@
   }
 }
 
-@media screen and (min-width: 480px) {
-  .form__wrapper {
-    .form {
-      // width: 350px;
+.help-block {
+  color: red;
+}
+
+.alert {
+  p {
+    font-size: 0.9rem;
+    color: red;
+  }
+}
+
+.accounts__wrapper + .footer {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 420px) {
+  .accounts__wrapper {
+    .accounts__wrapper__title {
+      font-size: 2rem;
     }
+  }
+  .form__wrapper {
+    width: 350px;
+    .form, form {
+      border: 4px solid black;
+    }
+  }
+  .accounts__text__container {
+    border: 4px solid black;
+    padding: 2rem;
   }
 }
 

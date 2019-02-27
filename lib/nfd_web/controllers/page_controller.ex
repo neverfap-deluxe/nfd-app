@@ -67,11 +67,13 @@ defmodule NfdWeb.PageController do
     
   end
 
-  def article(conn, %{"name" => name}) do
+  def article(conn, %{"slug" => slug}) do
     page_type = "content"
-    case PageAPI.article(name) do
+    case PageAPI.article(slug) do
       {:ok, response} ->
-        conn |> render("article.html", item: response.body["data"], page_type: page_type)
+        IO.inspect(response.body["data"])
+        {:ok, articlesResponse} = PageAPI.articles_content()
+        conn |> render("article.html", item: response.body["data"], articles: articlesResponse.body["data"], page_type: page_type)
       {:error, error} ->
         conn |> render("404.html")
     end
@@ -88,9 +90,9 @@ defmodule NfdWeb.PageController do
     end
   end
 
-  def practice(conn, %{"name" => name}) do
+  def practice(conn, %{"slug" => slug}) do
     page_type = "content"
-    case PageAPI.practice(name) do
+    case PageAPI.practice(slug) do
       {:ok, response} ->
         conn |> render("practice.html", item: response.body["data"], page_type: page_type)
       {:error, error} ->
@@ -109,9 +111,9 @@ defmodule NfdWeb.PageController do
     end
   end
 
-  def course(conn, %{"name" => name}) do
+  def course(conn, %{"slug" => slug}) do
     page_type = "content"
-    case PageAPI.course(name) do
+    case PageAPI.course(slug) do
       {:ok, response} ->
         conn |> render("course.html", item: response.body["data"], page_type: page_type)
       {:error, error} ->
@@ -129,9 +131,9 @@ defmodule NfdWeb.PageController do
     end
   end
 
-  def podcast(conn, %{"name" => name}) do
+  def podcast(conn, %{"slug" => slug}) do
     page_type = "content"
-    case PageAPI.podcast(name) do
+    case PageAPI.podcast(slug) do
       {:ok, response} ->
         conn |> render("podcast.html", item: response.body["data"], page_type: page_type)
       {:error, error} ->
@@ -157,6 +159,23 @@ defmodule NfdWeb.PageController do
       {:error, error} ->
         conn |> render("404.html")
     end
+  end
+
+  
+
+  def account(conn, _params) do
+    changeset = Pow.Plug.change_user(conn)
+
+    render(conn, "account.html", changeset: changeset)
+  end
+
+  def confirm_email_begin(conn, _params) do
+
+    current_user = Pow.Plug.current_user(conn)
+
+    conn
+      |> put_flash(:user_email, current_user.email)
+      |> render("confirm_email_begin.html")
   end
 
 end

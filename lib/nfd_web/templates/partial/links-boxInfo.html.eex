@@ -1,22 +1,22 @@
-<%#  <div class="box__info">
-  <h4 class="box__info__title">NeverFap Deluxe</h4>
-  
-</div>  %>
-
 <div class="account__info box__info">
   <p class="account__info__title">Register or login for additional access to NeverFap Deluxe! </p>
   
   <div class="account__buttons">
-    <a class="account__info__button" href="/accounts">
-      <div class="account__info__button__text">
-        Register
-      </div>
-    </a>
-    <a class="account__info__button" href="/accounts">
-      <div class="account__info__button__text">
-        Sign in
-      </div>
-    </a>
+    <span class="account__info__button">
+      <%= link to: Routes.pow_registration_path(@conn, :new) do %>
+        <div class="account__info__button__text">
+          Register
+        </div>
+      <% end %>
+    </span> 
+
+    <span class="account__info__button">
+      <%= link to: Routes.pow_session_path(@conn, :new) do %>
+        <div class="account__info__button__text">
+          Sign in
+        </div>
+      <% end %>
+    </span> 
   </div>
 </div>
   
