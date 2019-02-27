@@ -61,6 +61,7 @@ defmodule NfdWeb.PageController do
         {:ok, articlesResponse} = PageAPI.articles_content()
         conn |> render("articles.html", item: response.body["data"], articles: articlesResponse.body["data"], page_type: page_type)
       {:error, error} ->
+        IO.inspect(error)
         conn |> render("404.html")
     end
     
@@ -80,7 +81,8 @@ defmodule NfdWeb.PageController do
     page_type = "page"
     case PageAPI.practices() do
       {:ok, response} ->
-        conn |> render("practices.html", item: response.body["data"], page_type: page_type)
+        {:ok, practicesResponse} = PageAPI.practices_content()
+        conn |> render("practices.html", item: response.body["data"], practices: practicesResponse.body["data"], page_type: page_type)
       {:error, error} ->
         conn |> render("404.html")
     end
@@ -100,7 +102,8 @@ defmodule NfdWeb.PageController do
     page_type = "page"
     case PageAPI.courses() do
       {:ok, response} ->
-        conn |> render("courses.html", item: response.body["data"], page_type: page_type)
+        {:ok, coursesResponse} = PageAPI.courses_content()
+        conn |> render("courses.html", item: response.body["data"], courses: coursesResponse.body["data"], page_type: page_type)
       {:error, error} ->
         conn |> render("404.html")
     end

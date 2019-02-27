@@ -16,7 +16,7 @@ defmodule NfdWeb.PageAPI do
   end
 
   def articles() do
-    get("/articles/articles_page.json")
+    get("/articles/articles_page/index.json")
   end
 
   def practice(practice_name) do
@@ -24,7 +24,7 @@ defmodule NfdWeb.PageAPI do
   end
 
   def practices() do
-    get("/practices/practices_page.json")
+    get("/practices/practices_page/index.json")
   end
 
   def course(course_name) do
@@ -32,7 +32,7 @@ defmodule NfdWeb.PageAPI do
   end
 
   def courses() do
-    get("/courses/courses_page.json")
+    get("/courses/courses_page/index.json")
   end
 
   def guide() do

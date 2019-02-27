@@ -24,14 +24,15 @@
   <div class="posts__off posts--guide" id="articles_latest_posts">
     <%= partial "articles_latest.html", %{ items: @articles, tag_type: "context" } %>
   </div>
-
+  
   <div class="posts__on posts--guide" id="articles_latest_plain_posts">
     <%= partial "articles_latest_plain_text.html", %{ items: @articles, tag_type: "context" } %>
   </div>
-
+  
   <div class="posts__off posts--guide" id="articles_category_posts">
     <%= partial "articles_category.html", %{ items: @articles, tag_type: "context" } %>
   </div>
 </div>
+  
 
 <script src='<%= Routes.static_path(@conn, "/js/articles.js") %>'></script>
