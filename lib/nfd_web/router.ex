@@ -38,6 +38,7 @@ defmodule NfdWeb.Router do
     get "/about", PageController, :about
     get "/contact", PageController, :contact
   
+    get "/guide", PageController, :guide
     get "/articles", PageController, :articles
     get "/articles/:article_id", PageController, :article
     get "/practices", PageController, :practices

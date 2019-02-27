@@ -1,45 +1,42 @@
 <div class="posts">
   <%= Enum.map(@items, fn(item) -> %>
-    <%= if Enum.find(item.categories, &(&1 == @post_category)) do %>
-    <a class="post" href="<%= article['permalink'] %>">
+    <%= if Enum.find(item["categories"], &(&1 == @post_category)) do %>
+    <a class="post" href='<%= item["permalink"] %>'>
       <div class="post__left">
         <div class="post__five__principles">
-          <%= if @item["categories"] == "introduction" do %>
+          <%= if item["categories"] == "introduction" do %>
             <div class="post__five__principles__item post__five__principles__item--introduction">
               Introduction
             </div>
           <% end %>
-          <%= if @item["categories"] == "choice-over-mind" do %>
+          <%= if item["categories"] == "choice-over-mind" do %>
             <div class="post__five__principles__item post__five__principles__item--choice-over-mind">
               Choice over mind
             </div>
           <% end %>
-          <%= if @item["categories"] == "balance-over-reward" do %> 
+          <%= if item["categories"] == "balance-over-reward" do %> 
             <div class="post__five__principles__item post__five__principles__item--balance-over-reward">
               Balance over reward
             </div>
           <% end %>
-          <%= if @item["categories"] == "struggle-over-none" do %> 
+          <%= if item["categories"] == "struggle-over-none" do %> 
             <div class="post__five__principles__item post__five__principles__item--struggle-over-none">
               Struggle over none
             </div>
           <% end %>
-          <%= if @item["categories"] == "awareness-over-all" do %> 
+          <%= if item["categories"] == "awareness-over-all" do %> 
             <div class="post__five__principles__item post__five__principles__item--awareness-over-all">
               Awareness over all
             </div>
           <% end %>
-          <%= if @item["categories"] == "uncondition-over-judgement" do %> 
+          <%= if item["categories"] == "uncondition-over-judgement" do %> 
             <div class="post__five__principles__item post__five__principles__item--uncondition-over-judgement">
               Uncondition over judgement
             </div>
           <% end %>
         </div>
-        <h5 class="post__date"><%= @item["date"] %></h5>
-        <h4 class="post__title"><%= @item["title"] %></h4>    
-      </div>
-      <div class="post__right">
-        <img class="post__image" src="<%= @item['image'] %>" />      
+        <h5 class="post__date"><%= item["date"] %></h5>
+        <h4 class="post__title"><%= item["title"] %></h4>    
       </div>
     </a>    
     <% end %>

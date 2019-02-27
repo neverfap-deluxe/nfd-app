@@ -1,8 +1,8 @@
 <div class="index__container posts">
   <div class="articles__list">
-    <%= Enum.map(@items, fn(article) -> %>
-      <%= if Enum.find(article.tags, &(&1 == @tag_type)) do %>
-        <span><a class="link articles__link" href="<%= article['permalink'] %>"><%= @item["date"] %> | <%= @item["title"] %></a></span>
+    <%= Enum.map(@items, fn(item) -> %>
+      <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
+        <span><a class="link articles__link" href='<%= item["permalink"] %>'><%= item["date"] %> | <%= item["title"] %></a></span>
       <% end %>
     <% end ) %>
   </div>

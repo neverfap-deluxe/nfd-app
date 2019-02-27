@@ -6,9 +6,9 @@
   <!-- <h3>Introduction</h3> -->
   <div class="articles__list">
     <%= Enum.map(@items, fn(article) -> %>
-      <%= if Enum.find(article.categories, &(&1 == "introduction")) do %>
-        <%= if article.categories @tag_type do %>
-          <span><a class="link articles__link" href="<%= article['permalink'] %>"><%= @item["date"] %> | <%= @item["title"] %></a></span>
+      <%= if Enum.find(article["categories"], &(&1 == "introduction")) do %>
+        <%= if Enum.find(article["tags"], &(&1 == @tag_type)) do %>
+          <span><a class="link articles__link" href='<%= article["permalink"] %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
         <% end %>
       <% end %>
     <% end ) %>
@@ -19,9 +19,9 @@
   </ul>
   <div class="articles__list">
     <%= Enum.map(@items, fn(article) -> %>
-      <%= if Enum.find(article.categories, &(&1 == "choice-over-mind")) do %>
-        <%= if Enum.find(article.tags, &(&1 == @tag_type)) do %>
-          <span><a class="link articles__link" href="<%= article['permalink'] %>"><%= @item["date"] %> | <%= @item["title"] %></a></span>
+      <%= if Enum.find(article["categories"], &(&1 == "choice-over-mind")) do %>
+        <%= if Enum.find(article["tags"], &(&1 == @tag_type)) do %>
+          <span><a class="link articles__link" href='<%= article["permalink"] %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
         <% end %>       
       <% end %>
     <% end ) %>
@@ -33,9 +33,9 @@
   </ul>
   <div class="articles__list">
     <%= Enum.map(@items, fn(article) -> %>
-      <%= if Enum.find(article.categories, &(&1 == "balance-over-reward")) do %>
-          <%= if Enum.find(article.tags, &(&1 == @tag_type)) do %>
-            <span><a class="link articles__link" href="<%= article['permalink'] %>"><%= @item["date"] %> | <%= @item["title"] %></a></span>
+      <%= if Enum.find(article["categories"], &(&1 == "balance-over-reward")) do %>
+          <%= if Enum.find(article["tags"], &(&1 == @tag_type)) do %>
+            <span><a class="link articles__link" href='<%= article["permalink"] %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
           <% end %>
         <% end %>
     <% end ) %>
@@ -47,9 +47,9 @@
   </ul>
   <div class="articles__list">
     <%= Enum.map(@items, fn(article) -> %>
-      <%= if Enum.find(article.categories, &(&1 == "struggle-over-none")) do %>
-        <%= if Enum.find(article.tags, &(&1 == @tag_type)) do %>
-          <span><a class="link articles__link" href="<%= article['permalink'] %>"><%= @item["date"] %> | <%= @item["title"] %></a></span>
+      <%= if Enum.find(article["categories"], &(&1 == "struggle-over-none")) do %>
+        <%= if Enum.find(article["tags"], &(&1 == @tag_type)) do %>
+          <span><a class="link articles__link" href='<%= article["permalink"] %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
         <% end %>
       <% end %>
     <% end ) %>
@@ -61,9 +61,9 @@
   </ul>
   <div class="articles__list">
     <%= Enum.map(@items, fn(article) -> %>
-      <%= if Enum.find(article.categories, &(&1 == "awareness-over-all")) do %>
-        <%= if Enum.find(article.tags, &(&1 == @tag_type)) do %>
-          <span><a class="link articles__link" href="<%= article['permalink'] %>"><%= @item["date"] %> | <%= @item["title"] %></a></span>
+      <%= if Enum.find(article["categories"], &(&1 == "awareness-over-all")) do %>
+        <%= if Enum.find(article["tags"], &(&1 == @tag_type)) do %>
+          <span><a class="link articles__link" href='<%= article["permalink"] %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
         <% end %>
       <% end %>
     <% end ) %>
@@ -74,9 +74,9 @@
   </ul>
   <div class="articles__list">
     <%= Enum.map(@items, fn(article) -> %>
-      <%= if Enum.find(article.categories, &(&1 == "uncondition-over-judgement")) do %>
-        <%= if Enum.find(article.tags, &(&1 == @tag_type)) do %>
-          <span><a class="link articles__link" href="<%= article['permalink'] %>"><%= @item["date"] %> | <%= @item["title"] %></a></span>
+      <%= if Enum.find(article["categories"], &(&1 == "uncondition-over-judgement")) do %>
+        <%= if Enum.find(article["tags"], &(&1 == @tag_type)) do %>
+          <span><a class="link articles__link" href='<%= article["permalink"] %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
         <% end %>
       <% end %>
     <% end ) %>

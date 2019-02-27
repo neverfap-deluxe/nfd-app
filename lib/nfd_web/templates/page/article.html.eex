@@ -22,8 +22,8 @@
     <%= raw @item["content"] %>
   </div>
 
-  <%= partial "shareButtons.html", assigns %>
-  
+  <!-- Note: It would be good to get share buttons here. -->
+
   <%= partial "next_prev_buttons.html", assigns %>
 </div>
 

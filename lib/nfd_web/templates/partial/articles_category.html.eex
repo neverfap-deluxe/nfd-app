@@ -4,18 +4,18 @@
     <span><li class="five__principles__item__page">Introduction</li></span>
   </ul>
   <div class="articles__list">
-    <%= Enum.map(@items, fn(article) -> %>
-      <%= if Enum.find(article.categories, &(&1 == "introduction")) do %>
-        <%= if article.categories @tag_type do %>
-          <a class="post" href="<%= article['permalink'] %>">
+    <%= Enum.map(@items, fn(item) -> %>
+      <%= if Enum.find(item["categories"], &(&1 == "introduction")) do %>
+        <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
+          <a class="post" href='<%= item["permalink"] %>'>
             <div class="post__left">
               <div class="post__five__principles">
                 <div class="post__five__principles__item post__five__principles__item--introduction">
                   Introduction
                 </div>
               </div>
-              <h5 class="post__date"><%= @item["date"] %></h5>
-              <h4 class="post__title"><%= @item["title"] %></h4>    
+              <h5 class="post__date"><%=item["date"] %></h5>
+              <h4 class="post__title"><%=item["title"] %></h4>    
             </div>
           </a>
         <% end %>
@@ -27,18 +27,18 @@
     <span><li class="five__principles__item__page">Choice Over Mind</li></span>
   </ul>
   <div class="articles__list">
-    <%= Enum.map(@items, fn(article) -> %>
-      <%= if Enum.find(article.categories, &(&1 == "choice-over-mind")) do %>
-        <%= if Enum.find(article.tags, &(&1 == @tag_type)) do %>
-          <a class="post" href="<%= article['permalink'] %>">
+    <%= Enum.map(@items, fn(item) -> %>
+      <%= if Enum.find(item["categories"], &(&1 == "choice-over-mind")) do %>
+        <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
+          <a class="post" href='<%= item["permalink"] %>'>
             <div class="post__left">
               <div class="post__five__principles">
                 <div class="post__five__principles__item post__five__principles__item--choice-over-mind">
                   Choice over mind
                 </div>
               </div>
-              <h5 class="post__date"><%= @item["date"] %></h5>
-              <h4 class="post__title"><%= @item["title"] %></h4>    
+              <h5 class="post__date"><%= item["date"] %></h5>
+              <h4 class="post__title"><%= item["title"] %></h4>    
             </div>
           </a>
         <% end %>       
@@ -51,18 +51,18 @@
     <span><li class="five__principles__item__page">Balance Over Reward</li></span>
   </ul>
   <div class="articles__list">
-    <%= Enum.map(@items, fn(article) -> %>
-      <%= if Enum.find(article.categories, &(&1 == "balance-over-reward")) do %>
-        <%= if Enum.find(article.tags, &(&1 == @tag_type)) do %>
-          <a class="post" href="<%= article['permalink'] %>">
+    <%= Enum.map(@items, fn(item) -> %>
+      <%= if Enum.find(item["categories"], &(&1 == "balance-over-reward")) do %>
+        <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
+          <a class="post" href='<%= item["permalink"] %>'>
               <div class="post__left">
                 <div class="post__five__principles">
                   <div class="post__five__principles__item post__five__principles__item--balance-over-reward">
                     Balance over reward
                   </div>
                 </div>
-                <h5 class="post__date"><%= @item["date"] %></h5>
-                <h4 class="post__title"><%= @item["title"] %></h4>    
+                <h5 class="post__date"><%= item["date"] %></h5>
+                <h4 class="post__title"><%= item["title"] %></h4>    
               </div>
             </a>
         <% end %>
@@ -75,18 +75,18 @@
     <span><li class="five__principles__item__page">Struggle Over None</li></span>
   </ul>
   <div class="articles__list">
-    <%= Enum.map(@items, fn(article) -> %>
-      <%= if Enum.find(article.categories, &(&1 == "struggle-over-none")) do %>
-        <%= if Enum.find(article.tags, &(&1 == @tag_type)) do %>
-          <a class="post" href="<%= article['permalink'] %>">
+    <%= Enum.map(@items, fn(item) -> %>
+      <%= if Enum.find(item["categories"], &(&1 == "struggle-over-none")) do %>
+        <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
+          <a class="post" href='<%= item["permalink"] %>'>
               <div class="post__left">
                 <div class="post__five__principles">
                   <div class="post__five__principles__item post__five__principles__item--struggle-over-none">
                     Struggle over none
                   </div>
                 </div>
-                <h5 class="post__date"><%= @item["date"] %></h5>
-                <h4 class="post__title"><%= @item["title"] %></h4>    
+                <h5 class="post__date"><%= item["date"] %></h5>
+                <h4 class="post__title"><%= item["title"] %></h4>    
               </div>
             </a>
         <% end %>
@@ -99,18 +99,18 @@
     <span><li class="five__principles__item__page">Awareness Over All</li></span>
   </ul>
   <div class="articles__list">
-    <%= Enum.map(@items, fn(article) -> %>
-      <%= if Enum.find(article.categories, &(&1 == "awareness-over-all")) do %>
-        <%= if Enum.find(article.tags, &(&1 == @tag_type)) do %>
-          <a class="post" href="<%= article['permalink'] %>">
+    <%= Enum.map(@items, fn(item) -> %>
+      <%= if Enum.find(item["categories"], &(&1 == "awareness-over-all")) do %>
+        <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
+          <a class="post" href='<%= item["permalink"] %>'>
             <div class="post__left">
               <div class="post__five__principles">
                 <div class="post__five__principles__item post__five__principles__item--awareness-over-all">
                   Awareness over all
                 </div>
               </div>
-              <h5 class="post__date"><%= @item["date"] %></h5>
-              <h4 class="post__title"><%= @item["title"] %></h4>    
+              <h5 class="post__date"><%= item["date"] %></h5>
+              <h4 class="post__title"><%= item["title"] %></h4>    
             </div>
           </a>
         <% end %>
@@ -122,18 +122,18 @@
     <span><li class="five__principles__item__page">Uncondition Over Judgement</li></span>
   </ul>
   <div class="articles__list">
-    <%= Enum.map(@items, fn(article) -> %>
-      <%= if Enum.find(article.categories, &(&1 == "uncondition-over-judgement")) do %>
-        <%= if Enum.find(article.tags, &(&1 == @tag_type)) do %>
-          <a class="post" href="<%= article['permalink'] %>">
+    <%= Enum.map(@items, fn(item) -> %>
+      <%= if Enum.find(item["categories"], &(&1 == "uncondition-over-judgement")) do %>
+        <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
+          <a class="post" href='<%= item["permalink"] %>'>
             <div class="post__left">
               <div class="post__five__principles">
                 <div class="post__five__principles__item post__five__principles__item--uncondition-over-judgement">
                   Uncondition over judgement
                 </div>
               </div>
-              <h5 class="post__date"><%= @item["date"] %></h5>
-              <h4 class="post__title"><%= @item["title"] %></h4>    
+              <h5 class="post__date"><%= item["date"] %></h5>
+              <h4 class="post__title"><%= item["title"] %></h4>    
             </div>
           </a>
         <% end %>

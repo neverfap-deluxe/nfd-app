@@ -1,21 +1,21 @@
 
 <div class="single__next__prev">
-  <%= if .PrevInSection %>
-    <%= if .PrevInSection.Title %>
+  <%= if @item["prevInSection"] do %>
+    <%= if @item["prevInSectionTitle"] do %>
       <div class="button__wrapper">
-        <a class="button button__black_and_white" href="<%=.PrevInSection.Permalink%>">Previous Post | <span><%= .PrevInSection.Title %></span></a>
+        <a class="button button__black_and_white" href='<%= @item["prevInSectionPermalink"] %>'>Previous Post | <span><%= @item["prevInSectionTitle"] %></span></a>
       </div>
-    <%= else %>
+    <% else %>
       <div style="width: 300px;"></div>
     <% end %>
   <% end %>
 
-  <%= if .NextInSection %>
-    <%= if .NextInSection.Title %>
+  <%= if @item["nextInSection"] do %>
+    <%= if @item["nextInSectionTitle"] do %>
       <div class="button__wrapper">
-        <a class="button button__black_and_white" href="<%=.NextInSection.Permalink%>">Next Post | <span><%= .NextInSection.Title %></span></a>
+        <a class="button button__black_and_white" href='<%=@item["nextInSectionPermalink"] %>'>Next Post | <span><%= @item["nextInSectionTitle"] %></span></a>
       </div>
-    <%= else %>
+    <% else %>
       <div style="width: 300px;"></div>  
     <% end %>
   <% end %>

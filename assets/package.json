@@ -5,7 +5,7 @@
     "deploy": "webpack --mode production",
     "watch": "webpack --mode development --watch",
     
-    "emw": "npm run -s mjml-email-confirmation-success & npm run -s mjml-email-confirmation & npm run -s mjml-reset-password & npm run -s mjml-email-subscription-confirmation & npm run -s mjml-email-subscription-confirmation-success",
+    "mjml": "npm run -s mjml-email-confirmation-success & npm run -s mjml-email-confirmation & npm run -s mjml-reset-password & npm run -s mjml-email-subscription-confirmation & npm run -s mjml-email-subscription-confirmation-success",
 
     "mjml-email-confirmation-success": "npx mjml --watch ./email_templates/email_confirmation_success.mjml -o ../lib/nfd_web/templates/email/email_confirmation_success.html.eex",
     "mjml-email-confirmation": "npx mjml --watch ./email_templates/email_confirmation.mjml -o ../lib/nfd_web/templates/pow_email_confirmation/mailer/email_confirmation.html.eex",

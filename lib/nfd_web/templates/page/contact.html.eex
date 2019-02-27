@@ -7,9 +7,9 @@
     <form class="form" action="https://formspree.io/julius_dott@hotmail.com" method="POST">  
       <!-- <h4 class="form__title">THE FORM</h4> -->
     <div class="form__input__container">
-      <input class="form__input" type="Text" => placeholder="Name" name='name'/>
+      <input class="form__input" type=text: placeholder="Name" name='name'/>
       <input class="form__input" type="email" placeholder="Email" name='_replyTo'/>
-      <textarea class="form__input form__textarea" type="Text" => placeholder="Message" name='message'></textarea>
+      <textarea class="form__input form__textarea" type=text: placeholder="Message" name='message'></textarea>
     </div>
   
     <div class="form__submission__container">

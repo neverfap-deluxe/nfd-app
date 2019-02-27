@@ -1,9 +1,9 @@
 <div class="account__info">
-  <p class="account__info__title"><%= .Text %></p>
+  <p class="account__info__title"><%= @text %></p>
   <div class="account__buttons">
-    <a class="account__info__button account__info__button--link" href="<%= .Link %>">
+    <a class="account__info__button account__info__button--link" href='<%= @link %>'>
       <div class="account__info__button__text">
-        <%= @item["title"] %>
+        <%= @title %>
       </div>
     </a> 
   </div>

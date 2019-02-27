@@ -3,29 +3,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-  <meta name="author" content="<%= Application.get_env(:ac, :website_author) %>">
-  <meta name="keywords" content="<%= Application.get_env(:ac, :website_keywords) %>">
+  <meta name="author" content="<%= Application.get_env(:nfd, :website_author) %>">
+  <meta name="keywords" content="<%= Application.get_env(:nfd, :website_keywords) %>">
   <meta name="robots" content="noodp"/>
-  <link rel="canonical" href="<%= item.permalink %>" />
+  <!-- Will need to check this -->
+  <link rel="canonical" href='<%= @conn.assigns["item"]["permalink"] %>' />
 
-  <%= if @conn.assigns["meta_title"] do %>
-    <title><%= @meta_title %> </title>
-    <meta property="og:title" content="<%= @meta_title %>">
-    <meta name="twitter:title" content="<%= @meta_title %>">    
+  <%= if @conn.assigns["item"]["title"] do %>
+    <title><%= @conn.assigns["item"]["title"] %> </title>
+    <meta property="og:title" content='<%= @conn.assigns["item"]["title"] %>'>
+    <meta name="twitter:title" content='<%= @conn.assigns["item"]["title"] %>'>    
   <% else %>
-    <title><%= Application.get_env(:ac, :website_title) %></title>
+    <title><%= Application.get_env(:nfd, :website_title) %></title>
   <% end %>
 
-  <%= if @conn.assigns["meta_description"] do %>
+  <%= if @conn.assigns["item"] do %>
     <meta name="description" content="<%= @meta_description %>">
     <meta property="og:description" content="<%= @meta_description %>">   
     <meta name="twitter:description" content="<%= @meta_description %>">    
-    <meta name="twitter:image:alt" content="<%= @meta_title %>">
+    <meta name="twitter:image:alt" content='<%= @conn.assigns["item"]["title"] %>'>
   <% else %>
-    <meta name="description" content="<%= Application.get_env(:ac, :website_description) %>">
-    <meta property="og:description" content="<%= Application.get_env(:ac, :website_description) %>">    
-    <meta name="twitter:description" content="<%= Application.get_env(:ac, :website_description) %>">
-    <meta name="twitter:image:alt" content="<%= Application.get_env(:ac, :website_alt_image) %>">    
+    <meta name="description" content="<%= Application.get_env(:nfd, :website_description) %>">
+    <meta property="og:description" content="<%= Application.get_env(:nfd, :website_description) %>">    
+    <meta name="twitter:description" content="<%= Application.get_env(:nfd, :website_description) %>">
+    <meta name="twitter:image:alt" content="<%= Application.get_env(:nfd, :website_alt_image) %>">    
   <% end %>
 
 <!-- will need to figure out2019 -->
@@ -35,17 +36,17 @@
     
   <!-- facebook things -->
   <meta property="og:url" content="<%= Routes.url(@conn) <> @conn.request_path %>">
-  <meta property="og:site_name" content="<%= Application.get_env(:ac, :website_description) %>">
+  <meta property="og:site_name" content="<%= Application.get_env(:nfd, :website_description) %>">
   
-  <meta name="twitter:site" content="<%= Application.get_env(:ac, :website_twitter) %>">
-  <meta name="twitter:creator" content="<%= Application.get_env(:ac, :website_twitter) %>">
+  <meta name="twitter:site" content="<%= Application.get_env(:nfd, :website_twitter) %>">
+  <meta name="twitter:creator" content="<%= Application.get_env(:nfd, :website_twitter) %>">
   <meta name="twitter:card" content="summary_large_image">
   
-  <link rel="preconnect" href="<%= Application.get_env(:ac, :website_domain) %>">
-  <link rel="preconnect" href="<%= Application.get_env(:ac, :website_domain) %>about">
-  <link rel="preconnect" href="<%= Application.get_env(:ac, :website_domain) %>gifts">
+  <link rel="preconnect" href='<%= Application.get_env(:nfd, :website_domain) %>">
+  <link rel="preconnect" href='<%= Application.get_env(:nfd, :website_domain) %>about">
+  <link rel="preconnect" href='<%= Application.get_env(:nfd, :website_domain) %>gifts">
 
-  <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+  <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/app.css") %>"/>
 
 
   <!-- Emoji CSS -->
@@ -78,52 +79,50 @@
 
 
   <!-- Open Graph Schema -->
-  <%= if .IsPage %>
-    <script type="application/ld+json">
-      <%= if eq .Section "post" %>
-        {
-          "@context" : "http://schema.org",
-          "@type" : "BlogPosting",
-          "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "<%= .Site.BaseURL %>"
-          },
-          "articleSection" : "<%= .Section %>",
-          "name" : "<%= if eq .Section "courses" %><%= "NeverFap Deluxe Courses |"%><%= else if eq .Section "articles"%><%= "NeverFap Deluxe Articles |"%><%= else if eq .Section "practices"%><%= "NeverFap Deluxe Practices |"%><%= else %><%= "NeverFap Deluxe |"%><% end %> <%= @item["title"] %>",
-          "headline" : "<%= if eq .Section "courses" %><%= "NeverFap Deluxe Courses |"%><%= else if eq .Section "articles"%><%= "NeverFap Deluxe Articles |"%><%= else if eq .Section "practices"%><%= "NeverFap Deluxe Practices |"%><%= else %><%= "NeverFap Deluxe |"%><% end %> <%= @item["title"] %>",
-          "description" : "<%= .Description %>", 
-          "inLanguage" : "en-US",
-          "author" : "<%= Application.get_env(:ac, :website_author) %>",
-          "creator" : "<%= Application.get_env(:ac, :website_author) %>",
-          "publisher": "<%= Application.get_env(:ac, :website_author) %>",
-          "accountablePerson" : "<%= Application.get_env(:ac, :website_author) %>",
-          "copyrightHolder" : "<%= Application.get_env(:ac, :website_author) %>",
-          "copyrightYear" : "<%= .Date.Format "2006" %>",
-          "datePublished": "<%= time .Date %>",
-          "dateModified" : "<%= .Date %>",
-          "url" : "<%= .permalink %>",
-          "keywords" : [ <%= if isset @item "tags" %><%= range @item["tags"] %>"<%= . %>",<% end %><% end %> ]
-          "genre": "<%= range @item["categories"] %><%= . %><% end %>",
-        }
-      <%= else %>
-        {
-          "@context": "http://schema.org",
-          "@type": "WebSite",
-          "url": "<%= .permalink %>",
-          "name": "<%= if eq .Section "courses" %><%= "NeverFap Deluxe Courses |"%><%= else if eq .Section "articles"%><%= "NeverFap Deluxe Articles |"%><%= else if eq .Section "practices"%><%= "NeverFap Deluxe Practices |"%><%= else %><%= "NeverFap Deluxe |"%><% end %> <%= @item["title"] %>",
-          "author": {
-            "@type": "Person",
-            "name": "<%= Application.get_env(:ac, :website_author) %>"
-          },
-          "description": "<%= .Description %>",
-        }
-      <% end %>
-    </script>
-  <% end %>
+  <script type="application/ld+json">
+    <%= if @conn.assigns["page_type"] == "content" do %>
+      {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "<%= Application.get_env(:nfd, :base_url) %>"
+        },
+        "articleSection" : "<%= @conn.assigns["item"]["section"] %>",
+        "name" : "<%= if @conn.assigns["item"]["section"] == "courses" do %>NeverFap Deluxe Courses |<% end %><%= if @conn.assigns["item"]["section"] == "articles" do %>NeverFap Deluxe Articles |<% end %><%= if @conn.assigns["item"]["section"] == "practices" do %>NeverFap Deluxe Practices |<% else %>NeverFap Deluxe |<% end %> <%= @conn.assigns["item"]["title"] %>",
+        "headline" : "<%= if @conn.assigns["item"]["section"] == "courses" do %>NeverFap Deluxe Courses |<% end %><%= if @conn.assigns["item"]["section"] == "articles" do %>NeverFap Deluxe Articles |<% end %><%= if @conn.assigns["item"]["section"] == "practices" do %>NeverFap Deluxe Practices |<% else %>NeverFap Deluxe |<% end %> <%= @conn.assigns["item"]["title"] %>",
+        "description" : "<%= @conn.assigns["item"]["description"] %>", 
+        "inLanguage" : "en-US",
+        "author" : "<%= Application.get_env(:nfd, :website_author) %>",
+        "creator" : "<%= Application.get_env(:nfd, :website_author) %>",
+        "publisher": "<%= Application.get_env(:nfd, :website_author) %>",
+        "accountablePerson" : "<%= Application.get_env(:nfd, :website_author) %>",
+        "copyrightHolder" : "<%= Application.get_env(:nfd, :website_author) %>",
+        "copyrightYear" : "<%= @conn.assigns["item"]["date"] %>",
+        "datePublished": "<%= @conn.assigns["item"]["date"] %>",
+        "dateModified" : "<%= @conn.assigns["item"]["date"] %>",
+        "url" : "<%= @conn.assigns["item"]["permalink"] %>",  
+        "keywords" : [ <%= if @conn.assigns["item"]["tags"] do %><%= Enum.map(@conn.assigns["item"]["tags"], fn(tag) -> %>"<%= tag %>",<% end ) %><% end %> ]
+        "genre": "<%= Enum.map(@conn.assigns["item"]["categories"], fn(category) -> %>"<%= category %>",<% end ) %>",
+      }
+    <% else %>
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "<%= @conn.assigns["item"]["permalink"] %>",
+        "name": "<%= if @conn.assigns["item"]["section"] == "courses" do %>NeverFap Deluxe Courses |<% end %><%= if @conn.assigns["item"]["section"] == "articles" do %>NeverFap Deluxe Articles |<% end %><%= if @conn.assigns["item"]["section"] == "practices" do %>NeverFap Deluxe Practices |<% else %>NeverFap Deluxe |<% end %> <%= @conn.assigns["item"]["title"] %>",
+        "author": {
+          "@type": "Person",
+          "name": "<%= Application.get_env(:nfd, :website_author) %>"
+        },
+        "description": "<%= @conn.assigns["item"]["description"] %>",
+      }
+    <% end %>
+  </script>
 
   <!-- Will need to do an Elixir version of this -->
   <!-- Routes.url(@conn) -->
-  <title><%= if eq .Section "courses" %><%= "NeverFap Deluxe Courses |"%><%= else if eq .Section "articles"%><%= "NeverFap Deluxe Articles |"%><%= else if eq .Section "practices"%><%= "NeverFap Deluxe Practices |"%><%= else %><%= "NeverFap Deluxe |"%><% end %> <%= @item["title"] %></title>
+  <title><%= if @conn.assigns["item"]["section"] == "courses" do %>NeverFap Deluxe Courses |<% end %><%= if @conn.assigns["item"]["section"] == "articles" do %>NeverFap Deluxe Articles |<% end %><%= if @conn.assigns["item"]["section"] == "practices" do %>NeverFap Deluxe Practices |<% else %>NeverFap Deluxe |<% end %> <%= @conn.assigns["item"]["title"] %></title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132863786-1"></script>

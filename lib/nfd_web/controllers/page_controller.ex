@@ -1,80 +1,159 @@
 defmodule NfdWeb.PageController do
   use NfdWeb, :controller
 
-  alias NfdWeb.PageJson
+  alias NfdWeb.PageAPI
 
   plug :put_layout, "general.html"
 
   def home(conn, _params) do
-    {:ok, response} = PageJson.home()
+    page_type = "page"
 
-    IO.inspect(response)
-    render(conn, "home.html", item: response.body["data"])
+    case PageAPI.home() do
+      {:ok, response} -> 
+        {:ok, articlesResponse} = PageAPI.articles_content()
+        conn |> render("home.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], articles: articlesResponse.body["data"], page_type: page_type)
+      {:error, error} ->  # :econnrefused
+        IO.inspect(error)
+        conn |> render("404.html")
+    end
   end
 
   def about(conn, _params) do
-    {:ok, response} = PageJson.about()
-
-    render(conn, "about.html", item: response.body["data"])
+    page_type = "page"
+    case PageAPI.about() do
+      {:ok, response} ->
+        conn |> render("about.html", item: response.body["data"], page_type: page_type)
+      {:error, error} ->
+        conn |> render("404.html")
+    end
+    
   end
 
   def contact(conn, _params) do
-    {:ok, response} = PageJson.contact()
-    render(conn, "contact.html", item: response.body["data"])
+    page_type = "page"
+    case PageAPI.contact() do
+      {:ok, response} ->
+        conn |> render("contact.html", item: response.body["data"], page_type: page_type)
+      {:error, error} ->
+        conn |> render("404.html")
+    end
   end
 
 
   # Content
 
-  def articles(conn, %{"name" => name}) do
-    {:ok, response} = PageJson.articles(name)
-    render(conn, "articles.html", item: response.body["data"])
+  def guide(conn, _params) do
+    page_type = "page"
+    case PageAPI.guide() do
+      {:ok, response} ->
+        {:ok, articlesResponse} = PageAPI.articles_content()
+        conn |> render("guide.html", item: response.body["data"], articles: articlesResponse.body["data"], page_type: page_type)
+      {:error, error} ->
+        conn |> render("404.html")
+    end
+    
   end
 
-  def article(conn, _params) do
-    {:ok, response} = PageJson.article()
-    render(conn, "article.html", item: response.body["data"])
+  def articles(conn, _params) do
+    page_type = "page"
+    case PageAPI.articles() do
+      {:ok, response} ->
+        {:ok, articlesResponse} = PageAPI.articles_content()
+        conn |> render("articles.html", item: response.body["data"], articles: articlesResponse.body["data"], page_type: page_type)
+      {:error, error} ->
+        conn |> render("404.html")
+    end
+    
   end
 
-  def practices(conn, %{"name" => name}) do
-    {:ok, response} = PageJson.practices(name)
-    render(conn, "practices.html", item: response.body["data"])
+  def article(conn, %{"name" => name}) do
+    page_type = "content"
+    case PageAPI.article(name) do
+      {:ok, response} ->
+        conn |> render("article.html", item: response.body["data"], page_type: page_type)
+      {:error, error} ->
+        conn |> render("404.html")
+    end
   end
 
-  def practice(conn, _params) do
-    {:ok, response} = PageJson.practice()
-    render(conn, "practice.html", item: response.body["data"])
+  def practices(conn, _params) do
+    page_type = "page"
+    case PageAPI.practices() do
+      {:ok, response} ->
+        conn |> render("practices.html", item: response.body["data"], page_type: page_type)
+      {:error, error} ->
+        conn |> render("404.html")
+    end
+  end
+
+  def practice(conn, %{"name" => name}) do
+    page_type = "content"
+    case PageAPI.practice(name) do
+      {:ok, response} ->
+        conn |> render("practice.html", item: response.body["data"], page_type: page_type)
+      {:error, error} ->
+        conn |> render("404.html")
+    end
   end
 
   def courses(conn, _params) do
-    {:ok, response} = PageJson.courses()
-    render(conn, "courses.html", item: response.body["data"])
+    page_type = "page"
+    case PageAPI.courses() do
+      {:ok, response} ->
+        conn |> render("courses.html", item: response.body["data"], page_type: page_type)
+      {:error, error} ->
+        conn |> render("404.html")
+    end
   end
 
   def course(conn, %{"name" => name}) do
-    {:ok, response} = PageJson.course(name)
-    render(conn, "course.html", item: response.body["data"])
+    page_type = "content"
+    case PageAPI.course(name) do
+      {:ok, response} ->
+        conn |> render("course.html", item: response.body["data"], page_type: page_type)
+      {:error, error} ->
+        conn |> render("404.html")
+    end
   end
 
   def podcasts(conn, _params) do
-    {:ok, response} = PageJson.podcasts()
-    render(conn, "podcasts.html", item: response.body["data"])
+    page_type = "page"
+    case PageAPI.podcasts() do
+      {:ok, response} ->
+        conn |> render("podcasts.html", item: response.body["data"], page_type: page_type)
+      {:error, error} ->
+        conn |> render("404.html")
+    end
   end
 
-  def podcast(conn, _params) do
-    {:ok, response} = PageJson.podcast()
-    render(conn, "podcast.html", item: response.body["data"])
+  def podcast(conn, %{"name" => name}) do
+    page_type = "content"
+    case PageAPI.podcast(name) do
+      {:ok, response} ->
+        conn |> render("podcast.html", item: response.body["data"], page_type: page_type)
+      {:error, error} ->
+        conn |> render("404.html")
+    end
   end
 
   def disclaimer(conn, _params) do
-    {:ok, response} = PageJson.disclaimer()
-    render(conn, "disclaimer.html", item: response.body["data"])
+    page_type = "page"
+    case PageAPI.disclaimer() do
+      {:ok, response} ->
+        conn |> render("disclaimer.html", item: response.body["data"], page_type: page_type)
+      {:error, error} ->
+        conn |> render("404.html")
+    end
   end
 
   def privacy(conn, _params) do
-    {:ok, response} = PageJson.privacy()
-    render(conn, "privacy.html", item: response.body["data"])
+    page_type = "page"
+    case PageAPI.privacy() do
+      {:ok, response} ->
+        conn |> render("privacy.html", item: response.body["data"], page_type: page_type)
+      {:error, error} ->
+        conn |> render("404.html")
+    end
   end
-
 
 end

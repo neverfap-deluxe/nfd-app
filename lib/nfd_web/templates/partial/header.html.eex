@@ -34,6 +34,4 @@
   </ul>
 </nav>
 
-
-<script src='/js/header.js'></script>
-
+<script src='<%= Routes.static_path(@conn, "/js/header.js") %>'></script>

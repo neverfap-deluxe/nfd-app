@@ -1,0 +1,179 @@
+<div class="single__wrapper">
+  <h2 class="single__title">Guide <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <div class="single__content" style="margin-bottom: 0rem;">
+    <p>Welcome to the NeverFap Deluxe Guide!</p>
+    <p>Thank you for choosing to take a deeper look into the NeverFap method of overcoming porn addiction.</p>
+    <p>Coming to the realisation that you're a porn addict, as well as making the decision to overcome your porn addiction is arguably one of the most profound things you can ever do.</p>
+    <p>It will completely change the way you feel, think and perceive yourself and others.</p>
+  </div>
+  
+  <div class="five__principles__guide">
+    <div class="five__principles__guide__item">Learn to value your mental health above all.</div>
+    <div class="five__principles__guide__item">Develop the ability to quiet and focus your mind.</div>
+    <div class="five__principles__guide__item">Accept yourself and others unconditionally.</div>
+    <div class="five__principles__guide__item">Change the way you think about sex and women.</div>
+    <div class="five__principles__guide__item">Commit to long-term thinking.</div>
+  </div>
+
+  <div class="five__principles__guide--mobile">
+    <h3>Learn to value your mental health above all.</h3>
+    <h3>Develop the ability to quiet and focus your mind.</h3>
+    <h3>Accept yourself and others unconditionally.</h3>
+    <h3>Change the way you think about sex and women.</h3>
+    <h3>Commit to long-term thinking.</h3>
+  </div>
+</div>
+
+<%= partial "links-accountInfo.html", assigns %>
+
+<%=#  Five Principles of NeverFap  %>
+<div class="single__wrapper">   
+  <div class="single__content" style="margin-bottom: 0;">
+    <h2>Getting Started</h2>
+
+    <p>Before you begin, I highly recommend becoming familiar with <a class="link" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles of NeverFap</a>.</p>
+    <p>These principles will form the basis of everything you will learn, whether you decide to get started with the courses, read the articles or practice the mental health exercises.</p>
+    <p>Because in most cases, the reason why you're addicted to porn is because you've <u>neglected at least one of these principles in some form</u>.</p>
+    <p>These five principles are: Choice over mind, Balance over reward, Awareness over all, Struggle over none and Uncondition over judgement.</p>
+    <p>And until you master all five principles, it will be very difficult for you to truly be comfortable with your porn recovery and to succeed with any amount of certainty.</p>
+
+  </div>
+</div>
+
+<%= partial "links-boxLink.html", %{ title: "Principles", text: "Check out The Five Fundamental Principles Of NeverFap!", link: "/articles/the-five-fundamental-principles-of-neverfap" } %>
+
+<div class="single__wrapper">   
+  <div class="single__content" style="margin-bottom: 0;">
+
+    <h2>NeverFap Deluxe Articles</h2>
+
+    <p>NeverFap Deluxe Articles are designed to provide you with the knowlege to gain a better understanding of what exactly it is you need to do to help you overcome your porn addiction.</p>
+    <p>They will help address your current misunderstanding of yourself, as well as provide you with the context to understand the value of our NeverFap Deluxe Practices.</p>
+    <p>These articles will serve as a strong basis for your porn recovery, and are referenced within the NeverFap Deluxe Courses. In fact, the courses are generally the best way to consume the articles.</p>
+    <p>The articles contained within the <a class="link" href="/courses/introduction/">Introduction course</a> are an excellent place to start with your NeverFap Deluxe journey. They will provide you with a better understanding of the NeverFap method of overcoming porn addiction.</p>
+
+  </div>
+</div>
+
+<%= partial "links-boxLink.html", %{ title: "Articles", text: "Check out our NeverFap Deluxe Articles!", link: "/articles" } %>
+
+<div class="single__wrapper">   
+  <div class="single__content" style="margin-bottom: 0;">
+
+    <h2>NeverFap Deluxe Practices</h2>
+
+    <p>NeverFap Deluxe Practices focus solely on verifiable steps you can take on a daily basis to help you progress towards learning the skills to end your porn addiction.</p>
+    <p>This is where you'll be spending a majority of your time, practicing these skills and exercises so that you can become comfortable with using them in everyday situations.</p>
+    <p>The most fundamental practice you can learn is <a class="link" href="/practices/observe-it-all">Observe it all</a>. It is the only practice referenced as part of the Introduction course and it is the exercise you will practice everyday, regardless of whatever other exercises you choose to adopt.</p>
+    <p>It is arguably the most important thing you can do for your mental health, and to be quite honest, you could probably overcome your porn addiction with this one practice alone.</p>
+    <p>Do yourself a favour and commit.</p>
+  </div>
+</div>
+
+<%= partial "links-boxLink.html", %{ title: "Practices", text: "Check out our NeverFap Deluxe Practices!", link: "/practices" } %>
+
+
+<%=# NeverFap Deluxe Courses %>
+<div class="single__wrapper">   
+  <div class="single__content" style="margin-bottom: 0;">
+
+    <h2>NeverFap Deluxe Courses</h2>
+
+    <p>NeverFap Deluxe Courses combine the NeverFap Articles and Practices into single, linear progression-based pathways based upon The Five Fundamental Principles of NeverFap.</p>
+    <p>They are designed to help you focus on a particular area of understanding, so that you can master that concept and feel confident with your ability to address your porn addiction.</p>
+    <p>As mentioned earlier, I recommend getting started with the Introduction course and working your way down the list, revisiting practices you personally found useful.</p>
+    <p>In addition, these courses will also be available as premium audio courses if you decide to <a class="link" href="/accounts">sign up</a> with a NeverFap Deluxe Community account. (although they don't yet exist, so stay tuned!)</p>
+
+  </div>
+</div>
+
+<%= partial "links-boxLink.html", %{ title: "Courses", text: "Check out our NeverFap Deluxe Courses!", link: "/courses" } %>
+
+<div class="single__wrapper">      
+  <h2>Content List</h2>
+  <p>If you'd like to dive into some of our articles, feel free to explore the range of articles, practices and courses sorted by category.</p>
+
+  <div class="popular__latest__options">
+    <h3 class="button__click button__on popular__latest__options--guide" id="introduction_click">Introduction</h3>
+    <h3 class="button__click button__off popular__latest__options--guide" id="choice_over_mind_click">Choice over mind</h3>
+    <h3 class="button__click button__off popular__latest__options--guide" id="balance_over_reward_click">Balance over reward</h3>
+    <h3 class="button__click button__off popular__latest__options--guide" id="struggle_over_none_click">Struggle over none</h3>
+    <h3 class="button__click button__off popular__latest__options--guide" id="awareness_over_all_click">Awareness over all</h3>
+    <h3 class="button__click button__off popular__latest__options--guide" id="uncondition_over_judgement_click">Uncondition over judgement</h3>
+  </div>
+  
+  <div class="post__on posts--guide" id="introduction_posts">
+    <%= partial "category_posts.html", %{ items: @articles, post_category: "introduction" } %>
+  </div>
+
+  <div class="post__off posts--guide" id="choice_over_mind_posts">
+    <%= partial "category_posts.html", %{ items: @articles, post_category: "choice-over-mind" } %>
+  </div>
+
+  <div class="post__off posts--guide" id="balance_over_reward_posts">
+    <%= partial "category_posts.html", %{ items: @articles, post_category: "balance-over-reward" } %>
+  </div>
+
+  <div class="post__off posts--guide" id="strugle_over_none_posts">
+    <%= partial "category_posts.html", %{ items: @articles, post_category: "struggle-over-none" } %>
+  </div>
+
+  <div class="post__off posts--guide" id="awareness_over_all_posts">
+    <%= partial "category_posts.html", %{ items: @articles, post_category: "awareness-over-all" } %>
+  </div>
+
+  <div class="post__off posts--guide" id="uncondition_over_judgement_posts">
+    <%= partial "category_posts.html", %{ items: @articles, post_category: "uncondition-over-judgement" } %>
+  </div>
+</div>
+
+<script src='/js/guide.js'></script>
+
+
+
+
+
+
+<%#  
+    <h2>Getting Started</h2>
+
+    <p>Before you begin, I highly recommend becoming familiar with <a class="link" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles of NeverFap</a>.</p>
+    <p>These principles will form the basis of everything you will learn, and each article will focus on a particular principle.</p>
+
+    <div class="button__wrapper">
+      <a
+        class="button button__secondary" 
+        href="/articles/the-five-fundamental-principles-of-neverfap"
+        >Learn More About The Five Principles.</a
+      >
+    </div>
+
+    <h2>NeverFap Deluxe Articles</h2>
+
+    <p>NeverFap Deluxe Articles are designed to provide you with the knowlege to gain a better understanding of what exactly it is you need to do.</p>
+    <p>They will help address your current misunderstanding, as well as provide you with the context to overcome your porn addiction.</p>
+    <p>These articles will serve as a strong basis for your porn recovery.</p>
+
+    <div class="button__wrapper">
+      <a
+        class="button button__secondary" 
+        href="/articles"
+        >NeverFap Deluxe Articles.</a
+      >
+    </div>
+
+    <h2>NeverFap Deluxe Practices</h2>
+
+    <p>NeverFap Deluxe Practices focus solely on verifiable steps you can take on a daily basis to help you progress towards learning the skills to end your porn addiction.</p>
+    <p>This is where you'll be spending a majority of your time, practicing these skills and exercises so that you can master them.</p>
+    <p>My recommended approach is to start with <a class="link" href="/practices/observe-it-all">Observe it all</a> (which will be the core exercise you will practice every single day) and then to pick one additional exercise to practice throughout the day.</p>
+
+    <!-- <h2>Article Types</h2> -->
+    
+    <div class="button__wrapper">
+      <a
+        class="button button__secondary" 
+        href="/practices"
+        >NeverFap Deluxe Practices.</a
+      >
+    </div>  %>

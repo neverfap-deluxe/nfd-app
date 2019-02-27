@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%= partial "head.html", assigns %>
+
+  <body>
+    <main role="main" class="main" id="content">
+      <%= render @view_module, @view_template, assigns %>
+    </main>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+
+</html>
