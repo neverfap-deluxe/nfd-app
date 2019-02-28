@@ -1,0 +1,151 @@
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:rawvoice="http://www.rawvoice.com/rawvoiceRssModule/" version="2.0">
+  <channel>
+    <title>The NeverFap Deluxe Podcast</title>
+    <link>https://neverfapdeluxe.com/</link>
+    <image>
+      <url>https://neverfapdeluxe.com/images/logo.png
+      </url>
+      <title>The NeverFap Deluxe Podcast</title>
+      <link>https://neverfapdeluxe.com/</link>
+    </image>
+    <description>
+    Recovered porn addict Julius Reade shares all his tips and tricks from his five year NoFap journey to overcome porn addiction. Learn about the power of meditation, how porn addiction works, as well as how you can easily stay on track if you commit to your mental health and embrace a whole new way of thinking. For more information about the podcast, please visit our website at https://neverfapdeluxe.com/ where you will discover articles, practices, guides and courses to help you overcome porn addiction. If you have any questions, please send them to our contact form at https://neverfapdeluxe.com/about
+    </description>
+    <language>en-us</language>
+    <copyright>Julius Reade copyright 2019</copyright>
+    <atom:link href="https://neverfapdeluxe.com/podcast.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Tue, 12 Feb 2019 06:00:00 PDT</lastBuildDate>
+    <itunes:author>Julius Reade</itunes:author>
+    <itunes:summary>
+    Recovered porn addict Julius Reade shares all his tips and tricks from his five year NoFap journey to overcome porn addiction. Learn about the power of meditation, how porn addiction works, as well as how you can easily stay on track if you commit to your mental health and embrace a whole new way of thinking. For more information about the podcast, please visit our website at https://neverfapdeluxe.com/ where you will discover articles, practices, guides and courses to help you overcome porn addiction. If you have any questions, please send them to our contact form at https://neverfapdeluxe.com/about
+    </itunes:summary>
+    <itunes:subtitle>NoFap porn addiction recovery tips and tricks by Julius Reade</itunes:subtitle>
+    <itunes:owner>
+      <itunes:name>Julius Reade</itunes:name>
+      <itunes:email>julius.reade@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:explicit>No</itunes:explicit>
+    <itunes:keywords>
+    NoFap,porn addiction,porn recovery,NeverFap,NeverFap Deluxe,porn recovery,mental health,meditation,NoFap challenge
+    </itunes:keywords>
+    <itunes:image href="https://neverfapdeluxe.com/images/logo.png"/>
+    <rawvoice:rating>TV-G</rawvoice:rating>
+    <rawvoice:location>Melbourne, Australia</rawvoice:location>
+    <rawvoice:frequency>Weekly</rawvoice:frequency>
+    <itunes:category text="Technology"/>
+    <itunes:category text="Education"/>
+    <pubDate>Sat, 02 Jan 2016 06:00:00 PDT</pubDate>
+
+    
+    <item>
+      <title>
+EP01 - My Personal NoFap Porn Recovery Journey
+      </title>
+      <link>
+https://s3-us-west-1.amazonaws.com/podcasts.thepolyglotdeveloper.com/data/2016/TPDP+-+Episode+1+-+The+Requirements+for+Building+Mobile+Applications.mp3
+      </link>
+      <pubDate>Sat, 02 Jan 2016 16:00:00 PDT</pubDate>
+      <description>
+      In this episode I talk about my own NoFap porn recovery journey over the past five years, as well as all the challenges I've faced up until my recovery in October 2018. I talk about childhood factors, I talk about mental health, as well as how I managed to finally overcome porn addiction. More information about today's podcast can be found at https://neverfapdeluxe.com/podcast/episode-one-my-personal-nofap-porn-recovery-journey. Please send any questions you have to the contact form at https://neverfapdeluxe.com/about.
+      </description>
+      <enclosure url="https://s3-us-west-1.amazonaws.com/podcasts.thepolyglotdeveloper.com/data/2016/TPDP+-+Episode+1+-+The+Requirements+for+Building+Mobile+Applications.mp3" length="36715125" type="audio/mpeg"/>
+      <guid>
+https://s3-us-west-1.amazonaws.com/podcasts.thepolyglotdeveloper.com/data/2016/TPDP+-+Episode+1+-+The+Requirements+for+Building+Mobile+Applications.mp3
+      </guid>
+      <itunes:duration>19:07</itunes:duration>
+      <itunes:summary>
+      In this episode I talk about my own NoFap porn recovery journey over the past five years, as well as all the challenges I've faced up until my recovery in October 2018. I talk about childhood factors, I talk about mental health, as well as how I managed to finally overcome porn addiction. More information about today's podcast can be found at https://neverfapdeluxe.com/podcast/episode-one-my-personal-nofap-porn-recovery-journey. Please send any questions you have to the contact form at https://neverfapdeluxe.com/about.      </itunes:summary>
+      <itunes:image href="https://neverfapdeluxe.com/images/logo.png"/>
+      <itunes:keywords>
+NoFap,porn addiction,porn recovery,NeverFap,NeverFap Deluxe,porn recovery,mental health,meditation,NoFap challenge
+      </itunes:keywords>
+      <itunes:explicit>no</itunes:explicit>
+    </item>
+    <!--
+
+    <item>
+      <title>
+EP02 - What Exactly Constitutes As Relapse?
+      </title>
+      <link>
+https://s3-us-west-1.amazonaws.com/podcasts.thepolyglotdeveloper.com/data/2016/TPDP+-+Episode+1+-+The+Requirements+for+Building+Mobile+Applications.mp3
+      </link>
+      <pubDate>Sat, 02 Jan 2016 16:00:00 PDT</pubDate>
+      <description>
+      In this episode I talk about relapse and what this means in the context of your NoFap porn addiction recovery. More information about today's podcast can be found at https://neverfapdeluxe.com/podcast/episode-two-what-exactly-constitutes-as-relapse. Please send any questions you have to the contact form at https://neverfapdeluxe.com/about.
+      </description>
+      <enclosure url="https://s3-us-west-1.amazonaws.com/podcasts.thepolyglotdeveloper.com/data/2016/TPDP+-+Episode+1+-+The+Requirements+for+Building+Mobile+Applications.mp3" length="36715125" type="audio/mpeg"/>
+      <guid>
+https://s3-us-west-1.amazonaws.com/podcasts.thepolyglotdeveloper.com/data/2016/TPDP+-+Episode+1+-+The+Requirements+for+Building+Mobile+Applications.mp3
+      </guid>
+      <itunes:duration>19:07</itunes:duration>
+      <itunes:summary>
+      In this episode I talk about my own NoFap porn recovery journey over the past five years, as well as all the challenges I've faced up until my recovery in October 2018. I talk about childhood factors, I talk about mental health, as well as how I managed to finally overcome porn addiction. More information about today's podcast can be found at https://neverfapdeluxe.com/podcast/episode-one-my-personal-nofap-porn-recovery-journey. Please send any questions you have to the contact form at https://neverfapdeluxe.com/about.      </itunes:summary>
+      <itunes:image href="https://neverfapdeluxe.com/images/logo.png"/>
+      <itunes:keywords>
+NoFap,porn addiction,porn recovery,NeverFap,NeverFap Deluxe,porn recovery,mental health,meditation,NoFap challenge
+      </itunes:keywords>
+      <itunes:explicit>no</itunes:explicit>
+    </item>
+
+
+
+    <item>
+      <title>
+EP03 - How To Become Comfortable With Your Emotions
+      </title>
+      <link>
+https://s3-us-west-1.amazonaws.com/podcasts.thepolyglotdeveloper.com/data/2016/TPDP+-+Episode+1+-+The+Requirements+for+Building+Mobile+Applications.mp3
+      </link>
+      <pubDate>Sat, 02 Jan 2016 16:00:00 PDT</pubDate>
+      <description>
+      In this episode I talk about our emotions and the dynamic they play in influencing our NoFap porn addiction recovery. How emotions affect our actions, why it's important to learn to have control over our emotions, as well as the steps you can personally take to ensure that your mind is calm, stable and non-reactive. More information about today's podcast can be found at https://neverfapdeluxe.com/podcast/episode-three-how-to-become-comfortable-with-your-emotions. Please send any questions you have to the contact form at https://neverfapdeluxe.com/about.
+      </description>
+      <enclosure url="https://s3-us-west-1.amazonaws.com/podcasts.thepolyglotdeveloper.com/data/2016/TPDP+-+Episode+1+-+The+Requirements+for+Building+Mobile+Applications.mp3" length="36715125" type="audio/mpeg"/>
+      <guid>
+https://s3-us-west-1.amazonaws.com/podcasts.thepolyglotdeveloper.com/data/2016/TPDP+-+Episode+1+-+The+Requirements+for+Building+Mobile+Applications.mp3
+      </guid>
+      <itunes:duration>19:07</itunes:duration>
+      <itunes:summary>
+      In this episode I talk about our emotions and the dynamic they play in influencing our NoFap porn addiction recovery. How emotions affect our actions, why it's important to learn to have control over our emotions, as well as the steps you can personally take to ensure that your mind is calm, stable and non-reactive. More information about today's podcast can be found at https://neverfapdeluxe.com/podcast/episode-three-how-to-become-comfortable-with-your-emotions. Please send any questions you have to the contact form at https://neverfapdeluxe.com/about.
+      <itunes:image href="https://neverfapdeluxe.com/images/logo.png"/>
+      <itunes:keywords>
+NoFap,porn addiction,porn recovery,NeverFap,NeverFap Deluxe,porn recovery,mental health,meditation,NoFap challenge
+      </itunes:keywords>
+      <itunes:explicit>no</itunes:explicit>
+    </item>
+
+
+
+
+    <item>
+      <title>
+EP04 - What Is Effective Meditation In The Context Of NoFap?
+      </title>
+      <link>
+https://s3-us-west-1.amazonaws.com/podcasts.thepolyglotdeveloper.com/data/2016/TPDP+-+Episode+1+-+The+Requirements+for+Building+Mobile+Applications.mp3
+      </link>
+      <pubDate>Sat, 02 Jan 2016 16:00:00 PDT</pubDate>
+      <description>
+      In this episode I talk about the power of meditation and how it can help you with your NoFap porn addiction recovery journey. How meditation works as a tool to help regain control over our mind, how meditation works as a healthy coping mechanism, as well as why meditation is vital for a successful and effortless NoFap transition. More information about today's podcast can be found at https://neverfapdeluxe.com/podcast/episode-four-what-is-effective-meditation-in-the-context-of-nofap. Please send any questions you have to the contact form at https://neverfapdeluxe.com/about.
+      </description>
+      <enclosure url="https://s3-us-west-1.amazonaws.com/podcasts.thepolyglotdeveloper.com/data/2016/TPDP+-+Episode+1+-+The+Requirements+for+Building+Mobile+Applications.mp3" length="36715125" type="audio/mpeg"/>
+      <guid>
+https://s3-us-west-1.amazonaws.com/podcasts.thepolyglotdeveloper.com/data/2016/TPDP+-+Episode+1+-+The+Requirements+for+Building+Mobile+Applications.mp3
+      </guid>
+      <itunes:duration>19:07</itunes:duration>
+      <itunes:summary>
+      In this episode I talk about the power of meditation and how it can help you with your NoFap porn addiction recovery journey. How meditation works as a tool to help regain control over our mind, how meditation works as a healthy coping mechanism, as well as why meditation is vital for a successful and effortless NoFap transition. More information about today's podcast can be found at https://neverfapdeluxe.com/podcast/episode-four-what-is-effective-meditation-in-the-context-of-nofap. Please send any questions you have to the contact form at https://neverfapdeluxe.com/about.
+      <itunes:image href="https://neverfapdeluxe.com/images/logo.png"/>
+      <itunes:keywords>
+NoFap,porn addiction,porn recovery,NeverFap,NeverFap Deluxe,porn recovery,mental health,meditation,NoFap challenge
+      </itunes:keywords>
+      <itunes:explicit>no</itunes:explicit>
+    </item>
+
+  -->
+
+  </channel>
+</rss>

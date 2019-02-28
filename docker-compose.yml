@@ -5,7 +5,7 @@ networks:
 
 services:
   web:
-    image: "myapp:latest"
+    image: "dottjt/nfd:latest"
     depends_on:
       - db
     deploy:
@@ -35,3 +35,28 @@ services:
       - config/docker.env
     networks:
       - webnet
+
+
+
+
+# purely for testing on local.
+# version: '3.5'
+
+# services:
+#   web:
+#     image: "myapp:latest"
+#     ports:
+#       - "80:4000" # In our .env file above, we chose port 4000
+#     env_file:
+#       - config/docker.env
+#     depends_on:
+#       - db
+
+#   db:
+#     image: postgres:10-alpine
+#     volumes:
+#       - "./volumes/postgres:/var/lib/postgresql/data"
+#     ports:
+#       - "5432:5432"
+#     env_file:
+#       - config/docker.env

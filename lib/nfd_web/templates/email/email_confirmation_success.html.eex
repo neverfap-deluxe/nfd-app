@@ -3,7 +3,7 @@
     <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
       <head>
         <title>
-          NeverFap Deluxe | Email Confirmation
+          NeverFap Deluxe | Account Verified
         </title>
         <!--[if !mso]><!-- -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -71,7 +71,7 @@
       <div
          style=""
       >
-        <!-- mj-include fails to read file : ./email_partials/navbar at /Users/dottjt/Code/PER/nfd/assets/email_templates/email_partials/navbar --><!-- mj-include fails to read file : ./email_partials/header at /Users/dottjt/Code/PER/nfd/assets/email_templates/email_partials/header --><!-- Intro text -->
+        <!-- mj-include fails to read file : ../email_partials/navbar at /Users/dottjt/Code/PER/nfd/assets/email_partials/navbar --><!-- mj-include fails to read file : ../email_partials/header at /Users/dottjt/Code/PER/nfd/assets/email_partials/header --><!-- Intro text -->
       
       <!--[if mso | IE]>
       <table
@@ -118,7 +118,7 @@
       <div
          style="font-family:Helvetica Neue;font-size:25px;line-height:1;text-align:left;color:#000000;"
       >
-        Email Verification
+        Account Verified
       </div>
     
               </td>
@@ -132,7 +132,7 @@
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:23px;text-align:left;color:#000000;"
       >
-        Thank you for creating an account with NeverFap Deluxe. It's one of the most positive things you can do for your porn addiction.
+        Welcome to NeverFap Deluxe!
       </div>
     
               </td>
@@ -146,21 +146,7 @@
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:23px;text-align:left;color:#000000;"
       >
-        Please use the following link to confirm your e-mail address.
-      </div>
-    
-              </td>
-            </tr>
-          
-            <tr>
-              <td
-                 align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
-              >
-                
-      <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:23px;text-align:left;color:#000000;"
-      >
-        
+        There is a wealth of content for you to explore on NeverFap Deluxe, designed specifically to help you overcome your porn addiction.
       </div>
     
               </td>
@@ -179,7 +165,7 @@
              align="center" bgcolor="#F45E43" role="presentation" style="border:none;border-radius:0px;cursor:auto;mso-padding-alt:10px 25px;background:#F45E43;" valign="middle"
           >
             <a
-               href="<%= @url %>" style="display:inline-block;background:#F45E43;color:#ffffff;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:120%;Margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:0px;" target="_blank"
+               href="https://neverfapdeluxe.com/" style="display:inline-block;background:#F45E43;color:#ffffff;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:120%;Margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:0px;" target="_blank"
             >
               Verify Email
             </a>
@@ -215,7 +201,7 @@
       </table>
       <![endif]-->
     
-    <!-- mj-include fails to read file : ./email_partials/link_buttons at /Users/dottjt/Code/PER/nfd/assets/email_templates/email_partials/link_buttons --><!-- mj-include fails to read file : ./email_partials/social_media at /Users/dottjt/Code/PER/nfd/assets/email_templates/email_partials/social_media -->
+    <!-- mj-include fails to read file : ../email_partials/link_buttons at /Users/dottjt/Code/PER/nfd/assets/email_partials/link_buttons --><!-- mj-include fails to read file : ../email_partials/social_media at /Users/dottjt/Code/PER/nfd/assets/email_partials/social_media -->
       </div>
     
       </body>

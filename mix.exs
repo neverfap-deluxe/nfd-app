@@ -61,6 +61,7 @@ defmodule Nfd.MixProject do
       {:timex, "~> 3.0"},
 
       {:distillery, "~> 2.0"},
+      {:sitemap, "~> 1.1"}
    
     ]
   end

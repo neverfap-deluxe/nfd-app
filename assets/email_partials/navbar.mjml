@@ -1,0 +1,12 @@
+<!-- Navbar -->
+<mj-section background-color="#ef6451">
+  <mj-column>
+    <mj-navbar ico-padding="0" hamburger="hamburger" ico-color="#ffffff">
+        <mj-navbar-link	href="https://neverfapdeluxe.com/" color="#ffffff">Home</mj-navbar-link>
+        <mj-navbar-link	href="https://neverfapdeluxe.com/guide" color="#ffffff">Guide</mj-navbar-link>
+        <mj-navbar-link	href="https://neverfapdeluxe.com/articles" color="#ffffff">Articles</mj-navbar-link>
+        <mj-navbar-link	href="https://neverfapdeluxe.com/practices" color="#ffffff">Practices</mj-navbar-link>
+        <mj-navbar-link	href="https://neverfapdeluxe.com/courses" color="#ffffff">Courses</mj-navbar-link>
+    </mj-navbar>
+  </mj-column>
+</mj-section>

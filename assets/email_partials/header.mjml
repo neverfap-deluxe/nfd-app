@@ -1,0 +1,14 @@
+<!-- Header -->
+<mj-section 
+  background-size="cover"
+  background-repeat="no-repeat"
+  background-color="linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%)">
+  <mj-column border="5px solid white">
+    <mj-text 
+      align="center"
+      color="#fff"
+      container-background-color="black"
+      font-size="40px"
+      font-family="Helvetica Neue">NeverFap Deluxe</mj-text>
+  </mj-column>
+</mj-section>

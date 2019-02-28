@@ -1,0 +1,12 @@
+<!-- Link Buttons -->
+<mj-section background-color="#fbfbfb">
+  <mj-column>
+    <mj-button width="120px" background-color="white" color="black" border="5px solid black" border-radius="0px" href="https://neverfapdeluxe.com/articles">Articles</mj-button>
+  </mj-column>
+  <mj-column>
+    <mj-button width="120px" background-color="white" color="black" border="5px solid black" border-radius="0px" href="https://neverfapdeluxe.com/practices">Practices</mj-button>
+  </mj-column>
+  <mj-column>
+    <mj-button width="120px" background-color="white" color="black" border="5px solid black" border-radius="0px" href="https://neverfapdeluxe.com/guides">Guides</mj-button>
+  </mj-column>
+</mj-section>
