@@ -1,47 +1,38 @@
-language: node_js
+language: elixir
 sudo: enabled
-
 addons:
-  ssh_known_hosts: 157.230.231.111
-
+  ssh_known_hosts: 198.199.67.180
 branches:
   only:
   - production
-
 services:
-  - docker
-
+- docker
 env:
   global:
-  - secret: 4JtQSj0ehCD6B5BwyW6diVcaQA2c7bovI23GyeTTTgfkuKRkzDcoY51ZsMDdsflJ94zV7TEIS31eCeq4awftawft2IBYdHZeVZQlEQlUOfwD4B2XrAYXFIq1PAEiccakeskeriatwfuyoawfntarosenfwyoudmcUCykGm4bUZ3CaW6AxrIMFzuAYjA98VIz6YmYTmM0rst4gdh3y24rstrst
+  - secure: V1UHrtiBD6tU2/LOKFpxblOtR3HapCBHlyxWxk6mEZE6Q0O2qmkggKVgVY8qBMjKmTzrYzjvxw3h9mH5LgDbSqQ9Eu9IPhL7QPfqBVvkVXs59OqdmnXNhzq9qR86CRFITfNyr3HEUjLWVl7QF0hKeZtmm9RhICVpK6kUzpmH/zTN9i11t7d/Uia79M+vzrOQlsMwya54k4famHigZrJp44+6Ao3Ov/GI4cHYjWuHHZLKNa0MhTkD+EmKek+4hZzFlQP2iPqVpvjxrjDomOGAO6wNSv1+c1afRmV7vM7Zsih7Q5vDOEK17PEwfGJ2fosvGbIQz8skeEHvsRZZHhLLostOW7mkpcz+TtUJTsPm2Yy6KK3l92L4FWasWFHLcQfeo71Sm/oAkKuzfIAFCm/5YgYItrW6Oi8MZSuq5i/3KXhZ/ni5Zc+QdwDAcxW3SnhaAkuOmmOu8wGmxXhF0NQvGTCll1VzwzbYEXGpWspTJhMTNY1nNT6dAK6XMDTP/xtVIcUzTZr3Y9ZOOmal2uRcyji4DWQPSOyA1i+PRU4odZEv93wbSsRjF5DrJ1dZzBoUYYJwMvUqT6enovv35ZFBVMe1PXwd0AnJ2J+qlerVVuXKVCJrWMHihZvn4fn+qylGvEYrY59maVLeIDlTMLOr+80lMw3/SVjHCWpIJph5SMo=
   - DOCKER_USERNAME=dottjt
-  - secure: YydLAtHHczrVrZi7Pihf29ibPpLasX2pKXFVjS3alq30hIFjCclRB2KXXZdWFXuHnZY2xc8m6cRG/3bMpwM+RoOvWEPQfMXXPSj4Porez/iPjJ2bhlK48PVu5mB50iFt7QqF2IpV9HoC6yYIPvKzjTPCfrq9WhIyCxUiAi+PDiNGaKjeE8EvxgkAhIyUVjPAdyCoP1as8BezBzWWsIbOx2Ko1zBc4F3cAuo/McTUBFZCXZktlAVqov+6SwVNvsgcIINlyQ/BwJRum4IX+wCtQUkI6JTi03RcnaSv+z/aQsjZXf0B+gsvRKDFJifEyYW5VpZeb8Ab4zRjlYLyAtPBDqKpRydrnAeNNxUWVrr3x2NThnGd4YM0E7SJ+RCi4Cje2T/AOTlYkM+YCyyvMBlPdMBWCeIeC7nLUgcJBSmo89rskQBuTDEtXyVpvpXdpE4yCy6ipX1CysxzC1QrmeopYNYxtGAcl34RQXXiHZia09WR0kDX42394FJqvIK3gJWE2hk0s4OaDyTCovLCINDFW/2fPaSMXCAhKYYa63wecFFylyTYCuquUU0mxt9QejGrx0Ty7BYqu754sJdBwmVEu3yGb2jyMGE85dJWcqlkMDlFd6zAXTTnz3VyoSUoWBamAjRy/IHUaDEgPJYlxky0MAHZZbmRAoNutnDieU6Dpt8=
-
 before_script:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker pull dottjt/watashi-api || true
-
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- docker pull dottjt/nfd-app || true
 script:
-  - ls -a
-  - docker-compose build
-  - docker-compose up -d
-
+- ls -a
+- docker-compose build
+- docker-compose up -d
 after_script:
-  - docker images
-
+- docker images
 before_deploy:
-  - openssl aes-256-cbc -K $encrypted_0aaf8c57bbc0_key -iv $encrypted_0aaf8c57bbc0_iv -in deploy_rsa.enc -out /tmp/deploy_rsa -d
-  - eval "$(ssh-agent -s)"
-  - chmod 600 /tmp/deploy_rsa
-  - ssh-add /tmp/deploy_rsa
-
+- openssl aes-256-cbc -K $encrypted_989cc8ced1db_key -iv $encrypted_989cc8ced1db_iv
+  -in deploy_key.enc -out ./deploy_key -d
+- eval "$(ssh-agent -s)"
+- chmod 600 /tmp/deploy_rsa
+- ssh-add /tmp/deploy_rsa
+- ssh -i ./deploy_key root@198.199.67.180 pwd
 deploy:
-  - provider: script
-    script: docker push dottjt/watashi-api
-    on:
-      branch: production
-  - provider: script
-    script: bash deploy.sh
-    on:
-      branch: production
-
+- provider: script
+  script: docker push dottjt/nfd-app
+  on:
+    branch: production
+- provider: script
+  script: bash deploy.sh
+  on:
+    branch: production

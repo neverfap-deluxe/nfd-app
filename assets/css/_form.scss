@@ -7,8 +7,6 @@
   align-items: center;
   justify-content: flex-start;
   
-  height: 145vh;
-
   background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
   background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
   background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
@@ -36,11 +34,12 @@
   }
 
   .header {
-    background: white;
-    border-top: 5px solid black;
-    border-bottom: 5px solid black;
 
     .header__links {
+      border-top: 5px solid black;
+      border-bottom: 5px solid black;
+      background: white;
+  
       .header__link__wrapper {
         .header__link {
           color: black;
@@ -79,6 +78,7 @@
 .form__wrapper {
   display: flex;
   width: 100%;
+  margin-bottom: 4rem;
 
   .form__success {
     display: flex;

@@ -1,5 +1,5 @@
 .login__top {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   border-top: 5px solid cyan;
@@ -11,7 +11,9 @@
 
   // width: 100vw;
 
+
   .login__top__title {
+    display: none;
     margin-right: 0.5rem;
     font-size: 0.9rem;
     padding: 0!important;
@@ -22,27 +24,6 @@
     padding-right: 1rem;
   }
 
-  .login__top__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid black;
-    height: 2.6rem;
-    min-width: 6.5rem;
-
-    margin-bottom: 1rem;
-
-    cursor: pointer;
-
-    margin-right: 0.6rem;
-    box-shadow: -5px 5px 0px 0px cyan;
-
-    transition: box-shadow .3s;
-    .login__top__button__text {  
-      color: black;
-      font-size: 0.9rem; 
-    }  
-  }
   
   .login__top__button:hover {
     box-shadow: -8px 8px 0px 0px rgb(249, 104, 84);
@@ -59,8 +40,8 @@
       justify-content: center;
       align-items: center;
       border: 2px solid black;
-      height: 2.6rem;
-      min-width: 6.5rem;
+      height: 2.2rem;
+      min-width: 6rem;
   
       margin-bottom: 1rem;
   
@@ -82,21 +63,20 @@
   }
 }
 
-.account__buttons {
+.account__buttons__login {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   justify-content: center;
   align-items: center;
 
   min-width: 160px;
 
-  margin-top: 1rem;
-  margin-right: 1rem;
-
+  // margin-top: 1rem;
+  // margin-right: 1rem;
 }
 
 @media screen and (min-width: 420px) {
-  .account__buttons {
+  .account__buttons__login {
     margin-top: 0;
     flex-direction: row;
 
@@ -106,6 +86,7 @@
   }
 
   .login__top {
+    display: flex;
     .login__top__button {
       margin-bottom: 0;
     }
@@ -119,7 +100,11 @@
 
 
 @media screen and (min-width: 768px) {
-
+  .login__top {
+    .login__top__title {
+      display: block;
+    }
+  }  
 }
 
 // @media screen and (min-width: 1280px) {

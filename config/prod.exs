@@ -11,8 +11,21 @@ use Mix.Config
 # before starting your production server.
 config :nfd, NfdWeb.Endpoint,
   http: [:inet6, port: System.get_env("PORT") || 4000],
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  url: [host: System.get_env("HOST"), port: 80],
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  server: true,
+  code_reloader: false
+
+
+# Configure your database
+config :nfd, Nfd.Repo,
+  username: System.get_env("POSTGRES_USER"),
+  password: System.get_env("POSTGRES_PASSWORD"),
+  database: System.get_env("POSTGRES_DB"),
+  hostname: System.get_env("POSTGRES_HOST"),
+  pool_size: 15
+
 
 # Do not print debug messages in production
 config :logger, level: :info
@@ -68,4 +81,5 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs which should be versioned
 # separately.
-import_config "prod.secret.exs"
+
+# import_config "prod.secret.exs"

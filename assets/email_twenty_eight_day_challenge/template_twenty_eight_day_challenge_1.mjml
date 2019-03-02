@@ -11,7 +11,7 @@
     <mj-section background-color="#fafafa">
       <mj-column width="400px">
         <mj-text font-size="25px" font-family="Helvetica Neue" padding-bottom="20px">
-          Email Verification
+          Welcome!
         </mj-text>
 
         <mj-button 

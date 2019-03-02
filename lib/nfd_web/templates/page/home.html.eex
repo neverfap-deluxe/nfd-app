@@ -3,7 +3,9 @@
   <%= partial "head.html", assigns %>
   <body>
     <div class="homepage__content">
+      <%= partial "login_top.html", assigns %>
       <div class="homepage__hero">
+        
         <%= partial "header.html", assigns %>
         <h1 class="homepage__hero__title">NeverFap <span class="deluxe__font">Deluxe</span></h1>
         <h2 class="homepage__hero__title__secondary">The Comprehensive NoFap Companion.</h2>
@@ -34,7 +36,7 @@
         </ul>
       </div>
 
-      <div class="homepage__hero">
+      <div class="homepage__hero homepage__hero--secondary">
         <h1 class="homepage__hero__title">Here's what I do.</h1>
         <h2 class="homepage__hero__title__secondary">I explain step-by-step exactly how to give up porn.</h2>
       </div>
@@ -120,7 +122,7 @@
 
 
 
-      <div class="homepage__hero">
+      <div class="homepage__hero homepage__hero--secondary">
         <h1 class="homepage__hero__title">The NeverFap Deluxe Guide.</h1>
         <h2 class="homepage__hero__title__secondary">A series of articles to help explain the NeverFap method.</h2>
       </div>
@@ -151,7 +153,7 @@
         <hr />
       </div>
 
-      <div class="homepage__hero">
+      <div class="homepage__hero homepage__hero--secondary">
         <h1 class="homepage__hero__title">If you believe you have limited control over your mind.</h1>
         <ul class="homepage__hero__principle__wrapper">
           <li class="homepage__hero__principle__item">Choice over mind</li>
@@ -163,7 +165,7 @@
         <hr />
       </div>
 
-      <div class="homepage__hero">
+      <div class="homepage__hero homepage__hero--secondary">
         <h1 class="homepage__hero__title">If you struggle to get further than two months.</h1>
         <ul class="homepage__hero__principle__wrapper">
           <li class="homepage__hero__principle__item">Balance over reward</li>
@@ -175,7 +177,7 @@
         <hr />
       </div>
 
-      <div class="homepage__hero">
+      <div class="homepage__hero homepage__hero--secondary">
         <h1 class="homepage__hero__title">If you consistently fight your emotions.</h1>
         <ul class="homepage__hero__principle__wrapper">
           <li class="homepage__hero__principle__item">Struggle over none</li>
@@ -187,7 +189,7 @@
         <hr />
       </div>
 
-      <div class="homepage__hero">
+      <div class="homepage__hero homepage__hero--secondary">
         <h1 class="homepage__hero__title">If you don't practice meditation.</h1>
         <ul class="homepage__hero__principle__wrapper">
           <li class="homepage__hero__principle__item">Awareness over all</li>
@@ -199,7 +201,7 @@
         <hr />
       </div>
 
-      <div class="homepage__hero">
+      <div class="homepage__hero homepage__hero--secondary">
         <h1 class="homepage__hero__title">If you are critical of yourself and others.</h1>
         <ul class="homepage__hero__principle__wrapper">
           <li class="homepage__hero__principle__item">Uncondition over judgement</li>

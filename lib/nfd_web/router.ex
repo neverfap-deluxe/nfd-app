@@ -54,7 +54,7 @@ defmodule NfdWeb.Router do
 
     get "/dashboard", DashboardController, :dashboard
     get "/profile", DashboardController, :profile
-    get "confirm_email_begin", RegistrationController, :confirm_email_begin
+    # get "/confirm_email_begin", RegistrationController, :confirm_email_begin
 
     delete "/logout", SessionController, :delete, as: :logout
   end

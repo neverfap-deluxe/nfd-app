@@ -11,7 +11,6 @@ defmodule Nfd.Users.User do
       on_delete: :delete_all
 
     pow_user_fields()
-
     # has_many :courses, Nfdraw @item["content"].Course
 
     timestamps()

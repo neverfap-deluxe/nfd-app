@@ -37,7 +37,6 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
-config :ecto, json_library: Jason
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
@@ -58,6 +57,13 @@ config :nfd, :pow,
   mailer_backend: NfdWeb.PowMailer,
   web_mailer_module: NfdWeb
 
+  # Mailer setup
+  config :nfd, Nfd.SwooshMailer,
+    adapter: Swoosh.Adapters.AmazonSES,
+    region: "us-east-1",
+    access_key: System.get_env("AWS_ACCESS_KEY"),
+    secret: System.get_env("AWS_SECRET_KEY")
+  
 config :nfd, :pow_assent,
   providers:
        [
@@ -78,13 +84,6 @@ config :nfd, :pow_assent,
         ]
       ]
 
-# Mailer setup
-config :nfd, Nfd.SwooshMailer,
-  adapter: Swoosh.Adapters.AmazonSES,
-  region: "us-east-1",
-  access_key: System.get_env("AWS_ACCESS_KEY"),
-  secret: System.get_env("AWS_SECRET_KEY")
-
 
 # Cron setup
 config :nfd, Nfd.Scheduler,
@@ -98,5 +97,5 @@ config :nfd, Nfd.Scheduler,
     # {"0 18-6/2 * * *", fn -> :mnesia.backup('/var/backup/mnesia') end},
     # Runs every midnight:
     # {"@daily",         {Backup, :backup, []%>
-    {"@daily", {Sitemaps, :generate, []}}, # "0 12 * * *
+    # {"@daily", {Sitemaps, :generate, []}}, # "0 12 * * *
   ]

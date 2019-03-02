@@ -73,3 +73,4 @@ config :nfd, Nfd.Repo,
   database: "nfd_dev",
   hostname: "localhost",
   pool_size: 10
+

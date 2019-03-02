@@ -1,8 +1,11 @@
 defmodule NfdWeb.PageAPI do
   use Tesla
 
-  # plug Tesla.Middleware.BaseUrl, "https://netlify.neverfapdeluxe.com"
-  plug Tesla.Middleware.BaseUrl, "http://localhost:1313"
+  if Mix.env == :dev do 
+    plug Tesla.Middleware.BaseUrl, "http://localhost:1313"
+  else 
+    plug Tesla.Middleware.BaseUrl, "https://netlify.neverfapdeluxe.com"
+  end
   plug Tesla.Middleware.JSON
 
   # Single Page Data
@@ -12,7 +15,7 @@ defmodule NfdWeb.PageAPI do
   end
 
   def articles() do
-    get("/articles/articles_page/index.json")
+    get("/articles/index.json")
   end
 
   def practice(practice_name) do
@@ -20,7 +23,7 @@ defmodule NfdWeb.PageAPI do
   end
 
   def practices() do
-    get("/practices/practices_page/index.json")
+    get("/practices/index.json")
   end
 
   def course(course_name) do
@@ -28,7 +31,7 @@ defmodule NfdWeb.PageAPI do
   end
 
   def courses() do
-    get("/courses/courses_page/index.json")
+    get("/courses/index.json")
   end
 
   def podcast(podcast_name) do
@@ -36,7 +39,7 @@ defmodule NfdWeb.PageAPI do
   end
 
   def podcasts() do
-    get("/podcasts/podcasts_page/index.json")
+    get("/podcasts/index.json")
   end
 
 
@@ -69,21 +72,4 @@ defmodule NfdWeb.PageAPI do
   def account() do
     get("/account/index.json")
   end
-
-
-
-  # list content
-
-  def articles_content() do
-    get("/articles/index.json")
-  end
-
-  def practices_content() do
-    get("/practices/index.json")
-  end
-
-  def courses_content() do
-    get("/courses/index.json")
-  end
-
 end

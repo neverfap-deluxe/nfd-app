@@ -40,7 +40,9 @@ npm-debug.log
 # secrets files as long as you replace their contents by environment
 # variables.
 /config/*.secret.exs
-
+/secrets/*
 
 .env
 config/docker.env
+docker-compose.yml
+deploy_key

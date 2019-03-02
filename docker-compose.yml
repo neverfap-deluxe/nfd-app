@@ -1,62 +1,29 @@
-networks:
-  webnet:
-    driver: overlay
-    attachable: true # Needed in order to run custom commands in the container
-
+version: '3.7'
 services:
-  web:
-    image: "dottjt/nfd:latest"
+  nfd-app:
+    image: 'dottjt/nfd-app'
+    container_name: 'nfd-app'
+    env_file:
+      - .env
+    ports:
+      - 4000:4000
+    build:
+      context: .
     depends_on:
-      - db
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: on-failure
-    ports:
-      - "80:4000"
+      - nfd-db
+
+  nfd-db:
+    image: postgres:11.2-alpine
+    container_name: nfd-db
     env_file:
-      - config/docker.env
-    networks:
-      - webnet
-      
-  db:
-    image: postgres:10-alpine
-    deploy:
-      replicas: 1
-      placement:
-        constraints: [node.role == manager]
-      restart_policy:
-        condition: on-failure
-    volumes:
-      - "./volumes/postgres:/var/lib/postgresql/data"
+      - .env
     ports:
-      - "5432:5432"
-    env_file:
-      - config/docker.env
+      - 5432:5432
     networks:
-      - webnet
+      - nginx-network
 
+networks:
+  nginx-network:
+    driver: bridge
+    # external: true
 
-
-
-# purely for testing on local.
-# version: '3.5'
-
-# services:
-#   web:
-#     image: "myapp:latest"
-#     ports:
-#       - "80:4000" # In our .env file above, we chose port 4000
-#     env_file:
-#       - config/docker.env
-#     depends_on:
-#       - db
-
-#   db:
-#     image: postgres:10-alpine
-#     volumes:
-#       - "./volumes/postgres:/var/lib/postgresql/data"
-#     ports:
-#       - "5432:5432"
-#     env_file:
-#       - config/docker.env

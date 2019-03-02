@@ -20,7 +20,7 @@ defmodule Nfd.MixProject do
   def application do
     [
       mod: {Nfd.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :confex] #:edeliver
     ]
   end
 
@@ -50,6 +50,7 @@ defmodule Nfd.MixProject do
       {:pow, "~> 1.0.1"},
       {:pow_assent, "~> 0.1.0-rc.2"},
       {:swoosh, "~> 0.21"},
+      {:phoenix_swoosh, "~> 0.2"},
       {:gen_smtp, "~> 0.12"},
       {:certifi, "~> 2.4", override: true},
       {:ssl_verify_fun, "~> 1.1"},
@@ -60,9 +61,10 @@ defmodule Nfd.MixProject do
       {:quantum, "~> 2.3"},
       {:timex, "~> 3.0"},
 
-      {:distillery, "~> 2.0"},
-      {:sitemap, "~> 1.1"}
-   
+      # {:distillery, "~> 2.0"},
+      # {:edeliver, ">= 1.6.0"},
+      {:sitemap, "~> 1.1"},
+      {:confex, "~> 3.4.0"}
     ]
   end
 
