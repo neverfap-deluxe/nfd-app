@@ -22,7 +22,8 @@ before_script:
 # The rest of the ENV are defined in the travis console, for the travis build
 script:
   - ls -a
-  - docker-compose build --build-arg AWS_ACCESS_KEY="$AWS_ACCESS_KEY" --build-arg AWS_SECRET_KEY="$AWS_SECRET_KEY" --build-arg JSON_API="$JSON_API" --build-arg HOST="$HOST" --build-arg POSTGRES_USER="$POSTGRES_USER" --build-arg POSTGRES_PASSWORD="$POSTGRES_PASSWORD" --build-arg POSTGRES_DB="$POSTGRES_DB" --build-arg POSTGRES_HOST="$POSTGRES_HOST" --build-arg SECRET_KEY_BASE="$SECRET_KEY_BASE"
+  - echo "$AWS_ACCESS_KEY"
+  - docker-compose build --build-arg AWS_ACCESS_KEY="$AWS_ACCESS_KEY" --build-arg AWS_SECRET_KEY="$AWS_SECRET_KEY" --build-arg JSON_API="$JSON_API" --build-arg HOST="$HOST" --build-arg POSTGRES_USER="$POSTGRES_USER" --build-arg POSTGRES_PASSWORD="$POSTGRES_PASSWORD" --build-arg POSTGRES_DB="$POSTGRES_DB" --build-arg POSTGRES_HOST="$POSTGRES_HOST" --build-arg SECRET_KEY_BASE="$SECRET_KEY_BASE" --no-cache .
   - docker-compose up -d
 
 after_script:
