@@ -10,7 +10,7 @@ rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/nginx/nginx-prod.conf root@198
 
 # .env file
 echo 'echo rsync nginx/nginx.conf'
-rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/nginx/.env root@198.199.67.180:/docker/letsencrypt-docker-nginx/src/production
+rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/nginx/env-dot root@198.199.67.180:/docker/letsencrypt-docker-nginx/src/production/.env
 
 ssh root@198.199.67.180 <<EOF
   echo "docker pull dottjt/nfd-app"
