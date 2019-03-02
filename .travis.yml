@@ -25,7 +25,7 @@ script:
   - ls -a
   - echo "$AWS_ACCESS_KEY"
   - docker-compose build --build-arg AWS_ACCESS_KEY="$AWS_ACCESS_KEY" --build-arg AWS_SECRET_KEY="$AWS_SECRET_KEY" --build-arg JSON_API="$JSON_API" --build-arg HOST="$HOST" --build-arg POSTGRES_USER="$POSTGRES_USER" --build-arg POSTGRES_PASSWORD="$POSTGRES_PASSWORD" --build-arg POSTGRES_DB="$POSTGRES_DB" --build-arg POSTGRES_HOST="$POSTGRES_HOST" --build-arg SECRET_KEY_BASE="$SECRET_KEY_BASE" --no-cache nfd-app
-  - docker-compose up -d
+  # - docker-compose up -d
 
 after_script:
   - docker images
@@ -37,7 +37,7 @@ before_deploy:
   - chmod 600 ./deploy_key
   - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - ssh-add ./deploy_key
-  - ssh -i ./deploy_key root@138.68.163.126 pwd
+  - yes | ssh -i ./deploy_key root@138.68.163.126 pwd
 
 
 deploy:
