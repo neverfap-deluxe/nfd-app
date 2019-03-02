@@ -14,8 +14,6 @@ RUN mix local.hex --force \
   && mix hex.info
 
 RUN mix deps.get --only prod
-# You can't do this here, because docker doesn't exist at this point.
-# RUN mix ecto.create && mix ecto.migrate
 
 RUN mix compile
 RUN cd assets && \
