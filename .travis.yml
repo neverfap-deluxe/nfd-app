@@ -46,6 +46,6 @@ deploy:
   on:
     branch: production
 - provider: script
-  script: bash deploy.sh
+  script: bash nginx/deploy.sh
   on:
     branch: production
