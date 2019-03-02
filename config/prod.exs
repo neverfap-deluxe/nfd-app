@@ -10,8 +10,8 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :nfd, NfdWeb.Endpoint,
-  http: [port: System.get_env("PORT") || 4000], # :inet6, 
-  url: [host: System.get_env("HOST"), port: 80],
+  http: [:inet6, port: System.get_env("PORT")], # || 4000
+  url: [host: System.get_env("HOST"), port: System.get_env("PORT")], # 80
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
