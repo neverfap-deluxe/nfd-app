@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo $TRAVIS_BUILD_DIR
+echo $TRAVIS_BUILD_DIR/nginx/
+
 # nginx docker-compose.yml file
 echo 'echo rsync nginx/docker-compose.yml'
 rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/nginx/docker-compose.yml root@198.199.67.180:/docker/letsencrypt-docker-nginx/src/production
