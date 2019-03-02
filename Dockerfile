@@ -7,7 +7,7 @@ WORKDIR /app
 COPY . .
 
 RUN apk update && \
-    apk add -u musl musl-dev musl-utils nodejs-npm build-base
+    apk add -u musl musl-dev musl-utils nodejs-npm build-base python2
 
 RUN mix local.hex --force \
   && mix local.rebar --force \
@@ -26,4 +26,6 @@ RUN cd assets && \
     mix phx.digest
 
 EXPOSE 4000
-CMD ["./run.sh"]
+# CMD ["./run.sh"]
+# CMD ["mix", "phx.server"]
+CMD ["mix", "do", "ecto.create,", "ecto.migrate,", "phx.server"]

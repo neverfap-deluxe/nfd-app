@@ -28,6 +28,6 @@ defmodule NfdWeb.SessionController do
   def delete(conn, _params) do
     {:ok, conn} = Pow.Plug.clear_authenticated_user(conn)
 
-    redirect(conn, to: Routes.registration_path(conn, :account))
+    redirect(conn, to: Routes.pow_registration_path(conn, :account))
   end
 end

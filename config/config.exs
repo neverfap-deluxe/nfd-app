@@ -25,7 +25,7 @@ config :nfd,
 # Configures the endpoint
 config :nfd, NfdWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "gJBJhimWS0kQ/YU4YqYQmMkP3hl/z+euhjl5jH6H01IKBvfXXe9x2xPzDLx+T0Rm",
+  secret_key_base: "w5eMCe3BbcBsDL/9CdnL2bVs243jn2WnlpD92UO2e2sF04f9wcsWUb1ZeOWARy2J",
   render_errors: [view: NfdWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Nfd.PubSub, adapter: Phoenix.PubSub.PG2]
 

@@ -11,6 +11,8 @@ services:
       context: .
     depends_on:
       - nfd-db
+    networks:
+      - nginx-network
 
   nfd-db:
     image: postgres:11.2-alpine
@@ -25,5 +27,4 @@ services:
 networks:
   nginx-network:
     driver: bridge
-    # external: true
 

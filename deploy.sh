@@ -6,7 +6,11 @@ rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/nginx/docker-compose.yml root@
 
 # nginx.conf file
 echo 'echo rsync nginx/nginx.conf'
-rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/nginx/nginx.conf root@198.199.67.180:/docker/letsencrypt-docker-nginx/src/production
+rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/nginx/nginx-prod.conf root@198.199.67.180:/docker/letsencrypt-docker-nginx/src/production
+
+# .env file
+echo 'echo rsync nginx/nginx.conf'
+rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/nginx/.env root@198.199.67.180:/docker/letsencrypt-docker-nginx/src/production
 
 ssh root@198.199.67.180 <<EOF
   echo "docker pull dottjt/nfd-app"
@@ -15,6 +19,9 @@ ssh root@198.199.67.180 <<EOF
   echo "echo cd /docker/letsencrypt-docker-nginx/src/production/" 
   cd /docker/letsencrypt-docker-nginx/src/production/ 
   
+  echo "source .env"
+  source .env
+
   echo "echo docker-compose down"
   docker-compose down 
   

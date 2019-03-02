@@ -20,7 +20,7 @@ defmodule Nfd.MixProject do
   def application do
     [
       mod: {Nfd.Application, []},
-      extra_applications: [:logger, :runtime_tools, :confex] #:edeliver
+      extra_applications: [:logger, :runtime_tools] #:edeliver
     ]
   end
 
@@ -42,7 +42,6 @@ defmodule Nfd.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:tesla, "~> 1.2.1"},
-      # {:hackney, "~> 1.14.0"}, specified for tesla, but I think it already gets it
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
 
@@ -60,11 +59,7 @@ defmodule Nfd.MixProject do
 
       {:quantum, "~> 2.3"},
       {:timex, "~> 3.0"},
-
-      # {:distillery, "~> 2.0"},
-      # {:edeliver, ">= 1.6.0"},
       {:sitemap, "~> 1.1"},
-      {:confex, "~> 3.4.0"}
     ]
   end
 

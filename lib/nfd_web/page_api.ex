@@ -1,11 +1,7 @@
 defmodule NfdWeb.PageAPI do
   use Tesla
 
-  if Mix.env == :dev do 
-    plug Tesla.Middleware.BaseUrl, "http://localhost:1313"
-  else 
-    plug Tesla.Middleware.BaseUrl, "https://netlify.neverfapdeluxe.com"
-  end
+  plug Tesla.Middleware.BaseUrl, System.get_env("JSON_API")
   plug Tesla.Middleware.JSON
 
   # Single Page Data

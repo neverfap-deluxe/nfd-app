@@ -9,6 +9,15 @@ make build
 // will build production image.
 
 
+
+
+$ docker exec --interactive --tty example_web_1 /bin/bash
+> mix phoenix.gen.model User users name:string
+> mix ecto.migrate
+
+CMD [“mix”, “do”, “ecto.create,”, “ecto.migrate,”, “phoenix.server”]
+
+
 # Setup 
 https://docs.travis-ci.com/user/encryption-keys/
 https://github.com/dwyl/learn-travis/blob/master/encrypted-ssh-keys-deployment.md
