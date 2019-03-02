@@ -10,8 +10,8 @@ services:
       - 4000:4000    
     build:
       context: .
-    depends_on:
-      - nfd-db
+    # depends_on:
+    #   - nfd-db
     networks:
       - nginx-network
 
