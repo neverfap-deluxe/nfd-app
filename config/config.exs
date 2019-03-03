@@ -55,14 +55,16 @@ config :nfd, :pow,
   extensions: [PowResetPassword, PowEmailConfirmation],
   controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
   mailer_backend: NfdWeb.PowMailer,
-  web_mailer_module: NfdWeb
+  routes_backend: NfdWeb.Pow.Routes,
+  web_mailer_module: NfdWeb,
+  web_module: NfdWeb
 
   # Mailer setup
   config :nfd, Nfd.SwooshMailer,
     adapter: Swoosh.Adapters.AmazonSES,
     region: "us-east-1",
-    access_key: System.get_env("AWS_ACCESS_KEY"),
-    secret: System.get_env("AWS_SECRET_KEY")
+    access_key: "AKIAILIFD5L5JEBNTFUQ",
+    secret: "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"
   
 config :nfd, :pow_assent,
   providers:

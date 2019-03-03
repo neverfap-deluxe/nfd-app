@@ -13,6 +13,15 @@
         </div>
       <% end %>
 
+      <%= if @changeset.data.unconfirmed_email do %>
+        <div>
+          <p>Click the link in the confirmation email to change your email to <%= @changeset.data.unconfirmed_email %></span>.</p>
+        </div>
+      <% end %>
+    
+      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
       <div class="form__input__container">
         <%= label f, :current_password %>
         <%= password_input f, :current_password %>

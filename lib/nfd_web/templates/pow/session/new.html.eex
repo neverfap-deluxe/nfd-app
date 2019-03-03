@@ -11,6 +11,9 @@
         </div>
       <% end %>
 
+      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
       <div class="form__input__container">
         <div class="error__label__combo">
           <%= label f, @changeset.data.__struct__.pow_user_id_field() %>

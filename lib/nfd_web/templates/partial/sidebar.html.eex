@@ -3,6 +3,22 @@
     
     <%= link to: Routes.dashboard_path(@conn, :dashboard), class: "hub__sidebar__button" do %>
       <i class="fas fa-home"></i>
+      <span>Dash</span>
+    <% end %>
+
+    <%= link to: Routes.dashboard_path(@conn, :audio_courses), class: "hub__sidebar__button" do %>
+      <i class="fas fa-file-audio"></i>
+      <span>Audio</span>
+    <% end %>
+
+    <%= link to: Routes.dashboard_path(@conn, :email_challenges), class: "hub__sidebar__button" do %>
+      <i class="fas fa-envelope-square"></i>
+      <span>Challenges</span>
+    <% end %>
+
+    <%= link to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "hub__sidebar__button" do %>
+      <i class="fas fa-sign-out-alt"></i>
+      <span>Logout</span>
     <% end %>
 
   </div>

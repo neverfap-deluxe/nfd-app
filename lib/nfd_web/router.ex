@@ -46,6 +46,8 @@ defmodule NfdWeb.Router do
     get "/disclaimer", PageController, :disclaimer
     get "/privacy", PageController, :privacy
 
+    get "/confirm_email_begin", PageController, :confirm_email_begin
+
     get "/neverfap-deluxe-account", PageController, :account
   end
 
@@ -53,8 +55,9 @@ defmodule NfdWeb.Router do
     pipe_through [:browser, :protected]
 
     get "/dashboard", DashboardController, :dashboard
-    get "/profile", DashboardController, :profile
-    # get "/confirm_email_begin", RegistrationController, :confirm_email_begin
+    get "/dashboard/profile", DashboardController, :profile
+    get "/dashboard/audio_courses", DashboardController, :audio_courses
+    get "/dashboard/email_challenges", DashboardController, :email_challenges
 
     delete "/logout", SessionController, :delete, as: :logout
   end

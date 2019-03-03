@@ -1,7 +1,7 @@
 defmodule NfdWeb.PageAPI do
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, System.get_env("JSON_API")
+  plug Tesla.Middleware.BaseUrl, "http://localhost:1313"
   plug Tesla.Middleware.JSON
 
   # Single Page Data

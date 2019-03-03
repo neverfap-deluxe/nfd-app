@@ -16,7 +16,7 @@
   <span><span class="homepage__process__link"><%= @item["date"] %></span></span>  
 </div>
 
-<%= partial "links-accountInfo.html", assigns %>
+<%= partial "links-patreon.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content">
@@ -33,4 +33,4 @@
   <%= partial "latest_posts.html", assigns %>  
 </div>
 
-<%= partial "links-accountInfo.html", assigns %>
+<%= partial "links-patreon.html", assigns %>

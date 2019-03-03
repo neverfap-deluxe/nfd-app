@@ -7,7 +7,7 @@
   }
 }
 
-.hub__dashboard, .hub__profile {
+.hub__dashboard, .hub__profile, .hub__audio__courses, .hub__email__challenges {
   padding: 4rem;
   width: 100%;
 
@@ -27,6 +27,7 @@
     
     p {
       font-size: 1.2rem;
+      line-height: 1.8rem;
     }  
 
     h3 {

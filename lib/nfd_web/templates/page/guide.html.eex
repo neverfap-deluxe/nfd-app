@@ -24,7 +24,7 @@
   </div>
 </div>
 
-<%= partial "links-accountInfo.html", assigns %>
+<%= partial "links-patreon.html", assigns %>
 
 <%=#  Five Principles of NeverFap  %>
 <div class="single__wrapper">   
@@ -126,6 +126,8 @@
     <%= partial "category_posts.html", %{ items: @articles, post_category: "uncondition-over-judgement" } %>
   </div>
 </div>
+
+<%= partial "login_top.html", assigns %>
 
 <script src='/js/guide.js'></script>
 

@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<%= partial "links-accountInfo.html", assigns %>
+<%= partial "links-patreon.html", assigns %>
 
 <div class="single__wrapper">
   <h3 class="popular__latest__options__title">Articles</h3>
@@ -33,6 +33,7 @@
     <%= partial "articles_category.html", %{ items: @articles, tag_type: "context" } %>
   </div>
 </div>
+<%= partial "login_top.html", assigns %>
   
 
 <script src='<%= Routes.static_path(@conn, "/js/articles.js") %>'></script>

@@ -9,7 +9,7 @@
   </div>
 </div>
 
-<%= partial "links-accountInfo.html", assigns %>
+<%= partial "links-patreon.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content" >

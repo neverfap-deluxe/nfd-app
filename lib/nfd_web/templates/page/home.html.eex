@@ -11,7 +11,7 @@
         <h2 class="homepage__hero__title__secondary">The Comprehensive NoFap Companion.</h2>
       </div>
 
-      <%= partial "links-accountInfo.html", assigns %>
+      <%= partial "links-patreon.html", assigns %>
 
       <div class="homepage__section">
         <p style="margin-top: 2.5rem;">My name is Julius and I'm a recovered porn addict. <i class="em em-blush"></i></p>
@@ -43,7 +43,7 @@
 
       <div class="homepage__section">
         <h3>
-          With the NeverFap Deluxe Guide, I explain exactly how and why these steps work.
+          With the NeverFap Deluxe Method, I explain exactly how and why these steps work.
         </h3>
         <p>
           Because once you intuitively understand how something works, you will
@@ -153,7 +153,7 @@
         <hr />
       </div>
 
-      <div class="homepage__hero homepage__hero--secondary">
+      <div class="homepage__hero homepage__hero--third">
         <h1 class="homepage__hero__title">If you believe you have limited control over your mind.</h1>
         <ul class="homepage__hero__principle__wrapper">
           <li class="homepage__hero__principle__item">Choice over mind</li>
@@ -165,7 +165,7 @@
         <hr />
       </div>
 
-      <div class="homepage__hero homepage__hero--secondary">
+      <div class="homepage__hero homepage__hero--third">
         <h1 class="homepage__hero__title">If you struggle to get further than two months.</h1>
         <ul class="homepage__hero__principle__wrapper">
           <li class="homepage__hero__principle__item">Balance over reward</li>
@@ -177,7 +177,7 @@
         <hr />
       </div>
 
-      <div class="homepage__hero homepage__hero--secondary">
+      <div class="homepage__hero homepage__hero--third">
         <h1 class="homepage__hero__title">If you consistently fight your emotions.</h1>
         <ul class="homepage__hero__principle__wrapper">
           <li class="homepage__hero__principle__item">Struggle over none</li>
@@ -189,7 +189,7 @@
         <hr />
       </div>
 
-      <div class="homepage__hero homepage__hero--secondary">
+      <div class="homepage__hero homepage__hero--third">
         <h1 class="homepage__hero__title">If you don't practice meditation.</h1>
         <ul class="homepage__hero__principle__wrapper">
           <li class="homepage__hero__principle__item">Awareness over all</li>
@@ -201,7 +201,7 @@
         <hr />
       </div>
 
-      <div class="homepage__hero homepage__hero--secondary">
+      <div class="homepage__hero homepage__hero--third">
         <h1 class="homepage__hero__title">If you are critical of yourself and others.</h1>
         <ul class="homepage__hero__principle__wrapper">
           <li class="homepage__hero__principle__item">Uncondition over judgement</li>
@@ -224,10 +224,12 @@
           <a class="homepage__guide" href="/guide">NeverFap Deluxe Guide</a>
         </div>
       </div>
-
     </div>
+
     <%= partial "footer.html", assigns %>
   </body>
+
+  
   <script src='<%= Routes.static_path(@conn, "/js/homepage.js") %>'></script>
 </html>
 <!--

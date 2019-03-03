@@ -6,8 +6,15 @@ defmodule NfdWeb.DashboardController do
   def dashboard(conn, _params) do
     conn
       |> put_flash(:info, "Welcome back!")
-      |> redirect(to: Routes.dashboard_path(conn, :dashboard))  
+      |> render("dashboard.html")
+  end
 
+  def audio_courses(conn, _params) do
+    render(conn, "audio_courses.html")
+  end
+
+  def email_challenges(conn, _params) do
+    render(conn, "email_challenges.html")
   end
 
   def profile(conn, _params) do
@@ -17,4 +24,5 @@ defmodule NfdWeb.DashboardController do
   def profile_delete_confirmation(conn, _params) do
     render(conn, "profile.html")
   end
+
 end

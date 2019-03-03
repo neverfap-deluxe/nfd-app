@@ -162,9 +162,7 @@ defmodule NfdWeb.PageController do
   end
 
   def confirm_email_begin(conn, _params) do
-
     current_user = Pow.Plug.current_user(conn)
-
     conn
       |> put_flash(:user_email, current_user.email)
       |> render("confirm_email_begin.html")

@@ -1,5 +1,6 @@
 .hub__sidebar {
-  width: 9rem;
+  width: 6rem;
+  min-width: 4rem;
   height: 100vh;
   
   background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
@@ -20,13 +21,25 @@
     flex-direction: column;
 
     .hub__sidebar__button {
+      .fas {
+        font-size: 1.3rem;
+      }
+
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
   
       color: white;
       width: 100%;
-      height: 6rem;
+      height: 4rem;
+
+      span {
+        display: inline-block;
+        margin-top: 0.2rem;
+        text-align: center;
+        font-size: 0.6rem;
+      }
     }
 
     .hub__sidebar__button:hover {
