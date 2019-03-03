@@ -20,7 +20,7 @@ defmodule Nfd.MixProject do
   def application do
     [
       mod: {Nfd.Application, []},
-      extra_applications: [:logger, :runtime_tools] #:edeliver
+      extra_applications: [:logger, :runtime_tools, :confex]
     ]
   end
 
@@ -60,6 +60,7 @@ defmodule Nfd.MixProject do
       {:quantum, "~> 2.3"},
       {:timex, "~> 3.0"},
       {:sitemap, "~> 1.1"},
+      {:confex, "~> 3.4.0"},
     ]
   end
 

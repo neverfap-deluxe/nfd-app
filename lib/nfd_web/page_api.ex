@@ -1,71 +1,85 @@
 defmodule NfdWeb.PageAPI do
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "http://localhost:1313"
-  plug Tesla.Middleware.JSON
+  def is_localhost(host) do
+    if host == "localhost" do 
+      "http://localhost:1313"
+    else 
+      "https://neverfapdeluxe.netlify.com"      
+    end
+  end
+
+  def api_client(api_endpoint) do
+    middleware = [
+      {Tesla.Middleware.BaseUrl, api_endpoint},
+      Tesla.Middleware.JSON,
+    ]
+
+    Tesla.client(middleware)
+  end
 
   # Single Page Data
 
-  def article(article_name) do
-    get("/articles/" <> article_name <> "/index.json")
+  def article(client, article_name) do
+    get(client, "/articles/" <> article_name <> "/index.json")
   end
 
-  def articles() do
-    get("/articles/index.json")
+  def articles(client) do
+    get(client, "/articles/index.json")
   end
 
-  def practice(practice_name) do
-    get("/practices/" <> practice_name <> "/index.json")
+  def practice(client, practice_name) do
+    get(client, "/practices/" <> practice_name <> "/index.json")
   end
 
-  def practices() do
-    get("/practices/index.json")
+  def practices(client) do
+    get(client, "/practices/index.json")
   end
 
-  def course(course_name) do
-    get("/courses/" <> course_name <> "/index.json")
+  def course(client, course_name) do
+    get(client, "/courses/" <> course_name <> "/index.json")
   end
 
-  def courses() do
-    get("/courses/index.json")
+  def courses(client) do
+    get(client, "/courses/index.json")
   end
 
-  def podcast(podcast_name) do
-    get("/podcasts/" <> podcast_name <> "/index.json")
+  def podcast(client, podcast_name) do
+    get(client, "/podcasts/" <> podcast_name <> "/index.json")
   end
 
-  def podcasts() do
-    get("/podcasts/index.json")
+  def podcasts(client) do
+    get(client, "/podcasts/index.json")
   end
 
 
   # Pages
 
-  def home() do
-    get("/index.json")
+  def home(client) do
+    get(client, "/index.json")
   end
 
-  def guide() do
-    get("/guide/index.json")
+  def guide(client) do
+    get(client, "/guide/index.json")
   end
 
-  def about() do
-    get("/about/index.json")
+  def about(client) do
+    get(client, "/about/index.json")
   end
 
-  def contact() do
-    get("/contact/index.json")
+  def contact(client) do
+    get(client, "/contact/index.json")
   end
 
-  def disclaimer() do
-    get("/disclaimer/index.json")
+  def disclaimer(client) do
+    get(client, "/disclaimer/index.json")
   end
 
-  def privacy() do
-    get("/privacy/index.json")
+  def privacy(client) do
+    get(client, "/privacy/index.json")
   end
 
-  def account() do
-    get("/account/index.json")
+  def account(client) do
+    get(client, "/account/index.json")
   end
 end

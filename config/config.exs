@@ -60,11 +60,11 @@ config :nfd, :pow,
   web_module: NfdWeb
 
   # Mailer setup
-  config :nfd, Nfd.SwooshMailer,
-    adapter: Swoosh.Adapters.AmazonSES,
-    region: "us-east-1",
-    access_key: "AKIAILIFD5L5JEBNTFUQ",
-    secret: "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"
+config :nfd, Nfd.SwooshMailer,
+  adapter: Swoosh.Adapters.AmazonSES,
+  region: "us-east-1",
+  access_key: {:system, "AWS_ACCESS_KEY"},
+  secret: {:system, "AWS_SECRET_KEY"} 
   
 config :nfd, :pow_assent,
   providers:
