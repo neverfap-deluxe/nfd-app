@@ -11,7 +11,7 @@ defmodule NfdWeb.PowMailer do
 
     %Swoosh.Email{}
     |> to({"namewayne", user.email})
-    |> from({"NeverFap Deluxe", "no-reply@neverfapdeluxe.com"})
+    |> from({"NeverFap Deluxe", "neverfapdeluxe@gmail.com"})
     |> subject(subject)
     |> html_body(html)
     |> text_body(text)
