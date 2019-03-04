@@ -57,16 +57,15 @@
       </div>      
 
       <div class="homepage__section">
-        <h1>The NeverFap Method.</h1>
+        <h1>The Method.</h1>
 
         <h2>It takes approximately 90 days to overcome porn addiction.</h2>
-        <h3>It's called the <u>NeverFap 90 Day Rule</u>, because those without healthy coping mechanisms rarely make it past 90 days.</h3>
+        <h3>It's called the <u>NeverFap Deluxe 90 Day Rule</u>, because those without healthy coping mechanisms rarely make it past 90 days.</h3>
         <p>In other words, if you can make it past 90 days without relapsing, it most likely means you've developed effective control over your mind.</p>
-        <p>It generally indicates that you have developed effective strategies to deal with life.</p>
-        <p>This is what we are aiming for.</p>
-        <h2>In most cases, getting past the 90 day mark usually signifies the end of porn addiction forever. <i class="em em-hushed"></i> </h2>
-        <p>On the other hand, if you struggle to consistently get past 90 days, it most likely means you're approaching your recovery incorrectly.</p>
-        <p>It's easy to get to 30 days, or even 60 days using unhealthy coping mechanisms such as obsession, escapism, self-criticism or emotional dissociation.</p>
+        <p>This control is what we aim to teach you.</p>
+        <h2>In most cases, getting past the 90 day mark will usually signify the end of your porn addiction. Forever. <i class="em em-hushed"></i> </h2>
+        <p>On the other hand, if you struggle to consistently get past 90 days, it most likely means you're approaching your recovery in a way that is ineffective.</p>
+        <p>It's easy to get to 30 days or even 60 days using unhealthy coping mechanisms such as obsession, escapism, self-criticism or emotional dissociation.</p>
         <p>However, they almost always result in relapse. <i class="em em-ambulance"></i></p>
       </div>
 
@@ -87,15 +86,17 @@
           <h2 class="cyan__banner__title">can happen within 90 days.</h2>
         </div>
       </div>
-
+      
       <div class="homepage__section">
-        <h1>Situations where unhealthy mechanisms crumble.</h1>
-        <h2>Which healthy coping mechanisms make trivial.</h2>
-        <h3>Like, absurdly easy.</h3>
-        <p>Personally speaking, it's not something I even have to think about anymore.</p>
-        <p>I know in precise detail, exactly what I need to do to maintain the state of my mental health, which is why you are here reading this today.</p>
+        <h1>...and it's these situations where <span style="color: rgba(255,46,182,1);">unhealthy coping mechanisms</span> crumble.</h1>
+        <h2>This is where 90% of relapse happens.</h2>
+        <h3>Because unhealthy coping mechanisms don't help you deal with your emotions. They only help to supress them until they become unmanagable. Which is when you relapse.</h3>
+        <h3>Relapse which could have been avoided, if only you had invested in healthy coping mechanisms which would have made dealing with those tough situations, trivial.</h3>
+        <h3>Like, absurdly trivial.</h3>
+        <p>I know in precise detail exactly what I need to do to keep my mind regulated and under control, and it's not even something I need to think about it anymore.</p>
+        <p>Now imagine how awesome that would be.</p>
+        <p>Because that's my life.</p>
       </div>
-
 
       <div class="magenta__banner">
         <div class="magenta__banner__title__container">
@@ -104,12 +105,39 @@
       </div>
 
       <div class="homepage__section">
-        <h1>It's about developing control over your mind.</h1>
-      
+        <h1>Instead it's all about <span style="color: cyan;">developing control</span> over your mind.</h1>
         <h2>...and that's really all healthy coping mechanisms are.</h2>
-        <h3>Skills and strategies which provide you with control over your mind, so that when your mind is under pressure, it doesn't collapse like a tower of cards.</h3>
-        <p>For example, choosing to remain calm and collected, rather than abruptly react and watch porn.</p>
-        <p>You can do it.</p>
+        <h3>Skills and abilities which provide you with control over your mind, so that when your mind is under pressure, it doesn't collapse like a tower of cards.</h3>
+        <p>For example, being able to remain calm and collected with a clear mind in difficult situations, rather than react in hesitation and give into our immediate desires.</p>
+
+        <div class="five__principles__guide" >
+          <h2 style="margin-top: 2.5rem;">Such as the ability to...</h2>
+          <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Value your mental health above all.</div></div>
+          <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Quiet and focus you mind.</div></div>
+          <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Love and accept youself unconditionally.</div></div>
+          <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Be confident about you recovery.</div></div>
+          <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Commit to long-term thinking.</div></div>
+        </div>
+
+        <div class="five__principles__guide--mobile">
+          <h3>Value your mental health above all.</h3>
+          <h3>Quiet and focus you mind.</h3>
+          <h3>Love and accept youself unconditionally.</h3>
+          <h3>Be confident about you recovery.</h3>
+          <h3>Commit to long-term thinking.</h3>
+        </div> 
+        
+        <h2>bleh.</h2>
+      </div>
+
+      <div class="account__info">
+        <p class="account__info__title">Making sense now?</p>
+      </div>      
+
+      <div class="homepage__section">
+        <h1>Skills which anyone can learn.</h1>
+        <h3>(I'm looking at you, baby boy)</h3>
+        <h3>Right now.</h3>
       </div>
 
       <div class="cyan__banner">
@@ -118,21 +146,23 @@
           <h2 class="cyan__banner__title">How.</h2>
           <h2 class="cyan__banner__title">Do you.</h2>
           <h2 class="cyan__banner__title">Develop these healthy coping mechanisms?</h2>   
-          <!-- <h2 class="cyan__banner__title">developthesehealthycopingmechanismskthxbye?</h2>      -->
         </div>
       </div>
 
       <div class="homepage__section">
-        <h1>Through practice and consistency.</h1>
-        <h2>Those two things are the only things which matter to your recovery.</h2>
+        <h1>By practicing those skills consistently.</h1>
+        <h2>Don't even think about cheap work arounds. <span style="color: rgba(255,46,182,1);">I will hurt you.</span></h2>
+        <h2>Practice and consistency are the only two things which matter to your recovery.</h2>
         <h3>Everything else is pure noise.</h3>
-        <p>There are no cheap hacks, like blocking porn from your computer or watching a bunch of motivation videos on YouTube to feel as if you're top-notch.</p>
-        <p>Although you're more than welcome to try, and come back when you're ready to actually believe me ;)</p>
+        <p>There are no cheap hacks, like putting a porn filter on your computer as if that's actually going to physically stop you from pursuing your addiction.</p>
+        <p>It doesn't work.</p>
+        <p>It never has. It never will.</p>
+        <p>Although you're more than welcome to try ;)</p>
       </div>
 
       <div class="black__banner">
         <div class="black__banner__title__container">
-          <h2 class="black__banner__title">Ultimately, there are three broad healthy <span class="black__banner__broad">coping mechanisms</span></br> NeverFap Deluxe focuses on.</h2>
+          <h2 class="black__banner__title" style="margin-bottom: 3rem;">Ultimately, there are three broad healthy coping mechanisms</br> <span class="black__banner__broad">NeverFap Deluxe</span> focuses on.</h2>
           <h1 class="black__banner__title black__banner__title--cat">Awareness</h1>
           <h1 class="black__banner__title black__banner__title--cat">Calmness</h1>
           <h1 class="black__banner__title black__banner__title--cat">Ambition</h1>
@@ -140,10 +170,14 @@
       </div>
 
       <div class="homepage__section">
-          7 day kickstarter plan. 
+        <h1>Most people are severely deficient in one or two of these areas.</h1>
+        
       </div>
 
       <div class="homepage__section">
+
+          7 day kickstarter plan. 
+
         <h1>You want to stop being a porn addict?</h1>
         <h2 style="margin-bottom: 2rem;">It's really not that hard.</h2>
 
@@ -336,7 +370,6 @@
     <li>Learning to value and invest in myself.</li>
   </ul> 
 -->
-
 
 
       <!-- <div class="homepage__hero">

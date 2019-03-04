@@ -151,10 +151,16 @@ hr {
   top: 0;
 }
 
-.em-x, .em-cake, .em-bank, .em-ambulance {
+.em-x, .em-cake, .em-bank {
   position: relative;
   left: 0.2rem;
   top: 0;
+}
+
+.em-ambulance {
+  position: relative;
+  left: 0.2rem;
+
 }
 
 .em-rainbow {
@@ -162,6 +168,7 @@ hr {
 }
 
 .em-white_check_mark {
+  display: none!important;
   position: relative;
   left: 0.7rem;
   width: 30px;
@@ -177,6 +184,10 @@ hr {
   body {
     margin: 0.5rem!important;
     width: initial;
+  }
+
+  .em-white_check_mark {
+    display: inline-block!important;
   }
 
   .em-rainbow {

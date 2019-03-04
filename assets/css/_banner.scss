@@ -1,9 +1,8 @@
 .cyan__banner {
   // margin-top: 1.5rem;
   // margin-bottom: 1.5rem;
-
-  border-top: 4px solid cyan;
-  border-bottom: 4px solid cyan;
+  border-top: 1px solid cyan;
+  border-bottom: 1px solid cyan;
 
   width: 100%;
   background: cyan;
@@ -15,8 +14,10 @@
   }
 
   .cyan__banner__title { // rgba(255,46,182,1)
-    border: 4px solid cyan;    
     font-size: 1.2rem;
+    border: 1px solid cyan;    
+    margin-top: 0;
+    margin-bottom: 0;
 
     line-height: 3.4rem;
     // margin-left: 1rem;
@@ -130,7 +131,15 @@
 
 @media screen and (min-width: 768px) {
   .cyan__banner {
+    border-top: 4px solid cyan;
+    border-bottom: 4px solid cyan;
+
     .cyan__banner__title {
+        
+      border: 4px solid cyan;    
+      margin-top: 0.9rem;
+      margin-bottom: 0.9rem;
+  
       width: 600px;
       margin: 0 auto;
       // padding-top: 2rem;
