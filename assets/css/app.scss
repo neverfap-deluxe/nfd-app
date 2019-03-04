@@ -5,11 +5,12 @@
 @import "_hub.scss";
 @import "_hub_sidebar.scss";
 
-// templates 
-@import "partial/_account_info.scss";
+// partial 
+@import "partial/_patreon.scss";
 @import "partial/_box_info.scss";
 @import "partial/_header.scss";
 @import "partial/_footer.scss";
+@import "partial/_kickstarter.scss";
 
 // pages
 @import "pages/_homepage.scss";

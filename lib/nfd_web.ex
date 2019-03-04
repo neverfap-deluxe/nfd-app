@@ -47,6 +47,25 @@ defmodule NfdWeb do
       def partial(template, assigns \\ []) do
         render(NfdWeb.PartialView, template, assigns)
       end
+
+      def page_title(section, title) do
+        pre_title = 
+          case section do 
+            "courses" -> 
+              "NeverFap Deluxe Courses | "
+          
+            "articles" -> 
+              "NeverFap Deluxe Articles | "
+          
+            "practices" -> 
+              "NeverFap Deluxe Practices | "
+            
+            _ ->
+              "NeverFap Deluxe | "
+          end 
+          
+          pre_title <> title
+      end
     end
   end
 
