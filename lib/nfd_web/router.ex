@@ -62,6 +62,11 @@ defmodule NfdWeb.Router do
     delete "/logout", SessionController, :delete, as: :logout
   end
 
+  scope "/dev" do
+    pipe_through [:browser]
+    forward "/mailbox", Plug.Swoosh.MailboxPreview, [base_path: "/dev/mailbox"]
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end

@@ -10,10 +10,11 @@
         <h1 class="homepage__hero__title">NeverFap <span class="deluxe__font">Deluxe</span></h1>
         <h2 class="homepage__hero__title__secondary">The Comprehensive NoFap Companion.</h2>
       </div>
-
+      
       <%= partial "links-patreon.html", assigns %>
 
       <div class="homepage__section">
+      
         <p style="margin-top: 2.5rem;">My name is Julius and I'm a recovered porn addict. <i class="em em-blush"></i></p>
         <ul class="homepage__recovered__porn__addict__list">
           <span><li class="homepage__recovered__porn__addict__item__lead">I no longer crave porn. <i class="em em-white_check_mark"></i></li></span>
@@ -43,7 +44,7 @@
 
       <div class="homepage__section">
         <h3>
-          With the NeverFap Deluxe Method, I explain exactly how and why these steps work.
+          With the <b>NeverFap Deluxe Method</b>, I explain exactly how and why these steps work.
         </h3>
         <p>
           Because once you intuitively understand how something works, you will
@@ -51,11 +52,101 @@
         </p>
       </div>
 
-      <%= partial "links-boxLink.html", %{ title: "Guide", text: "Check out our NeverFap Deluxe Guide!", link:  "/guide" } %>
+      <div class="account__info">
+        <p class="account__info__title">Let's learn.</p>
+      </div>      
 
       <div class="homepage__section">
-        <h1 style="margin-top: 2.5rem; margin-bottom: 3rem;">The porn addiction recovery process is simple.</h1>
-        
+        <h1>The NeverFap Method.</h1>
+
+        <h2>It takes approximately 90 days to overcome porn addiction.</h2>
+        <h3>It's called the <u>NeverFap 90 Day Rule</u>, because those without healthy coping mechanisms rarely make it past 90 days.</h3>
+        <p>In other words, if you can make it past 90 days without relapsing, it most likely means you've developed effective control over your mind.</p>
+        <p>It generally indicates that you have developed effective strategies to deal with life.</p>
+        <p>This is what we are aiming for.</p>
+        <h2>In most cases, getting past the 90 day mark usually signifies the end of porn addiction forever. <i class="em em-hushed"></i> </h2>
+        <p>On the other hand, if you struggle to consistently get past 90 days, it most likely means you're approaching your recovery incorrectly.</p>
+        <p>It's easy to get to 30 days, or even 60 days using unhealthy coping mechanisms such as obsession, escapism, self-criticism or emotional dissociation.</p>
+        <p>However, they almost always result in relapse. <i class="em em-ambulance"></i></p>
+      </div>
+
+      <div class="cyan__banner">
+        <div class="cyan__banner__title__container">
+          <h2 class="cyan__banner__title">Because a lot of</h2>
+          <h2 class="cyan__banner__title" style="color: rgba(255,46,182,1)">
+            <div class="slidingVertical">
+              <span>arguing with family members</span>
+              <span>struggling with your career</span>
+              <span>not caring about yourself</span>
+              <span>dealing with toxic people</span>
+              <span>feeling depressed and anxious</span>
+              <span>pushing yourself way too hard</span>
+              <span>life not going as planned</span>
+            </div>.
+          </h2>
+          <h2 class="cyan__banner__title">can happen within 90 days.</h2>
+        </div>
+      </div>
+
+      <div class="homepage__section">
+        <h1>Situations where unhealthy mechanisms crumble.</h1>
+        <h2>Which healthy coping mechanisms make trivial.</h2>
+        <h3>Like, absurdly easy.</h3>
+        <p>Personally speaking, it's not something I even have to think about anymore.</p>
+        <p>I know in precise detail, exactly what I need to do to maintain the state of my mental health, which is why you are here reading this today.</p>
+      </div>
+
+
+      <div class="magenta__banner">
+        <div class="magenta__banner__title__container">
+          <h2 class="magenta__banner__title">You see, overcoming porn addiction isn't really about <span class="text-flicker-out-glow">porn</span>.</h2>
+        </div>
+      </div>
+
+      <div class="homepage__section">
+        <h1>It's about developing control over your mind.</h1>
+      
+        <h2>...and that's really all healthy coping mechanisms are.</h2>
+        <h3>Skills and strategies which provide you with control over your mind, so that when your mind is under pressure, it doesn't collapse like a tower of cards.</h3>
+        <p>For example, choosing to remain calm and collected, rather than abruptly react and watch porn.</p>
+        <p>You can do it.</p>
+      </div>
+
+      <div class="cyan__banner">
+        <div class="cyan__banner__title__container">
+          <h2 class="cyan__banner__title">So.</h2>
+          <h2 class="cyan__banner__title">How.</h2>
+          <h2 class="cyan__banner__title">Do you.</h2>
+          <h2 class="cyan__banner__title">Develop these healthy coping mechanisms?</h2>   
+          <!-- <h2 class="cyan__banner__title">developthesehealthycopingmechanismskthxbye?</h2>      -->
+        </div>
+      </div>
+
+      <div class="homepage__section">
+        <h1>Through practice and consistency.</h1>
+        <h2>Those two things are the only things which matter to your recovery.</h2>
+        <h3>Everything else is pure noise.</h3>
+        <p>There are no cheap hacks, like blocking porn from your computer or watching a bunch of motivation videos on YouTube to feel as if you're top-notch.</p>
+        <p>Although you're more than welcome to try, and come back when you're ready to actually believe me ;)</p>
+      </div>
+
+      <div class="black__banner">
+        <div class="black__banner__title__container">
+          <h2 class="black__banner__title">Ultimately, there are three broad healthy <span class="black__banner__broad">coping mechanisms</span></br> NeverFap Deluxe focuses on.</h2>
+          <h1 class="black__banner__title black__banner__title--cat">Awareness</h1>
+          <h1 class="black__banner__title black__banner__title--cat">Calmness</h1>
+          <h1 class="black__banner__title black__banner__title--cat">Ambition</h1>
+        </div>
+      </div>
+
+      <div class="homepage__section">
+          7 day kickstarter plan. 
+      </div>
+
+      <div class="homepage__section">
+        <h1>You want to stop being a porn addict?</h1>
+        <h2 style="margin-bottom: 2rem;">It's really not that hard.</h2>
+
         <div class="homepage__process">
           <span><h3 class="homepage__process__title">
             Read the articles.
@@ -266,3 +357,16 @@
         </ul>
       </div>  -->
 
+<!--
+      <div class="five__principles__guide">
+        <h2>Such as...</h2>
+        <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Arguing with family members.</div></div>
+        <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Struggling with your career.</div></div>
+        <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Urges to stop caring about yourself.</div></div>
+        <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Dealing with toxic clients.</div></div>
+        <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Anxiety. Depression.</div></div>
+        <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Pushing ourselves way too hard.</div></div>
+        <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Life not going as planned.</div></div>
+      </div>
+
+    -->

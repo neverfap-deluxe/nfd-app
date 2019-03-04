@@ -59,33 +59,6 @@ config :nfd, :pow,
   web_mailer_module: NfdWeb,
   web_module: NfdWeb
 
-  # Mailer setup
-config :nfd, Nfd.SwooshMailer,
-  adapter: Swoosh.Adapters.AmazonSES,
-  region: "us-east-1",
-  access_key: {:system, "AWS_ACCESS_KEY"},
-  secret: {:system, "AWS_SECRET_KEY"} 
-  
-config :nfd, :pow_assent,
-  providers:
-       [
-        facebook: [
-          client_id: "REPLACE_WITH_CLIENT_ID",
-          client_secret: "REPLACE_WITH_CLIENT_SECRET",
-          strategy: PowAssent.Strategy.Facebook
-        ],
-        google: [
-          client_id: "REPLACE_WITH_CLIENT_ID",
-          client_secret: "REPLACE_WITH_CLIENT_SECRET",
-          strategy: PowAssent.Strategy.Google
-        ],
-        vk: [
-          consumer_key: "REPLACE_WITH_CONSUMER_KEY",
-          consumer_secret: "REPLACE_WITH_CONSUMER_SECRET",
-          strategy: PowAssent.Strategy.Twitter
-        ]
-      ]
-
 
 # Cron setup
 config :nfd, Nfd.Scheduler,
