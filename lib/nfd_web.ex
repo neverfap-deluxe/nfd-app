@@ -66,6 +66,17 @@ defmodule NfdWeb do
           
           pre_title <> title
       end
+
+      def iterate_collection(collection) do
+        if collection do 
+          collection |> 
+            Enum.map(fn(item) ->
+              "<%= item %>,"
+            end)
+        else 
+          ""
+        end
+      end
     end
   end
 
