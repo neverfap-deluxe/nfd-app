@@ -1,14 +1,23 @@
 <!-- Header -->
-<mj-section 
+<!-- <mj-section 
   background-size="cover"
   background-repeat="no-repeat"
-  background-color="linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%)">
-  <mj-column border="5px solid white">
+  background-color="linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%)"
+  > -->
+
+<mj-hero
+  mode="fluid-height"
+  height="170px"
+  background-width="600px"
+  background-height="170px"
+  background-color="linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%)"
+  padding="100px 0px">
     <mj-text 
       align="center"
       color="#fff"
       container-background-color="black"
       font-size="40px"
       font-family="Helvetica Neue">NeverFap Deluxe</mj-text>
-  </mj-column>
-</mj-section>
+</mj-hero>
+
+<!-- </mj-section> -->

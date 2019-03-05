@@ -3,7 +3,7 @@
     <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
       <head>
         <title>
-          NeverFap Deluxe | Email Confirmation
+          NeverFap Deluxe | Email Subscription Confirmation
         </title>
         <!--[if !mso]><!-- -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -133,7 +133,7 @@
       
     <!--[if !mso><!-->
     
-        <input type="checkbox" id="17de608db43e4e65" class="mj-menu-checkbox" style="display:none !important; max-height:0; visibility:hidden;" />
+        <input type="checkbox" id="cb49e5a955bfc97c" class="mj-menu-checkbox" style="display:none !important; max-height:0; visibility:hidden;" />
       
     <!--<![endif]-->
   
@@ -141,7 +141,7 @@
          class="mj-menu-trigger" style="display:none;max-height:0px;max-width:0px;font-size:0px;overflow:hidden;"
       >
         <label
-           for="17de608db43e4e65" class="mj-menu-label" style="display:block;cursor:pointer;mso-hide:all;-moz-user-select:none;user-select:none;color:#ffffff;font-size:30px;font-family:Ubuntu, Helvetica, Arial, sans-serif;text-transform:uppercase;text-decoration:none;line-height:30px;padding:0;" align="center"
+           for="cb49e5a955bfc97c" class="mj-menu-label" style="display:block;cursor:pointer;mso-hide:all;-moz-user-select:none;user-select:none;color:#ffffff;font-size:30px;font-family:Ubuntu, Helvetica, Arial, sans-serif;text-transform:uppercase;text-decoration:none;line-height:30px;padding:0;" align="center"
         >
           <span
              class="mj-menu-icon-open" style="mso-hide:all;"
@@ -431,7 +431,7 @@
       <div
          style="font-family:Helvetica Neue;font-size:25px;line-height:35px;text-align:left;color:#000000;"
       >
-        Email Verification
+        Email Subscription Confirmation
       </div>
     
               </td>
@@ -445,7 +445,7 @@
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:23px;text-align:left;color:#000000;"
       >
-        Thank you for creating an account with NeverFap Deluxe. It's one of the most positive things you can do for your porn addiction.
+        Thank you for subscribing for updates with NeverFap Deluxe.
       </div>
     
               </td>
@@ -459,7 +459,7 @@
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:23px;text-align:left;color:#000000;"
       >
-        Please use the following link to confirm your e-mail address.
+        Please use the following link to confirm your subscription.
       </div>
     
               </td>
@@ -494,7 +494,7 @@
             <a
                href="<%= @url %>" style="display:inline-block;background:#F45E43;color:#ffffff;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:120%;Margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:0px;" target="_blank"
             >
-              Verify Email
+              Confirm Subscription
             </a>
           </td>
         </tr>

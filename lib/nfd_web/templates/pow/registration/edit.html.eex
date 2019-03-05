@@ -5,46 +5,47 @@
 
   <h1 class="accounts__wrapper__title">Edit profile</h1>
     
-  <div class="form__wrapper">
-    <%= form_for @changeset, @action, [as: :user], fn f -> %>
-      <%= if @changeset.action do %>
-        <div class="alert alert-danger">
-          <p>Oops, something went wrong! Please check the errors below.</p>
-        </div>
-      <% end %>
+  <div class="accounts__body">
+    <div class="form__wrapper">
+      <%= form_for @changeset, @action, [as: :user], fn f -> %>
+        <%= if @changeset.action do %>
+          <div class="alert alert-danger">
+            <p>Oops, something went wrong! Please check the errors below.</p>
+          </div>
+        <% end %>
 
-      <%= if @changeset.data.unconfirmed_email do %>
-        <div>
-          <p>Click the link in the confirmation email to change your email to <%= @changeset.data.unconfirmed_email %></span>.</p>
-        </div>
-      <% end %>
-    
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-
-      <div class="form__input__container">
-        <%= label f, :current_password %>
-        <%= password_input f, :current_password %>
-        <%= error_tag f, :current_password %>
-
-        <%= label f, @changeset.data.__struct__.pow_user_id_field() %>
-        <%= text_input f, @changeset.data.__struct__.pow_user_id_field() %>
-        <%= error_tag f, @changeset.data.__struct__.pow_user_id_field() %>
-
-        <%= label f, :password %>
-        <%= password_input f, :password %>
-        <%= error_tag f, :password %>
-
-        <%= label f, :confirm_password %>
-        <%= password_input f, :confirm_password %>
-        <%= error_tag f, :confirm_password %>
-      </div>
+        <%= if @changeset.data.unconfirmed_email do %>
+          <div>
+            <p>Click the link in the confirmation email to change your email to <%= @changeset.data.unconfirmed_email %></span>.</p>
+          </div>
+        <% end %>
       
-      <div class="form__submission__container">
-        <%= submit "Update" %>
-      </div>
-    <% end %>
+        <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+        <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+        <div class="form__input__container">
+          <%= label f, :current_password %>
+          <%= password_input f, :current_password %>
+          <%= error_tag f, :current_password %>
+
+          <%= label f, @changeset.data.__struct__.pow_user_id_field() %>
+          <%= text_input f, @changeset.data.__struct__.pow_user_id_field() %>
+          <%= error_tag f, @changeset.data.__struct__.pow_user_id_field() %>
+
+          <%= label f, :password %>
+          <%= password_input f, :password %>
+          <%= error_tag f, :password %>
+
+          <%= label f, :confirm_password %>
+          <%= password_input f, :confirm_password %>
+          <%= error_tag f, :confirm_password %>
+        </div>
+        
+        <div class="form__submission__container">
+          <%= submit "Update" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
-
 <%= partial "footer.html", assigns %>

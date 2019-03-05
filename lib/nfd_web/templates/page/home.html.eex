@@ -63,8 +63,10 @@
         <h2>It takes approximately 90 days to overcome porn addiction.</h2> <!-- <i class="em em-tent"></i> -->
         <h3>It's called the <u>NeverFap Deluxe 90 Day Rule</u>, because those without healthy coping mechanisms rarely make it past 90 days.</h3>
         <p>In other words, if you can make it past 90 days without relapsing, it most likely means you've developed effective control over your mind.</p>
-        <p>This control is what we aim to teach you.</p>
-        <h2>In most cases, getting past the 90 day mark will usually signify the end of your porn addiction. Forever. <i class="em em-hushed"></i> </h2>
+
+        <span><p class="link articles__link" style="text-decoration: none;">This control is what we aim to teach you.</p></span>
+
+        <h2>In most cases, getting past the 90 day mark will usually signify the end of your porn addiction. Forever.</h2> <!--<i class="em em-hushed"></i>-->
         <p>On the other hand, if you struggle to consistently get past 90 days, it most likely means you're approaching your recovery in a way that is ineffective.</p>
         <p>It's easy to get to 30 days or even 60 days using unhealthy coping mechanisms such as obsession, escapism, self-criticism or emotional dissociation.</p>
         <p>However, they almost always result in relapse. <i class="em em-ambulance"></i></p>
@@ -93,7 +95,7 @@
         <h2>This is where 90% of relapse happens.</h2>
         <h3>Because unhealthy coping mechanisms don't help you deal with your emotions. They only help to supress them until they become unmanagable. Which is how you relapse.</h3>
         <h3>Relapse which could have been avoided, if only you had invested in healthy coping mechanisms which would have made dealing with those tough situations, trivial.</h3>
-        <h3>Like, absurdly trivial.</h3>
+        <h3>Like, absurdly trivial. <i class="em em-hatching_chick"></i></h3>
         <p>I know in precise detail exactly what I need to do to keep my mind regulated and under control, and it's not even something I need to think about it anymore.</p>
         <p>Now imagine how awesome that would be.</p>
         <p>Because that's my life.</p>
@@ -108,7 +110,7 @@
       <div class="homepage__section">
         <h1>It's about <u style="border-bottom: 4px solid cyan; padding-bottom: 0rem;">developing control</u> over your mind.</h1>
         <h2>...and that's really all healthy coping mechanisms are.</h2>
-        <h3>Skills and abilities which provide you with control over your mind, so that when your mind is under pressure, it doesn't collapse like a tower of cards.</h3>
+        <h3>Skills and abilities which provide you with control over your mind, so that when your mind is under pressure, it doesn't collapse like a tower of cards. <i class="em em-woman_in_lotus_position"></i></i></h3>
         <p>For example, being able to remain calm and collected with a clear mind in difficult situations, rather than react in hesitation and give into our immediate desires.</p>
 
         <div class="five__principles__guide" style="margin-bottom: 2.5rem;">
@@ -185,7 +187,7 @@
         
         <h2>Now, this is where it gets hard.</h2>
         <h3>Since I don't know you (although I'm sure you're lovely), it's difficult for me to take you down a particular path to help you develop control over your mind.</h3>
-        <h3>Regardless here are some basic guidelines.</h3>
+        <h3>Regardless here are some basic guidelines. <i class="em em-golfer"></i></h3>
       </div>
 
       <div class="homepage__section">
@@ -213,7 +215,7 @@
       </div>    
 
       <div class="homepage__section">
-        <p>On the other hand, if you haven't put pants on in weeks because you've been glued to your computer screen in a haze of dysphoria and pre-cum. <i class="em em-wilted_flower"></i></p>
+        <p>On the other hand, if you haven't put on pants in weeks because you've been glued to your computer screen in a haze of dysphoria and pre-cum. <i class="em em-wilted_flower"></i></p>
         <p>You'll probably want to work on all three. <i class="em em-unamused"></i></p>
         <h2>In general, <u style="border-bottom: 4px solid rgba(255,46,182,1); padding-bottom: 0rem;">almost everyone</u> needs to work on developing their awareness to help them cope more effectively.</h2>
         <h3>Which is why a large portion of NeverFap Deluxe is dedicated towards <u><b>awareness</b></u> articles, practices and courses.</h3>
@@ -256,10 +258,22 @@
       <div style="margin-bottom: 1rem; height: 4px; background: cyan;"></div>
       <div style="margin-bottom: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
       <div style="margin-bottom: 1rem; height: 4px; background: cyan;"></div>
+      <div style="margin-bottom: 1rem; height: 6px; background: rgba(255,46,182,1);"></div>
+      <div style="margin-bottom: 1rem; height: 12px; background: cyan;"></div>
+      <div style="margin-bottom: 1rem; height: 24px; background: rgba(255,46,182,1);"></div>
+      <div style="margin-bottom: 1rem; height: 48px; background: cyan;"></div>
+      <div style="margin-bottom: 1rem; height: 96px; background: rgba(255,46,182,1);"></div>
+      <div style="margin-bottom: 1rem; height: 192px; background: cyan;"></div>
 
       <div class="homepage__section">
-        <h3 style="margin-top: 2.5rem; margin-bottom: 3rem;">Furthermore, all of these articles and practices have been organised into...</h3>
-        <h2>The Five Fundmental Principles of NeverFap!</h2>
+        <h3 style="margin-top: 2.5rem;">Oh.</h3>
+        <h2>And one last thing.</h2>
+        <h1>The Five Fundmental Principles of NeverFap!</h1>
+      </div>
+
+      <div style="margin-bottom: 1rem; height: 20px; background: yellow;"></div>
+
+      <div class="homepage__section">
         <ul class="five__principles__list__main">
           <span><li class="five__principles__item__main">Choice over mind</li></span>
           <span><li class="five__principles__item__main">Balance over reward</li></span>
@@ -268,8 +282,26 @@
           <span><li class="five__principles__item__main__judgement">Uncondition over judgement</li></span>
         </ul>
       </div>
+
+      <div style="margin-bottom: 1rem; height: 20px; background: yellow;"></div>
+
+      <div class="homepage__section">
+
+        <h1>Here's the deal.</h1>
+        <h2>When I first created this website, I came up with these five principles to assist others.</h2>
+        <h3>In the past, I personally used them to help me better understand myself, as well as what I needed to focused on.</h3>
+        <p>These days I don't use them so much, however I'm sure you'll find them super useful. Which is why I've written a lot of content around them.</p>
+        <p>If you're still a little confused, the five principles can be a good place to start. <i class="em em---1"></i></p>
+        <div class="button__wrapper">
+          <a
+            class="button"
+            href="/articles/the-five-fundamental-principles-of-neverfap"
+            >Learn More About The Five Principles.</a
+          >
+        </div>
+      </div>
   
-      <%= partial "links-boxLink.html", %{ title: "Principles", text: "Learn more about The Five Fundamental Principles of NeverFap.", link:  "/articles/the-five-fundamental-principles-of-neverfap" } %>
+      <%#= partial "links-boxLink.html", %{ title: "Principles", text: "Learn more about The Five Fundamental Principles of NeverFap.", link:  "/articles/the-five-fundamental-principles-of-neverfap" } %>
     
       <div class="homepage__hero homepage__hero--secondary">
         <h1 class="homepage__hero__title">NeverFap Deluxe Articles.</h1>
@@ -277,7 +309,7 @@
       </div>
 
       <div class="homepage__section">
-        <h2>Here are a selection of our top articles to help get you started:</h2>
+        <h2>Here are a selection of our top articles to help get you started.</h2>
         <hr style="margin-top: 2.5rem; margin-bottom: 2rem;"/>
 
         <h3 class="popular__latest__options__title">Articles</h3>
@@ -293,13 +325,7 @@
         </div>
       </div>
   
-      <!-- <div class="button__wrapper">
-        <a
-          class="button"
-          href="/articles/the-five-fundamental-principles-of-neverfap"
-          >Learn More About The Five Principles.</a
-        >
-      </div> -->
+
 
 
       <!-- <div class="seven_day_kickstarter_cont">
@@ -395,127 +421,3 @@
   
   <script src='<%= Routes.static_path(@conn, "/js/homepage.js") %>'></script>
 </html>
-<!--
-  <ul>
-    <li>Learning to value my mental health above all. </li>
-    <li>Developing the ability to quiet and focus my mind. </li>
-    <li>Learning to love and accept myself and others unconditionally.</li>
-    <li>Being confident and coming out about my addiction.</li>
-    <li>Changing the way I think about sex and women.</li>
-    <li>Understanding the value of commitment and long-term thinking. </li>
-    <li>Identifying and understanding my various mental disorders. </li>
-    <li>Properly understanding what life being 'porn free' actually means.</li>
-    <li>Learning to value and invest in myself.</li>
-  </ul> 
--->
-
-
-      <!-- <div class="homepage__hero">
-        <h1 class="homepage__hero__title">Here's how it works.</h1>
-        <h2 class="homepage__hero__title__secondary">There is one simple rule to overcoming porn addiction.</h2>
-      </div>
-
-      <div class="homepage__section">
-        <p>Practice is the only thing that matters.</p>
-        <h3>This website comprises of many different fundamental practices to help you develop the core skills in order to address porn addiction.</h3>
-
-        <ul class="five__principles__guide">
-          <span class="five__principles__item__wrapper"><li class="five__principles__item">Learn to value your mental health above all.</li></span>
-          <span class="five__principles__item__wrapper"><li class="five__principles__item">Develop the ability to quiet and focus your mind.</li></span>
-          <span class="five__principles__item__wrapper"><li class="five__principles__item">Accept yourself and others unconditionally.</li></span>
-          <span class="five__principles__item__wrapper"><li class="five__principles__item">Change the way you think about sex and women.</li></span>
-          <span class="five__principles__item__wrapper"><li class="five__principles__item">Commit to long-term thinking.</li></span>
-        </ul>
-      </div>  -->
-
-<!--
-      <div class="five__principles__guide">
-        <h2>Such as...</h2>
-        <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Arguing with family members.</div></div>
-        <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Struggling with your career.</div></div>
-        <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Urges to stop caring about yourself.</div></div>
-        <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Dealing with toxic clients.</div></div>
-        <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Anxiety. Depression.</div></div>
-        <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Pushing ourselves way too hard.</div></div>
-        <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Life not going as planned.</div></div>
-      </div>
-
-    -->
-
-
-
-
-    <%#
-    <div class="homepage__hero homepage__hero--secondary">
-      <h1 class="homepage__hero__title">Articles, Practices & Courses.</h1>
-      <span><h2 class="homepage__hero__title__secondary">The digital syrup you've been waiting for.</h2></span>
-    </div>
-
-    <div class="homepage__section">
-      <!-- <h1 style="margin-bottom: 2rem;">Why.</h1>
-      <h2 style="margin-bottom: 3rem;">It's super simple.</h2>
-
-      <div class="homepage__process">
-        <span><h3 class="homepage__process__title">
-          Read the articles.
-        </h3></span>
-        <p class="homepage__process__text">Understand exactly why NeverFap works.</p>
-      </div>
-      <span><a class="homepage__process__link" href="/articles">Link to articles.</a></span>
-
-      <div class="homepage__process">
-        <span><h3 class="homepage__process__title">
-          Practice the exercises.
-        </h3></span>
-        <p class="homepage__process__text">Develop healthy coping mechanisms with daily practice.</p>
-      </div>
-      <span><a class="homepage__process__link" href="/articles">Link to exercises.</a></span>
-
-      <div class="homepage__process">
-        <span><h3 class="homepage__process__title">
-          Complete the courses.
-        </h3></span>
-        <%#  <p class="homepage__process__text">Practice these skills on a daily basis.</p>  %>
-        <p class="homepage__process__text">Learn new skills based on proven pathways.</p>
-      </div>
-      <span><a class="homepage__process__link" href="/articles">Link to courses.</a></span>
- -->
-
-    <div class="homepage__section">
-      <h3 style="margin-top: 1.5rem; margin-bottom: 2rem;">It's really not that hard. <i class="em em-cake"></i></h3>
-      <p style="margin-bottom: 2rem;">Check out the NeverFap Deluxe Guide for <u>further instruction</u>!</p>
-    </div>
-
-    <%= partial "links-boxLink.html", %{ title: "Guide", text: "You should definitely click on me. Pleeeease.", link: "/guide" } %>
-
-    <div class="homepage__section">
-      <h3 style="margin-top: 2.5rem; margin-bottom: 3rem;">Furthermore, all of these articles and practices have been organised into...</h3>
-      <h2>The Five Fundmental Principles of NeverFap!</h2>
-      <ul class="five__principles__list__main">
-        <span><li class="five__principles__item__main">Choice over mind</li></span>
-        <span><li class="five__principles__item__main">Balance over reward</li></span>
-        <span><li class="five__principles__item__main">Struggle over none</li></span>
-        <span><li class="five__principles__item__main">Awareness over all</li></span>
-        <span><li class="five__principles__item__main__judgement">Uncondition over judgement</li></span>
-      </ul>
-    </div>
-
-    <%= partial "links-boxLink.html", %{ title: "Principles", text: "Learn more about The Five Fundamental Principles of NeverFap.", link:  "/articles/the-five-fundamental-principles-of-neverfap" } %>
-
-    <div class="homepage__section">
-      <h3>Hooray!</h3>
-      <h2>
-        The Five Fundamental Principles of NeverFap make
-        addressing your porn addiction a breeze.
-      </h2>
-
-      <h3 style="margin-top: 2.5rem;">It's what this entire website has been built upon. <i class="em em-bank"></i></h3>
-      <div class="button__wrapper">
-        <a
-          class="button"
-          href="/articles/the-five-fundamental-principles-of-neverfap"
-          >Learn More About The Five Principles.</a
-        >
-      </div>
-    </div>
-%>

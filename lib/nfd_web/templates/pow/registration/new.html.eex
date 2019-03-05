@@ -55,7 +55,6 @@
       <% end %>
     </div>
   </div>
-  
 </div>
 
 <%= partial "footer.html", assigns %>
