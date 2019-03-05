@@ -15,6 +15,7 @@
 - Figure out meta-titles
 - Sort out image meta. 
 - Breadcrumbs
+- Put reddit link on homepage once subreddit is created.
 
 https://forestry.io/blog/build-a-json-api-with-hugo/
 

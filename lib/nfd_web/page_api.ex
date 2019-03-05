@@ -45,11 +45,19 @@ defmodule NfdWeb.PageAPI do
   end
 
   def podcast(client, podcast_name) do
-    get(client, "/podcasts/" <> podcast_name <> "/index.json")
+    get(client, "/podcast/" <> podcast_name <> "/index.json")
   end
 
   def podcasts(client) do
-    get(client, "/podcasts/index.json")
+    get(client, "/podcast/index.json")
+  end
+
+  def quote(client, quote_name) do
+    get(client, "/quotes/" <> quote_name <> "/index.json")
+  end
+
+  def quotes(client) do
+    get(client, "/quotes/index.json")
   end
 
 
@@ -79,7 +87,14 @@ defmodule NfdWeb.PageAPI do
     get(client, "/privacy/index.json")
   end
 
+  # Special
+
   def account(client) do
     get(client, "/account/index.json")
   end
+
+  def seven_day_kickstarter(client) do
+    get(client, "/seven_day_kickstarter/index.json")
+  end
+
 end

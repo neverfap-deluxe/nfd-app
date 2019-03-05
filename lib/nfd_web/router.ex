@@ -42,12 +42,13 @@ defmodule NfdWeb.Router do
     get "/courses/:slug", PageController, :course
     get "/podcast", PageController, :podcasts
     get "/podcast/:slug", PageController, :podcast
+    get "/quotes", PageController, :quotes
+    get "/quotes/:slug", PageController, :quote
 
     get "/disclaimer", PageController, :disclaimer
     get "/privacy", PageController, :privacy
 
-    get "/confirm_email_begin", PageController, :confirm_email_begin
-
+    get "/seven-day-neverfap-deluxe-kickstarter", PageController, :seven_day_kickstarter
     get "/neverfap-deluxe-account", PageController, :account
   end
 

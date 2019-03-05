@@ -44,9 +44,7 @@
       </div>
 
       <div class="homepage__section">
-        <h3>
-          With the <b>NeverFap Deluxe Method</b>, I explain exactly how and why these steps work.
-        </h3>
+        <h3>With the <b>NeverFap Deluxe Method</b>, I explain exactly how and why these steps work.</h3>
         <p>
           Because once you intuitively understand how something works, you will
           <u>commit to it forever.</u> <i class="em em-v"></i>
@@ -59,17 +57,16 @@
 
       <div class="homepage__section">
         <h1>How it works.</h1>
-
         <h2>It takes approximately 90 days to overcome porn addiction.</h2> <!-- <i class="em em-tent"></i> -->
         <h3>It's called the <u>NeverFap Deluxe 90 Day Rule</u>, because those without healthy coping mechanisms rarely make it past 90 days.</h3>
-        <p>In other words, if you can make it past 90 days without relapsing, it most likely means you've developed effective control over your mind.</p>
+        <p>In other words, if you can make it past 90 days without relapsing, then it most likely means you've developed effective control over your mind.</p>
 
-        <span><p class="link articles__link" style="text-decoration: none;">This control is what we aim to teach you.</p></span>
+        <span><p class="articles__link" style="text-decoration: none;">NeverFap Deluxe aims to teach you this control.</p></span>
 
-        <h2>In most cases, getting past the 90 day mark will usually signify the end of your porn addiction. Forever.</h2> <!--<i class="em em-hushed"></i>-->
-        <p>On the other hand, if you struggle to consistently get past 90 days, it most likely means you're approaching your recovery in a way that is ineffective.</p>
-        <p>It's easy to get to 30 days or even 60 days using unhealthy coping mechanisms such as obsession, escapism, self-criticism or emotional dissociation.</p>
-        <p>However, they almost always result in relapse. <i class="em em-ambulance"></i></p>
+        <h2>In most cases, getting past the 90 day mark will usually signify the end of your porn addiction forever. <i class="em em-hushed"></i></h2> <!--<i class="em em-hushed"></i>-->
+        <p>On the other hand, if you struggle to consistently get past 90 days, it most likely means you're approaching your recovery in the wrong way.</p>
+        <p>It's easy to get to 30 days or even 60 days using unhealthy coping mechanisms such as bipolar obsession, overworking, escapism, self-criticism or emotional dissociation.</p>
+        <p>However, they almost always result in relapse. <i class="em em-ambulance"></i></p> <!-- <i class="em em-ambulance"></i>-->
       </div>
 
       <div class="cyan__banner">
@@ -93,10 +90,11 @@
       <div class="homepage__section">
         <h1>...and it's these situations where <span style="color: rgba(255,46,182,1);">unhealthy coping mechanisms</span> crumble.</h1>
         <h2>This is where 90% of relapse happens.</h2>
-        <h3>Because unhealthy coping mechanisms don't help you deal with your emotions. They only help to supress them until they become unmanagable. Which is how you relapse.</h3>
-        <h3>Relapse which could have been avoided, if only you had invested in healthy coping mechanisms which would have made dealing with those tough situations, trivial.</h3>
+        <h3>Because unhealthy coping mechanisms don't help you deal with your emotions. They only help you successfully ignore them until they become unmanagable.</h3>
+        <h3>This is why we relapse, and cave into our urges. Because we didn't truly address our mental health in a productive way.</h3>
+        <h3>Relapse which could have been avoided, if only we'd invested in healthy coping mechanisms which would have made dealing with those tough situations, trivial.</h3>
         <h3>Like, absurdly trivial. <i class="em em-hatching_chick"></i></h3>
-        <p>I know in precise detail exactly what I need to do to keep my mind regulated and under control, and it's not even something I need to think about it anymore.</p>
+        <p>With my healthy coping mechanisms in place, I know in precise detail exactly what I need to do to keep my mind regulated and under control.</p>
         <p>Now imagine how awesome that would be.</p>
         <p>Because that's my life.</p>
       </div>
@@ -110,11 +108,11 @@
       <div class="homepage__section">
         <h1>It's about <u style="border-bottom: 4px solid cyan; padding-bottom: 0rem;">developing control</u> over your mind.</h1>
         <h2>...and that's really all healthy coping mechanisms are.</h2>
-        <h3>Skills and abilities which provide you with control over your mind, so that when your mind is under pressure, it doesn't collapse like a tower of cards. <i class="em em-woman_in_lotus_position"></i></i></h3>
-        <p>For example, being able to remain calm and collected with a clear mind in difficult situations, rather than react in hesitation and give into our immediate desires.</p>
+        <h3>Skills and abilities which provide you with control over your mind, so that when your mind is feeling lost and under pressure, it doesn't collapse like a tower of cards. <i class="em em-woman_in_lotus_position"></i></i></h3>
+        <p>For example, learning to remain calm and collected with a clear frame of mind, rather than react in hesitation.</p>
 
         <div class="five__principles__guide" style="margin-bottom: 2.5rem;">
-          <h2 style="margin-top: 2.5rem; margin-bottom: 2.5rem;">This also includes the ability to...</h2>
+          <h2 style="margin-top: 2.5rem; margin-bottom: 2.5rem;">Including the ability to...</h2>
           <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Value your mental health above all.</div></div>
           <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Quiet and focus you mind.</div></div>
           <div class="five__principles__guide__item__cont"><div class="five__principles__guide__item">Love and accept youself unconditionally.</div></div>
@@ -132,7 +130,7 @@
       </div>
 
       <div class="account__info">
-        <p class="account__info__title">Making sense now?</p>
+        <p class="account__info__title">The skill we talk about most on this website is <u>meditation</u>. You'll learn a lot more about it soon.</p>
       </div>      
 
       <div class="homepage__section">
@@ -168,8 +166,8 @@
         <h2>Practice and Consistency are the only two things which matter to your recovery.</h2>
         <h3>Everything else is pure noise. <i class="em em-notes"></i></h3>
         <p>There are no cheap hacks, like putting a porn filter on your computer as if that's actually going to physically stop you from pursuing your addiction.</p>
-        <p>It doesn't work, and it never has.</p>
-        <p>Although you're more than welcome to try ;)</p>
+        <p>It doesn't work.</p>
+        <p style="font-size: 0.8rem;">Although you're more than welcome to try ;)</p>
       </div>
 
       <div class="black__banner">
@@ -187,7 +185,10 @@
         
         <h2>Now, this is where it gets hard.</h2>
         <h3>Since I don't know you (although I'm sure you're lovely), it's difficult for me to take you down a particular path to help you develop control over your mind.</h3>
-        <h3>Regardless here are some basic guidelines. <i class="em em-golfer"></i></h3>
+        <h3>There's simply too much useful content on this website, and everyone is truly different in terms of their circumstances and life challenges.</h3>
+
+        <!-- TODO: Put Reddit link here -->
+        <h3>Regardless, here are some basic guidelines. <i class="em em-golfer"></i></h3>
       </div>
 
       <div class="homepage__section">
@@ -210,17 +211,20 @@
         <span><h2 class="black__banner__title--stand">Ambition.</h2></span>
       </div>
   
-      <div class="account__info">
+      <div class="account__info last__one">
         <p class="account__info__title">If you struggle with motivation and life purpose, you'll probably want to work on your <u><b>ambition</b></u>.</p>
       </div>    
 
       <div class="homepage__section">
-        <p>On the other hand, if you haven't put on pants in weeks because you've been glued to your computer screen in a haze of dysphoria and pre-cum. <i class="em em-wilted_flower"></i></p>
+        <p>On the other hand, if you haven't seen a pair of pants in weeks because you've been glued to your computer screen in a haze of dysphoria and pre-cum. <i class="em em-wilted_flower"></i></p>
         <p>You'll probably want to work on all three. <i class="em em-unamused"></i></p>
-        <h2>In general, <u style="border-bottom: 4px solid rgba(255,46,182,1); padding-bottom: 0rem;">almost everyone</u> needs to work on developing their awareness to help them cope more effectively.</h2>
-        <h3>Which is why a large portion of NeverFap Deluxe is dedicated towards <u><b>awareness</b></u> articles, practices and courses.</h3>
-        <p>In most cases, it's as simple as commiting to 10 minutes of meditation per day.</p>
+        <h2>In general, <u style="border-bottom: 4px solid rgba(255,46,182,1); padding-bottom: 0rem;">almost everyone</u> needs to work on their awareness to help them cope more effectively.</h2>
+        <h3>In most cases, it's as simple as commiting to 10 minutes of meditation per day.</h3>
         <p>It's how I personally got started.</p>
+        <p>Now you can too.</p>
+
+        <!-- Seven Day kickstarter banner. -->
+
         <h2>So without further ado...</h2>
       </div>
 
@@ -245,12 +249,19 @@
         <div class="homepage__section homepage__section--no-margin">
           <h1>Guide.</h1>
         </div>
-      
 
-      <%= partial "links-boxLink.html", %{ title: "Guide", text: "Check out the NeverFap Deluxe Guide to get started.", link: "/guide" } %>
-  
-      <div style="margin-bottom: 1rem; margin-top: 1rem height: 4px; background: cyan;"></div>
-      <div style="margin-bottom: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+      <div style="padding-top: 2.5rem; padding-bottom: 2.5rem;"class="account__info">
+        <p class="account__info__title">Check out the NeverFap Deluxe Guide to get started.</p>
+        <div class="account__buttons">
+          <a class="account__info__button account__info__button--link" href='/guide'>
+            <div class="account__info__button__text">
+              Guide
+            </div>
+          </a> 
+        </div>
+      </div>
+            
+      <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
       <div style="margin-bottom: 1rem; height: 4px; background: cyan;"></div>
       <div style="margin-bottom: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
       <div style="margin-bottom: 1rem; height: 4px; background: cyan;"></div>
@@ -267,8 +278,9 @@
 
       <div class="homepage__section">
         <h3 style="margin-top: 2.5rem;">Oh.</h3>
-        <h2>And one last thing.</h2>
-        <h1>The Five Fundmental Principles of NeverFap!</h1>
+        <h2>And one last thing. <i class="em em-aerial_tramway"></i></h2>
+        <h2>I created these <u style="border-bottom: 4px solid yellow; padding-bottom: 0rem;">fundamental principles</u> that you might find useful.</h2>
+        <h1 style="margin-top: 1rem;">The Five Fundmental Principles of NeverFap!</h1>
       </div>
 
       <div style="margin-bottom: 1rem; height: 20px; background: yellow;"></div>
@@ -283,15 +295,20 @@
         </ul>
       </div>
 
+      <%= partial "links-boxLink.html", %{ title: "Learn", text: "Learn more about The Five Fundamental Principles of NeverFap.", link:  "/articles/the-five-fundamental-principles-of-neverfap" } %>
       <div style="margin-bottom: 1rem; height: 20px; background: yellow;"></div>
 
       <div class="homepage__section">
 
         <h1>Here's the deal.</h1>
-        <h2>When I first created this website, I came up with these five principles to assist others.</h2>
-        <h3>In the past, I personally used them to help me better understand myself, as well as what I needed to focused on.</h3>
-        <p>These days I don't use them so much, however I'm sure you'll find them super useful. Which is why I've written a lot of content around them.</p>
-        <p>If you're still a little confused, the five principles can be a good place to start. <i class="em em---1"></i></p>
+        <h2>These five principles help explain the five most common things people generally struggle with.</h2>
+        <h3>In the past, I've used them to help me better understand myself, as well as uncover what I personally needed to focus on.</h3>
+        <p>For example, <u>Choice over mind</u> explains that you're always in control of your ability to react, and that how you react determines what your outcome in life will be.</p>
+        <p>An idea which people tend to ignore.</p>
+        <p>These principles serve as mantras to help empower you and remind you of what you need to do to achieve your goal of overcoming addiction.</p>
+        <p>And that ignoring any of these principles, will simply lead to the continuing of your porn addiction.</p>
+        <p>The principles teach you the right way. <i class="em em---1"></i></p></p>
+        <p>If you're still a little confused or overwhelmed by everything, then these five principles are an amazing place to start.</p>
         <div class="button__wrapper">
           <a
             class="button"
@@ -301,7 +318,6 @@
         </div>
       </div>
   
-      <%#= partial "links-boxLink.html", %{ title: "Principles", text: "Learn more about The Five Fundamental Principles of NeverFap.", link:  "/articles/the-five-fundamental-principles-of-neverfap" } %>
     
       <div class="homepage__hero homepage__hero--secondary">
         <h1 class="homepage__hero__title">NeverFap Deluxe Articles.</h1>
@@ -391,7 +407,7 @@
       </div>
 
       <div class="homepage__hero homepage__hero--third">
-        <h1 class="homepage__hero__title">If you are critical of yourself and others.</h1>
+        <h1 class="homepage__hero__title">If you're critical of yourself and others.</h1>
         <ul class="homepage__hero__principle__wrapper">
           <li class="homepage__hero__principle__item">Uncondition over judgement</li>
         </ul>
@@ -407,7 +423,7 @@
         <h1>I've spent most my life doing it wrong.</h1>
         <h2>So you don't have to waste your time like I did. <i class="em em-innocent"></i></h2>
         <hr />
-        <p>Click on the link below to get started with your NeverFap journey:</p>
+        <p>Click on the link below to get started with your NeverFap journey.</p>
 
         <div class="homepage__hero homepage__guide__wrapper">
           <a class="homepage__guide" href="/guide">NeverFap Deluxe Guide</a>
@@ -417,7 +433,7 @@
 
     <%= partial "footer.html", assigns %>
   </body>
-
+  <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/homepage.js") %>'></script>
+  <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   
-  <script src='<%= Routes.static_path(@conn, "/js/homepage.js") %>'></script>
 </html>
