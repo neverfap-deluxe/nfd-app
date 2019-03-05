@@ -14,7 +14,7 @@
       <%= partial "links-patreon.html", assigns %>
 
       <div class="homepage__section">
-        <h1>Who am I?</h1>
+        <h1>Who?</h1>
       
         <p style="margin-top: 2.5rem;">My name is Julius and I'm a recovered porn addict. <i class="em em-blush"></i></p>
         <ul class="homepage__recovered__porn__addict__list">
@@ -60,7 +60,7 @@
       <div class="homepage__section">
         <h1>How it works.</h1>
 
-        <h2>It takes approximately 90 days to overcome porn addiction.</h2>
+        <h2>It takes approximately 90 days to overcome porn addiction.</h2> <!-- <i class="em em-tent"></i> -->
         <h3>It's called the <u>NeverFap Deluxe 90 Day Rule</u>, because those without healthy coping mechanisms rarely make it past 90 days.</h3>
         <p>In other words, if you can make it past 90 days without relapsing, it most likely means you've developed effective control over your mind.</p>
         <p>This control is what we aim to teach you.</p>
@@ -106,7 +106,7 @@
       </div>
 
       <div class="homepage__section">
-        <h1>It's about <u style="border-bottom: 4px solid cyan; padding-bottom: 0.4rem;">developing control</u> over your mind.</h1>
+        <h1>It's about <u style="border-bottom: 4px solid cyan; padding-bottom: 0rem;">developing control</u> over your mind.</h1>
         <h2>...and that's really all healthy coping mechanisms are.</h2>
         <h3>Skills and abilities which provide you with control over your mind, so that when your mind is under pressure, it doesn't collapse like a tower of cards.</h3>
         <p>For example, being able to remain calm and collected with a clear mind in difficult situations, rather than react in hesitation and give into our immediate desires.</p>
@@ -134,7 +134,7 @@
       </div>      
 
       <div class="homepage__section">
-        <h1>Control which <u style="border-bottom: 4px solid cyan; padding-bottom: 0.4rem;">anyone can learn</u> with practice and consistency.</h1>
+        <h1>Control which <u style="border-bottom: 4px solid cyan; padding-bottom: 0rem;">anyone can learn</u> with practice and consistency.</h1>
         <h3>Right now. <i class="em em-male-technologist"></i></h3>
       </div>
 
@@ -160,6 +160,7 @@
       </div>
 
       <div class="homepage__section">
+        <h2>It's simple. </h2>
         <h1>Practice and Consistency. </i></h1> <!-- <i class="em em-man_climbing"> -->
         <h2>Don't even think about cheap work arounds. <span style="color: rgba(255,46,182,1);">I will hurt you.</span> <i class="em em-right_anger_bubble"></i></h2>
         <h2>Practice and Consistency are the only two things which matter to your recovery.</h2>
@@ -180,7 +181,7 @@
       </div>
 
       <div class="homepage__section">
-        <h1>Most people are <u style="border-bottom: 4px solid rgba(255,46,182,1); padding-bottom: 0.4rem;">severely deficient</u> in one or two of these areas.</h1>
+        <h1>Most people are <u style="border-bottom: 4px solid rgba(255,46,182,1); padding-bottom: 0rem;">severely deficient</u> in one or two of these areas.</h1>
         
         <h2>Now, this is where it gets hard.</h2>
         <h3>Since I don't know you (although I'm sure you're lovely), it's difficult for me to take you down a particular path to help you develop control over your mind.</h3>
@@ -214,7 +215,7 @@
       <div class="homepage__section">
         <p>On the other hand, if you haven't put pants on in weeks because you've been glued to your computer screen in a haze of dysphoria and pre-cum. <i class="em em-wilted_flower"></i></p>
         <p>You'll probably want to work on all three. <i class="em em-unamused"></i></p>
-        <h2>In general, <u style="border-bottom: 4px solid rgba(255,46,182,1); padding-bottom: 0.4rem;">almost everyone</u> needs to work on developing their awareness to help them cope more effectively.</h2>
+        <h2>In general, <u style="border-bottom: 4px solid rgba(255,46,182,1); padding-bottom: 0rem;">almost everyone</u> needs to work on developing their awareness to help them cope more effectively.</h2>
         <h3>Which is why a large portion of NeverFap Deluxe is dedicated towards <u><b>awareness</b></u> articles, practices and courses.</h3>
         <p>In most cases, it's as simple as commiting to 10 minutes of meditation per day.</p>
         <p>It's how I personally got started.</p>
