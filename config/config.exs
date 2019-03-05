@@ -13,11 +13,8 @@ config :nfd,
   ecto_repos: [Nfd.Repo],
   base_url: "https://neverfapdeluxe.com/",
   website_author: "Julius Reade",
-  website_name: "",
-  website_keywords: "",
-  website_description: "",
-  website_logo_png: "",
-  website_alt_image: "",
+  website_logo_png: "/images/logo.png",
+  website_alt_image: "/images/logo.png",
   language_code: "en-us",
   google_analytics: "UA-132863786-1"
 

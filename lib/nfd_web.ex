@@ -51,7 +51,7 @@ defmodule NfdWeb do
       def page_title(section, title) do
         pre_title = 
           case section do 
-            "courses" -> 
+            "courses" ->
               "NeverFap Deluxe Courses | "
           
             "articles" -> 
@@ -60,6 +60,12 @@ defmodule NfdWeb do
             "practices" -> 
               "NeverFap Deluxe Practices | "
             
+            "podcast" ->
+              "NeverFap Deluxe Podcast | "
+
+            "quotes" ->
+              "NeverFap Deluxe Quotes | "
+
             _ ->
               "NeverFap Deluxe | "
           end 
@@ -67,14 +73,11 @@ defmodule NfdWeb do
           pre_title <> title
       end
 
-      def iterate_collection(collection) do
-        if collection do 
-          collection |> 
-            Enum.map(fn(item) ->
-              "<%= item %>,"
-            end)
+      def iterate_json_collection(collection) do
+        if length(collection) != 1 do 
+          collection |> Enum.join(", ")
         else 
-          ""
+          "NeverFap Deluxe"
         end
       end
     end

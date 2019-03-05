@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
   <meta name="author" content="<%= Application.get_env(:nfd, :website_author) %>">
-  <meta name="keywords" content='<%= @conn.assigns.item["tags"] %>'>
+  <meta name="keywords" content='<%= iterate_json_collection @conn.assigns.item["categories"] %>'>
   <meta name="robots" content="noodp"/>
   <!-- Will need to check this -->
   <link rel="canonical" href='<%= @conn.assigns.item["permalink"] %>' />
@@ -27,10 +27,10 @@
     <meta name="twitter:description" content="<%= Application.get_env(:nfd, :website_description) %>">
     <meta name="twitter:image:alt" content="<%= Application.get_env(:nfd, :website_alt_image) %>">    
   <% end %>
-
+  
 <!-- will need to figure out2019 -->
-  <!-- <meta property="og:image" content="">
-  <meta name="twitter:image" content=""> -->
+  <meta property="og:image" content="<%= Application.get_env(:nfd, :website_logo_png) %>">
+  <meta name="twitter:image" content="<%= Application.get_env(:nfd, :website_logo_png) %>">
 
     
   <!-- facebook things -->
@@ -41,12 +41,12 @@
   <meta name="twitter:creator" content="<%= Application.get_env(:nfd, :website_twitter) %>">
   <meta name="twitter:card" content="summary_large_image">
   
-  <link rel="preconnect" href='<%= Application.get_env(:nfd, :website_domain) %>">
-  <link rel="preconnect" href='<%= Application.get_env(:nfd, :website_domain) %>about">
-  <link rel="preconnect" href='<%= Application.get_env(:nfd, :website_domain) %>gifts">
+  <link rel="preconnect" href="<%= Application.get_env(:nfd, :base_url) %>">
+  <link rel="preconnect" href="<%= Application.get_env(:nfd, :base_url) %>guide">
+  <link rel="preconnect" href="<%= Application.get_env(:nfd, :base_url) %>articles">
+  <link rel="preconnect" href="<%= Application.get_env(:nfd, :base_url) %>practices">
 
-  <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/app.css") %>"/>
-
+  <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/app.css") %>'/>
 
   <!-- Emoji CSS -->
   <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
@@ -69,6 +69,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
+
 
   <!-- SCSS -->
   <link rel="stylesheet" href="/css/normalize.css">
@@ -101,8 +102,8 @@
         "datePublished": "<%= @conn.assigns.item["date"] %>",
         "dateModified" : "<%= @conn.assigns.item["date"] %>",
         "url" : "<%= @conn.assigns.item["permalink"] %>",  
-        "keywords" : [ <%= if @conn.assigns.item["tags"] do %><%= Enum.map(@conn.assigns.item["tags"], fn(tag) -> %>"<%= tag %>",<% end ) %><% end %> ]
-        "genre": "<%= if @conn.assigns.item["categories"] do %><%= Enum.map(@conn.assigns.item["categories"], fn(category) -> %>"<%= category %>",<% end ) %><% end %>",
+        "keywords" : [ <%= iterate_json_collection @conn.assigns.item["tags"] %> ]
+        "genre": "<%= hd @conn.assigns.item["categories"] %>",
       }
     <% else %>
       {
