@@ -1,0 +1,111 @@
+<mjml>
+    <mj-head>
+      <mj-title>NeverFap Deluxe Seven Day Kickstarter | Day 0</mj-title>
+      <mj-preview>NeverFap Deluxe Seven Day Kickstarter Preview</mj-preview>
+      <mj-attributes>
+        <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-all>
+        <mj-text font-weight="400" font-size="16px" color="#000000" line-height="24px" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-text>
+      </mj-attributes>
+      <mj-style inline="inline">
+        .body-section { -webkit-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15); -moz-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15); box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15); }
+      </mj-style>
+      <mj-style inline="inline">
+        .text-link { color: #5e6ebf }
+      </mj-style>
+      <mj-style inline="inline">
+        .footer-link { color: #888888 }
+      </mj-style>
+    </mj-head>
+    
+    <mj-body background-color="#E7E7E7" width="600px">
+
+      <mj-section full-width="full-width" background-color="linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%)" padding-bottom="0">
+        <mj-column width="100%">
+          <mj-text color="#ffffff" font-weight="bold" align="center" text-transform="uppercase" font-size="16px" letter-spacing="1px" padding-top="30px">
+            NeverFap Deluxe
+            <br/>
+            <span style="color: #979797; font-weight: normal">-</span>
+          </mj-text>
+          <mj-text color="white" align="center" font-size="13px" padding-top="0" font-weight="bold" text-transform="uppercase" letter-spacing="1px" line-height="20px">
+            Day 1
+            <br/> The meditation
+          </mj-text>
+  
+          <mj-image src="https://f002.backblazeb2.com/file/neverfapdeluxeemail/email__header.png" width="600px" alt="" padding="0" href="https://google.com" />
+        </mj-column>
+      </mj-section>
+
+      <mj-wrapper padding-top="0" padding-bottom="0" css-class="body-section">
+        <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
+          <mj-column width="100%">
+            <mj-text color="#212b35" font-weight="bold" font-size="20px">
+              It's time to start meditating.
+            </mj-text>
+            
+            <mj-text color="#637381" font-size="20px">
+              <strong>What most people seem to struggle with is sticking to the process.</strong>
+            </mj-text>
+            
+            
+            
+            <!-- Divider -->
+            <mj-text color="#637381" font-size="16px"></mj-text>
+            <mj-divider border-color="#DFE3E8" border-width="1px" />
+            <mj-text color="#637381" font-size="16px"></mj-text>
+            <!-- Divider -->
+            
+  
+            <mj-text color="#212b35" font-weight="bold" font-size="20px">
+              Next steps.
+            </mj-text>
+            
+            <mj-text color="#637381" font-size="16px">
+              Tomorrow we'll go into some of the practices you can do to help you regain control over your mind.
+            </mj-text>
+  
+            <mj-text color="#637381" font-size="16px">
+              If you haven't yet been to the homepage, I highly recommend checking it out. It has a great introduction into porn addiction, how recovery works, as well as 
+            </mj-text>
+            
+            <mj-button background-color="white" color="black" border="4px solid cyan;" padding-bottom="35px" padding-top="35px" href="https://neverfapdeluxe.com/">NeverFap Deluxe Homepage</mj-button>
+
+            <mj-text color="#637381" font-size="16px" padding-bottom="30px">
+              Aside from that, I also recommend checking out some of the introductory articles on the website. 
+            </mj-text>
+                      
+            <mj-text color="#637381" font-size="16px" padding-top="20px" align="center">
+              <strong>Introduction To The NeverFap Deluxe Guide</strong>
+            </mj-text>
+            
+            <mj-button padding-top="0px" background-color="white" color="black" border="4px solid cyan;" href="https://neverfapdeluxe.com/articles/introduction-to-the-neverfap-deluxe-guide/">link</mj-button>
+            
+            <mj-text color="#637381" font-size="16px" padding-top="20px" align="center">
+              <strong>The Five Fundamental Principles Of NeverFap</strong>
+            </mj-text>
+
+            <mj-button padding-top="0px" background-color="white" color="black" border="4px solid cyan;" href="https://neverfapdeluxe.com/articles/the-five-fundamental-principles-of-neverfap/">link</mj-button>
+
+            <mj-text color="#637381" font-size="16px" padding-top="20px" align="center">
+              <strong>My Personal Porn Recovery Journey</strong>
+            </mj-text>
+
+            <mj-button padding-top="0px" background-color="white" color="black" border="4px solid cyan;" href="https://neverfapdeluxe.com/articles/my-personal-porn-recovery-journey/">link</mj-button>
+
+            <mj-text color="#637381" font-size="16px" padding-top="20px">
+              Thank you for reading and I'll see you here tomorrow.
+            </mj-text>
+  
+            <!-- Divider -->
+            <mj-text color="#637381" font-size="16px"></mj-text>
+            <mj-divider border-color="#DFE3E8" border-width="1px" />
+            <mj-text color="#637381" font-size="16px"></mj-text>
+            <!-- Divider -->
+
+            <mj-image src="https://f002.backblazeb2.com/file/neverfapdeluxeemail/email__header__assort.png" alt="" />
+
+      </mj-wrapper>
+  
+    <mj-include path="../email_partials/seven_day_bottom.mjml"/>
+
+    </mj-body>
+  </mjml>

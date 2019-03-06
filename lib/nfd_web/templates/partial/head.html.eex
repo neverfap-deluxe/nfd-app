@@ -4,43 +4,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
   <meta name="author" content="<%= Application.get_env(:nfd, :website_author) %>">
-  <meta name="keywords" content='<%= iterate_json_collection @conn.assigns.item["categories"] %>'>
   <meta name="robots" content="noodp"/>
-  <!-- Will need to check this -->
-  <link rel="canonical" href='<%= @conn.assigns.item["permalink"] %>' />
 
-  <!-- Page title -->
-  <% title = page_title @conn.assigns.item["section"], @conn.assigns.item["title"] %>
-  
-  <title><%= title %></title>
-  <meta property="og:title" content='<%= title %>'>
-  <meta name="twitter:title" content='<%= title %>'>    
-
-  <%= if @conn.assigns.item do %>
-    <meta name="description" content='<%= @conn.assigns.item["description"] %>'>
-    <meta property="og:description" content='<%= @conn.assigns.item["description"] %>'>
-    <meta name="twitter:description" content='<%= @conn.assigns.item["description"] %>'>
-    <meta name="twitter:image:alt" content='<%= title %>'>
-  <% else %>
-    <meta name="description" content="<%= Application.get_env(:nfd, :website_description) %>">
-    <meta property="og:description" content="<%= Application.get_env(:nfd, :website_description) %>">    
-    <meta name="twitter:description" content="<%= Application.get_env(:nfd, :website_description) %>">
-    <meta name="twitter:image:alt" content="<%= Application.get_env(:nfd, :website_alt_image) %>">    
-  <% end %>
-  
-<!-- will need to figure out2019 -->
-  <meta property="og:image" content="<%= Application.get_env(:nfd, :website_logo_png) %>">
-  <meta name="twitter:image" content="<%= Application.get_env(:nfd, :website_logo_png) %>">
-
+  <%= if Map.has_key?(@conn.assigns, :item) do %>
+    <% title = page_title @conn.assigns.item["section"], @conn.assigns.item["title"] %>
     
-  <!-- facebook things -->
-  <meta property="og:url" content="<%= Routes.url(@conn) <> @conn.request_path %>">
-  <meta property="og:site_name" content="<%= Application.get_env(:nfd, :website_description) %>">
-  
-  <meta name="twitter:site" content="<%= Application.get_env(:nfd, :website_twitter) %>">
-  <meta name="twitter:creator" content="<%= Application.get_env(:nfd, :website_twitter) %>">
-  <meta name="twitter:card" content="summary_large_image">
-  
+    <!-- Page title -->
+    <title><%= title %></title>
+    <meta property="og:title" content='<%= title %>'>
+    <meta name="twitter:title" content='<%= title %>'>    
+
+    <%= if @conn.assigns.item do %>
+      <meta name="description" content='<%= @conn.assigns.item["description"] %>'>
+      <meta property="og:description" content='<%= @conn.assigns.item["description"] %>'>
+      <meta name="twitter:description" content='<%= @conn.assigns.item["description"] %>'>
+      <meta name="twitter:image:alt" content='<%= title %>'>
+    <% else %>
+      <meta name="description" content="<%= Application.get_env(:nfd, :website_description) %>">
+      <meta property="og:description" content="<%= Application.get_env(:nfd, :website_description) %>">    
+      <meta name="twitter:description" content="<%= Application.get_env(:nfd, :website_description) %>">
+      <meta name="twitter:image:alt" content="<%= Application.get_env(:nfd, :website_alt_image) %>">    
+    <% end %>
+    
+    <meta name="keywords" content='<%= iterate_json_collection @conn.assigns.item["categories"] %>'>
+    <!-- Will need to check this -->
+    <link rel="canonical" href='<%= @conn.assigns.item["permalink"] %>' />
+
+    <!-- will need to figure out -->
+    <meta property="og:image" content="<%= Application.get_env(:nfd, :website_logo_png) %>">
+    <meta name="twitter:image" content="<%= Application.get_env(:nfd, :website_logo_png) %>">
+
+    <!-- facebook things -->
+    <meta property="og:url" content="<%= Routes.url(@conn) <> @conn.request_path %>">
+    <meta property="og:site_name" content="<%= Application.get_env(:nfd, :website_description) %>">
+    
+    <meta name="twitter:site" content="<%= Application.get_env(:nfd, :website_twitter) %>">
+    <meta name="twitter:creator" content="<%= Application.get_env(:nfd, :website_twitter) %>">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Open Graph Schema -->
+    <script type="application/ld+json">
+      <%= if @conn.assigns["page_type"] == "content" do %>
+        {
+          "@context" : "http://schema.org",
+          "@type" : "BlogPosting",
+          "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "<%= Application.get_env(:nfd, :base_url) %>"
+          },
+          "articleSection" : "<%= @conn.assigns.item["section"] %>",
+          "name" : "<%= title %>",
+          "headline" : "<%= title %>",
+          "description" : "<%= @conn.assigns.item["description"] %>", 
+          "inLanguage" : "en-US",
+          "author" : "<%= Application.get_env(:nfd, :website_author) %>",
+          "creator" : "<%= Application.get_env(:nfd, :website_author) %>",
+          "publisher": "<%= Application.get_env(:nfd, :website_author) %>",
+          "accountablePerson" : "<%= Application.get_env(:nfd, :website_author) %>",
+          "copyrightHolder" : "<%= Application.get_env(:nfd, :website_author) %>",
+          "copyrightYear" : "<%= @conn.assigns.item["date"] %>",
+          "datePublished": "<%= @conn.assigns.item["date"] %>",
+          "dateModified" : "<%= @conn.assigns.item["date"] %>",
+          "url" : "<%= @conn.assigns.item["permalink"] %>",  
+          "keywords" : [ <%= iterate_json_collection @conn.assigns.item["tags"] %> ]
+          "genre": "<%= hd @conn.assigns.item["categories"] %>",
+        }
+      <% else %>
+        {
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "url": "<%= @conn.assigns.item["permalink"] %>",
+          "name": "<%= title %>",
+          "author": {
+            "@type": "Person",
+            "name": "<%= Application.get_env(:nfd, :website_author) %>"
+          },
+          "description": "<%= @conn.assigns.item["description"] %>",
+        }
+      <% end %>
+    </script>    
+  <% end %>
+
+  <% if length(@conn.path_info) > 1 do %>
+    <%= if (hd @conn.path_info) == "registration" do %>
+      <title>NeverFap Deluxe | Register</title>
+      <meta name="description" content="Create a NeverFap Deluxe account and gain access to a wide variety of courses and resources to help you overcome porn addiction.">
+    <% end %>
+
+    <%= if (hd @conn.path_info) == "session" do %>
+      <title>NeverFap Deluxe | Login</title>
+      <meta name="description" content="Login to your NeverFap Deluxe account and gain access to a wide variety of courses and resources to help you overcome porn addiction.">
+    <% end %>
+  <% end %>
+
   <link rel="preconnect" href="<%= Application.get_env(:nfd, :base_url) %>">
   <link rel="preconnect" href="<%= Application.get_env(:nfd, :base_url) %>guide">
   <link rel="preconnect" href="<%= Application.get_env(:nfd, :base_url) %>articles">
@@ -70,56 +126,11 @@
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
-
   <!-- SCSS -->
   <link rel="stylesheet" href="/css/normalize.css">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Parisienne|Montserrat|Noto+Sans" rel="stylesheet">
-
-
-  <!-- Open Graph Schema -->
-  <script type="application/ld+json">
-    <%= if @conn.assigns["page_type"] == "content" do %>
-      {
-        "@context" : "http://schema.org",
-        "@type" : "BlogPosting",
-        "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "<%= Application.get_env(:nfd, :base_url) %>"
-        },
-        "articleSection" : "<%= @conn.assigns.item["section"] %>",
-        "name" : "<%= title %>",
-        "headline" : "<%= title %>",
-        "description" : "<%= @conn.assigns.item["description"] %>", 
-        "inLanguage" : "en-US",
-        "author" : "<%= Application.get_env(:nfd, :website_author) %>",
-        "creator" : "<%= Application.get_env(:nfd, :website_author) %>",
-        "publisher": "<%= Application.get_env(:nfd, :website_author) %>",
-        "accountablePerson" : "<%= Application.get_env(:nfd, :website_author) %>",
-        "copyrightHolder" : "<%= Application.get_env(:nfd, :website_author) %>",
-        "copyrightYear" : "<%= @conn.assigns.item["date"] %>",
-        "datePublished": "<%= @conn.assigns.item["date"] %>",
-        "dateModified" : "<%= @conn.assigns.item["date"] %>",
-        "url" : "<%= @conn.assigns.item["permalink"] %>",  
-        "keywords" : [ <%= iterate_json_collection @conn.assigns.item["tags"] %> ]
-        "genre": "<%= hd @conn.assigns.item["categories"] %>",
-      }
-    <% else %>
-      {
-        "@context": "http://schema.org",
-        "@type": "WebSite",
-        "url": "<%= @conn.assigns.item["permalink"] %>",
-        "name": "<%= title %>",
-        "author": {
-          "@type": "Person",
-          "name": "<%= Application.get_env(:nfd, :website_author) %>"
-        },
-        "description": "<%= @conn.assigns.item["description"] %>",
-      }
-    <% end %>
-  </script>
-
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132863786-1"></script>

@@ -21,6 +21,12 @@ https://forestry.io/blog/build-a-json-api-with-hugo/
 
 {{< hr2 Types of categories
 
+Email Templates
+
+https://mjml.io/try-it-live/templates/recast
+
+
+
 - popular
 
 - Context
@@ -33,6 +39,7 @@ Marketing -
 - Create Reddit
 - Offer free coaching to prominent users doing NoFap
 - Offer free coaching to people attempting to overcome porn addictino.
+- Figure out head component for login/register pages.
 
 
 NoFap Emergency

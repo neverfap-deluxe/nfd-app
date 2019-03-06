@@ -4,24 +4,26 @@
   </mj-head>
   <mj-body>
 
-    <mj-include path="../email_partials/navbar.mjml"/>
-    <mj-include path="../email_partials/header.mjml"/>
+    <!-- <mj-include path="../email_partials/navbar.mjml"/> -->
+    <!-- <mj-include path="../email_partials/header.mjml"/> -->
 
     <!-- Intro text -->
     <mj-section background-color="#fafafa" padding-top="70px" padding-bottom="70px">
       <mj-column width="400px">
         <mj-text font-size="25px" line-height="35px" font-family="Helvetica Neue" padding-bottom="20px">
-          Welcome!
+          Reset Password
         </mj-text>
-
+        <mj-text line-height="20px">
+          Please use the following link to reset your password.
+        </mj-text>
         <mj-button 
-          background-color="#F45E43" padding-top="30px"
+          background-color="#F45E43"
           border-radius="0px"
-          href="<%= @url %>">Verify Email</mj-button>
+          href="<%= @url %>">Reset Password</mj-button>
       </mj-column>
     </mj-section>
 
-    <mj-include path="../email_partials/link_buttons.mjml"/>
-    <mj-include path="../email_partials/social_media.mjml"/>
+    <!-- <mj-include path="../email_partials/link_buttons.mjml"/> -->
+    <!-- <mj-include path="../email_partials/social_media.mjml"/>-->
   </mj-body>
 </mjml>

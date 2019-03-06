@@ -1,8 +1,9 @@
+<%= partial "login_top.html", assigns %>
+
 <div class="accounts__wrapper">
   <%= partial "header.html", assigns %>
 
   <h1 class="accounts__wrapper__title">Register</h1>
-
 
   <div class="accounts__body">
     <div class="accounts__text__container"> 

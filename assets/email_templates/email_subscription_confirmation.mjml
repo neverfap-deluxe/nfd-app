@@ -1,10 +1,8 @@
 <mjml>
   <mj-head>
-    <mj-title>NeverFap Deluxe | Email Subscription Confirmation</mj-title>
+    <mj-title>NeverFap Deluxe | Email Subscription Confirmed</mj-title>
   </mj-head>
   <mj-body>
-    <mj-include path="../email_partials/navbar.mjml"/>
-    <mj-include path="../email_partials/header.mjml"/>
 
     <!-- Intro text -->
     <mj-section background-color="#fafafa" padding-top="70px" padding-bottom="70px">
@@ -12,24 +10,15 @@
         <mj-text font-size="25px" line-height="35px" font-family="Helvetica Neue" padding-bottom="20px">
           Email Subscription Confirmation
         </mj-text>
-        <mj-text line-height="23px">
-          Thank you for subscribing for updates with NeverFap Deluxe.
-        </mj-text>
-
-        <mj-text line-height="23px">
-          Please use the following link to confirm your subscription.
-        </mj-text>
-        <mj-text line-height="23px">
-          
+        <mj-text line-height="20px">
+          Please use the following link to confirm your e-mail address.
         </mj-text>
         <mj-button 
-          background-color="#F45E43" padding-top="30px"
+          background-color="#F45E43"
           border-radius="0px"
           href="<%= @url %>">Confirm Subscription</mj-button>
       </mj-column>
     </mj-section>
 
-    <mj-include path="../email_partials/link_buttons.mjml"/>
-    <mj-include path="../email_partials/social_media.mjml"/>
   </mj-body>
 </mjml>

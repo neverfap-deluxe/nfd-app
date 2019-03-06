@@ -48,7 +48,9 @@ defmodule NfdWeb.Router do
     get "/disclaimer", PageController, :disclaimer
     get "/privacy", PageController, :privacy
 
-    get "/seven-day-neverfap-deluxe-kickstarter", PageController, :seven_day_kickstarter
+    get "/seven-day-kickstarter", PageController, :seven_day_kickstarter
+    get "/twenty-eight-day-awareness-challenge", PageController, :twenty_eight_day_challenge
+    get "/ten-day-meditation-primer", PageController, :ten_day_meditation
     get "/neverfap-deluxe-account", PageController, :account
   end
 

@@ -1,4 +1,4 @@
-<%= partial "head.html", assigns %>
+<%= partial "login_top.html", assigns %>
 
 <div class="accounts__wrapper">
   <%= partial "header.html", assigns %>
