@@ -11,8 +11,8 @@ defmodule NfdWeb.PageController do
      
     case client |> PageAPI.home() do
       {:ok, response} -> 
-        {:ok, articlesResponse} = client |> PageAPI.articles()
-        conn |> render("home.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)
+        {:ok, articlesResponse} = client |> PageAPI.articles()        
+          conn |> render("home.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)
       {:error, _error} ->  # :econnrefused
         conn |> render("404.html")
     end
@@ -72,15 +72,17 @@ defmodule NfdWeb.PageController do
   end
 
   def article(conn, %{"slug" => slug}) do
-    # TODO Check if it is draft. 
-
     page_type = "content"
     client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
 
     case client |> PageAPI.article(slug) do
       {:ok, response} ->
-        {:ok, articlesResponse} = client |> PageAPI.articles()
-        conn |> render("article.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)
+        if response.body["data"]["draft"] == false do 
+          {:ok, articlesResponse} = client |> PageAPI.articles()
+          conn |> render("article.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)  
+        else 
+          conn |> render("404.html")
+        end
       {:error, _error} ->
         conn |> render("404.html")
     end
@@ -99,14 +101,16 @@ defmodule NfdWeb.PageController do
   end
 
   def practice(conn, %{"slug" => slug}) do
-    # TODO Check if it is draft. 
-
     page_type = "content"
     client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
 
     case client |> PageAPI.practice(slug) do
       {:ok, response} ->
-        conn |> render("practice.html", item: response.body["data"], page_type: page_type)
+        if response.body["data"]["draft"] == false do 
+          conn |> render("practice.html", item: response.body["data"], page_type: page_type)
+        else
+          conn |> render("404.html")
+        end
       {:error, _error} ->
         conn |> render("404.html")
     end
@@ -125,14 +129,16 @@ defmodule NfdWeb.PageController do
   end
 
   def course(conn, %{"slug" => slug}) do
-    # TODO Check if it is draft. 
-
     page_type = "content"
     client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
 
     case client |> PageAPI.course(slug) do
       {:ok, response} ->
-        conn |> render("course.html", item: response.body["data"], page_type: page_type)
+        if response.body["data"]["draft"] == false do 
+          conn |> render("course.html", item: response.body["data"], page_type: page_type)
+        else
+          conn |> render("404.html")
+        end
       {:error, _error} ->
         conn |> render("404.html")
     end
@@ -151,14 +157,16 @@ defmodule NfdWeb.PageController do
   end
 
   def podcast(conn, %{"slug" => slug}) do
-    # TODO Check if it is draft. 
-
     page_type = "content"
     client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
 
     case client |> PageAPI.podcast(slug) do
       {:ok, response} ->
-        conn |> render("podcast.html", item: response.body["data"], page_type: page_type)
+        if response.body["data"]["draft"] == false do 
+          conn |> render("podcast.html", item: response.body["data"], page_type: page_type)
+        else 
+          conn |> render("404.html")
+        end
       {:error, _error} ->
         conn |> render("404.html")
     end
@@ -177,14 +185,16 @@ defmodule NfdWeb.PageController do
   end
 
   def quote(conn, %{"slug" => slug}) do
-    # TODO Check if it is draft. 
-
     page_type = "content"
     client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
 
     case client |> PageAPI.quote(slug) do
       {:ok, response} ->
-        conn |> render("quote.html", item: response.body["data"], page_type: page_type)
+        if response.body["data"]["draft"] == false do 
+          conn |> render("quote.html", item: response.body["data"], page_type: page_type)
+        else
+          conn |> render("404.html")
+        end
       {:error, _error} ->
         conn |> render("404.html")
     end

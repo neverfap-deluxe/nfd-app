@@ -1,0 +1,15 @@
+<div class="single__wrapper">   
+  <h2 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+
+  <div class="single__content">
+    <p>Welcome to the NeverFap Deluxe Podcast!</p>
+    <p>The NeverFap Deluxe Podcast </p>
+    <p>Recovered porn addict Julius Reade shares all his tips and tricks from his five year NoFap journey to overcome porn addiction. Learn about the power of meditation, how porn addiction works, as well as how you can easily stay on track if you commit to your mental health and embrace a whole new way of thinking. For more information about the podcast, please visit our website at https://neverfapdeluxe.com/ where you will discover articles, practices, guides and courses to help you overcome porn addiction. If you have any questions, please send them to our contact form at https://neverfapdeluxe.com/about </p>
+  </div>
+</div>
+
+<%= partial "links-patreon.html", assigns %>
+
+
+<%= partial "login_top.html", assigns %>
+  
