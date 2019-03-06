@@ -16,6 +16,7 @@
 - Sort out image meta. 
 - Breadcrumbs
 - Put reddit link on homepage once subreddit is created.
+- A heap of meta content for a large range of new pages that have been created.
 
 https://forestry.io/blog/build-a-json-api-with-hugo/
 

@@ -101,4 +101,8 @@ defmodule NfdWeb.PageAPI do
     get(client, "/ten_day_meditation/index.json")
   end
 
+  def twenty_eight_day_awareness(client) do
+    get(client, "/twenty_eight_day_awareness/index.json")
+  end
+
 end

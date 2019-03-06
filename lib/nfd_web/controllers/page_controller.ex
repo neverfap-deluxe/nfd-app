@@ -72,6 +72,8 @@ defmodule NfdWeb.PageController do
   end
 
   def article(conn, %{"slug" => slug}) do
+    # TODO Check if it is draft. 
+
     page_type = "content"
     client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
 
@@ -97,6 +99,8 @@ defmodule NfdWeb.PageController do
   end
 
   def practice(conn, %{"slug" => slug}) do
+    # TODO Check if it is draft. 
+
     page_type = "content"
     client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
 
@@ -121,6 +125,8 @@ defmodule NfdWeb.PageController do
   end
 
   def course(conn, %{"slug" => slug}) do
+    # TODO Check if it is draft. 
+
     page_type = "content"
     client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
 
@@ -145,6 +151,8 @@ defmodule NfdWeb.PageController do
   end
 
   def podcast(conn, %{"slug" => slug}) do
+    # TODO Check if it is draft. 
+
     page_type = "content"
     client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
 
@@ -169,6 +177,8 @@ defmodule NfdWeb.PageController do
   end
 
   def quote(conn, %{"slug" => slug}) do
+    # TODO Check if it is draft. 
+
     page_type = "content"
     client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
 

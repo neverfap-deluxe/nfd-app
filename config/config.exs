@@ -56,6 +56,7 @@ config :nfd, :pow,
   web_mailer_module: NfdWeb,
   web_module: NfdWeb
 
+  
 
 # Cron setup
 config :nfd, Nfd.Scheduler,
