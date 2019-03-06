@@ -44,9 +44,6 @@ defmodule NfdWeb.Endpoint do
     signing_salt: "vsK5HnrP" # "secret"
 
   plug Pow.Plug.Session, otp_app: :nfd
-    # repo: Nfd.Repo, # not sure
-    # user: Nfd.Users.User, # not sure
-    # web_module: NfdWeb # not sure
 
   # Web Plugs
   plug NfdWeb.Router
@@ -56,13 +53,4 @@ defmodule NfdWeb.Endpoint do
   # Please set `web_module: NfdWeb` in your configuration.
   # defmodule NfdWeb.Endpoint do
 
-  #   # ...
-
-  #   plug NfdWeb.Pow.Plug.Session,
-  #     repo: Nfd.Repo,
-  #     user: Nfd.Users.User,
-  #     web_module: NfdWeb
-
-  #   # ...
-  # end
 end

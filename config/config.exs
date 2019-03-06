@@ -47,7 +47,7 @@ config :phoenix, :format_encoders,
   json: Jason
 
 config :nfd, :pow,
-  user: Nfd.Users.User,
+  user: Nfd.Account.User,
   repo: Nfd.Repo,
   extensions: [PowResetPassword, PowEmailConfirmation],
   controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
