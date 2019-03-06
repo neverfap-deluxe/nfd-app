@@ -1,6 +1,6 @@
-defmodule NfdWeb.TwentyEightDayChallengeScheduler do
+defmodule NfdWeb.TwentyEightDayAwarenessScheduler do
   use Swoosh.Mailer, otp_app: :nfd
-  use Phoenix.Swoosh, view: NfdWeb.TwentyEightDayChallengeView, layout: {NfdWeb.LayoutView, :email}
+  use Phoenix.Swoosh, view: NfdWeb.TwentyEightDayAwarenessView, layout: {NfdWeb.LayoutView, :email}
   import Swoosh.Email
 
   require Logger
@@ -10,16 +10,16 @@ defmodule NfdWeb.TwentyEightDayChallengeScheduler do
     #   |> # get only subscribers that  day_number
 
     # Enum.each(subscribers, fn(subscriber) -> 
-    #   if (subscriber.is_subscribed_twenty_eight_day_challenge) do
+    #   if (subscriber.is_subscribed_twenty_eight_day_awareness) do
 
     #     email = cast(subscriber, subject, template)
     #     process(email)
         
-    #     if (twenty_eight_day_challenge_count == 29) do
-    #       #  set is_subscribed_twenty_eight_day_challenge to false
+    #     if (twenty_eight_day_awareness_count == 29) do
+    #       #  set is_subscribed_twenty_eight_day_awareness to false
     #     else
-    #       # otherwise, increment twenty_eight_day_challenge_count
-    #       twenty_eight_day_challenge_count
+    #       # otherwise, increment twenty_eight_day_awareness_count
+    #       twenty_eight_day_awareness_count
     #     end
     #   end
     # end)

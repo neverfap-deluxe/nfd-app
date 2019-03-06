@@ -207,13 +207,13 @@ defmodule NfdWeb.PageController do
 
   # Special
 
-  def twenty_eight_day_challenge(conn, _params) do
+  def twenty_eight_day_awareness(conn, _params) do
     page_type = "page"
     client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
 
-    case client |> PageAPI.twenty_eight_day_challenge() do
+    case client |> PageAPI.twenty_eight_day_awareness() do
       {:ok, response} ->
-        conn |> render("twenty_eight_day_challenge.html", item: response.body["data"], page_type: page_type)
+        conn |> render("twenty_eight_day_awareness.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->
         conn |> render("404.html")
     end
@@ -226,6 +226,18 @@ defmodule NfdWeb.PageController do
     case client |> PageAPI.seven_day_kickstarter() do
       {:ok, response} ->
         conn |> render("seven_day_kickstarter.html", item: response.body["data"], page_type: page_type)
+      {:error, _error} ->
+        conn |> render("404.html")
+    end
+  end
+
+  def ten_day_meditation(conn, _params) do
+    page_type = "page"
+    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+
+    case client |> PageAPI.ten_day_meditation() do
+      {:ok, response} ->
+        conn |> render("ten_day_meditation.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->
         conn |> render("404.html")
     end

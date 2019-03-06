@@ -31,7 +31,7 @@ defmodule Nfd.Sitemaps do
       add Helpers.page_path(Endpoint, :guide), priority: 0.5, changefreq: "daily", expires: nil
       add Helpers.page_path(Endpoint, :seven_day_kickstarter), priority: 0.5, changefreq: "daily", expires: nil
       add Helpers.page_path(Endpoint, :ten_day_meditation), priority: 0.5, changefreq: "daily", expires: nil
-      add Helpers.page_path(Endpoint, :twenty_eight_day_challenge), priority: 0.5, changefreq: "daily", expires: nil
+      add Helpers.page_path(Endpoint, :twenty_eight_day_awareness), priority: 0.5, changefreq: "daily", expires: nil
       
       add Helpers.page_path(Endpoint, :disclaimer), priority: 0.5, changefreq: "weekly", expires: nil
       add Helpers.page_path(Endpoint, :privacy), priority: 0.5, changefreq: "weekly", expires: nil
