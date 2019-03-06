@@ -131,10 +131,14 @@
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .single__wrapper {
+    margin-left: 200px;
+  }
+}
+
 @media screen and (min-width: 1280px) {
   .single__wrapper {
-    display: flex;
-    flex-direction: column;
-    margin-left: 240px;
+    margin-left: 280px;
   }
 }
