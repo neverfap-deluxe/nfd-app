@@ -1,6 +1,6 @@
 <mjml>
     <mj-head>
-      <mj-title>NeverFap Deluxe Seven Day Kickstarter | Day 0</mj-title>
+      <mj-title>NeverFap Deluxe Seven Day Kickstarter | Day 1</mj-title>
       <mj-preview>NeverFap Deluxe Seven Day Kickstarter Preview</mj-preview>
       <mj-attributes>
         <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-all>
@@ -8,12 +8,6 @@
       </mj-attributes>
       <mj-style inline="inline">
         .body-section { -webkit-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15); -moz-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15); box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15); }
-      </mj-style>
-      <mj-style inline="inline">
-        .text-link { color: #5e6ebf }
-      </mj-style>
-      <mj-style inline="inline">
-        .footer-link { color: #888888 }
       </mj-style>
     </mj-head>
     
@@ -39,19 +33,76 @@
         <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
           <mj-column width="100%">
             <mj-text color="#212b35" font-weight="bold" font-size="20px">
-              It's time to start meditating.
+              Welcome to the meditation.
             </mj-text>
+            <mj-text color="#35393d" font-size="16px">
+              All strong porn addiction recovery strategies start with developing healthy coping mechanism, and the predominant coping mechanism that NeverFap Deluxe teaches is meditation.
+            </mj-text>
+            <mj-text color="#35393d" font-size="16px">
+              Put simply, meditation makes porn recovery simple.
+            </mj-text>
+            <mj-text color="#35393d" font-size="16px">
+              It doesn't require a rediculous amount of effort. It only takes 10 minutes a day. Compared to other strategies, it is the easiest and most accessible that I know.
+            </mj-text>
+            <mj-text color="#35393d" font-size="16px">
+              I've written an article which explains some of these aspects:
+            </mj-text>
+
+
+            <mj-text color="#35393d" font-size="16px" padding-top="20px" align="center">
+              <strong>The Importance Of Meditation For Porn Addiction</strong>
+            </mj-text>
+            <mj-button padding-top="0px" background-color="white" color="black" border="4px solid cyan;" href="https://neverfapdeluxe.com/articles/the-importance-of-meditation-for-porn-addiction/">link</mj-button>
+
+
+            <mj-text color="#212b35" font-weight="bold" font-size="20px">
+              What is meditation?
+            </mj-text>
+            <mj-text color="#35393d" font-size="16px">
+              Meditation is a practice that is designed to teach you control over your emotions.
+            </mj-text>
+            <mj-text color="#35393d" font-size="16px">
+              It does this by teaching you to actively calm your mind, without judgement and without reaction. 
+            </mj-text>
+            <mj-text color="#35393d" font-size="16px">
+              Control is a funny thing, because a lot of us assume that it's about grabbing onto something not letting it go. In reality, this is actually the opposite to control, because control isn't something that is need to go get.
+            </mj-text>
+
+            <mj-text color="#212b35" font-weight="bold" font-size="20px">
+              How to meditate.
+            </mj-text>
+
+            <mj-text color="#35393d" font-size="16px">
+              In order to meditate, we are going to use a technique called observation.
+            </mj-text>
+            <mj-text color="#35393d" font-size="16px">
+              Often, meditation can be a point of confusion for people. Personally speaking, it was something that I'd struggled with, because 
+            </mj-text>
+
+
+
+
+            <mj-text color="#35393d" font-size="16px" padding-top="20px" align="center">
+              <strong>Observe it all</strong>
+            </mj-text>
+            <mj-button padding-top="0px" background-color="white" color="black" border="4px solid cyan;" href="https://neverfapdeluxe.com/practices/observe-it-all/">link</mj-button>
+
+
             
-            <mj-text color="#637381" font-size="20px">
+            <mj-text color="#35393d" font-size="20px">
               <strong>What most people seem to struggle with is sticking to the process.</strong>
             </mj-text>
             
             
+            <mj-text color="#35393d" font-size="16px">
+              You have been warned.      
+            </mj-text>
             
+
             <!-- Divider -->
-            <mj-text color="#637381" font-size="16px"></mj-text>
+            <mj-text color="#35393d" font-size="16px"></mj-text>
             <mj-divider border-color="#DFE3E8" border-width="1px" />
-            <mj-text color="#637381" font-size="16px"></mj-text>
+            <mj-text color="#35393d" font-size="16px"></mj-text>
             <!-- Divider -->
             
   
@@ -59,46 +110,46 @@
               Next steps.
             </mj-text>
             
-            <mj-text color="#637381" font-size="16px">
+            <mj-text color="#35393d" font-size="16px">
               Tomorrow we'll go into some of the practices you can do to help you regain control over your mind.
             </mj-text>
   
-            <mj-text color="#637381" font-size="16px">
+            <mj-text color="#35393d" font-size="16px">
               If you haven't yet been to the homepage, I highly recommend checking it out. It has a great introduction into porn addiction, how recovery works, as well as 
             </mj-text>
             
             <mj-button background-color="white" color="black" border="4px solid cyan;" padding-bottom="35px" padding-top="35px" href="https://neverfapdeluxe.com/">NeverFap Deluxe Homepage</mj-button>
 
-            <mj-text color="#637381" font-size="16px" padding-bottom="30px">
+            <mj-text color="#35393d" font-size="16px" padding-bottom="30px">
               Aside from that, I also recommend checking out some of the introductory articles on the website. 
             </mj-text>
                       
-            <mj-text color="#637381" font-size="16px" padding-top="20px" align="center">
+            <mj-text color="#35393d" font-size="16px" padding-top="20px" align="center">
               <strong>Introduction To The NeverFap Deluxe Guide</strong>
             </mj-text>
             
             <mj-button padding-top="0px" background-color="white" color="black" border="4px solid cyan;" href="https://neverfapdeluxe.com/articles/introduction-to-the-neverfap-deluxe-guide/">link</mj-button>
             
-            <mj-text color="#637381" font-size="16px" padding-top="20px" align="center">
+            <mj-text color="#35393d" font-size="16px" padding-top="20px" align="center">
               <strong>The Five Fundamental Principles Of NeverFap</strong>
             </mj-text>
 
             <mj-button padding-top="0px" background-color="white" color="black" border="4px solid cyan;" href="https://neverfapdeluxe.com/articles/the-five-fundamental-principles-of-neverfap/">link</mj-button>
 
-            <mj-text color="#637381" font-size="16px" padding-top="20px" align="center">
+            <mj-text color="#35393d" font-size="16px" padding-top="20px" align="center">
               <strong>My Personal Porn Recovery Journey</strong>
             </mj-text>
 
             <mj-button padding-top="0px" background-color="white" color="black" border="4px solid cyan;" href="https://neverfapdeluxe.com/articles/my-personal-porn-recovery-journey/">link</mj-button>
 
-            <mj-text color="#637381" font-size="16px" padding-top="20px">
+            <mj-text color="#35393d" font-size="16px" padding-top="20px">
               Thank you for reading and I'll see you here tomorrow.
             </mj-text>
   
             <!-- Divider -->
-            <mj-text color="#637381" font-size="16px"></mj-text>
+            <mj-text color="#35393d" font-size="16px"></mj-text>
             <mj-divider border-color="#DFE3E8" border-width="1px" />
-            <mj-text color="#637381" font-size="16px"></mj-text>
+            <mj-text color="#35393d" font-size="16px"></mj-text>
             <!-- Divider -->
 
             <mj-image src="https://f002.backblazeb2.com/file/neverfapdeluxeemail/email__header__assort.png" alt="" />

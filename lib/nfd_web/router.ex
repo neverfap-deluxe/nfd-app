@@ -29,29 +29,30 @@ defmodule NfdWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-
+    get "/guide", PageController, :guide
+    get "/neverfap-deluxe-account", PageController, :account
     get "/about", PageController, :about
     get "/contact", PageController, :contact
-  
-    get "/guide", PageController, :guide
-    get "/articles", PageController, :articles
-    get "/articles/:slug", PageController, :article
-    get "/practices", PageController, :practices
-    get "/practices/:slug", PageController, :practice
-    get "/courses", PageController, :courses
-    get "/courses/:slug", PageController, :course
-    get "/podcast", PageController, :podcasts
-    get "/podcast/:slug", PageController, :podcast
-    get "/quotes", PageController, :quotes
-    get "/quotes/:slug", PageController, :quote
-
     get "/disclaimer", PageController, :disclaimer
     get "/privacy", PageController, :privacy
 
+    get "/articles", ContentController, :articles
+    get "/articles/:slug", ContentController, :article
+    get "/practices", ContentController, :practices
+    get "/practices/:slug", ContentController, :practice
+    get "/courses", ContentController, :courses
+    get "/courses/:slug", ContentController, :course
+    get "/podcast", ContentController, :podcasts
+    get "/podcast/:slug", ContentController, :podcast
+    get "/quotes", ContentController, :quotes
+    get "/quotes/:slug", ContentController, :quote
+
     get "/seven-day-kickstarter", PageController, :seven_day_kickstarter
+    get "/seven-day-kickstarter/:day", PageController, :seven_day_kickstarter_day
     get "/twenty-eight-day-awareness-challenge", PageController, :twenty_eight_day_awareness
+    get "/twenty-eight-day-awareness-challenge/:day", PageController, :twenty_eight_day_awareness_day
     get "/ten-day-meditation-primer", PageController, :ten_day_meditation
-    get "/neverfap-deluxe-account", PageController, :account
+    get "/ten-day-meditation-primer/:day", PageController, :ten_day_meditation
   end
 
   scope "/", NfdWeb do
@@ -59,8 +60,14 @@ defmodule NfdWeb.Router do
 
     get "/dashboard", DashboardController, :dashboard
     get "/dashboard/profile", DashboardController, :profile
+
     get "/dashboard/audio_courses", DashboardController, :audio_courses
+    get "/dashboard/audio_courses/:collection", DashboardController, :audio_courses_collection
+    get "/dashboard/audio_courses/:collection/:file", DashboardController, :audio_courses_single
+
     get "/dashboard/email_challenges", DashboardController, :email_challenges
+    get "/dashboard/email_challenges/:collection", DashboardController, :email_challenges_collection
+    get "/dashboard/email_challenges/:collection/:file", DashboardController, :email_challenges_single
 
     delete "/logout", SessionController, :delete, as: :logout
   end

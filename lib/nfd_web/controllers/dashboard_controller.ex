@@ -9,13 +9,34 @@ defmodule NfdWeb.DashboardController do
       |> render("dashboard.html")
   end
 
+
+  # audio courses
   def audio_courses(conn, _params) do
     render(conn, "audio_courses.html")
   end
 
+  def audio_courses_collection(conn, _params) do
+    render(conn, "audio_courses_collection.html")
+  end
+
+  def audio_courses_file(conn, _params) do
+    render(conn, "audio_courses_file.html")
+  end
+
+
+  # email challenges
   def email_challenges(conn, _params) do
     render(conn, "email_challenges.html")
   end
+
+  def email_challenges_collection(conn, _params) do
+    render(conn, "email_challenges_collection.html")
+  end
+
+  def email_challenges_file(conn, _params) do
+    render(conn, "email_challenges_file.html")
+  end
+
 
   def profile(conn, _params) do
     render(conn, "profile.html")

@@ -34,6 +34,5 @@ RUN cd assets && \
     mix phx.digest
 
 EXPOSE 4000
-# CMD ["./run.sh"]
-# CMD ["mix", "phx.server"]
+
 CMD ["mix", "do", "ecto.create,", "ecto.migrate,", "phx.server"]

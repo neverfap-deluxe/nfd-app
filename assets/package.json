@@ -6,8 +6,9 @@
     "watch": "webpack --mode development --watch",
     
     "mjml": "npm run -s mjml-ecs & npm run -s mjml-ec & npm run -s mjml-rp & npm run -s mjml-esc & npm run -s mjml-escs",
-    "a": "npm run -s a0",
     "k": "npm run -s k0",
+    "m": "npm run -s m0",
+    "a": "npm run -s a0",
 
     "k0": "npx mjml --watch ./email_seven_day_kickstarter/template_seven_day_kickstarter_0.mjml -o ../lib/nfd_web/templates/seven_day_kickstarter/template_seven_day_kickstarter_0.html.eex",
     "k1": "npx mjml --watch ./email_seven_day_kickstarter/template_seven_day_kickstarter_1.mjml -o ../lib/nfd_web/templates/seven_day_kickstarter/template_seven_day_kickstarter_1.html.eex",
@@ -17,6 +18,18 @@
     "k5": "npx mjml --watch ./email_seven_day_kickstarter/template_seven_day_kickstarter_5.mjml -o ../lib/nfd_web/templates/seven_day_kickstarter/template_seven_day_kickstarter_5.html.eex",
     "k6": "npx mjml --watch ./email_seven_day_kickstarter/template_seven_day_kickstarter_6.mjml -o ../lib/nfd_web/templates/seven_day_kickstarter/template_seven_day_kickstarter_6.html.eex",
     "k7": "npx mjml --watch ./email_seven_day_kickstarter/template_seven_day_kickstarter_7.mjml -o ../lib/nfd_web/templates/seven_day_kickstarter/template_seven_day_kickstarter_7.html.eex",
+
+    "m0": "npx mjml --watch ./email_ten_day_meditation/template_ten_day_meditation_0.mjml -o ../lib/nfd_web/templates/ten_day_meditation/template_ten_day_meditation_0.html.eex",
+    "m1": "npx mjml --watch ./email_ten_day_meditation/template_ten_day_meditation_1.mjml -o ../lib/nfd_web/templates/ten_day_meditation/template_ten_day_meditation_1.html.eex",
+    "m2": "npx mjml --watch ./email_ten_day_meditation/template_ten_day_meditation_2.mjml -o ../lib/nfd_web/templates/ten_day_meditation/template_ten_day_meditation_2.html.eex",
+    "m3": "npx mjml --watch ./email_ten_day_meditation/template_ten_day_meditation_3.mjml -o ../lib/nfd_web/templates/ten_day_meditation/template_ten_day_meditation_3.html.eex",
+    "m4": "npx mjml --watch ./email_ten_day_meditation/template_ten_day_meditation_4.mjml -o ../lib/nfd_web/templates/ten_day_meditation/template_ten_day_meditation_4.html.eex",
+    "m5": "npx mjml --watch ./email_ten_day_meditation/template_ten_day_meditation_5.mjml -o ../lib/nfd_web/templates/ten_day_meditation/template_ten_day_meditation_5.html.eex",
+    "m6": "npx mjml --watch ./email_ten_day_meditation/template_ten_day_meditation_6.mjml -o ../lib/nfd_web/templates/ten_day_meditation/template_ten_day_meditation_6.html.eex",
+    "m7": "npx mjml --watch ./email_ten_day_meditation/template_ten_day_meditation_7.mjml -o ../lib/nfd_web/templates/ten_day_meditation/template_ten_day_meditation_7.html.eex",
+    "m8": "npx mjml --watch ./email_ten_day_meditation/template_ten_day_meditation_8.mjml -o ../lib/nfd_web/templates/ten_day_meditation/template_ten_day_meditation_8.html.eex",
+    "m9": "npx mjml --watch ./email_ten_day_meditation/template_ten_day_meditation_9.mjml -o ../lib/nfd_web/templates/ten_day_meditation/template_ten_day_meditation_9.html.eex",
+    "m10": "npx mjml --watch ./email_ten_day_meditation/template_ten_day_meditation_10.mjml -o ../lib/nfd_web/templates/ten_day_meditation/template_ten_day_meditation_10.html.eex",
 
     "a0": "npx mjml --watch ./email_twenty_eight_day_awareness/template_twenty_eight_day_awareness_0.mjml -o ../lib/nfd_web/templates/twenty_eight_day_awareness/template_twenty_eight_day_awareness_0.html.eex",
     "a1": "npx mjml --watch ./email_twenty_eight_day_awareness/template_twenty_eight_day_awareness_1.mjml -o ../lib/nfd_web/templates/twenty_eight_day_awareness/template_twenty_eight_day_awareness_1.html.eex",

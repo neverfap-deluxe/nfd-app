@@ -1,6 +1,6 @@
 defmodule NfdWeb.TwentyEightDayAwarenessScheduler do
   use Swoosh.Mailer, otp_app: :nfd
-  use Phoenix.Swoosh, view: NfdWeb.TwentyEightDayAwarenessView, layout: {NfdWeb.LayoutView, :email}
+  use Phoenix.Swoosh, view: NfdWeb.TwentyEightDayAwarenessEmailTemplateView, layout: {NfdWeb.LayoutView, :email}
   import Swoosh.Email
 
   require Logger
@@ -60,7 +60,7 @@ defmodule NfdWeb.TwentyEightDayAwarenessScheduler do
   def cast(%{user: user, subject: subject, template: template}) do
     %Swoosh.Email{}
       |> to({"namewayne", user.email})
-      |> from({"NeverFap Deluxe", "no-reply@neverfapdeluxe.com"})
+      |> from({"NeverFap Deluxe", "neverfapdeluxe@gmail.com"})
       |> subject(subject)
       |> render_body(template, %{username: user.username})
 
