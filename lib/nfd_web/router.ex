@@ -47,12 +47,12 @@ defmodule NfdWeb.Router do
     get "/quotes", ContentController, :quotes
     get "/quotes/:slug", ContentController, :quote
 
-    get "/seven-day-kickstarter", PageController, :seven_day_kickstarter
-    get "/seven-day-kickstarter/:day", PageController, :seven_day_kickstarter_day
-    get "/twenty-eight-day-awareness-challenge", PageController, :twenty_eight_day_awareness
-    get "/twenty-eight-day-awareness-challenge/:day", PageController, :twenty_eight_day_awareness_day
-    get "/ten-day-meditation-primer", PageController, :ten_day_meditation
-    get "/ten-day-meditation-primer/:day", PageController, :ten_day_meditation
+    get "/seven-day-kickstarter", ContentEmailController, :seven_day_kickstarter
+    get "/seven-day-kickstarter/:day", ContentEmailController, :seven_day_kickstarter_single
+    get "/twenty-eight-day-awareness-challenge", ContentEmailController, :twenty_eight_day_awareness
+    get "/twenty-eight-day-awareness-challenge/:day", ContentEmailController, :twenty_eight_day_awareness_single
+    get "/ten-day-meditation-primer", ContentEmailController, :ten_day_meditation
+    get "/ten-day-meditation-primer/:day", ContentEmailController, :ten_day_meditation_single
   end
 
   scope "/", NfdWeb do
@@ -65,9 +65,9 @@ defmodule NfdWeb.Router do
     get "/dashboard/audio_courses/:collection", DashboardController, :audio_courses_collection
     get "/dashboard/audio_courses/:collection/:file", DashboardController, :audio_courses_single
 
-    get "/dashboard/email_challenges", DashboardController, :email_challenges
-    get "/dashboard/email_challenges/:collection", DashboardController, :email_challenges_collection
-    get "/dashboard/email_challenges/:collection/:file", DashboardController, :email_challenges_single
+    get "/dashboard/email_campaigns", DashboardController, :email_campaigns
+    get "/dashboard/email_campaigns/:collection", DashboardController, :email_campaigns_collection
+    get "/dashboard/email_campaigns/:collection/:file", DashboardController, :email_campaigns_single
 
     delete "/logout", SessionController, :delete, as: :logout
   end

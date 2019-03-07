@@ -11,7 +11,7 @@
       <span>Audio</span>
     <% end %>
 
-    <%= link to: Routes.dashboard_path(@conn, :email_challenges), class: "hub__sidebar__button" do %>
+    <%= link to: Routes.dashboard_path(@conn, :email_campaigns), class: "hub__sidebar__button" do %>
       <i class="fas fa-envelope-square"></i>
       <span>Challenges</span>
     <% end %>

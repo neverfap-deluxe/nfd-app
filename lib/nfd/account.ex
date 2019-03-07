@@ -213,6 +213,23 @@ defmodule Nfd.Account do
     Repo.all(Subscriber)
   end
 
+  def list_subscribers_general do
+    Repo.all(
+      from s in Subscriber, 
+      where: [ subscribed: true ]
+    )
+  end
+
+  def list_subscribers_campaign do
+    Repo.all(
+      from s in Subscriber, 
+      where: [ seven_day_kickstarter_subscribed: true ],
+      or_where: [ ten_day_meditation_subscribed: true ],
+      or_where: [ twenty_eight_day_awareness_subscribed: true ]
+    )
+  end
+
+
   @doc """
   Gets a single subscriber.
 

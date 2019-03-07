@@ -1,15 +1,16 @@
 defmodule NfdWeb.ContentController do
   use NfdWeb, :controller
 
-  alias NfdWeb.PageAPI
+  alias NfdWeb.API
+  alias NfdWeb.API.Content
 
   plug :put_layout, "general.html"
 
   def articles(conn, _params) do
     page_type = "page"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> PageAPI.articles() do
+    case client |> Content.articles() do
       {:ok, response} ->
         conn |> render("articles.html", item: response.body["data"], articles: response.body["data"]["articles"], page_type: page_type)
       {:error, _error} ->
@@ -19,12 +20,12 @@ defmodule NfdWeb.ContentController do
 
   def article(conn, %{"slug" => slug}) do
     page_type = "content"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> PageAPI.article(slug) do
+    case client |> Content.article(slug) do
       {:ok, response} ->
         if response.body["data"]["draft"] == false do 
-          {:ok, articlesResponse} = client |> PageAPI.articles()
+          {:ok, articlesResponse} = client |> Content.articles()
           conn |> render("article.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)  
         else 
           conn |> render("404.html")
@@ -36,9 +37,9 @@ defmodule NfdWeb.ContentController do
 
   def practices(conn, _params) do
     page_type = "page"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> PageAPI.practices() do
+    case client |> Content.practices() do
       {:ok, response} ->
         conn |> render("practices.html", item: response.body["data"], practices: response.body["data"]["practices"], page_type: page_type)
       {:error, _error} ->
@@ -48,9 +49,9 @@ defmodule NfdWeb.ContentController do
 
   def practice(conn, %{"slug" => slug}) do
     page_type = "content"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> PageAPI.practice(slug) do
+    case client |> Content.practice(slug) do
       {:ok, response} ->
         if response.body["data"]["draft"] == false do 
           conn |> render("practice.html", item: response.body["data"], page_type: page_type)
@@ -64,9 +65,9 @@ defmodule NfdWeb.ContentController do
 
   def courses(conn, _params) do
     page_type = "page"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> PageAPI.courses() do
+    case client |> Content.courses() do
       {:ok, response} ->
         conn |> render("courses.html", item: response.body["data"], courses: response.body["data"]["courses"], page_type: page_type)
       {:error, _error} ->
@@ -76,9 +77,9 @@ defmodule NfdWeb.ContentController do
 
   def course(conn, %{"slug" => slug}) do
     page_type = "content"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> PageAPI.course(slug) do
+    case client |> Content.course(slug) do
       {:ok, response} ->
         if response.body["data"]["draft"] == false do 
           conn |> render("course.html", item: response.body["data"], page_type: page_type)
@@ -92,9 +93,9 @@ defmodule NfdWeb.ContentController do
 
   def podcasts(conn, _params) do
     page_type = "page"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> PageAPI.podcasts() do
+    case client |> Content.podcasts() do
       {:ok, response} ->
         conn |> render("podcasts.html", item: response.body["data"], podcasts: response.body["data"]["podcasts"], page_type: page_type)
       {:error, _error} ->
@@ -104,9 +105,9 @@ defmodule NfdWeb.ContentController do
 
   def podcast(conn, %{"slug" => slug}) do
     page_type = "content"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> PageAPI.podcast(slug) do
+    case client |> Content.podcast(slug) do
       {:ok, response} ->
         if response.body["data"]["draft"] == false do 
           conn |> render("podcast.html", item: response.body["data"], page_type: page_type)
@@ -120,9 +121,9 @@ defmodule NfdWeb.ContentController do
 
   def quotes(conn, _params) do
     page_type = "page"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> PageAPI.quotes() do
+    case client |> Content.quotes() do
       {:ok, response} ->
         conn |> render("quotes.html", item: response.body["data"], item: response.body["data"]["quotes"], page_type: page_type)
       {:error, _error} ->
@@ -132,9 +133,9 @@ defmodule NfdWeb.ContentController do
 
   def quote(conn, %{"slug" => slug}) do
     page_type = "content"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> PageAPI.quote(slug) do
+    case client |> Content.quote(slug) do
       {:ok, response} ->
         if response.body["data"]["draft"] == false do 
           conn |> render("quote.html", item: response.body["data"], page_type: page_type)
@@ -148,9 +149,9 @@ defmodule NfdWeb.ContentController do
 
   def disclaimer(conn, _params) do
     page_type = "page"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> PageAPI.disclaimer() do
+    case client |> Content.disclaimer() do
       {:ok, response} ->
         conn |> render("disclaimer.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->
@@ -160,9 +161,9 @@ defmodule NfdWeb.ContentController do
 
   def privacy(conn, _params) do
     page_type = "page"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> PageAPI.privacy() do
+    case client |> Content.privacy() do
       {:ok, response} ->
         conn |> render("privacy.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->

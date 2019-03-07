@@ -134,9 +134,9 @@ defmodule Nfd.AccountTest do
   describe "subscribers" do
     alias Nfd.Account.Subscriber
 
-    @valid_attrs %{seven_day_kickstarter_count: 42, seven_day_kickstarter_subscribed: true, subscribed: true, subscriber_email: "some subscriber_email", ten_day_meditation_count: 42, ten_day_meditation_subscribed: true, twenty_eight_day_awareness_count: 42, twenty_eight_day_challenge_subscribed: true}
-    @update_attrs %{seven_day_kickstarter_count: 43, seven_day_kickstarter_subscribed: false, subscribed: false, subscriber_email: "some updated subscriber_email", ten_day_meditation_count: 43, ten_day_meditation_subscribed: false, twenty_eight_day_awareness_count: 43, twenty_eight_day_challenge_subscribed: false}
-    @invalid_attrs %{seven_day_kickstarter_count: nil, seven_day_kickstarter_subscribed: nil, subscribed: nil, subscriber_email: nil, ten_day_meditation_count: nil, ten_day_meditation_subscribed: nil, twenty_eight_day_awareness_count: nil, twenty_eight_day_challenge_subscribed: nil}
+    @valid_attrs %{seven_day_kickstarter_count: 42, seven_day_kickstarter_subscribed: true, subscribed: true, subscriber_email: "some subscriber_email", ten_day_meditation_count: 42, ten_day_meditation_subscribed: true, twenty_eight_day_awareness_count: 42, twenty_eight_day_awareness_subscribed: true}
+    @update_attrs %{seven_day_kickstarter_count: 43, seven_day_kickstarter_subscribed: false, subscribed: false, subscriber_email: "some updated subscriber_email", ten_day_meditation_count: 43, ten_day_meditation_subscribed: false, twenty_eight_day_awareness_count: 43, twenty_eight_day_awareness_subscribed: false}
+    @invalid_attrs %{seven_day_kickstarter_count: nil, seven_day_kickstarter_subscribed: nil, subscribed: nil, subscriber_email: nil, ten_day_meditation_count: nil, ten_day_meditation_subscribed: nil, twenty_eight_day_awareness_count: nil, twenty_eight_day_awareness_subscribed: nil}
 
     def subscriber_fixture(attrs \\ %{}) do
       {:ok, subscriber} =
@@ -166,7 +166,7 @@ defmodule Nfd.AccountTest do
       assert subscriber.ten_day_meditation_count == 42
       assert subscriber.ten_day_meditation_subscribed == true
       assert subscriber.twenty_eight_day_awareness_count == 42
-      assert subscriber.twenty_eight_day_challenge_subscribed == true
+      assert subscriber.twenty_eight_day_awareness_subscribed == true
     end
 
     test "create_subscriber/1 with invalid data returns error changeset" do
@@ -183,7 +183,7 @@ defmodule Nfd.AccountTest do
       assert subscriber.ten_day_meditation_count == 43
       assert subscriber.ten_day_meditation_subscribed == false
       assert subscriber.twenty_eight_day_awareness_count == 43
-      assert subscriber.twenty_eight_day_challenge_subscribed == false
+      assert subscriber.twenty_eight_day_awareness_subscribed == false
     end
 
     test "update_subscriber/2 with invalid data returns error changeset" do

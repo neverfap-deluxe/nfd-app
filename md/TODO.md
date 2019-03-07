@@ -10,13 +10,13 @@
 - Create similar practices on practices page.
 - create categories/tags
 - Get logo images
-- Figure out twitter https://twitter.com/
 - Practices to show 
 - Figure out meta-titles
 - Sort out image meta. 
 - Breadcrumbs
 - Put reddit link on homepage once subreddit is created.
 - A heap of meta content for a large range of new pages that have been created.
+- Design my 404 page.
 
 https://forestry.io/blog/build-a-json-api-with-hugo/
 

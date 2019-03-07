@@ -1,17 +1,19 @@
 defmodule NfdWeb.PageController do
   use NfdWeb, :controller
 
-  alias NfdWeb.PageAPI
+  alias NfdWeb.API
+  alias NfdWeb.API.Page
+  alias NfdWeb.API.Content
 
   plug :put_layout, "general.html"
 
   def home(conn, _params) do
     page_type = "page"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
      
-    case client |> PageAPI.home() do
+    case client |> Page.home() do
       {:ok, response} -> 
-        {:ok, articlesResponse} = client |> PageAPI.articles()        
+        {:ok, articlesResponse} = client |> Content.articles()        
           conn |> render("home.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)
       {:error, _error} ->  # :econnrefused
         conn |> render("404.html")
@@ -20,11 +22,11 @@ defmodule NfdWeb.PageController do
 
   def guide(conn, _params) do
     page_type = "page"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> PageAPI.guide() do
+    case client |> Page.guide() do
       {:ok, response} ->
-        {:ok, articlesResponse} = client |> PageAPI.articles()
+        {:ok, articlesResponse} = client |> Content.articles()
         conn |> render("guide.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)
       {:error, _error} ->
         conn |> render("404.html")
@@ -33,9 +35,9 @@ defmodule NfdWeb.PageController do
 
   def about(conn, _params) do
     page_type = "page"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> PageAPI.about() do
+    case client |> Page.about() do
       {:ok, response} ->
         conn |> render("about.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->
@@ -45,9 +47,9 @@ defmodule NfdWeb.PageController do
 
   def contact(conn, _params) do
     page_type = "page"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> PageAPI.contact() do
+    case client |> Page.contact() do
       {:ok, response} ->
         conn |> render("contact.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->
@@ -57,9 +59,9 @@ defmodule NfdWeb.PageController do
   
   def disclaimer(conn, _params) do
     page_type = "page"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> PageAPI.disclaimer() do
+    case client |> Page.disclaimer() do
       {:ok, response} ->
         conn |> render("disclaimer.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->
@@ -69,9 +71,9 @@ defmodule NfdWeb.PageController do
 
   def privacy(conn, _params) do
     page_type = "page"
-    client = PageAPI.is_localhost(conn.host) |> PageAPI.api_client()
+    client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> PageAPI.privacy() do
+    case client |> Page.privacy() do
       {:ok, response} ->
         conn |> render("privacy.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->

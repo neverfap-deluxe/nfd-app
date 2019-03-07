@@ -21,6 +21,16 @@ defmodule Nfd.Content do
     Repo.all(Collection)
   end
 
+  def list_audio_courses do
+    Repo.all(from c in Collection, where: [type: "audio_course"]) 
+  end
+
+  def list_email_campaigns do
+    Repo.all(from c in Collection, where: [type: "email_campaign"]) 
+  end
+
+
+
   @doc """
   Gets a single collection.
 
@@ -36,6 +46,7 @@ defmodule Nfd.Content do
 
   """
   def get_collection!(id), do: Repo.get!(Collection, id)
+  def get_collection_slug!(slug), do: Repo.get!(Collection, slug)
 
   @doc """
   Creates a collection.
@@ -132,6 +143,7 @@ defmodule Nfd.Content do
 
   """
   def get_file!(id), do: Repo.get!(File, id)
+  def get_file_slug!(slug), do: Repo.get!(File, slug)
 
   @doc """
   Creates a file.

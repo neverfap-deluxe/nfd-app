@@ -6,7 +6,7 @@ defmodule Nfd.Repo.Migrations.CreateSubscribers do
       add :id, :binary_id, primary_key: true
       add :subscriber_email, :string
       add :subscribed, :boolean, default: false, null: false
-      add :twenty_eight_day_challenge_subscribed, :boolean, default: false, null: false
+      add :twenty_eight_day_awareness_subscribed, :boolean, default: false, null: false
       add :twenty_eight_day_awareness_count, :integer
       add :seven_day_kickstarter_subscribed, :boolean, default: false, null: false
       add :seven_day_kickstarter_count, :integer
