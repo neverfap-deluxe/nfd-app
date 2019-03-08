@@ -11,7 +11,7 @@ defmodule NfdWeb.EmailScheduler do
 
   require Logger
 
-  def email_scheduler(subject, template, day_number) do
+  def email_scheduler() do
     subscribers = Account.list_subscribers_campaign()
     Enum.each(subscribers, fn(subscriber) ->
       email_scheduler_logic(7, subscriber, subscriber.seven_day_kickstarter_subscribed, subscriber.seven_day_kickstarter_count)
@@ -22,7 +22,6 @@ defmodule NfdWeb.EmailScheduler do
 
   def email_scheduler_logic(type, subscriber, is_subscribed, day_count) do
     if (is_subscribed) do
-      
       { subject, template } =
         case type do 
           7 -> SevenDayKickstarterScheduler.run(day_count)
@@ -31,9 +30,9 @@ defmodule NfdWeb.EmailScheduler do
         end 
 
       case type do 
-        7 -> cast(subscriber.email, subject, template) |> process("Seven Day NeverFap Deluxe Kickstarter - Day #{day_count} E-mail sent: " <> subscriber.email)
-        10 -> cast(subscriber.email, subject, template) |> process("Ten Day Meditation Primer - Day #{day_count} E-mail sent: " <> subscriber.email)
-        28 -> cast(subscriber.email, subject, template) |> process("Twenty Eight Day Challenge - Day #{day_count} E-mail sent: " <> subscriber.email)
+        7 -> cast({subscriber, subject, template}) |> process("Seven Day NeverFap Deluxe Kickstarter - Day #{day_count} E-mail sent: " <> subscriber.email)
+        10 -> cast({subscriber, subject, template}) |> process("Ten Day Meditation Primer - Day #{day_count} E-mail sent: " <> subscriber.email)
+        28 -> cast({subscriber, subject, template}) |> process("Twenty Eight Day Challenge - Day #{day_count} E-mail sent: " <> subscriber.email)
       end 
 
       case type do 
@@ -44,9 +43,9 @@ defmodule NfdWeb.EmailScheduler do
     end
   end
 
-  def cast(%{email, subject: subject, template: template}) do
+  def cast(%{subscriber: subscriber, subject: subject, template: template}) do
     %Swoosh.Email{}
-      |> to({"namewayne", user.email})
+      |> to(subscriber.subscriber_email)
       |> from({"NeverFap Deluxe", "neverfapdeluxe@gmail.com"})
       |> subject(subject)
       |> render_body(template)

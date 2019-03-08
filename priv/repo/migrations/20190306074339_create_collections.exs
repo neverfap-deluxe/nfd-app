@@ -9,6 +9,7 @@ defmodule Nfd.Repo.Migrations.CreateCollections do
       add :display_name, :string
       add :description, :string
       add :status, :string
+      add :price, :float
       add :premium, :boolean, default: false, null: false
 
       timestamps()

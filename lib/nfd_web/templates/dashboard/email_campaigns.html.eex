@@ -5,8 +5,12 @@
     <p>I am currently in the process of building a seven day kickstarter email campaign.</p>
     <p>Come back soon!</p>
 
-    <div class="hub__main__audio">
-
+    <div class="hub__main__email">
+      <%= Enum.map(@collections, fn(collection) -> %>
+        <div class="email__collection">
+          
+        </div>
+      <% end ) %>
     </div>
   </div>
 </div>

@@ -22,24 +22,28 @@ defmodule Nfd.Account.User do
     field :last_name, :string
     field :slug, :string
 
-    has_one :subscriber, Nfd.Account.Subscriber
-    has_many :collection_access, Nfd.Account.CollectionAccess
+    has_one :subscriber, Nfd.Account.Subscriber, on_delete: :delete_all
+    has_many :collection_access, Nfd.Account.CollectionAccess, on_delete: :delete_all
 
     timestamps()
   end
 
-  @doc false
   def changeset(user, attrs) do
+    new_attr = Map.merge(attrs, %{ subscriber: %{ subscriber_email: attrs.email }})
     user
-      |> pow_changeset(attrs)
-      |> pow_extension_changeset(attrs)
-      |> cast(attrs, [:slug, :display_name, :first_name, :last_name, :is_admin, :coaching_minutes])
-      |> validate_required([:slug, :display_name, :first_name, :last_name, :is_admin, :coaching_minutes])
+      |> pow_changeset(new_attr)
+      |> pow_extension_changeset(new_attr)
+      |> cast_assoc(:subscriber)
   end
 
-  # def changeset(user_or_changeset, attrs) do
-  #   user_or_changeset
-  #   |> pow_changeset(attrs)
-  #   |> pow_extension_changeset(attrs)
-  # end
+  def changeset_other(user, attrs) do
+    user
+    |> cast(attrs, [:slug, :display_name, :first_name, :last_name, :is_admin, :coaching_minutes])
+    |> validate_required([:slug, :display_name, :first_name, :last_name, :is_admin, :coaching_minutes])
+  end
+
+  # NOTE: This is unsafe and technically only for dev.
+  def changeset_confirm_email(user, attrs) do
+    user |> cast(attrs, [:email_confirmed_at])
+  end
 end

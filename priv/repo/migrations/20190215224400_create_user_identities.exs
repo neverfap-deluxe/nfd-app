@@ -3,9 +3,11 @@ defmodule Nfd.Repo.Migrations.CreateUserIdentities do
 
   def change do
     create table(:user_identities) do
+      add :empty, :string
       add :provider, :string, null: false
       add :uid, :string, null: false
-      add :user_id, references("users"), on_delete: :nothing
+      # add :user_id, references("users"), on_delete: :nothing
+      add :user_id, references(:users, on_delete: :nothing, type: :binary_id)
 
       timestamps(updated_at: false)
     end

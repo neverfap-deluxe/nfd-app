@@ -17,6 +17,6 @@ defmodule Nfd.Repo.Migrations.CreateSubscribers do
       timestamps()
     end
 
-    create index(:subscribers, [:user_id])
+    create index(:subscribers, [:user_id, :subscriber_email])
   end
 end

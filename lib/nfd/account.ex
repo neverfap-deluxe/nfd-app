@@ -36,6 +36,7 @@ defmodule Nfd.Account do
 
   """
   def get_user!(id), do: Repo.get!(User, id)
+  def get_user_email(email), do: Repo.get_by(User, email: email)
 
   @doc """
   Creates a user.
@@ -73,6 +74,11 @@ defmodule Nfd.Account do
     |> Repo.update()
   end
 
+  def update_user_email_confirm(%User{} = user, attrs) do
+    user 
+    |> User.changeset_confirm_email(attrs)
+    |> Repo.update()
+  end
   @doc """
   Deletes a User.
 
@@ -245,6 +251,7 @@ defmodule Nfd.Account do
 
   """
   def get_subscriber!(id), do: Repo.get!(Subscriber, id)
+  def get_subscriber_user_id!(user_id), do: Repo.get_by!(Subscriber, user_id: user_id)
 
   @doc """
   Creates a subscriber.

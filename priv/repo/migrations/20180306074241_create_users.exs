@@ -11,6 +11,9 @@ defmodule Nfd.Repo.Migrations.CreateUsers do
       add :is_admin, :boolean, default: false, null: false
       add :coaching_minutes, :integer
 
+      add :email, :string, null: false
+      add :password_hash, :string
+
       timestamps()
     end
     create unique_index(:users, [:email])

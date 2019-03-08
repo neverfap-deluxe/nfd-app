@@ -13,7 +13,7 @@
 
     <%= link to: Routes.dashboard_path(@conn, :email_campaigns), class: "hub__sidebar__button" do %>
       <i class="fas fa-envelope-square"></i>
-      <span>Challenges</span>
+      <span>Email</span>
     <% end %>
 
     <%= link to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "hub__sidebar__button" do %>

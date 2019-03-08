@@ -46,7 +46,7 @@ defmodule Nfd.Content do
 
   """
   def get_collection!(id), do: Repo.get!(Collection, id)
-  def get_collection_slug!(slug), do: Repo.get!(Collection, slug)
+  def get_collection_slug!(slug), do: Repo.get_by!(Collection, slug: slug)
 
   @doc """
   Creates a collection.
@@ -143,7 +143,7 @@ defmodule Nfd.Content do
 
   """
   def get_file!(id), do: Repo.get!(File, id)
-  def get_file_slug!(slug), do: Repo.get!(File, slug)
+  def get_file_slug!(slug), do: Repo.get_by!(File, slug: slug)
 
   @doc """
   Creates a file.

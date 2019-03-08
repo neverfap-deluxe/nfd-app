@@ -2,13 +2,24 @@ defmodule NfdWeb.DashboardController do
   use NfdWeb, :controller
 
   alias Nfd.Content
+  alias Nfd.Account
 
   plug :put_layout, "hub.html"
 
   def dashboard(conn, _params) do
+    user = Pow.Plug.current_user(conn)
+    subscriber = Account.get_subscriber_user_id!(user.id)
+
+    collections_audio = Content.list_audio_courses()
+    collections_email = Content.list_email_campaigns()
+
     conn
       |> put_flash(:info, "Welcome back!")
-      |> render("dashboard.html")
+      |> render("dashboard.html", user: user, subscriber: subscriber, collections_audio: collections_audio, collections_email: collections_email)
+  end
+
+  def payment(conn, _params) do
+    
   end
 
   # audio courses

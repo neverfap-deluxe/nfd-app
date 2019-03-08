@@ -11,6 +11,7 @@ defmodule Nfd.Content.Collection do
     field :display_name, :string
     field :premium, :boolean, default: false
     field :slug, :string
+    field :price, :float
 
     has_many :files, Nfd.Content.File
 

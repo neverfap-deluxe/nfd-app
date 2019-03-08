@@ -1,1 +1,11 @@
-You got 404'd
+<!-- The 404 page should be a page that has all the content on the website. -->
+
+<div class="single__wrapper">   
+  <h2 class="single__title">404 <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
+  <div class="single__content" style="margin-bottom: 0;">
+    <p>Unfortunately, the page you wanted to go to doesn't exist.</p>
+    <a class="link articles_link"href="/">Home</a>
+  </div>
+</div>
+
+<%= partial "links-patreon.html", assigns %>

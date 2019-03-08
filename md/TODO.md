@@ -17,6 +17,7 @@
 - Put reddit link on homepage once subreddit is created.
 - A heap of meta content for a large range of new pages that have been created.
 - Design my 404 page.
+- Podcast page.
 
 https://forestry.io/blog/build-a-json-api-with-hugo/
 

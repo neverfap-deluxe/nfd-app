@@ -53,6 +53,8 @@ defmodule NfdWeb.Router do
     get "/twenty-eight-day-awareness-challenge/:day", ContentEmailController, :twenty_eight_day_awareness_single
     get "/ten-day-meditation-primer", ContentEmailController, :ten_day_meditation
     get "/ten-day-meditation-primer/:day", ContentEmailController, :ten_day_meditation_single
+
+    post "/create", AccountController, :create
   end
 
   scope "/", NfdWeb do
@@ -68,8 +70,6 @@ defmodule NfdWeb.Router do
     get "/dashboard/email_campaigns", DashboardController, :email_campaigns
     get "/dashboard/email_campaigns/:collection", DashboardController, :email_campaigns_collection
     get "/dashboard/email_campaigns/:collection/:file", DashboardController, :email_campaigns_single
-
-    delete "/logout", SessionController, :delete, as: :logout
   end
 
   scope "/dev" do

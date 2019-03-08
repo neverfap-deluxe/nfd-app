@@ -2,19 +2,31 @@
   <h2 class="hub__main__title">Dashboard</h2>
   
   <div class="hub__main__area">
-    <p>Welcome to the NeverFap Deluxe members section!</p>
-    <p>There's not a whole lot to do as a member (as of yet), however here's a bunch of links you can look at:</p>
+    <div class="hub__main__area__content">
+      <h2>Updates</h2>
+      <p>If you'd like to keep up to date on future products as they're released to your email, please subscribe to our newsletter! Alternatively, I post a weekly update of my progress on the website on my <a class="link articles_link" href="https://patreon.com/NeverFapDeluxe">Patreon Account</a>.</p>
 
+      <p class="status"><b>Status:</b> <%= subscribed_status @subscriber.subscribed %></p>
+      <div class="button subscribe__button">Subscribe me.</div>
+      
+      <h2>Email Challenges</h2>
+      <div class="hub__main__email">
+        <%= Enum.map(@collections_email, fn(collection) -> %>
+          <div class="email__collection">
+            <h3><%= collection.display_name %></h3>
+            <p><%= collection.description %></p>
 
-    <h2>Website updates</h2>
-    <p>If you'd like to keep up to date on future products as they're released, please subscribe to our newsletter </p>
-    <p></p>
-    
+            <a class="learn__more" href="/dashboard/<%= collection.slug %>">
+              Learn more.
+            </a>
+          </div>
+        <% end ) %>
+      </div>
 
-    <div class="hub__main__audio">
-
+      <h2>Audio Courses</h2>
+      <div class="hub__main__audio">
+        <p>Unfortunately there are not </p>
+      </div>
     </div>
-
   </div>
-  
 </div>

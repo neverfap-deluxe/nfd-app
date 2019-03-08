@@ -35,4 +35,4 @@ RUN cd assets && \
 
 EXPOSE 4000
 
-CMD ["mix", "do", "ecto.create,", "ecto.migrate,", "phx.server"]
+CMD ["mix", "do", "ecto.setup,", "phx.server"]
