@@ -18,10 +18,6 @@ defmodule NfdWeb.DashboardController do
       |> render("dashboard.html", user: user, subscriber: subscriber, collections_audio: collections_audio, collections_email: collections_email)
   end
 
-  def payment(conn, _params) do
-    
-  end
-
   # audio courses
   def audio_courses(conn, _params) do
     collections = Content.list_audio_courses()

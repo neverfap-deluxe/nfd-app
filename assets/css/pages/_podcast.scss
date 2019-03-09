@@ -1,0 +1,25 @@
+.podcast__item__container {
+  .podcast__item {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border: 4px solid black;
+    padding: 1rem;
+
+    h1 {
+      cursor: pointer;
+      color: black;
+    }
+
+    h1:hover {
+      text-shadow: -5px 5px cyan;
+    }
+
+    .link {
+      display: inline-block!important;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+}
+

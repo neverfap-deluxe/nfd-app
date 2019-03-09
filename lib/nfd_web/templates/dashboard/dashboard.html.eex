@@ -7,8 +7,10 @@
       <p>If you'd like to keep up to date on future products as they're released to your email, please subscribe to our newsletter! Alternatively, I post a weekly update of my progress on the website on my <a class="link articles_link" href="https://patreon.com/NeverFapDeluxe">Patreon Account</a>.</p>
 
       <p class="status"><b>Status:</b> <%= subscribed_status @subscriber.subscribed %></p>
-      <div class="button subscribe__button">Subscribe me.</div>
-      
+      <a href="<%= Routes.function_path(@conn, :change_subscription, subscribed: @subscriber.subscribed, user_id: @user.id) %>" class="button subscribe__button"><%= subscribed_status_text @subscriber.subscribed %></a>
+    </div>
+    
+    <div class="hub__main__area__content">
       <h2>Email Challenges</h2>
       <div class="hub__main__email">
         <%= Enum.map(@collections_email, fn(collection) -> %>
@@ -16,17 +18,29 @@
             <h3><%= collection.display_name %></h3>
             <p><%= collection.description %></p>
 
-            <a class="learn__more" href="/dashboard/<%= collection.slug %>">
+            <a class="learn__more" href="/dashboard/email_campaigns/<%= collection.slug %>">
               Learn more.
             </a>
           </div>
         <% end ) %>
       </div>
+    </div>
 
+    <div class="hub__main__area__content">
       <h2>Audio Courses</h2>
       <div class="hub__main__audio">
-        <p>Unfortunately there are not </p>
+        <p>There are no audio courses, as of yet.</p>
+        <p>However, please feel free to check out the NeverFap Deluxe podcast.</p>
+        <a style="margin-bottom: 1rem; margin-top: 1rem;"href="/podcast" class="button subscribe__button">NeverFap Deluxe Podcast</a>
       </div>
+    </div>
+
+    <div class="hub__main__area__content">
+      <h2>Links</h2>
+      <p>Website: <a href="https://neverfapdeluxe.com">https://neverfapdeluxe.com/</a></p>
+      <p>Twitter: <a href="https://twitter.com/NeverFapDeluxe">https://twitter.com/NeverFapDeluxe</a></p>
+      <p>Reddit: <a href="https://reddit.com/user/NeverFapDeluxe">https://reddit.com/user/NeverFapDeluxe</a></p>
+      <p>Discord: <a href="https://discord.gg/YETRkSj">https://discord.gg/YETRkSj</a></p>
     </div>
   </div>
 </div>

@@ -27,6 +27,7 @@
 
 .hub__main__area {
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
   
   padding: 0.5rem;
@@ -35,6 +36,7 @@
   
   .hub__main__area__content {
     width: 100%;
+    margin-bottom: 2rem;
 
     .status {
       margin-top: 1rem;
@@ -47,7 +49,11 @@
     line-height: 1.6rem;
     margin-top: 0.4rem;
     margin-bottom: 0.4rem;
-  }  
+  }
+
+  h2 {
+    margin-bottom: 1rem;  
+  }
 
   h3 {
     font-size: 1.3rem;
@@ -96,6 +102,7 @@
     margin-bottom: 1rem;
 
     h3 {
+      margin-top: 0.5rem;
 
     }
   }

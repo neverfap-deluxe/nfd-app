@@ -2,12 +2,15 @@
   <h2 class="hub__main__title">Audio Courses</h2>
   
   <div class="hub__main__area">
-    <p>There are no audio courses, as of yet.</p>
-    <p>I know, this place is a little barebones at the moment.</p>
-    <!-- <p>In the meantime, please feel free to listen to the podcast.</p> -->
+    <div class="hub__main__area__content">
+      <p>There are no audio courses, as of yet.</p> 
+      <p>However, please feel free to check out the NeverFap Deluxe podcast.</p>
+      <a style="margin-bottom: 1rem; margin-top: 1rem;"href="/podcast" class="button subscribe__button">NeverFap Deluxe Podcast</a>
+      <p>Alternatively, there are some pretty amazing email challenges that I've created, and they can be found <a class="link" href="/dashboard/email_campaigns">here</a>.</p>
 
-    <div class="hub__main__audio">
+      <div class="hub__main__audio">
 
+      </div>
     </div>
   </div>
 </div>

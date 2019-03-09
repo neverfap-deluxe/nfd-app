@@ -16,6 +16,11 @@
       <span>Email</span>
     <% end %>
 
+    <%= link to: Routes.dashboard_path(@conn, :profile), class: "hub__sidebar__button" do %>
+    <i class="fas fa-user-circle"></i>
+      <span>Profile</span>
+    <% end %>
+
     <%= link to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "hub__sidebar__button" do %>
       <i class="fas fa-sign-out-alt"></i>
       <span>Logout</span>

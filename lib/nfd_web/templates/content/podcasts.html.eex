@@ -3,13 +3,22 @@
 
   <div class="single__content">
     <p>The NeverFap Deluxe Podcast is a fornightly podcast about porn addiction recovery.</p>
-    <p>In essence, it is an informal </p>
+    <p>It's informal. It's fun. Yum.</p>
     
-
+    <!-- <p>iTunes: </p> -->
   </div>
 
-  <div>
-    <%= @podcasts %>
+  <div class="podcast__item__container">
+    <%= Enum.map(@podcasts, fn(podcast) -> %>
+      <div class="podcast__item">
+        <a href=""><h1><%= podcast["title"] %></h1></a>
+        <h3><%= podcast["content"] %></h3>
+        <a class="link articles__link" href='<%= podcast["url"] %>'>download</a>
+        <audio controls src='<%= podcast["url"] %>'>
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+      </div>
+    <% end ) %>
   </div>
 
 </div>

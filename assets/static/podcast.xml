@@ -3,58 +3,57 @@
   xmlns:rawvoice="http://www.rawvoice.com/rawvoiceRssModule/" version="2.0">
   <channel>
     <title>The NeverFap Deluxe Podcast</title>
-    <link>https://neverfapdeluxe.com/</link>
+    <link>https://neverfapdeluxe.com/</link> <!-- NOTE: Will need to change this to the neverfapdeluxe.com/podcast route once that becomes live -->
     <image>
       <url>https://neverfapdeluxe.com/images/logo.png
       </url>
       <title>The NeverFap Deluxe Podcast</title>
-      <link>https://neverfapdeluxe.com/</link>
+      <link>https://neverfapdeluxe.com/</link> <!-- NOTE: Will need to change this to the neverfapdeluxe.com/podcast route once that becomes live -->
     </image>
     <description>
-    Recovered porn addict Julius Reade shares all his tips and tricks from his five year NoFap journey to overcome porn addiction. Learn about the power of meditation, how porn addiction works, as well as how you can easily stay on track if you commit to your mental health and embrace a whole new way of thinking. For more information about the podcast, please visit our website at https://neverfapdeluxe.com/ where you will discover articles, practices, guides and courses to help you overcome porn addiction. If you have any questions, please send them to our contact form at https://neverfapdeluxe.com/about
+    Recovered porn addict Julius shares all his tips and tricks from his five year NoFap journey to overcome porn addiction. Learn about the power of meditation, how porn addiction works, as well as how you can easily stay on track if you commit to your mental health and embrace a whole new way of thinking. For more information about the podcast, please visit our website at https://neverfapdeluxe.com/ where you will discover articles, practices, guides and courses to help you overcome porn addiction. If you have any questions, please send them to our contact form at https://neverfapdeluxe.com/about
     </description>
     <language>en-us</language>
-    <copyright>Julius Reade copyright 2019</copyright>
+    <copyright>Julius copyright 2019</copyright>
     <atom:link href="https://neverfapdeluxe.com/podcast.xml" rel="self" type="application/rss+xml"/>
     <lastBuildDate>Tue, 12 Feb 2019 06:00:00 PDT</lastBuildDate>
-    <itunes:author>Julius Reade</itunes:author>
+    <itunes:author>Julius</itunes:author>
     <itunes:summary>
-    Recovered porn addict Julius Reade shares all his tips and tricks from his five year NoFap journey to overcome porn addiction. Learn about the power of meditation, how porn addiction works, as well as how you can easily stay on track if you commit to your mental health and embrace a whole new way of thinking. For more information about the podcast, please visit our website at https://neverfapdeluxe.com/ where you will discover articles, practices, guides and courses to help you overcome porn addiction. If you have any questions, please send them to our contact form at https://neverfapdeluxe.com/about
+    Recovered porn addict Julius shares all his tips and tricks from his five year NoFap journey to overcome porn addiction. Learn about the power of meditation, how porn addiction works, as well as how you can easily stay on track if you commit to your mental health and embrace a whole new way of thinking. For more information about the podcast, please visit our website at https://neverfapdeluxe.com/ where you will discover articles, practices, guides and courses to help you overcome porn addiction. If you have any questions, please send them to our contact form at https://neverfapdeluxe.com/about
     </itunes:summary>
-    <itunes:subtitle>NoFap porn addiction recovery tips and tricks by Julius Reade</itunes:subtitle>
+    <itunes:subtitle>NoFap porn addiction recovery tips and tricks by Julius</itunes:subtitle>
     <itunes:owner>
-      <itunes:name>Julius Reade</itunes:name>
-      <itunes:email>julius.reade@gmail.com</itunes:email>
+      <itunes:name>Julius</itunes:name>
+      <itunes:email>neverfapdeluxe@gmail.com</itunes:email>
     </itunes:owner>
-    <itunes:explicit>No</itunes:explicit>
+    <itunes:explicit>no</itunes:explicit>
     <itunes:keywords>
     NoFap,porn addiction,porn recovery,NeverFap,NeverFap Deluxe,porn recovery,mental health,meditation,NoFap challenge
     </itunes:keywords>
     <itunes:image href="https://neverfapdeluxe.com/images/logo.png"/>
-    <rawvoice:rating>TV-G</rawvoice:rating>
+    <!-- <rawvoice:rating>TV-PG-13</rawvoice:rating> -->
     <rawvoice:location>Melbourne, Australia</rawvoice:location>
     <rawvoice:frequency>Weekly</rawvoice:frequency>
-    <itunes:category text="Technology"/>
-    <itunes:category text="Education"/>
-    <pubDate>Sat, 02 Jan 2016 06:00:00 PDT</pubDate>
-
+    <itunes:category text="Health"/>
+    <itunes:category text="Self-Help"/>
+    <pubDate>Sat, 03 Mar 2019 06:00:00 PDT</pubDate>
     
     <item>
       <title>
 EP01 - My Personal NoFap Porn Recovery Journey
       </title>
       <link>
-https://s3-us-west-1.amazonaws.com/podcasts.thepolyglotdeveloper.com/data/2016/TPDP+-+Episode+1+-+The+Requirements+for+Building+Mobile+Applications.mp3
+https://f002.backblazeb2.com/file/neverfapdeluxepodcast/ep1-my-personal-nofap-porn-recovery-journey.mp3
       </link>
-      <pubDate>Sat, 02 Jan 2016 16:00:00 PDT</pubDate>
+      <pubDate>Sat, 03 Mar 2019 12:03:00 PDT</pubDate>
       <description>
       In this episode I talk about my own NoFap porn recovery journey over the past five years, as well as all the challenges I've faced up until my recovery in October 2018. I talk about childhood factors, I talk about mental health, as well as how I managed to finally overcome porn addiction. More information about today's podcast can be found at https://neverfapdeluxe.com/podcast/episode-one-my-personal-nofap-porn-recovery-journey. Please send any questions you have to the contact form at https://neverfapdeluxe.com/about.
       </description>
-      <enclosure url="https://s3-us-west-1.amazonaws.com/podcasts.thepolyglotdeveloper.com/data/2016/TPDP+-+Episode+1+-+The+Requirements+for+Building+Mobile+Applications.mp3" length="36715125" type="audio/mpeg"/>
+      <enclosure url="https://f002.backblazeb2.com/file/neverfapdeluxepodcast/ep1-my-personal-nofap-porn-recovery-journey.mp3" length="35128270" type="audio/mpeg"/>
       <guid>
-https://s3-us-west-1.amazonaws.com/podcasts.thepolyglotdeveloper.com/data/2016/TPDP+-+Episode+1+-+The+Requirements+for+Building+Mobile+Applications.mp3
+https://f002.backblazeb2.com/file/neverfapdeluxepodcast/ep1-my-personal-nofap-porn-recovery-journey.mp3
       </guid>
-      <itunes:duration>19:07</itunes:duration>
+      <itunes:duration>36:35</itunes:duration>
       <itunes:summary>
       In this episode I talk about my own NoFap porn recovery journey over the past five years, as well as all the challenges I've faced up until my recovery in October 2018. I talk about childhood factors, I talk about mental health, as well as how I managed to finally overcome porn addiction. More information about today's podcast can be found at https://neverfapdeluxe.com/podcast/episode-one-my-personal-nofap-porn-recovery-journey. Please send any questions you have to the contact form at https://neverfapdeluxe.com/about.      </itunes:summary>
       <itunes:image href="https://neverfapdeluxe.com/images/logo.png"/>

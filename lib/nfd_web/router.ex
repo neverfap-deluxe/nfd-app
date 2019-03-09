@@ -54,7 +54,7 @@ defmodule NfdWeb.Router do
     get "/ten-day-meditation-primer", ContentEmailController, :ten_day_meditation
     get "/ten-day-meditation-primer/:day", ContentEmailController, :ten_day_meditation_single
 
-    post "/create", AccountController, :create
+    post "/kickstarter_subscribe", FunctionController, :kickstarter_subscribe
   end
 
   scope "/", NfdWeb do
@@ -70,6 +70,8 @@ defmodule NfdWeb.Router do
     get "/dashboard/email_campaigns", DashboardController, :email_campaigns
     get "/dashboard/email_campaigns/:collection", DashboardController, :email_campaigns_collection
     get "/dashboard/email_campaigns/:collection/:file", DashboardController, :email_campaigns_single
+
+    get "/dashboard/change_subscription", FunctionController, :change_subscription
   end
 
   scope "/dev" do
