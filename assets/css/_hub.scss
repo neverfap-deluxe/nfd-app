@@ -59,38 +59,6 @@
     font-size: 1.3rem;
   }
 
-  .subscribe__button {
-    display: inline-block;
-    font-size: 0.85rem!important;
-    line-height: 1.1rem!important;
-    background: white!important;
-    border: 4px solid black!important;
-    color: black!important;
-
-    margin-top: 1brem;
-    margin-bottom: 2rem;
-  }
-
-  .button {
-    box-shadow: -5px 5px 0px 0px cyan;  
-    padding: 0.8rem; 
-    cursor: pointer;
-  
-    transition: box-shadow .3s, bottom .3s, left .3s;
-
-    font-size: 1.4rem;
-    line-height: 2.15rem;
-  }
-  
-  .button:hover {
-    box-shadow: -10px 10px 0px 0px cyan;
-    bottom: -5px;
-    left: -5px;
-  }
-  
-  .button:focus {
-    outline: 0;
-  }
 }
 
 .hub__main__audio, .hub__main__email {
@@ -105,6 +73,14 @@
       margin-top: 0.5rem;
 
     }
+
+    .email__collection__bottom {
+      display: flex;
+      align-items: center;
+      
+      justify-content: space-between;
+      width: 100%;
+    }
   }
 
   .audio__collection {
@@ -117,6 +93,17 @@
   p {
 
   }
+}
+
+
+.delete__button {
+  color: red!important;
+}
+
+.profile__options__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 @media screen and (min-width: 420px) {

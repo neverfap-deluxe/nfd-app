@@ -4,17 +4,16 @@ defmodule NfdWeb.FunctionController do
   alias Nfd.Content
   alias Nfd.Account
 
-  def kickstarter_subscribe(conn, %{"email" => email}) do
-    # subscriber = Account.get_subscriber_user_id!(user_id)
-  end
+  def delete_acount(conn, %{"user" => user}) do 
+    case Account.delete_user(user) do
+      { :ok, empty_user } ->
+        # TODO: Send an email to me, signifying that the user deleted themselves.
+        redirect(conn, to: Routes.page_path(conn, :home))
 
-  def change_subscription(conn, %{"subscribed" => subscribed, "user_id" => user_id}) do
-    subscriber = Account.get_subscriber_user_id!(user_id)
-    
-    if subscribed == "true", do: Account.update_subscriber(subscriber, %{ subscribed: false })
-    if subscribed == "false", do: Account.update_subscriber(subscriber, %{ subscribed: true }) 
-
-    redirect(conn, to: Routes.dashboard_path(conn, :dashboard))
+      {:error, user } -> 
+        IO.inspect(user)
+        redirect(conn, to: Routes.page_path(conn, :home))
+    end
   end
 
 end

@@ -4,10 +4,15 @@
   <div class="hub__main__area">
     <div class="hub__main__area__content">
       <h3>Options</h3>
+      <!-- TODO: Ability to set firstName and lastName etc. -->
 
-      <%= link "Send reset password email", to: Routes.pow_reset_password_reset_password_path(@conn, :new), class: "button subscribe__button" %>
+      <!-- TODO: Purchased programs list. -->
 
-      <%= link "Logout", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "button subscribe__button hub__header__logout" %>
+      <div class="profile__options__container">
+        <%= link "Logout", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "subscribe__button" %>
+  
+        <%= link "Delete Account", to: Routes.dashboard_path(@conn, :profile_delete_confirmation), class: "subscribe__button delete__button" %> 
+      </div>
     </div>
   </div>
 </div>

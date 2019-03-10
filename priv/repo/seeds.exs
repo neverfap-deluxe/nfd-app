@@ -78,7 +78,7 @@ Repo.insert!(%Collection{
 Repo.insert!(%Collection{
   type: "email_campaign",
   status: "in_progress",
-  description: "",
+  description: "Learn more about your awareness with our 28 day awareness challenge.",
   display_name: "28 Day Awareness Challenge",
   premium: false,
   price: 14.99,

@@ -22,12 +22,27 @@
       <%#  </div>  %> -->
     </a>
 
-    <a id="link__practices" class="header__link__wrapper" href="/practices">
+
+    <!-- <a id="link__practices" class="header__link__wrapper" href="/practices">
       <li class="header__link">Practices</li>
-    </a>
-    <a id="link__courses" class="header__link__wrapper" href="/courses">
+    </a> -->
+
+    
+    <!-- <a id="link__courses" class="header__link__wrapper" href="/courses">
       <li class="header__link">Courses</li>
+    </a> -->
+
+    <a id="link__podcast" class="header__link__wrapper" href="/podcast">
+      <li class="header__link">Podcast</li>
     </a>
+
+        
+    <a id="link__community" class="header__link__wrapper" href="/community">
+      <li class="header__link">Community</li>
+    </a>
+
+
+
     <a id="link__about" class="header__link__wrapper" href="/about">
       <li class="header__link">About</li>
     </a>

@@ -1,0 +1,17 @@
+<div class="hub__main__email">
+  <%= Enum.map(@collections_email, fn(collection) -> %>
+    <div class="email__collection">
+      <h3><%= collection.display_name %></h3>
+      <p><%= collection.description %></p>
+      <div class="email__collection__bottom">
+        <%= if collection.status == "complete" do %>
+          <a class="subscribe__button" href="/dashboard/email_campaigns/<%= collection.slug %>">
+            Learn more.
+          </a>  
+        <% else %>
+          <span style="color: red; margin-top: 1rem;">Not yet complete</span>
+        <% end %>
+      </div>
+    </div>
+  <% end ) %>
+</div>

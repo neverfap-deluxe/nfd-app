@@ -1,0 +1,40 @@
+
+  .subscribe__button {
+    display: inline-block;
+    font-size: 0.85rem;
+    line-height: 1.1rem;
+    background: white;
+    border: 4px solid black;
+    color: black;
+
+    margin-top: 1rem;
+    // margin-bottom: 2rem;
+
+    box-shadow: -5px 5px 0px 0px cyan;  
+    padding: 0.8rem; 
+    cursor: pointer;
+  
+    transition: box-shadow .3s, bottom .3s, left .3s;
+  }
+
+  .subscribe__button:hover {
+    box-shadow: -10px 10px 0px 0px cyan;
+    bottom: -5px;
+    left: -5px;
+  }
+  
+  .subscribe__button:focus {
+    outline: 0;
+  }
+
+  .status {
+    margin-bottom: 0!important;
+  }
+
+  .status__green {
+    color: green;
+  }
+  .status__red {
+    color: red;
+  }
+

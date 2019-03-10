@@ -7,6 +7,7 @@ defmodule Nfd.Meta.Page do
   @foreign_key_type :binary_id
   schema "pages" do
     field :page_id, :string
+    field :page_title, :string
     field :visit_count, :integer
 
     timestamps()
@@ -15,7 +16,7 @@ defmodule Nfd.Meta.Page do
   @doc false
   def changeset(page, attrs) do
     page
-    |> cast(attrs, [:page_id, :visit_count])
-    |> validate_required([:page_id, :visit_count])
+    |> cast(attrs, [:page_id, :visit_count, :page_title])
+    |> validate_required([:page_id, :visit_count, :page_title])
   end
 end

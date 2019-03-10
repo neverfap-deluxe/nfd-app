@@ -1,6 +1,9 @@
 defmodule NfdWeb.EmailScheduler do
   use Swoosh.Mailer, otp_app: :nfd
-  use Phoenix.Swoosh, view: NfdWeb.TenDayMeditationEmailTemplateView, layout: {NfdWeb.LayoutView, :email}
+  use Phoenix.Swoosh, 
+    view: NfdWeb.SubscriptionTemplateView, 
+    layout: {NfdWeb.LayoutView, :email}
+
   import Swoosh.Email
 
   alias Nfd.Account
@@ -10,6 +13,8 @@ defmodule NfdWeb.EmailScheduler do
   alias NfdWeb.TwentyEightDayAwarenessScheduler
 
   require Logger
+
+  # Email Schedule Logic
 
   def email_scheduler() do
     subscribers = Account.list_subscribers_campaign()
@@ -29,10 +34,11 @@ defmodule NfdWeb.EmailScheduler do
           28 -> TwentyEightDayAwarenessScheduler.run(day_count)
         end 
 
+        # TODO: Put in templates
       case type do 
-        7 -> cast({subscriber, subject, template}) |> process("Seven Day NeverFap Deluxe Kickstarter - Day #{day_count} E-mail sent: " <> subscriber.email)
-        10 -> cast({subscriber, subject, template}) |> process("Ten Day Meditation Primer - Day #{day_count} E-mail sent: " <> subscriber.email)
-        28 -> cast({subscriber, subject, template}) |> process("Twenty Eight Day Challenge - Day #{day_count} E-mail sent: " <> subscriber.email)
+        7 -> cast_scheduler({subscriber, subject, template}) |> process("Seven Day NeverFap Deluxe Kickstarter - Day #{day_count} E-mail sent: " <> subscriber.email)
+        10 -> cast_scheduler({subscriber, subject, template}) |> process("Ten Day Meditation Primer - Day #{day_count} E-mail sent: " <> subscriber.email)
+        28 -> cast_scheduler({subscriber, subject, template}) |> process("Twenty Eight Day Challenge - Day #{day_count} E-mail sent: " <> subscriber.email)
       end 
 
       case type do 
@@ -43,12 +49,13 @@ defmodule NfdWeb.EmailScheduler do
     end
   end
 
-  def cast(%{subscriber: subscriber, subject: subject, template: template}) do
+  def cast_scheduler(%{subscriber: subscriber, subject: subject, template: template}) do
+    # TODO: Put in variables into template
     %Swoosh.Email{}
       |> to(subscriber.subscriber_email)
       |> from({"NeverFap Deluxe", "neverfapdeluxe@gmail.com"})
       |> subject(subject)
-      |> render_body(template)
+      |> render_body(template, %{})
   end
 
   def process(email, message) do

@@ -1,7 +1,7 @@
 var link__home = document.querySelector('#link__home');
 var link__guide = document.querySelector('#link__guide');
 var link__articles = document.querySelector('#link__articles');
-var link__practices = document.querySelector('#link__practices');
+var link__podcast = document.querySelector('#link__podcast');
 var link__courses = document.querySelector('#link__courses');
 var link__about = document.querySelector('#link__about');
 
@@ -22,8 +22,8 @@ switch(pathnameProper) {
     link__articles.style.borderBottom = '5px solid orange';
     break;
   
-  case 'practices':
-    link__practices.style.borderBottom = '5px solid orange';
+  case 'podcast':
+    link__podcast.style.borderBottom = '5px solid orange';
     break;
 
   case 'courses':

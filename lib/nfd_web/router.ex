@@ -30,7 +30,7 @@ defmodule NfdWeb.Router do
 
     get "/", PageController, :home
     get "/guide", PageController, :guide
-    get "/neverfap-deluxe-account", PageController, :account
+    get "/community", PageController, :community
     get "/about", PageController, :about
     get "/contact", PageController, :contact
     get "/disclaimer", PageController, :disclaimer
@@ -53,8 +53,19 @@ defmodule NfdWeb.Router do
     get "/twenty-eight-day-awareness-challenge/:day", ContentEmailController, :twenty_eight_day_awareness_single
     get "/ten-day-meditation-primer", ContentEmailController, :ten_day_meditation
     get "/ten-day-meditation-primer/:day", ContentEmailController, :ten_day_meditation_single
+ 
+    get "/:four_oh_four", PageController, :four_oh_four
+  end
 
-    post "/kickstarter_subscribe", FunctionController, :kickstarter_subscribe
+  # Subscription 
+  scope "/", NfdWeb do
+    pipe_through :browser
+
+    # Subscription functions
+    get "/confirm_subscription", SubscriptionController, :add_subscription_func
+    get "/unsubscribe", SubscriptionController, :unsubscribe_func
+    get "/subscription_success", SubscriptionController, :confirm_subscription_func
+    get "/change_subscription_general_func", SubscriptionController, :change_subscription_general_func
   end
 
   scope "/", NfdWeb do
@@ -62,6 +73,7 @@ defmodule NfdWeb.Router do
 
     get "/dashboard", DashboardController, :dashboard
     get "/dashboard/profile", DashboardController, :profile
+    get "/dashboard/delete_profile", DashboardController, :profile_delete_confirmation
 
     get "/dashboard/audio_courses", DashboardController, :audio_courses
     get "/dashboard/audio_courses/:collection", DashboardController, :audio_courses_collection
@@ -70,8 +82,6 @@ defmodule NfdWeb.Router do
     get "/dashboard/email_campaigns", DashboardController, :email_campaigns
     get "/dashboard/email_campaigns/:collection", DashboardController, :email_campaigns_collection
     get "/dashboard/email_campaigns/:collection/:file", DashboardController, :email_campaigns_single
-
-    get "/dashboard/change_subscription", FunctionController, :change_subscription
   end
 
   scope "/dev" do

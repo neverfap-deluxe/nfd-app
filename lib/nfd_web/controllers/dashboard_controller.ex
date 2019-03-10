@@ -26,13 +26,13 @@ defmodule NfdWeb.DashboardController do
 
   def audio_courses_collection(conn, %{"collection" => collection}) do
     collections = Content.list_audio_courses()
-    collection = Content.get_collection_slug(collection)
+    collection = Content.get_collection_slug!(collection)
     render(conn, "audio_courses_collection.html", collections: collections, collection: collection)
   end
 
   def audio_courses_file(conn, %{"collection" => collection, "file" => file}) do
     collections = Content.list_audio_courses()
-    collection = Content.get_collection_slug(collection)
+    collection = Content.get_collection_slug!(collection)
     file = Content.get_file_slug(file)
     render(conn, "audio_courses_file.html", collections: collections, collection: collection, file: file)
   end
@@ -45,13 +45,13 @@ defmodule NfdWeb.DashboardController do
 
   def email_campaigns_collection(conn, %{"collection" => collection}) do
     collections = Content.list_email_campaigns()
-    collection = Content.get_collection_slug(collection)
+    collection = Content.get_collection_slug!(collection)
     render(conn, "email_campaigns_collection.html", collections: collections, collection: collection)
   end
 
   def email_campaigns_file(conn, %{"collection" => collection, "file" => file}) do
     collections = Content.list_email_campaigns()
-    collection = Content.get_collection_slug(collection)
+    collection = Content.get_collection_slug!(collection)
     file = Content.get_file_slug(file)
     render(conn, "email_campaigns_file.html", collections: collections, collection: collection, file: file)
   end
@@ -61,7 +61,7 @@ defmodule NfdWeb.DashboardController do
   end
 
   def profile_delete_confirmation(conn, _params) do
-    render(conn, "profile.html")
+    render(conn, "profile_delete_confirmation.html")
   end
 
 end

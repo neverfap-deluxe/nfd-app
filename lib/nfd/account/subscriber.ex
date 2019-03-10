@@ -24,6 +24,15 @@ defmodule Nfd.Account.Subscriber do
   def changeset(subscriber, attrs) do
     subscriber
     |> cast(attrs, [:subscriber_email, :subscribed, :twenty_eight_day_awareness_subscribed, :twenty_eight_day_awareness_count, :seven_day_kickstarter_subscribed, :seven_day_kickstarter_count, :ten_day_meditation_subscribed, :ten_day_meditation_count])
-    |> validate_required([:subscriber_email, :subscribed, :twenty_eight_day_awareness_subscribed, :twenty_eight_day_awareness_count, :seven_day_kickstarter_subscribed, :seven_day_kickstarter_count, :ten_day_meditation_subscribed, :ten_day_meditation_count])
+    |> validate_required(
+      [:subscriber_email, 
+      # :subscribed, 
+      # :twenty_eight_day_awareness_subscribed, 
+      # :twenty_eight_day_awareness_count, 
+      # :seven_day_kickstarter_subscribed, 
+      # :seven_day_kickstarter_count, 
+      # :ten_day_meditation_subscribed, 
+      # :ten_day_meditation_count
+      ])
   end
 end

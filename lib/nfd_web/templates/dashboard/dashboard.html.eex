@@ -4,33 +4,20 @@
   <div class="hub__main__area">
     <div class="hub__main__area__content">
       <h2>Updates</h2>
-      <p>If you'd like to keep up to date on future products as they're released to your email, please subscribe to our newsletter! Alternatively, I post a weekly update of my progress on the website on my <a class="link articles_link" href="https://patreon.com/NeverFapDeluxe">Patreon Account</a>.</p>
+      <p>If you'd like to keep up to date on future products as they're released, please subscribe to our newsletter!</p>
 
-      <p class="status"><b>Status:</b> <%= subscribed_status @subscriber.subscribed %></p>
-      <a href="<%= Routes.function_path(@conn, :change_subscription, subscribed: @subscriber.subscribed, user_id: @user.id) %>" class="button subscribe__button"><%= subscribed_status_text @subscriber.subscribed %></a>
+      <%= partial "subscriber_status.html", %{ conn: @conn, subscribed: @subscriber.subscribed, user_id: @user.id } %>
     </div>
     
     <div class="hub__main__area__content">
       <h2>Email Challenges</h2>
-      <div class="hub__main__email">
-        <%= Enum.map(@collections_email, fn(collection) -> %>
-          <div class="email__collection">
-            <h3><%= collection.display_name %></h3>
-            <p><%= collection.description %></p>
-
-            <a class="learn__more" href="/dashboard/email_campaigns/<%= collection.slug %>">
-              Learn more.
-            </a>
-          </div>
-        <% end ) %>
-      </div>
+      <%= partial "dashboard-email_campaigns.html", %{ collections_email: @collections_email} %>
     </div>
 
     <div class="hub__main__area__content">
       <h2>Audio Courses</h2>
       <div class="hub__main__audio">
-        <p>There are no audio courses, as of yet.</p>
-        <p>However, please feel free to check out the NeverFap Deluxe podcast.</p>
+        <p>There are no audio courses, as of yet. Please feel free to check out the NeverFap Deluxe podcast while I figure out how to deliver the best possible experience for you.</p>
         <a style="margin-bottom: 1rem; margin-top: 1rem;"href="/podcast" class="button subscribe__button">NeverFap Deluxe Podcast</a>
       </div>
     </div>

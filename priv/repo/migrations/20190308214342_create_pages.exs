@@ -5,6 +5,7 @@ defmodule Nfd.Repo.Migrations.CreatePages do
     create table(:pages, primary_key: false) do
       add :id, :binary_id, primary_key: true
       add :page_id, :string
+      add :page_title, :string
       add :visit_count, :integer
 
       timestamps()

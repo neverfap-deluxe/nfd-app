@@ -9,6 +9,10 @@ defmodule NfdWeb.API.Page do
     get(client, "/guide/index.json")
   end
 
+  def community(client) do
+    get(client, "/community/index.json")
+  end
+
   def about(client) do
     get(client, "/about/index.json")
   end

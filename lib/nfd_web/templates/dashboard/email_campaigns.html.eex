@@ -1,15 +1,9 @@
 <div class="hub__email__challenges">
   <h2 class="hub__main__title">Email Challenges</h2>
   
-  <div class="hub__main__area">
-    <p>I decided to create these email campaigns </p>
-    
-    <div class="hub__main__email">
-      <%= Enum.map(@collections, fn(collection) -> %>
-        <div class="email__collection">
-          
-        </div>
-      <% end ) %>
+  <div class="hub__main__area">    
+    <div class="hub__main__area__content">
+      <%= partial "dashboard-email_campaigns.html", %{ collections_email: @collections} %>
     </div>
   </div>
 </div>

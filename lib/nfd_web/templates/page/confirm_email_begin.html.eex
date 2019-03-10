@@ -1,3 +1,0 @@
-<h1>Please confirm your email to continue.</h1>
-
-<%= get_flash(@conn, :user_email) %>

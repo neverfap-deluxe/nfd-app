@@ -17,7 +17,8 @@
 - Put reddit link on homepage once subreddit is created.
 - A heap of meta content for a large range of new pages that have been created.
 - Design my 404 page.
-- Podcast page.
+- Page that has everything inside the app.
+- Add validation to email subscription to see if they have paid for the subscription before modifying matrix.
 
 https://forestry.io/blog/build-a-json-api-with-hugo/
 
