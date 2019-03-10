@@ -4,6 +4,7 @@ defmodule Nfd.Repo.Migrations.CreateFiles do
   def change do
     create table(:files, primary_key: false) do
       add :id, :binary_id, primary_key: true
+      add :seed_id, :string
       add :slug, :string
       add :type, :string
       add :display_name, :string
@@ -15,7 +16,6 @@ defmodule Nfd.Repo.Migrations.CreateFiles do
 
       timestamps()
     end
-
-    create index(:files, [:collection_id])
+    create index(:files, [:collection_id, :seed_id])
   end
 end

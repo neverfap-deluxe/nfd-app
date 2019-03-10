@@ -4,6 +4,7 @@ defmodule Nfd.Repo.Migrations.CreateCollections do
   def change do
     create table(:collections, primary_key: false) do
       add :id, :binary_id, primary_key: true
+      add :seed_id, :string
       add :slug, :string
       add :type, :string
       add :display_name, :string
@@ -14,6 +15,6 @@ defmodule Nfd.Repo.Migrations.CreateCollections do
 
       timestamps()
     end
-
+    create unique_index(:collections, [:seed_id])
   end
 end

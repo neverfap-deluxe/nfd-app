@@ -5,6 +5,7 @@ defmodule Nfd.Content.Collection do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "collections" do
+    field :seed_id, :string
     field :type, :string
     field :status, :string
     field :description, :string
@@ -21,7 +22,7 @@ defmodule Nfd.Content.Collection do
   @doc false
   def changeset(collection, attrs) do
     collection
-    |> cast(attrs, [:slug, :display_name, :status, :description, :type, :premium])
+    |> cast(attrs, [:seed_id, :slug, :display_name, :status, :description, :type, :premium])
     |> validate_required([:slug, :display_name, :status, :description, :type, :premium])
   end
 end

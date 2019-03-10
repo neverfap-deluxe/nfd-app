@@ -6,6 +6,7 @@ defmodule Nfd.Content.File do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "files" do
+    field :seed_id, :string
     field :type, :string
     field :description, :string
     field :display_name, :string
@@ -23,7 +24,7 @@ defmodule Nfd.Content.File do
   @doc false
   def changeset(file, attrs) do
     file
-    |> cast(attrs, [:slug, :display_name, :description, :type, :file_url, :download_count, :premium])
+    |> cast(attrs, [:seed_id, :slug, :display_name, :description, :type, :file_url, :download_count, :premium])
     |> validate_required([:slug, :display_name, :description, :type, :file_url, :download_count, :premium])
   end
 end

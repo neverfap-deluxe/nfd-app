@@ -10,9 +10,10 @@ defmodule Nfd.Account.User do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "users" do
-    has_many :user_identities,
-    Nfd.UserIdentities.UserIdentity,
-    on_delete: :delete_all
+    # has_many :user_identities,
+    #   Nfd.UserIdentities.UserIdentity,
+    #   on_delete: :delete_all
+
     pow_user_fields()
 
     field :coaching_minutes, :integer
