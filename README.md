@@ -105,6 +105,9 @@ run: ## Run the app in Docker
 \
 
 
+# HUGE GOTCHATS
+- When you take this code from the website, it uses a phrase "letsencrypt-site". Replace that with "neverfapdeluxe.com"
+
 
 <!-- staging -->
 sudo docker run -it --rm \
@@ -118,8 +121,6 @@ certonly --webroot \
 --webroot-path=/data/letsencrypt \
 --staging \
 -d neverfapdeluxe.com -d www.neverfapdeluxe.com
-
-
 
 
 <!-- prod -->

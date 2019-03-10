@@ -2,8 +2,8 @@
   <h2 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
   <div class="single__content" style="margin-bottom: 0;">
     <p>Join the NeverFap Deluxe Community!</p>
-    <p>There are a heap of different ways you can interact with the NeverFap Deluxe Community, whether you want to chat about your porn addiction or simply follow NeverFap Deluxe on social media.</p>
-    <p>With NeverFap Deluxe Account you also have access to a variety of unique, structured content that is available only from our members section.</p>
+    <p>There are a heap of different ways you can interact with the NeverFap Deluxe Community, whether you want to chat with others about your porn addiction, or even follow NeverFap Deluxe on social media.</p>
+    <p>In addition, we offer a variety of uniquely structured content that is available only when you register for a NeverFap Deluxe Account.</p>
     <p>This includes things like helpful email campaigns to help you keep on track with your porn recovery, as well as a bunch of audio courses to teach you things such as meditation.</p>
     <p>Furthermore, it's completely FREE to register for an account.</p>
   </div>
@@ -14,10 +14,10 @@
 <div class="single__wrapper">
   <div class="single__content" >
     <h2>Create an account</h2>
-    <p>When you sign up for a NeverFap Deluxe Account, you have access to a variety of email campaigns .</p>
+    <p>When you sign up for a NeverFap Deluxe Account, you gain access to a variety of free and premium email campaigns.</p>
 
-    <h3>Seven Day Kickstarter</h3>
-    <p></p>
+    <h3>Seven Day NeverFap Deluxe Kickstarter</h3>
+    <p>With our FREE Seven Day NeverFap Deluxe Kickstarter, </p>
     
   </div>
 </div>
