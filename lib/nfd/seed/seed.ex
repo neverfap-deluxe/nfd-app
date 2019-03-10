@@ -3,6 +3,8 @@ defmodule Mix.Tasks.Nfd.Seed do
   alias Nfd.Repo
   import Ecto
 
+  alias Nfd.SeedSevenDayKickstarter
+
   alias Nfd.Repo
   alias Nfd.Account
   alias Nfd.Content
@@ -22,10 +24,12 @@ defmodule Mix.Tasks.Nfd.Seed do
   def seed(:dev) do    
     seed_users()
     seed_collections()
+    SeedSevenDayKickstarter.seed()
   end
 
   def seed(:prod) do
     seed_collections()
+    SeedSevenDayKickstarter.seed()
   end
 
   def seed_users() do 
@@ -84,7 +88,6 @@ defmodule Mix.Tasks.Nfd.Seed do
       collection -> nil
     end
     
-    
     case Content.get_collection_seed_id("12ec4d76-3d93-42c5-8c2f-65bb146e4bd6") do
       nil -> Repo.insert!(%Collection{
         seed_id: "12ec4d76-3d93-42c5-8c2f-65bb146e4bd6",
@@ -100,5 +103,4 @@ defmodule Mix.Tasks.Nfd.Seed do
       collection -> nil
     end
   end
-
 end  
