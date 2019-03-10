@@ -20,7 +20,7 @@ defmodule NfdWeb.Router do
   scope "/" do
     pipe_through :browser
 
-    pow_routes() # Because I'm using custom routes defined below, this isn't needed.
+    pow_routes()
     pow_extension_routes()
     pow_assent_routes()
   end
@@ -53,9 +53,7 @@ defmodule NfdWeb.Router do
     get "/twenty-eight-day-awareness-challenge/:day", ContentEmailController, :twenty_eight_day_awareness_single
     get "/ten-day-meditation-primer", ContentEmailController, :ten_day_meditation
     get "/ten-day-meditation-primer/:day", ContentEmailController, :ten_day_meditation_single
- 
-    get "/:four_oh_four", PageController, :four_oh_four
-  end
+   end
 
   # Subscription 
   scope "/", NfdWeb do

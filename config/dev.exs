@@ -12,7 +12,7 @@ config :nfd, Nfd.SwooshMailer,
 # with webpack to recompile .js and .css sources.
 config :nfd, NfdWeb.Endpoint,
   http: [port: 4000],
-  debug_errors: true,
+  debug_errors: false, # by setting this to false, it will show what errors will look like in production, not dev.
   code_reloader: true,
   check_origin: false,
   watchers: [

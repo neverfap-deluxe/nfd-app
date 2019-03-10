@@ -108,8 +108,4 @@ defmodule NfdWeb.PageController do
 
     render(conn, "account.html", changeset: changeset)
   end
-
-  def four_oh_four(conn, %{ "four_oh_four" => four_oh_four}) do
-    conn |> render("404.html")
-  end
 end

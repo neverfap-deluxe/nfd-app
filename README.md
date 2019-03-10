@@ -102,3 +102,34 @@ run: ## Run the app in Docker
 	docker run --env-file config/docker.env \
 		--expose 4000 -p 4000:4000 \
 		--rm -it $(APP_NAME):latest
+\
+
+
+
+<!-- staging -->
+sudo docker run -it --rm \
+-v /docker-volumes/etc/letsencrypt:/etc/letsencrypt \
+-v /docker-volumes/var/lib/letsencrypt:/var/lib/letsencrypt \
+-v /docker/letsencrypt-docker-nginx/src/letsencrypt/neverfapdeluxe.com:/data/letsencrypt \
+-v "/docker-volumes/var/log/letsencrypt:/var/log/letsencrypt" \
+certbot/certbot \
+certonly --webroot \
+--register-unsafely-without-email --agree-tos \
+--webroot-path=/data/letsencrypt \
+--staging \
+-d neverfapdeluxe.com -d www.neverfapdeluxe.com
+
+
+
+
+<!-- prod -->
+sudo docker run -it --rm \
+-v /docker-volumes/etc/letsencrypt:/etc/letsencrypt \
+-v /docker-volumes/var/lib/letsencrypt:/var/lib/letsencrypt \
+-v /docker/letsencrypt-docker-nginx/src/letsencrypt/neverfapdeluxe.com:/data/letsencrypt \
+-v "/docker-volumes/var/log/letsencrypt:/var/log/letsencrypt" \
+certbot/certbot \
+certonly --webroot \
+--email neverfapdeluxe@gmail.com --agree-tos --no-eff-email \
+--webroot-path=/data/letsencrypt \
+-d neverfapdeluxe.com -d www.neverfapdeluxe.com
