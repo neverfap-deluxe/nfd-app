@@ -1,9 +1,10 @@
 use Mix.Config
 
 # Mailer setup
-config :nfd, Nfd.SwooshMailer,
-  adapter: Swoosh.Adapters.Local
+# config :nfd, Nfd.SwooshMailer,
+#   adapter: Swoosh.Adapters.Local
   
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #

@@ -22,7 +22,7 @@ defmodule NfdWeb.Router do
 
     pow_routes()
     pow_extension_routes()
-    pow_assent_routes()
+    # pow_assent_routes()
   end
 
   scope "/", NfdWeb do
