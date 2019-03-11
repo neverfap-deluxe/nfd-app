@@ -4,15 +4,6 @@ use Mix.Config
 # config :nfd, Nfd.SwooshMailer,
 #   adapter: Swoosh.Adapters.Local
   
-
-# Mailer setup
-config :nfd, Nfd.SwooshMailer,
-  adapter: Swoosh.Adapters.AmazonSES,
-  region: "us-east-1",
-  access_key: "AKIAJPIIOK56VNDACONA",
-  secret: "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" 
-
-
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
