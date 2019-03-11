@@ -9,6 +9,8 @@ make build
 // will build production image.
 
 
+# Some Phoenix Framework Stuff
+https://alexgaribay.com/2016/02/12/seeding-your-phoenix-app-for-different-mix-environments/
 
 
 $ docker exec --interactive --tty example_web_1 /bin/bash

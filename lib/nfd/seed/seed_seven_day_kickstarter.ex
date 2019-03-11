@@ -21,8 +21,8 @@ defmodule Nfd.SeedSevenDayKickstarter do
             %File{},
             Map.merge(%{
               seed_id: "8710f97c-4117-431d-99c8-4c734d916276",
-              file_url: "",
-              display_name: "The Beginning",
+              file_url: "", # There is no file.
+              display_name: "Day 0 - The Beginning",
               description: "Learn about the beginning.",
               slug: "day-0",
               collection_id: collection.id
@@ -39,8 +39,8 @@ defmodule Nfd.SeedSevenDayKickstarter do
             %File{},
             Map.merge(%{
               seed_id: "2279faec-a1fb-4d42-a140-f8946aae9e9e",
-              file_url: "",
-              display_name: "The Beginning",
+              file_url: "", # There is no file.
+              display_name: "Day 1 - The Awareness",
               description: "Yeah",
               slug: "day-1",
               collection_id: collection.id

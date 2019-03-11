@@ -1,7 +1,6 @@
 <div class="single__wrapper">   
   <h2 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
   <div class="single__content" style="margin-bottom: 0;">
-
     <p>Welcome to NeverFap Deluxe.</p>
     <p>I decided to create this website in 2019 to help people overcome porn addiction.</p>
     <p>Not only have I personally overcome porn addiction, to a point that I literally do not think about porn nor struggle with it in any way.</p>
@@ -9,7 +8,13 @@
   </div>
 </div>
 
-<%= partial "links-patreon.html", assigns %>
+<%= partial "links/patreon.html", assigns %>
+
+<!-- TODO: Talk about how the only thng I want to achieve on this website is to 
+  change the way people think about porn addiction. 
+
+  Once you understand how it works, by making that mental shift, it becomes incredibly easy.
+-->
 
 <div class="single__wrapper">
   <div class="single__content" >
@@ -32,7 +37,7 @@
   </div>
 </div>
 
-<%= partial "links-boxLink.html", %{ title: "Guide", text: "Check out our NeverFap Deluxe Guide!", link: "/guide" } %>
+<%= partial "links/custom.html", %{ title: "Guide", text: "Check out our NeverFap Deluxe Guide!", link: "/guide" } %>
 
 <div class="single__wrapper">
   <div class="single__content">
@@ -56,7 +61,7 @@
   </div>
 </div>
 
-<%= partial "links-boxInfo.html", assigns %>
+<%= partial "links/loginregister.html", assigns %>
 
 <div class="single__wrapper" id="contact__form">   
   <h2 class="single__title">Contact <img src="/images/logo.png" class="logo__square" alt=""/></h2>

@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<%= partial "links-patreon.html", assigns %>
+<%= partial "links/patreon.html", assigns %>
 
 <div class="single__wrapper">
   <h3 class="popular__latest__options__title">Articles</h3>
@@ -22,18 +22,18 @@
   </div>
   
   <div class="posts__off posts--guide" id="articles_latest_posts">
-    <%= partial "articles_latest.html", %{ items: @articles, tag_type: "context" } %>
+    <%= partial "list/articles_latest.html", %{ items: @articles, tag_type: "context" } %>
   </div>
   
   <div class="posts__on posts--guide" id="articles_latest_plain_posts">
-    <%= partial "articles_latest_plain_text.html", %{ items: @articles, tag_type: "context" } %>
+    <%= partial "list/articles_latest_plain_text.html", %{ items: @articles, tag_type: "context" } %>
   </div>
   
   <div class="posts__off posts--guide" id="articles_category_posts">
-    <%= partial "articles_category.html", %{ items: @articles, tag_type: "context" } %>
+    <%= partial "list/articles_category.html", %{ items: @articles, tag_type: "context" } %>
   </div>
 </div>
-<%= partial "login_top.html", assigns %>
+<%= partial "links/loginregister_top.html", assigns %>
   
 
 <script src='<%= Routes.static_path(@conn, "/js/articles.js") %>'></script>

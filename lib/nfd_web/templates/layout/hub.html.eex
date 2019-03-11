@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%= partial "head_dashboard.html", assigns %>
+  <%= partial "hub/head.html", assigns %>
 
   <body>
     <div class="hub">
       <%= partial "header.html", assigns %>
       
       <main role="main" class="hub__bottom">
-        <%= partial "sidebar.html", assigns %>
+        <%= partial "hub/sidebar.html", assigns %>
 
         <%= render @view_module, @view_template, assigns %>
       </main>

@@ -9,7 +9,7 @@
   </div>
 </div>
 
-<%= partial "links-patreon.html", assigns %>
+<%= partial "links/loginregister_top.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content" >
@@ -22,7 +22,7 @@
   </div>
 </div>
 
-<%= partial "login_top.html", assigns %>
+<%= partial "links/loginregister_top.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content">
@@ -33,6 +33,18 @@
     </div>
   </div>
 </div>
+
+<div class="single__wrapper">
+  <div class="single__content">
+    <h2>Discord</h2>
+    
+    <div class="button__wrapper">
+      <a class="button button__secondary" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles Of NeverFap.</a>
+    </div>
+  </div>
+</div>
+  
+<%= partial "links/discord.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content">

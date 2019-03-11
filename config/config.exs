@@ -18,7 +18,6 @@ config :nfd,
   language_code: "en-us",
   google_analytics: "UA-132863786-1"
 
-
 # Configures the endpoint
 config :nfd, NfdWeb.Endpoint,
   url: [host: "localhost"],
@@ -56,7 +55,10 @@ config :nfd, :pow,
   web_mailer_module: NfdWeb,
   web_module: NfdWeb
 
-  
+# Admin backend
+# config :torch,
+#   otp_app: :nfd,
+#   template_format: "eex"
 
 # Cron setup
 config :nfd, Nfd.Scheduler,

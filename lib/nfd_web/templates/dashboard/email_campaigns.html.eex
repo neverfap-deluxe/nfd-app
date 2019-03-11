@@ -3,7 +3,7 @@
   
   <div class="hub__main__area">    
     <div class="hub__main__area__content">
-      <%= partial "dashboard-email_campaigns.html", %{ collections_email: @collections} %>
+      <%= partial "hub/email_campaigns.html", %{ collections_email: @collections} %>
     </div>
   </div>
 </div>

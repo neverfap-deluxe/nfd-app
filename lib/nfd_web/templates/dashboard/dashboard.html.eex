@@ -11,7 +11,7 @@
     
     <div class="hub__main__area__content">
       <h2>Email Challenges</h2>
-      <%= partial "dashboard-email_campaigns.html", %{ collections_email: @collections_email} %>
+      <%= partial "hub/email_campaigns.html", %{ collections_email: @collections_email} %>
     </div>
 
     <div class="hub__main__area__content">

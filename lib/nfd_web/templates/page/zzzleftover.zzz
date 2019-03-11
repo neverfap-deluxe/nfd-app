@@ -90,7 +90,7 @@
       <p style="margin-bottom: 2rem;">Check out the NeverFap Deluxe Guide for <u>further instruction</u>!</p>
     </div>
 
-    <%= partial "links-boxLink.html", %{ title: "Guide", text: "You should definitely click on me. Pleeeease.", link: "/guide" } %>
+    <%= partial "links/custom.html", %{ title: "Guide", text: "You should definitely click on me. Pleeeease.", link: "/guide" } %>
 
     <div class="homepage__section">
       <h3 style="margin-top: 2.5rem; margin-bottom: 3rem;">Furthermore, all of these articles and practices have been organised into...</h3>
@@ -104,7 +104,7 @@
       </ul>
     </div>
 
-    <%= partial "links-boxLink.html", %{ title: "Principles", text: "Learn more about The Five Fundamental Principles of NeverFap.", link:  "/articles/the-five-fundamental-principles-of-neverfap" } %>
+    <%= partial "links/custom.html", %{ title: "Principles", text: "Learn more about The Five Fundamental Principles of NeverFap.", link:  "/articles/the-five-fundamental-principles-of-neverfap" } %>
 
     <div class="homepage__section">
       <h3>Hooray!</h3>

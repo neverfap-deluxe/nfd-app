@@ -11,4 +11,4 @@
   </div>
 </div>
 
-<%= partial "links-patreon.html", assigns %>
+<%= partial "links/patreon.html", assigns %>

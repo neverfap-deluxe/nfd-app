@@ -31,6 +31,7 @@ defmodule NfdWeb do
     quote do
       use Phoenix.View,
         root: "lib/nfd_web/templates",
+        pattern: "**/*",
         namespace: NfdWeb
 
       # Import convenience functions from controllers

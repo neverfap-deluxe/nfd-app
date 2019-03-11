@@ -39,18 +39,18 @@
 
 </div>
 
-<%= partial "links-patreon.html", assigns %>
+<%= partial "links/patreon.html", assigns %>
 
 <div class="single__wrapper">
   <h2>Course Articles</h2>
   <p>These articles have been written to help you better understand what the <%= @item["title"] %> means, as well as how it will help you overcome your porn addiction.</p>
-  <%= partial "courses-courses_articles_by_category.html", %{ "category_type" => @item["category"] } %>
+  <%= partial "courses/articles_by_category.html", %{ "category_type" => @item["category"] } %>
 
   <h2>Course Practices</h2>
   <p>These practices entail the exercises you will perform in order to improve skills related to <%= @item["title"] %>. They should be performed in a specific order.</p>
 
-  <%= partial "courses-courses_practices_by_category.html", %{ "category_type" => @item["category"] } %>
+  <%= partial "courses/practices_by_category.html", %{ "category_type" => @item["category"] } %>
 </div>
 
-<%= partial "links-boxInfo.html", assigns %>
+<%= partial "links/loginregister.html", assigns %>
 

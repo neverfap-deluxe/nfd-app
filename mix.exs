@@ -65,6 +65,8 @@ defmodule Nfd.MixProject do
 
       {:navigation_history, "~> 0.2.2"}
 
+      # Admin backend
+      # {:torch, "~> 2.0.0-rc.1"}
     ]
   end
 

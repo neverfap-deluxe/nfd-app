@@ -28,17 +28,12 @@ defmodule Nfd.Sitemaps do
     do 
       create do
         add Helpers.page_path(Endpoint, :home), priority: 0.5, changefreq: "daily", expires: nil
+        add Helpers.page_path(Endpoint, :guide), priority: 0.5, changefreq: "daily", expires: nil
+        add Helpers.page_path(Endpoint, :community), priority: 0.5, changefreq: "daily", expires: nil
         add Helpers.page_path(Endpoint, :about), priority: 0.5, changefreq: "daily", expires: nil
         add Helpers.page_path(Endpoint, :contact), priority: 0.5, changefreq: "daily", expires: nil
-
-        add Helpers.page_path(Endpoint, :guide), priority: 0.5, changefreq: "daily", expires: nil
-        add Helpers.page_path(Endpoint, :seven_day_kickstarter), priority: 0.5, changefreq: "daily", expires: nil
-        add Helpers.page_path(Endpoint, :ten_day_meditation), priority: 0.5, changefreq: "daily", expires: nil
-        add Helpers.page_path(Endpoint, :twenty_eight_day_awareness), priority: 0.5, changefreq: "daily", expires: nil
-        
         add Helpers.page_path(Endpoint, :disclaimer), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :privacy), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :account), priority: 0.5, changefreq: "weekly", expires: nil
 
         add Helpers.page_path(Endpoint, :articles), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :practices), priority: 0.5, changefreq: "weekly", expires: nil
@@ -65,6 +60,11 @@ defmodule Nfd.Sitemaps do
         Enum.each(quotesResponse.body["data"]["quotes"], fn(quoteArg) ->
           add Helpers.page_path(Endpoint, :quote, quoteArg["slug"]), priority: 0.5, changefreq: "daily", expires: nil                    
         end)
+
+        # TODO: Will also need to configure the individual days, once they're created.
+        add Helpers.page_path(Endpoint, :seven_day_kickstarter), priority: 0.5, changefreq: "daily", expires: nil
+        add Helpers.page_path(Endpoint, :ten_day_meditation), priority: 0.5, changefreq: "daily", expires: nil
+        add Helpers.page_path(Endpoint, :twenty_eight_day_awareness), priority: 0.5, changefreq: "daily", expires: nil        
 
       end
     end

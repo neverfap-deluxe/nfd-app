@@ -1,2 +1,10 @@
-<%= render @view_module, @view_template, assigns %>
-
+<!DOCTYPE html>
+<html>
+  <%= partial "head.html", assigns %>
+  <body>
+    <%= render @view_module, @view_template, assigns %>
+    <%= partial "footer.html", assigns %>
+  </body>
+  <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/homepage.js") %>'></script>
+  <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+</html>

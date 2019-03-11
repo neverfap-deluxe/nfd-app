@@ -24,7 +24,7 @@
   </div>
 </div>
 
-<%= partial "links-patreon.html", assigns %>
+<%= partial "links/patreon.html", assigns %>
 
 <%=#  Five Principles of NeverFap  %>
 <div class="single__wrapper">   
@@ -40,7 +40,7 @@
   </div>
 </div>
 
-<%= partial "links-boxLink.html", %{ title: "Principles", text: "Check out The Five Fundamental Principles Of NeverFap!", link: "/articles/the-five-fundamental-principles-of-neverfap" } %>
+<%= partial "links/custom.html", %{ title: "Principles", text: "Check out The Five Fundamental Principles Of NeverFap!", link: "/articles/the-five-fundamental-principles-of-neverfap" } %>
 
 <div class="single__wrapper">   
   <div class="single__content" style="margin-bottom: 0;">
@@ -55,7 +55,7 @@
   </div>
 </div>
 
-<%= partial "links-boxLink.html", %{ title: "Articles", text: "Check out our NeverFap Deluxe Articles!", link: "/articles" } %>
+<%= partial "links/custom.html", %{ title: "Articles", text: "Check out our NeverFap Deluxe Articles!", link: "/articles" } %>
 
 <div class="single__wrapper">   
   <div class="single__content" style="margin-bottom: 0;">
@@ -70,7 +70,7 @@
   </div>
 </div>
 
-<%= partial "links-boxLink.html", %{ title: "Practices", text: "Check out our NeverFap Deluxe Practices!", link: "/practices" } %>
+<%= partial "links/custom.html", %{ title: "Practices", text: "Check out our NeverFap Deluxe Practices!", link: "/practices" } %>
 
 
 <%=# NeverFap Deluxe Courses %>
@@ -87,7 +87,7 @@
   </div>
 </div>
 
-<%= partial "links-boxLink.html", %{ title: "Courses", text: "Check out our NeverFap Deluxe Courses!", link: "/courses" } %>
+<%= partial "links/custom.html", %{ title: "Courses", text: "Check out our NeverFap Deluxe Courses!", link: "/courses" } %>
 
 <div class="single__wrapper">      
   <h2>Content List</h2>
@@ -103,31 +103,31 @@
   </div>
   
   <div class="post__on posts--guide" id="introduction_posts">
-    <%= partial "category_posts.html", %{ items: @articles, post_category: "introduction" } %>
+    <%= partial "guide/category_posts.html", %{ items: @articles, post_category: "introduction" } %>
   </div>
 
   <div class="post__off posts--guide" id="choice_over_mind_posts">
-    <%= partial "category_posts.html", %{ items: @articles, post_category: "choice-over-mind" } %>
+    <%= partial "guide/category_posts.html", %{ items: @articles, post_category: "choice-over-mind" } %>
   </div>
 
   <div class="post__off posts--guide" id="balance_over_reward_posts">
-    <%= partial "category_posts.html", %{ items: @articles, post_category: "balance-over-reward" } %>
+    <%= partial "guide/category_posts.html", %{ items: @articles, post_category: "balance-over-reward" } %>
   </div>
 
   <div class="post__off posts--guide" id="strugle_over_none_posts">
-    <%= partial "category_posts.html", %{ items: @articles, post_category: "struggle-over-none" } %>
+    <%= partial "guide/category_posts.html", %{ items: @articles, post_category: "struggle-over-none" } %>
   </div>
 
   <div class="post__off posts--guide" id="awareness_over_all_posts">
-    <%= partial "category_posts.html", %{ items: @articles, post_category: "awareness-over-all" } %>
+    <%= partial "guide/category_posts.html", %{ items: @articles, post_category: "awareness-over-all" } %>
   </div>
 
   <div class="post__off posts--guide" id="uncondition_over_judgement_posts">
-    <%= partial "category_posts.html", %{ items: @articles, post_category: "uncondition-over-judgement" } %>
+    <%= partial "guide/category_posts.html", %{ items: @articles, post_category: "uncondition-over-judgement" } %>
   </div>
 </div>
 
-<%= partial "login_top.html", assigns %>
+<%= partial "links/loginregister_top.html", assigns %>
 
 <script src='/js/guide.js'></script>
 

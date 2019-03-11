@@ -1,0 +1,10 @@
+<div class="account__info">
+  <p class="account__info__title">Wanna join the chat? Check out our Discord Channel.</p>
+  <div class="account__buttons">
+    
+    <a class="account__discord__button__container" href="https://discord.gg/YETRkSj">
+      <img class="account__discord__button__logo" src="/images/discord__logo.png" />
+      <p class="account__discord__button__text"><span class="account__discord__button__text--display">DISCORD CHANNEL</span></p>
+    </a>
+  </div>
+</div>
