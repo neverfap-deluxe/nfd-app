@@ -2,13 +2,20 @@
   <h2 class="single__title">Guide <img src="/images/logo.png" class="logo__square" alt=""/></h2>
   <div class="single__content" style="margin-bottom: 0rem;">
     <p>Welcome to the NeverFap Deluxe Guide!</p>
-    <p>Thank you for choosing to take a deeper look into the NeverFap method of overcoming porn addiction.</p>
-    <p>Coming to the realisation that you're a porn addict, as well as making the decision to overcome your porn addiction is arguably one of the most profound things you can ever do.</p>
+    <p>Thank you for deciding to take a deeper look into the NeverFap Deluxe Method of overcoming porn addiction.</p>
+    <p>Coming to the realisation that you're a porn addict, as well as making the decision to overcome your porn addiction is arguably one of the most profound things you will ever do.</p>
     <p>It will completely change the way you feel, think and perceive yourself and others.</p>
+    <p>But only if you're willing to <b>trust the process</b>.</p>
   </div>
-  
+</div>
+
+<%= partial "links/discord.html", assigns %>
+
+<div class="single__wrapper">
+  <h2>What You Will Learn</h2>
+
   <div class="five__principles__guide">
-    <div class="five__principles__guide__item">Learn to value your mental health above all.</div>
+    <div class="five__principles__guide__item">How to value your mental health above all.</div>
     <div class="five__principles__guide__item">Develop the ability to quiet and focus your mind.</div>
     <div class="five__principles__guide__item">Accept yourself and others unconditionally.</div>
     <div class="five__principles__guide__item">Change the way you think about sex and women.</div>
@@ -16,7 +23,7 @@
   </div>
 
   <div class="five__principles__guide--mobile">
-    <h3>Learn to value your mental health above all.</h3>
+    <h3>How to value your mental health above all.</h3>
     <h3>Develop the ability to quiet and focus your mind.</h3>
     <h3>Accept yourself and others unconditionally.</h3>
     <h3>Change the way you think about sex and women.</h3>
@@ -24,15 +31,14 @@
   </div>
 </div>
 
-<%= partial "links/patreon.html", assigns %>
+<%= partial "links/loginregister.html", assigns %>
 
-<%=#  Five Principles of NeverFap  %>
 <div class="single__wrapper">   
   <div class="single__content" style="margin-bottom: 0;">
     <h2>Getting Started</h2>
 
     <p>Before you begin, I highly recommend becoming familiar with <a class="link" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles of NeverFap</a>.</p>
-    <p>These principles will form the basis of everything you will learn, whether you decide to get started with the courses, read the articles or practice the mental health exercises.</p>
+    <p>These principles will form the basis of everything you learn, whether you decide to get started with the courses, read the articles or practice the mental health exercises.</p>
     <p>Because in most cases, the reason why you're addicted to porn is because you've <u>neglected at least one of these principles in some form</u>.</p>
     <p>These five principles are: Choice over mind, Balance over reward, Awareness over all, Struggle over none and Uncondition over judgement.</p>
     <p>And until you master all five principles, it will be very difficult for you to truly be comfortable with your porn recovery and to succeed with any amount of certainty.</p>
