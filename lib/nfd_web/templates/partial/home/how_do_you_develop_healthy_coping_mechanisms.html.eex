@@ -1,0 +1,20 @@
+<div class="cyan__banner">
+  <div class="cyan__banner__title__container card_container">
+    <div class="card">
+      <h2 class="cyan__banner__title front">So.</h2>
+      <h2 class="cyan__banner__title back">So.</h2>
+    </div>
+    <div class="card">
+      <h2 class="cyan__banner__title front">How.</h2>
+      <h2 class="cyan__banner__title back">How.</h2>
+    </div>
+    <div class="card">
+      <h2 class="cyan__banner__title front">Do you.</h2>
+      <h2 class="cyan__banner__title back">Do you.</h2>
+    </div>
+    <div class="card">
+      <h2 class="cyan__banner__title front">Develop healthy coping mechanisms?</h2>
+      <h2 class="cyan__banner__title back">Develop healthy coping mechanisms?</h2>
+    </div>
+  </div>
+</div>

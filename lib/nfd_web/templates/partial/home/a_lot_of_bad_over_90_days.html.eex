@@ -1,0 +1,17 @@
+<div class="cyan__banner">
+  <div class="cyan__banner__title__container">
+    <h2 class="cyan__banner__title">Because a lot of</h2>
+    <h2 class="cyan__banner__title" style="color: rgba(255,46,182,1)">
+      <div class="slidingVertical">
+        <span>arguing with family</span>
+        <span>struggling with your career</span>
+        <span>not caring about yourself</span>
+        <span>dealing with toxic people</span>
+        <span>feeling depressed</span>
+        <span>pushing yourself too hard</span>
+        <span>life not going as planned</span>
+      </div>.
+    </h2>
+    <h2 class="cyan__banner__title">can happen over 90 days.</h2>
+  </div>
+</div>

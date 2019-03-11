@@ -1,0 +1,23 @@
+<div class="homepage__section">
+  <h2 class="black__banner__title--stand">Awareness.</h2>
+</div>
+
+<div class="account__info">
+  <p class="account__info__title">If you feel that you don't have healthy coping mechanisms in place, then you'll want to work on your <u><b>awareness</b></u>.</p>
+</div>    
+
+<div class="homepage__section">
+  <span><h2 class="black__banner__title--stand">Calmness.</h2></span>
+</div>
+
+<div class="account__info">
+  <p class="account__info__title">If you push yourself too hard or struggle to relax then you'll want to work on your <u><b>calmness</b></u>.</p>
+</div>    
+
+<div class="homepage__section">
+  <span><h2 class="black__banner__title--stand">Ambition.</h2></span>
+</div>
+
+<div class="account__info last__one">
+  <p class="account__info__title">If you struggle with motivation and life purpose, you'll probably want to work on your <u><b>ambition</b></u>.</p>
+</div>  

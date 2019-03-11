@@ -57,7 +57,7 @@
     <h3>It's called the <u>NeverFap Deluxe 90 Day Rule</u>, because those without healthy coping mechanisms rarely make it past 90 days.</h3>
     <p>In other words, if you can make it past 90 days without relapsing, then it most likely means you've developed effective control over your mind.</p>
 
-    <span><p class="articles__link" style="text-decoration: none;">NeverFap Deluxe aims to teach you this control.</p></span>
+    <span><p class="articles__link cursor__default" style="text-decoration: none;">NeverFap Deluxe aims to teach you this control.</p></span>
 
     <h2>In most cases, getting past the 90 day mark will usually signify the end of your porn addiction forever. <i class="em em-hushed"></i></h2> <!--<i class="em em-hushed"></i>-->
     <p>On the other hand, if you struggle to consistently get past 90 days, it most likely means you're approaching your recovery in the wrong way.</p>
@@ -65,23 +65,7 @@
     <p>However, they almost always result in relapse. <i class="em em-ambulance"></i></p> <!-- <i class="em em-ambulance"></i>-->
   </div>
 
-  <div class="cyan__banner">
-    <div class="cyan__banner__title__container">
-      <h2 class="cyan__banner__title">Because a lot of</h2>
-      <h2 class="cyan__banner__title" style="color: rgba(255,46,182,1)">
-        <div class="slidingVertical">
-          <span>arguing with family</span>
-          <span>struggling with your career</span>
-          <span>not caring about yourself</span>
-          <span>dealing with toxic people</span>
-          <span>feeling depressed</span>
-          <span>pushing yourself too hard</span>
-          <span>life not going as planned</span>
-        </div>.
-      </h2>
-      <h2 class="cyan__banner__title">can happen over 90 days.</h2>
-    </div>
-  </div>
+  <%= partial "home/a_lot_of_bad_over_90_days.html", assigns %>
   
   <div class="homepage__section">
     <h1>...and it's these situations where <span style="color: rgba(255,46,182,1);">unhealthy coping mechanisms</span> crumble.</h1>
@@ -95,11 +79,7 @@
     <p>Because that's my life.</p>
   </div>
 
-  <div class="magenta__banner">
-    <div class="magenta__banner__title__container">
-      <h2 class="magenta__banner__title">You see, overcoming porn addiction isn't really about <span class="text-flicker-out-glow">porn</span>.</h2>
-    </div>
-  </div>
+  <%= partial "home/is_not_really_about_porn.html", assigns %>
 
   <div class="homepage__section">
     <h1>It's about <u style="border-bottom: 4px solid cyan; padding-bottom: 0rem;">developing control</u> over your mind.</h1>
@@ -124,36 +104,13 @@
       <h3>Commit to long-term thinking.</h3>
     </div> 
   </div>
-
-  <div class="account__info">
-    <p class="account__info__title">The skill we talk about most on this website is <u>meditation</u>. You'll learn a lot more about it soon.</p>
-  </div>      
-
+  <div class="account__info"><p class="account__info__title">The skill we talk about most on this website is <u>meditation</u>. You'll learn a lot more about it soon.</p></div>      
   <div class="homepage__section">
     <h1>Control which <u style="border-bottom: 4px solid cyan; padding-bottom: 0rem;">anyone can learn</u> with practice and consistency.</h1>
     <h3>Right now. <i class="em em-male-technologist"></i></h3>
   </div>
 
-  <div class="cyan__banner">
-    <div class="cyan__banner__title__container card_container">
-      <div class="card">
-        <h2 class="cyan__banner__title front">So.</h2>
-        <h2 class="cyan__banner__title back">So.</h2>
-      </div>
-      <div class="card">
-        <h2 class="cyan__banner__title front">How.</h2>
-        <h2 class="cyan__banner__title back">How.</h2>
-      </div>
-      <div class="card">
-        <h2 class="cyan__banner__title front">Do you.</h2>
-        <h2 class="cyan__banner__title back">Do you.</h2>
-      </div>
-      <div class="card">
-        <h2 class="cyan__banner__title front">Develop healthy coping mechanisms?</h2>
-        <h2 class="cyan__banner__title back">Develop healthy coping mechanisms?</h2>
-      </div>
-    </div>
-  </div>
+  <%= partial "home/how_do_you_develop_healthy_coping_mechanisms.html", assigns %>
 
   <div class="homepage__section">
     <h2>It's simple. </h2>
@@ -166,19 +123,10 @@
     <p style="font-size: 0.8rem;">Although you're more than welcome to try ;)</p>
   </div>
 
-  <div class="black__banner">
-    <div class="black__banner__title__container">
-      <h2 class="black__banner__title" style="margin-bottom: 3rem;">Ultimately, there are three broad healthy coping mechanisms</br> <span class="black__banner__broad">NeverFap Deluxe</span> focuses on.</h2>
-      <h1 class="black__banner__title black__banner__title--cat">Awareness</h1>
-      <h1 class="black__banner__title black__banner__title--cat">Calmness</h1>
-      <h2 class="black__banner__title">&</h2>
-      <h1 class="black__banner__title black__banner__title--cat">Ambition</h1>
-    </div>
-  </div>
+  <%= partial "home/three_healthy_coping_mechanisms.html", assigns %>
 
   <div class="homepage__section">
     <h1>Most people are <u style="border-bottom: 4px solid rgba(255,46,182,1); padding-bottom: 0rem;">severely deficient</u> in one or two of these areas.</h1>
-    
     <h2>Now, this is where it gets hard.</h2>
     <h3>Since I don't know you (although I'm sure you're lovely), it's difficult for me to take you down a particular path to help you develop control over your mind.</h3>
     <h3>There's simply too much useful content on this website, and everyone is truly different in terms of their circumstances and life challenges.</h3>
@@ -187,29 +135,7 @@
     <h3>Regardless, here are some basic guidelines. <i class="em em-golfer"></i></h3>
   </div>
 
-  <div class="homepage__section">
-    <h2 class="black__banner__title--stand">Awareness.</h2>
-  </div>
-
-  <div class="account__info">
-    <p class="account__info__title">If you feel that you don't have healthy coping mechanisms in place, then you'll want to work on your <u><b>awareness</b></u>.</p>
-  </div>    
-  
-  <div class="homepage__section">
-    <span><h2 class="black__banner__title--stand">Calmness.</h2></span>
-  </div>
-
-  <div class="account__info">
-    <p class="account__info__title">If you push yourself too hard or struggle to relax then you'll want to work on your <u><b>calmness</b></u>.</p>
-  </div>    
-
-  <div class="homepage__section">
-    <span><h2 class="black__banner__title--stand">Ambition.</h2></span>
-  </div>
-
-  <div class="account__info last__one">
-    <p class="account__info__title">If you struggle with motivation and life purpose, you'll probably want to work on your <u><b>ambition</b></u>.</p>
-  </div>    
+  <%= partial "home/healthy_coping_mechanisms_guidelines.html", assigns %>  
 
   <div class="homepage__section">
     <p>On the other hand, if you haven't seen a pair of pants in weeks because you've been glued to your computer screen in a haze of dysphoria and pre-cum. <i class="em em-wilted_flower"></i></p>
@@ -220,59 +146,12 @@
     <p>Now you can too.</p>
 
     <!-- Seven Day kickstarter banner. -->
-
     <!-- Here would be a really good place to also put in top ten unhealthy coping mechanisms. -->
 
     <h2>So without further ado...</h2>
   </div>
 
-  <div style="margin-bottom: 1rem; height: 4px; background: cyan;"></div>
-    <div class="homepage__section homepage__section--no-margin">
-      <h1>The</h1>
-    </div>
-  <div style="margin-bottom: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
-    <div class="homepage__section homepage__section--no-margin">
-      <h1>Never</h1>
-    </div>
-  <div style="margin-bottom: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
-    <div class="homepage__section homepage__section--no-margin">
-      <h1>Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap Fap</h1>
-    </div>
-
-  <div style="margin-bottom: 1rem; height: 4px; background: cyan;"></div>
-    <div class="homepage__section homepage__section--no-margin">
-      <h1>Deluxe</h1>
-    </div>
-  <div style="margin-bottom: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
-    <div class="homepage__section homepage__section--no-margin">
-      <h1>Guide.</h1>
-    </div>
-
-  <div style="padding-top: 2.5rem; padding-bottom: 2.5rem;"class="account__info">
-    <p class="account__info__title">Check out the NeverFap Deluxe Guide to get started.</p>
-    <div class="account__buttons">
-      <a class="account__info__button account__info__button--link" href='/guide'>
-        <div class="account__info__button__text">
-          Guide
-        </div>
-      </a> 
-    </div>
-  </div>
-        
-  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
-  <div style="margin-bottom: 1rem; height: 4px; background: cyan;"></div>
-  <div style="margin-bottom: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
-  <div style="margin-bottom: 1rem; height: 4px; background: cyan;"></div>
-  <div style="margin-bottom: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
-  <div style="margin-bottom: 1rem; height: 4px; background: cyan;"></div>
-  <div style="margin-bottom: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
-  <div style="margin-bottom: 1rem; height: 4px; background: cyan;"></div>
-  <div style="margin-bottom: 1rem; height: 6px; background: rgba(255,46,182,1);"></div>
-  <div style="margin-bottom: 1rem; height: 12px; background: cyan;"></div>
-  <div style="margin-bottom: 1rem; height: 24px; background: rgba(255,46,182,1);"></div>
-  <div style="margin-bottom: 1rem; height: 48px; background: cyan;"></div>
-  <div style="margin-bottom: 1rem; height: 96px; background: rgba(255,46,182,1);"></div>
-  <div style="margin-bottom: 1rem; height: 192px; background: cyan;"></div>
+  <%= partial "home/the_neverfap_deluxe_guide_special.html", assigns %>
 
   <div class="homepage__section">
     <h3 style="margin-top: 2.5rem;">Oh.</h3>
@@ -294,6 +173,7 @@
   </div>
 
   <%= partial "links/custom.html", %{ title: "Learn", text: "Learn more about The Five Fundamental Principles of NeverFap.", link:  "/articles/the-five-fundamental-principles-of-neverfap" } %>
+
   <div style="margin-bottom: 1rem; height: 20px; background: yellow;"></div>
 
   <div class="homepage__section">

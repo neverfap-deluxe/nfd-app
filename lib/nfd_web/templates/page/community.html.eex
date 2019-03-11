@@ -5,57 +5,51 @@
     <p>There are a heap of different ways you can interact with the NeverFap Deluxe Community, whether you want to chat with others about your porn addiction, or even follow NeverFap Deluxe on social media.</p>
     <p>In addition, we offer a variety of uniquely structured content that is available only when you register for a NeverFap Deluxe Account.</p>
     <p>This includes things like helpful email campaigns to help you keep on track with your porn recovery, as well as a bunch of audio courses to teach you things such as meditation.</p>
-    <p>Furthermore, it's completely FREE to register for an account.</p>
   </div>
 </div>
 
-<%= partial "links/loginregister_top.html", assigns %>
+<%= partial "links/patreon.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content" >
     <h2>Create an account</h2>
     <p>When you sign up for a NeverFap Deluxe Account, you gain access to a variety of free and premium email campaigns.</p>
 
-    <h3>Seven Day NeverFap Deluxe Kickstarter</h3>
-    <p>With our FREE Seven Day NeverFap Deluxe Kickstarter, </p>
+    <h3 class="articles__link cursor__default">7 Day NeverFap Deluxe Kickstarter</h3>
+    <p>With our FREE 7 Day NeverFap Deluxe Kickstarter, we explain the ropes of how you can get started with the NeverFap Deluxe method of overcoming porn addiction.</p>
     
+    <h3 class="articles__link cursor__default">10 Day Meditation Primer</h3>
+    <p>Feeling a bit confused about meditation? The 10 Day Meditation Primer is designed to explain what meditation is, how it works, as well as what you can do to get started and practicing straight-away.</p>
+
+    <h3 class="articles__link cursor__default">28 Day Awareness Challenge</h3>
+    <p>The </p>
+    
+    <p>Furthermore, it's completely FREE to register.</p>
+
   </div>
 </div>
 
-<%= partial "links/loginregister_top.html", assigns %>
-
-<div class="single__wrapper">
-  <div class="single__content">
-    <h2>Social Media</h2>
-    
-    <div class="button__wrapper">
-      <a class="button button__secondary" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles Of NeverFap.</a>
-    </div>
-  </div>
-</div>
-
-<div class="single__wrapper">
-  <div class="single__content">
-    <h2>Discord</h2>
-    
-    <div class="button__wrapper">
-      <a class="button button__secondary" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles Of NeverFap.</a>
-    </div>
-  </div>
-</div>
-  
-<%= partial "links/discord.html", assigns %>
+<%= partial "links/loginregister.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content">
     <h2>Chat</h2>
-    <p>If you'd like to chat with me or if you have any questions about NeverFap Deluxe, I've setup a discord channl</p>
-    
+    <p>I've setup a Discord channel if you're interested in having a chat or if you have any questions about NeverFap Deluxe.</p>
+    <p>Obviously, we all live in different time zones, however I always check it and respond as promptly as I can.</p>
+    <p>I'm personally located in Melbourne, Australia. (GMT+11:00)</p>
+  </div>
+</div>
+
+<%= partial "links/discord.html", assigns %>
+
+<div class="single__wrapper">
+  <div class="single__content">
+    <h2>Social Media</h2>
+    <p>I'm also available on Reddit and Twitter, if that's your thing.</p>
+    a 
+
     <div class="button__wrapper">
       <a class="button button__secondary" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles Of NeverFap.</a>
     </div>
   </div>
-</div>
-  
-<h2>Social Media</h2>
 </div>
