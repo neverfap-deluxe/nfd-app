@@ -41,8 +41,8 @@ config :nfd, Nfd.SwooshMailer,
 # which you should run after static files are built and
 # before starting your production server.
 config :nfd, NfdWeb.Endpoint,
-  # http: [],
-  url: [host: System.get_env("HOST")], # port: 80
+  http: [port: 4000],
+  url: [host: System.get_env("HOST"), port: 80],
   # https: [
   #   port: 443,
   #   otp_app: :nfd,
