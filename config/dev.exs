@@ -5,6 +5,14 @@ use Mix.Config
 #   adapter: Swoosh.Adapters.Local
   
 
+# Mailer setup
+config :nfd, Nfd.SwooshMailer,
+  adapter: Swoosh.Adapters.AmazonSES,
+  region: "us-east-1",
+  access_key: "AKIAJPIIOK56VNDACONA",
+  secret: "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" 
+
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
@@ -13,6 +21,7 @@ use Mix.Config
 # with webpack to recompile .js and .css sources.
 config :nfd, NfdWeb.Endpoint,
   http: [port: 4000],
+  url: [host: "localhost"], # port: 80
   debug_errors: false, # by setting this to false, it will show what errors will look like in production, not dev.
   code_reloader: true,
   check_origin: false,

@@ -41,8 +41,8 @@ config :nfd, Nfd.SwooshMailer,
 # which you should run after static files are built and
 # before starting your production server.
 config :nfd, NfdWeb.Endpoint,
-  http: [port: System.get_env("PORT")], # :inet6, || 4000
-  url: [host: System.get_env("HOST"), port: System.get_env("URL_PORT")], # port: 80
+  # http: [port: System.get_env("PORT")], # :inet6, || 4000
+  url: [host: System.get_env("HOST")], # port: 80
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
