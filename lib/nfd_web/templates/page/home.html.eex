@@ -4,7 +4,7 @@
     
     <%= partial "header.html", assigns %>
     <h1 class="homepage__hero__title">NeverFap <span class="deluxe__font">Deluxe</span></h1>
-    <h2 class="homepage__hero__title__secondary">The Comprehensive NoFap Companion.</h2>
+    <h2 class="homepage__hero__title__secondary">The Comprehensive NoFap Guide.</h2>
   </div>
   
   <%= partial "links/patreon.html", assigns %>
