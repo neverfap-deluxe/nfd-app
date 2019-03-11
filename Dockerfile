@@ -36,5 +36,6 @@ RUN cd assets && \
 EXPOSE 4000
 
 # CMD ["mix", "do", "ecto.create,", "ecto.migrate,", "run priv/repo/seeds.exs,", "phx.server"]
-RUN "mix ecto.setup"
-CMD ["iex", "-S", "mix", "phx.server"]
+# RUN "mix ecto.setup"
+# CMD ["iex", "-S", "mix", "phx.server"]
+CMD ["iex", "-S", "mix", "do", "ecto.setup,", "phx.server"]
