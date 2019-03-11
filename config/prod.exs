@@ -41,8 +41,15 @@ config :nfd, Nfd.SwooshMailer,
 # which you should run after static files are built and
 # before starting your production server.
 config :nfd, NfdWeb.Endpoint,
-  # http: [port: System.get_env("PORT")], # :inet6, || 4000
+  http: [port: 80],
   url: [host: System.get_env("HOST")], # port: 80
+  https: [
+    port: 443,
+    otp_app: :nfd,
+    keyfile: "/nfd_ssl/fullchain.pem",
+    certfile: "/nfd_ssl/privkey.pem",
+  ],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
