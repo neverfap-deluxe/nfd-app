@@ -2,7 +2,7 @@ defmodule NfdWeb.Router do
   use NfdWeb, :router
   use Pow.Phoenix.Router
   use Pow.Extension.Phoenix.Router, otp_app: :nfd
-  use PowAssent.Phoenix.Router
+  # use PowAssent.Phoenix.Router
 
   pipeline :browser do
     plug :accepts, ["html"]

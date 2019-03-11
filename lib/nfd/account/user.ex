@@ -3,7 +3,7 @@ defmodule Nfd.Account.User do
   use Pow.Ecto.Schema
   use Pow.Extension.Ecto.Schema,
     extensions: [PowResetPassword, PowEmailConfirmation]
-  use PowAssent.Ecto.Schema
+  # use PowAssent.Ecto.Schema
 
   import Ecto.Changeset
 
