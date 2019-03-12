@@ -252,43 +252,43 @@
 }
 
 .slidingVertical span{
-	animation: topToBottom 17.5s linear infinite 0s;
-	-ms-animation: topToBottom 17.5s linear infinite 0s;
-	-webkit-animation: topToBottom 17.5s linear infinite 0s;
+	animation: topToBottom 14s linear infinite 0s;
+	-ms-animation: topToBottom 14s linear infinite 0s;
+	-webkit-animation: topToBottom 14s linear infinite 0s;
 	color: black;
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
 }
 .slidingVertical span:nth-child(2){
-	animation-delay: 2.5s;
-	-ms-animation-delay: 2.5s;
-	-webkit-animation-delay: 2.5s;
+	animation-delay: 2s;
+	-ms-animation-delay: 2s;
+	-webkit-animation-delay: 2s;
 }
 .slidingVertical span:nth-child(3){
-	animation-delay: 5s;
-	-ms-animation-delay: 5s;
-	-webkit-animation-delay: 5s;
+	animation-delay: 4s;
+	-ms-animation-delay: 4s;
+	-webkit-animation-delay: 4s;
 }
 .slidingVertical span:nth-child(4){
-	animation-delay: 7.5s;
-	-ms-animation-delay: 7.5s;
-	-webkit-animation-delay: 7.5s;
+	animation-delay: 6s;
+	-ms-animation-delay: 6s;
+	-webkit-animation-delay: 6s;
 }
 .slidingVertical span:nth-child(5){
+	animation-delay: 8s;
+	-ms-animation-delay: 8s;
+	-webkit-animation-delay: 8s;
+}
+.slidingVertical span:nth-child(6){
 	animation-delay: 10s;
 	-ms-animation-delay: 10s;
 	-webkit-animation-delay: 10s;
 }
-.slidingVertical span:nth-child(6){
-	animation-delay: 12.5s;
-	-ms-animation-delay: 12.5s;
-	-webkit-animation-delay: 12.5s;
-}
 .slidingVertical span:nth-child(7){
-	animation-delay: 15s;
-	-ms-animation-delay: 15s;
-	-webkit-animation-delay: 15s;
+	animation-delay: 12s;
+	-ms-animation-delay: 12s;
+	-webkit-animation-delay: 12s;
 }
 
 /*topToBottom Animation*/

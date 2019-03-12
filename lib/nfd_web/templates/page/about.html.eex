@@ -4,23 +4,19 @@
     <p>Welcome to NeverFap Deluxe.</p>
     <p>I decided to create this website in 2019 to help people overcome porn addiction.</p>
     <p>Not only have I personally overcome porn addiction, to a point that I literally do not think about porn nor struggle with it in any way.</p>
-    <p>I want to help you do the same too.</p>
+    <p>However I want to help you do the same too.</p>
   </div>
 </div>
 
 <%= partial "links/patreon.html", assigns %>
 
-<!-- TODO: Talk about how the only thng I want to achieve on this website is to 
-  change the way people think about porn addiction. 
-
-  Once you understand how it works, by making that mental shift, it becomes incredibly easy.
--->
-
 <div class="single__wrapper">
   <div class="single__content" >
-    <p>While everyone is seemingly aware of the NoFap movement, and while there are thousands of support groups and networks, no one actually seems to be able to  effectively explain how to achieve NoFap with any sort of consistency.</p>
-    <p>Everything I could find online ranged from the seemingly vague, including various non-sensical theories about how to manage porn cravings, to just outright terrible advice from existing porn addicts who even admit themselves that they have no idea what they're actually doing.</p>
-    <p>I mean, you wouldn't get financial advice from someone with a gambling problem, so why should porn addiction recovery advice be any different?</p>
+    <h2>NoFap</h2>
+    <p>While everyone is aware of the NoFap movement, no one actually seems to be able to effectively explain how to achieve NoFap with any sort of consistency.</p>
+    <p>Most of the materials I could find online ranged from various theories on how to manage cravings and emotions using ineffective and unhealthy coping mechanisms.</p>
+    <p>To personal advice from existing porn addicts who's opinion seemed to change depending on what day of the week it was. All the while none of this dialog being clear, tangible, nor straight-forward in anyway.</p>
+    <p>You wouldn't take directions from a GPS that didn't provide clear instructions of how to get from point A to B, so why should porn addiction recovery be any different?</p>
 
     <hr class="hr3"/>
     <h3>That's when I knew there was an opportunity to create a website that could save people years trying to overcome their porn addiction.</h3>
@@ -29,37 +25,67 @@
     <p>Introducing NeverFap Deluxe.</p>
     <p>A comprehensive online step-by-step how-to guide which explains exactly what you need to do to overcome porn addiction.</p>
     <p>No more excuses. No more compromises.</p>
-    <p>This is the real deal.</p>
+    <p><a class="link" href="/articles/what-makes-neverfap-so-different/">This is the real deal.</a></p>
     
-    <div class="button__wrapper">
+    <!-- <div class="button__wrapper">
       <a class="button button__secondary" href="/articles/what-makes-neverfap-so-different/">What Makes NeverFap So Different.</a>
-    </div>
+    </div> -->
   </div>
 </div>
 
-<%= partial "links/custom.html", %{ title: "Guide", text: "Check out our NeverFap Deluxe Guide!", link: "/guide" } %>
+<%= partial "links/loginregister.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content">
-    
-    <h2>The Five Fundamental Principles of NeverFap</h2>
-    <p>Compromising of five fundamental principles, the NeverFap method of eliminating porn addiction could honestly not be any simpler, and we've broken it down so you don't have to.</p>
-    <p>These principles will form the basis of everything you will learn, whether you decide to get started with the courses, read the articles or practice the mental health exercises.</p>
-    <p>These principles are:</p>
-    
-    <div class="five__principles__list__main">
-      <span><div class="five__principles__item__main">Choice over mind</div></span>
-      <span><div class="five__principles__item__main">Balance over reward</div></span>
-      <span><div class="five__principles__item__main">Struggle over none</div></span>
-      <span><div class="five__principles__item__main">Awareness over all</div></span>
-      <span><div class="five__principles__item__main">Uncondition over judgement</div></span>
-    </div>
-    
-    <div class="button__wrapper">
-      <a class="button button__secondary" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles Of NeverFap.</a>
-    </div>
+    <h2>Our Goal</h2>
+    <p>NeverFap Deluxe maintains one really simple goal.</p>
+    <p>It's a goal which I strongly believe in, which I believe is key in helping you overcome porn addiction.</p>
+    <hr class="hr3"/>
+    <h3>Ultimately, I want to change the way you think about porn addiction.</h3>
+    <hr class="hr3__bottom"/>
+
+    <p>The truth is that overcoming porn addiction is deceptively simple.</p>
+    <p>With the right information and guidance, overcoming porn addiction can be an incredibly straight-forward process that anyone can do at any point in their life.</p>
+    <p>It is a process which doesn't discriminate against how smart you are, against how much knowledge you already have about your porn addiction, nor concern who you are today. </p>
+    <p>It's simply a matter of ensuring that you practice the exercises.</p>
+    <p>However, the only way you're going to practice those exercises consistently is if you're willing to make the mental shift to make it easy for yourself, and change the way you think about porn addiction.</p>
+    <p>Otherwise, you're going to lose hope. You're going to become cynical. You're going to stop doing the exercises without realising the impact of your actions, and that's when everything is going to fall apart.</p>
+
+    <hr class="hr3"/>
+    <h3>So how do I make this mental shift?</h3>
+    <hr class="hr3__bottom"/>
+
+    <p>Well, it's as simple as trusting the process.</p>
+    <p>Fear and doubt are the biggest killers when it comes to long term progress.</p>
+    <p>However if you're willing to trust the process, if you're willing to understand the power of practice and consistency, then everything will fall into place.</p>
+    <p>...and the only way you're going to develop this trust is if you understand why these things are important, in addition to how you can easily obtain that knowledge.</p>
+
+    <hr class="hr3"/>
+    <h3>NeverFap Deluxe aims to make these ideas click in your head, without hesitation.</h3>
+    <hr class="hr3__bottom"/>
+
+    <p>We have put a lot of time into making the information on this website fun, engaging and accessible so that it becomes as clear as daylight why you must trust the process.</p>
+    <p>This means reading the articles and guides on this website until it becomes second-nature to you.</p>
+    <p>It is the very reason why NeverFap Deluxe is so effective at helping you overcome porn addiction.</p>
+    <p>Because it just makes sense.</p>
   </div>
 </div>
+
+<%= partial "links/discord.html", assigns %>
+
+<div class="single__wrapper">
+    <div class="single__content">
+      <h2>Next Steps</h2>
+      <p>If you haven't yet already, we highly recommend checking out the <a class="link" href="/">NeverFap Deluxe Homepage</a>.</p>
+      <p>It explores in great detail what you can expect from NeverFap Deluxe, as well as an introduction into some of the skills you'll be learning from the materials on this website.</p>
+      <p>We then recommend checking out the <a class="link" href="/guide">NeverFap Deluxe Guide</a> which follows on from the homepage, and provides additional knowledge and context.</p>
+      <p>From there you can check out the various articles and practices which have been designed to help you better understand yourself, as well provide you with tangible exercises you can do on a daily basis.</p>
+      <p>Only you have the power to do this.</p>
+      <p>Certainly, I want to help you, but only if you're willing to put one foot forward in front of the other.</p>
+      <p>Do you wanna play ball?</p>
+    </div>
+  </div>
+
 
 <%= partial "links/loginregister.html", assigns %>
 
@@ -83,3 +109,36 @@
     </form>
   </div>    
 </div>
+
+
+
+
+<!-- <div class="single__wrapper">
+  <div class="single__content">
+    <h2>Our Mission</h2>
+    <p>We have a really simple goal.</p>
+
+    <hr class="hr3"/>
+    <h3>We want you to change the way you think about porn addiction.</h3>
+    <hr class="hr3__bottom"/>
+
+    <p>The truth is that overcoming pornography addiction is deceptively simple.</p>
+
+    <h2>The Five Fundamental Principles of NeverFap</h2>
+    <p>Compromising of five fundamental principles, the NeverFap method of eliminating porn addiction could honestly not be any simpler, and we've broken it down so you don't have to.</p>
+    <p>These principles will form the basis of everything you will learn, whether you decide to get started with the courses, read the articles or practice the mental health exercises.</p>
+    <p>These principles are:</p>
+    
+    <div class="five__principles__list__main">
+      <span><div class="five__principles__item__main">Choice over mind</div></span>
+      <span><div class="five__principles__item__main">Balance over reward</div></span>
+      <span><div class="five__principles__item__main">Struggle over none</div></span>
+      <span><div class="five__principles__item__main">Awareness over all</div></span>
+      <span><div class="five__principles__item__main">Uncondition over judgement</div></span>
+    </div>
+    
+    <div class="button__wrapper">
+      <a class="button button__secondary" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles Of NeverFap.</a>
+    </div>
+  </div>
+</div> -->
