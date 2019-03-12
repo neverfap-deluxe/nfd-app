@@ -9,29 +9,7 @@
   </div>
 </div>
 
-<%= partial "links/discord.html", assigns %>
-
-<div class="single__wrapper">
-  <h2>What You Will Learn</h2>
-
-  <div class="five__principles__guide">
-    <div class="five__principles__guide__item">How to value your mental health above all.</div>
-    <div class="five__principles__guide__item">Develop the ability to quiet and focus your mind.</div>
-    <div class="five__principles__guide__item">Accept yourself and others unconditionally.</div>
-    <div class="five__principles__guide__item">Change the way you think about sex and women.</div>
-    <div class="five__principles__guide__item">Commit to long-term thinking.</div>
-  </div>
-
-  <div class="five__principles__guide--mobile">
-    <h3>How to value your mental health above all.</h3>
-    <h3>Develop the ability to quiet and focus your mind.</h3>
-    <h3>Accept yourself and others unconditionally.</h3>
-    <h3>Change the way you think about sex and women.</h3>
-    <h3>Commit to long-term thinking.</h3>
-  </div>
-</div>
-
-<%= partial "links/loginregister.html", assigns %>
+<%= partial "links/patreon.html", assigns %>
 
 <div class="single__wrapper">   
   <div class="single__content" style="margin-bottom: 0;">
@@ -41,8 +19,9 @@
     <p>Following on from the homepage, there are essentially two core skills we must learn, adopt and master.</p>
 
     <div style="margin-bottom: 2rem; margin-top: 2rem; height: 4px; background: cyan;"></div>
-    <h2 style="margin-bottom: 3rem; margin-top: 3rem;">The first skill is <u>awareness</u>.</h2>
+    <h3 style="margin-bottom: 2rem; margin-top: 2rem;">The first skill is <u>awareness</u>.</h3>
     <div style="margin-bottom: 2rem; margin-top: 2rem; height: 4px; background: cyan;"></div>
+
     <p>Awareness relates to your ability to remain conscious.</p>
     <p>In other words, your ability to navigate your mind in order to pursue healthy coping mechanisms. Ultimately, is what allows you to assert control over yourself.</p>
     <p>In fact, your awareness is the reason why you're reading this paragraph, because at some point you made the conscious decision to do something about your porn addiction.</p>
@@ -52,9 +31,8 @@
     <p>Awareness is your ticket out of this mess. It is your capacity for conscious action.</p>
     <p>It will be key to your success.</p>
 
-
     <div style="margin-bottom: 2rem; margin-top: 2rem; height: 4px; background: cyan;"></div>
-    <h2 style="margin-bottom: 3rem; margin-top: 3rem;">The second skill is <u>calmness</u>.</h2>
+    <h3 style="margin-bottom: 2rem; margin-top: 2rem;">The second skill is <u>calmness</u>.</h3>
     <div style="margin-bottom: 2rem; margin-top: 2rem; height: 4px; background: cyan;"></div>
 
     <p>Calmness is your ability to remain relaxed.</p>
@@ -66,7 +44,7 @@
     <p>Calmness is what makes things easy.</p>
 
     <div style="margin-bottom: 2rem; margin-top: 2rem; height: 4px; background: cyan;"></div>
-    <h2 style="margin-bottom: 3rem; margin-top: 3rem;"><u>Meditation</u> is how we will be developing these skills.</h2>
+    <h3 style="margin-bottom: 2rem; margin-top: 2rem;"><u>Meditation</u> is how we will be developing these skills.</h3>
     <div style="margin-bottom: 2rem; margin-top: 2rem; height: 4px; background: cyan;"></div>
 
     <p>Why meditation?</p>
@@ -77,7 +55,7 @@
     <p></p>
 
     <div style="margin-bottom: 2rem; margin-top: 2rem; height: 4px; background: cyan;"></div>
-    <h2 style="margin-bottom: 3rem; margin-top: 3rem;">Well actually, there is a third skill <u>Ambition</u>.</h2>
+    <h3 style="margin-bottom: 2rem; margin-top: 2rem;">Well actually, there is a third skill <u>Ambition</u>.</h3>
     <div style="margin-bottom: 2rem; margin-top: 2rem; height: 4px; background: cyan;"></div>
 
     <p>Ambition is everything else once you've mastered awareness and calmness.</p>
@@ -96,7 +74,7 @@
   <h3 class="summary__items">Meditation is how you get there.</h3>
   <h3 class="summary__items">Ambition is how you kickass.</h3>
 
-  <h3 style="margin-top: 4rem; margin-bottom: 4rem;">...and this, is where your journey begins.</h3>
+  <h3 class="summary__items--invert" style="margin-top: 4rem; margin-bottom: 4rem;">...and this, is where your journey begins.</h3>
   <h1 class="guide__banner__title" style="margin-bottom: 4rem;">What you choose to do next is up to you.</h1>
   <div class="single__wrapper">
     <h2>NeverFap Deluxe Articles</h2>
@@ -119,6 +97,8 @@
 
     <!-- <p>NeverFap Deluxe Practices focus solely on verifiable steps you can do on a daily basis to help you build awareness and calmness.</p> -->
     <p><a class="guide__link" href="/practices/observe-it-all/">Observe it all</a></br> Our primary meditation exercise It is the sole exercise we recommend for beginners.</p>
+    <p><a class="guide__link" href="/practices/slow-it-down/">Slow it down</a></br> This exercise is great as an introduction to calmness.</p>
+    <p><a class="guide__link" href="/practices/dissolve-it-down/">Dissolve it down</a></br> This is an excellent visual exercise which is designed to shatter your ego.</p>
   </div>
 </div>
 <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
@@ -277,3 +257,31 @@
 
 
     <!-- <%= partial "links/custom.html", %{ title: "Principles", text: "Check out The Five Fundamental Principles Of NeverFap!", link: "/articles/the-five-fundamental-principles-of-neverfap" } %> -->
+
+
+
+
+
+
+
+<!-- <div class="single__wrapper">
+  <h2>What You Will Learn</h2>
+
+  <div class="five__principles__guide">
+    <div class="five__principles__guide__item">How to value your mental health above all.</div>
+    <div class="five__principles__guide__item">Develop the ability to quiet and focus your mind.</div>
+    <div class="five__principles__guide__item">Accept yourself and others unconditionally.</div>
+    <div class="five__principles__guide__item">Change the way you think about sex and women.</div>
+    <div class="five__principles__guide__item">Commit to long-term thinking.</div>
+  </div>
+
+  <div class="five__principles__guide--mobile">
+    <h3>How to value your mental health above all.</h3>
+    <h3>Develop the ability to quiet and focus your mind.</h3>
+    <h3>Accept yourself and others unconditionally.</h3>
+    <h3>Change the way you think about sex and women.</h3>
+    <h3>Commit to long-term thinking.</h3>
+  </div>
+</div> -->
+
+<!-- <%= partial "links/loginregister.html", assigns %> -->
