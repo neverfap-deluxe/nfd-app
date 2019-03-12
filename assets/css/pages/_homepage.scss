@@ -258,10 +258,19 @@
   margin: 1rem;
 }
 
+.homepage__section__closer {
+  margin: 1rem;
+}
+
 .homepage__section--no-margin {
   margin: 0!important;
   padding-left: 1rem;
 }
+
+.homepage__section--adapt {
+  margin-bottom: 3rem;
+}
+
 
 .homepage__process__link {
   color: black;
@@ -409,6 +418,11 @@
     margin: 2rem;
   }    
 
+
+  .homepage__section__closer {
+    margin: 2rem;
+  }
+
   .homepage__section--no-margin {
     margin: 0!important;
   }
@@ -479,11 +493,24 @@
     margin-bottom: 2rem;
   }
 
+  .homepage__section__closer {
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+    margin-left: 16%;
+    width: 600px;
+  }
+
+
   .homepage__section--no-margin {
     margin: 0 auto!important;
     margin-top: 0!important;
     margin-bottom: 0!important;
   }
+
+  .homepage__section--adapt {
+    margin-bottom: 6rem;
+  }
+
 }
 
 @media screen and (min-width: 1280px) {

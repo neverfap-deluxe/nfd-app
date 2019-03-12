@@ -14,6 +14,7 @@ defmodule NfdWeb.ErrorView do
     Phoenix.Controller.status_message_from_template(template)
   end
 
+  # These last two have been added by me. They are unnecessary.
   # def render("404.html", _assigns) do
   #   render("404.html")
   # end

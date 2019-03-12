@@ -30,7 +30,7 @@
 }
 
 .single__wrapper {
-  margin: 10px;
+  margin: 1rem;
 
   h2 {
     font-size: 2rem;
@@ -94,8 +94,9 @@
 
 @media screen and (min-width: 420px) {
   .single__wrapper {
-    margin: 40px;
-    margin-top: 40px;
+    margin: 2rem;
+    // margin: 40px;
+    // margin-top: 40px;
 
     .single__title {
       margin-top: 2rem;
@@ -125,6 +126,12 @@
     flex-direction: column;
     margin-left: 160px;
     width: 600px;
+
+    // width: 600px;
+    // margin: 0 auto;
+    // margin-top: 2rem;
+    // margin-bottom: 2rem;
+
     .single__content {
       margin-top: 0;
     }

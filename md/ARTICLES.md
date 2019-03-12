@@ -51,6 +51,9 @@ __Created/Done__
 
 ## Uncondition over judgement - UOJ
 
+Acknowledgement is the real ego killer
+
+
 __TODO__
 - The fallacy of judgement as an effective means
 - Understanding emotional reactions.

@@ -5,7 +5,7 @@
     <p>Thank you for deciding to take a deeper look into the NeverFap Deluxe Method of overcoming porn addiction.</p>
     <p>Coming to the realisation that you're a porn addict, as well as making the decision to overcome your porn addiction is arguably one of the most profound things you will ever do.</p>
     <p>It will completely change the way you feel, think and perceive yourself and others.</p>
-    <p>But only if you're willing to <b>trust the process</b>.</p>
+    <p>But only if you're willing to <u><b>trust the process</b></u>.</p>
   </div>
 </div>
 
@@ -35,65 +35,114 @@
 
 <div class="single__wrapper">   
   <div class="single__content" style="margin-bottom: 0;">
-    <h2>Getting Started</h2>
+    <h1>Getting Started</h1>
+    <p>As a fantastic introduction into NeverFap Deluxe, I highly recommend checking out the <a class="link" href="/">NeverFap Deluxe Homepage</a>.</p>
+    <p>It describes a bit about myself, about how NeverFap Deluxe works, as well as some of the skills you'll be learning from the materials on this website and beyond.</p>
+    <p>Essentially, there are two core skills we must learn.</p>
 
-    <p>Before you begin, I highly recommend becoming familiar with <a class="link" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles of NeverFap</a>.</p>
-    <p>These principles will form the basis of everything you learn, whether you decide to get started with the courses, read the articles or practice the mental health exercises.</p>
-    <p>Because in most cases, the reason why you're addicted to porn is because you've <u>neglected at least one of these principles in some form</u>.</p>
-    <p>These five principles are: Choice over mind, Balance over reward, Awareness over all, Struggle over none and Uncondition over judgement.</p>
-    <p>And until you master all five principles, it will be very difficult for you to truly be comfortable with your porn recovery and to succeed with any amount of certainty.</p>
+    <div style="margin-bottom: 2rem; margin-top: 2rem; height: 4px; background: cyan;"></div>
+    <h2 style="margin-bottom: 3rem; margin-top: 3rem;">The first skill is <u>awareness</u>.</h2>
+    <div style="margin-bottom: 2rem; margin-top: 2rem; height: 4px; background: cyan;"></div>
+    <p>Awareness is your ability to remain conscious.</p>
+    <p>In other words, your ability to wield your mind and pursue healthy coping mechanisms.</p>
+    <p>Awareness is what allows you to assert control over yourself. It is the reason why you're reading this paragraph, because at some point you made the decision to do something about your porn addiction; a conscious decision that you made on your behalf.</p>
+    <p>Of course, just because you have a conscious mind, doesn't mean that you've developed the ability to remain conscious all the time, let alone remain conscious when your emotions get the better of you.</p>
+    <p>No different to weight training, only by practicing awareness can we learn to activate our conscious at the best and worst of times, and therefore pursue healthy coping mechanisms without hesitation.</p>
+    
+    <p>Awareness is your muscle for conscious action.</p>
+    <p>It is your key to success.</p>
 
+    <div style="margin-bottom: 2rem; margin-top: 2rem; height: 4px; background: cyan;"></div>
+    <h2 style="margin-bottom: 3rem; margin-top: 3rem;">The second skill is <u>calmness</u>.</h2>
+    <div style="margin-bottom: 2rem; margin-top: 2rem; height: 4px; background: cyan;"></div>
+
+    <p>The reason why calmness is important is because in 99% of situations it will be your go-to healthy coping mechanism.</p>
+    <p>In fact, it will be your go-to. Period.</p>
+    <p>You should always be calm and calculated, as that will allow you to be at your absolute most effective, no matter what you do in life.</p>
+    <p>The primary reason why it's effective is because we are at our most conscious when our mind is calm, and therefore we will most be able to exert control over ourselves when we are calm.</p>
+    <p>That's why it's important that we develop both skills, because they both build on each other and allow us to make overcoming porn addiction an absolute breeze.</p>
+
+    <div style="margin-bottom: 2rem; margin-top: 2rem; height: 4px; background: cyan;"></div>
+    <h2 style="margin-bottom: 3rem; margin-top: 3rem;"><u>Meditation</u> is how we will be developing these skills.</h2>
+    <div style="margin-bottom: 2rem; margin-top: 2rem; height: 4px; background: cyan;"></div>
+
+    <p>Why meditation?</p>
+    <p>Because it teaches us both awareness and calmness at the same time, which is precisely why it's so powerful in terms of teaching us to adopt healthy coping mechanisms.</p>
+    <p>Furthermore, it's an incredibly simple process, which is vital when we're starting out with limited awareness over ourselves.</p>
+    <p>Meditation makes it easy.</p>
   </div>
 </div>
 
-<%= partial "links/custom.html", %{ title: "Principles", text: "Check out The Five Fundamental Principles Of NeverFap!", link: "/articles/the-five-fundamental-principles-of-neverfap" } %>
-
-<div class="single__wrapper">   
-  <div class="single__content" style="margin-bottom: 0;">
-
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+<div class="guide__banner">
+  <h3>...and this, is where your journey begins.</h3>
+  <h1 class="guide__banner__title" style="margin-bottom: 4rem;">What you choose to do next is up to you.</h1>
+  <div class="single__wrapper">
     <h2>NeverFap Deluxe Articles</h2>
-
-    <p>NeverFap Deluxe Articles are designed to provide you with the knowlege to gain a better understanding of what exactly it is you need to do to help you overcome your porn addiction.</p>
-    <p>They will help address your current misunderstanding of yourself, as well as provide you with the context to understand the value of our NeverFap Deluxe Practices.</p>
-    <p>These articles will serve as a strong basis for your porn recovery, and are referenced within the NeverFap Deluxe Courses. In fact, the courses are generally the best way to consume the articles.</p>
-    <p>The articles contained within the <a class="link" href="/courses/introduction/">Introduction course</a> are an excellent place to start with your NeverFap Deluxe journey. They will provide you with a better understanding of the NeverFap method of overcoming porn addiction.</p>
-
+    
+    <p>NeverFap Deluxe Articles are designed to provide you with a better understanding behind the how and why.</p>
+    <p><a class="link articles__link" href="/articles/my-personal-porn-recovery-journey/">My Personal Porn Recovery Journey</a></br> ...is great if you'd like to understand a bit more about my porn recovery journey.</p>
+    <p><a class="link articles__link" href="articles/the-importance-of-meditation-for-porn-addiction/">The Importance Of Meditation For Porn Addiction</a></br> ...is great if you'd like to know a bit more about how meditation relates to porn addiction recovery.</p>
+    <p><a class="link articles__link" href="/articles/introduction-to-the-neverfap-deluxe-guide/">The Five Fundamental Principles Of NeverFap</a></br> ...is great if you'd like a deeper understanding of some of the intricacies of NeverFap Deluxe.</p>
   </div>
+
+  
+  
 </div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
 
-<%= partial "links/custom.html", %{ title: "Articles", text: "Check out our NeverFap Deluxe Articles!", link: "/articles" } %>
+<%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Articles", link: "/articles" } %>
 
-<div class="single__wrapper">   
-  <div class="single__content" style="margin-bottom: 0;">
-
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+<div class="guide__banner">
+  <div class="single__wrapper">
     <h2>NeverFap Deluxe Practices</h2>
 
-    <p>NeverFap Deluxe Practices focus solely on verifiable steps you can take on a daily basis to help you progress towards learning the skills to end your porn addiction.</p>
-    <p>This is where you'll be spending a majority of your time, practicing these skills and exercises so that you can become comfortable with using them in everyday situations.</p>
-    <p>The most fundamental practice you can learn is <a class="link" href="/practices/observe-it-all">Observe it all</a>. It is the only practice referenced as part of the Introduction course and it is the exercise you will practice everyday, regardless of whatever other exercises you choose to adopt.</p>
-    <p>It is arguably the most important thing you can do for your mental health, and to be quite honest, you could probably overcome your porn addiction with this one practice alone.</p>
-    <p>Do yourself a favour and commit.</p>
+    <p>NeverFap Deluxe Practices focus solely on verifiable steps you can do on a daily basis to help you build awareness and calmness.</p>
+    <p>We recommend starting with <a class="link" href="/practices/observe-it-all">Observe it all</a>. It is the primary meditation exercise you will practice on a daily basis, and the easiest way to reason with meditation.</p>
   </div>
 </div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
 
-<%= partial "links/custom.html", %{ title: "Practices", text: "Check out our NeverFap Deluxe Practices!", link: "/practices" } %>
+<%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Practices.", link: "/practices" } %>
 
-
-<%=# NeverFap Deluxe Courses %>
-<div class="single__wrapper">   
-  <div class="single__content" style="margin-bottom: 0;">
-
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+<div class="guide__banner">
+  <div class="single__wrapper">
     <h2>NeverFap Deluxe Courses</h2>
-
     <p>NeverFap Deluxe Courses combine the NeverFap Articles and Practices into single, linear progression-based pathways based upon The Five Fundamental Principles of NeverFap.</p>
-    <p>They are designed to help you focus on a particular area of understanding, so that you can master that concept and feel confident with your ability to address your porn addiction.</p>
-    <p>As mentioned earlier, I recommend getting started with the Introduction course and working your way down the list, revisiting practices you personally found useful.</p>
-    <p>In addition, these courses will also be available as premium audio courses if you decide to <a class="link" href="/accounts">sign up</a> with a NeverFap Deluxe Community account. (although they don't yet exist, so stay tuned!)</p>
+    <!-- <p>They are designed to help you focus on a particular area of understanding, so that you can master that concept and feel confident with your ability to address your porn addiction.</p> -->
+    <p>As mentioned earlier, I recommend getting started with the <a class="link" href="/courses/introduction/">Introduction course</a> and working your way down the list, revisiting practices you personally found useful.</p>
+
 
   </div>
 </div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
 
-<%= partial "links/custom.html", %{ title: "Courses", text: "Check out our NeverFap Deluxe Courses!", link: "/courses" } %>
+<%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Courses.", link: "/courses" } %>
+
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+
+<div class="single__wrapper">
+  <div class="single__content">
+    <h1>Next Steps</h1>
+
+    <p>If you're still not sure what to do, then that's okay.</p>
+    <p>Just slowly make your way through the content on the website, and feel free to ask any questions in our <a class="link" href="https://discord.gg/YETRkSj">discord channel</a>. I try my best to respond at least once a day.</p>
+    <p>Remember that what you're essentially doing is learning an entirely new way of thinking. Don't worry if it doesn't immediately make sense or if it feels uncomfortable. It's to be expected.</p>
+    <p>I've also put together The Five Fundamental Principles of NeverFap which can help flesh out some of the ideas on this website into more relatable common cases.</p>
+
+    <div class="button__wrapper">
+      <a
+        class="button button__secondary" 
+        href="/articles/the-five-fundamental-principles-of-neverfap"
+        >Learn More About The Five Principles.</a
+      >
+    </div>
+  </div>
+</div>
+
+<%= partial "links/discord.html", assigns %>
 
 <div class="single__wrapper">      
   <h2>Content List</h2>
@@ -185,3 +234,18 @@
         >NeverFap Deluxe Practices.</a
       >
     </div>  %>
+
+
+
+
+
+    <!-- The first being your <u>awareness</u>, and the second being your <u>calmness</u>. -->
+
+    <!-- <p>Before you begin, I highly recommend becoming familiar with <a class="link" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles of NeverFap</a>.</p> -->
+    <!-- <p>These principles will form the basis of everything you learn, whether you decide to get started with the courses, read the articles or practice the mental health exercises.</p>
+    <p>Because in most cases, the reason why you're addicted to porn is because you've <u>neglected at least one of these principles in some form</u>.</p>
+    <p>These five principles are: Choice over mind, Balance over reward, Awareness over all, Struggle over none and Uncondition over judgement.</p>
+    <p>And until you master all five principles, it will be very difficult for you to truly be comfortable with your porn recovery and to succeed with any amount of certainty.</p> -->
+
+
+    <!-- <%= partial "links/custom.html", %{ title: "Principles", text: "Check out The Five Fundamental Principles Of NeverFap!", link: "/articles/the-five-fundamental-principles-of-neverfap" } %> -->

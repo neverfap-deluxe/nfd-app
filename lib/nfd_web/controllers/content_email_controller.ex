@@ -17,7 +17,7 @@ defmodule NfdWeb.ContentEmailController do
         Meta.increment_visit_count(response.body["data"])
         conn |> render("twenty_eight_day_awareness.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->
-        conn |> render("404.html")
+        conn |> render(NfdWeb.ErrorView, "404.html")
     end
   end
 
@@ -30,7 +30,7 @@ defmodule NfdWeb.ContentEmailController do
         Meta.increment_visit_count(response.body["data"])
         conn |> render("twenty_eight_day_awareness_single.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->
-        conn |> render("404.html")
+        conn |> render(NfdWeb.ErrorView, "404.html")
     end
   end
 
@@ -43,7 +43,7 @@ defmodule NfdWeb.ContentEmailController do
         Meta.increment_visit_count(response.body["data"])
         conn |> render("seven_day_kickstarter.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->
-        conn |> render("404.html")
+        conn |> render(NfdWeb.ErrorView, "404.html")
     end
   end
 
@@ -56,7 +56,7 @@ defmodule NfdWeb.ContentEmailController do
         Meta.increment_visit_count(response.body["data"])
         conn |> render("seven_day_kickstarter_single.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->
-        conn |> render("404.html")
+        conn |> render(NfdWeb.ErrorView, "404.html")
     end
   end
 
@@ -69,7 +69,7 @@ defmodule NfdWeb.ContentEmailController do
         Meta.increment_visit_count(response.body["data"])
         conn |> render("ten_day_meditation.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->
-        conn |> render("404.html")
+        conn |> render(NfdWeb.ErrorView, "404.html")
     end
   end
 
@@ -82,7 +82,7 @@ defmodule NfdWeb.ContentEmailController do
         Meta.increment_visit_count(response.body["data"])
         conn |> render("ten_day_meditation_single.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->
-        conn |> render("404.html")
+        conn |> render(NfdWeb.ErrorView, "404.html")
     end
   end
 end
