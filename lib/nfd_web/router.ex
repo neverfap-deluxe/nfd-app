@@ -47,8 +47,8 @@ defmodule NfdWeb.Router do
     get "/quotes", ContentController, :quotes
     get "/quotes/:slug", ContentController, :quote
 
-    get "/seven-day-kickstarter", ContentEmailController, :seven_day_kickstarter
-    get "/seven-day-kickstarter/:day", ContentEmailController, :seven_day_kickstarter_single
+    get "/seven-day-neverfap-deluxe-kickstarter", ContentEmailController, :seven_day_kickstarter
+    get "/seven-day-neverfap-deluxe-kickstarter/:day", ContentEmailController, :seven_day_kickstarter_single
     get "/twenty-eight-day-awareness-challenge", ContentEmailController, :twenty_eight_day_awareness
     get "/twenty-eight-day-awareness-challenge/:day", ContentEmailController, :twenty_eight_day_awareness_single
     get "/ten-day-meditation-primer", ContentEmailController, :ten_day_meditation

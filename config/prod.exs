@@ -53,8 +53,7 @@ config :nfd, NfdWeb.Endpoint,
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
-  root: ".",
-  code_reloader: false
+  root: "."
   # https: [
   #   port: 443,
   #   otp_app: :nfd,

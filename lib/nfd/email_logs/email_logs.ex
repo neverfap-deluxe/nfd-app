@@ -1,25 +1,28 @@
 defmodule Nfd.EmailLogs do 
   use Swoosh.Mailer, otp_app: :nfd
-  use Phoenix.Swoosh, 
+  use Phoenix.Swoosh,
     view: NfdWeb.SubscriptionTemplateView, 
     layout: {NfdWeb.LayoutView, :email}
 
   import Swoosh.Email
 
-  require Logger
-
-  def cast_scheduler(%{subscriber: subscriber, subject: subject, template: template}) do
-    # TODO: Put in variables into template
-    %Swoosh.Email{}
-      |> to(subscriber.subscriber_email)
-      |> from({"NeverFap Deluxe", "neverfapdeluxe@gmail.com"})
-      |> subject(subject)
-      |> render_body(template, %{})
+  def new_user_email_log(email) do 
+    cast_log("New User Created: " <> email, "New User Created: " <> email) |> process_log()
   end
 
-  def cast_log(email, message) do
-    Nfd.SwooshMailer.deliver(email)
+  def new_subscriber_email_log(email, subscription) do 
+    cast_log("New Subscriber: " <> email <> " for " <> subscription, "New Subscriber: " <> email <> " for " <> subscription) |> process_log()
+  end
 
-    Logger.debug(message)
+  def cast_log(subject, message) do
+    %Swoosh.Email{}
+      |> to({"Julius Reade", "julius.reade@gmail.com"})
+      |> from({"NeverFap Deluxe", "neverfapdeluxe@gmail.com"})
+      |> subject(subject)
+      |> text_body(message)
+  end
+
+  def process_log(email) do
+    Nfd.SwooshMailer.deliver(email)
   end
 end

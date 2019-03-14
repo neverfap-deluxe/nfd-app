@@ -36,7 +36,7 @@ defmodule Nfd.Account.User do
         |> pow_changeset(new_attr)
         |> pow_extension_changeset(new_attr)
         |> cast_assoc(:subscriber)
-    else 
+    else
       user
         |> pow_changeset(attrs)
         |> pow_extension_changeset(attrs)

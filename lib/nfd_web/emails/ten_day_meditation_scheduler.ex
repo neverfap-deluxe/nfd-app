@@ -1,6 +1,14 @@
 defmodule NfdWeb.TenDayMeditationScheduler do
   alias Nfd.Account
 
+  defp subscription_action(subscriber, pos) do
+    case pos do 
+      0 -> nil
+      1 -> Account.update_subscriber(subscriber, %{ ten_day_meditation_subscribed: true })
+      2 -> Account.update_subscriber(subscriber, %{ ten_day_meditation_subscribed: false })
+    end
+  end
+
   def run(count) do
     case count do
       0 -> { "", "" }

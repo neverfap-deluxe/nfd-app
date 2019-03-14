@@ -11,7 +11,7 @@ defmodule NfdWeb.EmailSubscription do
 
   def send_email_subscription(subscriber, matrix_element) do
     cast_subscriber(
-      subscriber, 
+      subscriber,
       "Confirm your subscription", 
       "template_email_subscription_confirmation.html"
     ) |> process("Confirm your subscription E-mail sent: " <> subscriber.email)
@@ -23,6 +23,9 @@ defmodule NfdWeb.EmailSubscription do
       [1, _] -> "7 Day NeverFap Deluxe Kickstarter"
       [2, _] -> "10 Day Meditation Primer"
       [3, _] -> "28 Day Awareness Challenge"
+      [4, _] -> "3 Day Awareness Primer"
+      [5, _] -> "3 Day Calmness Primer"
+      [6, _] -> "3 Day Meditation Primer" 
     end
   end
 
@@ -32,56 +35,30 @@ defmodule NfdWeb.EmailSubscription do
       [1, pos] when pos in [0, 1, 2] -> true
       [2, pos] when pos in [0, 1, 2] -> true
       [3, pos] when pos in [0, 1, 2] -> true
+      [4, pos] when pos in [0, 1, 2] -> true
+      [5, pos] when pos in [0, 1, 2] -> true
+      [6, pos] when pos in [0, 1, 2] -> true
       [_, _] -> nil
     end
   end
 
   def update_subscription(subscriber, matrix_element) do 
     # Value: 0 - do nothing, 1 subscribe, 2 unsubscribe 
-    # Position: 0 - general, 1 kickstarter, 2 meditation, 3 awareness 
+    # Position: 0 - general, 1 kickstarter, 2 meditation, 3 awareness, 4 awareness, 5 calmness, 6 meditation 
     # "0+1-1+1" #value 0, pos 1; value 1, pos 1;
     
     # Enum.map(String.split(matrix_element, "-"), fn(campaign) ->
       # ["0", "1"]
       case String.split(matrix_element, "+") do
-        [0, pos] -> general_subscription_action(subscriber, pos)
-        [1, pos] -> kickstarter_subscription_action(subscriber, pos)
-        [2, pos] -> meditation_subscription_action(subscriber, pos)
-        [3, pos] -> awareness_subscription_action(subscriber, pos)
+        [0, pos] -> NfdWeb.GeneralScheduler.subscription_action(subscriber, pos)
+        [1, pos] -> NfdWeb.SevenDayKickstarterScheduler.subscription_action(subscriber, pos)
+        [2, pos] -> NfdWeb.TenDayMeditationScheduler.subscription_action(subscriber, pos)
+        [3, pos] -> NfdWeb.TwentyEightDayAwarenessScheduler.subscription_action(subscriber, pos)
+        [4, pos] -> NfdWeb.ThreeDayAwarenessScheduler.subscription_action(subscriber, pos)
+        [5, pos] -> NfdWeb.ThreeDayCalmnessScheduler.subscription_action(subscriber, pos)
+        [6, pos] -> NfdWeb.ThreeDayMeditationScheduler.subscription_action(subscriber, pos)
       end
     # end)
-  end
-
-  defp general_subscription_action(subscriber, pos) do
-    case pos do 
-      0 -> nil
-      1 -> Account.update_subscriber(subscriber, %{ subscribed: true })
-      2 -> Account.update_subscriber(subscriber, %{ subscribed: false })
-    end
-  end
-
-  defp kickstarter_subscription_action(subscriber, pos) do
-    case pos do 
-      0 -> nil
-      1 -> Account.update_subscriber(subscriber, %{ seven_day_kickstarter_subscribed: true })
-      2 -> Account.update_subscriber(subscriber, %{ seven_day_kickstarter_subscribed: false })
-    end
-  end
-
-  defp meditation_subscription_action(subscriber, pos) do
-    case pos do 
-      0 -> nil
-      1 -> Account.update_subscriber(subscriber, %{ ten_day_meditation_subscribed: true })
-      2 -> Account.update_subscriber(subscriber, %{ ten_day_meditation_subscribed: false })
-    end
-  end
-
-  defp awareness_subscription_action(subscriber, pos) do
-    case pos do 
-      0 -> nil
-      1 -> Account.update_subscriber(subscriber, %{ twenty_eight_day_awareness_subscribed: true })
-      2 -> Account.update_subscriber(subscriber, %{ twenty_eight_day_awareness_subscribed: false })
-    end
   end
 
   def cast_subscriber(subscriber, subject, template) do

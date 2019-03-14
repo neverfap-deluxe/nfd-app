@@ -1,0 +1,38 @@
+<div class="seven__day__kickstarter__banner">
+  <div class="banner__empty"></div>
+  <div class="banner__magenta"></div>
+  <div class="banner__cyan"></div>
+  <!-- <div class="banner__white"></div> -->
+
+  <div class="seven__day__kickstarter__banner__inner">
+    <h1 class="seven__day__kickstarter__banner__title">7 Day NeverFap Deluxe Kickstarter</h1>
+
+    <div class="seven__day__kickstarter__banner__box">
+      <div class="seven__day__kickstarter__banner__list">
+        <p class="seven__day__kickstarter__banner__item">The Beginning - Day 0</p>
+        <p class="seven__day__kickstarter__banner__item">The Meditation - Day 1</p>
+        <p class="seven__day__kickstarter__banner__item">The Awareness - Day 2</p>
+        <p class="seven__day__kickstarter__banner__item">The Calmness - Day 3</p>
+        <p class="seven__day__kickstarter__banner__item">The Trust - Day 4</p>
+        <p class="seven__day__kickstarter__banner__item">The Relapse - Day 5</p>
+        <p class="seven__day__kickstarter__banner__item">The Ambition - Day 6</p>
+        <p class="seven__day__kickstarter__banner__item">The Consistency - Day 7</p>
+      </div>
+      
+      <div class="seven__day__kickstarter__banner__form">
+        <p>Learn all the basics of the NeverFap Deluxe Method with our 7 Day Kickstarter Guide!</p>
+        <%= form_for @seven_day_kickstarter_changeset, Routes.subscription_path(@conn, :add_subscription_func), fn f -> %>
+          <%= text_input f, :subscriber_email, [placeholder: "email"] %>
+          <%= submit "Submit" %>
+          <%= hidden_input f, :matrix_element, [value: "1+1"] %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="banner__white"></div> -->
+  <div class="banner__cyan"></div>
+  <div class="banner__magenta"></div>
+  <div class="banner__empty"></div>
+</div>
+

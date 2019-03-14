@@ -6,6 +6,7 @@ defmodule NfdWeb.PageController do
   alias NfdWeb.API.Content
   
   alias Nfd.Meta
+  alias Nfd.Account.Subscriber
 
   plug :put_layout, "general.html"
 
@@ -13,11 +14,13 @@ defmodule NfdWeb.PageController do
     page_type = "page"
     client = API.is_localhost(conn.host) |> API.api_client()
      
+    seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
+
     case client |> Page.home() do
       {:ok, response} -> 
         Meta.increment_visit_count(response.body["data"])
         {:ok, articlesResponse} = client |> Content.articles()
-          conn |> render("home.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)
+          conn |> render("home.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], articles: articlesResponse.body["data"]["articles"], seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, page_type: page_type)
       {:error, _error} ->  # :econnrefused
         conn |> render(NfdWeb.ErrorView, "404.html")
     end

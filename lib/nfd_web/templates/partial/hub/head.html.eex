@@ -5,10 +5,11 @@
   
   <title>NeverFap Deluxe Dashboard</title>
   <meta name="description" content='NeverFap Deluxe Dashboard'>
-
+  
   <link rel="preconnect" href='<%= Application.get_env(:nfd, :website_domain) %>">
   <link rel="preconnect" href='<%= Application.get_env(:nfd, :website_domain) %>about">
   <link rel="preconnect" href='<%= Application.get_env(:nfd, :website_domain) %>gifts">
+
 
   <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/app.css") %>"/>
 

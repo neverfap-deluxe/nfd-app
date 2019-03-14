@@ -102,7 +102,11 @@
   <link rel="preconnect" href="<%= Application.get_env(:nfd, :base_url) %>articles">
   <link rel="preconnect" href="<%= Application.get_env(:nfd, :base_url) %>practices">
 
-  <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/app.css") %>'/>
+  <!-- SCSS -->
+  <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/normalize.css") %>'/>
+  <!-- <%= if Mix.env != :dev do %> -->
+    <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/app.css") %>'/>
+  <!-- <% end %> -->
 
   <!-- Emoji CSS -->
   <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
@@ -126,8 +130,6 @@
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
-  <!-- SCSS -->
-  <link rel="stylesheet" href="/css/normalize.css">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Parisienne|Montserrat|Noto+Sans" rel="stylesheet">
