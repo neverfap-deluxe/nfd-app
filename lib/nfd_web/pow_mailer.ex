@@ -16,7 +16,6 @@ defmodule NfdWeb.PowMailer do
   end
 
   def process(email) do
-    IO.inspect(email)
     Nfd.SwooshMailer.deliver(email)
     Logger.debug("E-mail sent")
   end  

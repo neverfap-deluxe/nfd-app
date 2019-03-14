@@ -7,6 +7,8 @@ defmodule Nfd.Account.User do
 
   import Ecto.Changeset
 
+  alias Nfd.Account.Subscriber
+
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "users" do
@@ -30,20 +32,23 @@ defmodule Nfd.Account.User do
   end
 
   def changeset(user, attrs) do
+    # This is for when creating user.
+    if attrs["email"] do
+      IO.inspect "has attrs email"
+      Nfd.EmailLogs.new_user_email_log(attrs["email"])
+      new_attrs = Map.merge(user, %{subscriber: %{ subscriber_email: attrs["email"] }})
 
-    if Map.has_key?(attrs, :email) do
-      Nfd.EmailLogs.new_user_email_log(attrs.email)
-
-      new_attr = Map.merge(attrs, %{ subscriber: %{ subscriber_email: attrs.email }})
-      user
-        |> pow_changeset(new_attr)
-        |> pow_extension_changeset(new_attr)
-        |> cast_assoc(:subscriber)
-    else
       user
         |> pow_changeset(attrs)
         |> pow_extension_changeset(attrs)
-        |> cast_assoc(:subscriber)
+        # |> cast(attrs, [:subscriber])
+    else
+      IO.inspect "has not attrs email"
+      # this is for everything else, that just happens to use User.changeset
+      user
+        |> pow_changeset(attrs)
+        |> pow_extension_changeset(attrs)
+        # |> cast_assoc(:subscriber)
     end
   end
 
