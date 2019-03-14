@@ -24,8 +24,8 @@
         <%= form_for @seven_day_kickstarter_changeset, Routes.subscription_path(@conn, :add_subscription_func), fn f -> %>
           <%= text_input f, :subscriber_email, [placeholder: "email", class: "banner__input"] %>
           <%= submit "Submit", [class: "banner__submit"]  %>
-          <%= hidden_input f, :matrix_element, [value: "0+1-1+1"] %>
-          <%= hidden_input f, :main_matrix, [value: "1+1"] %>
+          <%= hidden_input f, :multiple_matrix, [value: "0h1-1h1"] %>
+          <%= hidden_input f, :main_matrix, [value: "1h1"] %>
         <% end %>
       </div>
     </div>

@@ -8,7 +8,7 @@ defmodule NfdWeb.DashboardController do
 
   def dashboard(conn, _params) do
     user = Pow.Plug.current_user(conn)
-    subscriber = Account.get_subscriber_user_id!(user.id)
+    subscriber = Account.get_subscriber_user_id(user.id)
 
     collections_audio = Content.list_audio_courses()
     collections_email = Content.list_email_campaigns()

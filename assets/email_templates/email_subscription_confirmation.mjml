@@ -11,7 +11,7 @@
           Email Subscription Confirmation
         </mj-text>
         <mj-text line-height="20px">
-          Please use the following link to confirm your e-mail address.
+          Please use the following link to confirm your e-mail address for the <%= @course_name %>.
         </mj-text>
         <mj-button 
           background-color="#F45E43"

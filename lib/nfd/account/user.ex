@@ -3,16 +3,16 @@ defmodule Nfd.Account.User do
   use Pow.Ecto.Schema
   use Pow.Extension.Ecto.Schema,
     extensions: [PowResetPassword, PowEmailConfirmation]
-  # use PowAssent.Ecto.Schema
+  use PowAssent.Ecto.Schema
 
   import Ecto.Changeset
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "users" do
-    # has_many :user_identities,
-    #   Nfd.UserIdentities.UserIdentity,
-    #   on_delete: :delete_all
+    has_many :user_identities,
+      Nfd.UserIdentities.UserIdentity,
+      on_delete: :delete_all
 
     pow_user_fields()
 
@@ -30,9 +30,10 @@ defmodule Nfd.Account.User do
   end
 
   def changeset(user, attrs) do
-    Nfd.EmailLogs.new_user_email_log(attrs.email)
 
     if Map.has_key?(attrs, :email) do
+      Nfd.EmailLogs.new_user_email_log(attrs.email)
+
       new_attr = Map.merge(attrs, %{ subscriber: %{ subscriber_email: attrs.email }})
       user
         |> pow_changeset(new_attr)

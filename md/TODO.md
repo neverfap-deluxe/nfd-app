@@ -20,6 +20,8 @@
 - Page that has everything inside the app.
 - Add validation to email subscription to see if they have paid for the subscription before modifying matrix.
 
+- Emails to send day 0 email first.
+
 https://forestry.io/blog/build-a-json-api-with-hugo/
 
 {{< hr2 Types of categories

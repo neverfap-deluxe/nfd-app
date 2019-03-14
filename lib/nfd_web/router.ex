@@ -2,7 +2,7 @@ defmodule NfdWeb.Router do
   use NfdWeb, :router
   use Pow.Phoenix.Router
   use Pow.Extension.Phoenix.Router, otp_app: :nfd
-  # use PowAssent.Phoenix.Router
+  use PowAssent.Phoenix.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -22,7 +22,7 @@ defmodule NfdWeb.Router do
 
     pow_routes()
     pow_extension_routes()
-    # pow_assent_routes()
+    pow_assent_routes()
   end
 
   scope "/", NfdWeb do
@@ -61,8 +61,8 @@ defmodule NfdWeb.Router do
 
     # Subscription functions
     post "/confirm_subscription", SubscriptionController, :add_subscription_func
-    get "/unsubscribe", SubscriptionController, :unsubscribe_func
     get "/subscription_success", SubscriptionController, :confirm_subscription_func
+    get "/unsubscribe", SubscriptionController, :unsubscribe_func
     get "/change_subscription_general_func", SubscriptionController, :change_subscription_general_func
   end
 

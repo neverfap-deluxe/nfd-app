@@ -4,6 +4,11 @@ defmodule NfdWeb.FunctionController do
   alias Nfd.Content
   alias Nfd.Account
 
+  def contact_form_post(conn, %{"user" => user}) do
+
+    EM
+  end
+
   def delete_acount(conn, %{"user" => user}) do 
     case Account.delete_user(user) do
       { :ok, empty_user } ->

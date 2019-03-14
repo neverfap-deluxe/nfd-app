@@ -130,7 +130,6 @@
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Parisienne|Montserrat|Noto+Sans" rel="stylesheet">
 
@@ -145,6 +144,11 @@
       gtag('config', 'UA-132863786-1');
     }
   </script>
+
+  <!-- Google sign in -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="954591220445-1l03q4c08vdci34g8tdcjcgp134mn3m1.apps.googleusercontent.com">
+
 </head>
 
 

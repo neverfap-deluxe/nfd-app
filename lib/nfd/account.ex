@@ -251,7 +251,7 @@ defmodule Nfd.Account do
 
   """
   def get_subscriber!(id), do: Repo.get!(Subscriber, id)
-  def get_subscriber_user_id!(user_id), do: Repo.get_by!(Subscriber, user_id: user_id)
+  def get_subscriber_user_id(user_id), do: Repo.get_by(Subscriber, user_id: user_id)
   def get_subscriber_email(email), do: Repo.get_by(Subscriber, subscriber_email: email)
 
   @doc """

@@ -57,16 +57,23 @@
       display: inline-block;
       border: 3px solid cyan;
       box-shadow: -5px 5px 0px 0px white;
-      margin-top: 0!important;
-      margin-bottom: 0.4rem!important;
+      // margin-top: 0!important;
+      // margin-bottom: 0.4rem!important;
+      margin: 0.1rem;
       padding: 0.6rem;
+      transition: .2s;
     }
+    .seven__day__kickstarter__banner__item:hover {
+      box-shadow: -8px 8px 0px 0px white;
+
+    } 
   }
 
   .seven__day__kickstarter__banner__form {
     flex: 1;
     padding: 1rem;
     border: 1px solid black;
+    max-width: 400px;
 
     form {
       display: flex;

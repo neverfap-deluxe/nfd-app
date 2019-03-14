@@ -44,7 +44,7 @@ defmodule NfdWeb.TwentyEightDayAwarenessScheduler do
     end
   end
 
-  defp subscription_action(subscriber, pos) do
+  def subscription_action(subscriber, pos) do
     case pos do 
       "0" -> nil
       "1" -> Account.update_subscriber(subscriber, %{ twenty_eight_day_awareness_subscribed: true })

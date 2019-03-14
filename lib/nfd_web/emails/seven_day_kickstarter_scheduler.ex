@@ -1,12 +1,16 @@
 defmodule NfdWeb.SevenDayKickstarterScheduler do
   alias Nfd.Account
 
-  defp subscription_action(subscriber, pos) do
+  def subscription_action(subscriber, pos) do
     case pos do 
       "0" -> nil
       "1" -> Account.update_subscriber(subscriber, %{ seven_day_kickstarter_subscribed: true })
       "2" -> Account.update_subscriber(subscriber, %{ seven_day_kickstarter_subscribed: false })
     end
+  end
+
+  def unsubscribe_action(subscriber) do
+    Account.update_subscriber(subscriber, %{ seven_day_kickstarter_subscribed: false })
   end
 
   def run(count) do

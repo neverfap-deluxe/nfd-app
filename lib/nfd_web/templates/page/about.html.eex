@@ -95,20 +95,37 @@
   <div class="single__content">
     <p>If you would like to get in touch, please provide your name, email and message, and I will get back to you as soon as possible!</p>
   </div>    
+
+  <!-- Original Contact Form -->
   <div class="form__wrapper form__wrapper--full-width">
     <form class="form" action="https://formspree.io/julius_dott@hotmail.com" method="POST">  
-      <!-- <h4 class="form__title">THE FORM</h4> -->
-    <div class="form__input__container">
-      <input class="form__input" type=text: placeholder="Name" name='name'/>
-      <input class="form__input" type="email" placeholder="Email" name='_replyTo'/>
-      <textarea class="form__input form__textarea" type=text: placeholder="Message" name='message'></textarea>
-    </div>
-  
-    <div class="form__submission__container">
-      <button class="form__button" type="submit" value="Send">Send</button>
-    </div>
+      <div class="form__input__container">
+        <input class="form__input" type=text: placeholder="Name" name='name'/>
+        <input class="form__input" type="email" placeholder="Email" name='_replyTo'/>
+        <textarea class="form__input form__textarea" type=text: placeholder="Message" name='message'></textarea>
+      </div>
+    
+      <div class="form__submission__container">
+        <button class="form__button" type="submit" value="Send">Send</button>
+      </div>
     </form>
-  </div>    
+  </div>
+
+  <!-- New Contact Form -->
+  <!-- <div class="form__wrapper form__wrapper--full-width">
+    <%= form_for @contact_form_changeset, Routes.contact_form_post(@conn, :add_subscription_func), fn f -> %> 
+      <div class="form__input__container">
+        <%= text_input f, :name, [placeholder: "name", class: "form__input"] %>
+        <%= text_input f, :email, [placeholder: "email", class: "form__input"] %>
+        <%= textarea_input f, :message, [placeholder: "email", class: "form__input form__textarea"] %>
+      </div>
+    
+      <div class="form__submission__container">
+        <%= submit "Send", [class: "form__button"]  %>
+      </div>
+    <% end %>
+  </div> -->
+  
 </div>
 
 

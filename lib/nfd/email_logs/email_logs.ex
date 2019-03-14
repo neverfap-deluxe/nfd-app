@@ -14,6 +14,10 @@ defmodule Nfd.EmailLogs do
     cast_log("New Subscriber: " <> email <> " for " <> subscription, "New Subscriber: " <> email <> " for " <> subscription) |> process_log()
   end
 
+  def new_contact_form_email(name, email, message) do
+    cast_log("New Contact Form Submission: " <> name <> " - " <> email, "New Subscriber: " <> email <> " for " <> subscription) |> process_log()
+  end
+
   def cast_log(subject, message) do
     %Swoosh.Email{}
       |> to({"Julius Reade", "julius.reade@gmail.com"})
