@@ -1,9 +1,5 @@
 defmodule Nfd.EmailLogs do 
   use Swoosh.Mailer, otp_app: :nfd
-  use Phoenix.Swoosh,
-    view: NfdWeb.SubscriptionTemplateView, 
-    layout: {NfdWeb.LayoutView, :email}
-
   import Swoosh.Email
 
   def new_user_email_log(email) do 
@@ -15,7 +11,7 @@ defmodule Nfd.EmailLogs do
   end
 
   def new_contact_form_email(name, email, message) do
-    cast_log("New Contact Form Submission: " <> name <> " - " <> email, "New Subscriber: " <> email <> " for " <> subscription) |> process_log()
+    cast_log("New Contact Form Submission: " <> name <> " - " <> email, "Email: " <> email <> "\n Message:" <> message) |> process_log()
   end
 
   def cast_log(subject, message) do

@@ -203,4 +203,67 @@ defmodule Nfd.AccountTest do
       assert %Ecto.Changeset{} = Account.change_subscriber(subscriber)
     end
   end
+
+  describe "contact_form" do
+    alias Nfd.Account.ContactForm
+
+    @valid_attrs %{email: "some email", message: "some message", name: "some name"}
+    @update_attrs %{email: "some updated email", message: "some updated message", name: "some updated name"}
+    @invalid_attrs %{email: nil, message: nil, name: nil}
+
+    def contact_form_fixture(attrs \\ %{}) do
+      {:ok, contact_form} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Account.create_contact_form()
+
+      contact_form
+    end
+
+    test "list_contact_form/0 returns all contact_form" do
+      contact_form = contact_form_fixture()
+      assert Account.list_contact_form() == [contact_form]
+    end
+
+    test "get_contact_form!/1 returns the contact_form with given id" do
+      contact_form = contact_form_fixture()
+      assert Account.get_contact_form!(contact_form.id) == contact_form
+    end
+
+    test "create_contact_form/1 with valid data creates a contact_form" do
+      assert {:ok, %ContactForm{} = contact_form} = Account.create_contact_form(@valid_attrs)
+      assert contact_form.email == "some email"
+      assert contact_form.message == "some message"
+      assert contact_form.name == "some name"
+    end
+
+    test "create_contact_form/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Account.create_contact_form(@invalid_attrs)
+    end
+
+    test "update_contact_form/2 with valid data updates the contact_form" do
+      contact_form = contact_form_fixture()
+      assert {:ok, %ContactForm{} = contact_form} = Account.update_contact_form(contact_form, @update_attrs)
+      assert contact_form.email == "some updated email"
+      assert contact_form.message == "some updated message"
+      assert contact_form.name == "some updated name"
+    end
+
+    test "update_contact_form/2 with invalid data returns error changeset" do
+      contact_form = contact_form_fixture()
+      assert {:error, %Ecto.Changeset{}} = Account.update_contact_form(contact_form, @invalid_attrs)
+      assert contact_form == Account.get_contact_form!(contact_form.id)
+    end
+
+    test "delete_contact_form/1 deletes the contact_form" do
+      contact_form = contact_form_fixture()
+      assert {:ok, %ContactForm{}} = Account.delete_contact_form(contact_form)
+      assert_raise Ecto.NoResultsError, fn -> Account.get_contact_form!(contact_form.id) end
+    end
+
+    test "change_contact_form/1 returns a contact_form changeset" do
+      contact_form = contact_form_fixture()
+      assert %Ecto.Changeset{} = Account.change_contact_form(contact_form)
+    end
+  end
 end

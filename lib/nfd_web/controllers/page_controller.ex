@@ -7,6 +7,7 @@ defmodule NfdWeb.PageController do
   
   alias Nfd.Meta
   alias Nfd.Account.Subscriber
+  alias Nfd.Account.ContactForm
 
   plug :put_layout, "general.html"
 
@@ -58,10 +59,12 @@ defmodule NfdWeb.PageController do
     page_type = "page"
     client = API.is_localhost(conn.host) |> API.api_client()
 
+    contact_form_changeset = ContactForm.changeset(%ContactForm{}, %{name: "", email: "", message: ""})
+    
     case client |> Page.about() do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
-        conn |> render("about.html", item: response.body["data"], page_type: page_type)
+        conn |> render("about.html", item: response.body["data"], contact_form_changeset: contact_form_changeset, page_type: page_type)
       {:error, _error} ->
         conn |> render(NfdWeb.ErrorView, "404.html")
     end

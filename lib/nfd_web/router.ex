@@ -55,10 +55,14 @@ defmodule NfdWeb.Router do
     get "/ten-day-meditation-primer/:day", ContentEmailController, :ten_day_meditation_single
    end
 
-  # Subscription 
+  # Functions 
   scope "/", NfdWeb do
     pipe_through :browser
 
+    # General functions
+    post "/send_message", FunctionController, :contact_form_post
+    get "/send_message_success", FunctionController, :send_message_success
+  
     # Subscription functions
     post "/confirm_subscription", SubscriptionController, :add_subscription_func
     get "/subscription_success", SubscriptionController, :confirm_subscription_func

@@ -113,11 +113,11 @@
 
   <!-- New Contact Form -->
   <!-- <div class="form__wrapper form__wrapper--full-width">
-    <%= form_for @contact_form_changeset, Routes.contact_form_post(@conn, :add_subscription_func), fn f -> %> 
+    <%= form_for @contact_form_changeset, Routes.function_path(@conn, :contact_form_post), fn f -> %> 
       <div class="form__input__container">
-        <%= text_input f, :name, [placeholder: "name", class: "form__input"] %>
-        <%= text_input f, :email, [placeholder: "email", class: "form__input"] %>
-        <%= textarea_input f, :message, [placeholder: "email", class: "form__input form__textarea"] %>
+        <%= text_input f, :name, [placeholder: "Name", class: "form__input"] %>
+        <%= text_input f, :email, [placeholder: "Email", class: "form__input"] %>
+        <%= textarea f, :message, [placeholder: "Message", class: "form__input form__textarea"] %>
       </div>
     
       <div class="form__submission__container">

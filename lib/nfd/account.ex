@@ -318,4 +318,100 @@ defmodule Nfd.Account do
   def change_subscriber(%Subscriber{} = subscriber) do
     Subscriber.changeset(subscriber, %{})
   end
+
+  alias Nfd.Account.ContactForm
+
+  @doc """
+  Returns the list of contact_form.
+
+  ## Examples
+
+      iex> list_contact_form()
+      [%ContactForm{}, ...]
+
+  """
+  def list_contact_form do
+    Repo.all(ContactForm)
+  end
+
+  @doc """
+  Gets a single contact_form.
+
+  Raises `Ecto.NoResultsError` if the Contact form does not exist.
+
+  ## Examples
+
+      iex> get_contact_form!(123)
+      %ContactForm{}
+
+      iex> get_contact_form!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_contact_form!(id), do: Repo.get!(ContactForm, id)
+
+  @doc """
+  Creates a contact_form.
+
+  ## Examples
+
+      iex> create_contact_form(%{field: value})
+      {:ok, %ContactForm{}}
+
+      iex> create_contact_form(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_contact_form(attrs \\ %{}) do
+    %ContactForm{}
+    |> ContactForm.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a contact_form.
+
+  ## Examples
+
+      iex> update_contact_form(contact_form, %{field: new_value})
+      {:ok, %ContactForm{}}
+
+      iex> update_contact_form(contact_form, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_contact_form(%ContactForm{} = contact_form, attrs) do
+    contact_form
+    |> ContactForm.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a ContactForm.
+
+  ## Examples
+
+      iex> delete_contact_form(contact_form)
+      {:ok, %ContactForm{}}
+
+      iex> delete_contact_form(contact_form)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_contact_form(%ContactForm{} = contact_form) do
+    Repo.delete(contact_form)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking contact_form changes.
+
+  ## Examples
+
+      iex> change_contact_form(contact_form)
+      %Ecto.Changeset{source: %ContactForm{}}
+
+  """
+  def change_contact_form(%ContactForm{} = contact_form) do
+    ContactForm.changeset(contact_form, %{})
+  end
 end
