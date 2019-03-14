@@ -30,6 +30,8 @@ defmodule Nfd.Account.User do
   end
 
   def changeset(user, attrs) do
+    Nfd.EmailLogs.new_user_email_log(attrs.email)
+
     if Map.has_key?(attrs, :email) do
       new_attr = Map.merge(attrs, %{ subscriber: %{ subscriber_email: attrs.email }})
       user

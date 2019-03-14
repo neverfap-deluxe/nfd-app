@@ -3,9 +3,9 @@ defmodule NfdWeb.SevenDayKickstarterScheduler do
 
   defp subscription_action(subscriber, pos) do
     case pos do 
-      0 -> nil
-      1 -> Account.update_subscriber(subscriber, %{ seven_day_kickstarter_subscribed: true })
-      2 -> Account.update_subscriber(subscriber, %{ seven_day_kickstarter_subscribed: false })
+      "0" -> nil
+      "1" -> Account.update_subscriber(subscriber, %{ seven_day_kickstarter_subscribed: true })
+      "2" -> Account.update_subscriber(subscriber, %{ seven_day_kickstarter_subscribed: false })
     end
   end
 

@@ -116,7 +116,7 @@
     <h1 class="unhealthy__banner__title" style="margin-bottom: 6rem;">What are some of these <span style="color: white;">unhealthy coping mechanisms</span>?</h1>
 
     <div class="homepage__section__closer">
-       These include things like.
+       They include things like.
 
       <h2>Self-criticism as a means of motivation.</h2>
       <div style="border-top: 3px solid black;"></div>
@@ -204,7 +204,7 @@
     </div>
   </div> -->
 
-  <%#= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, seven_day_kickstarter_changeset: @seven_day_kickstarter_changeset } %>
+  <%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, seven_day_kickstarter_changeset: @seven_day_kickstarter_changeset } %>
   
     <!-- Seven Day kickstarter banner. -->
     <!-- Here would be a really good place to also put in top ten unhealthy coping mechanisms. -->

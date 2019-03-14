@@ -6,68 +6,79 @@ defmodule NfdWeb.SubscriptionController do
 
   alias NfdWeb.EmailSubscription
 
-  def add_subscription_func(conn, %{"email" => email, "matrix_element" => matrix_element}) do
-    case EmailSubscription.validate_matrix_element(matrix_element) do 
-      true ->
-        case Account.get_subscriber_email(email) do 
-          nil ->
-            case Account.create_subscriber(%{subscriber_email: email}) do
-              {:ok, subscriber} ->
-                EmailSubscription.send_email_subscription(subscriber, matrix_element)
-                course_name = EmailSubscription.course_name_from_matrix(matrix_element)
-                render(conn, "confirm_subscription_page.html", course_name: course_name)
+  def add_subscription_func(conn, %{"subscriber" => subscriber}) do
+    matrix_element = subscriber["matrix_element"]
+    main_matrix = subscriber["main_matrix"]
+    email = subscriber["subscriber_email"]
 
-              {:error, changeset} ->
-                error_message = "Could not create subscriber."
-                render(conn, "failed_subscription_page.html", error_message: error_message)
-            end
+    IO.inspect EmailSubscription.validate_matrix_element(matrix_element)
 
-          subscriber ->
-            EmailSubscription.send_email_subscription(subscriber, matrix_element)
-            course_name = EmailSubscription.course_name_from_matrix(matrix_element)
+    case EmailSubscription.validate_matrix_element(matrix_element) do
+      true -> add_subscription_create_user(email, matrix_element, main_matrix, conn)
+      [true, true] -> add_subscription_create_user(email, matrix_element, main_matrix, conn)
+      _ -> render_failure_page("Matrix element is invalid.", conn)
+      [_, _] -> render_failure_page("Matrix element is invalid.", conn)
+    end
+  end
+
+  defp add_subscription_create_user(email, matrix_element, main_matrix, conn) do
+    case Account.get_subscriber_email(email) do
+      nil ->
+        case Account.create_subscriber(%{subscriber_email: email}) do
+          {:ok, subscriber} ->
+            EmailSubscription.send_email_subscription(subscriber, main_matrix)
+            course_name = EmailSubscription.course_name_from_matrix(main_matrix)
             render(conn, "confirm_subscription_page.html", course_name: course_name)
+
+          {:error, changeset} -> render_failure_page("Could not create subscriber.", conn)
         end
-      nil ->
-        error_message = "Matrix element is invalid."
-        render(conn, "unsubscribe_subscription_page.html", error_message: error_message)
+
+      subscriber ->
+        EmailSubscription.send_email_subscription(subscriber, main_matrix)
+        course_name = EmailSubscription.course_name_from_matrix(main_matrix)
+        render(conn, "confirm_subscription_page.html", course_name: course_name)
     end
   end
 
-  def confirm_subscription_func(conn, %{"email" => email, "matrix_element" => matrix_element}) do
+  def confirm_subscription_func(conn, %{"email" => email, "matrix_element" => matrix_element, "main_matrix" => main_matrix}) do
     case EmailSubscription.validate_matrix_element(matrix_element) do 
-      true -> 
-        case Account.get_subscriber_email(email) do
-          nil ->
-            error_message = "It's not possible to confirm the subscription of a subscriber that doesn't exist."
-            render(conn, "failed_subscription_page.html", error_message: error_message)
-
-          subscriber ->
-            EmailSubscription.update_subscription(subscriber, matrix_element)
-            course_name = EmailSubscription.course_name_from_matrix(matrix_element)
-            render(conn, "success_subscription_page.html", course_name: course_name)
-        end
-      nil ->
-        error_message = "Matrix element is invalid."
-        render(conn, "unsubscribe_subscription_page.html", error_message: error_message)
+      true -> confirm_subscription_update_subscription(email, matrix_element, main_matrix, conn)
+      [true, true] -> confirm_subscription_update_subscription(email, matrix_element, main_matrix, conn)
+      _ -> render_failure_page("Matrix element is invalid.", conn)
+      [_, _] -> render_failure_page("Matrix element is invalid.", conn)
     end
   end
 
-  def unsubscribe_func(conn, %{"email" => email, "matrix_element" => matrix_element}) do
-    case EmailSubscription.validate_matrix_element(matrix_element) do 
-      true -> 
-        case Account.get_subscriber_email(email) do
-          nil ->
-            error_message = "Unable to unsubscribe a subscriber that doesn't exist."
-            render(conn, "unsubscribe_subscription_page.html", error_message: error_message)
-          
-          subscriber ->
-            course_name = EmailSubscription.course_name_from_matrix(matrix_element)
-            render(conn, "unsubscribe_subscription_page.html", course_name: course_name)
-        end
-      nil -> 
-        error_message = "Matrix element is invalid."
-        render(conn, "unsubscribe_subscription_page.html", error_message: error_message)
+  defp confirm_subscription_update_subscription(email, matrix, main_matrix, conn) do 
+    case Account.get_subscriber_email(email) do
+      nil -> render_failure_page("It's not possible to confirm the subscription of a subscriber that doesn't exist.", conn)
+      subscriber ->
+        EmailSubscription.update_subscription(subscriber, matrix)
+        course_name = EmailSubscription.course_name_from_matrix(main_matrix)
+        render(conn, "success_subscription_page.html", course_name: course_name)
     end
+  end
+
+  def unsubscribe_func(conn, %{"email" => email, "matrix_element" => matrix_element, "main_matrix" => main_matrix}) do
+    case EmailSubscription.validate_matrix_element(matrix_element) do 
+      true -> unsubscribe_user(email, matrix_element, main_matrix, conn)
+      [true, true] -> unsubscribe_user(email, matrix_element, main_matrix, conn)
+      _ -> render_failure_page("Matrix element is invalid.", conn)
+      [_, _] -> render_failure_page("Matrix element is invalid.", conn)
+    end
+  end
+
+  defp unsubscribe_user(email, matrix_element, main_matrix, conn) do 
+    case Account.get_subscriber_email(email) do
+      nil -> render_failure_page("Unable to unsubscribe a subscriber that doesn't exist.", conn)
+      subscriber ->
+        course_name = EmailSubscription.course_name_from_matrix(main_matrix)
+        render(conn, "unsubscribe_subscription_page.html", course_name: course_name)
+    end  
+  end
+
+  defp render_failure_page(error_message, conn) do 
+    render(conn, "failed_subscription_page.html", error_message: error_message)
   end
 
   def change_subscription_general_func(conn, %{"subscribed" => subscribed, "user_id" => user_id}) do

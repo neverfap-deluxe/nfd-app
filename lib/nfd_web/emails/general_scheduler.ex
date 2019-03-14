@@ -3,9 +3,9 @@ defmodule NfdWeb.GeneralScheduler do
 
   defp subscription_action(subscriber, pos) do
     case pos do 
-      0 -> nil
-      1 -> Account.update_subscriber(subscriber, %{ subscribed: true })
-      2 -> Account.update_subscriber(subscriber, %{ subscribed: false })
+      "0" -> nil
+      "1" -> Account.update_subscriber(subscriber, %{ subscribed: true })
+      "2" -> Account.update_subscriber(subscriber, %{ subscribed: false })
     end
   end
 

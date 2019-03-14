@@ -11,7 +11,6 @@
   border-top: 4px solid black;
   border-bottom: 4px solid black;
 
-
   .seven__day__kickstarter__banner__inner {
     padding: 1.4rem;
   }
@@ -66,6 +65,8 @@
 
   .seven__day__kickstarter__banner__form {
     flex: 1;
+    padding: 1rem;
+    border: 1px solid black;
 
     form {
       display: flex;
@@ -79,8 +80,7 @@
     background: cyan;
     color: white;
     box-shadow: -5px 5px 0px 0px black;
-  }
-  
+  } 
 }
 
 .unhealthy__banner {
@@ -176,6 +176,41 @@
   }
 }
 
+.banner__input {
+  font-weight: 900;
+  font-size: 1rem;
+  height: 2.8rem;
+  width: 100%;
+  border: 2px solid black;
+  box-sizing: border-box;
+  padding-left: 0.8rem;
+  margin-bottom: 0.6rem;
+  flex: 3;
+}
+
+.banner__submit {
+  flex: 1;
+  font-weight: 900;   
+  font-size: 1rem;     
+  height: 2.8rem;
+  width: 100%;
+  border: 2px solid black;
+  // padding: 0.2rem;
+  box-shadow: -3px 3px 0px 0px black;
+  cursor: pointer;
+  transition: .1s;
+
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.banner__submit:focus {
+  outline: 0;
+}
+
+.banner__submit:hover {
+  box-shadow: -6px 6px 0px 0px black;
+}
 
 
 @media screen and (min-width: 420px) {

@@ -3,9 +3,9 @@ defmodule NfdWeb.TenDayMeditationScheduler do
 
   defp subscription_action(subscriber, pos) do
     case pos do 
-      0 -> nil
-      1 -> Account.update_subscriber(subscriber, %{ ten_day_meditation_subscribed: true })
-      2 -> Account.update_subscriber(subscriber, %{ ten_day_meditation_subscribed: false })
+      "0" -> nil
+      "1" -> Account.update_subscriber(subscriber, %{ ten_day_meditation_subscribed: true })
+      "2" -> Account.update_subscriber(subscriber, %{ ten_day_meditation_subscribed: false })
     end
   end
 

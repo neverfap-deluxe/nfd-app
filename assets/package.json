@@ -5,7 +5,8 @@
     "deploy": "npx webpack --mode production",
     "watch": "npx webpack --mode development --watch",
     
-    "mjml": "npm run -s mjml-ecs & npm run -s mjml-ec & npm run -s mjml-rp & npm run -s mjml-esc & npm run -s mjml-escs",
+    "mjml": "npm run -s mjml-ec & npm run -s mjml-rp & npm run -s mjml-ecs & npm run -s mjml-esc & npm run -s mjml-escs",
+
     "k": "npm run -s k0",
     "m": "npm run -s m0",
     "a": "npm run -s a0",
@@ -73,9 +74,9 @@
     "mjml-ec": "npx mjml --watch ./email_templates/email_confirmation.mjml -o ../lib/nfd_web/templates/pow_email_confirmation/mailer/email_confirmation.html.eex",
     "mjml-rp": "npx mjml --watch ./email_templates/reset_password.mjml -o ../lib/nfd_web/templates/pow_reset_password/mailer/reset_password.html.eex",
 
-    "mjml-ecs": "npx mjml --watch ./email_templates/email_user_confirmation_success_followup.mjml -o ../lib/nfd_web/templates/subscription/template_email_user_confirmation_success_followup.html.eex",
-    "mjml-esc": "npx mjml --watch ./email_templates/email_subscription_confirmation.mjml -o ../lib/nfd_web/templates/subscription/template_email_subscription_confirmation.html.eex",
-    "mjml-escs": "npx mjml --watch ./email_templates/email_subscription_confirmation_success.mjml -o ../lib/nfd_web/templates/subscription/template_email_subscription_confirmation_success.html.eex"
+    "mjml-ecs": "npx mjml --watch ./email_templates/email_user_confirmation_success_followup.mjml -o ../lib/nfd_web/templates/subscription_template/template_email_user_confirmation_success_followup.html.eex",
+    "mjml-esc": "npx mjml --watch ./email_templates/email_subscription_confirmation.mjml -o ../lib/nfd_web/templates/subscription_template/template_email_subscription_confirmation.html.eex",
+    "mjml-escs": "npx mjml --watch ./email_templates/email_subscription_confirmation_success.mjml -o ../lib/nfd_web/templates/subscription_template/template_email_subscription_confirmation_success.html.eex"
   },
   "dependencies": {
     "mjml": "^4.4.0-beta.1",

@@ -60,7 +60,7 @@ defmodule NfdWeb.Router do
     pipe_through :browser
 
     # Subscription functions
-    get "/confirm_subscription", SubscriptionController, :add_subscription_func
+    post "/confirm_subscription", SubscriptionController, :add_subscription_func
     get "/unsubscribe", SubscriptionController, :unsubscribe_func
     get "/subscription_success", SubscriptionController, :confirm_subscription_func
     get "/change_subscription_general_func", SubscriptionController, :change_subscription_general_func
