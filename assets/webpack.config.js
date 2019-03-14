@@ -5,7 +5,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-module.exports = (env, options) => ({
+module.exports = (env, options) => ({ 
   optimization: {
     minimizer: [
       new UglifyJsPlugin({ cache: true, parallel: true, sourceMap: false }),
@@ -33,9 +33,9 @@ module.exports = (env, options) => ({
         use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
-        test: /\.scss$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
-            "style-loader", // creates style nodes from JS strings
+            options.mode !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
             "css-loader", // translates CSS into CommonJS
             "sass-loader" // compiles Sass to CSS, using Node Sass by default
         ]
