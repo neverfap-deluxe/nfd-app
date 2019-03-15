@@ -13,7 +13,7 @@ defmodule NfdWeb.Endpoint do
     at: "/",
     from: :nfd,
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(css fonts images js favicon.ico robots.txt sitemap.xml sitemap1.xml podcast.xml)
 
   # plug Plug.Static,
   #   at: "/torch",
