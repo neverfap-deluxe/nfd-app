@@ -11,7 +11,11 @@ defmodule Nfd.EmailLogs do
   end
 
   def new_contact_form_email(name, email, message) do
-    cast_log("New Contact Form Submission: " <> name <> " - " <> email, "Email: " <> email <> "\n Message:" <> message) |> process_log()
+    cast_log("New Contact Form Submission: " <> name <> " - " <> email, "Email: " <> email <> ", Message:" <> message) |> process_log()
+  end
+
+  def user_deleted_email(email) do
+    cast_log("User Deleted Themselves: " <> email, "User Deleted Themselves: " <> email) |> process_log()
   end
 
   def cast_log(subject, message) do

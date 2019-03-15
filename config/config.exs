@@ -72,5 +72,5 @@ config :nfd, Nfd.Scheduler,
     # {"0 18-6/2 * * *", fn -> :mnesia.backup('/var/backup/mnesia') end},
     # Runs every midnight:
     # {"@daily",         {Backup, :backup, []%>
-    # {"@daily", {Sitemaps, :generate, []}}, # "0 12 * * *
+    {"@daily", {Sitemaps, :generate, []}}, # "0 12 * * *
   ]

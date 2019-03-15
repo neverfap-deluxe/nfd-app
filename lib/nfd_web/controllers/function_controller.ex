@@ -22,7 +22,7 @@ defmodule NfdWeb.FunctionController do
   def delete_acount(conn, %{"user" => user}) do 
     case Account.delete_user(user) do
       { :ok, empty_user } ->
-        # TODO: Send an email to me, signifying that the user deleted themselves.
+        Nfd.EmailLogs.user_deleted_email(user.email)
         redirect(conn, to: Routes.page_path(conn, :home))
 
       {:error, user } -> 

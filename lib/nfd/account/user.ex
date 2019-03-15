@@ -33,24 +33,20 @@ defmodule Nfd.Account.User do
   end
 
   def changeset(user, attrs) do
-    # This is for when creating user.
     if attrs["email"] do
-      # IO.inspect "has attrs email"
+      # This is for when creating user.
+      IO.inspect "has attrs email"
       Nfd.EmailLogs.new_user_email_log(attrs["email"])
-      # subscriber = Account.create_subscriber(%{ subscriber_email: attrs["email"] })
-      # new_attrs = Map.merge(attrs, %{subscriber: subscriber})
 
       user
         |> pow_changeset(attrs)
         |> pow_extension_changeset(attrs)
-        # |> put_assoc(:subscriber, subscriber)
     else
       IO.inspect "has not attrs email"
       # this is for everything else, that just happens to use User.changeset
       user
         |> pow_changeset(attrs)
         |> pow_extension_changeset(attrs)
-        |> cast_assoc(:subscriber)
     end
   end
 
