@@ -4,6 +4,10 @@ use Mix.Config
 config :nfd, Nfd.SwooshMailer,
   adapter: Swoosh.Adapters.Local
   
+config :recaptcha,
+  public_key: System.get_env("GOOGLE_RECAPTCHA_CLIENT"),
+  secret: System.get_env("GOOGLE_RECAPTCHA_SECRET")
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #

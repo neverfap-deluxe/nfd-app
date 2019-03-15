@@ -158,30 +158,4 @@ defmodule NfdWeb.ContentController do
         conn |> render(NfdWeb.ErrorView, "404.html")
     end
   end
-
-  def disclaimer(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Content.disclaimer() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        conn |> render("disclaimer.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
-    end
-  end
-
-  def privacy(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Content.privacy() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        conn |> render("privacy.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
-    end
-  end
 end

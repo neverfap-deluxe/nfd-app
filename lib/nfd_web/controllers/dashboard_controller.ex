@@ -39,7 +39,7 @@ defmodule NfdWeb.DashboardController do
 
     collections = Content.list_audio_courses()
     collection = Content.get_collection_slug!(collection)
-    file = Content.get_file_slug(file)
+    file = Content.get_file_slug!(file)
     render(conn, "audio_courses_file.html", subscriber: subscriber, collections: collections, collection: collection, file: file)
   end
 
@@ -64,7 +64,7 @@ defmodule NfdWeb.DashboardController do
 
     collections = Content.list_email_campaigns()
     collection = Content.get_collection_slug!(collection)
-    file = Content.get_file_slug(file)
+    file = Content.get_file_slug!(file)
     render(conn, "email_campaigns_file.html", subscriber: subscriber, collections: collections, collection: collection, file: file)
   end
 

@@ -1,4 +1,4 @@
-defmodule NfdWeb.EmailScheduler do
+defmodule NfdWeb.EmailSend do
   use Swoosh.Mailer, otp_app: :nfd
   use Phoenix.Swoosh, 
     view: NfdWeb.SubscriptionTemplateView, 
@@ -9,8 +9,8 @@ defmodule NfdWeb.EmailScheduler do
   alias Nfd.Account
 
   alias NfdWeb.SevenDayKickstarterScheduler
-  alias NfdWeb.TenDayMeditationScheduler
-  alias NfdWeb.TwentyEightDayAwarenessScheduler
+  # alias NfdWeb.TenDayMeditationScheduler
+  # alias NfdWeb.TwentyEightDayAwarenessScheduler
 
   alias NfdWeb.EmailMatrixTransform
 
@@ -18,13 +18,11 @@ defmodule NfdWeb.EmailScheduler do
   
 
   # Email Schedule Logic
-
-
   def send_email_subscription(subscriber, multiple_matrix, main_matrix) do
     url = EmailMatrixTransform.subscription_confirmation_url_from_matrix(subscriber.subscriber_email, multiple_matrix, main_matrix)
     course_name = EmailMatrixTransform.course_name_from_matrix(main_matrix)
     IO.inspect NfdWeb.Endpoint.url()
-    EmailSend.cast_subscriber(
+    cast_subscriber(
       subscriber,
       url,
       course_name,

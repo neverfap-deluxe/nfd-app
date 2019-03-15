@@ -98,7 +98,7 @@
 
   <!-- Original Contact Form -->
   <div class="form__wrapper form__wrapper--full-width">
-    <form class="form" action="https://formspree.io/julius_dott@hotmail.com" method="POST">  
+    <!-- <form class="form" action="https://formspree.io/julius_dott@hotmail.com" method="POST">  
       <div class="form__input__container">
         <input class="form__input" type=text: placeholder="Name" name='name'/>
         <input class="form__input" type="email" placeholder="Email" name='_replyTo'/>
@@ -108,23 +108,25 @@
       <div class="form__submission__container">
         <button class="form__button" type="submit" value="Send">Send</button>
       </div>
-    </form>
+    </form> -->
   </div>
 
   <!-- New Contact Form -->
-  <!-- <div class="form__wrapper form__wrapper--full-width">
+  <div class="form__wrapper form__wrapper--full-width">
     <%= form_for @contact_form_changeset, Routes.function_path(@conn, :contact_form_post), fn f -> %> 
       <div class="form__input__container">
         <%= text_input f, :name, [placeholder: "Name", class: "form__input"] %>
         <%= text_input f, :email, [placeholder: "Email", class: "form__input"] %>
         <%= textarea f, :message, [placeholder: "Message", class: "form__input form__textarea"] %>
+        <%= raw Recaptcha.Template.display %>
+
       </div>
     
       <div class="form__submission__container">
         <%= submit "Send", [class: "form__button"]  %>
       </div>
     <% end %>
-  </div> -->
+  </div>
   
 </div>
 

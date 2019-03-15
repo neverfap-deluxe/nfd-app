@@ -38,6 +38,11 @@ config :phoenix, :json_library, Jason
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
 
+if Mix.env() == :dev do 
+  import_config "#{Mix.env()}.secret.exs"
+end
+
+
 # CUSTOM CONFIG 
 
 config :tesla, adapter: Tesla.Adapter.Hackney
@@ -65,7 +70,7 @@ config :nfd, Nfd.Scheduler,
   jobs: [
     # 28 day challenge
     # Every minute
-    # {"* * * * *",      {Heartbeat, :send, []%>,
+    {"* * * * *", {Sitemaps, :generate, []}},
     # Every 15 minutes
     # {"*/15 * * * *",   fn -> System.cmd("rm", ["/tmp/tmp_"]) end},
     # Runs on 18, 20, 22, 0, 2, 4, 6:

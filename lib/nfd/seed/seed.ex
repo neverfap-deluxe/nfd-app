@@ -1,7 +1,6 @@
 defmodule Mix.Tasks.Nfd.Seed do  
   use Mix.Task
   alias Nfd.Repo
-  import Ecto
 
   alias Nfd.SeedSevenDayKickstarter
 
@@ -14,7 +13,7 @@ defmodule Mix.Tasks.Nfd.Seed do
   # alias Nfd.Account.CollectionAccess
   
   alias Nfd.Content.Collection
-  alias Nfd.Content.File
+  # alias Nfd.Content.File
   
   def run(_) do
     Mix.Task.run "app.start", []

@@ -20,7 +20,7 @@ defmodule Nfd.MixProject do
   def application do
     [
       mod: {Nfd.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :recaptcha]
     ]
   end
 
@@ -61,7 +61,9 @@ defmodule Nfd.MixProject do
       {:timex, "~> 3.0"},
       {:sitemap, "~> 1.1"},
 
-      {:navigation_history, "~> 0.2.2"}
+      {:navigation_history, "~> 0.2.2"},
+
+      {:recaptcha, "~> 2.3"}
 
       # Admin backend
       # {:torch, "~> 2.0.0-rc.1"}

@@ -206,9 +206,6 @@
 
   <%#= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, seven_day_kickstarter_changeset: @seven_day_kickstarter_changeset } %>
   
-    <!-- Seven Day kickstarter banner. -->
-    <!-- Here would be a really good place to also put in top ten unhealthy coping mechanisms. -->
-
   <div class="homepage__section">
     <h2>So without further ado...</h2>
     <h3>(Elaborating on these two ideas of <u>awareness</u> and <u>calmness</u>)</h3>

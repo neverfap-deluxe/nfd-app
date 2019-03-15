@@ -1,7 +1,6 @@
 defmodule NfdWeb.FunctionController do
   use NfdWeb, :controller
 
-  alias Nfd.Content
   alias Nfd.Account
 
   alias Nfd.EmailLogs
@@ -11,8 +10,14 @@ defmodule NfdWeb.FunctionController do
     email = contact_form["email"]
     message = contact_form["message"]
 
-    EmailLogs.new_contact_form_email(name, email, message)
-    redirect(conn, to: Routes.function_path(conn, :send_message_success))
+    case Recaptcha.verify(contact_form["g-recaptcha-response"]) do
+      {:ok, _response} -> 
+        EmailLogs.new_contact_form_email(name, email, message)
+        redirect(conn, to: Routes.function_path(conn, :send_message_success))
+    
+      {:error, _errors} -> 
+        redirect(conn, to: Routes.page_path(conn, :home))
+    end
   end
 
   def send_message_success(conn, _params) do
@@ -21,12 +26,11 @@ defmodule NfdWeb.FunctionController do
 
   def delete_acount(conn, %{"user" => user}) do 
     case Account.delete_user(user) do
-      { :ok, empty_user } ->
+      {:ok, _empty_user} ->
         Nfd.EmailLogs.user_deleted_email(user.email)
         redirect(conn, to: Routes.page_path(conn, :home))
 
-      {:error, user } -> 
-        IO.inspect(user)
+      {:error, _error} -> 
         redirect(conn, to: Routes.page_path(conn, :home))
     end
   end

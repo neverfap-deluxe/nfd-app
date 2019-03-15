@@ -11,6 +11,11 @@ config :nfd, Nfd.SwooshMailer,
   access_key: System.get_env("AWS_ACCESS_KEY"),
   secret: System.get_env("AWS_SECRET_KEY") 
 
+config :recaptcha,
+  public_key: System.get_env("GOOGLE_RECAPTCHA_CLIENT"),
+  secret: System.get_env("GOOGLE_RECAPTCHA_SECRET")
+
+
 config :nfd, :pow_assent,
   providers:
        [
