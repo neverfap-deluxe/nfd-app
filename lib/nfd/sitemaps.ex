@@ -12,7 +12,8 @@ defmodule Nfd.Sitemaps do
   use Sitemap,
       host: "https://neverfapdeluxe.com",
       files_path: "priv/static/",
-      public_path: "/",
+      files_path: "priv/static/sitemaps/",
+      public_path: "sitemaps/",
       compress: false
 
   # Generate

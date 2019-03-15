@@ -83,8 +83,3 @@ config :nfd, Nfd.Repo,
   hostname: "localhost",
   pool_size: 10
 
-
-config :sitemap, [
-  compress: false,
-  host: "http://neverfapdeluxe.com",
-]

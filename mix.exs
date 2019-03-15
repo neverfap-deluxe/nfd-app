@@ -20,7 +20,7 @@ defmodule Nfd.MixProject do
   def application do
     [
       mod: {Nfd.Application, []},
-      extra_applications: [:logger, :runtime_tools, :recaptcha]
+      extra_applications: [:logger, :runtime_tools, :sitemap, :recaptcha]
     ]
   end
 
