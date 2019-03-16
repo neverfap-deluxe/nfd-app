@@ -82,23 +82,31 @@ defmodule NfdWeb.DashboardController do
 
   defp check_if_subscriber_exists(user) do
     # Check is subscriber email already exists.
+    IO.inspect user
+    IO.inspect user.email
     case Account.get_subscriber_email(user.email) do
-      # If email already exists.
-      subscriber -> 
-        # Check if user_id is same as user.id
-        if subscriber.user_id != user.id do 
-          # If not the same, then update
-          Account.update_subscriber(subscriber, %{user_id: user.id})
-        else
-          # Otherwise return original subscriber value
-          subscriber
-        end
       nil ->
+        IO.inspect "nil"
         # If subscriber does not exist, create new subscriber
         case Account.create_subscriber(%{ subscriber_email: user.email }) do
           # Return created subscriber
           {:ok, subscriber} -> subscriber
           {:error, error} -> IO.inspect "Could not create subscriber"
+        end
+
+      # If email already exists.
+      subscriber -> 
+        IO.inspect "sub"
+        IO.inspect "sub"
+        # Check if user_id is same as user.id
+        if subscriber.user_id != user.id do 
+          IO.inspect "not user"
+          # If not the same, then update
+          Account.update_subscriber(subscriber, %{user_id: user.id})
+        else
+          IO.inspect "not use 2r"
+          # Otherwise return original subscriber value
+          subscriber
         end
     end
   end
