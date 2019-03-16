@@ -5,16 +5,6 @@
   
   <title>NeverFap Deluxe Dashboard</title>
   <meta name="description" content='NeverFap Deluxe Dashboard'>
-  
-  <link rel="preconnect" href='<%= Application.get_env(:nfd, :website_domain) %>">
-  <link rel="preconnect" href='<%= Application.get_env(:nfd, :website_domain) %>about">
-  <link rel="preconnect" href='<%= Application.get_env(:nfd, :website_domain) %>gifts">
-
-
-  <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/app.css") %>"/>
-
-  <!-- Emoji CSS -->
-  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 
   <!-- favicon.ico -->
   <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -37,6 +27,10 @@
 
   <!-- SCSS -->
   <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/app.css") %>'/>
+
+  <!-- Emoji CSS -->
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Parisienne|Montserrat|Noto+Sans" rel="stylesheet">
