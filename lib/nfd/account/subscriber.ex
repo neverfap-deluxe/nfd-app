@@ -14,12 +14,12 @@ defmodule Nfd.Account.Subscriber do
     field :twenty_eight_day_awareness_count, :integer, default: 0
     field :twenty_eight_day_awareness_subscribed, :boolean, default: false
     
-    field :three_day_awareness_subscribed, :boolean, default: false
-    field :three_day_awareness_count, :integer, default: 0
-    field :three_day_calmness_subscribed, :boolean, default: false
-    field :three_day_calmness_count, :integer, default: 0
-    field :three_day_meditation_subscribed, :boolean, default: false
-    field :three_day_meditation_count, :integer, default: 0
+    # field :three_day_awareness_subscribed, :boolean, default: false
+    # field :three_day_awareness_count, :integer, default: 0
+    # field :three_day_calmness_subscribed, :boolean, default: false
+    # field :three_day_calmness_count, :integer, default: 0
+    # field :three_day_meditation_subscribed, :boolean, default: false
+    # field :three_day_meditation_count, :integer, default: 0
 
     # field :user_id, :binary_id
     belongs_to :user, Nfd.Account.User
@@ -40,12 +40,12 @@ defmodule Nfd.Account.Subscriber do
       :seven_day_kickstarter_count, 
       :ten_day_meditation_subscribed, 
       :ten_day_meditation_count,
-      :three_day_awareness_subscribed,
-      :three_day_awareness_count,
-      :three_day_calmness_subscribed,
-      :three_day_calmness_count,
-      :three_day_meditation_subscribed,
-      :three_day_meditation_count,
+      # :three_day_awareness_subscribed,
+      # :three_day_awareness_count,
+      # :three_day_calmness_subscribed,
+      # :three_day_calmness_count,
+      # :three_day_meditation_subscribed,
+      # :three_day_meditation_count,
       :user_id
     ])
     |> validate_required([:subscriber_email])

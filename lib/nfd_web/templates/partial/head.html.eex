@@ -149,6 +149,9 @@
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="google-signin-client_id" content="954591220445-1l03q4c08vdci34g8tdcjcgp134mn3m1.apps.googleusercontent.com">
 
+  <!-- Stripe API / Styling -->
+  <script src="https://js.stripe.com/v3/"></script>
+
 </head>
 
 

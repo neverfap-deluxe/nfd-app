@@ -33,21 +33,9 @@ defmodule Nfd.Account.User do
   end
 
   def changeset(user, attrs) do
-    if attrs["email"] do
-      # This is for when creating user.
-      IO.inspect "has attrs email"
-      Nfd.EmailLogs.new_user_email_log(attrs["email"])
-
-      user
-        |> pow_changeset(attrs)
-        |> pow_extension_changeset(attrs)
-    else
-      IO.inspect "has not attrs email"
-      # this is for everything else, that just happens to use User.changeset
-      user
-        |> pow_changeset(attrs)
-        |> pow_extension_changeset(attrs)
-    end
+    user
+      |> pow_changeset(attrs)
+      |> pow_extension_changeset(attrs)
   end
 
   def changeset_update(user, attrs) do

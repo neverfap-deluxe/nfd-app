@@ -31,15 +31,9 @@ Email Templates
 https://mjml.io/try-it-live/templates/recast
 
 
-
-- popular
-
-- Context
-- Practice
-- Introduction
 - Figure out how to make it look fancy in google
 
-Marketing - 
+Marketing
 - Create Quora
 - Create Reddit
 - Offer free coaching to prominent users doing NoFap

@@ -8,26 +8,24 @@ defmodule NfdWeb.SubscriptionController do
   alias NfdWeb.EmailSend
 
   def add_subscription_func(conn, %{"subscriber" => subscriber}) do
-    multiple_matrix = subscriber["multiple_matrix"]
-    main_matrix = subscriber["main_matrix"]
-    email = subscriber["subscriber_email"]
-
-    case EmailMatrixTransform.validate_multiple_matrix(multiple_matrix) do
-      true -> add_subscription_create_user(email, multiple_matrix, main_matrix, conn)
-      [true, true] -> add_subscription_create_user(email, multiple_matrix, main_matrix, conn)
+    case EmailMatrixTransform.validate_multiple_matrix(subscriber["multiple_matrix"]) do
+      true -> add_subscription_create_user(subscriber["subscriber_email"], subscriber["multiple_matrix"], subscriber["main_matrix"], conn)
+      [true, true] -> add_subscription_create_user(subscriber["subscriber_email"], subscriber["multiple_matrix"], subscriber["main_matrix"], conn)
       _ -> render_failure_page("Matrix element is invalid.", conn)
       [_, _] -> render_failure_page("Matrix element is invalid.", conn)
     end
   end
 
   defp add_subscription_create_user(email, multiple_matrix, main_matrix, conn) do
+    course_name = EmailMatrixTransform.course_name_from_matrix(main_matrix)
+
     case Account.get_subscriber_email(email) do
       nil ->
         case Account.create_subscriber(%{subscriber_email: email}) do
           {:ok, subscriber} ->
+            EmailLogs.new_subscriber_email_log(email, course_name)
             # TODO: Check if user is already subscribed
             # check_if_subscriber_is_already_subscribed(subscriber, main_matrix)
-            course_name = EmailMatrixTransform.course_name_from_matrix(main_matrix)
             EmailSend.send_email_subscription(subscriber, multiple_matrix, main_matrix)
             render(conn, "confirm_subscription_page.html", course_name: course_name)
 
@@ -35,7 +33,6 @@ defmodule NfdWeb.SubscriptionController do
         end
 
       subscriber ->
-        course_name = EmailMatrixTransform.course_name_from_matrix(main_matrix)
         EmailSend.send_email_subscription(subscriber, multiple_matrix, main_matrix)
         render(conn, "confirm_subscription_page.html", course_name: course_name)
     end
@@ -51,13 +48,14 @@ defmodule NfdWeb.SubscriptionController do
   end
 
   defp confirm_subscription_update_subscription(email, multiple_matrix, main_matrix, conn) do 
+    course_name = EmailMatrixTransform.course_name_from_matrix(main_matrix)
+
     case Account.get_subscriber_email(email) do
       nil -> render_failure_page("It's not possible to confirm the subscription of a subscriber that doesn't exist.", conn)
       subscriber ->
         # Send day 0 email, 
         EmailMatrixTransform.update_subscription(subscriber, multiple_matrix)
         EmailSend.send_day_0_email(subscriber, main_matrix)
-        course_name = EmailMatrixTransform.course_name_from_matrix(main_matrix)
         render(conn, "success_subscription_page.html", course_name: course_name)
     end
   end
@@ -72,12 +70,12 @@ defmodule NfdWeb.SubscriptionController do
   end
 
   defp unsubscribe_user(email, main_matrix, conn) do 
+    course_name = EmailMatrixTransform.course_name_from_matrix(main_matrix)
     case Account.get_subscriber_email(email) do
       nil -> render_failure_page("Unable to unsubscribe a subscriber that doesn't exist.", conn)
       subscriber ->
         # TODO: Function which actually unsubscribers the user
         EmailMatrixTransform.unsubscribe_subscriber(subscriber, main_matrix)
-        course_name = EmailMatrixTransform.course_name_from_matrix(main_matrix)
         render(conn, "unsubscribe_subscription_page.html", course_name: course_name)
     end  
   end

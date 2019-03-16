@@ -84,7 +84,6 @@ defmodule NfdWeb.DashboardController do
     IO.inspect user.email
     case Account.get_subscriber_email(user.email) do
       nil ->
-        IO.inspect "nil"
         # If subscriber does not exist, create new subscriber
         case Account.create_subscriber(%{ subscriber_email: user.email, user_id: user.id }) do
           # Return created subscriber
