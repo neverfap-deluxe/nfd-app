@@ -45,7 +45,8 @@ defmodule Nfd.Account.Subscriber do
       :three_day_calmness_subscribed,
       :three_day_calmness_count,
       :three_day_meditation_subscribed,
-      :three_day_meditation_count
+      :three_day_meditation_count,
+      :user_id
     ])
     |> validate_required([:subscriber_email])
   end

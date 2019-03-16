@@ -75,9 +75,7 @@ defmodule NfdWeb.DashboardController do
   end
 
   def profile_delete_confirmation(conn, _params) do
-    subscriber = Pow.Plug.current_user(conn) |> check_if_subscriber_exists()
-
-    render(conn, "profile_delete_confirmation.html", subscriber: subscriber)
+    render(conn, "profile_delete_confirmation.html")
   end
 
   defp check_if_subscriber_exists(user) do
@@ -88,7 +86,7 @@ defmodule NfdWeb.DashboardController do
       nil ->
         IO.inspect "nil"
         # If subscriber does not exist, create new subscriber
-        case Account.create_subscriber(%{ subscriber_email: user.email }) do
+        case Account.create_subscriber(%{ subscriber_email: user.email, user_id: user.id }) do
           # Return created subscriber
           {:ok, subscriber} -> subscriber
           {:error, error} -> IO.inspect "Could not create subscriber"
@@ -96,7 +94,6 @@ defmodule NfdWeb.DashboardController do
 
       # If email already exists.
       subscriber -> 
-        IO.inspect "sub"
         IO.inspect "sub"
         # Check if user_id is same as user.id
         if subscriber.user_id != user.id do 
