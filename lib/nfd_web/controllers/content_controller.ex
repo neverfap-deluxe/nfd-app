@@ -60,7 +60,8 @@ defmodule NfdWeb.ContentController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         if response.body["data"]["draft"] == false do 
-          conn |> render("practice.html", item: response.body["data"], page_type: page_type)
+          {:ok, articlesResponse} = client |> Content.articles()
+          conn |> render("practice.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)
         else
           conn |> render(NfdWeb.ErrorView, "404.html")
         end
@@ -90,7 +91,8 @@ defmodule NfdWeb.ContentController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         if response.body["data"]["draft"] == false do 
-          conn |> render("course.html", item: response.body["data"], page_type: page_type)
+          {:ok, articlesResponse} = client |> Content.articles()
+          conn |> render("course.html", item: response.body["data"], items: articlesResponse.body["data"]["articles"], page_type: page_type)
         else
           conn |> render(NfdWeb.ErrorView, "404.html")
         end

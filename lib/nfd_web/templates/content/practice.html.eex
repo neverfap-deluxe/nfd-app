@@ -30,7 +30,7 @@
   
 <div class="single__wrapper">
   <h2>Latest Posts</h2>
-  <%= partial "latest_posts.html", assigns %>  
+  <%= partial "latest_posts.html", %{ items: @articles } %>  
 </div>
 
 <%= partial "links/patreon.html", assigns %>
