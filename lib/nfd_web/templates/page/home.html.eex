@@ -47,7 +47,7 @@
     </p>
   </div>
 
-  <div class="account__info">
+  <div class="account__info account__info--margin-top">
     <p class="account__info__title">Let's learn.</p>
   </div>      
 
@@ -59,9 +59,10 @@
     <p style="margin-top: 2rem; margin-bottom: 1rem;"><span class="articles__link cursor__default" style="text-decoration: none; margin-left:0.7rem;">NeverFap Deluxe aims to teach you this control.</p></span>
 
     <h2>In most cases, getting past the 90 day mark will usually signify the end of your porn addiction forever. <i class="em em-hushed"></i></h2> <!--<i class="em em-hushed"></i>-->
-    <p>On the other hand, if you struggle to consistently get past 90 days, it most likely means you're approaching your recovery in the wrong way.</p>
-    <p>It's easy to get to 30 days or even 60 days using unhealthy coping mechanisms such as bipolar obsession, overworking, escapism, self-criticism or emotional dissociation.</p>
-    <p>However, they almost always result in relapse. <i class="em em-ambulance"></i></p> <!-- <i class="em em-ambulance"></i>-->
+    <p>On the other hand, if you struggle to consistently get past 90 days, then it most likely means you're approaching your recovery in the wrong way.</p>
+    <p>Because it's easy to get to 30 days (or even 60 days) using unhealthy coping mechanisms.</p>
+    <p>Including bipolar obsession, mindless over-working, distracting ourselves through escapism, self-criticism as a consequence of being excessively judgemental, and more.</p>
+    <p>However, they almost always result in <b><u>relapse</u></b>. <i class="em em-ambulance"></i></p> <!-- <i class="em em-ambulance"></i>-->
   </div>
 
   <%= partial "home/a_lot_of_bad_over_90_days.html", assigns %>
@@ -70,12 +71,13 @@
     <h1>...and it's these situations where <span style="color: rgba(255,46,182,1);">unhealthy coping mechanisms</span> crumble.</h1>
     <h2>This is where 90% of relapse happens.</h2>
     <h3>Because unhealthy coping mechanisms don't help you deal with your emotions. They only help you successfully ignore them until they become unmanagable.</h3>
-    <h3>This is why we relapse, and cave into our urges. Because we didn't truly address our mental health in a productive way.</h3>
-    <h3>Relapse which could have been avoided, if only we'd invested in healthy coping mechanisms which would have made dealing with those tough situations, trivial.</h3>
+    <!-- <h3>This is why we relapse, and cave into our urges. Because we didn't truly address our mental health in a productive way.</h3> -->
+    <h3>Relapse which could have been avoided, if only you had invested in healthy coping mechanisms which would have made dealing with those tough situations, trivial.</h3>
     <h3>Like, absurdly trivial. <i class="em em-hatching_chick"></i></h3>
-    <p>With my healthy coping mechanisms in place, I know in precise detail exactly what I need to do to keep my mind regulated and under control.</p>
-    <p>Now imagine how awesome that would be.</p>
-    <p>Because that's my life.</p>
+    <p>With my healthy coping mechanisms in place, I know in precise detail exactly what I need to do to keep my mind regulated and under control. Without thought.</p>
+    <p>Now imagine how awesome it would be to have that kind of control over your own life.</p>
+    <p>Because I can teach you that.</p>
+    <p><b>Period.</b></p>
   </div>
 
   <%= partial "home/is_not_really_about_porn.html", assigns %>
@@ -83,8 +85,8 @@
   <div class="homepage__section">
     <h1>It's about <u style="border-bottom: 4px solid cyan; padding-bottom: 0rem;">developing control</u> over your mind.</h1>
     <h2>...and that's really all healthy coping mechanisms are.</h2>
-    <h3>Skills and abilities which provide you with control over your mind, so that when your mind is feeling lost and under pressure, it doesn't collapse like a tower of cards. <i class="em em-woman_in_lotus_position"></i></i></h3>
-    <p>For example, learning to remain calm and collected with a clear frame of mind, rather than react in hesitation.</p>
+    <h3>Skills and abilities which provide you with control over your mind, so that when your mind is feeling lost and under pressure, won't fumble and collapse like a tower of cards. <i class="em em-woman_in_lotus_position"></i></i></h3>
+    <p>For example, learning to remain calm and collected with a clear frame of mind, rather than react in hesitation to your overbearing thoughts and feelings.</p>
 
     <div class="five__principles__guide" style="margin-bottom: 2.5rem;">
       <h2 style="margin-top: 2.5rem; margin-bottom: 2.5rem;">Including the ability to...</h2>
@@ -110,28 +112,29 @@
   </div>
 
 
-  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+  <div class="show__large" style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+
   <div class="unhealthy__banner">
-    <h3>So you may be wondering.</h3>
-    <h1 class="unhealthy__banner__title" style="margin-bottom: 6rem;">What are some of these <span style="color: white;">unhealthy coping mechanisms</span>?</h1>
+    <h2 class="margin__top__mobile">So you may be wondering.</h2>
+    <h1 class="unhealthy__banner__title">What are some of these <span style="color: white;">unhealthy coping mechanisms</span>?</h1>
 
     <div class="homepage__section__closer">
-       They include things like.
+      <span class="articles__link--magenta cursor__default">Well, they include things like.</span>
 
-      <h2>Self-criticism as a means of motivation.</h2>
+      <h2 class="banner__points">Self-criticism as a means of motivation.</h2>
       <div style="border-top: 3px solid black;"></div>
-      <h2>Judging others to feel better about ourselves.</h2>
+      <h2 class="banner__points">Judging others to feel better about ourselves.</h2>
       <div style="border-top: 3px solid black;"></div>
-      <h2>Obsession with the intent of keeping your mind distracted.</h2>
+      <h2 class="banner__points">Obsession with the intent of keeping our minds distracted.</h2>
       <div style="border-top: 3px solid black;"></div>
-      <h2>Incessant rationalisation of our thoughts.</h2>
+      <h2 class="banner__points">Incessant rationalisation of our thoughts.</h2>
       <div style="border-top: 3px solid black;"></div>
-      <h2>Pushing ourselves too hard as a solution for our feelings of inadequacy.</h2>
+      <h2 class="banner__points">Pushing ourselves excessively as a solution to our feelings of inadequacy.</h2>
       <div style="border-top: 3px solid black;"></div>
-      <h2>Embracing feelings of depression.</h2>
+      <h2 class="banner__points">Embracing depression as a coping mechanism.</h2>
       <div style="border-top: 3px solid black;"></div>
-      <h2>Escapism.</h2>
-      <div style="border-top: 3px solid black;"></div>
+      <h2 class="banner__points">Escapism.</h2>
+      <div class="show__large" style="border-top: 3px solid black;"></div>
 
     </div>
 
@@ -139,23 +142,38 @@
     <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: cyan;"></div> -->
 
   </div>
-  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: cyan;"></div>
+
+  <div class="show__large" style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: cyan;"></div>
 
   <div class="homepage__section">
-    <h3>Which is why instead.</h3>
-    <h1>We want to be developing <span style="color: cyan;">healthy coping mechanisms</span>.</h1>
-      They include things like.
+    <h2 class="margin__top__mobile">Which is why.</h2>
+    <h1>We want to be adopting some <span style="color: cyan;">healthy coping mechanisms</span> instead.</h1>
+      <p>Skills and abilities which have been designed to help us deal with our feelings and emotions, in a concise and effective manner. Like smashing ice with a sledgehammer.</p>
+      <!-- <p>So no more crying under the sink little Timmy.</p> -->
+      <!-- <p style="margin-bottom: 2rem;">You got this.</p> -->
 
-      <h2>Remaining calm and calculated at all times.</h2>
+      <!-- <p>Of course, you're only just reading about these things on my fabulous webpage. Wait till you actually practice them and experience them on a daily basis.</p>
+      <h2>It will blow. your. freaking. mind.</h2>
+      <p>So no more crying under the sink little Timmy. This the internet young man, and </p>
+      <p style="margin-bottom: 2rem;">You got this.</p> -->
+
+      <span style="margin-top: 1rem;" class="articles__link cursor__default">Some healthy coping mechanisms include.</span>
+
+      <h2 class="banner__points">Remaining calm and calculated in the face of stress and uncertainty.</h2>
       <div style="border-top: 3px solid cyan;"></div>
-      <h2>Keeping our minds wide, open and aware.</h2>
+      <h2 class="banner__points">Keeping our minds wide, aware and open at all times.</h2>
       <div style="border-top: 3px solid cyan;"></div>
-      <h2>Not taking our emotions personally at the worst of times.</h2>
+      <h2 class="banner__points">Not taking our difficult feelings and emotions personally.</h2>
       <div style="border-top: 3px solid cyan;"></div>
-      <h2>Openly communicating our problems.</h2>
+      <h2 class="banner__points">Openly communicating our problems and feelings to others.</h2>
       <div style="border-top: 3px solid cyan;"></div>
-      <h2>Regular meditation.</h2>
+      <h2 class="banner__points">Embracing vulnerability as a positive step forward.</h2>
       <div style="border-top: 3px solid cyan;"></div>
+      <h2 class="banner__points">Learning to love and accept ourselves for who we are.</h2>
+      <div style="border-top: 3px solid cyan;"></div>
+      <h2 class="banner__points">Meditating on a regular basis in order to remain calm and balanced.</h2>
+      <div class="show__large" style="border-top: 3px solid cyan;"></div>
+
   </div>
 
 
@@ -190,7 +208,7 @@
     <p>On the other hand, if you haven't seen a pair of pants in weeks because you've been glued to your computer screen in a haze of dysphoria and pre-cum. <i class="em em-wilted_flower"></i></p>
     <p>You'll probably want to work on all three. <i class="em em-unamused"></i></p>
     <h2>In general, <u style="border-bottom: 4px solid rgba(255,46,182,1); padding-bottom: 0rem;">almost everyone</u> needs to work on their awareness to help them cope more effectively.</h2>
-    <h3>In fact, your <u>awareness</u> and <u>calmness</u> are the two areas most people need to focus on, and is largely what this website has been designed to help you develop.</h3>
+    <h3>In fact, our <u>awareness</u> and <u>calmness</u> are the two areas most people will need to focus on, and is largely what this website will help you develop.</h3>
     <h3>In most cases, it's as simple as commiting to 10 minutes of meditation per day.</h3>
     <p>It's how I personally got started.</p>
     <p>Now you can too.</p>
@@ -244,7 +262,7 @@
     <p>For example, <u>Choice over mind</u> explains that you're always in control of your ability to react, and that how you react determines what your outcome in life will be.</p>
     <p>An idea which people tend to ignore.</p>
     <p>These principles serve as mantras to help empower you and remind you of what you need to do to achieve your goal of overcoming addiction.</p>
-    <p>And that ignoring any of these principles, will simply lead to the continuing of your porn addiction.</p>
+    <p>...and that ignoring any of these principles, will simply lead to the continuing of your porn addiction.</p>
     <p>The principles teach you the right way. <i class="em em---1"></i></p></p>
     <p>If you're still a little confused or overwhelmed by everything, then these five principles are an amazing place to start.</p>
     <div class="button__wrapper">

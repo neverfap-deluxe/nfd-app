@@ -107,7 +107,7 @@
   }
 
   .unhealthy__banner__title {
-
+    margin-bottom: 3rem;
   }
 }
 
@@ -241,6 +241,10 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
     padding-left: 4rem;
+
+    .unhealthy__banner__title {
+      margin-bottom: 6rem;
+    }  
   }  
 
   .seven__day__kickstarter__banner {
