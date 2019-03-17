@@ -61,6 +61,18 @@
   }
 }
 
+.account__buttons--single {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 160px;
+
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
 .account__buttons {
   display: flex;
   flex-direction: column;
@@ -123,13 +135,14 @@
     display: inline;
   }
 
+  .account__buttons--single {
+    margin-top: 0;
+    flex-direction: row;
+  }
+
   .account__buttons {
     margin-top: 0;
     flex-direction: row;
-
-    .account__patreon__button__container {
-      width: 11.5rem;
-    }
   }
 
   .account__info {

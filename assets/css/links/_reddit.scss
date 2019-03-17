@@ -1,0 +1,68 @@
+.account__buttons {
+
+  .account__reddit__button__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background: #FC471E;
+    box-sizing: border-box;
+    width: initial;
+    height: 2.25rem;
+
+    padding: 0.3rem;
+    // padding: 0.8rem;
+    margin: 0!important;
+    cursor: pointer;
+  
+    .account__reddit__button__logo {
+      width: 27px;
+      height: 27px;
+
+      position: relative;
+      left: 0rem;
+    }
+  
+    .account__reddit__button__text {
+      color: white;
+      margin: 0;
+      font-size: 0.69rem;
+      position: relative;
+      letter-spacing: 0.5px;
+      // top: 0.05rem;
+      right: 0.27rem;
+      font-family: 'Lato, sans-serif';
+      font-weight: 700;
+    }
+  }  
+
+  .account__reddit__button__container:hover {
+    opacity: 0.9;
+  }
+}
+
+.account__reddit__button__text--display {
+  display: none;
+  font-size: 0.75rem;
+}
+
+@media screen and (min-width: 420px) {
+  .account__reddit__button__text--display {
+    display: inline;
+  }
+
+  .account__buttons {
+
+    .account__reddit__button__container {
+      width: 11.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+// @media screen and (min-width: 1280px) {
+
+// }

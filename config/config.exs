@@ -12,11 +12,16 @@ alias Nfd.Sitemaps
 config :nfd,
   ecto_repos: [Nfd.Repo],
   base_url: "https://neverfapdeluxe.com/",
-  website_author: "Julius Reade",
-  website_logo_png: "/images/logo.png",
-  website_alt_image: "/images/logo.png",
-  language_code: "en-us",
-  google_analytics: "UA-132863786-1"
+  author: "Julius Reade",
+  logo: "/images/logo.png",
+  google_analytics_url: "UA-132863786-1",
+
+  social_facebook_url: "https://www.facebook.com/NeverFap-Deluxe-2203366683036015/",
+  social_twitter_url: "https://twitter.com/NeverFapDeluxe",
+  social_reddit_url: "https://www.reddit.com/user/NeverFapDeluxe",
+  social_patreon_url: "https://www.patreon.com/NeverFapDeluxe",
+  social_discord_url: "https://discord.gg/TuwARWk"
+
 
 # Configures the endpoint
 config :nfd, NfdWeb.Endpoint,

@@ -3,7 +3,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-  <meta name="author" content="<%= Application.get_env(:nfd, :website_author) %>">
+  <meta name="author" content="<%= Application.get_env(:nfd, :author) %>">
   <meta name="robots" content="noodp"/>
 
   <%= if Map.has_key?(@conn.assigns, :item) do %>
@@ -23,7 +23,7 @@
       <meta name="description" content="<%= Application.get_env(:nfd, :website_description) %>">
       <meta property="og:description" content="<%= Application.get_env(:nfd, :website_description) %>">    
       <meta name="twitter:description" content="<%= Application.get_env(:nfd, :website_description) %>">
-      <meta name="twitter:image:alt" content="<%= Application.get_env(:nfd, :website_alt_image) %>">    
+      <meta name="twitter:image:alt" content="<%= Application.get_env(:nfd, :logo) %>">    
     <% end %>
     
     <meta name="keywords" content='<%= iterate_json_collection @conn.assigns.item["categories"] %>'>
@@ -31,8 +31,8 @@
     <link rel="canonical" href='<%= @conn.assigns.item["permalink"] %>' />
 
     <!-- will need to figure out -->
-    <meta property="og:image" content="<%= Application.get_env(:nfd, :website_logo_png) %>">
-    <meta name="twitter:image" content="<%= Application.get_env(:nfd, :website_logo_png) %>">
+    <meta property="og:image" content="<%= Application.get_env(:nfd, :logo) %>">
+    <meta name="twitter:image" content="<%= Application.get_env(:nfd, :logo) %>">
 
     <!-- facebook things -->
     <meta property="og:url" content="<%= Routes.url(@conn) <> @conn.request_path %>">
@@ -57,11 +57,11 @@
           "headline" : "<%= title %>",
           "description" : "<%= @conn.assigns.item["description"] %>", 
           "inLanguage" : "en-US",
-          "author" : "<%= Application.get_env(:nfd, :website_author) %>",
-          "creator" : "<%= Application.get_env(:nfd, :website_author) %>",
-          "publisher": "<%= Application.get_env(:nfd, :website_author) %>",
-          "accountablePerson" : "<%= Application.get_env(:nfd, :website_author) %>",
-          "copyrightHolder" : "<%= Application.get_env(:nfd, :website_author) %>",
+          "author" : "<%= Application.get_env(:nfd, :author) %>",
+          "creator" : "<%= Application.get_env(:nfd, :author) %>",
+          "publisher": "<%= Application.get_env(:nfd, :author) %>",
+          "accountablePerson" : "<%= Application.get_env(:nfd, :author) %>",
+          "copyrightHolder" : "<%= Application.get_env(:nfd, :author) %>",
           "copyrightYear" : "<%= @conn.assigns.item["date"] %>",
           "datePublished": "<%= @conn.assigns.item["date"] %>",
           "dateModified" : "<%= @conn.assigns.item["date"] %>",
@@ -77,7 +77,7 @@
           "name": "<%= title %>",
           "author": {
             "@type": "Person",
-            "name": "<%= Application.get_env(:nfd, :website_author) %>"
+            "name": "<%= Application.get_env(:nfd, :author) %>"
           },
           "description": "<%= @conn.assigns.item["description"] %>",
         }
@@ -101,12 +101,12 @@
   <link rel="preconnect" href="<%= Application.get_env(:nfd, :base_url) %>guide">
   <link rel="preconnect" href="<%= Application.get_env(:nfd, :base_url) %>articles">
   <link rel="preconnect" href="<%= Application.get_env(:nfd, :base_url) %>practices">
+  <link rel="preconnect" href="<%= Application.get_env(:nfd, :base_url) %>community">
+  <link rel="preconnect" href="<%= Application.get_env(:nfd, :base_url) %>about">
 
   <!-- SCSS -->
-  <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/normalize.css") %>'/>
-  <!-- <%= if Mix.env != :dev do %> -->
-    <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/app.css") %>'/>
-  <!-- <% end %> -->
+  <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/normalize.css") %>'/>  
+  <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/app.css") %>'/>
 
   <!-- Emoji CSS -->
   <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
@@ -134,14 +134,14 @@
   <link href="https://fonts.googleapis.com/css?family=Parisienne|Montserrat|Noto+Sans" rel="stylesheet">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132863786-1"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<%= Application.get_env(:nfd, :google_analytics_url) %>"></script>
   <script>
     if (document.location.hostname.search("neverfapdeluxe.com") !== -1) {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-132863786-1');
+      gtag('config', '<%= Application.get_env(:nfd, :google_analytics_url) %>');
     }
   </script>
 
