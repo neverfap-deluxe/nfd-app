@@ -1,26 +1,17 @@
-{{< hr2 TODO
+EMOJI 
+https://afeld.github.io/emoji-css/
 
-{{< hr3 3rd party
+STRIPE
+https://stripe.com/docs/quickstart
+https://stripe.com/docs/stripe-js/elements/quickstart
+https://stripe.com/docs/stripe-js
+https://stripe.com/docs/charges
 
-- comments plugin
+http://blog.plataformatec.com.br/2015/08/working-with-ecto-associations-and-embeds/
 
-{{< hr2 app build
 
-- Create shortcodes for <hr/> with class. 
-- Create similar practices on practices page.
-- create categories/tags
-- Get logo images
-- Practices to show 
-- Figure out meta-titles
-- Sort out image meta. 
-- Breadcrumbs
-- Put reddit link on homepage once subreddit is created.
-- A heap of meta content for a large range of new pages that have been created.
-- Design my 404 page.
-- Page that has everything inside the app.
-- Add validation to email subscription to see if they have paid for the subscription before modifying matrix.
-
-- Emails to send day 0 email first.
+PODCAST THEME
+http://freemusicarchive.org/music/The_Chris_Kelsey_4/
 
 https://forestry.io/blog/build-a-json-api-with-hugo/
 
