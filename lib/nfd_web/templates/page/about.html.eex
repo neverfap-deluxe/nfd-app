@@ -1,9 +1,10 @@
 <div class="single__wrapper">   
   <h2 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
   <div class="single__content" style="margin-bottom: 0;">
-    <p>Welcome to NeverFap Deluxe.</p>
-    <p>I decided to create this website in 2019 to help people overcome porn addiction.</p>
-    <p>Not only have I personally overcome porn addiction, to a point that I literally do not think about porn nor struggle with it in any way.</p>
+    <p>Welcome to NeverFap Deluxe!</p>
+    <p>I decided to create this website in 2019 to help people overcome porn addiction, in the easiest and most effective way possible.</p>
+    <p>In essence, I aim to teach people how to be in complete control of their minds using the power of meditation and other various awareness and mental health practices.</p>
+    <p>Not only have I personally overcome my own porn addiction using these impressive skills and abilities (to a point that I literally do not think about porn, nor struggle with it to any capacity).</p>
     <p>However I want to help you do the same too.</p>
   </div>
 </div>
@@ -12,7 +13,6 @@
 
 <div class="single__wrapper">
   <div class="single__content" >
-    <h2>Motivation</h2>
     <p>While everyone is aware of the NoFap movement, no one actually seems to be able to effectively explain how to achieve NoFap with any sort of consistency.</p>
     <p>Most of the materials I could find online ranged from various theories on how to manage cravings and emotions using ineffective and unhealthy coping mechanisms.</p>
     <p>To personal advice from existing porn addicts who's opinion seemed to change depending on what day of the week it was. All the while none of this dialog being clear, tangible, nor straight-forward in anyway.</p>
@@ -35,7 +35,6 @@
 
 <div class="single__wrapper">
   <div class="single__content">
-    <h2>Aim</h2>
     <p>In order to teach you to adapt to these healthy coping mechanisms, NeverFap Deluxe maintains one really simple goal.</p>
     <p>It's a goal which I strongly believe in, which I believe is key in helping you overcome porn addiction.</p>
     
