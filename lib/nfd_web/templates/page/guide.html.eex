@@ -38,8 +38,8 @@
 
     <p>Because they remain in denial about their problems, without truly realising the extent to which they maintain this facade.</p>
     <p>Well, I'm here to break the cycle.</p>
-    <p>Understand that the sole reason why people relapse and lose control of themselves, is because of a decision at some point to distrust the process.</p>
-    <p>Perhaps they thought they'd be fine skipping out on their routine meditation for a couple of days, because they'd felt comfortable with the level of mental health they'd achieved up until then.</p>
+    <p>Understand that the sole reason why people relapse and lose control of themselves, is because of a decision they've made at some point to distrust the process.</p>
+    <p>Perhaps they thought they'd be fine skipping out on their routine meditation for a couple of days, because they were comfortable with the level of mental health they'd achieved up until then.</p>
     <p>Perhaps they failed to maintain their awareness because they thought it would be okay to act with excessive judgement in a particular situation, because "that's just what everyone does".</p>
     <p>Perhaps they decided to continuing working past their designated nightly cut-off time because they decided in this one particular instance, that it was okay to put their work before their mental health.</p>
     <p>All behaviours which outright neglect the sanctity of our commitment to the addiction recovery process.</p>
@@ -54,13 +54,13 @@
 
     <p>There is absolutely no doubt about it.</p>
     <p>No different to hitting the gym everyday, if you work out consistently you will put on muscle and you will become strong.</p>
-    <p>You can ignore it. You can fear it. You can tell yourself it's not worth it, or that it simply won't work for you. You can even claim that weakness is a superior attribute, and that exercise is a form of self-harm.</p>
-    <p>In no way does your opinion change the fact that consistently lifting heavy weights in gym will improve your strength.</p>
+    <p>You can ignore it. You can fear it. You can tell yourself it's not worth it, or that it won't work for you. You can even claim that weakness is a superior attribute, and that exercise is a form of self-harm.</p>
+    <p>It really doesn't matter what you think. In no way does your opinion change the fact that consistently lifting heavy weights in the gym will improve your strength.</p>
     <p>Your mental health is no different.</p>
     <p>If you practice meditation everyday and work on your awareness, you are guaranteed to become more in control of your thoughts, feelings and emotions over time.</p>
     <p>The process doesn't lie.</p>
     <p>I mean, it's just a process after all.</p>
-    <p>A series of steps which have been designed to help you improve as you take them one step at a time. It really doesn't get anymore simple than this, you just have to find the strength to trust the process.</p>
+    <p>A series of steps which have been designed to help you improve as you take them one step at a time. It really doesn't get anymore simple than this. Trust the process and you will succeed.</p>
     <p>Of course, I'm not expecting you to trust the process immediately.</p>
     <p>People will tend to distrust the process a few times, also known as the process of trial and error. But that's really up to you and how you choose to reason with your own denial.</p>
 
@@ -72,7 +72,7 @@
     <p></p>
     <p>This is not how processes work.</p>
     <p>For example, you can't just eat once and be done with it. You need to eat every single day in order to sustain yourself, and your mental health should be treated no differently.</p>
-    <p>You need to be practicing meditation and other awareness exercises every single day, not because you're inherently messed up but because it's a normal, healthy thing to do.</p>
+    <p>You need to be practicing meditation and other awareness exercises every single day, not because you're inherently messed up, but because it's a normal, healthy thing to do.</p>
     <p>Of course, if you're not already dedicating time towards any amount of self-maintenance, then even the slightest commitment may seem excessive for some people.</p>
     <p>When facing these kinds of dilemas, it can help to remember that you're in denial, and that what you're feeling is always unreasonable and needs to be challenged.</p>
     <p>I know when I started out, I found it immensely difficult to convince myself to find even 5 minutes to dedicate towards meditation, because I viewed it as a huge waste of time, if not a burden to my schedule.</p>
@@ -83,7 +83,7 @@
     <p>The same end result of being happy, confident and entirely porn free without even a hint of hesitation.</p>
     <p>Not because I believe in your inherent ability to succeed.</p>
     <p>But because I understand the incredible power of process as a driving force for permanent change, regardless of who you are or where you've come from.</p>
-    <p>The process is your friend.</p>
+    <p>The process is your best friend.</p>
   </div>
 </div>
 
@@ -173,16 +173,18 @@
     <!-- <p style="background: white; color: black;">NeverFap Deluxe Articles are designed to provide you with a better understanding behind the how and why.</p> -->
     <p class="guide__link__container"><a class="guide__link" href="/articles/my-personal-porn-recovery-journey/">My Personal Porn Recovery Journey</a></br> 
       Learn a bit more about my porn recovery journey, as well as how I managed to eventually kick the habit.</p>
-    <p class="guide__link__container"><a class="guide__link" href="articles/the-importance-of-meditation-for-porn-addiction/">The Importance Of Meditation For Porn Addiction</a></br> Learn about how meditation relates to porn addiction recovery.</p>
-    <p class="guide__link__container"><a class="guide__link" href="/articles/introduction-to-the-neverfap-deluxe-guide/">The Five Fundamental Principles Of NeverFap</a></br> Learn some of the rules and principles of NeverFap Deluxe.</p>
+    <p class="guide__link__container"><a class="guide__link" href="articles/the-importance-of-meditation-for-porn-addiction/">The Importance Of Meditation For Porn Addiction</a></br> 
+      Learn about the power of meditation and how it can help you with your porn addiction recovery.</p>
+    <p class="guide__link__container"><a class="guide__link" href="/articles/introduction-to-the-neverfap-deluxe-guide/">The Five Fundamental Principles Of NeverFap</a></br> 
+      Learn about some of the fundamental rules and principles of NeverFap Deluxe.</p>
   </div>
-  
-</div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
 
 <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Articles Index.", link: "/articles" } %>
 
 <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+
+</div>
 <div class="guide__banner">
   <div class="single__wrapper">
     <h2>NeverFap Deluxe Practices</h2>
