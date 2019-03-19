@@ -36,7 +36,7 @@
     <h3>This is why it takes up to 5 years on average for people to overcome their porn addiction.</h3>
     <hr class="hr3__bottom"/>
 
-    <p>Because we remain in denial about our problems, without truly realising the extent to which we are.</p>
+    <p>Because they remain in denial about their problems, without truly realising the extent to which they maintain this facade.</p>
     <p>Well, I'm here to break the cycle.</p>
     <p>Understand that the sole reason why people relapse and lose control of themselves, is because of a decision at some point to distrust the process.</p>
     <p>Perhaps they thought they'd be fine skipping out on their routine meditation for a couple of days, because they'd felt comfortable with the level of mental health they'd achieved up until then.</p>
@@ -171,9 +171,10 @@
     <h2>NeverFap Deluxe Articles</h2>
     
     <!-- <p style="background: white; color: black;">NeverFap Deluxe Articles are designed to provide you with a better understanding behind the how and why.</p> -->
-    <p><a class="guide__link" href="/articles/my-personal-porn-recovery-journey/">My Personal Porn Recovery Journey</a></br> Learn a bit more about my porn recovery journey, and how I .</p>
-    <p><a class="guide__link" href="articles/the-importance-of-meditation-for-porn-addiction/">The Importance Of Meditation For Porn Addiction</a></br> Learn about how meditation relates to porn addiction recovery.</p>
-    <p><a class="guide__link" href="/articles/introduction-to-the-neverfap-deluxe-guide/">The Five Fundamental Principles Of NeverFap</a></br> Learn some of the rules and principles of NeverFap Deluxe.</p>
+    <p class="guide__link__container"><a class="guide__link" href="/articles/my-personal-porn-recovery-journey/">My Personal Porn Recovery Journey</a></br> 
+      Learn a bit more about my porn recovery journey, as well as how I managed to eventually kick the habit.</p>
+    <p class="guide__link__container"><a class="guide__link" href="articles/the-importance-of-meditation-for-porn-addiction/">The Importance Of Meditation For Porn Addiction</a></br> Learn about how meditation relates to porn addiction recovery.</p>
+    <p class="guide__link__container"><a class="guide__link" href="/articles/introduction-to-the-neverfap-deluxe-guide/">The Five Fundamental Principles Of NeverFap</a></br> Learn some of the rules and principles of NeverFap Deluxe.</p>
   </div>
   
 </div>
