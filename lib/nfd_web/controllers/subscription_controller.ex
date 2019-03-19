@@ -76,7 +76,11 @@ defmodule NfdWeb.SubscriptionController do
       subscriber ->
         # TODO: Function which actually unsubscribers the user
         EmailMatrixTransform.unsubscribe_subscriber(subscriber, main_matrix)
-        render(conn, "unsubscribe_subscription_page.html", course_name: course_name)
+        if course_name == "General Newsletter" do
+          render(conn, "unsubscribe_general_subscription_page.html")          
+        else 
+          render(conn, "unsubscribe_course_subscription_page.html", course_name: course_name)
+        end
     end  
   end
 

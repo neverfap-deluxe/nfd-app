@@ -227,7 +227,7 @@
     <h1>Next Steps</h1>
 
     <p>If you're still not sure what to do, then that's okay.</p>
-    <p>Just slowly make your way through the content on the website, and feel free to ask any questions in our <a class="link" href="https://discord.gg/YETRkSj">discord channel</a>. I try my best to respond at least once a day.</p>
+    <p>Just slowly make your way through the content on the website, and feel free to ask any questions in our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Discord channel</a>. I try my best to respond at least once a day.</p>
     <p>Remember that you're essentially adopting an entirely new way of thinking, so it's not necessarily going to be easy, nor make complete sense overnight.</p>
     <p>Don't worry if it doesn't immediately make sense or if it feels uncomfortable. It's to be expected.</p>
     <p>Think of it like going to the gym. You're not going to become fully ripped within a few days. That's simply not how your physical body works, and your mind is no different.</p>

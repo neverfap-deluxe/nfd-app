@@ -2,17 +2,19 @@
   <h2 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
   <div class="single__content" style="margin-bottom: 0;">
     <p>Join the NeverFap Deluxe Community!</p>
-    <p>There are a heap of different ways you can interact with the NeverFap Deluxe Community, whether you want to chat with others about your porn addiction, or even follow NeverFap Deluxe on social media.</p>
-    <p>In addition, we offer a variety of uniquely structured content that is available only when you register for a NeverFap Deluxe Account.</p>
-    <p>This includes things like helpful email campaigns to help you keep on track with your porn recovery, as well as a bunch of audio courses to teach you things such as meditation.</p>
+    <p>There are a heap of different ways you can interact with the NeverFap Deluxe Community, whether you want to chat with others, or even follow NeverFap Deluxe on social media.</p>
+    <p>In addition, we offer a variety of unique content that is available only when you register for a NeverFap Deluxe Account.</p>
+    <p>This includes things like helpful email campaigns to help you keep on track with your porn recovery, as well as a bunch of audio courses to teach you meditation and awareness best practices.</p>
   </div>
 </div>
 
-<%= partial "links/patreon.html", assigns %>
+<div class="account__info account__info--margin-top">
+  <p class="account__info__title">Thank you for coming to the website! Does that make us best friends now!?</p>
+</div>      
 
-<div class="single__wrapper">
+<div class="single__wrapper single__wrapper--community">
   <div class="single__content" >
-    <h2>Create an account</h2>
+    <h2>Creating an account</h2>
     <p>When you sign up for a NeverFap Deluxe Account, you gain access to a variety of free and premium email campaigns.</p>
 
     <h3>Furthermore, it's completely FREE to register.</h3>
@@ -31,35 +33,64 @@
 
 <%= partial "links/loginregister.html", assigns %>
 
-<div class="single__wrapper">
+<div class="single__wrapper single__wrapper--community">
   <div class="single__content">
-    <h2>Chat</h2>
-    <p>I've setup a Discord channel if you're interested in having a chat or if you have any questions about NeverFap Deluxe.</p>
-    <p>Obviously, we all live in different time zones, however I always check it and respond as promptly as I can.</p>
+    <h2>Patreon</h2>
+    <p>I highly recommend checking out my Patreon if you're looking to track the progress I make on the website.</p>
+    <p>I post weekly updates of all the work I put towards NeverFap Deluxe, so it's an amazing place to keep up-to-date with all the essential happenings of this wonderful resource.</p>
+    <p>In addition, you're more than welcome to commit a monthly financial contribution towards the website if you so please.</p>
+  </div>
+</div>
+
+<%= partial "links/patreon.html", assigns %>
+
+<div class="single__wrapper single__wrapper--community">
+  <div class="single__content">
+    <h2>Reddit</h2>
+    <p>Ah, yes.</p>
+    <p>I use the NeverFapDeluxe Reddit account in order to market the website, as well as offer opinion and advice to people starting out with their porn recovery journey.</p>
+    <p>Feel free to follow my account in order to catch the trickle of my comments, or even just to say:</p>
+    <p><b>"Heyyyy 21F Aus, looking to hook up ;)</b>"</p>
+  </div>
+</div>
+
+<%= partial "links/reddit.html", assigns %>
+
+<div class="single__wrapper single__wrapper--community">
+  <div class="single__content">
+    <h2>Discord</h2>
+    <p>I've setup a Discord channel if you're interested in having a chat or if you have any questions about NeverFap Deluxe. It is also a great opportunity if you're looking for an accountability partner, or simply if you'd like to say G'Day and introduce yourself.</p>
+    <p>Obviously we all live in different time zones, however I check it frequently and respond as promptly as I can.</p>
     <p>I'm personally located in Melbourne, Australia. (GMT+11:00)</p>
   </div>
 </div>
 
 <%= partial "links/discord.html", assigns %>
 
-<!-- <div class="single__wrapper">
+<div class="single__wrapper single__wrapper--community">
   <div class="single__content">
-    <h2>Social Media</h2>
-    <p>NeverFap Deluxe is also available on Facebook, Reddit and Twitter, if that's your thing.</p>
+    <h2>Facebook</h2>
+    <p>Wanna join the Facebook page?</p>
+    <p>Sorry, what's that?</p>
+    <p>Oh, you silly little duckling. I can't hear you because this is the internet and this is only a webpage. Although seriously, you should stop talking to your computer screen and seek professional help.</p>
+  </div>
+</div>
 
-    <div class="account__buttons--single">
-      <a class="account__facebook__button__container" href="<%= Application.get_env(:nfd, :social_facebook_url) %>">
-        <img class="account__facebook__button__logo" src="/images/facebook__logo.png" />
-        <p class="account__facebook__button__text"><span class="account__facebook__button__text--display">FACEBOOK PAGE</span></p>
-      </a>
-    </div>
+<%= partial "links/facebook.html", assigns %>
 
-    <div class="account__buttons--single">
-      <a class="account__twitter__button__container" href="<%= Application.get_env(:nfd, :social_twitter_url) %>">
-        <img class="account__twitter__button__logo" src="/images/twitter__logo__blue.png" />
-        <p class="account__twitter__button__text"><span class="account__twitter__button__text--display">TWITTER ACCOUNT</span></p>
-      </a>
-    </div>
+<div class="single__wrapper single__wrapper--community">
+  <div class="single__content">
+    <h2>Twitter</h2>
+    <p>Maybe you enjoy a lighter shade of blue, than compared to a darker shade of blue.</p>
+    <p>Maybe you're colour blind.</p>
+    <p>Regardless of your sexual preference, feel free to follow our Twitter account and <a class="link" style="cursor: default;">#NeverFapDeluxe</a>.</p>
+  </div>
+</div>
+
+<%= partial "links/twitter.html", assigns %>
+
+<!-- <div class="single__wrapper">
+
 
     <div class="account__buttons--single">
       <a class="account__reddit__button__container" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">

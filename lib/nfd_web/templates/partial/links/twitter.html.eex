@@ -3,7 +3,7 @@
   <div class="account__buttons">
     <a class="account__twitter__button__container" href="<%= Application.get_env(:nfd, :social_twitter_url) %>">
       <img class="account__twitter__button__logo" src="/images/twitter__logo__blue.png" />
-      <p class="account__twitter__button__text"><span class="account__twitter__button__text--display">TWITTER ACCOUNT</span></p>
+      <p class="account__twitter__button__text">TWITTER <span class="account__twitter__button__text--display">ACCOUNT</span></p>
     </a>
   </div>
 </div>

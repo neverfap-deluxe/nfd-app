@@ -1,0 +1,22 @@
+.single__wrapper--community {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+
+// @media screen and (min-width: 420px) {
+//   single__wrapper--community {
+//   }
+// }
+
+@media screen and (min-width: 768px) {
+  .single__wrapper--community {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+// @media screen and (min-width: 1280px) {
+//   single__wrapper--community {
+//   }
+// }

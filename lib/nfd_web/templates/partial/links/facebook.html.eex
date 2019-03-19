@@ -3,7 +3,7 @@
   <div class="account__buttons">
     <a class="account__facebook__button__container" href="<%= Application.get_env(:nfd, :social_facebook_url) %>">
       <img class="account__facebook__button__logo" src="/images/facebook__logo.png" />
-      <p class="account__facebook__button__text"><span class="account__facebook__button__text--display">FACEBOOK PAGE</span></p>
+      <p class="account__facebook__button__text">FACEBOOK <span class="account__facebook__button__text--display">PAGE</span></p>
     </a>
   </div>
 </div>
