@@ -1,9 +1,0 @@
-<div class="single__wrapper">   
-  <h2 class="single__title">Thank you for unsubscribing!<img src="/images/logo.png" class="logo__square" alt=""/></h2>
-  <div class="single__content" style="margin-bottom: 0;">
-    <p>You don't want anymore <%= @course_name %> emails. I totally get it.</p>
-    <p>Please keep in mind that you may have only unsubscribed from this particular series of emails. If you've subscribed to other courses, or even the general newsletter, then you'll still be subscribed to those.</p>
-    <p>If you'd like to better manage your email subscriptions, then please login to your NeverFap Deluxe account.</p>
-  </div>
-</div>
-  

@@ -178,21 +178,24 @@
     <p class="guide__link__container"><a class="guide__link" href="/articles/introduction-to-the-neverfap-deluxe-guide/">The Five Fundamental Principles Of NeverFap</a></br> 
       Learn about some of the fundamental rules and principles of NeverFap Deluxe.</p>
   </div>
-  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+  
+</div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
 
 <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Articles Index.", link: "/articles" } %>
 
 <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
-
-</div>
 <div class="guide__banner">
   <div class="single__wrapper">
     <h2>NeverFap Deluxe Practices</h2>
 
     <!-- <p>NeverFap Deluxe Practices focus solely on verifiable steps you can do on a daily basis to help you build awareness and calmness.</p> -->
-    <p><a class="guide__link" href="/practices/observe-it-all/">Observe it all</a></br> Our primary meditation exercise It is the sole exercise we recommend for beginners.</p>
-    <p><a class="guide__link" href="/practices/slow-it-down/">Slow it down</a></br> This exercise is great as an introduction to calmness.</p>
-    <p><a class="guide__link" href="/practices/dissolve-it-down/">Dissolve it down</a></br> This is an excellent visual exercise which is designed to shatter your ego.</p>
+    <p class="guide__link__container"><a class="guide__link" href="/practices/observe-it-all/">Observe it all</a></br> 
+      Our primary meditation exercise It is the sole exercise we recommend for beginners.</p>
+    <p class="guide__link__container"><a class="guide__link" href="/practices/slow-it-down/">Slow it down</a></br> 
+      This exercise is great as an introduction to calmness.</p>
+    <p class="guide__link__container"><a class="guide__link" href="/practices/dissolve-it-down/">Dissolve it down</a></br> 
+      This is an excellent visual exercise which is designed to shatter your ego.</p>
   </div>
 </div>
 <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
@@ -205,7 +208,8 @@
     <h2>NeverFap Deluxe Courses</h2>
     <!-- <p>NeverFap Deluxe Courses combine the NeverFap Articles and Practices into single, linear progression-based pathways based upon The Five Fundamental Principles of NeverFap.</p> -->
     <!-- <p>They are designed to help you focus on a particular area of understanding, so that you can master that concept and feel confident with your ability to address your porn addiction.</p> -->
-    <p><a class="guide__link" href="/courses/introduction/">Introduction course</a></br> Is great as a beginning resource if you'd like to learn some of the rules and principles of NeverFap Deluxe.</p>
+    <p class="guide__link__container"><a class="guide__link" href="/courses/introduction/">Introduction course</a></br> 
+      Is great as a beginning resource if you'd like to learn some of the rules and principles of NeverFap Deluxe.</p>
 
     <!-- <p>As mentioned earlier, I recommend getting started with the <a class="link" href="/courses/introduction/">Introduction course</a> and working your way down the list, revisiting practices you personally found useful.</p> -->
 
