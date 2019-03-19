@@ -1,4 +1,4 @@
-defmodule NfdWeb.EmailSend do
+defmodule NfdWeb.SendEmails do
   use Swoosh.Mailer, otp_app: :nfd
   use Phoenix.Swoosh, 
     view: NfdWeb.SubscriptionTemplateView, 
@@ -15,16 +15,17 @@ defmodule NfdWeb.EmailSend do
   alias NfdWeb.EmailMatrixTransform
 
   require Logger
-  
 
   # Email Schedule Logic
   def send_email_subscription(subscriber, multiple_matrix, main_matrix) do
     url = EmailMatrixTransform.subscription_confirmation_url_from_matrix(subscriber.subscriber_email, multiple_matrix, main_matrix)
+    unsubscribe_url = EmailMatrixTransform.generate_unsubscribe_url(subscriber.subscriber_email,main_matrix)
     course_name = EmailMatrixTransform.course_name_from_matrix(main_matrix)
-    IO.inspect NfdWeb.Endpoint.url()
+
     cast_subscriber(
       subscriber,
       url,
+      unsubscribe_url,
       course_name,
       "Confirm your subscription",
       "template_email_subscription_confirmation.html"
@@ -34,6 +35,7 @@ defmodule NfdWeb.EmailSend do
   def send_day_0_email(subscriber, main_matrix) do
     case String.split(main_matrix, "h") do
       ["0", _] -> 
+        # TODO: Welcome email for general newsletter.
         nil
       ["1", _] -> 
         NfdWeb.SevenDayKickstarterScheduler.run(0)
@@ -68,7 +70,6 @@ defmodule NfdWeb.EmailSend do
           # 28 -> TwentyEightDayAwarenessScheduler.run(day_count)
         end 
 
-        # TODO: Put in templates
       case type do 
         7 -> cast_scheduler({subscriber, subject, template}) |> process("Seven Day NeverFap Deluxe Kickstarter - Day #{day_count} E-mail sent: " <> subscriber.email)
         # 10 -> cast_scheduler({subscriber, subject, template}) |> process("Ten Day Meditation Primer - Day #{day_count} E-mail sent: " <> subscriber.email)
@@ -92,18 +93,16 @@ defmodule NfdWeb.EmailSend do
       |> render_body(template, %{})
   end
 
-  def cast_subscriber(subscriber, url, course_name, subject, template) do
-    # TODO: Put in variables into template
+  def cast_subscriber(subscriber, url, unsubscribe_url, course_name, subject, template) do
     %Swoosh.Email{}
       |> to(subscriber.subscriber_email)
       |> from({"NeverFap Deluxe", "neverfapdeluxe@gmail.com"})
       |> subject(subject)
-      |> render_body(template, %{url: url, course_name: course_name})
+      |> render_body(template, %{url: url, unsubscribe_url: unsubscribe_url, course_name: course_name})
   end
 
   def process(email, message) do
     Nfd.SwooshMailer.deliver(email)
-
     Logger.debug(message)
   end
 end

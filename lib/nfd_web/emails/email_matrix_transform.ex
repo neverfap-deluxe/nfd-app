@@ -9,17 +9,8 @@ defmodule NfdWeb.EmailMatrixTransform do
 
   alias Nfd.Account
 
-  def subscription_confirmation_url_from_matrix(email, multiple_matrix, main_matrix) do
-    case String.split(main_matrix, "h") do
-      ["0", _] -> "#{NfdWeb.Endpoint.url()}/subscription_success?email=#{email}&multiple_matrix=#{multiple_matrix}&main_matrix=#{main_matrix}"
-      ["1", _] -> "#{NfdWeb.Endpoint.url()}/subscription_success?email=#{email}&multiple_matrix=#{multiple_matrix}&main_matrix=#{main_matrix}"
-      # ["2", _] -> "10 Day Meditation Primer"
-      # ["3", _] -> "28 Day Awareness Challenge"
-      # ["4", _] -> "3 Day Awareness Primer"
-      # ["5", _] -> "3 Day Calmness Primer"
-      # ["6", _] -> "3 Day Meditation Primer" 
-    end
-  end
+  def generate_subscription_confirmation_url(email, multiple_matrix, main_matrix), do: "#{NfdWeb.Endpoint.url()}/subscription_success?email=#{email}&multiple_matrix=#{multiple_matrix}&main_matrix=#{main_matrix}"
+  def generate_unsubscribe_url(email, main_matrix), do: "#{NfdWeb.Endpoint.url()}/unsubscribe?email=#{email}&main_matrix=#{main_matrix}"
 
   def course_name_from_matrix(main_matrix) do
     case String.split(main_matrix, "h") do
@@ -27,9 +18,9 @@ defmodule NfdWeb.EmailMatrixTransform do
       ["1", _] -> "7 Day NeverFap Deluxe Kickstarter"
       # ["2", _] -> "10 Day Meditation Primer"
       # ["3", _] -> "28 Day Awareness Challenge"
-      # ["4", _] -> "3 Day Awareness Primer"
-      # ["5", _] -> "3 Day Calmness Primer"
-      # ["6", _] -> "3 Day Meditation Primer" 
+      # ["4", _] -> ""
+      # ["5", _] -> ""
+      # ["6", _] -> " 
     end
   end
 
@@ -39,9 +30,9 @@ defmodule NfdWeb.EmailMatrixTransform do
       ["1", _] -> subscriber.seven_day_kickstarter_subscribed == true
       # ["2", _] -> "10 Day Meditation Primer"
       # ["3", _] -> "28 Day Awareness Challenge"
-      # ["4", _] -> "3 Day Awareness Primer"
-      # ["5", _] -> "3 Day Calmness Primer"
-      # ["6", _] -> "3 Day Meditation Primer" 
+      # ["4", _] -> ""
+      # ["5", _] -> ""
+      # ["6", _] -> " 
     end
   end
 
@@ -52,29 +43,30 @@ defmodule NfdWeb.EmailMatrixTransform do
         ["1", pos] when pos in ["0", "1", "2"] -> true
         # ["2", pos] when pos in ["0", "1", "2"] -> true
         # ["3", pos] when pos in ["0", "1", "2"] -> true
-        # ["4", pos] when pos in ["0", "1", "2"] -> true
-        # ["5", pos] when pos in ["0", "1", "2"] -> true
-        # ["6", pos] when pos in ["0", "1", "2"] -> true
+        # ["4", pos] 
+        # ["5", pos] 
+        # ["6", pos] 
         [_, _] -> nil
       end
     end)
   end
 
   def update_subscription(subscriber, multiple_matrix) do 
-    # Value: 0 - general, 1 kickstarter, 2 meditation, 3 awareness, 4 awareness, 5 calmness, 6 meditation 
+    # Value: 0 - general, 1 kickstarter, 2 meditation, 3 awareness,
     # Position: 0 - do nothing, 1 subscribe, 2 unsubscribe 
     # "0h1-1h1" #value 0, pos 1; value 1, pos 1;
     
     Enum.map(String.split(multiple_matrix, "-"), fn(main_matrix) ->
+      # NOTE: If there is no multiple, then it will just 
       # ["0", "1"]
       case String.split(main_matrix, "h") do
         ["0", pos] -> NfdWeb.GeneralScheduler.subscription_action(subscriber, pos)
         ["1", pos] -> NfdWeb.SevenDayKickstarterScheduler.subscription_action(subscriber, pos)
         # ["2", pos] -> NfdWeb.TenDayMeditationScheduler.subscription_action(subscriber, pos)
         # ["3", pos] -> NfdWeb.TwentyEightDayAwarenessScheduler.subscription_action(subscriber, pos)
-        # ["4", pos] -> NfdWeb.ThreeDayAwarenessScheduler.subscription_action(subscriber, pos)
-        # ["5", pos] -> NfdWeb.ThreeDayCalmnessScheduler.subscription_action(subscriber, pos)
-        # ["6", pos] -> NfdWeb.ThreeDayMeditationScheduler.subscription_action(subscriber, pos)
+        # ["4", pos] -> 
+        # ["5", pos] -> 
+        # ["6", pos] -> 
       end
     end)
   end
@@ -85,9 +77,9 @@ defmodule NfdWeb.EmailMatrixTransform do
       ["1", pos] -> NfdWeb.SevenDayKickstarterScheduler.unsubscribe_action(subscriber)
       # ["2", pos] -> NfdWeb.TenDayMeditationScheduler.subscription_action(subscriber, pos)
       # ["3", pos] -> NfdWeb.TwentyEightDayAwarenessScheduler.subscription_action(subscriber, pos)
-      # ["4", pos] -> NfdWeb.ThreeDayAwarenessScheduler.subscription_action(subscriber, pos)
-      # ["5", pos] -> NfdWeb.ThreeDayCalmnessScheduler.subscription_action(subscriber, pos)
-      # ["6", pos] -> NfdWeb.ThreeDayMeditationScheduler.subscription_action(subscriber, pos)
+      # ["4", pos] -> 
+      # ["5", pos] -> 
+      # ["6", pos] -> 
     end
   end
 

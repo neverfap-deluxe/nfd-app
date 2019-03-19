@@ -10,14 +10,14 @@
         <mj-social-element name="twitter" href="https://twitter.com/NeverFapDeluxe" background-color="#A1A0A0">
         </mj-social-element>
       </mj-social>
-      <mj-text color="#445566" font-size="11px" font-weight="bold" align="center">
+      <!-- <mj-text color="#445566" font-size="11px" font-weight="bold" align="center">
         View this email in your browser
+      </mj-text> -->
+      <mj-text color="#445566" font-size="11px" align="center" line-height="16px">
+        You are receiving this email because you registered with NeverFap Deluxe and agreed to receive emails from us regarding the 7 Day NeverFap Deluxe Kickstarter.
       </mj-text>
       <mj-text color="#445566" font-size="11px" align="center" line-height="16px">
-        You are receiving this email because you registered with NeverFap Deluxe and agreed to receive emails from us regarding The NeverFap Deluxe seven day kickstarter plan.
-      </mj-text>
-      <mj-text color="#445566" font-size="11px" align="center" line-height="16px">
-        &copy; NeverFap Deluxe., All Rights Reserved.
+        &copy; NeverFap Deluxe, All Rights Reserved.
       </mj-text>
     </mj-column>
   </mj-section>
@@ -25,7 +25,7 @@
     <mj-group>
       <mj-column width="100%" padding-right="0">
         <mj-text color="#445566" font-size="11px" align="center" line-height="16px" font-weight="bold">
-          <a class="footer-link" href="https://neverfapdeluxe.com/privacy">Privacy</a>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<a class="footer-link" href="https://www.google.com">Unsubscribe</a>
+          <a class="footer-link" href="https://neverfapdeluxe.com/privacy">Privacy</a>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<a class="footer-link" href="<%= @unsubscribe_url %>">Unsubscribe</a>
         </mj-text>
       </mj-column>
     </mj-group>

@@ -5,6 +5,7 @@
   <div class="single__content" style="margin-bottom: 0;">
     <p>Unfortunately, something went wrong.</p>
     <p><%= @error_message %></p>
+    <p><a class="link" href="/">Homepage</a></p>
   </div>
 </div>
   

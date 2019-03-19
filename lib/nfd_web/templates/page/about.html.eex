@@ -24,7 +24,7 @@
 
     <p>Introducing NeverFap Deluxe.</p>
     <p>A comprehensive online step-by-step how-to guide which explains exactly what you need to do to overcome porn addiction.</p>
-    <p>Based upon the healthy coping mechanisms I've developed over the years, which I use on a daily basis to keep my mind calm, balanced and under control.</p>
+    <p>Based upon the healthy coping mechanisms I've developed over the years, which I use on a daily basis to help keep my mind calm, balanced and under control.</p>
     <p>No more excuses. No more compromises.</p>
     <p>This is the real deal.</p>
     <!-- <p><a class="link" href="/articles/what-makes-neverfap-so-different/">This is the real deal.</a></p> -->
@@ -37,17 +37,16 @@
 
 <div class="single__wrapper">
   <div class="single__content">
-    <p>In order to teach you to adapt to these healthy coping mechanisms, NeverFap Deluxe maintains one really simple goal.</p>
-    <p>A goal which I strongly believe is key to helping you effectively overcome your porn addiction without difficulty.</p>
+    <p>In order to teach you to adapt to these healthy coping mechanisms, NeverFap Deluxe maintains one goal.</p>
+    <!-- which I strongly believe is key to helping you effectively overcome your porn addiction -->
     
     <hr class="hr3"/>
     <h3>Ultimately, I believe the process of overcoming porn addiction should be deceptively simple.</h3>
     <hr class="hr3__bottom"/>
-    <p>With the right information and guidance, I believe overcoming porn addiction can be an incredibly straight-forward process that anyone can do at any point in their life.</p>
-    <p>I believe it is a process which doesn't discriminate against how smart you are, against how much knowledge you already have about your porn addiction, nor concern who you are today. </p>
-    <p>I have put a lot of effort into ensuring that the information on this website is fun, engaging and accessible so that it becomes as clear as daylight as to why the process works, as well as how you can comfortably commit to it without hesitation.</p>
-    <p>This means reading the articles and guides on this website until it becomes second-nature to you.</p>
-    <p>This means commiting to your daily routine of meditation and awareness practice.</p>
+    <p>With the right information and guidance, I believe overcoming porn addiction can be an incredibly straight-forward process that anyone can partake at any point in their life.</p>
+    <p>A process which doesn't discriminate against how smart you are, against how much knowledge you already have about your porn addiction, nor concern who you are today. </p>
+    <p>I have put a lot of effort into ensuring that the information on this website is fun, engaging and accessible so that it becomes as clear as daylight as to why this process works, as well as how you can comfortably commit to it without hesitation.</p>
+    <p>This means reading the articles and guides on this website until it becomes second-nature to you, as well as commiting to your daily routine of meditation and awareness practice.</p>
     <p>It is the very reason why NeverFap Deluxe is so effective at helping you overcome porn addiction.</p>
     <p>Because it just makes sense.</p>
   </div>
@@ -95,8 +94,11 @@
   <!-- <div class="form__wrapper form__wrapper--full-width">
     <%= form_for @contact_form_changeset, Routes.function_path(@conn, :contact_form_post), fn f -> %> 
       <div class="form__input__container">
+        <%= error_tag f, :name %>
         <%= text_input f, :name, [placeholder: "Name", class: "form__input"] %>
+        <%= error_tag f, :email %>
         <%= text_input f, :email, [placeholder: "Email", class: "form__input"] %>
+        <%= error_tag f, :message %>
         <%= textarea f, :message, [placeholder: "Message", class: "form__input form__textarea"] %>
         <%= raw Recaptcha.Template.display %>
 

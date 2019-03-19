@@ -61,7 +61,8 @@ defmodule NfdWeb.Router do
 
     # General functions
     post "/send_message", FunctionController, :contact_form_post
-    get "/send_message_success", FunctionController, :send_message_success
+    get "/message_success", FunctionController, :send_message_success
+    get "/message_failed", FunctionController, :send_message_failed
   
     # Subscription functions
     post "/confirm_subscription", SubscriptionController, :add_subscription_func

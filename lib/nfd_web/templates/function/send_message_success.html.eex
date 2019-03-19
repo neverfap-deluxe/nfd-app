@@ -3,5 +3,7 @@
   <div class="single__content" style="margin-bottom: 0;">
     <p>Thank you for the message.</p>
     <p>It has been sent to my inbox and I'll try to respond ASAP.</p>
+    <p>In addition there's my <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Discord channel</a> where you can readily contact me.</p>
+    <p><a class="link" href="/">Homepage</a></p>
   </div>
 </div>
