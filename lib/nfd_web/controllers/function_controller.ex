@@ -10,12 +10,14 @@ defmodule NfdWeb.FunctionController do
     email = contact_form["email"]
     message = contact_form["message"]
 
+    # Account.create_contact_form({})
     case Recaptcha.verify(contact_form["g-recaptcha-response"]) do
       {:ok, _response} -> 
         EmailLogs.new_contact_form_email(name, email, message)
         redirect(conn, to: Routes.function_path(conn, :send_message_success))
     
-      {:error, _errors} -> 
+      {:error, errors} -> 
+        IO.inspect errors
         redirect(conn, to: Routes.page_path(conn, :home))
     end
   end
