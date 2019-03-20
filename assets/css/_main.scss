@@ -1,7 +1,9 @@
 * {
-  font-family: 'Monserrat',  'Noto Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
+
+  // Helvetica maybe for titles?
+  // So I LOVE Noto Sans for Chrome, however it looks terrible for Safari, so Lato has been the compromise.
   // font-family: 'Noto Sans', sans-serif;
-  // font-family: 'Monserrat', sans-serif;
 }
 
 a {
@@ -38,7 +40,7 @@ h4 {
   line-height: 1.8rem;
 }
 
-p, b { 
+p { 
   font-size: 1.1rem;
   line-height: 1.6rem;    
 }
