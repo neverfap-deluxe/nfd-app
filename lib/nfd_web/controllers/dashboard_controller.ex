@@ -3,6 +3,7 @@ defmodule NfdWeb.DashboardController do
 
   alias Nfd.Content
   alias Nfd.Account
+  alias Nfd.EmailLogs
 
   plug :put_layout, "hub.html"
 
@@ -12,7 +13,6 @@ defmodule NfdWeb.DashboardController do
 
     collections_audio = Content.list_audio_courses()
     collections_email = Content.list_email_campaigns()
-
     conn
       |> put_flash(:info, "Welcome back!")
       |> render("dashboard.html", user: user, subscriber: subscriber, collections_audio: collections_audio, collections_email: collections_email)
@@ -86,15 +86,18 @@ defmodule NfdWeb.DashboardController do
         case Account.create_subscriber(%{ subscriber_email: user.email, user_id: user.id }) do
           # Return created subscriber
           {:ok, subscriber} -> subscriber
-          {:error, error} -> IO.inspect "Could not create subscriber"
+          {:error, error} -> EmailLogs.error_email_log("#{user.email} - #{user.id} - Could not create subscriber - dashboard_controller.")
         end
 
       # If email already exists.
       subscriber -> 
         # Check if user_id is same as user.id
-        if subscriber.user_id != user.id do 
+        if subscriber.user_id != user.id do
           # If not the same, then update
-          Account.update_subscriber(subscriber, %{user_id: user.id})
+          case Account.update_subscriber(subscriber, %{user_id: user.id}) do 
+            {:ok, subscriber_with_user_id} -> subscriber_with_user_id 
+            {:error, changeset} -> EmailLogs.error_email_log("#{subscriber.subscriber_email} - Could not update subscriber - dashboard_controller.")
+          end
         else
           # Otherwise return original subscriber value
           subscriber

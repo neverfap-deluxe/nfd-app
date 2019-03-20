@@ -106,4 +106,100 @@ defmodule Nfd.Meta do
   def change_page(%Page{} = page) do
     Page.changeset(page, %{})
   end
+
+  alias Nfd.Meta.SubscriptionEmail
+
+  @doc """
+  Returns the list of subscription_emails.
+
+  ## Examples
+
+      iex> list_subscription_emails()
+      [%SubscriptionEmail{}, ...]
+
+  """
+  def list_subscription_emails do
+    Repo.all(SubscriptionEmail)
+  end
+
+  @doc """
+  Gets a single subscription_email.
+
+  Raises `Ecto.NoResultsError` if the Subscription email does not exist.
+
+  ## Examples
+
+      iex> get_subscription_email!(123)
+      %SubscriptionEmail{}
+
+      iex> get_subscription_email!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_subscription_email!(id), do: Repo.get!(SubscriptionEmail, id)
+
+  @doc """
+  Creates a subscription_email.
+
+  ## Examples
+
+      iex> create_subscription_email(%{field: value})
+      {:ok, %SubscriptionEmail{}}
+
+      iex> create_subscription_email(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_subscription_email(attrs \\ %{}) do
+    %SubscriptionEmail{}
+    |> SubscriptionEmail.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a subscription_email.
+
+  ## Examples
+
+      iex> update_subscription_email(subscription_email, %{field: new_value})
+      {:ok, %SubscriptionEmail{}}
+
+      iex> update_subscription_email(subscription_email, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_subscription_email(%SubscriptionEmail{} = subscription_email, attrs) do
+    subscription_email
+    |> SubscriptionEmail.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a SubscriptionEmail.
+
+  ## Examples
+
+      iex> delete_subscription_email(subscription_email)
+      {:ok, %SubscriptionEmail{}}
+
+      iex> delete_subscription_email(subscription_email)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_subscription_email(%SubscriptionEmail{} = subscription_email) do
+    Repo.delete(subscription_email)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking subscription_email changes.
+
+  ## Examples
+
+      iex> change_subscription_email(subscription_email)
+      %Ecto.Changeset{source: %SubscriptionEmail{}}
+
+  """
+  def change_subscription_email(%SubscriptionEmail{} = subscription_email) do
+    SubscriptionEmail.changeset(subscription_email, %{})
+  end
 end

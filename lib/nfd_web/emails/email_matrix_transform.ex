@@ -12,7 +12,7 @@ defmodule NfdWeb.EmailMatrixTransform do
   def generate_subscription_confirmation_url(email, multiple_matrix, main_matrix), do: "#{NfdWeb.Endpoint.url()}/subscription_success?email=#{email}&multiple_matrix=#{multiple_matrix}&main_matrix=#{main_matrix}"
   def generate_unsubscribe_url(email, main_matrix), do: "#{NfdWeb.Endpoint.url()}/unsubscribe?email=#{email}&main_matrix=#{main_matrix}"
 
-  def course_name_from_matrix(main_matrix) do
+  def generate_course_name_from_matrix(main_matrix) do
     case String.split(main_matrix, "h") do
       ["0", _] -> "General Newsletter"
       ["1", _] -> "7 Day NeverFap Deluxe Kickstarter"
@@ -24,7 +24,7 @@ defmodule NfdWeb.EmailMatrixTransform do
     end
   end
 
-  def check_if_subscriber_is_already_subscribed(subscriber, main_matrix) do
+  def validate_subscriber_is_already_subscribed(subscriber, main_matrix) do
     case String.split(main_matrix, "h") do
       ["0", _] -> subscriber.subscribed == true
       ["1", _] -> subscriber.seven_day_kickstarter_subscribed == true

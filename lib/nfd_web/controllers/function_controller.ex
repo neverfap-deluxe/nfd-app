@@ -34,9 +34,9 @@ defmodule NfdWeb.FunctionController do
             end
         end
         
-      {:error, errors} -> 
-        render(conn, "send_message_failed.html", message: message) 
-
+      {:error, errors} ->
+        EmailLogs.error_email_log("#{email} - #{message} - Could not verify captcha - function_controller.")
+        render(conn, "send_message_failed.html", message: message, error_message: "Could not verify Captcha")
     end
   end
 
@@ -44,8 +44,8 @@ defmodule NfdWeb.FunctionController do
     render(conn, "send_message_success.html")
   end
 
-  def send_message_send_message_failed(conn, %{ "message" => message}) do
-    render(conn, "send_message_failed.html", message: message)
+  def send_message_send_message_failed(conn, %{ "message" => message, "error_message" => error_message}) do
+    render(conn, "send_message_failed.html", message: message, error_message: error_message)
   end
   
   def delete_acount(conn, %{"user" => user}) do 

@@ -22,6 +22,10 @@ defmodule Nfd.EmailLogs do
     cast_log("User Deleted Themselves: " <> email, "User Deleted Themselves: " <> email) |> process_log()
   end
 
+  def error_email_log(message) do 
+    cast_log("Error", message) |> process_log()
+  end
+
   def cast_log(subject, message) do
     %Swoosh.Email{}
       |> to({"Julius Reade", "julius.reade@gmail.com"})

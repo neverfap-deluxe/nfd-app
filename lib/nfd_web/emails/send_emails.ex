@@ -18,9 +18,9 @@ defmodule NfdWeb.SendEmails do
 
   # Email Schedule Logic
   def send_email_subscription(subscriber, multiple_matrix, main_matrix) do
-    url = EmailMatrixTransform.subscription_confirmation_url_from_matrix(subscriber.subscriber_email, multiple_matrix, main_matrix)
+    url = EmailMatrixTransform.generate_subscription_confirmation_url(subscriber.subscriber_email, multiple_matrix, main_matrix)
     unsubscribe_url = EmailMatrixTransform.generate_unsubscribe_url(subscriber.subscriber_email,main_matrix)
-    course_name = EmailMatrixTransform.course_name_from_matrix(main_matrix)
+    course_name = EmailMatrixTransform.generate_course_name_from_matrix(main_matrix)
 
     cast_subscriber(
       subscriber,

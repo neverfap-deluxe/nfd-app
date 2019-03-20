@@ -56,16 +56,17 @@
     .seven__day__kickstarter__banner__item {
       display: inline-block;
       border: 3px solid cyan;
-      box-shadow: -5px 5px 0px 0px white;
-      // margin-top: 0!important;
-      // margin-bottom: 0.4rem!important;
+      box-shadow: -3px 3px 0px 0px white;
       margin: 0.1rem;
-      padding: 0.6rem;
+      padding: 0.4rem;
       transition: .2s;
+      font-size: 0.9rem;
+      margin-top: 0.4rem;
+      width: 95%;
     }
-    .seven__day__kickstarter__banner__item:hover {
-      box-shadow: -8px 8px 0px 0px white;
 
+    .seven__day__kickstarter__banner__item:hover {
+      box-shadow: -5px 5px 0px 0px white;
     } 
   }
 
@@ -74,6 +75,14 @@
     padding: 1rem;
     border: 1px solid black;
     max-width: 400px;
+
+    margin-top: 2.5rem;
+    margin-bottom: 3rem;
+    margin-left: 0rem;
+
+    p {
+      margin-top: 0.4rem;
+    }
 
     form {
       display: flex;
@@ -109,7 +118,6 @@
   .unhealthy__banner__title {
     margin-bottom: 3rem;
     max-width: 952px;
-
   }
 }
 
@@ -257,9 +265,20 @@
       border-right: none;
     }
   }  
+
+
+  .seven__day__kickstarter__banner {
+    .seven__day__kickstarter__banner__list {
+
+      .seven__day__kickstarter__banner__item {
+        width: initial;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {
+
   .single__wrapper {
     display: flex;
     flex-direction: column;
@@ -285,11 +304,44 @@
     .seven__day__kickstarter__banner__box {
       flex-direction: row;
     }
+    .seven__day__kickstarter__banner__form {
+      margin-top: 0rem;
+      margin-bottom: 0rem;
+      margin-left: 3rem;
+    }  
+
+    .seven__day__kickstarter__banner__list {
+
+      .seven__day__kickstarter__banner__item {
+        width: initial;
+        font-size: 0.9rem;
+        box-shadow: -5px 5px 0px 0px white;
+        margin: 0.1rem;
+        padding: 0.6rem;
+        transition: .2s;
+  
+        margin-top: 0.4rem;
+      }
+
+      .seven__day__kickstarter__banner__item:hover {
+        box-shadow: -8px 8px 0px 0px white;
+      }
+    }
   }
 }
 
 
 @media screen and (min-width: 1024px) {
+  .seven__day__kickstarter__banner {
+    .seven__day__kickstarter__banner__list {
+
+      .seven__day__kickstarter__banner__item {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+
   .unhealthy__banner, .guide__banner {
     .single__wrapper {
       margin-left: 200px;
