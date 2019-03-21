@@ -1,10 +1,9 @@
 @import "_main.scss";
-@import "_full_width.scss";
 
 // hub
-@import "_hub_header.scss";
-@import "_hub.scss";
-@import "_hub_sidebar.scss";
+@import "hub/_hub_header.scss";
+@import "hub/_hub.scss";
+@import "hub/_hub_sidebar.scss";
 
 // partial
 @import "links/_account_info.scss";
@@ -27,17 +26,20 @@
 @import "pages/_page.scss";
 @import "pages/_podcast.scss";
 @import "pages/_community.scss";
+@import "pages/_everything.scss";
+
+// banners
+@import "banners/_login_top.scss";
+@import "banners/_banner.scss";
+@import "banners/_banner_two.scss";
+
+// miscellaneous
+@import "misc/_javascript.scss";
+@import "misc/_margin.scss";
+@import "misc/_email_template.scss";
+@import "misc/_full_width.scss";
 
 // components
 @import "_five_principles.scss";
 @import "_button.scss";
-@import "_login_top.scss";
-@import "_banner.scss";
-@import "_banner_two.scss";
-
-// miscellaneous
-@import "_javascript.scss";
 @import "_account.scss";
-@import "_shortcodes.scss";
-@import "_margin.scss";
-@import "_email_template.scss";

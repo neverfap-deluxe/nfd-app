@@ -60,14 +60,9 @@ defmodule NfdWeb.SendEmails do
   def email_scheduler() do
     subscribers = Account.list_subscribers_campaign()
     Enum.each(subscribers, fn(subscriber) -> 
-      # case Meta.get_subscription_email_latest(course, subscription_email) do 
-      #   nil ->
-        # what does it do if there is no email_latest? - well, it means that the day 0 email was never sent, or there is no day zero email.
-          
-        unsubscribe_url = EmailMatrixTransform.generate_unsubscribe_url(subscriber.subscriber_email, "1h1")
-        email_scheduler_logic(7, subscriber, subscriber.seven_day_kickstarter_subscribed, subscriber.seven_day_kickstarter_count, unsubscribe_url)  
-      # end 
-
+      # NOTE: We don't need to worry about co-ordinating Day 0, because it will just be a general information email :)
+      seven_day_kickstarter_unsubscribe_url = EmailMatrixTransform.generate_unsubscribe_url(subscriber.subscriber_email, "1h1")
+      email_scheduler_logic(7, subscriber, subscriber.seven_day_kickstarter_subscribed, subscriber.seven_day_kickstarter_count, seven_day_kickstarter_unsubscribe_url)
 
       # email_scheduler_logic(10, subscriber, subscriber.ten_day_meditation_subscribed, subscriber.ten_day_meditation_count)
       # email_scheduler_logic(28, subscriber, subscriber.twenty_eight_day_awareness_subscribed, subscriber.twenty_eight_day_awareness_count)

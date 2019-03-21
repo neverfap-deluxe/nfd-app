@@ -35,6 +35,7 @@ defmodule NfdWeb.Router do
     get "/contact", PageController, :contact
     get "/disclaimer", PageController, :disclaimer
     get "/privacy", PageController, :privacy
+    get "/terms-and-conditions", PageController, :terms_and_conditions
     get "/accountability", PageController, :accountability
     get "/everything", PageController, :everything
 

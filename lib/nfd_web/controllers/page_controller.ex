@@ -109,6 +109,20 @@ defmodule NfdWeb.PageController do
     end
   end
 
+
+  def terms_and_conditions(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Page.terms_and_conditions() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])
+        conn |> render("terms_and_conditions.html", item: response.body["data"], page_type: page_type)
+      {:error, _error} ->
+        conn |> render(NfdWeb.ErrorView, "404.html")
+    end
+  end
+
   def account(conn, _params) do
     changeset = Pow.Plug.change_user(conn)
 

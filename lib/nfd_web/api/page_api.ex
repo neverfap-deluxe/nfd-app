@@ -29,6 +29,10 @@ defmodule NfdWeb.API.Page do
     get(client, "/privacy/index.json")
   end
 
+  def terms_and_conditions(client) do
+    get(client, "/privacy/terms_and_conditions.json")
+  end
+
   def account(client) do
     get(client, "/account/index.json")
   end

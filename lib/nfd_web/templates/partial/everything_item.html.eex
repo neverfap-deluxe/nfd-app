@@ -1,0 +1,15 @@
+<%= if @wip do %>
+  <div class="everything__item everything__item__greyed">
+    <h3 class="everything__item__title"><%= @title %></h3>
+    <p class="everything__item__description"><%= @description %></p>
+    <span class="everything__wip">Work in progress</span>
+
+  </div>      
+<% else %>
+  <a href="<%= @url %>">
+    <div class="everything__item">
+      <h3 class="everything__item__title"><%= @title %></h3>
+      <p class="everything__item__description"><%= @description %></p>
+    </div>      
+  </a>
+<% end %>

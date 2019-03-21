@@ -1,7 +1,64 @@
 <div class="single__wrapper">   
-  <h2 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
-  <div class="single__content" style="margin-bottom: 0;">
-    <p>Welcome to NeverFap Deluxe Accountabilty Program!</p>
+  <h2 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <div class="single__content">
+    <p>Welcome to the NeverFap Deluxe Accountabilty Program!</p>
+    <p>This program has been designed to help you commit to your mental health, by providing you with the motivation and awareness to stick with your daily meditation and mental health routine.</p>
+    <p>It has been designed with our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Discord channel</a> in mind.</p>
+  </div>
+</div>
+
+<%= partial "links/discord.html", assigns %>
+
+<div class="single__wrapper">   
+  <div class="single__content">
+    <h2>The Accountability Process</h2>
+    <p>Here is how the program works.</p>
+    <p>Once a day you will post in the <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> Discord channel.</p>
+    <p>In order for this to be effective, you will need to provide a few key details:</p>
+    
+    <hr class="hrul"/>
+      <ul>
+        <li>Start date: </li>
+        <li>Today's date:</li>
+        <li>Total days meditated: </li>
+        <li>Weekly schedule:</li>
+        <li>Which healthy coping mechanisms you practiced for that day.</li>  
+      </ul>
+    <hr class="hrul__bottom"/>
+
+    <p>Here’s an example of what you could post:</p>
+    
+    <hr class="hrul">
+      <ul>
+        <li>Date: 21-03-19 | Start Date: 06-04-19</li>
+        <li>- Meditated ten minutes before bed. (maybe even describe what kind of meditation you did)</li>
+        <li>- Meditated fifteen minutes on the way to work.</li>
+        <li>- Practiced Observe your senses for 20 minutes.</li>
+        <li>- Made a conscious effort not to look at women in public.  </li>
+      </ul>
+    <hr class="hrul__bottom">
+
+  </div>
+</div>
+
+<div class="single__wrapper">   
+  <div class="single__content">
+
+    <p>Total days meditated? </p>
+
+    <h2>The Reasoning</h2>
+    <p>There are a few things to note.</p>
+    <p>We're not focusing on keeping count in any capacity, whether it be your meditation streak or your relapse streak. I believe they are irrelevant to the recovery process, and can work against you in a lot of cases.</p>
+    <p>Put it this way, </p>
+    
+<p>It can help you understand how long you've gotten </p>
+
+    We’re only focusing on your meditation streak, not your relapse streak. Your relapse streak is irrelevant, because again, it’s not a positive action that is going to help you. What we want to focus on is positive, healthy coping mechanisms that you practiced for that day because at the end of the day, they’re the things that are going to help you overcome your porn addiction, and hilariously, it’s what people tend to ignore, hence why they consistently fail.
+    
+    In essence, what this system does is encourage you to make change, and you’ll be seeing others make the same changes as well. 
+    
+    Please let me know if that makes sense, and we can begin implementing this strategy :grin:
+    
   </div>
 </div>
 

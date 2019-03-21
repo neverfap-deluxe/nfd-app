@@ -125,3 +125,7 @@ certonly --webroot \
 
 Google Signin Process
 https://developers.google.com/identity/sign-in/web/sign-in?authuser=1
+
+
+
+https://termsandconditionstemplate.com/generate/
