@@ -2,10 +2,23 @@ defmodule NfdWeb.GeneralScheduler do
   alias Nfd.Account
 
   def subscription_action(subscriber, pos) do
+    IO.inspect "general #{pos}"
     case pos do 
       "0" -> nil
-      "1" -> Account.update_subscriber(subscriber, %{ subscribed: true })
-      "2" -> Account.update_subscriber(subscriber, %{ subscribed: false })
+      "1" -> 
+        case Account.update_subscriber(subscriber, %{ subscribed: true }) do
+          {:ok, updated_subscriber} -> updated_subscriber
+          {:error, changeset} -> 
+            EmailLogs.error_email_log("#{subscriber.subscriber_email} - Would not subscribe subscriber - subscription_action - general_scheduler.")        
+            false
+        end
+      "2" -> 
+        case Account.update_subscriber(subscriber, %{ subscribed: false }) do
+          {:ok, updated_subscriber} -> updated_subscriber
+          {:error, changeset} -> 
+            EmailLogs.error_email_log("#{subscriber.subscriber_email} - Would not unsubscribe subscriber - subscription_action - general_scheduler.")        
+            false
+        end
     end
   end
 

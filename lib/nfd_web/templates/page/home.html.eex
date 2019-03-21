@@ -9,6 +9,8 @@
   
   <%= partial "links/patreon.html", assigns %>
 
+  <%#= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, seven_day_kickstarter_changeset: @seven_day_kickstarter_changeset } %>
+
   <div class="homepage__section">
     <h1>Who?</h1>
   
@@ -40,7 +42,7 @@
   </div>
 
   <div class="homepage__section">
-    <h3>With the <b>NeverFap Deluxe Method</b>, I explain exactly how and why these steps work.</h3>
+    <h3>With the NeverFap Deluxe Method, I explain exactly how and why these steps work.</h3>
     <p>
       Because once you intuitively understand how something works, you will
       <u>commit to it forever.</u> <i class="em em-v"></i>

@@ -27,19 +27,21 @@ defmodule NfdWeb.SendEmails do
       url,
       unsubscribe_url,
       course_name,
-      "Confirm your subscription",
+      "Confirm Your #{course_name} Subscription",
       "template_email_subscription_confirmation.html"
     ) |> process("Confirm your subscription E-mail sent: " <> subscriber.subscriber_email)
   end
+
+
+  # TODO: Build unsubscribe email into email_scheduler.
 
   def send_day_0_email(subscriber, main_matrix) do
     case String.split(main_matrix, "h") do
       ["0", _] -> 
         # TODO: Welcome email for general newsletter.
         nil
-      ["1", _] -> 
-        NfdWeb.SevenDayKickstarterScheduler.run(0)
-        NfdWeb.SevenDayKickstarterScheduler.update(subscriber, 0)
+      ["1", _] ->
+        email_scheduler_logic(7, subscriber, subscriber.seven_day_kickstarter_subscribed, 0)
       # ["2", _] -> 
       #   NfdWeb.TenDayMeditationScheduler.run(0)
       #   NfdWeb.TenDayMeditationScheduler.update(subscriber, 0)
@@ -63,7 +65,7 @@ defmodule NfdWeb.SendEmails do
 
   def email_scheduler_logic(type, subscriber, is_subscribed, day_count) do
     if (is_subscribed) do
-      { subject, template } =
+      { template, subject } =
         case type do 
           7 -> SevenDayKickstarterScheduler.run(day_count)
           # 10 -> TenDayMeditationScheduler.run(day_count)
@@ -71,9 +73,9 @@ defmodule NfdWeb.SendEmails do
         end 
 
       case type do 
-        7 -> cast_scheduler({subscriber, subject, template}) |> process("Seven Day NeverFap Deluxe Kickstarter - Day #{day_count} E-mail sent: " <> subscriber.email)
-        # 10 -> cast_scheduler({subscriber, subject, template}) |> process("Ten Day Meditation Primer - Day #{day_count} E-mail sent: " <> subscriber.email)
-        # 28 -> cast_scheduler({subscriber, subject, template}) |> process("Twenty Eight Day Challenge - Day #{day_count} E-mail sent: " <> subscriber.email)
+        7 -> cast_scheduler(subscriber, subject, template) |> process("Seven Day NeverFap Deluxe Kickstarter - Day #{day_count} E-mail sent: " <> subscriber.email)
+        # 10 -> cast_scheduler(subscriber, subject, template) |> process("Ten Day Meditation Primer - Day #{day_count} E-mail sent: " <> subscriber.email)
+        # 28 -> cast_scheduler(subscriber, subject, template) |> process("Twenty Eight Day Challenge - Day #{day_count} E-mail sent: " <> subscriber.email)
       end 
 
       case type do 
@@ -84,8 +86,12 @@ defmodule NfdWeb.SendEmails do
     end
   end
 
-  def cast_scheduler(%{subscriber: subscriber, subject: subject, template: template}) do
+  def cast_scheduler(subscriber, subject, template) do
     # TODO: Put in variables into template
+    # TODO: Unsubscribe url for this email.
+    IO.inspect "cast_scheduler"
+    IO.inspect subscriber
+
     %Swoosh.Email{}
       |> to(subscriber.subscriber_email)
       |> from({"NeverFap Deluxe", "neverfapdeluxe@gmail.com"})

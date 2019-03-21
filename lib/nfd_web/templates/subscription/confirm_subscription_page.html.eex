@@ -2,9 +2,11 @@
   <h2 class="single__title">Confirm your subscription.<img src="/images/logo.png" class="logo__square" alt=""/></h2>
   <div class="single__content" style="margin-bottom: 0;">
     <p>Please check your email, beautiful person.</p>
-    <h3>Then I can totally give you access to the <%= @course_name %>.</h3>
+    <h3>Then I can totally give you access to the...</h3> 
+    <h3 class="email__course__name"><%= @course_name %></h3>
     <p>It will be glorious.</p>
-    <p><a class="link" href="/">Homepage</a></p>
+    <p>Fin.</p>
+    <p><a class="link" href="/">Home</a></p>
   </div>
 </div>
   

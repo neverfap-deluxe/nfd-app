@@ -3,7 +3,7 @@
     <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
       <head>
         <title>
-          NeverFap Deluxe | Email Subscription Confirmed
+          NeverFap Deluxe | Email Subscription Confirmation
         </title>
         <!--[if !mso]><!-- -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -118,7 +118,7 @@
       <div
          style="font-family:Helvetica Neue;font-size:25px;line-height:35px;text-align:left;color:#000000;"
       >
-        Email Subscription Confirmation
+        <%= @course_name %>
       </div>
     
               </td>
@@ -132,7 +132,7 @@
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
       >
-        Please use the following link to confirm your e-mail address.
+        Please use the following link to confirm your e-mail address for the <%= @course_name %> series.
       </div>
     
               </td>

@@ -62,9 +62,22 @@ defmodule NfdWeb.SubscriptionController do
         EmailLogs.error_email_log("#{email} - Cannot confirm the subscription of a subscriber that doesn't exist - confirm_subscription_update_subscription - subscription_controller.")        
         render_failure_page("It's not possible to confirm the subscription of a subscriber that doesn't exist.", conn)
       subscriber ->
-        EmailMatrixTransform.update_subscription(subscriber, multiple_matrix)
-        SendEmails.send_day_0_email(subscriber, main_matrix)
-        render(conn, "success_subscription_page.html", course_name: course_name)
+        case EmailMatrixTransform.update_subscription(subscriber, multiple_matrix) do 
+          [false] ->
+            EmailLogs.error_email_log("#{email} - Would not update subscriber for one - confirm_subscription_update_subscription - subscription_controller.")        
+            render_failure_page("The system (for some weird reason, since this should never happen) decided that it could not process your subscription and subscribe you to this course.", conn)
+          [x, y] when x == false or y == false -> 
+            EmailLogs.error_email_log("#{email} - Would not update subscriber for both - confirm_subscription_update_subscription - subscription_controller.")        
+            render_failure_page("The system (for some weird reason, since this should never happen) decided that it could not process your subscription and subscribe you to this course.", conn)
+          [updated_subscriber] ->
+            SendEmails.send_day_0_email(updated_subscriber, main_matrix)
+            render(conn, "success_subscription_page.html", course_name: course_name)  
+
+          # NOTE: The second matrix is always the main one, therefore y is the relevant updated_subscriber
+          [_general_subscriber, updated_subscriber] ->
+            SendEmails.send_day_0_email(updated_subscriber, main_matrix)
+            render(conn, "success_subscription_page.html", course_name: course_name)  
+        end
     end
   end
 

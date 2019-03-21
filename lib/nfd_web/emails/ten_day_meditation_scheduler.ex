@@ -9,19 +9,20 @@ defmodule NfdWeb.TenDayMeditationScheduler do
     end
   end
 
+  # TODO Will still need titles for these
   def run(count) do
     case count do
-      0 -> { "", "" }
-      1 -> { "", "" }
-      2 -> { "", "" }
-      3 -> { "", "" }
-      4 -> { "", "" }
-      5 -> { "", "" }
-      6 -> { "", "" }
-      7 -> { "", "" }
-      8 -> { "", "" }
-      9 -> { "", "" }
-      10 -> { "", "" }
+      0 -> { "template_ten_day_meditation_0.html", "" }
+      1 -> { "template_ten_day_meditation_1.html", "" }
+      2 -> { "template_ten_day_meditation_2.html", "" }
+      3 -> { "template_ten_day_meditation_3.html", "" }
+      4 -> { "template_ten_day_meditation_4.html", "" }
+      5 -> { "template_ten_day_meditation_5.html", "" }
+      6 -> { "template_ten_day_meditation_6.html", "" }
+      7 -> { "template_ten_day_meditation_7.html", "" }
+      8 -> { "template_ten_day_meditation_8.html", "" }
+      9 -> { "template_ten_day_meditation_9.html", "" }
+      10 -> { "template_ten_day_meditation_10.html", "" }
     end
   end
 

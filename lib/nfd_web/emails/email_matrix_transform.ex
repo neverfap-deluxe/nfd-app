@@ -56,6 +56,7 @@ defmodule NfdWeb.EmailMatrixTransform do
     # Position: 0 - do nothing, 1 subscribe, 2 unsubscribe 
     # "0h1-1h1" #value 0, pos 1; value 1, pos 1;
     
+    hello = 
     Enum.map(String.split(multiple_matrix, "-"), fn(main_matrix) ->
       # NOTE: If there is no multiple, then it will just 
       # ["0", "1"]
@@ -69,6 +70,9 @@ defmodule NfdWeb.EmailMatrixTransform do
         # ["6", pos] -> 
       end
     end)
+    IO.inspect hello
+
+    hello
   end
 
   def unsubscribe_subscriber(subscriber, main_matrix) do

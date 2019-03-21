@@ -88,16 +88,3 @@
 </div>
 
 <%= partial "links/twitter.html", assigns %>
-
-<!-- <div class="single__wrapper">
-
-
-    <div class="account__buttons--single">
-      <a class="account__reddit__button__container" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">
-        <img class="account__reddit__button__logo" src="/images/reddit__logo.png" />
-        <p class="account__reddit__button__text"><span class="account__reddit__button__text--display">SUBREDDIT</span></p>
-      </a>
-    </div>  
-  </div> -->
-
-</div>

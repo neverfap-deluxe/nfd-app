@@ -6,6 +6,6 @@
     <p>Error message: <%= @error_message %></p>
     <p>Message:</p>
     <p><%= @message %></p>
-    <p><a class="link" href="/">Homepage</a></p>
+    <p><a class="link" href="/">Home</a></p>
   </div>
 </div>

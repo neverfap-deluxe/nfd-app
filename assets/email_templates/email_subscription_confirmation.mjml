@@ -1,6 +1,6 @@
 <mjml>
   <mj-head>
-    <mj-title>NeverFap Deluxe | Email Subscription Confirmed</mj-title>
+    <mj-title>NeverFap Deluxe | Email Subscription Confirmation</mj-title>
   </mj-head>
   <mj-body>
 
@@ -8,10 +8,11 @@
     <mj-section background-color="#fafafa" padding-top="70px" padding-bottom="70px">
       <mj-column width="400px">
         <mj-text font-size="25px" line-height="35px" font-family="Helvetica Neue" padding-bottom="20px">
-          Email Subscription Confirmation
+          <%= @course_name %>
         </mj-text>
+
         <mj-text line-height="20px">
-          Please use the following link to confirm your e-mail address for the <%= @course_name %>.
+          Please use the following link to confirm your e-mail address for the <%= @course_name %> series.
         </mj-text>
         <mj-button 
           background-color="#F45E43"
