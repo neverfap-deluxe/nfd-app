@@ -37,8 +37,8 @@ defmodule NfdWeb.EmailMatrixTransform do
   end
 
   def validate_multiple_matrix(matrix) do
-    Enum.map(String.split(matrix, "-"), fn(multiple_matrix) ->
-      case String.split(multiple_matrix, "h") do
+    Enum.map(String.split(matrix, "-"), fn(main_matrix) ->
+      case String.split(main_matrix, "h") do
         ["0", pos] when pos in ["0", "1", "2"] -> true
         ["1", pos] when pos in ["0", "1", "2"] -> true
         # ["2", pos] when pos in ["0", "1", "2"] -> true
@@ -46,7 +46,7 @@ defmodule NfdWeb.EmailMatrixTransform do
         # ["4", pos] 
         # ["5", pos] 
         # ["6", pos] 
-        [_, _] -> nil
+        [_, _] -> IO.inspect "cake"
       end
     end)
   end

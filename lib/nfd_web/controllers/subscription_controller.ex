@@ -10,9 +10,9 @@ defmodule NfdWeb.SubscriptionController do
 
   def add_subscription_func(conn, %{"subscriber" => subscriber}) do
     case EmailMatrixTransform.validate_multiple_matrix(subscriber["multiple_matrix"]) do
-      true -> add_subscription_create_user(subscriber["subscriber_email"], subscriber["multiple_matrix"], subscriber["main_matrix"], conn)
+      [true] -> add_subscription_create_user(subscriber["subscriber_email"], subscriber["multiple_matrix"], subscriber["main_matrix"], conn)
       [true, true] -> add_subscription_create_user(subscriber["subscriber_email"], subscriber["multiple_matrix"], subscriber["main_matrix"], conn)
-      _ -> render_failure_page("Matrix element is invalid.", conn)
+      [_] -> render_failure_page("Matrix element is invalid.", conn)
       [_, _] -> render_failure_page("Matrix element is invalid.", conn)
     end
   end
@@ -47,9 +47,9 @@ defmodule NfdWeb.SubscriptionController do
 
   def confirm_subscription_func(conn, %{"email" => email, "multiple_matrix" => multiple_matrix, "main_matrix" => main_matrix}) do
     case EmailMatrixTransform.validate_multiple_matrix(multiple_matrix) do 
-      true -> confirm_subscription_update_subscription(email, multiple_matrix, main_matrix, conn)
+      [true] -> confirm_subscription_update_subscription(email, multiple_matrix, main_matrix, conn)
       [true, true] -> confirm_subscription_update_subscription(email, multiple_matrix, main_matrix, conn)
-      _ -> render_failure_page("Matrix element is invalid.", conn)
+      [_] -> render_failure_page("Matrix element is invalid.", conn)
       [_, _] -> render_failure_page("Matrix element is invalid.", conn)
     end
   end
@@ -82,10 +82,12 @@ defmodule NfdWeb.SubscriptionController do
   end
 
   def unsubscribe_func(conn, %{"email" => email, "main_matrix" => main_matrix}) do
+    IO.inspect EmailMatrixTransform.validate_multiple_matrix(main_matrix)
+
     case EmailMatrixTransform.validate_multiple_matrix(main_matrix) do 
-      true -> unsubscribe_user(email, main_matrix, conn)
+      [true] -> unsubscribe_user(email, main_matrix, conn)
       [true, true] -> unsubscribe_user(email, main_matrix, conn)
-      _ -> render_failure_page("Matrix element is invalid.", conn)
+      [_] -> render_failure_page("Matrix element is invalid.", conn)
       [_, _] -> render_failure_page("Matrix element is invalid.", conn)
     end
   end

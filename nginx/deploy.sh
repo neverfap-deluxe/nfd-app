@@ -10,8 +10,8 @@ ssh root@198.199.67.180 <<EOF
   echo "source .env"
   source .env
 
-  echo "y | docker image prune -a"
-  y | docker image prune -a
+  echo "echo y | docker image prune -a"
+  docker image prune -af
 
   echo "echo docker-compose down"
   docker-compose down 
