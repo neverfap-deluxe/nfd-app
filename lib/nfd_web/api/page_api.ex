@@ -33,4 +33,11 @@ defmodule NfdWeb.API.Page do
     get(client, "/account/index.json")
   end
 
+  def accountability(client) do
+    get(client, "/accountability/index.json")
+  end
+
+  def everything(client) do
+    get(client, "/everything/index.json")
+  end
 end

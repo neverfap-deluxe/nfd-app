@@ -1,5 +1,8 @@
 defmodule NfdWeb.SevenDayKickstarterScheduler do
   alias Nfd.Account
+  alias Nfd.Meta
+
+  alias Nfd.EmailLogs
 
   def subscription_action(subscriber, pos) do
     IO.inspect "sub #{pos}"
@@ -24,6 +27,7 @@ defmodule NfdWeb.SevenDayKickstarterScheduler do
   end
 
   def unsubscribe_action(subscriber) do
+    # TODO: Implement error handling for this. 
     Account.update_subscriber(subscriber, %{ seven_day_kickstarter_subscribed: false })
   end
 
@@ -40,12 +44,18 @@ defmodule NfdWeb.SevenDayKickstarterScheduler do
     end
   end
 
-  def update(subscriber, day_count) do 
-    if (day_count == 7) do
-      Account.update_subscriber(subscriber, %{ seven_day_kickstarter_subscribed: false, seven_day_kickstarter_count: 0 })
-    else
-      incremented_counter = subscriber.seven_day_kickstarter_count + 1
-      Account.update_subscriber(subscriber, %{ seven_day_kickstarter_count: incremented_counter })
+  def update(subscriber, day_count) do
+    case Meta.create_subscription_email(%{ day: day_count, course: "sevendayneverfapdeluxekickstarter", subscription_email: subscriber.subscriber_email}) do
+      {:ok, subscription_email} ->
+        if (day_count == 7) do
+          Account.update_subscriber(subscriber, %{ seven_day_kickstarter_subscribed: false, seven_day_kickstarter_count: 0 })
+        else
+          incremented_counter = subscriber.seven_day_kickstarter_count + 1
+          Account.update_subscriber(subscriber, %{ seven_day_kickstarter_count: incremented_counter })
+        end
+      {:error, error_changeset} ->
+        EmailLogs.error_email_log("#{subscriber.subscriber_email} - Failed to create Meta.SubscriptionEmail - seven_day_kickstarter_scheduler")
     end
+
   end
 end

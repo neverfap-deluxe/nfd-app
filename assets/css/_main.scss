@@ -1,6 +1,8 @@
 * {
   font-family: 'Lato', sans-serif;
 
+  // Maybe Open Sans for just h1 or h2
+
   // Helvetica maybe for titles?
   // So I LOVE Noto Sans for Chrome, however it looks terrible for Safari, so Lato has been the compromise.
   // font-family: 'Noto Sans', sans-serif;
@@ -45,6 +47,11 @@ p {
   line-height: 1.6rem;    
 }
 
+input, label, button {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
 .articles__link {
   display: inline-block;
   margin-bottom: 1.5rem;
@@ -84,7 +91,6 @@ p {
   color: lighten(black, 15%);
   box-shadow: -8px 8px 0px 0px rgba(255,46,182,1);
 }
-
 
 .articles__link--register {
   display: inline-block;

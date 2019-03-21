@@ -35,6 +35,8 @@ defmodule Nfd.Sitemaps do
         add Helpers.page_path(Endpoint, :contact), priority: 0.5, changefreq: "daily", expires: nil
         add Helpers.page_path(Endpoint, :disclaimer), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :privacy), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :accountability), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :everything), priority: 0.5, changefreq: "weekly", expires: nil
 
         add Helpers.content_path(Endpoint, :articles), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.content_path(Endpoint, :practices), priority: 0.5, changefreq: "weekly", expires: nil

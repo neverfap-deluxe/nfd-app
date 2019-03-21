@@ -114,4 +114,31 @@ defmodule NfdWeb.PageController do
 
     render(conn, "account.html", changeset: changeset)
   end
+
+  def accountability(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Page.accountability() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])
+        conn |> render("accountability.html", item: response.body["data"], page_type: page_type)
+      {:error, _error} ->
+        conn |> render(NfdWeb.ErrorView, "404.html")
+    end
+  end
+
+  def everything(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Page.everything() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])
+        conn |> render("everything.html", item: response.body["data"], page_type: page_type)
+      {:error, _error} ->
+        conn |> render(NfdWeb.ErrorView, "404.html")
+    end
+  end
+
 end

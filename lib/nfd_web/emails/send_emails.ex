@@ -54,12 +54,21 @@ defmodule NfdWeb.SendEmails do
       # ["6", _] -> 
     end
   end
+  
 
+  # TODO: Logic that checks if day 0 email went out today. If so, don't send email until next day.
   def email_scheduler() do
     subscribers = Account.list_subscribers_campaign()
-    Enum.each(subscribers, fn(subscriber) ->
-      unsubscribe_url_seven_day_kickstarter = EmailMatrixTransform.generate_unsubscribe_url(subscriber.subscriber_email, "1h1")
-      email_scheduler_logic(7, subscriber, subscriber.seven_day_kickstarter_subscribed, subscriber.seven_day_kickstarter_count, unsubscribe_url_seven_day_kickstarter)
+    Enum.each(subscribers, fn(subscriber) -> 
+      # case Meta.get_subscription_email_latest(course, subscription_email) do 
+      #   nil ->
+        # what does it do if there is no email_latest? - well, it means that the day 0 email was never sent, or there is no day zero email.
+          
+        unsubscribe_url = EmailMatrixTransform.generate_unsubscribe_url(subscriber.subscriber_email, "1h1")
+        email_scheduler_logic(7, subscriber, subscriber.seven_day_kickstarter_subscribed, subscriber.seven_day_kickstarter_count, unsubscribe_url)  
+      # end 
+
+
       # email_scheduler_logic(10, subscriber, subscriber.ten_day_meditation_subscribed, subscriber.ten_day_meditation_count)
       # email_scheduler_logic(28, subscriber, subscriber.twenty_eight_day_awareness_subscribed, subscriber.twenty_eight_day_awareness_count)
     end)
@@ -67,8 +76,8 @@ defmodule NfdWeb.SendEmails do
 
   def email_scheduler_logic(type, subscriber, is_subscribed, day_count, unsubscribe_url) do
     if (is_subscribed) do
-      { template, subject } = 
-        case type do 
+      { template, subject } =
+        case type do
           7 -> SevenDayKickstarterScheduler.run(day_count)
           # 10 -> TenDayMeditationScheduler.run(day_count)
           # 28 -> TwentyEightDayAwarenessScheduler.run(day_count)
@@ -78,13 +87,13 @@ defmodule NfdWeb.SendEmails do
         7 -> cast_scheduler(subscriber, subject, template, unsubscribe_url) |> process("Seven Day NeverFap Deluxe Kickstarter - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
         # 10 -> cast_scheduler(subscriber, subject, template, unsubscribe_url) |> process("Ten Day Meditation Primer - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
         # 28 -> cast_scheduler(subscriber, subject, template, unsubscribe_url) |> process("Twenty Eight Day Challenge - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
-      end 
-
-      case type do 
+      end
+      
+      case type do
         7 -> SevenDayKickstarterScheduler.update(subscriber, day_count)
         # 10 -> TenDayMeditationScheduler.update(subscriber, day_count)
         # 28 -> TwentyEightDayAwarenessScheduler.update(subscriber, day_count)
-      end 
+      end
     end
   end
 
