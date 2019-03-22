@@ -1,5 +1,5 @@
 <div class="single__wrapper">
-  <h2 class="single__title">Guide <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <h2 class="single__title">Guide <img src="/images/logo.png" class="logo__square" alt="" style="margin-right: 1rem;"/><a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#need a link to all the website content, instead?</p></a></h2>
   <div class="single__content" style="margin-bottom: 0rem;">
     <p>Welcome to the NeverFap Deluxe Guide!</p>
     <p>Thank you for deciding to take a deeper look into the NeverFap Deluxe Method of overcoming porn addiction.</p>

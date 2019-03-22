@@ -6,10 +6,8 @@
 
   </div>      
 <% else %>
-  <a href="<%= @url %>">
-    <div class="everything__item">
-      <h3 class="everything__item__title"><%= @title %></h3>
-      <p class="everything__item__description"><%= @description %></p>
-    </div>      
+  <a class="everything__item" href="<%= @url %>">
+    <h3 class="everything__item__title"><%= @title %></h3>
+    <p class="everything__item__description"><%= @description %></p>
   </a>
 <% end %>

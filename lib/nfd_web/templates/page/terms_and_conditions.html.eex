@@ -2,8 +2,7 @@
 <div class="single__wrapper">    
     <h1 class="single__title"><%= @item["title"] %></h1>
     <div class="single__content">
-      <p>These terms and conditions outline the rules and regulations for the use of NeverFap Deluxe's Website.</p> <br /> 
-
+      <p>These terms and conditions outline the rules and regulations for the use of NeverFap Deluxe's Website.</p>
       <p>By accessing this website we assume you accept these terms and conditions in full. Do not continue to use NeverFap Deluxe's website 
       if you do not accept all of the terms and conditions stated on this page.</p>
       <p>The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice
@@ -31,7 +30,8 @@
         <li>Reproduce, duplicate or copy material from https://neverfapdeluxe.com/</li>
       </ol>
       <p>Redistribute content from NeverFap Deluxe (unless content is specifically made for redistribution).</p>
-    <h2>User Comments</h2>
+
+    <!-- <h2>User Comments</h2>
       <ol>
         <li>This Agreement shall begin on the date hereof.</li>
         <li>Certain parts of this website offer the opportunity for users to post and exchange opinions, information,
@@ -121,7 +121,8 @@
           context and format of content on the linking party's site.</li>
       </ol>
       <p>No use of NeverFap Deluxe’s logo or other artwork will be allowed for linking absent a trademark license
-      agreement.</p>
+      agreement.</p> -->
+
     <h2>Iframes</h2>
       <p>Without prior approval and express written permission, you may not create frames around our Web pages or
       use other techniques that alter in any way the visual presentation or appearance of our Web site.</p>
@@ -159,14 +160,11 @@
       we will not be liable for any loss or damage of any nature.</p>
     <h2></h2>
       <p></p>
-    <h2>Credit & Contact Information</h2>
+    <!-- <h2>Credit & Contact Information</h2>
       <p>This Terms and conditions page was created at <a style="color:inherit;text-decoration:none;cursor:text;"
         href="https://termsandconditionstemplate.com">termsandconditionstemplate.com</a> generator. If you have
-      any queries regarding any of our terms, please contact us.</p>		
+      any queries regarding any of our terms, please contact us.</p>		 -->
   </div>
 
-  <div class="homepage__hero homepage__guide__wrapper">
-    <a class="homepage__guide" href="/guide">NeverFap Deluxe Guide</a>
-  </div>
 </div>
   

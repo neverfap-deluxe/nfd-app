@@ -30,7 +30,7 @@ defmodule NfdWeb.API.Page do
   end
 
   def terms_and_conditions(client) do
-    get(client, "/privacy/terms_and_conditions.json")
+    get(client, "/terms_and_conditions/index.json")
   end
 
   def account(client) do
