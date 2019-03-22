@@ -1,9 +1,10 @@
 <div class="single__wrapper">   
-  <h2 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>
   <div class="single__content">
     <p>Welcome to the NeverFap Deluxe Accountabilty Program!</p>
     <p>This program has been designed to help you commit to your mental health, by providing you with the motivation and awareness to stick with your daily meditation and mental health routine.</p>
-    <p>It has been designed with our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Discord channel</a> in mind.</p>
+    <p>It has been designed with our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel in mind, as that's where most our participants are posting, however you're more than welcome to use this as a personal journaling technique.</p>
+    <p>Although certainly, part of the value comes from reading the healthy coping mechanisms others post about in the channel.</p>
   </div>
 </div>
 
@@ -12,54 +13,63 @@
 <div class="single__wrapper">   
   <div class="single__content">
     <h2>The Accountability Process</h2>
-    <p>Here is how the program works.</p>
-    <p>Once a day you will post in the <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> Discord channel.</p>
-    <p>In order for this to be effective, you will need to provide a few key details:</p>
+    <p>Here's how the process works.</p>
+    <p>Once a day you will post in the Discord <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel with an update on the healthy coping mechanisms that you committed to for that day.</p>
+    <p><b>Then I will acknowledge the post with an emoji or some comments of recommendation.</b></p>
+    <p>It could have been your daily routine of meditation. It could have been something positive you did or achieved. It could have been physical exercise. It could have been one of the NeverFap Deluxe Practices.</p>
+    <p>It could even have been an epiphany of awareness which sparked positive change in your life.</p>
+    <p>The idea is that we want to be focusing on positive change, because that is ultimately that the process of recovery is about.</p>
+    <p>Replacing negative habits with positive habits.</p>
+    <p>Therefore, in order for this to be effective you will need to provide two key details:</p>
     
     <hr class="hrul"/>
       <ul>
-        <li>Start date: </li>
-        <li>Today's date:</li>
-        <li>Total days meditated: </li>
-        <li>Weekly schedule:</li>
-        <li>Which healthy coping mechanisms you practiced for that day.</li>  
+        <li>- Today's date</li>
+        <li>- Commitment streak</li>
+        <li>- A list of healthy coping mechanisms you practiced for that day.</li>  
       </ul>
     <hr class="hrul__bottom"/>
 
-    <p>Here’s an example of what you could post:</p>
-    
-    <hr class="hrul">
-      <ul>
-        <li>Date: 21-03-19 | Start Date: 06-04-19</li>
-        <li>- Meditated ten minutes before bed. (maybe even describe what kind of meditation you did)</li>
-        <li>- Meditated fifteen minutes on the way to work.</li>
-        <li>- Practiced Observe your senses for 20 minutes.</li>
-        <li>- Made a conscious effort not to look at women in public.  </li>
-      </ul>
-    <hr class="hrul__bottom">
-
+    <p>The reason why we're only focusing on our commitment streak, as opposed to our non-relapse streak, is because the amount of days you've gone without relapsing is ultimately irrelevant to your recovery.</p>
+    <p>In no way does it reflect on your mental health, nor provide any indication of how well you are able to cope with difficult emotions or be able to maintain control over your emotions.</p>
+    <p>On the other hand, positive action and healthy coping mechanisms are tangible things we can track, which prove positive change. Which is to say that our success first begins with positive change, and then reflects in outcomes such as not relapsing.</p>
+    <p>In essence, what this system does is encourage you to make positive change by focusing solely on the changes you make in your life, and you’ll be seeing others make the same changes as well. </p>
+    <p>Of course, it really is up to you how you decide to journal your progress.</p>
+    <p>These are merely my own personal guidelines.</p>
   </div>
 </div>
+
+<%= partial "links/discord.html", assigns %>
 
 <div class="single__wrapper">   
   <div class="single__content">
+    <h2>Accountability Examples</h2>
 
-    <p>Total days meditated? </p>
+    <p>Here are some examples of some thoughtful and helpful posts that you could post in the Discord <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel:</p>
 
-    <h2>The Reasoning</h2>
-    <p>There are a few things to note.</p>
-    <p>We're not focusing on keeping count in any capacity, whether it be your meditation streak or your relapse streak. I believe they are irrelevant to the recovery process, and can work against you in a lot of cases.</p>
-    <p>Put it this way, </p>
+    <div class="accountability__example__container">
+      <h2>Date: 21-03-19</h2>
+      <h3>Day 1</h3>
+      <div class="accountability__text__container">
+        <p>- Made the decision to commit to NoFap.</p>
+        <p>- Read the NeverFap Homepage.</p>
+        <p>- Decided to </p>
+      </div>
+    </div>
     
-<p>It can help you understand how long you've gotten </p>
+    <div class="accountability__example__container">
+      <h2>Date: 13-10-18</h2>
+      <h3>Meditation streak: 21 days</h3>
+      <div class="accountability__text__container">
+        <p>- Meditated ten minutes before bed.</p>
+        <p>- Meditated fifteen minutes on the way to work.</p>
+        <p>- Practiced <a class="link" href="/practices/observe">Observe Your Senses</a> for 20 minutes.</p>
+        <p>- Made a conscious effort not to look at women in public.</p>    
+      </div>
+    </div>
 
-    We’re only focusing on your meditation streak, not your relapse streak. Your relapse streak is irrelevant, because again, it’s not a positive action that is going to help you. What we want to focus on is positive, healthy coping mechanisms that you practiced for that day because at the end of the day, they’re the things that are going to help you overcome your porn addiction, and hilariously, it’s what people tend to ignore, hence why they consistently fail.
-    
-    In essence, what this system does is encourage you to make change, and you’ll be seeing others make the same changes as well. 
-    
-    Please let me know if that makes sense, and we can begin implementing this strategy :grin:
-    
   </div>
 </div>
+
 
 <%= partial "links/patreon.html", assigns %>
