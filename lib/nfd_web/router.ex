@@ -68,9 +68,9 @@ defmodule NfdWeb.Router do
     get "/message_failed", FunctionController, :send_message_failed
   
     # Subscription functions
-    post "/confirm_subscription", SubscriptionController, :add_subscription_func
-    get "/subscription_success", SubscriptionController, :confirm_subscription_func
-    get "/unsubscribe", SubscriptionController, :unsubscribe_func
+    post "/confirm_subscription", SubscriptionController, :add_subscription_validate_matrix
+    get "/subscription_success", SubscriptionController, :confirm_subscription_validate_matrix
+    get "/unsubscribe", SubscriptionController, :unsubscribe_validate_matrix
     get "/change_subscription_general_func", SubscriptionController, :change_subscription_general_func
   end
 

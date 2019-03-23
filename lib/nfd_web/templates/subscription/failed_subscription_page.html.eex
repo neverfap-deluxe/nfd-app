@@ -1,7 +1,7 @@
 <!-- Please check your email to confirm your subscription :) -->
 
 <div class="single__wrapper">   
-  <h2 class="single__title">Subscriber process failed.<img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <h2 class="single__title">Subscription process failed.<img src="/images/logo.png" class="logo__square" alt=""/></h2>
   <div class="single__content" style="margin-bottom: 0;">
     <p>Unfortunately, something went wrong.</p>
     <p><%= @error_message %></p>

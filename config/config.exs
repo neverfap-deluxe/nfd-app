@@ -22,14 +22,19 @@ config :nfd,
   social_patreon_url: "https://www.patreon.com/NeverFapDeluxe",
   social_discord_url: "https://discord.gg/TuwARWk",
 
-  seven_day_kickstarter_day_0_title: "The Beginning",
-  seven_day_kickstarter_day_1_title: "The Meditation",
-  seven_day_kickstarter_day_2_title: "The Awareness",
-  seven_day_kickstarter_day_3_title: "The Calmness",
-  seven_day_kickstarter_day_4_title: "The Trust",
-  seven_day_kickstarter_day_5_title: "The Relapse",
-  seven_day_kickstarter_day_6_title: "The Ambition",
-  seven_day_kickstarter_day_7_title: "The Consistency"
+  general_type: "generalemail",
+  kickstarter_type: "neverfapdeluxekickstarter",
+  meditation_primer_type: "meditationprimer",
+  awareness_challenge_type: "awarenesschallenge",
+
+  kickstarter_day_0_title: "The Beginning",
+  kickstarter_day_1_title: "The Meditation",
+  kickstarter_day_2_title: "The Awareness",
+  kickstarter_day_3_title: "The Calmness",
+  kickstarter_day_4_title: "The Trust",
+  kickstarter_day_5_title: "The Relapse",
+  kickstarter_day_6_title: "The Ambition",
+  kickstarter_day_7_title: "The Consistency"
 
 
 # Configures the endpoint

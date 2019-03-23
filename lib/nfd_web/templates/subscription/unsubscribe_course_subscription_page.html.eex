@@ -2,8 +2,7 @@
   <h2 class="single__title">No worries! <img src="/images/logo.png" class="logo__square" alt=""/></h2>
   <div class="single__content" style="margin-bottom: 0;">
     <p>You will no longer receive any emails regarding the <%= @course_name %>. I totally get it.</p>
-    <p>I appreciate you taking part, and I wish you best of luck with the future.</p>
+    <p>I wish you best of luck with the future.</p>
     <p>NeverFap Deluxe</p>
   </div>
 </div>
-  

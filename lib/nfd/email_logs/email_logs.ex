@@ -10,8 +10,12 @@ defmodule Nfd.EmailLogs do
     cast_log("New User Created: " <> email, "New User Created: " <> email) |> process_log()
   end
 
-  def new_subscriber_email_log(email, subscription) do 
-    cast_log("New Subscriber: " <> email <> " for " <> subscription, "New Subscriber: " <> email <> " for " <> subscription) |> process_log()
+  def new_subscriber_email_log(email, course_name) do 
+    cast_log("New Subscriber: " <> email <> " for " <> course_name, "New Subscriber: " <> email <> " for " <> course_name) |> process_log()
+  end
+
+  def new_unsubscribe_email_log(email, course_name) do 
+    cast_log("User unsubscribed: " <> email <> " for " <> course_name, "New Subscriber: " <> email <> " for " <> course_name) |> process_log()
   end
 
   def new_contact_form_email(name, email, message) do

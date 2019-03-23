@@ -13,9 +13,9 @@ defmodule Nfd.Sitemaps do
 
   use Sitemap,
       host: "https://neverfapdeluxe.com",
-      files_path: "priv/static/",
       files_path: "priv/static/sitemaps/",
       public_path: "sitemaps/",
+      verbose: true,
       compress: false
 
   # Generate
@@ -73,6 +73,8 @@ defmodule Nfd.Sitemaps do
         add Helpers.content_email_path(Endpoint, :twenty_eight_day_awareness), priority: 0.5, changefreq: "daily", expires: nil
       end
     end
-    ping()
+    
+    # NOTE: It will no longer ping google, I can't help but feel this is hurting everything
+    # ping()
   end 
 end

@@ -9,19 +9,19 @@
 
     <div class="seven__day__kickstarter__banner__box">
       <div class="seven__day__kickstarter__banner__list">
-        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :seven_day_kickstarter_day_0_title) %> - Day 0</p>
-        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :seven_day_kickstarter_day_1_title) %> - Day 1</p>
-        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :seven_day_kickstarter_day_2_title) %> - Day 2</p>
-        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :seven_day_kickstarter_day_3_title) %> - Day 3</p>
-        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :seven_day_kickstarter_day_4_title) %> - Day 4</p>
-        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :seven_day_kickstarter_day_5_title) %> - Day 5</p>
-        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :seven_day_kickstarter_day_6_title) %> - Day 6</p>
-        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :seven_day_kickstarter_day_7_title) %> - Day 7</p>
+        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_0_title) %> - Day 0</p>
+        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_1_title) %> - Day 1</p>
+        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_2_title) %> - Day 2</p>
+        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_3_title) %> - Day 3</p>
+        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_4_title) %> - Day 4</p>
+        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_5_title) %> - Day 5</p>
+        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_6_title) %> - Day 6</p>
+        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_7_title) %> - Day 7</p>
       </div>
       
       <div class="seven__day__kickstarter__banner__form">
         <p>Discover the basics of the NeverFap Deluxe Method with our 7 Day Kickstarter Guide!</p>
-        <%= form_for @seven_day_kickstarter_changeset, Routes.subscription_path(@conn, :add_subscription_func), [target: "_blank"], fn f -> %>
+        <%= form_for @seven_day_kickstarter_changeset, Routes.subscription_path(@conn, :add_subscription_validate_matrix), [target: "_blank"], fn f -> %>
           <%= text_input f, :subscriber_email, [placeholder: "email", class: "banner__input"] %>
           <%= submit "Submit", [class: "banner__submit"]  %>
           <!-- First matrix is general, second matrix is seven day. -->
