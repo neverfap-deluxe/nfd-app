@@ -30,7 +30,7 @@ defmodule NfdWeb.FunctionController do
                 Meta.increment_visit_count(response.body["data"])
                 conn |> render("about.html", item: response.body["data"], contact_form_changeset: contact_form_changeset, page_type: page_type)
               {:error, _error} ->
-                conn |> render(NfdWeb.ErrorView, "404.html")
+                conn |> put_view(NfdWeb.ErrorView) |> render("404.html")
             end
         end
         

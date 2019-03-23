@@ -30,7 +30,7 @@ defmodule Nfd.Account.Subscriber do
   @doc false
   def changeset(subscriber, attrs) do
     subscriber
-    |> cast(attrs, 
+    |> cast(attrs,
     [
       :subscriber_email, 
       :subscribed, 

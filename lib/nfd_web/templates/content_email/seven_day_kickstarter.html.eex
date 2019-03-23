@@ -1,21 +1,48 @@
-<!-- <div class="kickstarter__full__width">
-  <h1><%= @item["title"] %></h1>
-</div> -->
+<div class="email__campaign__full__width">
+  <h1 class="email__campaign__title"><%= @item["title"] %></h1>
 
-<div class="single__wrapper">   
-  <h2 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
-  <div class="single__content" style="margin-bottom: 0;">
+  <div class="email__campaign__box__two">
+    <h2 class="email__campaign__sub__title">Get started with your NeverFap Deluxe journey today.</h2>
 
+    <div class="email__campaign__text__container">
+      <p>With the Seven Day NeverFap Deluxe Kickstarter you will be provided with a comprehensive introduction into the NeverFap Deluxe method of overcoming porn addiction.</p>
+      <p>Over the course of a week, you will be sent daily emails which will explain what you need to know to overcome your porn addiction, as well as link to the articles and practices here on NeverFap Deluxe.</p>
+
+      <h3>Course overview</h3>
+      <div class="email__day__container">
+        <div class="email__day__container__item">
+          <h4 class="email__day__container__item__title">The Beginning - Day 0</h4>
+          <p class="email__day__container__item__text">A brief introduction into the series, as well as NeverFap Deluxe.</p>
+        </div>
+        <div class="email__day__container__item">
+          <h4 class="email__day__container__item__title">The Beginning - Day 0</h4>
+          <p class="email__day__container__item__text">A brief introduction into the series, as well as NeverFap Deluxe.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="seven__day__kickstarter__banner__box">
+    <div class="seven__day__kickstarter__banner__list">
+      <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :seven_day_kickstarter_day_0_title) %> - Day 0</p>
+      <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :seven_day_kickstarter_day_1_title) %> - Day 1</p>
+      <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :seven_day_kickstarter_day_2_title) %> - Day 2</p>
+      <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :seven_day_kickstarter_day_3_title) %> - Day 3</p>
+      <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :seven_day_kickstarter_day_4_title) %> - Day 4</p>
+      <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :seven_day_kickstarter_day_5_title) %> - Day 5</p>
+      <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :seven_day_kickstarter_day_6_title) %> - Day 6</p>
+      <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :seven_day_kickstarter_day_7_title) %> - Day 7</p>
+    </div>
     
+    <div class="seven__day__kickstarter__banner__form">
+      <p>Discover the basics of the NeverFap Deluxe Method with our 7 Day Kickstarter Guide!</p>
+      <%= form_for @seven_day_kickstarter_changeset, Routes.subscription_path(@conn, :add_subscription_func), [target: "_blank"], fn f -> %>
+        <%= text_input f, :subscriber_email, [placeholder: "email", class: "banner__input"] %>
+        <%= submit "Submit", [class: "banner__submit"]  %>
+        <!-- First matrix is general, second matrix is seven day. -->
+        <%= hidden_input f, :multiple_matrix, [value: "0h1-1h1"] %>
+        <%= hidden_input f, :main_matrix, [value: "1h1"] %>
+      <% end %>
+    </div>
   </div>
 </div>
-
-<%= partial "links/patreon.html", assigns %>
-
-<div class="single__wrapper">
-  <div class="single__content" >
-    <p>Cake</p>
-  </div>
-</div>
-
-<%= partial "links/custom.html", %{ title: "Guide", text: "Check out our NeverFap Deluxe Guide!", link: "/guide" } %>

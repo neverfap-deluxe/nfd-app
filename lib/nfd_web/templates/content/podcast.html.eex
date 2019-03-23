@@ -2,12 +2,18 @@
 <div class="single__wrapper">   
   <h2 class="single__title" style="margin-bottom: 1rem;"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
 
+  <div style="margin-top: 1.4rem;">
+    <%= raw @item["podcast_player"] %>
+  </div>
+
   <h3 style="margin-bottom: 2rem;"><%= raw @item["content"] %></h3>
   <div class="podcast__item__bottom">
-    <a class="link articles__link" href='<%= @item["podcast_url"] %>'>download</a>
+    <a class="link articles__link" href='<%= @item["podcast_url"] %>'>episode link</a>
+
+<!--     
     <audio controls src='<%= @item["podcast_url"] %>'>
       Your browser does not support the <code>audio</code> element.
-    </audio>  
+    </audio>   -->
   </div>
 </div>
 

@@ -1,4 +1,4 @@
-Sitemap: https://neverfapdeluxe.com/sitemaps/sitemap1.xml
+Sitemap: https://neverfapdeluxe.com/sitemaps/sitemap.xml
 User-agent: *
 Disallow: /tags/
 Disallow: /categories/

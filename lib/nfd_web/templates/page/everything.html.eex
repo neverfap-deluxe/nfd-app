@@ -49,7 +49,7 @@
     <div class="everything__section">
       <%= partial "everything_item.html", %{ wip: false, title: "Privacy", url: "/privacy", description: "Learn more about our NeverFap Deluxe Privacy Policy, populated conveniently by an online privacy policy generator." } %>
       <%= partial "everything_item.html", %{ wip: false, title: "Disclaimer", url: "/disclaimer", description: "Maybe you have a fetish for the conveniently contrived. Then you'll absolutely love our NeverFap Deluxe Disclaimer Policy." } %>      
-      <%= partial "everything_item.html", %{ wip: false, title: "Terms & Conditinos", url: "/terms-and-conditions", description: "NeverFap Deluxe Terms & Conditions. It's truly a rave of literary and epic proportions. Proceed with maximum caution." } %>      
+      <%= partial "everything_item.html", %{ wip: false, title: "Terms & Conditions", url: "/terms-and-conditions", description: "NeverFap Deluxe Terms & Conditions. It's truly a rave of literary and epic proportions. Proceed with maximum caution." } %>      
     </div>
   </div>   
 </div>

@@ -20,7 +20,16 @@ config :nfd,
   social_twitter_url: "https://twitter.com/NeverFapDeluxe",
   social_reddit_url: "https://www.reddit.com/user/NeverFapDeluxe",
   social_patreon_url: "https://www.patreon.com/NeverFapDeluxe",
-  social_discord_url: "https://discord.gg/TuwARWk"
+  social_discord_url: "https://discord.gg/TuwARWk",
+
+  seven_day_kickstarter_day_0_title: "The Beginning",
+  seven_day_kickstarter_day_1_title: "The Meditation",
+  seven_day_kickstarter_day_2_title: "The Awareness",
+  seven_day_kickstarter_day_3_title: "The Calmness",
+  seven_day_kickstarter_day_4_title: "The Trust",
+  seven_day_kickstarter_day_5_title: "The Relapse",
+  seven_day_kickstarter_day_6_title: "The Ambition",
+  seven_day_kickstarter_day_7_title: "The Consistency"
 
 
 # Configures the endpoint

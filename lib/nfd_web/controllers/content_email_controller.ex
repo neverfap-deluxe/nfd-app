@@ -5,6 +5,7 @@ defmodule NfdWeb.ContentEmailController do
   alias NfdWeb.API.ContentEmail
 
   alias Nfd.Meta 
+  alias Nfd.Account.Subscriber 
 
   plug :put_layout, "general.html"
 
@@ -17,7 +18,9 @@ defmodule NfdWeb.ContentEmailController do
         Meta.increment_visit_count(response.body["data"])
         conn |> render("twenty_eight_day_awareness.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
+        conn 
+        |> put_view(NfdWeb.ErrorView)
+        |> render("404.html")
     end
   end
 
@@ -30,7 +33,9 @@ defmodule NfdWeb.ContentEmailController do
         Meta.increment_visit_count(response.body["data"])
         conn |> render("twenty_eight_day_awareness_single.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
+        conn 
+        |> put_view(NfdWeb.ErrorView)
+        |> render("404.html")
     end
   end
 
@@ -38,12 +43,16 @@ defmodule NfdWeb.ContentEmailController do
     page_type = "page"
     client = API.is_localhost(conn.host) |> API.api_client()
 
+    seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
+
     case client |> ContentEmail.seven_day_kickstarter() do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
-        conn |> render("seven_day_kickstarter.html", item: response.body["data"], page_type: page_type)
+        conn |> render("seven_day_kickstarter.html", item: response.body["data"], seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, page_type: page_type)
       {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
+        conn 
+        |> put_view(NfdWeb.ErrorView)
+        |> render("404.html")
     end
   end
 
@@ -56,7 +65,9 @@ defmodule NfdWeb.ContentEmailController do
         Meta.increment_visit_count(response.body["data"])
         conn |> render("seven_day_kickstarter_single.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
+        conn 
+        |> put_view(NfdWeb.ErrorView)
+        |> render("404.html")
     end
   end
 
@@ -69,7 +80,9 @@ defmodule NfdWeb.ContentEmailController do
         Meta.increment_visit_count(response.body["data"])
         conn |> render("ten_day_meditation.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
+        conn 
+        |> put_view(NfdWeb.ErrorView)
+        |> render("404.html")
     end
   end
 
@@ -82,7 +95,9 @@ defmodule NfdWeb.ContentEmailController do
         Meta.increment_visit_count(response.body["data"])
         conn |> render("ten_day_meditation_single.html", item: response.body["data"], page_type: page_type)
       {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
+        conn 
+        |> put_view(NfdWeb.ErrorView)
+        |> render("404.html")
     end
   end
 end

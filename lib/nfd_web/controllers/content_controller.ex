@@ -17,7 +17,9 @@ defmodule NfdWeb.ContentController do
         Meta.increment_visit_count(response.body["data"])
         conn |> render("articles.html", item: response.body["data"], articles: response.body["data"]["articles"], page_type: page_type)
       {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
+        conn 
+        |> put_view(NfdWeb.ErrorView)
+        |> render("404.html")
     end
   end
 
@@ -32,10 +34,14 @@ defmodule NfdWeb.ContentController do
           {:ok, articlesResponse} = client |> Content.articles()
           conn |> render("article.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)  
         else 
-          conn |> render(NfdWeb.ErrorView, "404.html")
+          conn 
+          |> put_view(NfdWeb.ErrorView)
+          |> render("404.html")
         end
       {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
+        conn 
+        |> put_view(NfdWeb.ErrorView)
+        |> render("404.html")
     end
   end
 
@@ -48,7 +54,9 @@ defmodule NfdWeb.ContentController do
         Meta.increment_visit_count(response.body["data"])
         conn |> render("practices.html", item: response.body["data"], practices: response.body["data"]["practices"], page_type: page_type)
       {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
+        conn 
+        |> put_view(NfdWeb.ErrorView)
+        |> render("404.html")
     end
   end
 
@@ -63,10 +71,14 @@ defmodule NfdWeb.ContentController do
           {:ok, articlesResponse} = client |> Content.articles()
           conn |> render("practice.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)
         else
-          conn |> render(NfdWeb.ErrorView, "404.html")
+          conn 
+          |> put_view(NfdWeb.ErrorView)
+          |> render("404.html")
         end
       {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
+        conn 
+        |> put_view(NfdWeb.ErrorView)
+        |> render("404.html")
     end
   end
 
@@ -79,7 +91,9 @@ defmodule NfdWeb.ContentController do
         Meta.increment_visit_count(response.body["data"])
         conn |> render("courses.html", item: response.body["data"], courses: response.body["data"]["courses"], page_type: page_type)
       {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
+        conn 
+        |> put_view(NfdWeb.ErrorView)
+        |> render("404.html")
     end
   end
 
@@ -94,10 +108,14 @@ defmodule NfdWeb.ContentController do
           {:ok, articlesResponse} = client |> Content.articles()
           conn |> render("course.html", item: response.body["data"], items: articlesResponse.body["data"]["articles"], page_type: page_type)
         else
-          conn |> render(NfdWeb.ErrorView, "404.html")
+          conn 
+          |> put_view(NfdWeb.ErrorView)
+          |> render("404.html")
         end
       {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
+        conn 
+          |> put_view(NfdWeb.ErrorView)
+          |> render("404.html")
     end
   end
 
@@ -110,7 +128,9 @@ defmodule NfdWeb.ContentController do
         Meta.increment_visit_count(response.body["data"])
         conn |> render("podcasts.html", item: response.body["data"], podcasts: response.body["data"]["podcasts"], page_type: page_type)
       {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
+        conn 
+        |> put_view(NfdWeb.ErrorView)
+        |> render("404.html")
     end
   end
 
@@ -124,10 +144,14 @@ defmodule NfdWeb.ContentController do
         if response.body["data"]["draft"] == false do 
           conn |> render("podcast.html", item: response.body["data"], page_type: page_type)
         else 
-          conn |> render(NfdWeb.ErrorView, "404.html")
+          conn 
+          |> put_view(NfdWeb.ErrorView)
+          |> render("404.html")
         end
       {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
+        conn 
+        |> put_view(NfdWeb.ErrorView)
+        |> render("404.html")
     end
   end
 
@@ -140,7 +164,9 @@ defmodule NfdWeb.ContentController do
         Meta.increment_visit_count(response.body["data"])
         conn |> render("quotes.html", item: response.body["data"], item: response.body["data"]["quotes"], page_type: page_type)
       {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
+        conn 
+        |> put_view(NfdWeb.ErrorView)
+        |> render("404.html")
     end
   end
 
@@ -154,10 +180,14 @@ defmodule NfdWeb.ContentController do
         if response.body["data"]["draft"] == false do 
           conn |> render("quote.html", item: response.body["data"], page_type: page_type)
         else
-          conn |> render(NfdWeb.ErrorView, "404.html")
+          conn 
+          |> put_view(NfdWeb.ErrorView)
+          |> render("404.html")
         end
       {:error, _error} ->
-        conn |> render(NfdWeb.ErrorView, "404.html")
+        conn 
+        |> put_view(NfdWeb.ErrorView)
+        |> render("404.html")
     end
   end
 end

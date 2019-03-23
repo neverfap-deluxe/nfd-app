@@ -2,8 +2,7 @@ defmodule NfdWeb.GeneralScheduler do
   alias Nfd.Account
 
   def subscription_action(subscriber, pos) do
-    IO.inspect "general #{pos}"
-    case pos do 
+    case pos do
       "0" -> nil
       "1" -> 
         case Account.update_subscriber(subscriber, %{ subscribed: true }) do

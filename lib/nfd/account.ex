@@ -8,6 +8,13 @@ defmodule Nfd.Account do
 
   alias Nfd.Account.User
 
+
+
+  # from(u in User, where: u.username == ^username or u.email == ^username)
+  # |> Repo.one
+  
+
+
   @doc """
   Returns the list of users.
 

@@ -1,3 +1,110 @@
-.kickstarter__full__width {
-  background: cyan;
+.email__campaign__full__width {
+  border-top: 4px solid white;
+
+  padding: 0.5rem;
+
+  background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+  background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
+  color: white;
+
+  .email__campaign__title {
+    margin-top: 0rem!important;
+    font-size: 3rem;
+    line-height: 6rem;
+    text-shadow: 3px -3px cyan;
+  }
 }
+
+.email__campaign__box__two {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+
+  .email__campaign__sub__title {
+    flex: 1;
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+
+  .email__campaign__text__container {
+    flex: 1;
+  }
+}
+
+.email__day__container {
+  .email__day__container__item {
+    display: flex;
+    border: 4px solid white;
+    box-shadow: -5px 5px 0px 0px cyan;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    transition: .2s box-shadow;
+
+    .email__day__container__item__title {
+
+    }
+  }
+
+  .email__day__container__item:hover {
+    box-shadow: -8px 8px 0px 0px black; 
+  }
+}
+
+
+@media screen and (min-width: 420px) {
+  .email__campaign__full__width {
+    .email__campaign__title {
+
+    }
+
+  }
+  
+}
+
+
+@media screen and (min-width: 768px) {  
+  .email__campaign__full__width {
+    border-top: 4px solid white;
+  
+    padding: 3rem;
+  
+    .email__campaign__title {
+      margin-top: 0rem!important;
+      font-size: 6rem;
+      line-height: 9rem;
+    }
+  }
+
+  .email__campaign__box__two {
+    display: flex;
+    flex-direction: row;
+
+    .email__campaign__sub__title {
+      font-size: 3rem;
+      line-height: 6rem;
+  
+      max-width: 500px;
+    }
+
+    .email__campaign__text__container {
+      margin-top: 2rem;
+    }
+  }
+}
+
+// @media screen and (min-width: 1280px) {
+  // .email__campaign__full__width {
+  //   .email__campaign__title {
+
+  //   }
+  
+  //   .email__campaign__sub__title {
+
+  //   }
+  // }
+// }
