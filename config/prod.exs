@@ -1,8 +1,8 @@
 use Mix.Config
 
-# config :stripity_stripe, 
-#   api_key: System.get_env("STRIPE_SECRET_KEY"),
-#   json_library: Jason
+config :stripity_stripe, 
+  api_key: System.get_env("STRIPE_SECRET_KEY"),
+  json_library: Jason
 
 # Mailer setup
 config :nfd, Nfd.SwooshMailer,

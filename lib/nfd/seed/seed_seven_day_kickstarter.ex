@@ -30,7 +30,7 @@ defmodule Nfd.SeedSevenDayKickstarter do
               file)
             )
           )
-          collection -> nil
+          _collection -> nil
         end
 
         # day 1
@@ -48,7 +48,7 @@ defmodule Nfd.SeedSevenDayKickstarter do
               file)
             )
           )
-          collection -> nil
+          _collection -> nil
         end
         
     end

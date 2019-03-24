@@ -78,11 +78,6 @@ config :nfd, :pow,
   web_mailer_module: NfdWeb,
   web_module: NfdWeb
 
-# Admin backend
-# config :torch,
-#   otp_app: :nfd,
-#   template_format: "eex"
-
 # Cron setup
 config :nfd, Nfd.Scheduler,
   jobs: [

@@ -1,7 +1,6 @@
 <div class="homepage__content">
   <%= partial "links/loginregister_top.html", assigns %>
   <div class="homepage__hero">
-    
     <%= partial "header.html", assigns %>
     <h1 class="homepage__hero__title">NeverFap <span class="deluxe__font">Deluxe</span></h1>
     <h2 class="homepage__hero__title__secondary">The Comprehensive NoFap Guide.</h2>

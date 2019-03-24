@@ -13,13 +13,7 @@ defmodule NfdWeb.Endpoint do
     at: "/",
     from: :nfd,
     gzip: false,
-    only: ~w(css fonts images sitemaps js favicon.ico robots.txt podcast.xml)
-
-  # plug Plug.Static,
-  #   at: "/torch",
-  #   from: {:torch, "priv/static"},
-  #   gzip: true,
-  #   cache_control_for_etags: "public, max-age=86400"
+    only: ~w(css fonts images sitemaps sitemaps/sitemap.xml sitemaps/sitemap1.xml js favicon.ico robots.txt podcast.xml)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

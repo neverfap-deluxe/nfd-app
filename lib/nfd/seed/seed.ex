@@ -48,12 +48,12 @@ defmodule Mix.Tasks.Nfd.Seed do
     end
 
     date_string = "2018-12-30T16:00:00.000Z"             
-    {:ok, dt_struct, utc_offset} = DateTime.from_iso8601(date_string)
+    {:ok, dt_struct, _utc_offset} = DateTime.from_iso8601(date_string)
     
     user_k = Repo.insert!(User.changeset(%User{}, %{email: "k@k.com", password: "hellothere", confirm_password: "hellothere"}))
     Account.update_user_email_confirm(user_k, %{ email_confirmed_at: DateTime.truncate(dt_struct, :second) })
     
-    user_u = Repo.insert!(User.changeset(%User{}, %{email: "u@u.com", password: "hellothere", confirm_password: "hellothere"}))
+    Repo.insert!(User.changeset(%User{}, %{email: "u@u.com", password: "hellothere", confirm_password: "hellothere"}))
   end
 
   def seed_collections() do
@@ -69,7 +69,7 @@ defmodule Mix.Tasks.Nfd.Seed do
           slug: "seven-day-neverfap-deluxe-kickstarter"
         })
 
-      collection -> nil
+      _collection -> nil
     end
       
     case Content.get_collection_seed_id("943bd030-60e4-42da-a8c1-0c926c508374") do
@@ -84,7 +84,7 @@ defmodule Mix.Tasks.Nfd.Seed do
           slug: "ten-day-meditation-primer"
         })
 
-      collection -> nil
+      _collection -> nil
     end
     
     case Content.get_collection_seed_id("12ec4d76-3d93-42c5-8c2f-65bb146e4bd6") do
@@ -99,7 +99,7 @@ defmodule Mix.Tasks.Nfd.Seed do
         slug: "twenty-eight-day-awareness-challenge"
       })
 
-      collection -> nil
+      _collection -> nil
     end
   end
 end  

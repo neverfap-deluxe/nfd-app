@@ -66,9 +66,6 @@ defmodule Nfd.MixProject do
       {:navigation_history, "~> 0.2.2"},
 
       {:recaptcha, "~> 2.3"}
-
-      # Admin backend
-      # {:torch, "~> 2.0.0-rc.1"}
     ]
   end
 
@@ -82,7 +79,7 @@ defmodule Nfd.MixProject do
     [
       "ecto.setup": ["ecto.create", "ecto.migrate", "nfd.sitemap", "nfd.seed"], # "run priv/repo/seeds.exs"
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      "sitemap": ["nfd.sitemap"],
+      sitemap: ["nfd.sitemap"],
       test: ["ecto.create --quiet", "ecto.migrate", "test"]
     ]
   end

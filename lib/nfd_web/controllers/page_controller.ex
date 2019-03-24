@@ -18,14 +18,12 @@ defmodule NfdWeb.PageController do
     seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
 
     case client |> Page.home() do
-      {:ok, response} -> 
+      {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         {:ok, articlesResponse} = client |> Content.articles()
-          conn |> render("home.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], articles: articlesResponse.body["data"]["articles"], seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, page_type: page_type)
-      {:error, _error} ->  # :econnrefused
-        conn 
-        |> put_view(NfdWeb.ErrorView)
-        |> render("404.html")
+        conn |> render("home.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], articles: articlesResponse.body["data"]["articles"], seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, page_type: page_type)
+      {:error, _error} -> 
+        render_404_page(conn)
     end
   end
 
@@ -38,10 +36,8 @@ defmodule NfdWeb.PageController do
         Meta.increment_visit_count(response.body["data"])
         {:ok, articlesResponse} = client |> Content.articles()
         conn |> render("guide.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)
-      {:error, _error} ->
-        conn 
-        |> put_view(NfdWeb.ErrorView)
-        |> render("404.html")
+      {:error, _error} -> 
+        render_404_page(conn)
     end
   end
 
@@ -54,10 +50,8 @@ defmodule NfdWeb.PageController do
         Meta.increment_visit_count(response.body["data"])
         {:ok, articlesResponse} = client |> Content.articles()
         conn |> render("community.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)
-      {:error, _error} ->
-        conn 
-        |> put_view(NfdWeb.ErrorView)
-        |> render("404.html")
+      {:error, _error} -> 
+        render_404_page(conn)
     end
   end
 
@@ -71,10 +65,8 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("about.html", item: response.body["data"], contact_form_changeset: contact_form_changeset, page_type: page_type)
-      {:error, _error} ->
-        conn 
-        |> put_view(NfdWeb.ErrorView)
-        |> render("404.html")
+      {:error, _error} -> 
+        render_404_page(conn)
     end
   end
 
@@ -86,10 +78,8 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("contact.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} ->
-        conn 
-        |> put_view(NfdWeb.ErrorView)
-        |> render("404.html")
+      {:error, _error} -> 
+        render_404_page(conn)
     end
   end
   
@@ -101,10 +91,8 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("disclaimer.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} ->
-        conn 
-        |> put_view(NfdWeb.ErrorView)
-        |> render("404.html")
+      {:error, _error} -> 
+        render_404_page(conn)
     end
   end
 
@@ -116,10 +104,8 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("privacy.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} ->
-        conn 
-        |> put_view(NfdWeb.ErrorView)
-        |> render("404.html")
+      {:error, _error} -> 
+        render_404_page(conn)
     end
   end
 
@@ -132,10 +118,8 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("terms_and_conditions.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} ->
-        conn 
-        |> put_view(NfdWeb.ErrorView)
-        |> render("404.html")
+      {:error, _error} -> 
+        render_404_page(conn)
     end
   end
 
@@ -153,10 +137,8 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("accountability.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} ->
-        conn 
-        |> put_view(NfdWeb.ErrorView)
-        |> render("404.html")
+      {:error, _error} -> 
+        render_404_page(conn)
     end
   end
 
@@ -168,11 +150,14 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("everything.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} ->
-        conn 
-        |> put_view(NfdWeb.ErrorView)
-        |> render("404.html")
+      {:error, _error} -> 
+        render_404_page(conn)
     end
   end
 
+  defp render_404_page(conn) do 
+    conn 
+      |> put_view(NfdWeb.ErrorView)
+      |> render("404.html")
+  end
 end

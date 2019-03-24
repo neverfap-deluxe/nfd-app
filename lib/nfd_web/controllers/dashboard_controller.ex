@@ -9,7 +9,7 @@ defmodule NfdWeb.DashboardController do
 
   def dashboard(conn, _params) do
     user = Pow.Plug.current_user(conn)
-    subscriber = Pow.Plug.current_user(conn) |> check_if_subscriber_exists()
+    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
 
     collections_audio = Content.list_audio_courses()
     collections_email = Content.list_email_campaigns()
@@ -20,14 +20,14 @@ defmodule NfdWeb.DashboardController do
 
   # audio courses
   def audio_courses(conn, _params) do
-    subscriber = Pow.Plug.current_user(conn) |> check_if_subscriber_exists()
+    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
 
     collections = Content.list_audio_courses()
     render(conn, "audio_courses.html", subscriber: subscriber, collections: collections)
   end
 
   def audio_courses_collection(conn, %{"collection" => collection}) do
-    subscriber = Pow.Plug.current_user(conn) |> check_if_subscriber_exists()
+    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
 
     collections = Content.list_audio_courses()
     collection = Content.get_collection_slug!(collection)
@@ -35,7 +35,7 @@ defmodule NfdWeb.DashboardController do
   end
 
   def audio_courses_file(conn, %{"collection" => collection, "file" => file}) do
-    subscriber = Pow.Plug.current_user(conn) |> check_if_subscriber_exists()
+    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
 
     collections = Content.list_audio_courses()
     collection = Content.get_collection_slug!(collection)
@@ -45,14 +45,14 @@ defmodule NfdWeb.DashboardController do
 
   # email challenges
   def email_campaigns(conn, _params) do
-    subscriber = Pow.Plug.current_user(conn) |> check_if_subscriber_exists()
+    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
 
     collections = Content.list_email_campaigns()
     render(conn, "email_campaigns.html", subscriber: subscriber, collections: collections)
   end
 
   def email_campaigns_collection(conn, %{"collection" => collection}) do
-    subscriber = Pow.Plug.current_user(conn) |> check_if_subscriber_exists()
+    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
 
     collections = Content.list_email_campaigns()
     collection = Content.get_collection_slug!(collection)
@@ -60,7 +60,7 @@ defmodule NfdWeb.DashboardController do
   end
 
   def email_campaigns_file(conn, %{"collection" => collection, "file" => file}) do
-    subscriber = Pow.Plug.current_user(conn) |> check_if_subscriber_exists()
+    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
 
     collections = Content.list_email_campaigns()
     collection = Content.get_collection_slug!(collection)
@@ -69,7 +69,7 @@ defmodule NfdWeb.DashboardController do
   end
 
   def profile(conn, _params) do
-    subscriber = Pow.Plug.current_user(conn) |> check_if_subscriber_exists()
+    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
 
     render(conn, "profile.html", subscriber: subscriber)
   end
@@ -78,30 +78,34 @@ defmodule NfdWeb.DashboardController do
     render(conn, "profile_delete_confirmation.html")
   end
 
-  defp check_if_subscriber_exists(user) do
+
+
+  # Check if subscriber exists
+
+  defp check_subscriber_exists(user) do
     # Check is subscriber email already exists.
     case Account.get_subscriber_email(user.email) do
-      nil ->
-        # If subscriber does not exist, create new subscriber
-        case Account.create_subscriber(%{ subscriber_email: user.email, user_id: user.id }) do
-          # Return created subscriber
-          {:ok, subscriber} -> subscriber
-          {:error, error} -> EmailLogs.error_email_log("#{user.email} - #{user.id} - Could not create subscriber - dashboard_controller.")
-        end
-
-      # If email already exists.
-      subscriber -> 
-        # Check if user_id is same as user.id
-        if subscriber.user_id != user.id do
-          # If not the same, then update
-          case Account.update_subscriber(subscriber, %{user_id: user.id}) do 
-            {:ok, subscriber_with_user_id} -> subscriber_with_user_id 
-            {:error, changeset} -> EmailLogs.error_email_log("#{subscriber.subscriber_email} - Could not update subscriber - dashboard_controller.")
-          end
-        else
-          # Otherwise return original subscriber value
-          subscriber
-        end
+      nil -> check_subscriber_exists_create_subscriber(user.email, user.id)
+      subscriber -> check_subscriber_exists_update_subscriber(subscriber, user)
     end
   end
+
+  defp check_subscriber_exists_create_subscriber(user_email, user_id) do
+    case Account.create_subscriber(%{ subscriber_email: user_email, user_id: user_id }) do
+      {:ok, subscriber} -> subscriber
+      {:error, error} -> EmailLogs.error_email_log("#{user_email} - #{user_id} - Could not create subscriber - :check_subscriber_exists_create_subscriber.")
+    end
+  end
+
+  defp check_subscriber_exists_update_subscriber(subscriber, user) do 
+    if subscriber.user_id != user.id do
+      case Account.update_subscriber(subscriber, %{user_id: user.id}) do 
+        {:ok, subscriber_with_user_id} -> subscriber_with_user_id
+        {:error, _changeset} -> EmailLogs.error_email_log("#{subscriber.subscriber_email} - Could not update subscriber - :check_subscriber_exists_update_subscriber.")
+      end
+    else
+      subscriber
+    end
+  end
+
 end

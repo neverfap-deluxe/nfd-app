@@ -137,13 +137,10 @@ defmodule Nfd.Meta do
 
   """
   def get_subscription_email!(id), do: Repo.get!(SubscriptionEmail, id)
-  def get_subscription_email_latest(course, subscription_email) do
-    # TODO: figure out how to use Repo.get, this is incorrect.
-    Repo.get(
-      from s in SubscriptionEmail,
-      where: [ course: ^course, subscription_email: ^subscription_email]
-    )
-  end
+  # def get_subscription_email_latest(course, subscription_email) do
+  #   # TODO: figure out how to use Repo.get, this is incorrect.
+
+  # end
   
 
   @doc """
