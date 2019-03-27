@@ -1,5 +1,5 @@
 <div class="single__wrapper">   
-  <h2 class="single__title">Message failed to send!<img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
+  <h1 class="single__title">Message failed to send!<img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
   <div class="single__content" style="margin-bottom: 0;">
     <p>It appears your message has failed to send!</p>
     <p>If you'd still like to contact me, there's my <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Discord channel</a> where you can readily contact me.</p>

@@ -61,7 +61,7 @@ defmodule Mix.Tasks.Nfd.Seed do
       nil -> Repo.insert!(%Collection{
           seed_id: "068b52c1-cce1-4239-a345-1182ae528a41",
           type: "email_campaign",
-          status: "in_progress",
+          status: "complete",
           description: "Kickstart your NeverFap Deluxe journey with our seven day course which will take you through everything you need to know about overcoming your porn addiction.",
           display_name: "7 Day NeverFap Deluxe Kickstarter",
           premium: false,

@@ -1,8 +1,19 @@
 <div class="single__wrapper">
-  <h2 class="single__title">Guide <img src="/images/logo.png" class="logo__square" alt="" style="margin-right: 1rem;"/><a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#need a link to all the website content, instead?</p></a></h2>
-  <div class="single__content" style="margin-bottom: 0rem;">
+  <h1 class="single__title">Guide <img src="/images/logo.png" class="logo__square" alt="" style="margin-right: 1rem;"/><a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#need a link to all the website content, instead?</p></a></h2>
+  <div class="single__content">
     <p>Welcome to the NeverFap Deluxe Guide!</p>
     <p>Thank you for deciding to take a deeper look into the NeverFap Deluxe Method of overcoming porn addiction.</p>
+    <p>If you haven't yet had the chance, I highly recommend before continuing with the guide to check out the <a class="link" href="/">NeverFap Deluxe Homepage</a>.</p>
+    <p>It explores in great detail what you can expect from NeverFap Deluxe, and it will serve as a fantastic introduction and precursor to some of the skills you'll be learning from the materials on this website.</p>
+  </div>
+</div>
+
+<%= partial "links/patreon.html", assigns %>
+
+<div class="single__wrapper">
+  <div class="single__content" style="margin-bottom: 0rem;"/>
+    <h1>Introduction</h1>
+
     <p>Coming to the realisation that you're a porn addict, as well as making the decision to overcome your porn addiction is arguably one of the most profound things you will ever do.</p>
     <p>It will completely change the way you feel, think and perceive yourself and others.</p>
 
@@ -156,8 +167,8 @@
   </div>
 </div>
 
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
-<div class="guide__banner">
+<!-- <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div> -->
+<div class="guide__banner" style="border-top: 4px solid black;">
   <h2>In Summary</h2>
 
   <h3 class="summary__items">Awareness is what keeps you in check.</h3>
@@ -166,74 +177,191 @@
   <h3 class="summary__items">Ambition is how you kickass.</h3>
 
   <h3 class="summary__items--invert" style="margin-top: 4rem; margin-bottom: 4rem;">...and this, is where your journey begins.</h3>
-  <h1 class="guide__banner__title" style="margin-bottom: 4rem;">What you choose to do next is up to you.</h1>
-  <div class="single__wrapper">
-    <h2>NeverFap Deluxe Articles</h2>
+</div>
+
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+
+<div>
+  <h1 class="guide__banner__title">What you choose to do next is entirely up to you.</h1>
+</div>
+
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: cyan;"></div>
+
+
+
+<div class="guide__banner" style="border-bottom: 4px solid black;">
+
+  <div class="guide__suggestion__container">
+    <div class="black__banner__title__container">
+      <h2 class="black__banner__title" style="margin-bottom: 3rem;">Here are my #recommendations</h2>
+      <div class="guide__suggestion">
+        <h1 class="guide__suggestion__number">1.</h1>
+        <h1 class="guide__suggestion__title">Join the NeverFap Deluxe Accountability Program</h1>
+      </div>
+      <div class="guide__suggestion">
+        <h1 class="guide__suggestion__number">2.</h1>
+        <h1 class="guide__suggestion__title">Subscribe to the 7 Day NeverFap Deluxe Kickstarter</h1>
+      </div>
+      <div class="guide__suggestion">
+        <h1 class="guide__suggestion__number">3.</h1>
+        <h1 class="guide__suggestion__title">Begin reading some NeverFap Deluxe Articles</h1>
+      </div>
+      <div class="guide__suggestion">
+        <h1 class="guide__suggestion__number">4.</h1>
+        <h1 class="guide__suggestion__title">Begin practicing Awareness and Meditation</h1>
+      </div>
+      <div class="guide__suggestion">
+        <h1 class="guide__suggestion__number">5.</h1>
+        <h1 class="guide__suggestion__title">Listen to the NeverFap Deluxe Podcast</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="single__wrapper">   
+  <div class="single__content" style="margin-bottom: 0;">
+    <div class="guide__suggestion">
+      <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+      <h1>Accountability Program</h1>
+    </div>
+    <h3>Train your capacity for awareness by keeping track of your mental health progress.</h3>
+
+    <p>The first thing we are going to do is put in place a system of accountability that is designed to not only get us excited, but also help us keep on top of the healthy coping mechanisms we practice everyday.</p>
+    <p>In order to do this, we will be posting a daily journal into the NeverFap Deluxe Discord <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel.</p>
+    <p>Can't be bothered?</p>
+    <p>Well, that's the reason why it takes 5 years on average of people to overcome their porn addiction. You distrust the process, you lose the game. It's honestly that simple.</p>
     
-    <!-- <p style="background: white; color: black;">NeverFap Deluxe Articles are designed to provide you with a better understanding behind the how and why.</p> -->
+    <p>Furthermore, it's a great opportunity to see what everyone else is doing in terms of their healthy coping mechanisms, as well as understand the steps they're taking on a daily basis to get 90+ days with their progress.</p>
+    <p>Another great thing about <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> is the tight-nit community we have on the channel. Because we're small, you get the care and attention you deserve and I always respond to messages within 24 hours.</p>
+    <p>Oh, and let's not forget the acknowledgement process! We acknowledge each other's journal entries with with emojis, and it's a great motivator to see that other people are following the same journey that you are.</p>
+    <p>For a set of useful guidelines on the NeverFap Deluxe Accountability Program, please check this <a class="link" href="/accountability-program">web page</a>.</p>
+  </div>
+</div>
+
+<%= partial "links/discord.html", assigns %>
+
+<div class="single__wrapper">   
+  <div class="single__content" style="margin-bottom: 0;">
+    <div class="guide__suggestion">
+      <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+      <h1>7 Day NeverFap Deluxe Kickstarter</h1>
+    </div>
+    <h3>Learn more about the NeverFap Deluxe Method within a seven day period.</h3>
+
+    <p>Well, well, well.</p>
+    <p>The 7 Day NeverFap Deluxe Kickstarter is an email campaign I've put together which aims to teach you a little bit more about the inner workings of NeverFap Deluxe, as well as recommend you various NeverFap Articles and Practices.</p>
+    <p>It covers a range of core topics which are vital for helping you overcome your porn addiction, delivered straight to your email address each day over the course of a week.</p>
+    <p>We also feature a range of other useful guides and courses which become available if you sign up for a FREE NeverFap Deluxe Account.</p>
+    <p>If you'd like to learn more about the 7 Day NeverFap Deluxe Kickstarter, I've put together this fancy <a class="link" href="/seven-day-neverfap-deluxe-kickstarter/">landing page</a> which explores in greater detail what you will learn.</p>
+    <p>It is highly recommended for newcomers to NeverFap Deluxe or those who would simply like more information on how best to approach their porn addiction.</p>
+  </div>
+</div>
+
+<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, seven_day_kickstarter_changeset: @seven_day_kickstarter_changeset } %>
+
+<div class="single__wrapper">
+  <div class="single__content" style="margin-bottom: 0;">
+    <div class="guide__suggestion">
+      <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+      <h1>NeverFap Deluxe Articles</h1>
+    </div>
+    <h3>Learn more about the inner workings of porn addiction recovery and the power of mental health.</h3>
+
+    <p>NeverFap Deluxe Articles are designed to provide you with a better understanding behind the how and why of porn addiction recovery.</p>
+    <p>They are fantastic resources which provide in-depth analysis of issues related to porn addiction recovery, and are referenced throughout the website.</p>
+    <p>Here are some of my top picks.</p>
+
     <p class="guide__link__container"><a class="guide__link" href="/articles/my-personal-porn-recovery-journey/">My Personal Porn Recovery Journey</a></br> 
       Learn a bit more about my porn recovery journey, as well as how I managed to eventually kick the habit.</p>
     <p class="guide__link__container"><a class="guide__link" href="articles/the-importance-of-meditation-for-porn-addiction/">The Importance Of Meditation For Porn Addiction</a></br> 
       Learn about the power of meditation and how it can help you with your porn addiction recovery.</p>
     <p class="guide__link__container"><a class="guide__link" href="/articles/introduction-to-the-neverfap-deluxe-guide/">The Five Fundamental Principles Of NeverFap</a></br> 
-      Learn about some of the fundamental rules and principles of NeverFap Deluxe.</p>
+      Learn about some of the fundamental rules and principles of NeverFap Deluxe.</p>  
   </div>
-  
 </div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
 
-<%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Articles Index.", link: "/articles" } %>
+<div class="cyan__banner">
+  <div style="background: white;">
+    <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Articles Index.", link: "/articles" } %>
+  </div>
+</div>
 
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
-<div class="guide__banner">
-  <div class="single__wrapper">
-    <h2>NeverFap Deluxe Practices</h2>
+<div class="single__wrapper">   
+  <div class="single__content" style="margin-bottom: 0;">
+    <div class="guide__suggestion">
+      <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+      <h1>NeverFap Deluxe Practices</h1>
+    </div>
+    <h3>Develop a greater understanding of awareness and meditation best practices.</h3>
+  
+    <p>NeverFap Deluxe Practices focus solely on verifiable steps you can do on a daily basis to help you build awareness and calmness.</p>
+    <p>At a bare minimum you should be meditating everyday, usually for 10 minutes before bed (at least that's what most people find easiest, myself included).</p>
+    <p>To be quite honest, 100% of the actual recovery process in terms of effective change is nothing more than meditation.</p>
+    <p>However, because humans are silly and will refuse to commit (not to mention, we do silly things like get addicted to porn), I've dedicated a good 85% of this website towards convincing you why you should commit.</p>
+    <p>With the other 15% actually focused on meditation exercises and practices.</p>
+    <p>That's because convincing you to actually treat your mental health seriously is 85% of the battle. It's the primary thing most people struggle with, otherwise you wouldn't have become a porn addict within the first place.</p>
+    <p>Regardless, here are some exercises that I recommend.</p>
 
-    <!-- <p>NeverFap Deluxe Practices focus solely on verifiable steps you can do on a daily basis to help you build awareness and calmness.</p> -->
     <p class="guide__link__container"><a class="guide__link" href="/practices/observe-your-senses/">Observe Your Senses</a></br> 
-      Our primary meditation exercise It is the sole exercise we recommend for beginners.</p>
+      Our primary meditation exercise, which is the sole exercise we recommend that you practice every day.</p>
     <p class="guide__link__container"><a class="guide__link" href="/practices/slow-down-time/">Slow Down Time</a></br> 
       This exercise is great as an introduction to calmness.</p>
     <p class="guide__link__container"><a class="guide__link" href="/practices/dissolve-your-visual-field/">Dissolve Your Visual Field</a></br> 
       This is an excellent visual exercise which is designed to shatter your ego.</p>
   </div>
 </div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
 
-<%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Practices Index.", link: "/practices" } %>
-
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
-<div class="guide__banner">
-  <div class="single__wrapper">
-    <h2>NeverFap Deluxe Courses</h2>
-    <!-- <p>NeverFap Deluxe Courses combine the NeverFap Articles and Practices into single, linear progression-based pathways based upon The Five Fundamental Principles of NeverFap.</p> -->
-    <!-- <p>They are designed to help you focus on a particular area of understanding, so that you can master that concept and feel confident with your ability to address your porn addiction.</p> -->
-    <p class="guide__link__container"><a class="guide__link" href="/courses/introduction/">Introduction course</a></br> 
-      Is great as a beginning resource if you'd like to learn some of the rules and principles of NeverFap Deluxe.</p>
-
-    <!-- <p>As mentioned earlier, I recommend getting started with the <a class="link" href="/courses/introduction/">Introduction course</a> and working your way down the list, revisiting practices you personally found useful.</p> -->
-
-
+<div class="cyan__banner">
+  <div style="background: white;">
+    <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Practices Index.", link: "/practices" } %>
   </div>
 </div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
 
-<%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Courses Index.", link: "/courses" } %>
 
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+<div class="single__wrapper">   
+    <div class="single__content" style="margin-bottom: 0;">
+      <div class="guide__suggestion">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
+        <h1>NeverFap Deluxe Podcast</h1>
+      </div>
+      <h3>Learn more about porn addiction recovery in audio form!</h3>
+      <p>The NeverFap Deluxe Podcast is a fornightly podcast about porn addiction recovery. It aims to be informative, silly and somewhat hopelessly chic.</p>
+      <p>I wanted to have some fun with this one, it's a bit rediculous at times, but I'd also think to think that's equally as informative as it is oddly sensual.</p>
+      <p>The podcast is primarily available on Castbox and Spotify.</p>
+      <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="100%" height="300"></iframe>
+    </div>
+  </div>
+  
+  <div class="cyan__banner">
+    <div style="background: white;">
+      <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Podcast.", link: "/podcast" } %>
+    </div>
+  </div>
 
 <div class="single__wrapper">
   <div class="single__content">
     <h1>Next Steps</h1>
+    <p>If that isn't enough for you, then feel free to get involved with our <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">r/NeverFapDeluxe</a> Reddit Community!</p>
+    <p>We even have hilariously terrible memes such as this one:</p>
+    <img src="/images/one-does-not-simply.jpg" />
+  </div>
+</div>
 
+<%= partial "links/reddit.html", assigns %>
+
+<div class="single__wrapper">
+  <div class="single__content">
+    <h1>Still not sure?</h1>
+    
     <p>If you're still not sure what to do, then that's okay.</p>
-    <p>Just slowly make your way through the content on the website, and feel free to ask any questions in our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Discord channel</a>. I try my best to respond at least once a day.</p>
+    <p>Just slowly make your way through the content on the website, and feel free to ask any questions in our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Discord channel</a>. I'm usually around (assuming it's within my timezone) and I'm more than happy to respond.</p>
     <p>Remember that you're essentially adopting an entirely new way of thinking, so it's not necessarily going to be easy, nor make complete sense overnight.</p>
     <p>Don't worry if it doesn't immediately make sense or if it feels uncomfortable. It's to be expected.</p>
     <p>Think of it like going to the gym. You're not going to become fully ripped within a few days. That's simply not how your physical body works, and your mind is no different.</p>
     <p>This is why we have such a strong emphasis on practice and consistency. There are no special tricks, nor shortcuts. There is only your commitment to your mental health.</p>
   </div>
 </div>
+  
 
 <%= partial "links/discord.html", assigns %>
 
@@ -281,6 +409,30 @@
 
 
 
+
+
+<!-- 
+
+<div class="guide__banner">
+  <div class="single__wrapper">
+    <h2>NeverFap Deluxe Courses</h2>
+
+    <p class="guide__link__container"><a class="guide__link" href="/courses/introduction/">Introduction course</a></br> 
+      Is great as a beginning resource if you'd like to learn some of the rules and principles of NeverFap Deluxe.</p>
+
+  </div>
+</div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+
+<%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Courses Index.", link: "/courses" } %>
+
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div> -->
+
+
+
+
+    <!-- <p>NeverFap Deluxe Courses combine the NeverFap Articles and Practices into single, linear progression-based pathways based upon The Five Fundamental Principles of NeverFap.</p> -->
+    <!-- <p>They are designed to help you focus on a particular area of understanding, so that you can master that concept and feel confident with your ability to address your porn addiction.</p> -->
 
 
 

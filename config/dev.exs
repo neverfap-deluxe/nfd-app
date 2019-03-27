@@ -1,12 +1,7 @@
 use Mix.Config
 
-# Mailer setup
 config :nfd, Nfd.SwooshMailer,
   adapter: Swoosh.Adapters.Local
-  
-config :recaptcha,
-  public_key: System.get_env("GOOGLE_RECAPTCHA_CLIENT"),
-  secret: System.get_env("GOOGLE_RECAPTCHA_SECRET")
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
@@ -83,3 +78,5 @@ config :nfd, Nfd.Repo,
   hostname: "localhost",
   pool_size: 10
 
+
+import_config "dev.secret.exs"

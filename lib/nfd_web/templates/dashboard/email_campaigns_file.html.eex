@@ -1,8 +1,8 @@
 <div class="hub__email__challenges">
-  <h2 class="hub__main__title">Email Challenges</h2>
+  <h2 class="hub__main__title">Email Campaigns</h2>
   
   <div class="hub__main__area">
-    <p>Come back soon!</p>
+    <p><%= @file.display_name %></p>
 
     <div class="hub__main__audio">
 

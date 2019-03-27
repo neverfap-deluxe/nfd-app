@@ -1,4 +1,4 @@
-defmodule NfdWeb.API.Content do
+defmodule Nfd.API.Content do
   use Tesla
 
   def article(client, article_name) do

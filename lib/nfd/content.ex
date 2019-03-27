@@ -8,6 +8,10 @@ defmodule Nfd.Content do
 
   alias Nfd.Content.Collection
 
+
+  # def collection_slug_to_collection_access(collection_slug) do 
+
+
   @doc """
   Returns the list of collections.
 
@@ -22,12 +26,13 @@ defmodule Nfd.Content do
   end
 
   def list_audio_courses do
-    Repo.all(from c in Collection, where: [type: "audio_course"]) 
+    Repo.all(from c in Collection, where: [type: "audio_course"], order_by: [asc: :status]) 
   end
 
   def list_email_campaigns do
-    Repo.all(from c in Collection, where: [type: "email_campaign"]) 
+    Repo.all(from c in Collection, where: [type: "email_campaign"], order_by: [asc: :status]) 
   end
+
 
 
 

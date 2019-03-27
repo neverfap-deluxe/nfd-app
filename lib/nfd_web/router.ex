@@ -10,6 +10,7 @@ defmodule NfdWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug NavigationHistory.Tracker
   end
 
   pipeline :protected do
@@ -37,6 +38,7 @@ defmodule NfdWeb.Router do
     get "/privacy", PageController, :privacy
     get "/terms-and-conditions", PageController, :terms_and_conditions
     get "/accountability-program", PageController, :accountability
+    get "/new-fap-deluxe-submission-guidelines", PageController, :reddit_guidelines
     get "/everything", PageController, :everything
 
     get "/articles", ContentController, :articles
@@ -71,7 +73,7 @@ defmodule NfdWeb.Router do
     post "/confirm_subscription", SubscriptionController, :add_subscription_validate_matrix
     get "/subscription_success", SubscriptionController, :confirm_subscription_validate_matrix
     get "/unsubscribe", SubscriptionController, :unsubscribe_validate_matrix
-    get "/change_subscription_general_func", SubscriptionController, :change_subscription_general_func
+    get "/change_subscription_dashboard_func", DashboardController, :change_subscription_dashboard_func
   end
 
   scope "/", NfdWeb do

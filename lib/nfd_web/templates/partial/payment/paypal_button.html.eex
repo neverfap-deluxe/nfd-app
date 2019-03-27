@@ -1,0 +1,14 @@
+<div id='paypal_button' style="width: 300px;"></div>
+
+<script>
+paypal.Buttons({
+  style: {
+    size: 'medium',
+    color: 'gold',
+    shape: 'rect', // pill
+    label: 'checkout',
+    layout: 'horizontal',
+    tagline: 'true'
+  } 
+}).render('#paypal_button');
+</script>

@@ -49,7 +49,7 @@ defmodule Nfd.MixProject do
 
       # user authentication
       {:pow, "~> 1.0.2"},
-      {:pow_assent, "~> 0.1.0-rc.2"},
+      {:pow_assent, "~> 0.2.2"},
       {:swoosh, "~> 0.21"},
       {:phoenix_swoosh, "~> 0.2"},
       {:gen_smtp, "~> 0.12"},

@@ -9,4 +9,8 @@ defmodule NfdWeb.PartialView do
     if subscribed, do: "I would like to unsubscribe.", else: "Subscribe me."
   end
 
+  # TODO: Float to integer, times 100
+  def float_to_stripe_integer(float) do 
+    trunc(float * 100) 
+  end
 end

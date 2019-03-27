@@ -1,5 +1,5 @@
 <div class="single__wrapper">   
-  <h2 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt="" style="margin-right: 1rem;"/><a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#you're welcome :p</p></a></h2>
+  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt="" style="margin-right: 1rem;"/><a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#you're welcome :p</p></a></h2>
 </div>
 
 <div class="everything__container__outer">

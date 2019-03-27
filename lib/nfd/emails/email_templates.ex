@@ -1,4 +1,4 @@
-defmodule NfdWeb.EmailTemplates do
+defmodule Nfd.EmailTemplates do
 
   def run_seven_day_kickstarter(count) do
     case count do

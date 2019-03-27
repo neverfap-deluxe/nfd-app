@@ -1,9 +1,17 @@
 <div class="hub__email__challenges">
-  <h2 class="hub__main__title">Email Challenges</h2>
+  <h2 class="hub__main__title">Email Campaigns</h2>
+  <div class="hub__main__back__container">
+    <a class="hub__main__back" href="/dashboard">
+      Back to Dashboard
+    </a>
+    <!-- <a class="hub__main__back" href="/dashboard/email_campaigns">
+      Back to Email Campaigns
+    </a> -->
+  </div>
   
   <div class="hub__main__area">    
     <div class="hub__main__area__content">
-      <%= partial "hub/email_campaigns.html", %{ collections_email: @collections} %>
+      <%= partial "hub/email_campaign_list.html", %{ collections_email: @collections} %>
     </div>
   </div>
 </div>

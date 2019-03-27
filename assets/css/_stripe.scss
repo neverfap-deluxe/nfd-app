@@ -1,0 +1,96 @@
+.google__button {
+  display: block;
+  // display: flex;
+  // justify-content: space-around;
+  // text-align: center;
+
+  background: white;
+  color: #444;
+  border-radius: 5px;
+  border: thin solid #888;
+  box-shadow: 1px 1px 1px grey;
+  white-space: nowrap;
+
+  label {
+    font-family: serif;
+    font-weight: normal;
+  }
+  .google__button__icon {
+    background: url('https://developers.google.com/identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    width: 42px;
+    height: 42px;
+  }
+  .google__button__text {
+    display: inline-block;
+    vertical-align: middle;
+    // padding-left: 42px;
+    padding-right: 42px;
+    font-size: 14px;
+    font-weight: bold;
+    /* Use the Roboto font that is loaded in the <head> */
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+.google__button:hover {
+  cursor: pointer;
+}
+
+
+.hub__main__payment {
+  width: 100%;
+  .hub__main__payment__box {
+    display: flex;
+
+    .hub__main__payment__stripe {
+      flex: 1;
+    }
+    .hub__main__payment__paypal {
+      flex: 1;      
+    }
+  }
+}
+
+.hub__main__payment__course_information {
+  border: 4px solid black;
+  padding: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.hub__custom__stripe__checkout__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 4px solid cyan;
+  background: white;
+  // padding-top: 0.55rem;
+  // padding-bottom: 0.55rem;
+  // padding-left: 1.6rem;
+  // padding-right: 1.6rem;
+
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+
+  border-radius: 0.2rem;
+  transition: .4s box-shadow;
+  cursor: pointer;
+
+  width: 280px;
+  img {
+    // height: 32px;
+    height: 28px;
+    margin-right: 1rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+.hub__custom__stripe__checkout__button:hover {
+  box-shadow: -4px 4px 0px rgba(255,46,182,1);
+}

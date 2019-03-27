@@ -5,7 +5,7 @@ defmodule Nfd.SeedSevenDayKickstarter do
   alias Nfd.Content
   alias Nfd.Content.File
 
-  def seed() do
+  def seed do
     file = %{
       type: "email",
       premium: false,

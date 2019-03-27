@@ -19,6 +19,14 @@
         <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
         <div class="form__input__container">
+          <div class="form__auth__container">
+            <%= for link <- PowAssent.Phoenix.ViewHelpers.provider_links(@conn) do %>
+              <%= partial("auth/google_button.html", link: link) %>
+            <% end %>
+          </div>
+        
+          <hr class="form__auth__hr"/>
+    
           <div class="error__label__combo">
             <%= label f, @changeset.data.__struct__.pow_user_id_field() %>
             <%= error_tag f, @changeset.data.__struct__.pow_user_id_field() %>

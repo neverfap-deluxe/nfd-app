@@ -1,0 +1,9 @@
+<div class="account__info">
+  <p class="account__info__title">Check out the NeverFap Deluxe subreddit and reference <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewFapDeluxe</a> in your title!</p>
+  <div class="account__buttons">
+    <a class="account__reddit__button__container" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">
+      <img class="account__reddit__button__logo" src="/images/reddit__logo.png" />
+      <p class="account__reddit__button__text">COMMUNITY <span class="account__reddit__button__text--display"></span></p>
+    </a>
+  </div>
+</div>

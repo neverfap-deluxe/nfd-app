@@ -30,6 +30,8 @@ RUN cd assets && \
     npm install && \
     npm rebuild node-sass --force && \
     npm run deploy && \
+    npm run mjml \
+    npm run k \
     cd .. && \
     mix phx.digest
 

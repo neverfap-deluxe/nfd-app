@@ -1,5 +1,5 @@
 <div class="single__wrapper">   
-  <h2 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
   <div class="single__content">
     <p>My name is Julius and I am the founder of NeverFap Deluxe. If you would like to get in touch, please provide your name, email and message, and I will get back to you as soon as possible!</p>
   </div>    

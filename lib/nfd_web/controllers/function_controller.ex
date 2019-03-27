@@ -5,8 +5,8 @@ defmodule NfdWeb.FunctionController do
 
   alias Nfd.EmailLogs
 
-  alias NfdWeb.API
-  alias NfdWeb.API.Page
+  alias Nfd.API
+  alias Nfd.API.Page
   alias Nfd.Meta
 
   def contact_form_post(conn, %{"contact_form" => contact_form}) do

@@ -7,8 +7,8 @@ defmodule Nfd.Account.User do
 
   import Ecto.Changeset
 
-  alias Nfd.Account
   alias Nfd.Account.Subscriber
+  alias Nfd.Account.CollectionAccess
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
@@ -26,8 +26,8 @@ defmodule Nfd.Account.User do
     field :last_name, :string
     field :slug, :string
 
-    has_one :subscriber, Nfd.Account.Subscriber, on_delete: :delete_all
-    has_many :collection_access, Nfd.Account.CollectionAccess, on_delete: :delete_all
+    has_one :subscriber, Subscriber, on_delete: :delete_all
+    has_many :collection_access, CollectionAccess, on_delete: :delete_all
 
     timestamps()
   end

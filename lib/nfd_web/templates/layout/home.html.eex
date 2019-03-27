@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <%= partial "head.html", assigns %>
+  <%= partial "head_general.html", assigns %>
   <body>
     <%= render @view_module, @view_template, assigns %>
     <%= partial "footer.html", assigns %>

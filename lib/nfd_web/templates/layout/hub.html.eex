@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%= partial "hub/head.html", assigns %>
+  <%= partial "hub/head_hub.html", assigns %>
 
   <body>
     <div class="hub">

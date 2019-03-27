@@ -1,5 +1,5 @@
 <div class="single__wrapper">   
-  <h2 class="single__title">You did it! <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <h1 class="single__title">You did it! <img src="/images/logo.png" class="logo__square" alt=""/></h2>
   <div class="single__content" style="margin-bottom: 0;">
     <p>Thank you for subscribing to the...</p>
     <h2 class="subscriber__confirmation__success__title"><%= @course_name %></h2>

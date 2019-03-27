@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%= partial "head.html", assigns %>
+  <%= partial "head_general.html", assigns %>
   <body>
     <main role="main" class="main">
       <%= render @view_module, @view_template, assigns %>

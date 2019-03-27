@@ -44,6 +44,7 @@ defmodule Nfd.Account do
   """
   def get_user!(id), do: Repo.get!(User, id)
   def get_user_email(email), do: Repo.get_by(User, email: email)
+  def get_user_id_non_error(id), do: Repo.get_by(User, id)
 
   @doc """
   Creates a user.
@@ -130,6 +131,14 @@ defmodule Nfd.Account do
     Repo.all(CollectionAccess)
   end
 
+  def list_collection_access_by_user_id(user_id) do 
+    Repo.all(
+      from c in CollectionAccess,
+      where: [ user_id: ^user_id ]
+    )
+  end
+
+
   @doc """
   Gets a single collection_access.
 
@@ -145,6 +154,14 @@ defmodule Nfd.Account do
 
   """
   def get_collection_access!(id), do: Repo.get!(CollectionAccess, id)
+  def get_collection_access_by_slug!(slug), do: Repo.get_by!(CollectionAccess, slug: slug)
+
+  def get_collection_access_by_user_id_and_collection_id(user_id, collection_id) do
+    from(u in CollectionAccess, where: u.user_id == ^user_id or u.collection_id == ^collection_id) |> Repo.one
+  end
+  
+
+
 
   @doc """
   Creates a collection_access.
@@ -259,7 +276,7 @@ defmodule Nfd.Account do
   """
   def get_subscriber!(id), do: Repo.get!(Subscriber, id)
   def get_subscriber_user_id(user_id), do: Repo.get_by(Subscriber, user_id: user_id)
-  def get_subscriber_email(email), do: Repo.get_by(Subscriber, subscriber_email: email)
+  def get_subscriber_email(subscriber_email), do: Repo.get_by(Subscriber, subscriber_email: subscriber_email)
 
   @doc """
   Creates a subscriber.

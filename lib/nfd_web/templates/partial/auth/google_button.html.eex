@@ -1,0 +1,4 @@
+<a class="google__button" href="/auth/google/new">
+  <span class="google__button__icon"></span>
+  <span class="google__button__text">Sign in with Google</span>
+</a>

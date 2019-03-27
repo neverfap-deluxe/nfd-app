@@ -7,7 +7,7 @@
     
     "mjml": "npm run -s mjml-ec & npm run -s mjml-rp & npm run -s mjml-ecs & npm run -s mjml-esc & npm run -s mjml-escs",
 
-    "k": "npm run -s k0",
+    "k": "npm run -s k0 & npm run -s k1 & npm run -s k2 & npm run -s k3 & npm run -s k4 & npm run -s k5 & npm run -s k6 & npm run -s k7",
     "m": "npm run -s m0",
     "a": "npm run -s a0",
 

@@ -148,10 +148,15 @@
 
   <!-- Google sign in -->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <meta name="google-signin-client_id" content="954591220445-1l03q4c08vdci34g8tdcjcgp134mn3m1.apps.googleusercontent.com">
+  <meta name="google-signin-client_id" content="57568197060-jfvie0bpd270u9r3nvp5bbdhctrl57r1.apps.googleusercontent.com">
 
   <!-- Stripe API / Styling -->
-  <script src="https://js.stripe.com/v3/"></script>
+  <!-- <script src="https://js.stripe.com/v3/"></script> -->
+  <!-- <script src="https://checkout.stripe.com/checkout.js"></script> -->
+
+  <!-- PayPal -->
+  <!-- <script src="https://www.paypal.com/sdk/js?client-id=SB_CLIENT_ID"></script> -->
+
 
 </head>
 

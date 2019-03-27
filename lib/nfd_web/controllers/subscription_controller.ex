@@ -2,11 +2,10 @@ defmodule NfdWeb.SubscriptionController do
   use NfdWeb, :controller
 
   alias Nfd.Account
+  alias Nfd.Content
   alias Nfd.EmailLogs
-
-  alias NfdWeb.Emails
-  alias Util.Email
-
+  alias Nfd.Emails
+  alias Nfd.Util.Email
 
   # Add Subscription
 
@@ -26,14 +25,14 @@ defmodule NfdWeb.SubscriptionController do
 
   defp add_subscription_create_subscriber(conn, subscriber_email, multiple_matrix, main_matrix) do 
     case Account.create_subscriber(%{subscriber_email: subscriber_email}) do
-      {:ok, subscriber_email} -> add_subscription_check_if_already_subscribed(conn, subscriber_email, multiple_matrix, main_matrix)
-      {:error, changeset} -> render_failure_page(:add_subscription_create_subscriber, conn, subscriber_email, nil, nil)
+      {:ok, subscriber} -> add_subscription_check_if_already_subscribed(conn, subscriber, multiple_matrix, main_matrix)
+      {:error, _changeset} -> render_failure_page(:add_subscription_create_subscriber, conn, subscriber_email, nil, nil)
     end
   end
 
-  defp add_subscription_check_if_already_subscribed(conn, subscriber_email, multiple_matrix, main_matrix) do
-    subscriber = Account.get_subscriber_email(subscriber_email)
+  defp add_subscription_check_if_already_subscribed(conn, subscriber, multiple_matrix, main_matrix) do
     course_name = Email.main_matrix_to_type(main_matrix) |> Email.generate_course_name_from_type()
+
     case Email.validate_subscriber_is_already_subscribed(subscriber, main_matrix) do 
       true -> render_failure_page(:add_subscription_check_if_already_subscribed, conn, subscriber.subscriber_email, course_name, nil)
       false -> add_subscription_subscriber_does_not_exist(conn, subscriber.subscriber_email, multiple_matrix, main_matrix, course_name) 
@@ -77,10 +76,10 @@ defmodule NfdWeb.SubscriptionController do
     update_subscription_object = Enum.map(String.split(multiple_matrix, "-"), fn(main_matrix) ->
       # NOTE: If there is no multiple, then it will just be ["0", "1"]
       case Email.main_matrix_to_type_and_action(main_matrix) do
-        { general_type, action } -> confirm_subscription_action(subscriber, action, general_type)
-        { kickstarter_type, action } -> confirm_subscription_action(subscriber, action, kickstarter_type)
-        { meditation_primer_type, action } -> confirm_subscription_action(subscriber, action, meditation_primer_type)
-        { awareness_challenge_type, action } -> confirm_subscription_action(subscriber, action, awareness_challenge_type)
+        { ^general_type, action } -> confirm_subscription_action(subscriber, action, general_type)
+        { ^kickstarter_type, action } -> confirm_subscription_action(subscriber, action, kickstarter_type)
+        { ^meditation_primer_type, action } -> confirm_subscription_action(subscriber, action, meditation_primer_type)
+        { ^awareness_challenge_type, action } -> confirm_subscription_action(subscriber, action, awareness_challenge_type)
       end
     end)
 
@@ -102,10 +101,9 @@ defmodule NfdWeb.SubscriptionController do
 
   defp confirm_subscription_action_subscribe(subscriber, type) do
     {_, subscribed_property} = Email.type_to_subscriber_properties(type)
-
     case Account.update_subscriber(subscriber, %{ subscribed_property => true }) do
       {:ok, updated_subscriber} -> updated_subscriber
-      {:error, changeset} -> confirm_subscription_action_failure(subscriber.subscriber_email, "subscribe")
+      {:error, _changeset} -> confirm_subscription_action_failure(subscriber.subscriber_email, "subscribe")
     end
   end
 
@@ -113,7 +111,7 @@ defmodule NfdWeb.SubscriptionController do
     {_, subscribed_property} = Email.type_to_subscriber_properties(type)
     case Account.update_subscriber(subscriber, %{ subscribed_property => false }) do
       {:ok, updated_subscriber} -> updated_subscriber
-      {:error, changeset} -> confirm_subscription_action_failure(subscriber.subscriber_email, "unsubscribe")
+      {:error, _changeset} -> confirm_subscription_action_failure(subscriber.subscriber_email, "unsubscribe")
     end
   end
 
@@ -124,10 +122,49 @@ defmodule NfdWeb.SubscriptionController do
 
   defp confirm_subscription_success(conn, updated_subscriber, main_matrix) do 
     course_name = Email.main_matrix_to_type(main_matrix) |> Email.generate_course_name_from_type()
+
     Emails.send_day_0_email(updated_subscriber, main_matrix)
-    render(conn, "success_subscription_page.html", course_name: course_name)  
+
+    collection = confirm_subscription_get_collection(main_matrix)
+
+    if collection != nil and collection.premium and collection.price != 0.0 do
+      user = confirm_subscription_get_user_from_subscriber(conn, updated_subscriber, course_name)
+      confirm_subscription_check_if_access_collection_access_already_exists(conn, updated_subscriber, course_name, user, collection)
+    else
+      render(conn, "success_subscription_page.html", course_name: course_name)
+    end
   end
 
+    defp confirm_subscription_get_user_from_subscriber(conn, updated_subscriber, course_name) do 
+      case Account.get_user_id_non_error(updated_subscriber.user_id) do 
+        # User doesn't exist, therefore it's not premium
+        nil -> render(conn, "success_subscription_page.html", course_name: course_name)
+        user -> user
+      end
+    end
+
+    defp confirm_subscription_get_collection(main_matrix) do 
+      seed_id = Email.main_matrix_to_collection_seed_id(main_matrix)
+
+      case Content.get_collection_seed_id(seed_id) do 
+        nil -> nil
+        collection -> collection 
+      end
+    end
+
+  defp confirm_subscription_check_if_access_collection_access_already_exists(conn, updated_subscriber, course_name, user, collection) do 
+    case Account.get_collection_access_by_user_id_and_collection_id(user.id, collection.id) do 
+      nil -> confirm_subscription_create_collection_access(conn, updated_subscriber, course_name, user, collection)
+      collection_access -> render(conn, "success_subscription_page.html", course_name: course_name)
+    end
+  end
+
+  defp confirm_subscription_create_collection_access(conn, updated_subscriber, course_name, user, collection) do 
+    case Account.create_collection_access(%{collection_id: collection.id, user_id: user.id}) do
+      {:ok, _collection_access} -> render(conn, "success_subscription_page.html", course_name: course_name)
+      {:error, changeset} -> render_failure_page(:confirm_subscription_create_collection_access, conn, updated_subscriber.subscriber_email, nil, nil)
+    end
+  end
 
 
   # Unsubscribe Subscription
@@ -140,8 +177,6 @@ defmodule NfdWeb.SubscriptionController do
   end
 
   defp unsubscribe_get_subscriber(conn, subscriber_email, main_matrix) do 
-    course_name = Email.main_matrix_to_type(main_matrix) |> Email.generate_course_name_from_type()
-
     case Account.get_subscriber_email(subscriber_email) do
       nil -> render_failure_page(:unsubscribe_get_subscriber, conn, subscriber_email, nil, nil)
       subscriber -> unsubscribe_subscriber(conn, subscriber, main_matrix)
@@ -153,10 +188,10 @@ defmodule NfdWeb.SubscriptionController do
     { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type} = Email.generate_course_types()
       
     case Email.main_matrix_to_type(main_matrix) do
-      general_type -> unsubscribe_subscriber_action(conn, subscriber, general_type, course_name)
-      kickstarter_type -> unsubscribe_subscriber_action(conn, subscriber, kickstarter_type, course_name)
-      meditation_primer_type -> unsubscribe_subscriber_action(conn, subscriber, meditation_primer_type, course_name)
-      awareness_challenge_type -> unsubscribe_subscriber_action(conn, subscriber, awareness_challenge_type, course_name)
+      ^general_type -> unsubscribe_subscriber_action(conn, subscriber, general_type, course_name)
+      ^kickstarter_type -> unsubscribe_subscriber_action(conn, subscriber, kickstarter_type, course_name)
+      ^meditation_primer_type -> unsubscribe_subscriber_action(conn, subscriber, meditation_primer_type, course_name)
+      ^awareness_challenge_type -> unsubscribe_subscriber_action(conn, subscriber, awareness_challenge_type, course_name)
     end
   end
 
@@ -165,7 +200,7 @@ defmodule NfdWeb.SubscriptionController do
 
     case Account.update_subscriber(subscriber, %{ subscribed_property => false }) do
       {:ok, subscriber} -> unsubscribe_subscriber_action_success(conn, subscriber.subscriber_email, course_name)
-      {:error, changeset} -> render_failure_page(:unsubscribe_subscriber_action, conn, subscriber.subscriber_email, nil, subscribed_property)
+      {:error, _changeset} -> render_failure_page(:unsubscribe_subscriber_action, conn, subscriber.subscriber_email, nil, subscribed_property)
     end
   end
 
@@ -223,26 +258,14 @@ defmodule NfdWeb.SubscriptionController do
           "Unable to unsubscribe user",
           "#{subscriber_email} did not unsubscribe. #{subscribed_property} :unsubscribe_subscriber_action"
         }
+        :confirm_subscription_create_collection_access -> {
+          "Could not create Collection Access permissions",
+          "#{subscriber_email} could not create collection access. :confirm_subscription_create_collection_access"
+        }
       end
 
     EmailLogs.error_email_log(error_log_message)
     render(conn, "failed_subscription_page.html", error_message: error_message)
-  end
-
-
-
-  # Change subscription general
-
-  def change_subscription_general_func(conn, %{"subscribed" => subscribed, "user_id" => user_id}) do
-    case Account.get_subscriber_user_id(user_id) do
-      nil ->
-        redirect(conn, to: Routes.dashboard_path(conn, :dashboard))
-
-      subscriber ->
-        if subscribed == "true", do: Account.update_subscriber(subscriber, %{ subscribed: false })
-        if subscribed == "false", do: Account.update_subscriber(subscriber, %{ subscribed: true }) 
-        redirect(conn, to: Routes.dashboard_path(conn, :dashboard))
-    end
   end
 
   # def reset_subscription_to_different_day do 

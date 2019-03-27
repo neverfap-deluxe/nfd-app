@@ -17,7 +17,7 @@ defmodule Nfd.Account.CollectionAccess do
   @doc false
   def changeset(collection_access, attrs) do
     collection_access
-    |> cast(attrs, [:collection_id])
-    |> validate_required([:collection_id])
+    |> cast(attrs, [:collection_id, :user_id])
+    |> validate_required([:collection_id, :user_id])
   end
 end

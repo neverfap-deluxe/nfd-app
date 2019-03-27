@@ -1,8 +1,8 @@
 defmodule NfdWeb.ContentController do
   use NfdWeb, :controller
 
-  alias NfdWeb.API
-  alias NfdWeb.API.Content
+  alias Nfd.API
+  alias Nfd.API.Content
 
   alias Nfd.Meta
 

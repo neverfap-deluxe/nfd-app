@@ -15,6 +15,7 @@ defmodule Nfd.Content.Collection do
     field :price, :float
 
     has_many :files, Nfd.Content.File
+    # TODO: has_many, collection_access
 
     timestamps()
   end

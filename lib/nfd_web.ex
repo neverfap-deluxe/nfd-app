@@ -24,6 +24,10 @@ defmodule NfdWeb do
       import Plug.Conn
       import NfdWeb.Gettext
       alias NfdWeb.Router.Helpers, as: Routes
+
+      def redirect_back(conn, opts \\ []) do
+        redirect(conn, to: NavigationHistory.last_path(conn, opts))
+      end      
     end
   end
 

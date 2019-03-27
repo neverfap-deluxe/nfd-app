@@ -1,4 +1,4 @@
-defmodule NfdWeb.API do
+defmodule Nfd.API do
   use Tesla
 
   def is_localhost(host) do

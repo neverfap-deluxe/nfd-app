@@ -1,8 +1,8 @@
 defmodule NfdWeb.ContentEmailController do
   use NfdWeb, :controller
 
-  alias NfdWeb.API
-  alias NfdWeb.API.ContentEmail
+  alias Nfd.API
+  alias Nfd.API.ContentEmail
 
   alias Nfd.Meta 
   alias Nfd.Account.Subscriber 

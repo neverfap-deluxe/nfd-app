@@ -8,6 +8,7 @@
 use Mix.Config
 
 alias Nfd.Sitemaps
+alias Nfd.Emails
 
 config :nfd,
   ecto_repos: [Nfd.Repo],
@@ -18,7 +19,8 @@ config :nfd,
 
   social_facebook_url: "https://www.facebook.com/NeverFap-Deluxe-2203366683036015/",
   social_twitter_url: "https://twitter.com/NeverFapDeluxe",
-  social_reddit_url: "https://www.reddit.com/user/NeverFapDeluxe",
+  social_reddit_url: "https://www.reddit.com/r/NeverFapDeluxe",
+  social_reddit_user_url: "https://www.reddit.com/user/NeverFapDeluxe",
   social_patreon_url: "https://www.patreon.com/NeverFapDeluxe",
   social_discord_url: "https://discord.gg/TuwARWk",
 
@@ -27,15 +29,14 @@ config :nfd,
   meditation_primer_type: "meditationprimer",
   awareness_challenge_type: "awarenesschallenge",
 
-  kickstarter_day_0_title: "The Beginning",
-  kickstarter_day_1_title: "The Meditation",
+  kickstarter_day_0_title: "Introduction",
+  kickstarter_day_1_title: "The Trust",
   kickstarter_day_2_title: "The Awareness",
   kickstarter_day_3_title: "The Calmness",
-  kickstarter_day_4_title: "The Trust",
+  kickstarter_day_4_title: "The Meditation",
   kickstarter_day_5_title: "The Relapse",
-  kickstarter_day_6_title: "The Ambition",
-  kickstarter_day_7_title: "The Consistency"
-
+  kickstarter_day_6_title: "The Consistency",
+  kickstarter_day_7_title: "The Community"
 
 # Configures the endpoint
 config :nfd, NfdWeb.Endpoint,
@@ -88,7 +89,10 @@ config :nfd, Nfd.Scheduler,
     # {"*/15 * * * *",   fn -> System.cmd("rm", ["/tmp/tmp_"]) end},
     # Runs on 18, 20, 22, 0, 2, 4, 6:
     # {"0 18-6/2 * * *", fn -> :mnesia.backup('/var/backup/mnesia') end},
-    # Runs every midnight:
-    # {"@daily",         {Backup, :backup, []%>
+
+    # Email Scheduler - Runs every midnight:
+    # {"@daily", {Emails, :email_scheduler, []}}, # "0 12 * * *    
+
+    # Sitemap Scheduler - Runs every midnight:
     {"@daily", {Sitemaps, :generate, []}}, # "0 12 * * *
   ]

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%= partial "head.html", assigns %>
+  <%= partial "head_general.html", assigns %>
 
   <body>
     <%= partial "header.html", assigns %>

@@ -1,9 +1,9 @@
 defmodule NfdWeb.PageController do
   use NfdWeb, :controller
 
-  alias NfdWeb.API
-  alias NfdWeb.API.Page
-  alias NfdWeb.API.Content
+  alias Nfd.API
+  alias Nfd.API.Page
+  alias Nfd.API.Content
   
   alias Nfd.Meta
   alias Nfd.Account.Subscriber
@@ -31,11 +31,13 @@ defmodule NfdWeb.PageController do
     page_type = "page"
     client = API.is_localhost(conn.host) |> API.api_client()
 
+    seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
+
     case client |> Page.guide() do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         {:ok, articlesResponse} = client |> Content.articles()
-        conn |> render("guide.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)
+        conn |> render("guide.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, page_type: page_type)
       {:error, _error} -> 
         render_404_page(conn)
     end
@@ -137,6 +139,19 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("accountability.html", item: response.body["data"], page_type: page_type)
+      {:error, _error} -> 
+        render_404_page(conn)
+    end
+  end
+
+  def reddit_guidelines(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Page.reddit_guidelines() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])
+        conn |> render("reddit_guidelines.html", item: response.body["data"], page_type: page_type)
       {:error, _error} -> 
         render_404_page(conn)
     end

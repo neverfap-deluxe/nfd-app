@@ -1,8 +1,7 @@
 <div class="seven__day__kickstarter__banner">
-  <div class="banner__empty"></div>
+  <!-- <div class="banner__empty"></div> -->
   <div class="banner__magenta"></div>
   <div class="banner__cyan"></div>
-  <!-- <div class="banner__white"></div> -->
 
   <div class="seven__day__kickstarter__banner__inner">
     <h1 class="seven__day__kickstarter__banner__title">7 Day NeverFap Deluxe Kickstarter</h1>
@@ -28,13 +27,13 @@
           <%= hidden_input f, :multiple_matrix, [value: "0h1-1h1"] %>
           <%= hidden_input f, :main_matrix, [value: "1h1"] %>
         <% end %>
+        <a class="seven__day__kickstarter__learn__more" href="/seven-day-neverfap-deluxe-kickstarter">Click here to learn more.</a>
       </div>
     </div>
   </div>
 
-  <!-- <div class="banner__white"></div> -->
   <div class="banner__cyan"></div>
   <div class="banner__magenta"></div>
-  <div class="banner__empty"></div>
+  <!-- <div class="banner__empty"></div> -->
 </div>
 

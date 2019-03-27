@@ -4,8 +4,8 @@ defmodule Nfd.Sitemaps do
 
   import Ecto.Query, warn: false
 
-  alias NfdWeb.API
-  alias NfdWeb.API.Content
+  alias Nfd.API
+  alias Nfd.API.Content
 
   # For testing: Nfd.Sitemaps.generate()
   # iex -S mix do phx.server
@@ -39,6 +39,7 @@ defmodule Nfd.Sitemaps do
         add Helpers.page_path(Endpoint, :privacy), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :terms_and_conditions), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :accountability), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :reddit_guidelines), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :everything), priority: 0.5, changefreq: "weekly", expires: nil
 
         add Helpers.content_path(Endpoint, :articles), priority: 0.5, changefreq: "weekly", expires: nil
@@ -74,7 +75,6 @@ defmodule Nfd.Sitemaps do
       end
     end
     
-    # NOTE: It will no longer ping google, I can't help but feel this is hurting everything
-    # ping()
+    ping()
   end 
 end

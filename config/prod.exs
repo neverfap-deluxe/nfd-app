@@ -1,20 +1,18 @@
 use Mix.Config
 
-# config :stripity_stripe, 
-#   api_key: System.get_env("STRIPE_SECRET_KEY"),
-#   json_library: Jason
+config :recaptcha,
+  public_key: System.get_env("GOOGLE_RECAPTCHA_CLIENT"),
+  secret: System.get_env("GOOGLE_RECAPTCHA_SECRET")
 
-# Mailer setup
+config :stripity_stripe, 
+  api_key: System.get_env("STRIPE_API_KEY_SECRET"),
+  json_library: Jason
+
 config :nfd, Nfd.SwooshMailer,
   adapter: Swoosh.Adapters.AmazonSES,
   region: "us-east-1",
   access_key: System.get_env("AWS_ACCESS_KEY"),
   secret: System.get_env("AWS_SECRET_KEY") 
-
-config :recaptcha,
-  public_key: System.get_env("GOOGLE_RECAPTCHA_CLIENT"),
-  secret: System.get_env("GOOGLE_RECAPTCHA_SECRET")
-
 
 config :nfd, :pow_assent,
   providers:

@@ -6,14 +6,18 @@
       <h2>Updates</h2>
       <p>If you'd like to keep up to date on future products as they're released, please subscribe to our newsletter!</p>
 
-      <%= partial "subscriber_status.html", %{ conn: @conn, subscribed: @subscriber.subscribed, user_id: @user.id } %>
+      <%= partial "subscriber_status.html", %{ conn: @conn, subscribed: @is_subscribed, subscribed_property: @subscribed_property, user_id: @user.id } %>
     </div>
-    
-    <div class="hub__main__area__content">
-      <h2>Email Challenges</h2>
-      <%= partial "hub/email_campaigns.html", %{ collections_email: @collections_email} %>
-    </div>
+  </div>
 
+  <div class="hub__main__area">
+    <div class="hub__main__area__content">
+      <h2>Email Campaigns</h2>
+      <%= partial "hub/email_campaign_list.html", %{ collections_email: @collections_email, collections_access_list: @collections_access_list } %>
+    </div>
+  </div>
+
+  <div class="hub__main__area">    
     <div class="hub__main__area__content">
       <h2>Audio Courses</h2>
       <div class="hub__main__audio">
@@ -21,13 +25,17 @@
         <a style="margin-bottom: 1rem; margin-top: 1rem;"href="/podcast" class="button subscribe__button">NeverFap Deluxe Podcast</a>
       </div>
     </div>
+  </div>
 
+  <div class="hub__main__area">    
     <div class="hub__main__area__content">
       <h2>Links</h2>
       <p>Website: <a href="https://neverfapdeluxe.com">https://neverfapdeluxe.com/</a></p>
-      <p>Twitter: <a href="https://twitter.com/NeverFapDeluxe">https://twitter.com/NeverFapDeluxe</a></p>
-      <p>Reddit: <a href="https://reddit.com/user/NeverFapDeluxe">https://reddit.com/user/NeverFapDeluxe</a></p>
-      <p>Discord: <a href="https://discord.gg/YETRkSj">https://discord.gg/YETRkSj</a></p>
+      <p>Facebook: <a href="<%= Application.get_env(:nfd, :social_facebook_url) %>"><%= Application.get_env(:nfd, :social_facebook_url) %></a></p>
+      <p>Twitter: <a href="<%= Application.get_env(:nfd, :social_twitter_url) %>"><%= Application.get_env(:nfd, :social_twitter_url) %></a></p>
+      <p>Discord: <a href="<%= Application.get_env(:nfd, :social_discord_url) %>"><%= Application.get_env(:nfd, :social_discord_url) %></a></p>
+      <p>Reddit: <a href="<%= Application.get_env(:nfd, :social_reddit_url) %>"><%= Application.get_env(:nfd, :social_reddit_url) %></a></p>
     </div>
   </div>
+
 </div>

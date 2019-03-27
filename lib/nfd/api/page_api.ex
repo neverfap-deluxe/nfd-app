@@ -1,4 +1,4 @@
-defmodule NfdWeb.API.Page do
+defmodule Nfd.API.Page do
   use Tesla
 
   def home(client) do
@@ -39,6 +39,10 @@ defmodule NfdWeb.API.Page do
 
   def accountability(client) do
     get(client, "/accountability/index.json")
+  end
+
+  def reddit_guidelines(client) do
+    get(client, "/reddit_guidelines/index.json")
   end
 
   def everything(client) do

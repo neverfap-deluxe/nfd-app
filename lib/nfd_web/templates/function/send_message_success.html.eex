@@ -1,5 +1,5 @@
 <div class="single__wrapper">   
-  <h2 class="single__title">Thank you! <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
+  <h1 class="single__title">Thank you! <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
   <div class="single__content" style="margin-bottom: 0;">
     <p>Thank you for the message.</p>
     <p>It has been sent to my inbox and I'll try to respond ASAP.</p>

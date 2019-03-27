@@ -1,4 +1,4 @@
-defmodule NfdWeb.API.ContentEmail do
+defmodule Nfd.API.ContentEmail do
   use Tesla
 
   def seven_day_kickstarter(client) do

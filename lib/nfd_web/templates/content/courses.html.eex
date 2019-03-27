@@ -1,5 +1,5 @@
 <div class="single__wrapper">   
-  <h2 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
   <div class="single__content">
     <p>Here you'll find our NeverFap Deluxe Courses!</p>
     <p>These courses have been structured around the written content on this website, in order to provide you with the most efficient way forward with your porn recovery.</p>

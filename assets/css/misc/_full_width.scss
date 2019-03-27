@@ -37,16 +37,25 @@
 }
 
 .email__day__container {
+  
   .email__day__container__item {
     display: flex;
+    flex-direction: column;
+
     border: 4px solid white;
     box-shadow: -5px 5px 0px 0px cyan;
     padding-left: 1.4rem;
     padding-right: 1.4rem;
     transition: .2s box-shadow;
 
-    .email__day__container__item__title {
+    margin-bottom: 1.2rem;
 
+    .email__day__container__item__title {
+      margin-right: 1rem;
+      min-width: 160px;
+    }
+    .email__day__container__item__text {
+      margin-top: 0rem;
     }
   }
 
@@ -68,6 +77,17 @@
 
 
 @media screen and (min-width: 768px) {  
+  .email__day__container {
+    .email__day__container__item {
+      flex-direction: row;
+      .email__day__container__item__text {
+        margin-top: 1.7rem;
+      }
+  
+    }
+
+  }
+
   .email__campaign__full__width {
     border-top: 4px solid white;
   
@@ -80,6 +100,10 @@
     }
   }
 
+}
+
+
+@media screen and (min-width: 1024px) {
   .email__campaign__box__two {
     display: flex;
     flex-direction: row;
@@ -95,16 +119,18 @@
       margin-top: 2rem;
     }
   }
+
+  
 }
 
 // @media screen and (min-width: 1280px) {
-  // .email__campaign__full__width {
-  //   .email__campaign__title {
+//   .email__campaign__full__width {
+//     .email__campaign__title {
 
-  //   }
+//     }
   
-  //   .email__campaign__sub__title {
+//     .email__campaign__sub__title {
 
-  //   }
-  // }
+//     }
+//   }
 // }
