@@ -13,21 +13,20 @@
   margin-bottom: 4rem;
 
   .cyan__banner__title__container {
-    // background: black;
     position: relative;
   }
 
-  .cyan__banner__title { // rgba(255,46,182,1)
+  .cyan__banner__title {
     font-size: 1.2rem;
     border: 1px solid cyan;
     margin-top: 0;
     margin-bottom: 0;
 
     line-height: 3.4rem;
-    // margin-left: 1rem;
+    
     color: white;
     padding-left: 1rem;
-    // background: white;
+    
     background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
     background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
     background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
@@ -72,7 +71,7 @@
       // padding-top: 2rem;
       // padding-bottom: 2rem;
 
-      font-size: 2.7rem;
+      font-size: 2.1rem;
       line-height: 4rem;
       padding: 1rem;
 
