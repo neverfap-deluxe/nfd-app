@@ -35,43 +35,49 @@
 
 <div class="single__wrapper single__wrapper--community">
   <div class="single__content">
-    <h2>Patreon</h2>
-    <p>I highly recommend checking out my Patreon if you're looking to track the progress I make on the website.</p>
-    <p>I post weekly updates of all the work I put towards NeverFap Deluxe, so it's an amazing place to keep up-to-date with all the essential happenings of this wonderful resource.</p>
-    <p>In addition, you're more than welcome to commit a monthly financial contribution towards the website if you so please.</p>
-  </div>
-</div>
-
-<%= partial "links/patreon.html", assigns %>
-
-<div class="single__wrapper single__wrapper--community">
-  <div class="single__content">
-    <h2>Reddit</h2>
-    <p>Ah, yes.</p>
-    <p>I use the NeverFapDeluxe Reddit account in order to market the website, as well as offer opinion and advice to people starting out with their porn recovery journey.</p>
-    <p>Feel free to follow my account in order to catch the trickle of my comments, or even just to say:</p>
-    <p><b>"Heyyyy 21F Aus, looking to hook up ;)</b>"</p>
-
-    <!-- #LOLFap
-    #NewFapDeluxe
-    #MeditationMotivation
-    #HealthyCopingMechanismCrack
-     -->
-  </div>
-</div>
-
-<%= partial "links/reddit.html", assigns %>
-
-<div class="single__wrapper single__wrapper--community">
-  <div class="single__content">
     <h2>Discord</h2>
-    <p>I've setup a Discord channel if you're interested in having a chat or if you have any questions about NeverFap Deluxe. It is also a great opportunity if you're looking for an accountability partner, or simply if you'd like to say G'Day and introduce yourself.</p>
+    <p>I've setup a Discord channel if you're interested in having a chat or if you have any questions about NeverFap Deluxe. It's also a great opportunity to introduce yourself and get to know our small but active community.</p>
+    <p>In addition, I also offer an accountability program via our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel that has been designed to help you commit to your mental health, and motivate you by seeing what others are doing.</p>
+    <p>You can learn more about the program <a class="link" href="/accountability-program">here</a>.</p>
     <p>Obviously we all live in different time zones, however I check it frequently and respond as promptly as I can.</p>
     <p>I'm personally located in Melbourne, Australia. (GMT+11:00)</p>
   </div>
 </div>
 
 <%= partial "links/discord.html", assigns %>
+
+<div class="single__wrapper single__wrapper--community">
+  <div class="single__content">
+    <h2>Reddit</h2>
+    <p>Yes, that's right.</p>
+    <p>We have our very own subreddit.</p>
+    <p>Perhaps you'd like to receive some personal advice via our <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewFapDeluxe</a> initiative or even ask an important question in regards to one of the articles or practies on the website.</p>
+    <p>Feel free to follow my account in order to catch a trickle of my comments, or even just to say:</p>
+    <p><b>"Heyyyy 21F Aus, looking to hook up ;)</b>"</p>
+
+    <!-- #LOLFap
+    #NewFapDeluxe
+    #MeditationMotivation
+    #HealthyCopingMechanismCrack
+      -->
+  </div>
+</div>
+
+<%= partial "links/reddit.html", assigns %>
+  
+
+<div class="single__wrapper single__wrapper--community">
+    <div class="single__content">
+      <h2>Patreon</h2>
+      <p>I recommend checking out my Patreon if you're looking to track the progress I make on the website.</p>
+      <!-- TODO: Here's an example of an update I post -->
+      <p>I post weekly updates of all the work I put towards NeverFap Deluxe, so it's an amazing place to keep up-to-date with all the essential happenings of this wonderful resource.</p>
+      <p>In addition, you're more than welcome to commit a monthly financial contribution towards the website if you so please.</p>
+    </div>
+  </div>
+  
+  <%= partial "links/patreon.html", assigns %>
+  
 
 <div class="single__wrapper single__wrapper--community">
   <div class="single__content">
