@@ -1,0 +1,81 @@
+.cyan__banner {
+  box-sizing: border-box;
+  // margin-top: 1.5rem;
+  // margin-bottom: 1.5rem;
+  border-top: 1px solid cyan;
+  border-bottom: 1px solid cyan;
+
+  width: 100%;
+  background: cyan;
+  box-shadow: 0 14px 56px 0 rgba(0, 0, 0, 0.2), 0 12px 29px 0 rgba(0, 0, 0, 0.01);
+
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+
+  .cyan__banner__title__container {
+    // background: black;
+    position: relative;
+  }
+
+  .cyan__banner__title { // rgba(255,46,182,1)
+    font-size: 1.2rem;
+    border: 1px solid cyan;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    line-height: 3.4rem;
+    // margin-left: 1rem;
+    color: white;
+    padding-left: 1rem;
+    // background: white;
+    background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+    background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
+
+    .cyan__banner__bad {
+      color: black;
+    }
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .cyan__banner {
+    .cyan__banner__title {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cyan__banner {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+
+    border-top: 4px solid cyan;
+    border-bottom: 2px solid cyan;
+
+    .cyan__banner__title--lead {
+    }
+
+    .cyan__banner__title {
+      border: 1px solid white;
+      margin-top: 0.9rem;
+      margin-bottom: 0.9rem;
+
+      width: 600px;
+      margin: 0 auto;
+      margin-bottom: 0.1rem;
+      // padding-top: 2rem;
+      // padding-bottom: 2rem;
+
+      font-size: 2.7rem;
+      line-height: 4rem;
+      padding: 1rem;
+
+    }
+  }
+}

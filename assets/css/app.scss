@@ -15,7 +15,6 @@
 
 @import "partial/_header.scss";
 @import "partial/_footer.scss";
-@import "partial/_kickstarter.scss";
 @import "partial/_subscriber_status.scss";
 
 // pages
@@ -30,7 +29,13 @@
 
 // banners
 @import "banners/_login_top.scss";
-@import "banners/_banner.scss";
+@import "banners/_banner_misc.scss";
+@import "banners/_banner_magenta.scss";
+@import "banners/_banner_black.scss";
+@import "banners/_banner_cyan.scss";
+@import "banners/_banner_simple.scss";
+@import "banners/_banner_kickstarter.scss";
+@import "banners/_banner_guide.scss";
 @import "banners/_banner_two.scss";
 @import "banners/_banner_three.scss";
 
