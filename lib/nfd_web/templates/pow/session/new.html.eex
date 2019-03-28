@@ -22,7 +22,7 @@
           <div class="form__auth__container">
             <%#= for link <- PowAssent.Phoenix.ViewHelpers.provider_links(@conn) do %>
               <%= partial "auth/google_button.html" %>
-              <%= partial "auth/discord_button.html" %>
+              <%#= partial "auth/discord_button.html" %>
             <%# end %>
           </div>
         
