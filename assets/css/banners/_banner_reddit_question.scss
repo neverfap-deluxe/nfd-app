@@ -1,0 +1,47 @@
+.reddit__question__banner {
+  display: flex; 
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+
+  .reddit__question__banner__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 600px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
+    p {
+      text-align: center;
+    }
+  }
+}
+
+
+@media screen and (min-width: 420px) {
+  .reddit__question__banner {
+
+    .reddit__question__banner__box {
+      padding-left: 2rem;
+      padding-right: 2rem;
+
+      p {
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .reddit__question__banner {
+    min-width : 700px;
+    margin: 0 auto;
+  
+    .reddit__question__banner__box {
+
+    }
+  }
+}
