@@ -3,35 +3,47 @@
   <div class="single__content" style="margin-bottom: 0;">
     <p>I am currently offering free advice to people looking for additional help for their porn addiction recovery journey.</p>
     <p>Not only to help you answer any questions you may have, but also to ensure that NeverFap Deluxe remains an amazing and accessible resource for both beginners and veterans alike.</p>
-    <p>In order to receive a detailed break-down, all you have to do is post in the NeverFap Deluxe Subreddit with the tag <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewFapDeluxe</a>.</p>
-  </div>  
-</div>  
+    <p>In order to receive a detailed break-down of next steps to take with your porn addiction recovery, all you have to do is post in the NeverFap Deluxe Subreddit with the tag <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewFapDeluxe</a>.</p>
+  </div>
+</div>
 
 <%= partial "links/reddit.html", assigns %>
 
 <div class="single__wrapper">   
   <div class="single__content" style="margin-bottom: 0;">
     <h2>Recommendations</h2>
-    <p>How you ultimately choose to express yourself is entirely up to you, and I encourage you to write as little or as much as you want!</p>
-    <p>These are just some helpful suggestions.</p>
-
-    <h3>Information:</h3>
-    <p class="articles__link cursor__default" style="font-size: 1.2rem;">A brief description of who you are.</p>
-    <p class="articles__link cursor__default" style="font-size: 1.2rem;">Your background and history with porn addiction.</p>
-    <p class="articles__link cursor__default" style="font-size: 1.2rem;">Your progress with porn addiction recovery so far.</p>
-    <p class="articles__link cursor__default" style="font-size: 1.2rem;">A list of some of the things you personally struggle with.</p>
-      
-        
-    <h3>Titles:</h3>
-    <p class="articles__link cursor__default" style="font-size: 1.2rem;">3 Days PMO FREE, Looking for some advice. #NewFapDeluxe</p>
-    <p class="articles__link cursor__default" style="font-size: 1.2rem;">How do I get started with meditation? #NewFapDeluxe</p>
-    <p class="articles__link cursor__default" style="font-size: 1.2rem;">Male 16 new to NeverFap Deluxe! #NewFapDeluxe</p>
-
-
+    <p>What information you choose to post is entirely up to you, and I encourage you to write as little or as much as you want!</p>
+    <p>Obviously the more information you provide, the easier it will be to understand where you're coming from, as well as better understand what you need help with.</p>
+    <p>Here are some helpful suggestions.</p>
   </div>
 </div>
 
-<%= partial "links/reddit.html", assigns %>
+<div class="guide__banner" style="border-bottom: 4px solid black;">
+  <div class="guide__suggestion__container">
+    <div class="black__banner__title__container">
+      <h2 class="black__banner__title black__banner__title--reddit__guidelines">Information:</h2>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">A brief description of who you are.</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Your background and history with porn addiction.</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Your progress with porn addiction recovery so far.</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">A list of some of the things you personally struggle with.</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">A list of the coping mechanisms you rely on.</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Where you would like to see yourself in the .</p>
+    </div>
+  </div>
+</div>
+
+<div class="guide__banner" style="border-bottom: 4px solid black;">
+  <div class="guide__suggestion__container">
+    <div class="black__banner__title__container">
+      <h2 class="black__banner__title black__banner__title--reddit__guidelines">Example Titles:</h2>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">3 Days PMO FREE. #NewFapDeluxe</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">How do I get started with meditation? #NewFapDeluxe</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Male 16 new to NeverFap Deluxe! #NewFapDeluxe</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Struggling to get past a two weeks. #NewFapDeluxe</p>
+    </div>
+  </div>
+</div>
+
 
 <div class="single__wrapper">   
   <div class="single__content" style="margin-bottom: 0;">
@@ -53,3 +65,4 @@
   </div>
 </div>
   
+<%= partial "links/reddit.html", assigns %>

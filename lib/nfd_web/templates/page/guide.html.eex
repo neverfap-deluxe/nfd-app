@@ -3,7 +3,7 @@
   <div class="single__content">
     <p>Welcome to the NeverFap Deluxe Guide!</p>
     <p>Thank you for deciding to take a deeper look into the NeverFap Deluxe Method of overcoming porn addiction.</p>
-    <p>If you haven't yet had the chance, I highly recommend before continuing with the guide to check out the <a class="link" href="/">NeverFap Deluxe Homepage</a>.</p>
+    <p>If you haven't yet had the chance, I highly recommend checking out the <a class="link" href="/">NeverFap Deluxe Homepage</a> before continuing with the guide.</p>
     <p>It explores in great detail what you can expect from NeverFap Deluxe, and it will serve as a fantastic introduction and precursor to some of the skills you'll be learning from the materials on this website.</p>
   </div>
 </div>
@@ -352,8 +352,9 @@
 <div class="single__wrapper">
   <div class="single__content">
     <h1>Still not sure?</h1>
-    
     <p>If you're still not sure what to do, then that's okay.</p>
+    <p>I'm currently willing to offer a detailed break-down of next steps which you can take if you post in our </p>
+    <p>In addition, I also offer personal coaching </p>
     <p>Just slowly make your way through the content on the website, and feel free to ask any questions in our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Discord channel</a>. I'm usually around (assuming it's within my timezone) and I'm more than happy to respond.</p>
     <p>Remember that you're essentially adopting an entirely new way of thinking, so it's not necessarily going to be easy, nor make complete sense overnight.</p>
     <p>Don't worry if it doesn't immediately make sense or if it feels uncomfortable. It's to be expected.</p>
