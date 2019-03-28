@@ -24,13 +24,10 @@
 
   <!-- Note: It would be good to get share buttons here. -->
 
-  <%#= partial "next_prev_buttons.html", assigns %>
+  <%= partial "next_prev_buttons.html", assigns %>
 </div>
 
 <%= partial "reddit_question_banner.html", assigns %>
-
-
-<%= partial "links/loginregister.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content">
@@ -40,4 +37,4 @@
   </div>
 </div>
 
-<%= partial "links/patreon.html", assigns %>
+<%= partial "links/loginregister.html", assigns %>

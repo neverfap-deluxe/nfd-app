@@ -31,6 +31,7 @@ defmodule NfdWeb.ContentController do
         Meta.increment_visit_count(response.body["data"])
         if response.body["data"]["draft"] == false do 
           {:ok, articlesResponse} = client |> Content.articles()
+          
           conn |> render("article.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)  
         else 
           render_404_page(conn)

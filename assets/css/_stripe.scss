@@ -1,8 +1,5 @@
 .google__button {
   display: block;
-  // display: flex;
-  // justify-content: space-around;
-  // text-align: center;
 
   background: white;
   color: #444;
@@ -16,7 +13,7 @@
     font-weight: normal;
   }
   .google__button__icon {
-    background: url('https://developers.google.com/identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
+    background: url('/images/google__sign__in__logo.png') transparent 5px 50% no-repeat;
     display: inline-block;
     vertical-align: middle;
     width: 42px;

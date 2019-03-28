@@ -2,6 +2,23 @@
   <p></p>
 </div>
 
+<style>
+  #the-final-countdown {
+    background: #333;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: #eee;
+    text-shadow: 1px 1px 5px black;
+    padding: 1rem 0;
+    font-size: 3rem;
+    border: 1px solid #000;
+  }
+
+  #the-final-countdown p {
+
+  }
+</style>
+
 <script>
   setInterval(function time(){
     var d = new Date();
@@ -14,9 +31,11 @@
     if((sec + '').length == 1){
           sec = '0' + sec;
     }
-    const timer = querySelector('#the-final-countdown p');
-    timer.html(hours+':'+min+':'+sec);
+    const timer = document.querySelector('#the-final-countdown p');
+    timer.innerHTML = (hours+':'+min+':'+sec);
   }, 1000);
 </script>
 
 <!-- https://codepen.io/derrickmckeown/pen/KLDhk -->
+
+

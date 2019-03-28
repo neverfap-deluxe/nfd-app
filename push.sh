@@ -14,6 +14,7 @@ rsync -r --delete-after --quiet ./nginx/docker-compose.yml root@198.199.67.180:/
 echo 'echo rsync nginx/.env'
 rsync -r --delete-after --quiet ./nginx/.env root@198.199.67.180:/docker/letsencrypt-docker-nginx/src/production/.env
 
-git add .
+git add -u
+git reset -- config/dev.exs
 git commit -m "$1"
 git push
