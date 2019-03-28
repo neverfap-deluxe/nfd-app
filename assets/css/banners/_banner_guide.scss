@@ -170,6 +170,18 @@
 
 
 @media screen and (min-width: 420px) {
+  .guide__banner {
+    padding-left: 2rem;
+    padding-right: initial;
+    .single__wrapper {
+      margin: 2rem;
+    }
+
+    h2 {
+      border-right: none;
+    }
+  }
+
   .guide__banner__title {
     font-size: 3rem;
     line-height: 4rem;
@@ -238,14 +250,10 @@
     width: 60px;
   }
 
-  .unhealthy__banner, .guide__banner {
+  .guide__banner {
     padding-top: 3rem;
     padding-bottom: 3rem;
     padding-left: 4rem;
-
-    .unhealthy__banner__title {
-      margin-bottom: 6rem;
-    }
   }
 }
 
@@ -265,7 +273,7 @@
     padding: 1.6rem;
   }
 
-  .unhealthy__banner, .guide__banner {
+  .guide__banner {
     .single__wrapper {
       margin-left: 200px;
     }
@@ -273,7 +281,7 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .unhealthy__banner, .guide__banner {
+  .guide__banner {
     .single__wrapper {
       margin-left: 280px;
     }

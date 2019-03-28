@@ -1,0 +1,66 @@
+.unhealthy__banner {
+  padding: 1rem;
+
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
+
+  background: rgba(255,46,182,1);
+
+  h2, h3 {
+    color: white;
+  }
+
+  p {
+    color: white;
+  }
+
+  .unhealthy__banner__title {
+    margin-bottom: 3rem;
+    max-width: 952px;
+  }
+}
+
+
+@media screen and (min-width: 420px) {
+  .unhealthy__banner {
+    padding-left: 2rem;
+    padding-right: initial;
+    .single__wrapper {
+      margin: 2rem;
+    }
+
+    h2 {
+      border-right: none;
+    }
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .unhealthy__banner {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 4rem;
+
+    .unhealthy__banner__title {
+      margin-bottom: 6rem;
+    }
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .unhealthy__banner {
+    .single__wrapper {
+      margin-left: 200px;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .unhealthy__banner {
+    .single__wrapper {
+      margin-left: 280px;
+    }
+  }
+}
