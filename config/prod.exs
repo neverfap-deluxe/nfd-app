@@ -27,11 +27,11 @@ config :nfd, :pow_assent,
           client_secret: System.get_env("GOOGLE_CLIENT_SECRET"),
           strategy: PowAssent.Strategy.Google
         ],
-        # vk: [
-        #   consumer_key: "REPLACE_WITH_CONSUMER_KEY",
-        #   consumer_secret: "REPLACE_WITH_CONSUMER_SECRET",
-        #   strategy: PowAssent.Strategy.Twitter
-        # ]
+        discord: [
+          client_id: System.get_env("DISCORD_API_KEY"),
+          client_secret: System.get_env("DISCORD_API_KEY_SECRET"),
+          strategy: PowAssent.Strategy.Discord
+        ]
       ]
 
 # For production, don't forget to configure the url host

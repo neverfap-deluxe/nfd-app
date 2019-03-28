@@ -10,6 +10,7 @@
   </div>
   <div class="hub__main__area">
     <div class="hub__main__area__content">
+      <%= partial "email_countdown_timer.html", assigns %>
       <p><b>Landing page:</b> <a class="link" href="/<%= @collection.slug %>">link</a></p>
       <%= partial "subscriber_status.html", %{ conn: @conn, subscribed: @is_subscribed, subscribed_property: @subscribed_property, user_id: @user.id } %>
     </div>
