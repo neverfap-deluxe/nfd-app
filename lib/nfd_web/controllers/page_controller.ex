@@ -170,6 +170,19 @@ defmodule NfdWeb.PageController do
     end
   end
 
+  def coaching(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Page.coaching() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])
+        conn |> render("coaching.html", item: response.body["data"], page_type: page_type)
+      {:error, _error} -> 
+        render_404_page(conn)
+    end
+  end
+
   defp render_404_page(conn) do 
     conn 
       |> put_view(NfdWeb.ErrorView)

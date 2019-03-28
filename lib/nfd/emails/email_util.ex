@@ -15,8 +15,6 @@ defmodule Nfd.Util.Email do
     end      
   end
   def validate_subscriber_is_already_subscribed(subscriber, main_matrix) do
-    { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type} = generate_course_types()
-    
     case String.split(main_matrix, "h") do
       ["0", _] -> subscriber.subscribed == true
       ["1", _] -> subscriber.seven_day_kickstarter_subscribed == true

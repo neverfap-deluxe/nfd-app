@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <%= if @has_paid_for_collection != nil or @collection.premium or @collection.price != 0.0 do %>
+  <%#= if @has_paid_for_collection != nil or @collection.premium or @collection.price != 0.0 do %>
 
   <div class="hub__main__area">
       <div class="hub__main__payment">
@@ -48,7 +48,7 @@
       </div>
     </div>
   </div>
-<% end %>
+<%# end %>
 
   <!-- <div class="hub__main__area">
     <div class="hub__main__audio">

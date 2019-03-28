@@ -21,14 +21,27 @@ defmodule NfdWeb.DashboardController do
     { _count_property, subscribed_property } = Email.collection_slug_to_subscribed_property("general-newsletter")
     is_subscribed = Map.fetch!(subscriber, subscribed_property)
 
-    # Function to automatically create collection access for free courses i.e.
-    
-
     conn
       |> put_flash(:info, "Welcome back!")
       |> render("dashboard.html", user: user, subscriber: subscriber, collections_audio: collections_audio, collections_email: collections_email, collections_access_list: collections_access_list, is_subscribed: is_subscribed, subscribed_property: subscribed_property)
   end
 
+  def dashboard_coaching(conn, _params) do
+    user = Pow.Plug.current_user(conn)
+    create_collection_access_for_free_courses(user)
+    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
+    collections_access_list = Account.list_collection_access_by_user_id(user.id)
+
+    collections_audio = Content.list_audio_courses()
+    collections_email = Content.list_email_campaigns()
+
+    { _count_property, subscribed_property } = Email.collection_slug_to_subscribed_property("general-newsletter")
+    is_subscribed = Map.fetch!(subscriber, subscribed_property)
+
+    conn
+      |> put_flash(:info, "Welcome back!")
+      |> render("dashboard_coaching.html", user: user, subscriber: subscriber, collections_audio: collections_audio, collections_email: collections_email, collections_access_list: collections_access_list, is_subscribed: is_subscribed, subscribed_property: subscribed_property)
+  end
 
   
   # Email Campaigns
@@ -115,7 +128,6 @@ defmodule NfdWeb.DashboardController do
 
 
   # Profile
-
   def profile(conn, _params) do
     user = Pow.Plug.current_user(conn)
     create_collection_access_for_free_courses(user)
@@ -135,7 +147,6 @@ defmodule NfdWeb.DashboardController do
 
 
   # Check if subscriber exists
-
   defp check_subscriber_exists(user) do
     # Check is subscriber email already exists.
     case Account.get_subscriber_email(user.email) do
@@ -164,7 +175,6 @@ defmodule NfdWeb.DashboardController do
 
 
   # Helper Functions
-
   defp get_relevant_stripe_key(host) do
     if host == "localhost" do 
       "pk_test_ShlsB93VF6UPAeaGzhC3Lmue"
@@ -176,7 +186,6 @@ defmodule NfdWeb.DashboardController do
 
 
   # Change subscription general
-
   def change_subscription_dashboard_func(conn, %{"subscribed" => subscribed, "user_id" => user_id, "subscribed_property" => subscribed_property}) do
     subscribed_property_atom = String.to_atom(subscribed_property)
 
@@ -210,7 +219,7 @@ defmodule NfdWeb.DashboardController do
               {:ok, collection_access } -> collection_access
               {:error, _error} -> nil
             end
-          collection_access -> nil
+          _collection_access -> nil
         end
       end)
   end 

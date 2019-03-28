@@ -1,6 +1,6 @@
 defmodule Nfd.SeedSevenDayKickstarter do
   alias Nfd.Repo
-  import Ecto
+  # import Ecto
 
   alias Nfd.Content
   alias Nfd.Content.File

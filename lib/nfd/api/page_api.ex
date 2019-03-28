@@ -48,4 +48,8 @@ defmodule Nfd.API.Page do
   def everything(client) do
     get(client, "/everything/index.json")
   end
+
+  def coaching(client) do
+    get(client, "/coaching/index.json")
+  end
 end

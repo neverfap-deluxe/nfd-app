@@ -129,7 +129,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
+
+  <%= if Mix.env() != :dev do %>
+    <link rel="manifest" href="/manifest.json">
+  <% end %>
+
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">

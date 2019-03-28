@@ -1,0 +1,38 @@
+<div class="single__wrapper">   
+  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
+  <div class="single__content" style="margin-bottom: 0;">
+    <p>I offer personal porn addiction recovery coaching for people seeking much more targeted help for their porn addiction.</p>
+    <p>In most cases, the articles and courses contained within this website should provide you with all the knowledge you require in order to </p>
+    <p>There really are only a few scenarios in which you may want to consider personal coaching from me:</p>
+
+    <p>- You want to beat this thing quicker, and are happy to pay a premium for it.</p>
+    <p>- You're struggling to understand how to effectively practice meditation and other awareness exercises, and you're seeking guided help.</p>
+    <p>- You want to ask a question face-to-face to me about your porn addiction recovery.</p>
+    <p>- You're seeking advice on a recommended routine of mental health practice.</p>
+    <p>- You just wanna say hi, because why the hell not.</p>
+
+    <h3>I charge $45 for an initial 30 minute consultation.</h3>
+    <h3>Then it's $90 per hour for any on-going sessions that you feel like you need.</h3>
+
+    <p>Here's the thing, I can usually tell a person within a few minutes.</p>
+    <p>Often because most porn addicts are the same in terms of feelings, fears and doubts, and almost all of them are doing the exact wrong things.</p>
+    <p>For a lot of people, that initial 30 minutes is all they need, because they might only have a few on-going questions or are simply seeking routine.</p>
+    <p>On-going sessions can be helpful if you've been struggling for a long time, and you really need someone to keep your accountable and tell it to you straight.</p>
+    <p>In almost all these cases, the issue is that the client fails to stick to their routine. You distrust the process. You lose. It's that simple.</p>
+    <p>Of course, that's why I'm here to help.</p>
+  </div>
+</div>
+
+<%= partial "links/patreon.html", assigns %>
+
+<div class="single__wrapper">   
+  <div class="single__content" style="margin-bottom: 0;">
+    <h2>Next Steps</h2>
+    <p>If you're still interested in having me coach you, then there's two things you need to do.</p>
+    <p>Firstly, create a NeverFap Deluxe Account. You may register <%= link to: Routes.pow_registration_path(@conn, :new), class: "link" do %>here<% end %> or sign in <%= link to: Routes.pow_session_path(@conn, :new), class: "link" do %>here<% end %>.</p>
+    <p>This step is important, because it's essentially how you'll pay for the coaching.</p>
+    <p>Secondly, get in touch via email so I can learn a bit more about you, and so we can arrange a time.</p>
+  </div>
+</div>
+
+<%= partial "links/loginregister.html", assigns %>

@@ -38,8 +38,9 @@ defmodule NfdWeb.Router do
     get "/privacy", PageController, :privacy
     get "/terms-and-conditions", PageController, :terms_and_conditions
     get "/accountability-program", PageController, :accountability
-    get "/new-fap-deluxe-submission-guidelines", PageController, :reddit_guidelines
+    get "/new-fap-deluxe-reddit-guidelines", PageController, :reddit_guidelines
     get "/everything", PageController, :everything
+    get "/coaching", PageController, :coaching
 
     get "/articles", ContentController, :articles
     get "/articles/:slug", ContentController, :article

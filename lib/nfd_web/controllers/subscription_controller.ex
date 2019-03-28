@@ -155,14 +155,14 @@ defmodule NfdWeb.SubscriptionController do
   defp confirm_subscription_check_if_access_collection_access_already_exists(conn, updated_subscriber, course_name, user, collection) do 
     case Account.get_collection_access_by_user_id_and_collection_id(user.id, collection.id) do 
       nil -> confirm_subscription_create_collection_access(conn, updated_subscriber, course_name, user, collection)
-      collection_access -> render(conn, "success_subscription_page.html", course_name: course_name)
+      _collection_access -> render(conn, "success_subscription_page.html", course_name: course_name)
     end
   end
 
   defp confirm_subscription_create_collection_access(conn, updated_subscriber, course_name, user, collection) do 
     case Account.create_collection_access(%{collection_id: collection.id, user_id: user.id}) do
       {:ok, _collection_access} -> render(conn, "success_subscription_page.html", course_name: course_name)
-      {:error, changeset} -> render_failure_page(:confirm_subscription_create_collection_access, conn, updated_subscriber.subscriber_email, nil, nil)
+      {:error, _changeset} -> render_failure_page(:confirm_subscription_create_collection_access, conn, updated_subscriber.subscriber_email, nil, nil)
     end
   end
 

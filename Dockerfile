@@ -33,6 +33,11 @@ RUN cd assets && \
     cd .. && \
     mix phx.digest
 
+    # NOTE: Will need to remove --watch from the commands.
+    # npm run mjml \
+    # npm run k \
+
+
 EXPOSE 4000
 
 # CMD ["mix", "do", "ecto.create,", "ecto.migrate,", "run priv/repo/seeds.exs,", "phx.server"]

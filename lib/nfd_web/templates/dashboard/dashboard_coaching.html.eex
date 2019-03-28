@@ -1,0 +1,41 @@
+<div class="hub__email__challenges">
+  <h2 class="hub__main__title hub__main__title--email">Coaching</h2>
+  <div class="hub__main__back__container">
+    <a class="hub__main__back" href="/dashboard">
+      Back to Dashboard
+    </a>
+  </div>
+  <div class="hub__main__area">
+    <div class="hub__main__area__content">
+    <p>Coaching services information page: <a class="link" href="/coaching">link</a></p>
+    <p>Coaching Minutes: <% %></p>
+    </div>
+  </div>
+
+  <div class="hub__main__area">
+    <div class="hub__main__payment">
+      <h2>Payment</h2>
+      <div class="hub__main__area__content">
+        <p>We offer payment via Paypal or Credit Card.</p>
+        <p>The Purchase button will open a pop-up modal to Stripe Checkout, which will securely handle your Credit Card details via the Stripe API so your Credit Card information remains 100% secure.</p>
+        <p>The Paypal button will also open a pop-up modal for you to login to your Paypal account, where you can simply confirm the payment.</p>    
+      </div>
+
+      <div class="hub__main__payment__course_information">
+        <h3>Coaching Minutes</h3>
+        <h3>Price: $222222222</h3>
+      </div>
+
+      <div class="hub__main__payment__box">
+        <div class="hub__main__payment__stripe">
+          <h3>Credit Card</h3>
+          <%= partial "payment/stripe_checkout.html", %{stripe_api_key: @stripe_api_key, collection: @collection} %>
+        </div>
+        <div class="hub__main__payment__paypal">
+          <h3>PayPal</h3>
+          <%= partial "payment/paypal_button.html", %{} %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
