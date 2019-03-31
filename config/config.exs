@@ -91,8 +91,7 @@ config :nfd, Nfd.Scheduler,
     # {"0 18-6/2 * * *", fn -> :mnesia.backup('/var/backup/mnesia') end},
 
     # Email Scheduler - Runs every midnight:
-    # {"@daily", {Emails, :email_scheduler, []}}, # "0 12 * * *    
-    {"* * * * *", {Emails, :email_scheduler, []}}, # "0 12 * * *    
+    {"@daily", {Emails, :email_scheduler, []}}, # "0 12 * * *
 
     # Sitemap Scheduler - Runs every midnight:
     {"@daily", {Sitemaps, :generate, []}}, # "0 12 * * *
