@@ -26,7 +26,7 @@
 
     <h2>Email Campaigns</h2>
     <div class="everything__section">
-      <%= partial "everything_item.html", %{ wip: true, title: "7 Day NeverFap Deluxe Kickstarter", url: "/seven-day-neverfap-deluxe-kickstarter", description: "An introduction to the NeverFap Deluxe." } %>
+      <%= partial "everything_item.html", %{ wip: false, title: "7 Day NeverFap Deluxe Kickstarter", url: "/seven-day-neverfap-deluxe-kickstarter", description: "An introduction to the NeverFap Deluxe." } %>
       <%= partial "everything_item.html", %{ wip: true, title: "10 Day Meditation Primer", url: "/ten-day-meditation-primer", description: "An primer into the practice of meditation." } %>
       <%= partial "everything_item.html", %{ wip: true, title: "28 Day Awareness Challenge", url: "/twenty-eight-day-awareness-challenge", description: "Learn more about awareness and the power of your mind." } %>
     </div>
