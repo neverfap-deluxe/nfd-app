@@ -1,5 +1,5 @@
 <div class="single__wrapper">   
-  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <h1 class="single__title">Community <img src="/images/logo.png" class="logo__square" alt=""/></h2>
   <div class="single__content" style="margin-bottom: 0;">
     <p>Join the NeverFap Deluxe Community!</p>
     <p>There are a heap of different ways you can interact with the NeverFap Deluxe Community, whether you want to chat with others, or even follow NeverFap Deluxe on social media.</p>

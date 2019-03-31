@@ -1,5 +1,5 @@
 <div class="single__wrapper">   
-  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <h1 class="single__title">Coaching <img src="/images/logo.png" class="logo__square" alt=""/></h2>
   <div class="single__content" style="margin-bottom: 0;">
     <p>I offer porn addiction recovery coaching for people seeking more targeted help with their porn addiction.</p>
     <p>In most cases, the articles and courses contained within this website should provide you with all the skills and knowledge you require in order to help you overcome your porn addiction.</p>

@@ -1,5 +1,5 @@
 <div class="single__wrapper">   
-  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
+  <h1 class="single__title">About <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
   <div class="single__content" style="margin-bottom: 0;">
     <p>Welcome to NeverFap Deluxe!</p>
     <p>I decided to create this website in 2019 to help people overcome porn addiction, in the easiest and most effective way possible.</p>

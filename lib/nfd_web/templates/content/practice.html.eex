@@ -1,6 +1,6 @@
 <div class="single__wrapper practices__wrapper">
 
-  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>
+  <h1 class="single__title">Practices <img src="/images/logo.png" class="logo__square" alt=""/></h1>
 
   <div class="homepage__process single__homepage__process">
     <div class="homepage__process__title__container">

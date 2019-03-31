@@ -92,6 +92,7 @@ config :nfd, Nfd.Scheduler,
 
     # Email Scheduler - Runs every midnight:
     # {"@daily", {Emails, :email_scheduler, []}}, # "0 12 * * *    
+    {"* * * * *", {Emails, :email_scheduler, []}}, # "0 12 * * *    
 
     # Sitemap Scheduler - Runs every midnight:
     {"@daily", {Sitemaps, :generate, []}}, # "0 12 * * *
