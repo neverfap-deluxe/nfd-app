@@ -43,8 +43,6 @@ defmodule Nfd.Emails do
       { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type} = Nfd.Util.Email.generate_course_types()
       unsubscribe_url = Nfd.Util.Email.course_type_to_matrix(type) |> Nfd.Util.Email.generate_unsubscribe_url(subscriber.subscriber_email)
       
-      IO.inspect type, label: "email_scheduler_logic"
-
       { template, subject } =
         case type do
           ^kickstarter_type -> EmailTemplates.run_seven_day_kickstarter(day_count)
