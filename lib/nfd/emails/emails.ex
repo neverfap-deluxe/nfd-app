@@ -83,7 +83,7 @@ defmodule Nfd.Emails do
   def cast_course_email(subscriber, subject, template, unsubscribe_url) do
     %Swoosh.Email{}
       |> to(subscriber.subscriber_email)
-      |> from({"NeverFap Deluxe", "neverfapdeluxe@gmail.com"})
+      |> from({"NeverFap Deluxe", "admin@neverfapdeluxe.com"})
       |> subject(subject)
       |> render_body(template, %{unsubscribe_url: unsubscribe_url})
   end
@@ -93,7 +93,7 @@ defmodule Nfd.Emails do
 
     %Swoosh.Email{}
       |> to(subscriber_email)
-      |> from({"NeverFap Deluxe", "neverfapdeluxe@gmail.com"})
+      |> from({"NeverFap Deluxe", "admin@neverfapdeluxe.com"})
       |> subject(subject)
       |> render_body(template, %{url: url, unsubscribe_url: unsubscribe_url, course_name: course_name})
   end
