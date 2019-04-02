@@ -45,3 +45,5 @@ EXPOSE 4000
 
 # The iex actually doeComprehensive NoFap Guides nothing.
 CMD ["iex", "-S", "mix", "do", "ecto.prod,", "phx.server"]
+
+

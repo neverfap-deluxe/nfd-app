@@ -18,7 +18,7 @@ defmodule NfdWeb.FunctionController do
     case Recaptcha.verify(contact_form["g-recaptcha-response"]) do
       {:ok, _response} -> 
         case Account.create_contact_form(contact_form) do
-          {:ok, contact_form} ->
+          {:ok, _contact_form} ->
             EmailLogs.new_contact_form_email(name, email, message)
             render(conn, "send_message_success.html") 
     

@@ -129,3 +129,8 @@ https://developers.google.com/identity/sign-in/web/sign-in?authuser=1
 
 
 https://termsandconditionstemplate.com/generate/
+
+
+// migrations
+
+https://stackoverflow.com/questions/33153874/phoenix-ecto-postgres-table-not-creating

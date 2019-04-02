@@ -32,79 +32,83 @@
       <mj-wrapper padding-top="0" padding-bottom="0" css-class="body-section">
         <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
           <mj-column width="100%">
-            <mj-text color="#212b35" font-weight="bold" font-size="20px">
-              Welcome to the consistency.
-            </mj-text>
-            <mj-text color="#35393d" font-size="20px">
-              So far you've been exposed to a variety of important concepts. 
-            </mj-text>            
-            <mj-text color="#212b35" font-weight="bold" font-size="20px">
-              Essentially, you've already covered 90% of what makes the NeverFap Deluxe method of overcoming porn addiction so effective.
-            </mj-text>
-            <mj-text color="#35393d" font-size="16px">
-              Specifically, awareness, calmness and meditation.
-            </mj-text>
-            <mj-text color="#35393d" font-size="16px">
-              With those three concepts in mind, you can more-or-less overcome your porn addiction with ease.
-            </mj-text>
-            <mj-text color="#35393d" font-size="16px">
-              Of course, there's very good reason why I didn't start with those concepts off the bat. Instead, I decided to start with this concept of trust and why it's so important
-            </mj-text>
+  <mj-text color="#212b35" font-weight="bold" font-size="20px">
+    Welcome to the consistency.
+  </mj-text>
+  <mj-text color="#35393d" font-size="16px">
+    Today I want to talk about how best you can apply consistency to your own life.
+  </mj-text>
+  <mj-text color="#35393d" font-size="16px">
+		Where a lot of people go wrong is that they treat consistency as if it's a long-term goal.
+  </mj-text>            
+  <mj-text color="#35393d" font-size="16px">
+		For example, what I see a lot of people do in the r/NoFap subreddit is that they create these fancy 90 day calendars in the shape of a moutain on a massive sheet of paper.
+  </mj-text>            
+  <mj-text color="#35393d" font-size="16px">
+		Where they tick off each day from the bottom of the moutain, as if to suggest that their progress is a long-term grind to the top. 
+  </mj-text>            
+  <mj-text color="#35393d" font-size="16px">
+		Although great in theory, these types of strategies entirely miss the point of what consistency is.
+  </mj-text>            
+  <mj-text color="#35393d" font-size="16px">
+		Essentially, consistency doesn't start with long-term goals. 
+  </mj-text>            
+  <mj-text color="#35393d" font-size="20px">
+    <strong>
+		Consistency begins with the small things you can do each day.
+    </strong>
+  </mj-text>            
+  <mj-text color="#35393d" font-size="16px">
+		That's because change doesn't happen over 90 days. Change happens with each individual action you make, right now. 
+  </mj-text>            
+  <mj-text color="#35393d" font-size="16px">
+		Furthermore, focusing on the now greatly amplifies the significance of everything we do, rather than what we hope to achieve in the future.
+  </mj-text>            
+  <mj-text color="#35393d" font-size="16px">
+		For example, in the overall scheme of things 10 minutes of meditation each day doesn't seem like all that much. 
+  </mj-text>            
+  <mj-text color="#35393d" font-size="16px">
+		I mean, it's just a tiny blimp in the overall scheme of things. 
+  </mj-text>            
+  <mj-text color="#35393d" font-size="16px">
+    However as an individual action, that's 10 minutes more than you've ever done in your entire life to actively combat your porn addiction, ever. 
+  </mj-text>            
+  <mj-text color="#35393d" font-size="16px">
 
-            <!-- Divider -->
-            <mj-text color="#35393d" font-size="16px"></mj-text>
-            <mj-divider border-color="#DFE3E8" border-width="1px" />
-            <mj-text color="#35393d" font-size="16px"></mj-text>
-            <!-- Divider -->
-            
+  </mj-text>            
+  <mj-text color="#35393d" font-size="16px">
+
+  </mj-text>            
+  <mj-text color="#35393d" font-size="16px">
+
+  </mj-text>            
+
+  <!-- Divider -->
+  <mj-text color="#35393d" font-size="16px"></mj-text>
+  <mj-divider border-color="#DFE3E8" border-width="1px" />
+  <mj-text color="#35393d" font-size="16px"></mj-text>
+  <!-- Divider -->
   
-            <mj-text color="#212b35" font-weight="bold" font-size="20px">
-              Next steps.
-            </mj-text>
-            
-            <mj-text color="#35393d" font-size="16px">
-              Tomorrow we'll go into some of the practices you can do to help you regain control over your mind.
-            </mj-text>
+
+  <mj-text color="#212b35" font-weight="bold" font-size="20px">
+    Next steps.
+  </mj-text>
   
-            <mj-text color="#35393d" font-size="16px">
-              If you haven't yet been to the homepage, I highly recommend checking it out. It has a great introduction into porn addiction, how recovery works, as well as 
-            </mj-text>
-            
-            <mj-button background-color="white" color="black" border="4px solid cyan;" padding-bottom="35px" padding-top="35px" href="https://neverfapdeluxe.com/">NeverFap Deluxe Homepage</mj-button>
+  <mj-text color="#35393d" font-size="16px">
+    Tomorrow we'll go into some of the practices you can do to help you regain control over your mind.
+  </mj-text>
 
-            <mj-text color="#35393d" font-size="16px" padding-bottom="30px">
-              Aside from that, I also recommend checking out some of the introductory articles on the website. 
-            </mj-text>
-                      
-            <mj-text color="#35393d" font-size="16px" padding-top="20px" align="center">
-              <strong>Introduction To The NeverFap Deluxe Guide</strong>
-            </mj-text>
-            
-            <mj-button padding-top="0px" background-color="white" color="black" border="4px solid cyan;" href="https://neverfapdeluxe.com/articles/introduction-to-the-neverfap-deluxe-guide/">link</mj-button>
-            
-            <mj-text color="#35393d" font-size="16px" padding-top="20px" align="center">
-              <strong>The Five Fundamental Principles Of NeverFap</strong>
-            </mj-text>
+  <mj-text color="#35393d" font-size="16px" padding-top="20px">
+    Thank you for reading and I'll see you here tomorrow.
+  </mj-text>
 
-            <mj-button padding-top="0px" background-color="white" color="black" border="4px solid cyan;" href="https://neverfapdeluxe.com/articles/the-five-fundamental-principles-of-neverfap/">link</mj-button>
+  <!-- Divider -->
+  <mj-text color="#35393d" font-size="16px"></mj-text>
+  <mj-divider border-color="#DFE3E8" border-width="1px" />
+  <mj-text color="#35393d" font-size="16px"></mj-text>
+  <!-- Divider -->
 
-            <mj-text color="#35393d" font-size="16px" padding-top="20px" align="center">
-              <strong>My Personal Porn Recovery Journey</strong>
-            </mj-text>
-
-            <mj-button padding-top="0px" background-color="white" color="black" border="4px solid cyan;" href="https://neverfapdeluxe.com/articles/my-personal-porn-recovery-journey/">link</mj-button>
-
-            <mj-text color="#35393d" font-size="16px" padding-top="20px">
-              Thank you for reading and I'll see you here tomorrow.
-            </mj-text>
-  
-            <!-- Divider -->
-            <mj-text color="#35393d" font-size="16px"></mj-text>
-            <mj-divider border-color="#DFE3E8" border-width="1px" />
-            <mj-text color="#35393d" font-size="16px"></mj-text>
-            <!-- Divider -->
-
-            <mj-image src="https://f002.backblazeb2.com/file/neverfapdeluxeemail/email__header__assort.png" alt="" />
+  <mj-image src="https://f002.backblazeb2.com/file/neverfapdeluxeemail/email__header__assort.png" alt="" />
 
   </mj-column>
     </mj-section>
