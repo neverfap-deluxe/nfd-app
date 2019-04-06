@@ -5,6 +5,7 @@ defmodule NfdWeb.ContentController do
   alias Nfd.API.Content
 
   alias Nfd.Meta
+  alias Nfd.Account.Subscriber
 
   plug :put_layout, "general.html"
 
@@ -31,8 +32,11 @@ defmodule NfdWeb.ContentController do
         Meta.increment_visit_count(response.body["data"])
         if response.body["data"]["draft"] == false do 
           {:ok, articlesResponse} = client |> Content.articles()
-          
-          conn |> render("article.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)  
+
+          { previousArticle, nextArticle } = getPreviousNextArticle(articlesResponse.body["data"]["articles"], response.body["data"]);
+          seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
+
+          conn |> render("article.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, previousArticle: previousArticle, nextArticle: nextArticle, page_type: page_type)  
         else 
           render_404_page(conn)
         end
@@ -64,7 +68,12 @@ defmodule NfdWeb.ContentController do
         Meta.increment_visit_count(response.body["data"])
         if response.body["data"]["draft"] == false do 
           {:ok, articlesResponse} = client |> Content.articles()
-          conn |> render("practice.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)
+          {:ok, practicesResponse} = client |> Content.practices()
+
+          { previousArticle, nextArticle } = getPreviousNextArticle(practicesResponse.body["data"]["practices"], response.body["data"]);
+          seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
+          
+          conn |> render("practice.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, previousArticle: previousArticle, nextArticle: nextArticle, page_type: page_type)
         else
           render_404_page(conn)
         end
@@ -176,5 +185,22 @@ defmodule NfdWeb.ContentController do
     conn 
       |> put_view(NfdWeb.ErrorView)
       |> render("404.html")
+  end
+
+  defp getPreviousNextArticle(articles, currentArticle) do
+    articleValues = 
+      Enum.reduce(articles, %{last: nil, values: [], correct: false, previousArticle: nil, nextArticle: nil}, fn article, acc ->
+        if acc.correct do
+          %{last: article, previousArticle: acc.previousArticle, nextArticle: article, correct: false }
+        else  
+          if currentArticle["slug"] == article["slug"] do 
+            %{last: article, previousArticle: acc.last, nextArticle: nil, correct: true }
+          else 
+            %{last: article, previousArticle: acc.previousArticle, nextArticle: acc.nextArticle, correct: false}
+          end
+        end
+      end)
+      
+    { articleValues.previousArticle, articleValues.nextArticle }
   end
 end

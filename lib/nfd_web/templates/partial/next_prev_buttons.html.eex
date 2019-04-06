@@ -1,19 +1,19 @@
 
 <div class="single__next__prev">
-  <%= if @item["prevInSection"] do %>
-    <%= if @item["prevInSectionTitle"] do %>
+  <%= if @previousArticle do %>
+    <%= if @previousArticle["title"] do %>
       <div class="button__wrapper">
-        <a class="button button__black_and_white" href='<%= @item["prevInSectionPermalink"] %>'>Previous Post | <span><%= @item["prevInSectionTitle"] %></span></a>
+        <a class="button button__black_and_white" href='<%= @previousArticle["permalink"] %>'>Previous Post | <span><%= @previousArticle["title"] %></span></a>
       </div>
     <% else %>
       <div style="width: 300px;"></div>
     <% end %>
   <% end %>
 
-  <%= if @item["nextInSection"] do %>
-    <%= if @item["nextInSectionTitle"] do %>
+  <%= if @nextArticle do %>
+    <%= if @nextArticle["title"] do %>
       <div class="button__wrapper">
-        <a class="button button__black_and_white" href='<%=@item["nextInSectionPermalink"] %>'>Next Post | <span><%= @item["nextInSectionTitle"] %></span></a>
+        <a class="button button__black_and_white" href='<%=@nextArticle["permalink"] %>'>Next Post | <span><%= @nextArticle["title"] %></span></a>
       </div>
     <% else %>
       <div style="width: 300px;"></div>  
