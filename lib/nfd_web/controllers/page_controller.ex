@@ -21,7 +21,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         {:ok, articlesResponse} = client |> Content.articles()
-        conn |> render("home.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], articles: articlesResponse.body["data"]["articles"], seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, page_type: page_type)
+        conn |> render("home.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, page_type: page_type)
       {:error, _error} -> 
         render_404_page(conn)
     end
@@ -37,7 +37,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         {:ok, articlesResponse} = client |> Content.articles()
-        conn |> render("guide.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, page_type: page_type)
+        conn |> render("guide.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, page_type: page_type)
       {:error, _error} -> 
         render_404_page(conn)
     end
@@ -51,7 +51,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         {:ok, articlesResponse} = client |> Content.articles()
-        conn |> render("community.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], page_type: page_type)
+        conn |> render("community.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), page_type: page_type)
       {:error, _error} -> 
         render_404_page(conn)
     end

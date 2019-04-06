@@ -16,7 +16,7 @@ defmodule NfdWeb.ContentController do
     case client |> Content.articles() do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
-        conn |> render("articles.html", item: response.body["data"], articles: response.body["data"]["articles"], page_type: page_type)
+        conn |> render("articles.html", item: response.body["data"], articles: response.body["data"]["articles"] |> Enum.reverse(), page_type: page_type)
       {:error, _error} ->
         render_404_page(conn)
     end
@@ -33,10 +33,10 @@ defmodule NfdWeb.ContentController do
         if response.body["data"]["draft"] == false do 
           {:ok, articlesResponse} = client |> Content.articles()
 
-          { previousArticle, nextArticle } = getPreviousNextArticle(articlesResponse.body["data"]["articles"], response.body["data"]);
+          { previousArticle, nextArticle } = getPreviousNextArticle(articlesResponse.body["data"]["articles"] |> Enum.reverse(), response.body["data"]);
           seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
 
-          conn |> render("article.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, previousArticle: previousArticle, nextArticle: nextArticle, page_type: page_type)  
+          conn |> render("article.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, previousArticle: previousArticle, nextArticle: nextArticle, page_type: page_type)  
         else 
           render_404_page(conn)
         end
@@ -52,7 +52,7 @@ defmodule NfdWeb.ContentController do
     case client |> Content.practices() do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
-        conn |> render("practices.html", item: response.body["data"], practices: response.body["data"]["practices"], page_type: page_type)
+        conn |> render("practices.html", item: response.body["data"], practices: response.body["data"]["practices"] |> Enum.reverse(), page_type: page_type)
       {:error, _error} ->
         render_404_page(conn)
     end
@@ -70,10 +70,10 @@ defmodule NfdWeb.ContentController do
           {:ok, articlesResponse} = client |> Content.articles()
           {:ok, practicesResponse} = client |> Content.practices()
 
-          { previousArticle, nextArticle } = getPreviousNextArticle(practicesResponse.body["data"]["practices"], response.body["data"]);
+          { previousArticle, nextArticle } = getPreviousNextArticle(practicesResponse.body["data"]["practices"] |> Enum.reverse(), response.body["data"]);
           seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
           
-          conn |> render("practice.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], practices: practicesResponse.body["data"]["practices"], seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, previousArticle: previousArticle, nextArticle: nextArticle, page_type: page_type)
+          conn |> render("practice.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), practices: practicesResponse.body["data"]["practices"] |> Enum.reverse(), seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, previousArticle: previousArticle, nextArticle: nextArticle, page_type: page_type)
         else
           render_404_page(conn)
         end
@@ -89,7 +89,7 @@ defmodule NfdWeb.ContentController do
     case client |> Content.courses() do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
-        conn |> render("courses.html", item: response.body["data"], courses: response.body["data"]["courses"], page_type: page_type)
+        conn |> render("courses.html", item: response.body["data"], courses: response.body["data"]["courses"] |> Enum.reverse(), page_type: page_type)
       {:error, _error} ->
         render_404_page(conn)
     end
@@ -106,7 +106,7 @@ defmodule NfdWeb.ContentController do
         if response.body["data"]["draft"] == false do 
           {:ok, articlesResponse} = client |> Content.articles()
           {:ok, practicesResponse} = client |> Content.practices()
-          conn |> render("course.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], practices: practicesResponse.body["data"]["practices"], page_type: page_type)
+          conn |> render("course.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), practices: practicesResponse.body["data"]["practices"] |> Enum.reverse(), page_type: page_type)
         else
           render_404_page(conn)
         end
@@ -122,7 +122,7 @@ defmodule NfdWeb.ContentController do
     case client |> Content.podcasts() do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
-        conn |> render("podcasts.html", item: response.body["data"], podcasts: response.body["data"]["podcasts"], page_type: page_type)
+        conn |> render("podcasts.html", item: response.body["data"], podcasts: response.body["data"]["podcasts"] |> Enum.reverse(), page_type: page_type)
       {:error, _error} ->
         render_404_page(conn)
     end
