@@ -157,7 +157,9 @@ defmodule NfdWeb.DashboardController do
 
   defp check_subscriber_exists_create_subscriber(user_email, user_id) do
     case Account.create_subscriber(%{ subscriber_email: user_email, user_id: user_id }) do
-      {:ok, subscriber} -> subscriber
+      {:ok, subscriber} -> 
+        # NOTE: I think there's an issue where this only sometimes returns the subscriber_email.        
+        subscriber
       {:error, _error} -> EmailLogs.error_email_log("#{user_email} - #{user_id} - Could not create subscriber - :check_subscriber_exists_create_subscriber.")
     end
   end

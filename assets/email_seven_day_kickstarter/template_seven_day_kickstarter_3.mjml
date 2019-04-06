@@ -55,7 +55,9 @@
     However because it's one of the easiest approaches towards dealing with mentally and emotionally challenging situations.  
   </mj-text>
   <mj-text color="#35393d" font-size="20px">
+    <strong>
     At it's core, calmness is your ability to remain relaxed.
+      </strong>
   </mj-text>
      <mj-text color="#35393d" font-size="16px">
     It's a highly underrated skill which most people overlook, as a passive (and therefore ineffective) response towards stress.
@@ -69,9 +71,14 @@
   <mj-text color="#35393d" font-size="16px">
     However, I digress.
   </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    What usually happens for most people when they face stress, is that they immediately get tense. 
+            
+  <mj-text color="#35393d" font-size="20px">
+    <strong>
+    What usually happens for most people when they face stress, is that they immediately get tense.
+      </strong>
   </mj-text>
+
+            
 	<mj-text color="#35393d" font-size="16px">
     They get stressed, they feel this inherent desire to react and fight back, and as a result they become more agitated and frustrated with themselves.
   </mj-text>

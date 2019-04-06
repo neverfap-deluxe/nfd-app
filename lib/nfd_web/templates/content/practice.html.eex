@@ -21,6 +21,8 @@
 <div class="single__wrapper">
   <div class="single__content">
     <%= raw @item["content"] %>
+
+    <%= partial "similar_practices.html", %{ practices: @practices, category: @item["categories"] } %>
   </div>
 
   <%= partial "share_buttons.html", %{permalink: @item["permalink"] } %>

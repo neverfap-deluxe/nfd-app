@@ -73,7 +73,7 @@ defmodule NfdWeb.ContentController do
           { previousArticle, nextArticle } = getPreviousNextArticle(practicesResponse.body["data"]["practices"], response.body["data"]);
           seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
           
-          conn |> render("practice.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, previousArticle: previousArticle, nextArticle: nextArticle, page_type: page_type)
+          conn |> render("practice.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"], practices: practicesResponse.body["data"]["practices"], seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, previousArticle: previousArticle, nextArticle: nextArticle, page_type: page_type)
         else
           render_404_page(conn)
         end

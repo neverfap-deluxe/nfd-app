@@ -19,13 +19,15 @@ defmodule NfdWeb.SubscriptionController do
   defp add_subscription_get_subscriber(conn, subscriber_email, multiple_matrix, main_matrix) do
     case Account.get_subscriber_email(subscriber_email) do
       nil -> add_subscription_create_subscriber(conn, subscriber_email, multiple_matrix, main_matrix)
-      subscriber -> add_subscription_check_if_already_subscribed(conn, subscriber.subscriber_email, multiple_matrix, main_matrix)
+      subscriber -> add_subscription_check_if_already_subscribed(conn, subscriber, multiple_matrix, main_matrix)
     end
   end
 
   defp add_subscription_create_subscriber(conn, subscriber_email, multiple_matrix, main_matrix) do 
     case Account.create_subscriber(%{subscriber_email: subscriber_email}) do
-      {:ok, subscriber} -> add_subscription_check_if_already_subscribed(conn, subscriber, multiple_matrix, main_matrix)
+      {:ok, subscriber} -> 
+        # NOTE: I think there's an issue where this only sometimes returns the subscriber_email.
+        add_subscription_check_if_already_subscribed(conn, subscriber, multiple_matrix, main_matrix)
       {:error, _changeset} -> render_failure_page(:add_subscription_create_subscriber, conn, subscriber_email, nil, nil)
     end
   end

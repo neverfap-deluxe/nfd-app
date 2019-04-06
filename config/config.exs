@@ -14,7 +14,7 @@ config :nfd,
   ecto_repos: [Nfd.Repo],
   base_url: "https://neverfapdeluxe.com/",
   author: "Julius Reade",
-  logo: "/images/logo.png",
+  logo: "https://neverfapdeluxe.com/images/logo.png",
   google_analytics_url: "UA-132863786-1",
 
   social_facebook_url: "https://www.facebook.com/NeverFap-Deluxe-2203366683036015/",

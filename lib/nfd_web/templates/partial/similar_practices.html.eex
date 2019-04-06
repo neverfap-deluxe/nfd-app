@@ -1,0 +1,21 @@
+
+<hr class="hr2">
+<h2>Moving Forward</h2>
+<hr class="hr2__bottom">
+
+<p>Once you've practiced this for a few weeks, I highly recommend checking the rest of the exercises out:</p>
+
+<!-- <%= @category %> -->
+
+<!-- NOTE This isn't working, so it's just showing all exercises for now. -->
+<div class="index__container posts">
+  <div class="articles__list">
+    <%= Enum.map(@practices, fn(item) -> %>
+      <%#= if Enum.find(item["categories"], &(&1 == @category)) do %>
+        <%= if Enum.find(item["tags"], &(&1 == "practice")) do %>
+          <span><a class="link articles__link" href='<%= item["permalink"] %>'><%= item["title"] %></a></span>
+        <% end %>
+      <%# end %>
+    <% end) %>
+  </div>
+</div>
