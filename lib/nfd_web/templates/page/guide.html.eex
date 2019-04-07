@@ -332,6 +332,9 @@
     </div>
   </div>
   
+  <%= partial "banners/podcast_banner.html", assigns %>
+
+
   <div class="cyan__banner">
     <div style="background: white;">
       <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Podcast.", link: "/podcast" } %>

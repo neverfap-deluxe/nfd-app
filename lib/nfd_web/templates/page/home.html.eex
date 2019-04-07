@@ -289,6 +289,7 @@
     </div>
   </div>
 
+  <%= partial "banners/podcast_banner.html", assigns %>
 
   <div class="homepage__hero homepage__hero--secondary">
     <h1 class="homepage__hero__title">NeverFap Deluxe Articles.</h1>
