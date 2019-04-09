@@ -1,5 +1,54 @@
+
 <div class="discord__banner">
+  
   <h2 class="discord__banner__title">Needing some help keeping accountable?</h2>
+  <div style="height: 2px; width: 100%; background: cyan;"></div>
+  <div style="height: 2px; width: 100%; background: rgba(255,46,182,1);"></div>
+  <div style="height: 2px; width: 100%; background: cyan;"></div>
+  <div style="height: 2px; width: 100%; background: rgba(255,46,182,1);"></div>
+
+  <h3 class="discord__banner__title--secondary">Join our #accountability Discord channel and recieve daily support!</h3>
+  
+  <h3 class="discord__banner__title--secondary discord__banner__title--special">
+    At times the conversation can be slightly homophobic.
+  </h3>
+
+  <h3 class="discord__banner__title--secondary discord__banner__title--special--two">
+      <!-- <div class="acc_class">
+          <span class="acc__word">#accountability</span><span class="acc__word">#accountability</span><span class="acc__word">#accountability</span>
+          <span class="acc__word">#accountability</span><span class="acc__word">#accountability</span><span class="acc__word">#accountability</span>
+          <span class="acc__word">#accountability</span><span class="acc__word">#accountability</span><span class="acc__word">#accountability</span>
+          <span class="acc__word">#accountability</span><span class="acc__word">#accountability</span><span class="acc__word">#accountability</span>
+          <span class="acc__word">#accountability</span><span class="acc__word">#accountability</span><span class="acc__word">#accountability</span>
+          <span class="acc__word">#accountability</span><span class="acc__word">#accountability</span><span class="acc__word">#accountability</span>
+          <span class="acc__word">#accountability</span><span class="acc__word">#accountability</span><span class="acc__word">#accountability</span>
+          <span class="acc__word">#accountability</span><span class="acc__word">#accountability</span><span class="acc__word">#accountability</span>
+          <span class="acc__word">#accountability</span><span class="acc__word">#accountability</span><span class="acc__word">#accountability</span>
+        </div> -->
+      
+    With a dash of white nationalism to keep the children entertained.</h3>
+  <h3 class="discord__banner__title--secondary">
+    But the critics absolutely love it.
+  </h3>
+  <h3 class="discord__banner__title--secondary">
+    Join our discord today.
+  </h3>
+  <h3 class="discord__banner__title--secondary">
+    
+    <div class="account__buttons">
+      <a class="account__discord__button__container" href="<%= Application.get_env(:nfd, :social_discord_url) %>">
+        <img class="account__discord__button__logo" src="/images/discord__logo.png" />
+        <p class="account__discord__button__text">DISCORD <span class="account__discord__button__text--display">CHANNEL</span></p>
+      </a>
+    </div>
+  </h3>
+
+  <div style="height: 2px; width: 100%; background: cyan;"></div>
+  <div style="height: 2px; width: 100%; background: rgba(255,46,182,1);"></div>
+  <div style="height: 2px; width: 100%; background: cyan;"></div>
+  <div style="height: 2px; width: 100%; background: rgba(255,46,182,1);"></div>
+
+
 
 </div>
 

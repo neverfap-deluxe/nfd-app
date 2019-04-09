@@ -26,6 +26,7 @@
     padding: 3rem;
 
     font-size: 3rem;
+    line-height: 4.5rem;
     margin-bottom: 3rem;
   }
 
@@ -36,6 +37,7 @@
 
 .hub__main__back__container {
   display: flex;
+  // flex-direction: column;
   margin-bottom: 1rem;
 
   position: relative;
@@ -148,11 +150,13 @@
 @media screen and (min-width: 420px) {
   .hub {
   }
-
-
 }
 
 @media screen and (min-width: 768px) {
+  .hub__main__back__container {
+    // flex-direction: row;
+  }
+
   .hub__dashboard, 
   .hub__profile, 
   .hub__audio__courses, 

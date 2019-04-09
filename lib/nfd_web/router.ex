@@ -41,6 +41,7 @@ defmodule NfdWeb.Router do
     get "/new-fap-deluxe-reddit-guidelines", PageController, :reddit_guidelines
     get "/everything", PageController, :everything
     get "/coaching", PageController, :coaching
+    get "/post-relapse-academy", PageController, :post_relapse_academy
 
     get "/articles", ContentController, :articles
     get "/articles/:slug", ContentController, :article

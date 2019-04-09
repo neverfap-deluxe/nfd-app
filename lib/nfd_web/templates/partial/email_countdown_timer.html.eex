@@ -1,21 +1,28 @@
 <div id="the-final-countdown">
-  <p></p>
+  <p style="margin-right: 0.4rem;">Time till next email:</p>
+  <p id="the-final-counter"></p>
 </div>
 
 <style>
   #the-final-countdown {
-    background: #333;
+    /* margin-top: 1.6rem; */
+    display: flex;
+    align-items: center;
+    
     font-family: 'Lato', sans-serif;
     text-align: center;
-    color: #eee;
-    text-shadow: 1px 1px 5px black;
-    padding: 1rem 0;
+    color: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
     font-size: 3rem;
-    border: 1px solid #000;
+    border: 4px solid black;
+    background: white;
   }
 
   #the-final-countdown p {
-
+    margin-top: 0!important;
+    margin-bottom: 0!important;
+    font-size: 1.1rem;
   }
 </style>
 
@@ -31,7 +38,7 @@
     if((sec + '').length == 1){
           sec = '0' + sec;
     }
-    const timer = document.querySelector('#the-final-countdown p');
+    const timer = document.querySelector('#the-final-counter');
     timer.innerHTML = (hours+':'+min+':'+sec);
   }, 1000);
 </script>

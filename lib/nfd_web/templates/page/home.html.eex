@@ -3,9 +3,11 @@
   <div class="homepage__hero">
     <%= partial "header.html", assigns %>
     <h1 class="homepage__hero__title">NeverFap <span class="deluxe__font">Deluxe</span></h1>
-    <h2 class="homepage__hero__title__secondary">The Comprehensive Porn Addiction Recovery Platform.</h2>
+    <h2 class="homepage__hero__title__secondary">The Porn Addiction Recovery Process.</h2>
   </div>
   
+  <%#= partial "banners/discord_banner.html", assigns %>
+
   <%= partial "links/patreon.html", assigns %>
 
   <div class="homepage__section">
