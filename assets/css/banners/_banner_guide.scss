@@ -116,11 +116,13 @@
 }
 .guide__suggestion__number {
   display: none;
+  color: black;
 }
 .guide__suggestion__title {
   display: flex;
   align-items: center;
 
+  color: black;
   border: 4px solid black;
   background: white;
   box-shadow: -5px 5px 0px 0px cyan;

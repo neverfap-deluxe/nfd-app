@@ -4,8 +4,10 @@
     <div class="single__content" style="margin-bottom: 0;">
       <h3>Here you are.</h3>
       <p>You distrusted the process and you lost.</p> <!-- emoji -->
-      <p>As I've said on many occasions, it takes 5 years on average for people to overcome their porn addiction and certainly, no one is ever exception to the rule.</p>
-      <p>Given that this was to be expected, my job at this point is to educate you on why it happened, as well as get you back on track with your porn addiction recovery journey.</p>
+      <p>It takes 5 years on average to overcome porn addiction and you're currently experiencing that rule in full-effect.</p>
+      <p>My job at this point is to educate you on why it happened, why it takes people so long on average to overcome porn addiction, as well as get you back on track with your porn addiction recovery journey.</p>
+      <h2>If you keep reading, I will explain exactly why you relapsed.</h2>
+      <h3>As well as what you have to do to change.</h3>
     </div>
   </div>
 
@@ -32,7 +34,7 @@
   <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 100%;"></div>
 
   <div class="post__relapse__section--choices">
-    <h2>At this point, you really have two choices you can make.</h2>
+    <h1>At this point, you really have two choices you can make.</h1>
     <div class="choice__box">
       <div class="choice__item choice__one__container">
         <h3>You can continue to relapse and stop caring about yourself.</h3>    
@@ -70,12 +72,11 @@
     <div class="single__content">
       <h1>If you decided to continue reading.</h1>
       <p>Then you will have done a truly extrodinary thing.</p>
-      <p>You may not realise it, as you trod along in your post-relapse daze of disphoria. However you made a conscious decision to continue reading this article.</p>
-      <p>You could be doing any number of things right now, including watching porn, but instead, you are reading this article which is literally reprogramming your mind as we speak.</p>
-      <p>And the more you read it, and engrain this knowledge into your head, the more you'll grow and develop as a person.</p>
-      <p>No only is it one less moment spent reinforcing your addiction, however you're even deciding to go a step-further by using this opportunity to educate yourself.</p>
-      <p>Now, the reason why this is significant is because since your relapse...</p>
-      <h3>This is the most you've done up until now to actually change your habits, and this really cannot be understated.</h3>
+      <p>You may not realise it, however you made a conscious decision to continue reading this article.</p>
+      <p>You could be doing any number of things right now, including watching porn, but instead you are reading this article which is literally reprogramming your mind as we speak.</p>
+      <p>Not only is it one less moment spent reinforcing your addiction, however you're even going a step-further by using this opportunity to educate yourself.</p>
+      <!-- <p>Now, the reason why this is significant is because since your relapse...</p> -->
+      <h3>Arguably this is the most you've done since your relapse, and this really cannot be understated.</h3>
     </div>
   </div>
 
@@ -85,58 +86,162 @@
 
   <div class="single__wrapper">   
     <div class="single__content">
-      <h3>We simply stop caring, and that's that.</h3>
-      <p>And we remain this way for months, even years - until we finally build up the courage again to admit there's something wrong.</p>
-      <p>Well, let's change that. </p>
-
+      <h3>We stop caring, and that's that.</h3>
+      <p>And we remain this way for months, in some cases even years. Not really caring what happens next, even though we know we're not truly happy on the inside.</p>
+      <p>Usually, leaving our recovery to chance, hoping something will change in-spite of doing absolutely nothing about it.</p>
+      <p>Well, today we change that.</p>
+      <p>Furthermore, we'll make it super easy.</p>
     </div>
   </div>
 
-  <div class="post__relapse__section--dark">
-    <h1></h1>
-    <h2></h2>
-  </div>
+  <%= partial "links/patreon.html", assigns %>
 
   <div class="single__wrapper">   
     <div class="single__content">
-      <h3>The truth.</h3>
-      <p>You have much deeper problems that beign a pon</p>
-      
+      <p>Before I go into the exact details as to why you relapsed, as well as what you need to do in order to rectify that.</p>
+      <p>I want to first talk about what you're currently experiencing, because to be quite honest, that's most likely all you're able to recognise.</p>
+      <h1>Chances are you're feeling.</h1>
+    </div>
+  </div>
+
+<div class="feeling__post__relapse">
+  <div class="feeling__post__relapse__list">
+    <h2 class="feeling__post__relapse__item">Helplessness.</h2>
+    <h2 class="feeling__post__relapse__item">Guilt.</h2>
+    <h2 class="feeling__post__relapse__item">Shame.</h2>
+    <h2 class="feeling__post__relapse__item">Pointlessness.</h2>
+    <h2 class="feeling__post__relapse__item">Depression.</h2>
+    <h2 class="feeling__post__relapse__item">Sadness.</h2>
+    <h2 class="feeling__post__relapse__item">Anger.</h2>
+    <h2 class="feeling__post__relapse__item">Unmotivated.</h2>
+    <h2 class="feeling__post__relapse__item">Unworthy.</h2>
+    <h2 class="feeling__post__relapse__item">Broken.</h2>
+    <h2 class="feeling__post__relapse__item">Exhausted.</h2>
+    <h2 class="feeling__post__relapse__item">Unenthusiastic.</h2>
+    <h2 class="feeling__post__relapse__item">Irritated.</h2>
+    <h2 class="feeling__post__relapse__item">Obsessed.</h2>
+    <h2 class="feeling__post__relapse__item">Unfocused.</h2>
+  </div>
+  <h2 style="color: black; margin-top: 4rem;">And so much more...</h2>
+</div>
+
+  <div class="single__wrapper">   
+    <div class="single__content">
+      <h3>So why do you feel this way?</h3>
+      <p>In order to explain why, we'll need to go back a few steps and explain how you got here in the first place.</p>      
+      <p>However if you want the <b>tldr</b>.</p>
+
+      <h1>The reason why you relapsed is because of your self-limiting beliefs.</h1>
+      <p>Essentially, your self-limiting beliefs are the reason why you ended up straying from the process, as you now reside in a wet pile of cum and teenage perspiration.</p>
+      <span class="articles__link--magenta cursor__default">These include things like.</span>
+
+      <h2 class="banner__points">Believing that you are not good enough.</h2>
+      <div style="border-top: 3px solid rgba(255,46,182,1);"></div>
+      <h2 class="banner__points">Rampant perfectionism.</h2>
+      <div style="border-top: 3px solid rgba(255,46,182,1);"></div>
+      <h2 class="banner__points">.</h2>
+      <div style="border-top: 3px solid rgba(255,46,182,1);"></div>
+      <h2 class="banner__points">.</h2>
+      <div style="border-top: 3px solid rgba(255,46,182,1);"></div>
+      <h2 class="banner__points">.</h2>
+      <div style="border-top: 3px solid rgba(255,46,182,1);"></div>
+      <h2 class="banner__points">.</h2>
+      <div style="border-top: 3px solid rgba(255,46,182,1);"></div>
+      <h2 class="banner__points">.</h2>
+      <div class="show__large" style="border-top: 3px solid rgba(255,46,182,1);"></div>
     </div>
   </div>
 
 
+
+  <div class="feeling__post__relapse">
+    <h2 style="color: black;">You ate too much candy.</h2>
+    <h1 style="color: black;">And now your head is in candy land.</h1>
+
+    <div style="height: 2px; width: 100%; background: cyan;"></div>
+    <div style="height: 2px; width: 100%; background: rgba(255,46,182,1);"></div>
+    <div style="height: 4px; width: 100%; background: cyan;"></div>
+    <div style="height: 4px; width: 100%; background: rgba(255,46,182,1);"></div>
+    <div style="height: 8px; width: 100%; background: cyan;"></div>
+    <div style="height: 8px; width: 100%; background: rgba(255,46,182,1);"></div>
+    <div style="height: 16px; width: 100%; background: cyan;"></div>
+    <div style="height: 16px; width: 100%; background: rgba(255,46,182,1);"></div>
+    <div style="height: 32px; width: 100%; background: cyan;"></div>
+    <div style="height: 32px; width: 100%; background: rgba(255,46,182,1);"></div>
+    <div style="height: 64px; width: 100%; background: cyan;"></div>
+    <div style="height: 64px; width: 100%; background: rgba(255,46,182,1);"></div>
+    <div style="height: 128px; width: 100%; background: cyan;"></div>
+    <div style="height: 128px; width: 100%; background: rgba(255,46,182,1);"></div>
+    <div style="height: 256px; width: 100%; background: cyan;"></div>
+    <div style="height: 256px; width: 100%; background: rgba(255,46,182,1);"></div>
+    <div style="height: 512px; width: 100%; background: cyan;"></div>
+    <div style="height: 512px; width: 100%; background: rgba(255,46,182,1);"></div>
+    <div style="height: 1024px; width: 100%; background: cyan;"></div>
+    <div style="height: 1024px; width: 100%; background: rgba(255,46,182,1);"></div>
+    <div style="height: 2048px; width: 100%; background: cyan;"></div>
+    <div style="height: 2048px; width: 100%; background: rgba(255,46,182,1);"></div>
+
+    <h1 style="color: black; margin-top: 3rem;">Let's bring you back down to reality.</h1>
+
+  </div>
+  
+  
   <div class="single__wrapper">   
     <div class="single__content">
-      <p>So the real question here is why?</p>
-      <p>Well, it's likely due to outside factors.</p>
-
-      <ul>
-        <li>Stress from school or work.</li>
-        <li>Parents bringing you down.</li>
-        <li>Depression.</li>
-      </ul>
+      <p>You see, before you felt all those things and got stuck in that trap of emotion, you actually did something a lot more fundamental.</p>
+      <h2>You committed to a belief.</h2>
+  
+      <p>The fact that we call it a self-limiting belief is merely a label.</p>
+      <p>Rather, you have a belief which is telling you that you should take certain actions or produce certain thoughts or emotions.</p>
+      <p>What's hard is that very rarely do we ever see the belief. Instead, all we see is the emotion and that's why we get trapped in these cycles of awfulness, because we fail to truly see the root cause of our problems.</p>
+      <h3>Well, let's change that.</h3>
     </div>
   </div>
 
+  <div class="guide__banner" style="border-bottom: 4px solid black;">
+    <div class="guide__suggestion__container">
+      <div class="black__banner__title__container">
+        <h2 class="black__banner__title" style="margin-bottom: 3rem;">Here is your new <span class="black__banner__broad" style="color: black;">#process</span> sugar daddy.</h2>
+        <div class="guide__suggestion">
+          <h1 class="guide__suggestion__number">1.</h1>
+          <h1 class="guide__suggestion__title">Identify the self-limiting beliefs holding us back</h1>
+        </div>
+        <div class="guide__suggestion">
+          <h1 class="guide__suggestion__number">2.</h1>
+          <h1 class="guide__suggestion__title">Develop a new set of healthy beliefs</h1>
+        </div>
+        <div class="guide__suggestion">
+          <h1 class="guide__suggestion__number">3.</h1>
+          <h1 class="guide__suggestion__title">Gradually dissolve those self-limiting beliefs</h1>
+        </div>
+        <div class="guide__suggestion">
+          <h1 class="guide__suggestion__number">4.</h1>
+          <h1 class="guide__suggestion__title">Get back to our porn addiction recovery</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="single__wrapper">   
+  <div class="single__content">
+    <h1>Welcome back to the Great White.</h1>
+    <h2>It's just beautiful, ain't it?</h2>
+    <h3>Now that you have a general overview of what's wrong, the first thing we'll need to do is identify these self-limiting beliefs.</h3>
+      <!-- TODO: Ability to grab those selected feelings, and throw them away.. -->
+  </div>
+</div>
+    
 
   <div class="single__wrapper">   
     <div class="single__content">
 
-      <p>Ultimately, you didn't follow the process.</p>
-      <p>It's a bit like going to the gym. If you don't go the gym, you basically can't expect to get ripped.</p>
-      <p>Now, chances are that you have an idea of why this might be the case:</p>
-      <ul>
-        <li>Stress from school or work.</li>
-        <li>Parents bringing you down.</li>
-        <li>Depression.</li>
-      </ul>
     
       <p>However that is not the reason why you didn't follow the process.</p>
       <p></p>
       <!-- . The fact is that there are a lot of awful things that   -->
     
-      <h2>Tips</h2>
+      <h2>Final Tips</h2>
       <h3>Read the website</h3>
       <p>A lot of work has been put into the website. </p>
 
@@ -145,12 +250,15 @@
       <p>It's simply not true, and in fact is the polar inverse to what we are trying to learn.</p>
       <p>Ultimately, we're learning to become comfortable with our difficult emotions, as opposed to avoid them.</p>
       <p>The emotions aren't the issue. The issue is your ability to respond to them.</p>
-
-
-
     </div>
   </div>
     
+
+  <div class="post__relapse__section--dark">
+    <h1></h1>
+    <h2></h2>
+  </div>
+
 
 
   <!-- Link to discord #accountability program. -->
@@ -158,14 +266,6 @@
 
 
 
-  Post Relapse Academy.
-
-  - They didn’t follow the process.
-
-  - Do you have depression?
-  - Focus on this image of a carrot for 10 minutes. 
-
-</div>
 
 
 
@@ -173,13 +273,13 @@
 <div class="unhealthy__banner">
     <!-- TODO: Ability to select those feelings. -->
 
-    <!-- <h2 class="margin__top__mobile">So you may be wondering.</h2>
-    <h1 class="unhealthy__banner__title">What are some of these <span style="color: white;">unhealthy coping mechanisms</span>?</h1> -->
+    <h2 class="margin__top__mobile">So you may be wondering.</h2>
+    <h1 class="unhealthy__banner__title">What are some of these <span style="color: white;">unhealthy coping mechanisms</span>?</h1>
   <div class="homepage__section__closer">
     <h2 class="banner__points">Helplessness. Guilt. Shame. Pointlessness. Depression. Sadness. Anger. </h2>
   </div>
-    <!-- <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
-    <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: cyan;"></div> -->
+    <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+    <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: cyan;"></div>
 </div>
 
 <div class="single__wrapper">   
