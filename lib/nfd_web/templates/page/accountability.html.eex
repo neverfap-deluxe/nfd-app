@@ -3,7 +3,7 @@
   <div class="single__content">
     <p>Welcome to the NeverFap Deluxe Accountabilty Program!</p>
     <p>This program has been designed to help you commit to your mental health, by providing you with the motivation and awareness to stick with your daily meditation and mental health routine.</p>
-    <p>It has been designed with our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel in mind, as that's where most our participants are posting, however you're more than welcome to use this as a personal journaling technique.</p>
+    <p>It has been designed with our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel in mind as that's where most our participants are posting, however you're more than welcome to use this as a personal journaling technique.</p>
     <p>Although certainly, part of the value comes from reading the healthy coping mechanisms others post about in the channel.</p>
   </div>
 </div>
@@ -25,18 +25,19 @@
     <hr class="hrul"/>
       <ul>
         <li>- Today's date</li>
-        <li>- Commitment streak</li>
         <li>- A list of healthy coping mechanisms you practiced for that day.</li>  
+        <li>- A list of things you're going to do differently tomorrow.</li>  
       </ul>
     <hr class="hrul__bottom"/>
 
-    <p>The reason why we're only focusing on our commitment streak, as opposed to our non-relapse streak, is because the amount of days you've gone without relapsing is ultimately irrelevant to your recovery.</p>
-    <p>In no way does it reflect on your mental health, nor provide any indication of how well you are able to cope with difficult emotions or be able to maintain control over your emotions.</p>
-    <p>On the other hand, positive action and healthy coping mechanisms are tangible things we can track, which prove positive change. Which is to say that our success first begins with positive change, and then reflects in outcomes such as not relapsing.</p>
-    <p>In essence, what this system does is encourage you to make positive change by focusing solely on the changes you make in your life, and you’ll be seeing others make the same changes as well. </p>
-    <p>Of course, it really is up to you how you decide to journal your progress.</p>
-    <p>These are merely my own personal guidelines.</p>
-
+    <p>One thing you'll notice is that we don't report a relapse counter.</p>
+    <p>I have come to the conclusion that it does not work as a motivator, not only through extensive trialing, however also observing the progress of others over in r/NoFap.</p>
+    <p>In fact, it almost always hinders progress and ends up demotivating people, as they inevitably relapse due to inexperience with the porn recovery process.</p>
+    <!-- <p>The reason why we're only focusing on our commitment streak, as opposed to our non-relapse streak, is because the amount of days you've gone without relapsing is ultimately irrelevant to your recovery.</p>
+    <p>In no way does it reflect on your mental health, nor provide any indication of how well you are able to cope with difficult emotions or be able to maintain control over your emotions.</p> -->
+    <p>On the other hand, positive action and healthy coping mechanisms are tangible things we can track, which do not set expectations on our porn recovery journey.</p>
+    <p>In essence, what this system does is encourage you to make positive change by having you focus solely on the changes you make in your life, as well as from observing other people's posts.</p>
+    <p>Not only it is simple, however it's also very effective.</p>
     <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
   </div>
 </div>
@@ -49,13 +50,13 @@
 
     <p>Here are some examples of some thoughtful and helpful posts that you could post in the Discord <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel:</p>
 
+    <!-- TODO: Need to flesh out, or copy and paste. -->
     <div class="accountability__example__container">
       <h2>Date: 21-03-19</h2>
       <h3>Day 1</h3>
       <div class="accountability__text__container">
         <p>- Made the decision to commit to NoFap.</p>
         <p>- Read the NeverFap Homepage.</p>
-        <p>- Decided to </p>
       </div>
     </div>
     
