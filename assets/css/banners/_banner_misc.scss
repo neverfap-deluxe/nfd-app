@@ -65,6 +65,16 @@
 }
 
 /*topToBottom Animation*/
+@keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -moz-transform: translateY(-4.5rem); }
+	10% { opacity: 1; -moz-transform: translateY(0px); }
+  20% { opacity: 1; -moz-transform: translateY(0px); }
+  25% { opacity: 0; -moz-transform: translateY(0px); } // this originally wasn't here
+	30% { opacity: 0; -moz-transform: translateY(8rem); }
+	40% { opacity: 0; }
+	100% { opacity: 0; }
+}
 @-moz-keyframes topToBottom{
 	0% { opacity: 0; }
 	5% { opacity: 0; -moz-transform: translateY(-4.5rem); }
