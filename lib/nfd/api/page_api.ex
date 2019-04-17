@@ -56,4 +56,8 @@ defmodule Nfd.API.Page do
   def post_relapse_academy(client) do
     get(client, "/post_relapse_academy/index.json")
   end
+
+  def emergency(client) do
+    get(client, "/emergency/index.json")
+  end  
 end

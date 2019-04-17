@@ -42,6 +42,9 @@ defmodule NfdWeb.Router do
     get "/everything", PageController, :everything
     get "/coaching", PageController, :coaching
     get "/post-relapse-academy", PageController, :post_relapse_academy
+    get "/emergency", PageController, :emergency
+
+    get "/apple_podcast.xml", PageController, :apple_podcast_xml
 
     get "/articles", ContentController, :articles
     get "/articles/:slug", ContentController, :article

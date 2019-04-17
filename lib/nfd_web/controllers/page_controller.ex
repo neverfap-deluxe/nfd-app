@@ -196,6 +196,23 @@ defmodule NfdWeb.PageController do
     end
   end
 
+  def emergency(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Page.emergency() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])
+        conn |> render("emergency.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], page_type: page_type)
+      {:error, _error} -> 
+        render_404_page(conn)
+    end
+  end
+
+  def apple_podcast_xml(conn, _params) do 
+
+  end
+
   defp render_404_page(conn) do 
     conn 
       |> put_view(NfdWeb.ErrorView)
