@@ -57,13 +57,14 @@
   width: 100%;
   border-top: 10px solid rgba(255,46,182,1); // rgba(255,46,182,1)  
   border-bottom: 10px solid rgba(255,46,182,1);
-  padding: 4rem;
+  padding: 1rem;
   box-sizing: border-box;
   // background: white;
   // color: black;
 
   .choice__box {
     display: flex;
+    flex-direction: column;
   }
 
   .choice__box__spacer {
@@ -71,9 +72,14 @@
   }
 
   .choice__item {
+    display: flex;
+    align-items: center;
+
     flex: 7;
+
     padding: 1.6rem;
-    padding-left: 3.2rem;
+    padding-left: 1.9rem;
+
     // padding-right: 3.2rem;
     border: 8px solid black;
     margin-top: 2rem;
@@ -111,3 +117,20 @@
 .post__relapse__section--dark {
   background: black;
 }
+
+
+@media screen and (min-width: 768px) {
+  .post__relapse__section--choices {
+    padding: 4rem;
+
+    .choice__box {
+      display: flex;
+      flex-direction: row;
+      min-height: 300px;
+    }
+    .choice__item {
+      padding-left: 3.2rem;
+    }
+  }
+}
+
