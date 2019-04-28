@@ -59,5 +59,9 @@ defmodule Nfd.API.Page do
 
   def emergency(client) do
     get(client, "/emergency/index.json")
-  end  
+  end
+
+  def neverfap_deluxe_league(client) do
+    get(client, "/neverfap_deluxe_league/index.json")
+  end
 end

@@ -32,6 +32,9 @@
     <div class="everything__section">
       <%= partial "everything_item.html", %{ wip: false, title: "Accountability Program", url: "/accountability-program", description: "Join the NeverFap Deluxe Discord channel and learn to keep yourself accountable for your mental health." } %>
       <%= partial "everything_item.html", %{ wip: false, title: "#NewFapDeluxe Reddit Guidelines", url: "/new-fap-deluxe-reddit-guidelines", description: "Learn how you can recieve free advice by posting in our NeverFap Deluxe subreddit, with the #NewFapDeluxe hashtag." } %>
+      <!-- <%= partial "everything_item.html", %{ wip: false, title: "NeverFap Deluxe League", url: "/neverfap-deluxe-league", description: "Learn how you can recieve free advice by posting in our NeverFap Deluxe subreddit, with the #NewFapDeluxe hashtag." } %>
+      <%= partial "everything_item.html", %{ wip: true, title: "Emergency", url: "/emergency", description: "Learn how you can recieve free advice by posting in our NeverFap Deluxe subreddit, with the #NewFapDeluxe hashtag." } %>
+      <%= partial "everything_item.html", %{ wip: true, title: "Post Relapse Academy", url: "/post-relapse-academy", description: "Learn how you can recieve free advice by posting in our NeverFap Deluxe subreddit, with the #NewFapDeluxe hashtag." } %> -->
     </div>
 
     <h2>Social Media</h2>

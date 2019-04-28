@@ -209,8 +209,36 @@ defmodule NfdWeb.PageController do
     end
   end
 
-  def apple_podcast_xml(conn, _params) do 
+  def neverfap_deluxe_league(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
 
+    case client |> Page.neverfap_deluxe_league() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])
+        conn |> render("neverfap_deluxe_league.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], page_type: page_type)
+      {:error, _error} -> 
+        render_404_page(conn)
+    end
+  end
+
+  def apple_podcast_xml(conn, _params) do 
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case Tesla.get(client, "http://rss.castbox.fm/everest/aab82e46f0cd4791b1c8ddc19d5158c3.xml") do
+      {:ok, response} ->
+        regex = ~r/https:\/\/s3.castbox.fm(\/*[a-zA-Z0-9])*.png/
+        # does_match = Regex.match?(regex, "https://s3.castbox.fm/89/8f/d7/ab55544abb81506d8240808921.png") |> IO.inspect 
+        
+        new_xml = Regex.replace(regex, response.body, "https://neverfapdeluxe.com/logo_podcast.png", global: true)
+
+        conn 
+          |> put_resp_content_type("text/xml")
+          |> send_resp(200, new_xml)
+
+      {:error, _error} ->
+        render_404_page(conn)
+    end
   end
 
   defp render_404_page(conn) do 
