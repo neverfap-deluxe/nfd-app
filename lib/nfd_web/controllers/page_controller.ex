@@ -230,7 +230,7 @@ defmodule NfdWeb.PageController do
         regex = ~r/https:\/\/s3.castbox.fm(\/*[a-zA-Z0-9])*.png/
         # does_match = Regex.match?(regex, "https://s3.castbox.fm/89/8f/d7/ab55544abb81506d8240808921.png") |> IO.inspect 
         
-        new_xml = Regex.replace(regex, response.body, "https://neverfapdeluxe.com/logo_podcast.png", global: true)
+        new_xml = Regex.replace(regex, response.body, "https://neverfapdeluxe.com/images/logo_podcast.png", global: true)
 
         conn 
           |> put_resp_content_type("text/xml")
