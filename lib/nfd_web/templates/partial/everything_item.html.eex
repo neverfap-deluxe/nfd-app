@@ -3,7 +3,6 @@
     <h3 class="everything__item__title"><%= @title %></h3>
     <p class="everything__item__description"><%= @description %></p>
     <span class="everything__wip">Work in progress</span>
-
   </div>      
 <% else %>
   <a class="everything__item" href="<%= @url %>">

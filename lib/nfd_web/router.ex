@@ -44,6 +44,7 @@ defmodule NfdWeb.Router do
     get "/post-relapse-academy", PageController, :post_relapse_academy
     get "/emergency", PageController, :emergency
     get "/neverfap-deluxe-league", PageController, :neverfap_deluxe_league
+    get "/meditation", PageController, :meditation
     
     get "/apple_podcast.xml", PageController, :apple_podcast_xml
 

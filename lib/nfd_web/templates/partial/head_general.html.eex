@@ -151,6 +151,16 @@
     }
   </script>
 
+  <!-- Global site tag (gtag.js) - Google Ads: 875661467 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-875661467"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-875661467');
+  </script>
+
   <!-- Google sign in -->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="google-signin-client_id" content="57568197060-jfvie0bpd270u9r3nvp5bbdhctrl57r1.apps.googleusercontent.com">

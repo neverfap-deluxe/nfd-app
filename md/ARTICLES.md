@@ -39,11 +39,11 @@ __Created/Done__
 ## Choice over mind - COM
 
 __TODO__
-- Context: Porn is not who you are, it is your addiction.
 - The hidden art of not staring at women in public
 - It's the small things you do which bring change. ( talk about how it's about every small thing you do which helps change your brain, and that it takes weeks for these changes to come about, and why it's important to stick to a routine.)
 
 __WRITING__
+- Context: Porn is not who you are, it is your addiction
 
 __Created/Done__
 
@@ -52,7 +52,6 @@ __Created/Done__
 ## Uncondition over judgement - UOJ
 
 Acknowledgement is the real ego killer
-
 
 __TODO__
 - The fallacy of judgement as an effective means
@@ -81,9 +80,8 @@ __Created/Done__
 ## Awareness over all - AOA
 
 __TODO__
-- The Myth of Awareness (how awareness is a practice, not something you already have). 
--  Keeping on top of your emotions.
-- The power of observation.
+- The Myth of Awareness (how awareness is a practice, not something you already have).
+- Keeping on top of your emotions.
 
 __WRITING__
 

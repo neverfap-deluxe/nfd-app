@@ -1,0 +1,12 @@
+<div class="single__wrapper">   
+  <h1 class="single__title">Meditation <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <div class="single__content" style="margin-bottom: 0;">
+    <p>Welcome to NeverFap Deluxe!</p>
+    <p>I decided to create this website in 2019 to help people overcome porn addiction, in the easiest and most effective way possible.</p>
+    <p>In essence, I aim to teach people how to be in complete control of their minds using the power of meditation and other various awareness and mental health practices.</p>
+    <p>Not only have I personally overcome my own porn addiction using these impressive skills and abilities (to a point that I literally do not think about porn, nor struggle with it in any capacity).</p>
+    <p>However I want to help you do the same too.</p>
+  </div>
+</div>
+
+<%= partial "links/patreon.html", assigns %>

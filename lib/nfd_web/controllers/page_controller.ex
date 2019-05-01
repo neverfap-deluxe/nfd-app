@@ -216,7 +216,20 @@ defmodule NfdWeb.PageController do
     case client |> Page.neverfap_deluxe_league() do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
-        conn |> render("neverfap_deluxe_league.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], page_type: page_type)
+        conn |> render("neverfap_deluxe_league.html", item: response.body["data"], page_type: page_type)
+      {:error, _error} -> 
+        render_404_page(conn)
+    end
+  end
+
+  def meditation(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Page.meditation() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])
+        conn |> render("meditation.html", item: response.body["data"], page_type: page_type)
       {:error, _error} -> 
         render_404_page(conn)
     end
