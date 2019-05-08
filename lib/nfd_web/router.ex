@@ -44,7 +44,6 @@ defmodule NfdWeb.Router do
     get "/post-relapse-academy", PageController, :post_relapse_academy
     get "/emergency", PageController, :emergency
     get "/neverfap-deluxe-league", PageController, :neverfap_deluxe_league
-    get "/meditation", PageController, :meditation
     
     get "/apple_podcast.xml", PageController, :apple_podcast_xml
 
@@ -58,6 +57,8 @@ defmodule NfdWeb.Router do
     get "/podcast/:slug", ContentController, :podcast
     get "/quotes", ContentController, :quotes
     get "/quotes/:slug", ContentController, :quote
+    get "/meditation", ContentController, :meditations
+    get "/meditation/:slug", ContentController, :meditation
 
     get "/seven-day-neverfap-deluxe-kickstarter", ContentEmailController, :seven_day_kickstarter
     get "/seven-day-neverfap-deluxe-kickstarter/:day", ContentEmailController, :seven_day_kickstarter_single

@@ -64,8 +64,4 @@ defmodule Nfd.API.Page do
   def neverfap_deluxe_league(client) do
     get(client, "/neverfap_deluxe_league/index.json")
   end
-
-  def meditation(client) do
-    get(client, "/meditation/index.json")
-  end
 end

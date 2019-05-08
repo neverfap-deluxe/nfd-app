@@ -10,7 +10,7 @@
         <h1 class="single__title">404 <img src="/images/logo.png" class="logo__square" alt=""/></h2>
         <div class="single__content" style="margin-bottom: 0;">
           <p>Unfortunately, the page you're looking for doesn't exist.</p>
-          <p>That's okay. You're still no less of an amazing individual. Here is a complete list of all the pages on the website so I can help you find what you're looking for ^^</p>
+          <p>That's okay. You're still no less of an amazing individual. Here are a complete list of all the pages on the website so I can help you find what you're looking for ^^</p>
           <p>Otherwise, you may be permanently stuck in this void of non-existence, and in fact you may no longer be using the internet at all.</p>
           <p>Best of luck.</p>
           <a class="link" href="/">/</a>

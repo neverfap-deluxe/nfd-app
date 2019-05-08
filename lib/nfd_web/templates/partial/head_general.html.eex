@@ -2,9 +2,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
   <meta name="author" content="<%= Application.get_env(:nfd, :author) %>">
-  <meta name="robots" content="noodp"/>
+  <meta name="robots" content="index, follow">
+  
+  <%= if @conn.assigns.page_type == "content" do %>
+    <meta property="og:type" content="article">
+  <%= end %>
 
   <%= if Map.has_key?(@conn.assigns, :item) do %>
     <% title = page_title @conn.assigns.item["section"], @conn.assigns.item["title"] %>
@@ -22,7 +25,7 @@
       <meta name="description" content='<%= @conn.assigns.item["description"] %>'>
       <meta property="og:description" content='<%= @conn.assigns.item["description"] %>'>
       <meta name="twitter:description" content='<%= @conn.assigns.item["description"] %>'>
-      <meta name="twitter:image:alt" content='<%= title %>'>
+      <meta name="twitter:image:alt" content='<%= Application.get_env(:nfd, :logo) %>'>
     <% else %>
       <meta name="description" content="<%= Application.get_env(:nfd, :website_description) %>">
       <meta property="og:description" content="<%= Application.get_env(:nfd, :website_description) %>">    
@@ -34,17 +37,15 @@
     <!-- Will need to check this -->
     <link rel="canonical" href='<%= @conn.assigns.item["permalink"] %>' />
 
-    <!-- will need to figure out -->
-    <meta property="og:image" content="<%= Application.get_env(:nfd, :logo) %>">
     <meta name="twitter:image" content="<%= Application.get_env(:nfd, :logo) %>">
 
     <!-- facebook things -->
-    <meta property="og:url" content="<%= Routes.url(@conn) <> @conn.request_path %>">
-    <meta property="og:site_name" content="<%= Application.get_env(:nfd, :website_description) %>">
-    
+    <meta property="og:site_name" content="<%= Application.get_env(:nfd, :website_name) %>">
+    <meta property="article:author" content="<%= Application.get_env(:nfd, :author) %>">
+
     <!-- Open Graph Schema -->
     <script type="application/ld+json">
-      <%= if @conn.assigns["page_type"] == "content" do %>
+      <%= if @conn.assigns.page_type == "content" do %>
         {
           "@context" : "http://schema.org",
           "@type" : "BlogPosting",
@@ -59,7 +60,6 @@
           "inLanguage" : "en-US",
           "author" : "<%= Application.get_env(:nfd, :author) %>",
           "creator" : "<%= Application.get_env(:nfd, :author) %>",
-          "publisher": "<%= Application.get_env(:nfd, :author) %>",
           "accountablePerson" : "<%= Application.get_env(:nfd, :author) %>",
           "copyrightHolder" : "<%= Application.get_env(:nfd, :author) %>",
           "copyrightYear" : "<%= @conn.assigns.item["date"] %>",
@@ -68,6 +68,21 @@
           "url" : "<%= @conn.assigns.item["permalink"] %>",  
           "keywords" : [ <%= iterate_json_collection @conn.assigns.item["tags"] %> ]
           "genre": "<%= hd @conn.assigns.item["categories"] %>",
+          "image": {
+            "@type": "ImageObject",
+            "height": "400",
+            "width": "400",
+            "url": "https://neverfapdeluxe.com/images/logo.png"
+          },  
+          "publisher": {
+            "@type": "Organization",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://neverfapdeluxe.com/images/logo.png"
+            },
+            "name": "<%= Application.get_env(:nfd, :website_name) %>"
+          },  
+          "articleBody": "<%= @conn.assigns.item["content"] %>"
         }
       <% else %>
         {

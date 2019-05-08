@@ -18,6 +18,7 @@
       <%= partial "everything_item.html", %{ wip: false, title: "Practices", url: "/practices", description: "Discover a range of exercises with our NeverFap Deluxe Practices and gain mastery over those delicate emotions you deliberate." } %>
       <%= partial "everything_item.html", %{ wip: false, title: "Courses", url: "/courses", description: "Structured forms of the NeverFap Deluxe Articles and NeverFap Deluxe Practices, for those who enjoy sectional anatomy." } %>
       <%= partial "everything_item.html", %{ wip: false, title: "Podcast", url: "/podcast", description: "Listen to the NeverFap Deluxe Podcast and be informed, as well as entertained by my lunatic rants and unnecessarily sassy behaviour." } %>    
+      <%= partial "everything_item.html", %{ wip: true, title: "Meditation", url: "/meditation", description: "Introduce yourself to the wonderful world of meditation with our NeverFap Deluxe Guided Meditations." } %>    
       <%= partial "everything_item.html", %{ wip: true, title: "Quotes", url: "/quotes", description: "Inspire yourself with our range of NeverFap Deluxe Quotes." } %>    
     </div>
 

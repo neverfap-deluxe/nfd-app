@@ -19,7 +19,6 @@ defmodule Nfd.Sitemaps do
       compress: false
 
   # Generate
-
   def generate do
     client = "https://neverfapdeluxe.netlify.com" |> API.api_client()
 
@@ -27,7 +26,8 @@ defmodule Nfd.Sitemaps do
          {:ok, practicesResponse} <- (client |> Content.practices()),
          {:ok, coursesResponse} <- (client |> Content.courses()),
          {:ok, podcastsResponse} <- (client |> Content.podcasts()),
-         {:ok, quotesResponse} <- (client |> Content.quotes())
+         {:ok, quotesResponse} <- (client |> Content.quotes()),
+         {:ok, meditationsResponse} <- (client |> Content.meditations())
     do 
       create do
         add Helpers.page_path(Endpoint, :home), priority: 0.5, changefreq: "weekly", expires: nil
@@ -45,13 +45,13 @@ defmodule Nfd.Sitemaps do
         add Helpers.page_path(Endpoint, :post_relapse_academy), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :emergency), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :neverfap_deluxe_league), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :meditation), priority: 0.5, changefreq: "weekly", expires: nil
 
         add Helpers.content_path(Endpoint, :articles), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.content_path(Endpoint, :practices), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.content_path(Endpoint, :courses), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.content_path(Endpoint, :podcasts), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.content_path(Endpoint, :quotes), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.content_path(Endpoint, :meditations), priority: 0.5, changefreq: "weekly", expires: nil
 
         Enum.each(articlesResponse.body["data"]["articles"], fn(article) ->
           add Helpers.content_path(Endpoint, :article, article["slug"]), priority: 0.5, changefreq: "weekly", expires: nil                    
@@ -71,6 +71,10 @@ defmodule Nfd.Sitemaps do
 
         Enum.each(quotesResponse.body["data"]["quotes"], fn(quoteArg) ->
           add Helpers.content_path(Endpoint, :quote, quoteArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil                  
+        end)
+
+        Enum.each(meditationsResponse.body["data"]["meditations"], fn(meditationArg) ->
+          add Helpers.content_path(Endpoint, :meditation, meditationArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil                  
         end)
 
         # TODO: Will also need to configure the individual days, once they're created.

@@ -16,6 +16,7 @@ config :nfd,
   author: "Julius Reade",
   logo: "https://neverfapdeluxe.com/images/logo.png",
   google_analytics_url: "UA-132863786-1",
+  website_name: "NeverFap Deluxe",
 
   social_facebook_url: "https://www.facebook.com/NeverFap-Deluxe-2203366683036015/",
   social_twitter_url: "https://twitter.com/NeverFapDeluxe",

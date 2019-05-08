@@ -222,19 +222,6 @@ defmodule NfdWeb.PageController do
     end
   end
 
-  def meditation(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.meditation() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        conn |> render("meditation.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
-        render_404_page(conn)
-    end
-  end
-
   def apple_podcast_xml(conn, _params) do 
     client = API.is_localhost(conn.host) |> API.api_client()
 

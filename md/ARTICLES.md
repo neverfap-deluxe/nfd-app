@@ -102,3 +102,11 @@ __WRITING__
 
 __Created/Done__
 - Paying the NeverFap Maintenance Tax
+
+
+
+Overcoming porn addiction is a doing, not a thinking 
+
+No amount of thinking is going to help you. It is purely a process. That is why I put such a strong emphasis on the process and trusting it. Because those who overthinking don't know how to do.
+
+

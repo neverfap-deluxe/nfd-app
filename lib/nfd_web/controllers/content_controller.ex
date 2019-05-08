@@ -1,6 +1,7 @@
 defmodule NfdWeb.ContentController do
   use NfdWeb, :controller
-
+  use Timex
+  
   alias Nfd.API
   alias Nfd.API.Content
 
@@ -30,6 +31,7 @@ defmodule NfdWeb.ContentController do
       {:ok, response} ->
         check_api_response_for_404(conn, response.status)
         Meta.increment_visit_count(response.body["data"])
+        # TODO: Check condition if date is below/in front of
         if response.body["data"]["draft"] == false do 
           {:ok, articlesResponse} = client |> Content.articles()
 
@@ -167,9 +169,43 @@ defmodule NfdWeb.ContentController do
       {:ok, response} ->
         check_api_response_for_404(conn, response.status)
         Meta.increment_visit_count(response.body["data"])
+        # {:ok, dt} = Timex.parse(response.body["data"]["date"], "{ISO:Extended:Z}")
+        # Okay, I just realised that we don't need to check time, because netlify won't bulid posts with a date set to the future :D
         if response.body["data"]["draft"] == false do 
           conn |> render("quote.html", item: response.body["data"], page_type: page_type)
         else
+          render_404_page(conn)
+        end
+      {:error, _error} ->
+        render_404_page(conn)
+    end
+  end
+
+
+  def meditations(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Content.meditations() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])
+        conn |> render("meditations.html", item: response.body["data"], meditations: response.body["data"]["meditations"] |> Enum.reverse(), page_type: page_type)
+      {:error, _error} ->
+        render_404_page(conn)
+    end
+  end
+
+  def meditation(conn, %{"slug" => slug}) do
+    page_type = "content"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Content.meditation(slug) do
+      {:ok, response} ->
+        check_api_response_for_404(conn, response.status)
+        Meta.increment_visit_count(response.body["data"])
+        if response.body["data"]["draft"] == false do 
+          conn |> render("meditation.html", item: response.body["data"], page_type: page_type)
+        else 
           render_404_page(conn)
         end
       {:error, _error} ->
