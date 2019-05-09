@@ -5,10 +5,6 @@
   <meta name="author" content="<%= Application.get_env(:nfd, :author) %>">
   <meta name="robots" content="index, follow">
   
-  <%= if @conn.assigns.page_type == "content" do %>
-    <meta property="og:type" content="article">
-  <%= end %>
-
   <%= if Map.has_key?(@conn.assigns, :item) do %>
     <% title = page_title @conn.assigns.item["section"], @conn.assigns.item["title"] %>
     
@@ -42,6 +38,10 @@
     <!-- facebook things -->
     <meta property="og:site_name" content="<%= Application.get_env(:nfd, :website_name) %>">
     <meta property="article:author" content="<%= Application.get_env(:nfd, :author) %>">
+
+    <%= if @conn.assigns.page_type == "content" do %>
+      <meta property="og:type" content="article">
+    <%= end %>
 
     <!-- Open Graph Schema -->
     <script type="application/ld+json">

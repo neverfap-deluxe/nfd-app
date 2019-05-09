@@ -134,3 +134,10 @@ https://termsandconditionstemplate.com/generate/
 // migrations
 
 https://stackoverflow.com/questions/33153874/phoenix-ecto-postgres-table-not-creating
+
+
+
+// meta tags
+
+https://metatags.io/
+https://megatags.co/
