@@ -2,6 +2,6 @@
   <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt="" style="margin-right: 1rem;"/><a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#you're welcome :p</p></a></h2>
 </div>
 
-<%= partial "everything_module.html", assigns %>
+<%= partial "everything_module.html", %{ is_mobile_menu: false } %>
 
 <%= partial "links/patreon.html", assigns %>

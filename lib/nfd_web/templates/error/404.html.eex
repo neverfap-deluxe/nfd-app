@@ -17,7 +17,7 @@
         </div>
       </div>
 
-      <%= partial "everything_module.html", assigns %>
+      <%= partial "everything_module.html", %{ is_mobile_menu: false } %>
 
       <%#= partial "links/patreon.html", assigns %>
 
