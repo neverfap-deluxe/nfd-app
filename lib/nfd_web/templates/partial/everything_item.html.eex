@@ -1,11 +1,11 @@
 <%= if @is_mobile_menu do %>
   <%= if @wip do %>
-    <div class="everything__item everything__item__greyed">
+    <div class="everything__item everything__item--smaller everything__item__greyed">
       <h3 class="everything__item__title"><%= @title %></h3>
-      <span class="everything__wip">Work in progress</span>
+      <!-- <span class="everything__wip">Work in progress</span> -->
     </div>      
   <% else %>
-    <a class="everything__item" href="<%= @url %>">
+    <a class="everything__item everything__item--smaller" href="<%= @url %>">
       <h3 class="everything__item__title"><%= @title %></h3>
     </a>
   <% end %>

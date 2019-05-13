@@ -21,6 +21,12 @@
   .mobile__menu__overlay__button {
     display: none;
   }
+  // .mobile__menu__overlay__button .mobile__span {
+  //   box-shadow: -2px 2px 0px 0px black;
+  // }
+  .mobile__menu__overlay__button:hover .mobile__span {
+    box-shadow: -2px 2px 0px 0px black;
+  }  
 
   .header__links {
     display: flex;
