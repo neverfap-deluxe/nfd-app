@@ -3,7 +3,7 @@
     <div class="everything__item everything__item--smaller everything__item__greyed">
       <h3 class="everything__item__title"><%= @title %></h3>
       <!-- <span class="everything__wip">Work in progress</span> -->
-    </div>      
+    </div>
   <% else %>
     <a class="everything__item everything__item--smaller" href="<%= @url %>">
       <h3 class="everything__item__title"><%= @title %></h3>

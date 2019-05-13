@@ -45,6 +45,7 @@ defmodule NfdWeb.Router do
     get "/emergency", PageController, :emergency
     get "/neverfap-deluxe-league", PageController, :neverfap_deluxe_league
     get "/helpful-neverfappers-academy", PageController, :helpful_neverfappers_academy
+    get "/summary", PageController, :summary
     
     get "/apple_podcast.xml", PageController, :apple_podcast_xml
 

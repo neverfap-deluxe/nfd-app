@@ -70,6 +70,14 @@
       border-right: none;
       border-left: none;
       
+      .header__link__wrapper--disappear {
+        display: flex!important;
+      }
+  
+      .header__link__wrapper--main {
+        display: flex!important;
+      }
+  
       .header__link__wrapper {
         position: relative;
         border-bottom: 5px solid white;
@@ -274,6 +282,17 @@
 .homepage__section--adapt {
   margin-bottom: 3rem;
 }
+
+.homepage__splitter {
+  display: flex;
+  padding: 5rem;
+  background: #23272A;
+
+  .homepage__splitter__box {
+    flex: 1;
+  }
+}
+
 
 
 .homepage__process__link {

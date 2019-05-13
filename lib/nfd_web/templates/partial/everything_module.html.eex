@@ -11,10 +11,11 @@
     <div class="everything__section">
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Home", url: "/", description: "The beginning of your NeverFap Deluxe journey. Introducing a fantastic introduction into the intricacies of how NeverFap Deluxe works." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Community", url: "/community", description: "Get involved with the NeveFap Deluxe community, as well as our abundance of social media channels ripe for your viewing." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Summary", url: "/summary", description: "A concise summary of the entire NeverFap Deluxe Method of overcoming porn addiction, delivered by Le Reade himself." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "About", url: "/about", description: "A brief introduction into why I started NeverFap Deluxe, including a contact form for those inclined to send useful messages." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Coaching", url: "/coaching", description: "Recieve professional help from someone who's already figured it all out, and who can provide you with the support you need." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Login", url: "/session/new", description: "Login to your NeverFap Deluxe Account and subscribe to a variety of premium guides and free courses." } %>      
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Register", url: "/registration/new", description: "Register for a NeverFap Deluxe Account and explore the wonderful word of reasonably-priced written content." } %>      
-      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "About", url: "/about", description: "A brief introduction into why I started NeverFap Deluxe, including a contact form for those inclined to send useful messages." } %>
     </div>
 
     <h2 class="everything__sub__sub__title">Content Pages.</h2>

@@ -6,8 +6,6 @@
     <h2 class="homepage__hero__title__secondary">The Porn Addiction Recovery Process.</h2>
   </div>
   
-  <%#= partial "banners/discord_banner.html", assigns %>
-
   <%= partial "links/patreon.html", assigns %>
 
   <div class="homepage__section">
@@ -47,12 +45,18 @@
     </p>
   </div>
 
+
   <!-- TODO: Put the splitter here  -->
-  <!-- <div class="homepage__splitter">
+  <div class="homepage__splitter">
     <div class="homepage__splitter__box">
-      Maybe you just 
+      <p>Maybe you're just looking for a support group? Well, The Reade&copy; has you covered!</p>
+      <p>Join the NeverFap Deluxe League.</p>
+      <a href=""></a>
     </div>
-  </div> -->
+    <div class="homepage__splitter__box">
+      <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+    </div>
+  </div>
   
   <!-- TODO: Put the tldr here  -->
   <!-- <div class="homepage__tldr">
@@ -330,6 +334,7 @@
   </div>
 
 
+  <%= partial "banners/discord_banner.html", assigns %>
 
 
   <!-- <div class="seven_day_kickstarter_cont">

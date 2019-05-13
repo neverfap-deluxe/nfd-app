@@ -68,4 +68,8 @@ defmodule Nfd.API.Page do
   def helpful_neverfappers_academy(client) do
     get(client, "/helpful_neverfappers_academy/index.json")
   end
+
+  def summary(client) do
+    get(client, "/summary/index.json")
+  end
 end

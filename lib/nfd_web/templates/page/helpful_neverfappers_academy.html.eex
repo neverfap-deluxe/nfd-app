@@ -2,7 +2,9 @@
   <h1 class="single__title">NeverFap Deluxe League <img src="/images/logo.png" class="logo__square" alt=""/></h2>
   <div class="single__content" style="margin-bottom: 0;">
     <p>Welcome to the Helpful NeverFappers Academy!</p>
-    <p>Essentially the Helpful NeverFappers Academy is an extension of the </p>
+    <p>Essentially the Helpful NeverFappers Academy is an extension of our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> program on Discord. It is a volunteer program to help others with porn addiction, by providing them advice with everything you've learnt about your recovery through NeverFap Deluxe.</p>
+    <p>It is an excellent way to bolster your own knowledge and understanding of NeverFap Deluxe, as well as learn by teaching others the knowledge of your own .</p>
+    <p>As a Helpful NeverFapper you will essentially be tasked</p>
     <p><a class="link" href="https://league.neverfapdeluxe.com/">https://league.neverfapdeluxe.com/</a></p>
   </div>
 </div>

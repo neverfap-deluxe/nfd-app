@@ -7,11 +7,11 @@
       <li class="header__link">Home</li>
     </a>
 
-    <a id="link__guide" class="header__link__wrapper" href="/guide">
+    <a id="link__guide" class="header__link__wrapper header__link__wrapper--main" href="/guide">
       <li class="header__link">Guide</li>
     </a>
 
-    <a id="link__articles" class="header__link__wrapper" href="/articles">
+    <a id="link__articles" class="header__link__wrapper header__link__wrapper--main" href="/articles">
       <!--  <div style="position:relative;">  -->
         <li id='articles__click' class="header__link">Articles</li>
         <!--  <div id='articles__dropdown'>
@@ -22,7 +22,7 @@
       </div>  -->
     </a>
 
-    <a id="link__practices" class="header__link__wrapper" href="/practices">
+    <a id="link__practices" class="header__link__wrapper header__link__wrapper--main" href="/practices">
       <li class="header__link">Practices</li>
     </a>
 
@@ -30,17 +30,18 @@
       <li class="header__link">Courses</li>
     </a> -->
 
-    <a id="link__podcast" class="header__link__wrapper" href="/podcast">
+    <a id="link__podcast" class="header__link__wrapper header__link__wrapper--disappear" href="/podcast">
       <li class="header__link">Podcast</li>
     </a>
 
-    <a id="link__community" class="header__link__wrapper" href="/community">
+    <a id="link__community" class="header__link__wrapper header__link__wrapper--disappear" href="/community">
       <li class="header__link">Community</li>
     </a>
 
-    <a id="link__about" class="header__link__wrapper" href="/about">
+    <a id="link__about" class="header__link__wrapper header__link__wrapper--disappear" href="/about">
       <li class="header__link">About</li>
     </a>
+
   </ul>
   
   <%= partial "mobile_menu_overlay.html", assigns %>
