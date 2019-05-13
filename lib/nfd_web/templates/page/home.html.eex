@@ -47,6 +47,20 @@
     </p>
   </div>
 
+  <!-- TODO: Put the splitter here  -->
+  <!-- <div class="homepage__splitter">
+    <div class="homepage__splitter__box">
+      Maybe you just 
+    </div>
+  </div> -->
+  
+  <!-- TODO: Put the tldr here  -->
+  <!-- <div class="homepage__tldr">
+    <h1>tldr;</h1>
+    <h2>Essentially it comes down to 10 minutes of meditation each day. Not convinced? Then please keep reading!</h2>
+  </div> -->
+
+
   <div class="account__info account__info--margin-top">
     <p class="account__info__title">Let's learn.</p>
   </div>      
@@ -196,7 +210,7 @@
     <h1>Most people are <u style="border-bottom: 4px solid rgba(255,46,182,1); padding-bottom: 0rem;">severely deficient</u> in one or two of these areas.</h1>
     <h2>Now, this is where it gets hard.</h2>
     <h3>Since I don't know you (although I'm sure you're lovely), it's difficult for me to take you down a particular path to help you develop control over your mind.</h3>
-    <h3>However, I am willing to offer personalised advice if you post in our subreddit with the tag <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewNeverFapper</a> in your title.</h3>
+    <h3>However, I am willing to offer personalised advice if you post in our subreddit with the tag <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewFapDeluxe</a> in your title.</h3>
   </div>
     <!-- <div style="margin-top: 2rem; margin-bottom: 2rem;"> -->
       <%= partial "links/reddit--homepage.html", assigns %>
@@ -204,13 +218,13 @@
   <div class="homepage__section">
 
     <p>Not only does it help us build the NeverFap Deluxe Community, however it's a great opportunity for you to receive help and ask questions from someone who's been there before.</p>
-    <p>For some further guidelines on what information you should provide so I can best assist you, please checkout the <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewNeverFapper</a> submission guidelines.</p>
+    <p>For some further guidelines on what information you should provide so I can best assist you, please checkout the <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewFapDeluxe</a> submission guidelines.</p>
 
     <div class="button__wrapper">
       <a
         class="button button__secondary" 
         href="/new-fap-deluxe-reddit-guidelines"
-        >#NewNeverFapper submission guidelines.</a
+        >#NewFapDeluxe submission guidelines.</a
       >
     </div>
     

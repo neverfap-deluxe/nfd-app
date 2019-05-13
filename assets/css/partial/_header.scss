@@ -18,6 +18,10 @@
   background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
 
+  .mobile__menu__overlay__button {
+    display: none;
+  }
+
   .header__links {
     display: flex;
     flex-wrap: wrap;
@@ -152,6 +156,17 @@
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .header {
+    .mobile__menu__overlay__button {
+      display: flex;
+
+      .mobile__span {
+        background: white;
+      }
+    }
+  }
+}
 
 
 // .header__link__wrapper {

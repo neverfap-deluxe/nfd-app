@@ -21,19 +21,19 @@
       <meta name="description" content='<%= @conn.assigns.item["description"] %>'>
       <meta property="og:description" content='<%= @conn.assigns.item["description"] %>'>
       <meta name="twitter:description" content='<%= @conn.assigns.item["description"] %>'>
-      <meta name="twitter:image:alt" content='<%= Application.get_env(:nfd, :logo) %>'>
+      <meta name="twitter:image:alt" content='<%= Application.get_env(:nfd, :logo__small) %>'>
     <% else %>
       <meta name="description" content="<%= Application.get_env(:nfd, :website_description) %>">
       <meta property="og:description" content="<%= Application.get_env(:nfd, :website_description) %>">    
       <meta name="twitter:description" content="<%= Application.get_env(:nfd, :website_description) %>">
-      <meta name="twitter:image:alt" content="<%= Application.get_env(:nfd, :logo) %>">    
+      <meta name="twitter:image:alt" content="<%= Application.get_env(:nfd, :logo__small) %>">    
     <% end %>
     
     <meta name="keywords" content='<%= iterate_json_collection @conn.assigns.item["categories"] %>'>
     <!-- Will need to check this -->
     <link rel="canonical" href='<%= @conn.assigns.item["permalink"] %>' />
 
-    <meta name="twitter:image" content="<%= Application.get_env(:nfd, :logo) %>">
+    <meta name="twitter:image" content="<%= Application.get_env(:nfd, :logo__small) %>">
 
     <!-- facebook things -->
     <meta property="og:site_name" content="<%= Application.get_env(:nfd, :website_name) %>">

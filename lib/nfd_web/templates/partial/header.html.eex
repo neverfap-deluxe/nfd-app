@@ -41,12 +41,9 @@
     <a id="link__about" class="header__link__wrapper" href="/about">
       <li class="header__link">About</li>
     </a>
-
-    <span class="header__additional">
-
-
-    </span>
   </ul>
+  
+  <%= partial "mobile_menu_overlay.html", assigns %>
 </nav>
 
 <!-- Home | Guide | Articles | Podcast | Community | About -->

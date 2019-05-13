@@ -9,55 +9,56 @@
       <h2 class="everything__sub__title">Main Pages.</h1> 
     <% end %>
     <div class="everything__section">
-      <%= partial "everything_item.html", %{ wip: false, title: "Home", url: "/", description: "The beginning of your NeverFap Deluxe journey. Introducing a fantastic introduction into the intricacies of how NeverFap Deluxe works." } %>
-      <%= partial "everything_item.html", %{ wip: false, title: "Community", url: "/community", description: "Get involved with the NeveFap Deluxe community, as well as our abundance of social media channels ripe for your viewing." } %>
-      <%= partial "everything_item.html", %{ wip: false, title: "Coaching", url: "/coaching", description: "Recieve professional help from someone who's already figured it all out, and who can provide you with the support you need." } %>
-      <%= partial "everything_item.html", %{ wip: false, title: "Login", url: "/session/new", description: "Login to your NeverFap Deluxe Account and subscribe to a variety of premium guides and free courses." } %>      
-      <%= partial "everything_item.html", %{ wip: false, title: "Register", url: "/registration/new", description: "Register for a NeverFap Deluxe Account and explore the wonderful word of reasonably-priced written content." } %>      
-      <%= partial "everything_item.html", %{ wip: false, title: "About", url: "/about", description: "A brief introduction into why I started NeverFap Deluxe, including a contact form for those inclined to send useful messages." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Home", url: "/", description: "The beginning of your NeverFap Deluxe journey. Introducing a fantastic introduction into the intricacies of how NeverFap Deluxe works." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Community", url: "/community", description: "Get involved with the NeveFap Deluxe community, as well as our abundance of social media channels ripe for your viewing." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Coaching", url: "/coaching", description: "Recieve professional help from someone who's already figured it all out, and who can provide you with the support you need." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Login", url: "/session/new", description: "Login to your NeverFap Deluxe Account and subscribe to a variety of premium guides and free courses." } %>      
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Register", url: "/registration/new", description: "Register for a NeverFap Deluxe Account and explore the wonderful word of reasonably-priced written content." } %>      
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "About", url: "/about", description: "A brief introduction into why I started NeverFap Deluxe, including a contact form for those inclined to send useful messages." } %>
     </div>
 
     <h2 class="everything__sub__sub__title">Content Pages.</h2>
     <div class="everything__section">
-      <%= partial "everything_item.html", %{ wip: false, title: "Guide", url: "/guide", description: "Learn more about the NeverFap Deluxe Method of overcoming porn addiction with our keenly comprehensive NeverFap Deluxe Guide." } %>
-      <%= partial "everything_item.html", %{ wip: false, title: "Articles", url: "/articles", description: "View our range of NeverFap Deluxe Articles and learn more about the porn recovery process, as well how NeverFap Deluxe works." } %>
-      <%= partial "everything_item.html", %{ wip: false, title: "Practices", url: "/practices", description: "Discover a range of exercises with our NeverFap Deluxe Practices and gain mastery over those delicate emotions you deliberate." } %>
-      <%= partial "everything_item.html", %{ wip: false, title: "Courses", url: "/courses", description: "Structured forms of the NeverFap Deluxe Articles and NeverFap Deluxe Practices, for those who enjoy sectional anatomy." } %>
-      <%= partial "everything_item.html", %{ wip: false, title: "Podcast", url: "/podcast", description: "Listen to the NeverFap Deluxe Podcast and be informed, as well as entertained by my lunatic rants and unnecessarily sassy behaviour." } %>    
-      <%= partial "everything_item.html", %{ wip: true, title: "Meditation", url: "/meditation", description: "Introduce yourself to the wonderful world of meditation with our NeverFap Deluxe Guided Meditations." } %>    
-      <%= partial "everything_item.html", %{ wip: true, title: "Quotes", url: "/quotes", description: "Inspire yourself with our range of NeverFap Deluxe Quotes." } %>    
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Guide", url: "/guide", description: "Learn more about the NeverFap Deluxe Method of overcoming porn addiction with our keenly comprehensive NeverFap Deluxe Guide." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Articles", url: "/articles", description: "View our range of NeverFap Deluxe Articles and learn more about the porn recovery process, as well how NeverFap Deluxe works." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Practices", url: "/practices", description: "Discover a range of exercises with our NeverFap Deluxe Practices and gain mastery over those delicate emotions you deliberate." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Courses", url: "/courses", description: "Structured forms of the NeverFap Deluxe Articles and NeverFap Deluxe Practices, for those who enjoy sectional anatomy." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Podcast", url: "/podcast", description: "Listen to the NeverFap Deluxe Podcast and be informed, as well as entertained by my lunatic rants and unnecessarily sassy behaviour." } %>    
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "Meditation", url: "/meditation", description: "Introduce yourself to the wonderful world of meditation with our NeverFap Deluxe Guided Meditations." } %>    
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "Quotes", url: "/quotes", description: "Inspire yourself with our range of NeverFap Deluxe Quotes." } %>    
     </div>
 
     <h2 class="everything__sub__sub__title">Email Campaigns</h2>
     <div class="everything__section">
-      <%= partial "everything_item.html", %{ wip: false, title: "7 Day NeverFap Deluxe Kickstarter", url: "/seven-day-neverfap-deluxe-kickstarter", description: "An introduction to the NeverFap Deluxe." } %>
-      <%= partial "everything_item.html", %{ wip: true, title: "10 Day Meditation Primer", url: "/ten-day-meditation-primer", description: "An primer into the practice of meditation." } %>
-      <%= partial "everything_item.html", %{ wip: true, title: "28 Day Awareness Challenge", url: "/twenty-eight-day-awareness-challenge", description: "Learn more about awareness and the power of your mind." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "7 Day NeverFap Deluxe Kickstarter", url: "/seven-day-neverfap-deluxe-kickstarter", description: "An introduction to the NeverFap Deluxe." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "10 Day Meditation Primer", url: "/ten-day-meditation-primer", description: "An primer into the practice of meditation." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "28 Day Awareness Challenge", url: "/twenty-eight-day-awareness-challenge", description: "Learn more about awareness and the power of your mind." } %>
     </div>
 
     <h2 class="everything__sub__sub__title">Accountability</h2>
     <div class="everything__section">
-      <%= partial "everything_item.html", %{ wip: false, title: "Accountability Program", url: "/accountability-program", description: "Join the NeverFap Deluxe Discord channel and learn to keep yourself accountable for your mental health." } %>
-      <%= partial "everything_item.html", %{ wip: false, title: "#NewNeverFapper Reddit Guidelines", url: "/new-fap-deluxe-reddit-guidelines", description: "Learn how you can recieve free advice by posting in our NeverFap Deluxe subreddit, with the #NewNeverFapper hashtag." } %>
-      <%= partial "everything_item.html", %{ wip: false, title: "NeverFap Deluxe League", url: "/neverfap-deluxe-league", description: "Join the NeverFap Deluxe League and learn how you can easily overcome your porn addiction with the support of others." } %>
-      <!-- <%= partial "everything_item.html", %{ wip: true, title: "Emergency", url: "/emergency", description: "Learn how you can recieve free advice by posting in our NeverFap Deluxe subreddit, with the #NewNeverFapper hashtag." } %>
-      <%= partial "everything_item.html", %{ wip: true, title: "Post Relapse Academy", url: "/post-relapse-academy", description: "Learn how you can recieve free advice by posting in our NeverFap Deluxe subreddit, with the #NewNeverFapper hashtag." } %> -->
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Accountability Program", url: "/accountability-program", description: "Join the NeverFap Deluxe Discord channel and learn to keep yourself accountable for your mental health." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "#NewFapDeluxe Reddit Guidelines", url: "/new-fap-deluxe-reddit-guidelines", description: "Learn how you can recieve free advice by posting in our NeverFap Deluxe subreddit, with the #NewFapDeluxe hashtag." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "NeverFap Deluxe League", url: "/neverfap-deluxe-league", description: "Join the NeverFap Deluxe League and learn how you can easily overcome your porn addiction with the support of others." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "NeverFap Deluxe Emergency", url: "/emergency", description: "Need to calm down? Check out our NeverFap Deluxe Emergency page for more instructions. Remember, relaxation is key." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "Helpful NeverFappers Academy", url: "/neverfap-deluxe-league", description: "Join the Helpful NeverFappers Academy and accelerate your   and learn how you can easily overcome your porn addiction with the support of others." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "Post Relapse Academy", url: "/post-relapse-academy", description: "Maybe you're struggling with the NeverFap Deluxe Method of overcoming porn addiction? Well, perhaps there is something deeper going on." } %>
     </div>
 
     <h2 class="everything__sub__sub__title">Social Media</h2>
     <div class="everything__section">
-      <%= partial "everything_item.html", %{ wip: false, title: "Facebook", url: Application.get_env(:nfd, :social_facebook_url), description: "NeverFap Deluxe Facebook page." } %>
-      <%= partial "everything_item.html", %{ wip: false, title: "Twitter", url: Application.get_env(:nfd, :social_twitter_url), description: "NeverFap Deluxe Twitter account. " } %>
-      <%= partial "everything_item.html", %{ wip: false, title: "Reddit", url: Application.get_env(:nfd, :social_reddit_url), description: "NeverFap Deluxe Reddit account." } %>
-      <%= partial "everything_item.html", %{ wip: false, title: "Discord", url: Application.get_env(:nfd, :social_discord_url), description: "NeverFap Deluxe Discord account." } %>
-      <%= partial "everything_item.html", %{ wip: false, title: "Patreon", url: Application.get_env(:nfd, :social_patreon_url), description: "NeverFap Deluxe Patreon account." } %>    
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Facebook", url: Application.get_env(:nfd, :social_facebook_url), description: "NeverFap Deluxe Facebook page." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Twitter", url: Application.get_env(:nfd, :social_twitter_url), description: "NeverFap Deluxe Twitter account. " } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Reddit", url: Application.get_env(:nfd, :social_reddit_url), description: "NeverFap Deluxe Reddit account." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Discord", url: Application.get_env(:nfd, :social_discord_url), description: "NeverFap Deluxe Discord account." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Patreon", url: Application.get_env(:nfd, :social_patreon_url), description: "NeverFap Deluxe Patreon account." } %>    
     </div>
 
     <h2 class="everything__sub__sub__title">Misc</h2>
     <div class="everything__section">
-      <%= partial "everything_item.html", %{ wip: false, title: "Privacy", url: "/privacy", description: "Learn more about our NeverFap Deluxe Privacy Policy, populated conveniently by an online privacy policy generator." } %>
-      <%= partial "everything_item.html", %{ wip: false, title: "Disclaimer", url: "/disclaimer", description: "Maybe you have a fetish for the conveniently contrived. Then you'll absolutely love our NeverFap Deluxe Disclaimer Policy." } %>      
-      <%= partial "everything_item.html", %{ wip: false, title: "Terms & Conditions", url: "/terms-and-conditions", description: "NeverFap Deluxe Terms & Conditions. It's truly a literary rave of epic proportions. Proceed with maximum caution." } %>      
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Privacy", url: "/privacy", description: "Learn more about our NeverFap Deluxe Privacy Policy, populated conveniently by an online privacy policy generator." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Disclaimer", url: "/disclaimer", description: "Maybe you have a fetish for the conveniently contrived. Then you'll absolutely love our NeverFap Deluxe Disclaimer Policy." } %>      
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Terms & Conditions", url: "/terms-and-conditions", description: "NeverFap Deluxe Terms & Conditions. It's truly a literary rave of epic proportions. Proceed with maximum caution." } %>      
     </div>
   </div>   
 </div>

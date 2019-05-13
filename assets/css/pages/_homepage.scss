@@ -53,6 +53,10 @@
   color: white;
 
   .header {
+    .mobile__menu__overlay__button {
+      display: none;
+    }
+
     position: relative;
     top: -2.13rem;
 

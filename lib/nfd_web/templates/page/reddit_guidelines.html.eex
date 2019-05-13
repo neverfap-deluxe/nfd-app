@@ -3,7 +3,7 @@
   <div class="single__content" style="margin-bottom: 0;">
     <p>I am currently offering free advice to people looking for additional help for their porn addiction recovery journey.</p>
     <p>Not only to help you answer any questions you may have, but also to ensure that NeverFap Deluxe remains an amazing and accessible resource for both beginners and veterans alike.</p>
-    <p>In order to receive a detailed break-down of next steps to take with your porn addiction recovery, all you have to do is post in the NeverFap Deluxe Subreddit with the tag <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewNeverFapper</a>.</p>
+    <p>In order to receive a detailed break-down of next steps to take with your porn addiction recovery, all you have to do is post in the NeverFap Deluxe Subreddit with the tag <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewFapDeluxe</a>.</p>
   </div>
 </div>
 
@@ -36,10 +36,10 @@
   <div class="guide__suggestion__container">
     <div class="black__banner__title__container">
       <h2 class="black__banner__title black__banner__title--reddit__guidelines">Example Titles:</h2>
-      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">3 Days PMO FREE. #NewNeverFapper</p>
-      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">How do I get started with meditation? #NewNeverFapper</p>
-      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Male 16 new to NeverFap Deluxe! #NewNeverFapper</p>
-      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Struggling to get past a two weeks. #NewNeverFapper</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">3 Days PMO FREE. #NewFapDeluxe</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">How do I get started with meditation? #NewFapDeluxe</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Male 16 new to NeverFap Deluxe! #NewFapDeluxe</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Struggling to get past a two weeks. #NewFapDeluxe</p>
     </div>
   </div>
 </div>
@@ -58,7 +58,7 @@
     
 <!--     
     #LOLFap
-    #NewNeverFapper
+    #NewFapDeluxe
     #MeditationMotivation
     #HealthyCopingMechanismCrack -->
       
