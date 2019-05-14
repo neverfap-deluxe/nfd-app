@@ -8,7 +8,7 @@
 }
 
 .discord__banner {
-  padding: 5rem;
+  padding: 1rem;
   background: #23272A;
 
   .discord__banner__title {
@@ -53,5 +53,11 @@
 
   .discord__banner__description {
     
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .discord__banner {
+    padding: 5rem;
   }
 }

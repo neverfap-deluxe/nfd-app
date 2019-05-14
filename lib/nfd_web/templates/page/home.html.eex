@@ -7,30 +7,7 @@
   </div>
   
   <%= partial "links/patreon.html", assigns %>
-
-  <div class="homepage__section">
-    <h1>Who?</h1>
-    <p style="margin-top: 2.5rem;">My name is Julius and I'm a recovered porn addict. <i class="em em-blush"></i></p>
-    <ul class="homepage__recovered__porn__addict__list">
-      <span><li class="homepage__recovered__porn__addict__item__lead">I no longer crave porn. <i class="em em-white_check_mark"></i></li></span>
-      <span><li class="homepage__recovered__porn__addict__item">I no longer watch porn.</li></span>
-      <span><li class="homepage__recovered__porn__addict__item">I don't even think about porn, at all.</li></span>
-      <div class="homepage__recovered__porn__addict__spacer"></div>
-      <span><li class="homepage__recovered__porn__addict__item__lead">I no longer obsess over women in public. <i class="em em-white_check_mark"></i></li></span>
-      <span><li class="homepage__recovered__porn__addict__item">I no longer view women any differently to men.</li></span>
-      <span><li class="homepage__recovered__porn__addict__item">I no longer judge women in any capacity.</li></span>
-      
-      <div class="homepage__recovered__porn__addict__spacer"></div>
-      <span><li class="homepage__recovered__porn__addict__item__lead">I have control over my mind and my thoughts. <i class="em em-white_check_mark"></i></li></span>
-      <span><li class="homepage__recovered__porn__addict__item">I'm conscious of my feelings and emotions.</li></span>
-      <span><li class="homepage__recovered__porn__addict__item">I'm comfortable with my emotions, both positive and negative.</li></span>
-
-      <div class="homepage__recovered__porn__addict__spacer"></div>
-      <span><li class="homepage__recovered__porn__addict__item__lead">I accept myself for who I am. <i class="em em-white_check_mark"></i></li></span>
-      <span><li class="homepage__recovered__porn__addict__item">I'm happy, motivated, confident and ambitious.</li></span>
-      <span><li class="homepage__recovered__porn__addict__item">I'm unafraid of being vulnerable.</li></span>
-    </ul>
-  </div>
+  <%= partial "home/who.html", assigns %>
 
   <div class="homepage__hero homepage__hero--secondary">
     <h1 class="homepage__hero__title">Here's what I do.</h1>
@@ -43,19 +20,8 @@
       Because once you intuitively understand how something works, you will
       <u>commit to it forever.</u> <i class="em em-v"></i>
     </p>
-  </div>
+    <!-- <p>Continue below to learn more.</p> -->
 
-
-  <!-- TODO: Put the splitter here  -->
-  <div class="homepage__splitter">
-    <div class="homepage__splitter__box">
-      <p>Maybe you're just looking for a support group? Well, The Reade&copy; has you covered!</p>
-      <p>Join the NeverFap Deluxe League.</p>
-      <a href=""></a>
-    </div>
-    <div class="homepage__splitter__box">
-      <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
-    </div>
   </div>
   
   <!-- TODO: Put the tldr here  -->
@@ -64,11 +30,44 @@
     <h2>Essentially it comes down to 10 minutes of meditation each day. Not convinced? Then please keep reading!</h2>
   </div> -->
 
+  <!-- TODO: Discord Splitter  -->
+  <!-- <div class="homepage__splitter">
+    <div class="homepage__splitter__box homepage__splitter__box--top">
+      <div>
+        <h2 class="homepage__splitter__box__title">#accountability program</h2>
+        <p>Maybe you're just looking for a support group to share cuddles with!? Well, The Reade&copy; has you covered!</p>
+        <p>Join our Discord Server today. It's sexy.</p>
+        <a class="homepage__splitter__box__button" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Participate</a>    
+      </div>
+    </div>
+    <div class="homepage__splitter__box">
+      <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+    </div>
+  </div> -->
+
+  <!-- TODO: Podcast Splitter  -->
+  <!-- <div class="homepage__splitter homepage__splitter--podcast">
+    <div class="homepage__splitter__box homepage__splitter__box--top">
+      <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="100%" height="300"></iframe>        
+    </div>
+    <div class="homepage__splitter__box">
+      <div>
+        <h2 class="homepage__splitter__box__title">The NeverFap Deluxe Podcast</h2>
+        <p>Can't be bothered reading for the next 10 minutes? Well, some pretentious wanker who refers to himself in 3rd person as "The Reade&copy;" has you covered!</p>
+        <p>Listen to the NeverFap Deluxe Podcast! It's delirious.</p>
+        <a class="homepage__splitter__box__button" href="https://neverfapdeluxe.com/podcast">Listen</a>    
+      </div>
+    </div>
+  </div> -->
+  
+  <!-- <div class="account__info account__info--margin-top">
+    <p class="account__info__title">OMFG!? You survived the endless promotion. Well done. Let's learn.</p>
+  </div>       -->
 
   <div class="account__info account__info--margin-top">
     <p class="account__info__title">Let's learn.</p>
   </div>      
-
+  
   <div class="homepage__section">
     <h1>How it works.</h1>
     <h2>It takes approximately 90 days to overcome porn addiction.</h2> <!-- <i class="em em-tent"></i> -->
@@ -334,7 +333,7 @@
   </div>
 
 
-  <%= partial "banners/discord_banner.html", assigns %>
+  <!-- <%= partial "banners/discord_banner.html", assigns %> -->
 
 
   <!-- <div class="seven_day_kickstarter_cont">
