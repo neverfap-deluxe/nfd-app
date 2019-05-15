@@ -13,9 +13,9 @@
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Community", url: "/community", description: "Get involved with the NeveFap Deluxe community, as well as our abundance of social media channels ripe for your viewing." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Summary", url: "/summary", description: "A concise summary of the entire NeverFap Deluxe Method of overcoming porn addiction, delivered by Le Reade himself." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "About", url: "/about", description: "A brief introduction into why I started NeverFap Deluxe, including a contact form for those inclined to send useful messages." } %>
-      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Coaching", url: "/coaching", description: "Recieve professional help from someone who's already figured it all out, and who can provide you with the support you need." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Login", url: "/session/new", description: "Login to your NeverFap Deluxe Account and subscribe to a variety of premium guides and free courses." } %>      
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Register", url: "/registration/new", description: "Register for a NeverFap Deluxe Account and explore the wonderful word of reasonably-priced written content." } %>      
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Coaching", url: "/coaching", description: "Recieve professional help from someone who's already figured it all out, and who can provide you with the support you need." } %>
     </div>
 
     <h2 class="everything__sub__sub__title">Content Pages.</h2>
@@ -41,8 +41,8 @@
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Accountability Program", url: "/accountability-program", description: "Join the NeverFap Deluxe Discord channel and learn to keep yourself accountable for your mental health." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "#NewFapDeluxe Reddit Guidelines", url: "/new-fap-deluxe-reddit-guidelines", description: "Learn how you can recieve free advice by posting in our NeverFap Deluxe subreddit, with the #NewFapDeluxe hashtag." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "NeverFap Deluxe League", url: "/neverfap-deluxe-league", description: "Join the NeverFap Deluxe League and learn how you can easily overcome your porn addiction with the support of others." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Helpful NeverFappers Academy", url: "/helpful-neverfappers-academy", description: "Join the Helpful NeverFappers Academy and accelerate your   and learn how you can easily overcome your porn addiction with the support of others." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "NeverFap Deluxe Emergency", url: "/emergency", description: "Need to calm down? Check out our NeverFap Deluxe Emergency page for more instructions. Remember, relaxation is key." } %>
-      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "Helpful NeverFappers Academy", url: "/neverfap-deluxe-league", description: "Join the Helpful NeverFappers Academy and accelerate your   and learn how you can easily overcome your porn addiction with the support of others." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "Post Relapse Academy", url: "/post-relapse-academy", description: "Maybe you're struggling with the NeverFap Deluxe Method of overcoming porn addiction? Well, perhaps there is something deeper going on." } %>
     </div>
 

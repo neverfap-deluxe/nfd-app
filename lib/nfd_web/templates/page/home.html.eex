@@ -21,52 +21,66 @@
       <u>commit to it forever.</u> <i class="em em-v"></i>
     </p>
     <!-- <p>Continue below to learn more.</p> -->
-
   </div>
   
-  <!-- TODO: Put the tldr here  -->
-  <!-- <div class="homepage__tldr">
-    <h1>tldr;</h1>
-    <h2>Essentially it comes down to 10 minutes of meditation each day. Not convinced? Then please keep reading!</h2>
-  </div> -->
-
-  <!-- TODO: Discord Splitter  -->
-  <!-- <div class="homepage__splitter">
+  <div class="account__info account__info--margin-top">
+    <p class="account__info__title">In the meantime, here's some <span class="delicious__promotion">delicious</span> promotion to get you started. <i class="em em-admission_tickets"></i></p>
+  </div>     
+  <div class="homepage__splitter">
     <div class="homepage__splitter__box homepage__splitter__box--top">
       <div>
         <h2 class="homepage__splitter__box__title">#accountability program</h2>
-        <p>Maybe you're just looking for a support group to share cuddles with!? Well, The Reade&copy; has you covered!</p>
+        <p>Maybe you're just lookin' for a "support group" to share cuddles with!? Well, The Reade&copy; has you covered!</p>
         <p>Join our Discord Server today. It's sexy.</p>
-        <a class="homepage__splitter__box__button" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Participate</a>    
+        <a class="homepage__splitter__box__button homepage__splitter__box__button--pink" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Participate</a>    
       </div>
     </div>
-    <div class="homepage__splitter__box">
+    <div class="homepage__splitter__divider">
+    </div>  
+    <div class="homepage__splitter__box homepage__splitter__box--discord">
       <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
     </div>
-  </div> -->
+  </div>
 
-  <!-- TODO: Podcast Splitter  -->
-  <!-- <div class="homepage__splitter homepage__splitter--podcast">
-    <div class="homepage__splitter__box homepage__splitter__box--top">
-      <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="100%" height="300"></iframe>        
+  <!-- <div class="account__info account__info--margin-top">
+    <p class="account__info__title">Oh wait, you want more promotion?</p>
+  </div>       -->
+
+  <div class="homepage__splitter homepage__splitter--podcast">
+    <div class="homepage__splitter__box homepage__splitter__box--top homepage__splitter__box--podcast">
+      <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="500" height="500"></iframe>        
+    </div>
+    <div class="homepage__splitter__divider">
     </div>
     <div class="homepage__splitter__box">
       <div>
         <h2 class="homepage__splitter__box__title">The NeverFap Deluxe Podcast</h2>
-        <p>Can't be bothered reading for the next 10 minutes? Well, some pretentious wanker who refers to himself in 3rd person as "The Reade&copy;" has you covered!</p>
-        <p>Listen to the NeverFap Deluxe Podcast! It's delirious.</p>
+        <p>Can't be bothered reading for the next 5 minutes? Well, unfortuately that's just too bad and I'm going to have to ask you to read anyway!</p>
+        <p>Listen to the NeverFap Deluxe Podcast, you slacka!</p>
         <a class="homepage__splitter__box__button" href="https://neverfapdeluxe.com/podcast">Listen</a>    
       </div>
     </div>
-  </div> -->
+  </div>
   
-  <!-- <div class="account__info account__info--margin-top">
-    <p class="account__info__title">OMFG!? You survived the endless promotion. Well done. Let's learn.</p>
-  </div>       -->
+  <div class="account__info account__info--margin-top">
+    <p class="account__info__title">OMFG!? You survived the promotion. <i class="em em-confetti_ball"></i> Well done.<i class="em em-confetti_ball"></i></p>
+  </div>      
+  
+  <div class="homepage__section homepage__tldr">
+    <h1>tldr;</h1>
+    <h2>Essentially, it comes down to 10 minutes of meditation each day.</h2>
+  </div>
+
+  <!-- TODO thinking emoji? -->
+  <div class="homepage__section homepage__tldr--last">
+    <h1>Why!? <i class="em em-thinking_face"></i></h1>
+    <h2>Well, please keep reading!</h2>
+  </div>
 
   <div class="account__info account__info--margin-top">
-    <p class="account__info__title">Let's learn.</p>
+    <p class="account__info__title">Here's a more in-depth review.</i></p>
   </div>      
+  
   
   <div class="homepage__section">
     <h1>How it works.</h1>
@@ -333,7 +347,7 @@
   </div>
 
 
-  <!-- <%= partial "banners/discord_banner.html", assigns %> -->
+  <%= partial "banners/discord_banner.html", assigns %>
 
 
   <!-- <div class="seven_day_kickstarter_cont">
