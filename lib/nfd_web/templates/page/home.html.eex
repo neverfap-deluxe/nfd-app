@@ -20,11 +20,14 @@
       Because once you intuitively understand how something works, you will
       <u>commit to it forever.</u> <i class="em em-v"></i>
     </p>
+    <p>Please keep reading if you'd like to learn more.</p> 
+    <p>Sincerely,</p>
+    <p>Daddy Reade.</p>
     <!-- <p>Continue below to learn more.</p> -->
   </div>
   
   <div class="account__info account__info--margin-top">
-    <p class="account__info__title">In the meantime, here's some <span class="delicious__promotion">delicious</span> promotion to get you started. <i class="em em-admission_tickets"></i></p>
+    <p class="account__info__title">Before we get you started on the main course, here's some <span class="delicious__promotion">delicious</span> promotion. <i class="em em-admission_tickets"></i></p>
   </div>     
   <div class="homepage__splitter">
     <div class="homepage__splitter__box homepage__splitter__box--top">
@@ -74,11 +77,11 @@
   <!-- TODO thinking emoji? -->
   <div class="homepage__section homepage__tldr--last">
     <h1>Why!? <i class="em em-thinking_face"></i></h1>
-    <h2>Well, please keep reading!</h2>
+    <h2>Well, please keep reading random internet stranger!</h2>
   </div>
 
   <div class="account__info account__info--margin-top">
-    <p class="account__info__title">Here's a more in-depth review.</i></p>
+    <p class="account__info__title">Here's a more in-depth review of NeverFap Deluxe.</i></p>
   </div>      
   
   

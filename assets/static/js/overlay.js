@@ -6,6 +6,11 @@ var overlay__button__close = document.querySelector('#mobile__overlay__close__id
 
 var overlayState = false;
 
+// TODO: Add escape key for this thing.
+// addEventListener('', function(event) {
+
+// });
+
 overlay__button__close.onclick = function(event) {
   overlayState = false;
   overlay.style.display = 'none';
