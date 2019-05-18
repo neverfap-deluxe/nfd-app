@@ -41,7 +41,7 @@
 
     <%= if @conn.assigns.page_type == "content" do %>
       <meta property="og:type" content="article">
-    <%= end %>
+    <% end %>
 
     <!-- Open Graph Schema -->
     <script type="application/ld+json">
@@ -66,7 +66,7 @@
           "datePublished": "<%= @conn.assigns.item["date"] %>",
           "dateModified" : "<%= @conn.assigns.item["date"] %>",
           "url" : "<%= @conn.assigns.item["permalink"] %>",  
-          "keywords" : [ <%= iterate_json_collection @conn.assigns.item["tags"] %> ]
+          "keywords" : "<%= iterate_json_collection @conn.assigns.item["tags"] %>",
           "genre": "<%= hd @conn.assigns.item["categories"] %>",
           "image": {
             "@type": "ImageObject",
@@ -94,7 +94,7 @@
             "@type": "Person",
             "name": "<%= Application.get_env(:nfd, :author) %>"
           },
-          "description": "<%= @conn.assigns.item["description"] %>",
+          "description": "<%= @conn.assigns.item["description"] %>"
         }
       <% end %>
     </script>    
