@@ -24,7 +24,7 @@ config :nfd,
   social_reddit_url: "https://www.reddit.com/r/NeverFapDeluxe",
   social_reddit_user_url: "https://www.reddit.com/user/NeverFapDeluxe",
   social_patreon_url: "https://www.patreon.com/NeverFapDeluxe",
-  social_discord_url: "https://discord.gg/TuwARWk",
+  social_discord_url: "https://discord.gg/YETRkSj",
 
   general_type: "generalemail",
   kickstarter_type: "neverfapdeluxekickstarter",
