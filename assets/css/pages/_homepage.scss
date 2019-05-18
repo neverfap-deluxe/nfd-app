@@ -49,6 +49,7 @@
     padding-left: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    margin-top: 0;
   }
   h2 {
     width: 100px;
@@ -344,6 +345,7 @@
 
 .homepage__splitter {
   display: flex;
+
   flex-direction: column;
   padding: 1rem;
   background: #23272A;
@@ -545,6 +547,7 @@
   }
 
 .homepage__tldr {
+
   h2 {
     width: 100px;
     font-size: 4rem;
@@ -705,7 +708,13 @@
     flex-direction: row!important;
   }
   .homepage__splitter { 
+    align-items: center;
+    justify-content: center;
+
     flex-direction: row;
+    .homepage__splitter__box {
+      max-width: 42rem;
+    }
    
     .homepage__splitter__box--top {
       margin-bottom: 0;

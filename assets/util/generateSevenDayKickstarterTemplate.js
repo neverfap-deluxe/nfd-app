@@ -100,7 +100,7 @@ const parseFile = (fileName) => {
   // seven day kickstarter
   for (let i = 0; i < 8; i++) {
     const fileName = `template_seven_day_kickstarter_${i}.mjml`;
-    fse.readFileSync(`src/${fileName}`, itemsComplete, [{}]);
+    const file = fse.readFileSync(`src/${fileName}`, itemsComplete, [{}]);
 
     // do parsing stuff.
     generateDivider

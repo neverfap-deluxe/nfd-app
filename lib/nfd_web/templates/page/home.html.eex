@@ -26,7 +26,7 @@
     <!-- <p>Continue below to learn more.</p> -->
   </div>
   
-  <div class="account__info account__info--margin-top">
+  <div class="account__info">
     <p class="account__info__title">Before we get you started on the main course, here's some <span class="delicious__promotion">delicious</span> promotion. <i class="em em-admission_tickets"></i></p>
   </div>     
   <div class="homepage__splitter">
