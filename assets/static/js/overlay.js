@@ -11,6 +11,25 @@ var overlayState = false;
 
 // });
 
+window.addEventListener("keydown", function (event) {
+  if (event.defaultPrevented) {
+    return; // Do nothing if the event was already processed
+  }
+
+  switch (event.key) {
+    case "Escape":
+      overlayState = false;
+      overlay.style.display = 'none';
+      overlay__background.style.display = 'none';
+      break;
+    default:
+      return; // Quit when this doesn't handle the key event.
+  }
+  // Cancel the default action to avoid it being handled twice
+  event.preventDefault();
+}, true);
+
+
 overlay__button__close.onclick = function(event) {
   overlayState = false;
   overlay.style.display = 'none';
