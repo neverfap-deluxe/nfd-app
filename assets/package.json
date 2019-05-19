@@ -73,7 +73,8 @@
     "mjml": "^4.4.0-beta.1",
     "nearley": "^2.16.0",
     "phoenix": "file:../deps/phoenix",
-    "phoenix_html": "file:../deps/phoenix_html"
+    "phoenix_html": "file:../deps/phoenix_html",
+    "simple-text-parser": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

@@ -31,7 +31,12 @@
   text-shadow: -1px 1px rgba(255,46,182,1);
 }
 
+.homepage__tldr--signature {
+  display: none;
+}
+
 .homepage__tldr {
+  position: relative;
   padding: 1.5rem;
   margin-top: 3rem!important;
 
@@ -46,6 +51,7 @@
 
   h1 {
     background: black;
+    border: 4px solid white;
     padding-left: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -532,7 +538,7 @@
 }
 
 @media screen and (min-width: 420px) {
-
+  
   .homepage__tldr--last {
     margin-top: 1rem!important;
   }
@@ -605,6 +611,19 @@
 
 
 @media screen and (min-width: 768px) {
+  .homepage__tldr--signature {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 1rem;
+    border: 4px solid white;
+    color: white;
+    background: black;
+    font-size: 1.4rem;
+    margin: 1.6rem;
+  }
+
   .homepage__splitter {
     .homepage__splitter__box {
       padding: 1rem;
@@ -713,7 +732,7 @@
 
     flex-direction: row;
     .homepage__splitter__box {
-      max-width: 42rem;
+      max-width: 41rem;
     }
    
     .homepage__splitter__box--top {

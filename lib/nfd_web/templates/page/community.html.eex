@@ -54,12 +54,12 @@
     <h2>Reddit</h2>
     <p>Yes, that's right.</p>
     <p>We have our very own subreddit.</p>
-    <p>Perhaps you'd like to receive some personal advice via our <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewFapDeluxe</a> initiative or even ask an important question in regards to one of the articles or practies on the website.</p>
+    <p>Perhaps you'd like to receive some personal advice via our <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewNeverFapper</a> initiative or even ask an important question in regards to one of the articles or practies on the website.</p>
     <p>Feel free to follow my account in order to catch a trickle of my comments, or even just to say:</p>
     <p><b>"Heyyyy 21F Aus, looking to hook up ;)</b>"</p>
 
     <!-- #LOLFap
-    #NewFapDeluxe
+    #NewNeverFapper
     #MeditationMotivation
     #HealthyCopingMechanismCrack
       -->

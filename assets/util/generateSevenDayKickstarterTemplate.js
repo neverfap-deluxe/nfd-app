@@ -1,4 +1,6 @@
 const fse = require('fs-extra');
+const Parser = require("simple-text-parser");
+const parser = new Parser();
 
 const generateHead = (dayNumber) => `
   <mj-head>
@@ -96,6 +98,22 @@ const generate = () => `
 const parseFile = (fileName) => {
   // maybe I just need a
   // text parser utili
+
+  parser.addRule(/\#[\S]+/ig, function(tag) {
+    // Return the tag minus the `#` and surrond with html tags
+    
+    return "<span class=\"tag\">" + tag.substr(1) + "</span>";
+  });
+
+  parser.addRule(/-{3}/ig, function(tag) {
+    // Return the tag minus the `#` and surrond with html tags
+    
+    return "<span class=\"tag\">" + tag.substr(1) + "</span>";
+  });
+
+
+  parser.render("Some text #iamahashtag foo bar.");
+
 
   // seven day kickstarter
   for (let i = 0; i < 8; i++) {
