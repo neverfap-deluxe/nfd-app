@@ -32,13 +32,112 @@
     </a>
   </ul>
 
-  <div class="header__sub header__banner__home"></div>
-  <div class="header__sub header__banner__guide"></div>
-  <div class="header__sub header__banner__articles"></div>
-  <div class="header__sub header__banner__practices"></div>
-  <div class="header__sub header__banner__podcast"></div>
-  <div class="header__sub header__banner__community"></div>
-  <div class="header__sub header__banner__about"></div>
+    <div class="header__sub header__banner__home">
+      <div class="header__module">
+        <h3>NeverFap Deluxe</h3>
+        <h2>The king of porn recovery processes <i class="em em-crown"></i></h2>
+        <h4>Never </h4>
+      </div>
+      <div class="header__module">
+        <p>NeverFap Deluxe is a porn recovery process which focuses on the use of meditation and awareness in order to develop control over our minds.</p>
+      </div>
+    </div>
+
+    <!-- Guide -->
+    <div class="header__sub header__banner__guide">
+      <div class="header__module">
+        <h3>NeverFap Deluxe Guide</h3>
+        <a href="/articles">View all</a>
+      </div>
+    </div>
+
+    <!-- Articles -->
+    <div class="header__sub header__banner__articles">
+      <div class="header__module">
+        <h3>Latest Article</h3>
+        <p>Title</p>
+        <p>Date</p>
+        <a href="">View</a>
+      </div>
+
+      <div class="header__module">
+        <h3>NeverFap Deluxe Articles</h3>
+        <p>Learn more about </p>
+        <a href="/articles">View all</a>
+      </div>
+
+      <div class="header__module">
+        <h3>Understand the importance of meditation.</h3>
+        <p>T</p>
+        <a href="/articles/observe-your-senses">Observe Your Senses</a>
+      </div>
+    </div>
+
+    <!-- Practices -->
+    <div class="header__sub header__banner__practices">
+      <div class="header__module">
+        <h3>Latest Practice</h3>
+        <p>Title</p>
+        <p>Date</p>
+        <a href="">View</a>
+      </div>
+
+      <div class="header__module">
+        <h3>NeverFap Deluxe Practices</h3>
+        <p>Learn more about </p>
+        <a href="/practices">View all</a>
+      </div>
+
+      <div class="header__module">
+        <h3>Need help with meditation?</h3>
+        <p>Observe your senses covers the basics of it :D</p>
+        <a href="/practices/observe-your-senses">Observe Your Senses</a>
+      </div>
+    </div>
+
+    <!-- PODCAST -->
+    <div class="header__sub header__banner__podcast">
+      <div class="header__module">
+        <h3>The NeverFap Deluxe Podcast</h3>
+        <p>Learn more about </p>
+        <a href="/practices">View all</a>
+      </div>
+    </div>
+
+    <!-- COMMUNITY -->
+    <div class="header__sub header__banner__community">
+      <!-- Maybe talk about the #accountability program -->
+      <div class="header__module">
+        <h3>Become part of the NeverFap Deluxe Community!</h3>
+      </div>
+      <div class="header__module header__module--discord">
+        <h3>NeverFapDeluxe Discord</h3>
+        <a href=""></a>
+      </div>
+      <div class="header__module header__module--reddit">
+        <h3>r/NeverFapDeluxe Reddit</h3>
+        <a href=""></a>
+      </div>
+    </div>
+
+    <div class="header__sub header__banner__about">
+      <div class="header__module">
+        <h3>Learn more about NeverFap Deluxe</h3>
+
+      </div>
+      <div class="header__module">
+        <h3>NeverFap Deluxe League</h3>
+        <p>Learn more about the NeverFap Deluxe League</p>
+
+      </div>
+      <div class="header__module">
+        <h3>Contact Daddy Reade</h3>
+        <p>Send a message to someone who clearly has self-estee</p>
+        <a href="/contact"></a>
+      </div>
+    </div>
+
+
 </nav>
 
 

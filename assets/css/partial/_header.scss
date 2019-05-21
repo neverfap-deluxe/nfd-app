@@ -23,8 +23,13 @@
   display: none;
 }
 
+.header__module {
+  flex: 1;
+}
+
 .header {
-  position: 
+  position: absolute;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
