@@ -77,7 +77,6 @@
   .guide__suggestion {
     display: flex;
     flex-direction: column;
-
   }
 }
 
@@ -116,11 +115,13 @@
 }
 .guide__suggestion__number {
   display: none;
+  color: black;
 }
 .guide__suggestion__title {
   display: flex;
   align-items: center;
 
+  color: black;
   border: 4px solid black;
   background: white;
   box-shadow: -5px 5px 0px 0px cyan;
@@ -170,6 +171,18 @@
 
 
 @media screen and (min-width: 420px) {
+  .guide__banner {
+    padding-left: 2rem;
+    padding-right: initial;
+    .single__wrapper {
+      margin: 2rem;
+    }
+
+    h2 {
+      border-right: none;
+    }
+  }
+
   .guide__banner__title {
     font-size: 3rem;
     line-height: 4rem;
@@ -238,14 +251,10 @@
     width: 60px;
   }
 
-  .unhealthy__banner, .guide__banner {
+  .guide__banner {
     padding-top: 3rem;
     padding-bottom: 3rem;
     padding-left: 4rem;
-
-    .unhealthy__banner__title {
-      margin-bottom: 6rem;
-    }
   }
 }
 
@@ -265,7 +274,7 @@
     padding: 1.6rem;
   }
 
-  .unhealthy__banner, .guide__banner {
+  .guide__banner {
     .single__wrapper {
       margin-left: 200px;
     }
@@ -273,7 +282,7 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .unhealthy__banner, .guide__banner {
+  .guide__banner {
     .single__wrapper {
       margin-left: 280px;
     }

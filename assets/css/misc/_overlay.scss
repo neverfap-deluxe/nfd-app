@@ -1,0 +1,67 @@
+.mobile__menu__overlay__background {
+  display: none;
+  position: absolute;
+  background: black;
+  opacity: 0.6;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 450;
+}
+
+.mobile__menu__overlay {
+  display: none;
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+}
+
+.mobile__menu__overlay__button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: absolute;
+  right: 2rem;
+
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+
+  .mobile__span {
+    background: black;
+    height: 3px;
+    box-shadow: -2px 2px 0px 0px cyan;
+
+    transition: .2s box-shadow;
+  }
+}
+
+.mobile__menu__overlay__button:hover .mobile__span {
+  box-shadow: -2px 2px 0px 0px white;
+}
+
+.mobile__overlay__close {
+  cursor: pointer;
+
+  // width: 24px;
+  // height: 24px;
+  font-size: 1.6rem;
+  margin-right: 2rem;
+}
+
+.mobile__overlay__close__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: -5px 5px 0px 0px black;
+
+  margin-bottom: 1.6rem;
+}

@@ -1,6 +1,6 @@
 <div class="single__wrapper">   
   
-  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <h1 class="single__title">Practices <img src="/images/logo.png" class="logo__square" alt=""/><a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#need a link to all the website content, instead?</p></a></h2>
 
   <div class="single__content">
     <p>A complete list of all of the mental health practices here on NeverFap Deluxe. Yipee!</p>

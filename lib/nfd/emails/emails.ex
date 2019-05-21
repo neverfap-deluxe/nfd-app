@@ -19,8 +19,6 @@ defmodule Nfd.Emails do
     { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type} = Nfd.Util.Email.generate_course_types()
     type = Nfd.Util.Email.main_matrix_to_type(main_matrix)
 
-    IO.inspect type
-
     case type do
       # TODO: Welcome email for general newsletter.
       ^general_type -> nil
@@ -41,7 +39,6 @@ defmodule Nfd.Emails do
   end
 
   def email_scheduler_logic(type, subscriber, is_subscribed, day_count) do
-    IO.inspect type
     if (is_subscribed) do
       { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type} = Nfd.Util.Email.generate_course_types()
       unsubscribe_url = Nfd.Util.Email.course_type_to_matrix(type) |> Nfd.Util.Email.generate_unsubscribe_url(subscriber.subscriber_email)
@@ -84,7 +81,7 @@ defmodule Nfd.Emails do
   def cast_course_email(subscriber, subject, template, unsubscribe_url) do
     %Swoosh.Email{}
       |> to(subscriber.subscriber_email)
-      |> from({"NeverFap Deluxe", "neverfapdeluxe@gmail.com"})
+      |> from({"NeverFap Deluxe", "admin@neverfapdeluxe.com"})
       |> subject(subject)
       |> render_body(template, %{unsubscribe_url: unsubscribe_url})
   end
@@ -94,7 +91,7 @@ defmodule Nfd.Emails do
 
     %Swoosh.Email{}
       |> to(subscriber_email)
-      |> from({"NeverFap Deluxe", "neverfapdeluxe@gmail.com"})
+      |> from({"NeverFap Deluxe", "admin@neverfapdeluxe.com"})
       |> subject(subject)
       |> render_body(template, %{url: url, unsubscribe_url: unsubscribe_url, course_name: course_name})
   end

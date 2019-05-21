@@ -14,15 +14,17 @@
   justify-content: center;
   height: 3.4rem;
   min-width: 6.5rem;
-  background: white;
+  // background: white;
 }
 
 .header__dropdown__link__wrapper {
+  position: relative;
+  top: -15px;
   display: block;
   list-style: none;
   transition: background .1s ease-in, box-shadow .1s ease-in;
-  position: relative;
-
+  background: lighten(orange, 10%);
+  z-index: 500;
   .header__dropdown__link {
     display: flex;
     align-items: center;  
@@ -30,7 +32,7 @@
 
     height: 3.4rem;
     min-width: 6.5rem;
-    background: black;
+    background: lighten(orange, 10%);
     color: white;
     font-size: 1rem;
   }  

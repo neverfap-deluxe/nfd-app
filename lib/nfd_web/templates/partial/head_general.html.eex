@@ -2,15 +2,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
   <meta name="author" content="<%= Application.get_env(:nfd, :author) %>">
-  <meta name="robots" content="noodp"/>
-
+  <meta name="robots" content="index, follow">
+  
   <%= if Map.has_key?(@conn.assigns, :item) do %>
     <% title = page_title @conn.assigns.item["section"], @conn.assigns.item["title"] %>
     
     <!-- Page title -->
     <title><%= title %></title>
+
+    <meta name="twitter:site" content="<%= Application.get_env(:nfd, :website_twitter) %>">
+    <meta name="twitter:creator" content="<%= Application.get_env(:nfd, :website_twitter) %>">
+    <meta name="twitter:card" content="summary_large_image">
     <meta property="og:title" content='<%= title %>'>
     <meta name="twitter:title" content='<%= title %>'>    
 
@@ -18,33 +21,31 @@
       <meta name="description" content='<%= @conn.assigns.item["description"] %>'>
       <meta property="og:description" content='<%= @conn.assigns.item["description"] %>'>
       <meta name="twitter:description" content='<%= @conn.assigns.item["description"] %>'>
-      <meta name="twitter:image:alt" content='<%= title %>'>
+      <meta name="twitter:image:alt" content='<%= Application.get_env(:nfd, :logo__small) %>'>
     <% else %>
       <meta name="description" content="<%= Application.get_env(:nfd, :website_description) %>">
       <meta property="og:description" content="<%= Application.get_env(:nfd, :website_description) %>">    
       <meta name="twitter:description" content="<%= Application.get_env(:nfd, :website_description) %>">
-      <meta name="twitter:image:alt" content="<%= Application.get_env(:nfd, :logo) %>">    
+      <meta name="twitter:image:alt" content="<%= Application.get_env(:nfd, :logo__small) %>">    
     <% end %>
     
     <meta name="keywords" content='<%= iterate_json_collection @conn.assigns.item["categories"] %>'>
     <!-- Will need to check this -->
     <link rel="canonical" href='<%= @conn.assigns.item["permalink"] %>' />
 
-    <!-- will need to figure out -->
-    <meta property="og:image" content="<%= Application.get_env(:nfd, :logo) %>">
-    <meta name="twitter:image" content="<%= Application.get_env(:nfd, :logo) %>">
+    <meta name="twitter:image" content="<%= Application.get_env(:nfd, :logo__small) %>">
 
     <!-- facebook things -->
-    <meta property="og:url" content="<%= Routes.url(@conn) <> @conn.request_path %>">
-    <meta property="og:site_name" content="<%= Application.get_env(:nfd, :website_description) %>">
-    
-    <meta name="twitter:site" content="<%= Application.get_env(:nfd, :website_twitter) %>">
-    <meta name="twitter:creator" content="<%= Application.get_env(:nfd, :website_twitter) %>">
-    <meta name="twitter:card" content="summary_large_image">
-    
+    <meta property="og:site_name" content="<%= Application.get_env(:nfd, :website_name) %>">
+    <meta property="article:author" content="<%= Application.get_env(:nfd, :author) %>">
+
+    <%= if @conn.assigns.page_type == "content" do %>
+      <meta property="og:type" content="article">
+    <% end %>
+
     <!-- Open Graph Schema -->
     <script type="application/ld+json">
-      <%= if @conn.assigns["page_type"] == "content" do %>
+      <%= if @conn.assigns.page_type == "content" do %>
         {
           "@context" : "http://schema.org",
           "@type" : "BlogPosting",
@@ -59,15 +60,29 @@
           "inLanguage" : "en-US",
           "author" : "<%= Application.get_env(:nfd, :author) %>",
           "creator" : "<%= Application.get_env(:nfd, :author) %>",
-          "publisher": "<%= Application.get_env(:nfd, :author) %>",
           "accountablePerson" : "<%= Application.get_env(:nfd, :author) %>",
           "copyrightHolder" : "<%= Application.get_env(:nfd, :author) %>",
           "copyrightYear" : "<%= @conn.assigns.item["date"] %>",
           "datePublished": "<%= @conn.assigns.item["date"] %>",
           "dateModified" : "<%= @conn.assigns.item["date"] %>",
           "url" : "<%= @conn.assigns.item["permalink"] %>",  
-          "keywords" : [ <%= iterate_json_collection @conn.assigns.item["tags"] %> ]
+          "keywords" : "<%= iterate_json_collection @conn.assigns.item["tags"] %>",
           "genre": "<%= hd @conn.assigns.item["categories"] %>",
+          "image": {
+            "@type": "ImageObject",
+            "height": "400",
+            "width": "400",
+            "url": "https://neverfapdeluxe.com/images/logo.png"
+          },  
+          "publisher": {
+            "@type": "Organization",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://neverfapdeluxe.com/images/logo.png"
+            },
+            "name": "<%= Application.get_env(:nfd, :website_name) %>"
+          },  
+          "articleBody": "<%= @conn.assigns.item["content"] %>"
         }
       <% else %>
         {
@@ -79,7 +94,7 @@
             "@type": "Person",
             "name": "<%= Application.get_env(:nfd, :author) %>"
           },
-          "description": "<%= @conn.assigns.item["description"] %>",
+          "description": "<%= @conn.assigns.item["description"] %>"
         }
       <% end %>
     </script>    
@@ -105,7 +120,7 @@
   <link rel="preconnect" href="<%= Application.get_env(:nfd, :base_url) %>about">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Parisienne|Noto+Sans:400|Lato:400,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Monserrat|Parisienne|Noto+Sans:400|Lato:400,700,900" rel="stylesheet">
 
   <!-- SCSS -->
   <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/normalize.css") %>'/>  
@@ -131,7 +146,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
 
   <%= if Mix.env() != :dev do %>
-    <link rel="manifest" href="/manifest.json">
+    <!-- Is not being generated, and is blocking js from loading. -->
+    <!-- <link rel="manifest" href="/manifest.json"> -->
   <% end %>
 
   <meta name="msapplication-TileColor" content="#ffffff">
@@ -148,6 +164,16 @@
 
       gtag('config', '<%= Application.get_env(:nfd, :google_analytics_url) %>');
     }
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Ads: 875661467 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-875661467"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-875661467');
   </script>
 
   <!-- Google sign in -->

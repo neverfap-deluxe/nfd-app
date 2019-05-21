@@ -53,6 +53,7 @@ defmodule NfdWeb do
         render(NfdWeb.PartialView, template, assigns)
       end
 
+      # TODO: Add anything missing here.
       def page_title(section, title) do
         pre_title = 
           case section do 
@@ -71,6 +72,9 @@ defmodule NfdWeb do
             "quotes" ->
               "NeverFap Deluxe Quotes | "
 
+            "meditations" ->
+              "NeverFap Deluxe Meditations | "
+  
             _ ->
               "NeverFap Deluxe | "
           end 

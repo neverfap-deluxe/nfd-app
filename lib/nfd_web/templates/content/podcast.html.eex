@@ -1,6 +1,6 @@
 
 <div class="single__wrapper">   
-  <h1 class="single__title" style="margin-bottom: 1rem;"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <h1 class="single__title" style="margin-bottom: 1rem;">Podcast <img src="/images/logo.png" class="logo__square" alt=""/></h2>
 
   <div style="margin-top: 1.4rem;">
     <%= raw @item["podcast_player"] %>

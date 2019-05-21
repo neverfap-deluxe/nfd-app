@@ -2,7 +2,7 @@
   <div class="articles__list">
     <%= Enum.map(@items, fn(item) -> %>
       <%= if Enum.find(item["categories"], &(&1 == @category_type)) do %>
-        <%= if Enum.find(item.tags, &(&1 == "practice")) do %>
+        <%= if Enum.find(item["tags"], &(&1 == "practice")) do %>
           <span><a class="link articles__link" href='<%= item["permalink"] %>'><%= item["date"] %> | <%= item["title"] %></a></span>
         <% end %>
       <% end %>

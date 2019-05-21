@@ -1,22 +1,26 @@
 .google__button {
   display: block;
-  // display: flex;
-  // justify-content: space-around;
-  // text-align: center;
 
   background: white;
+  border: 5px solid black;;
+
   color: #444;
-  border-radius: 5px;
-  border: thin solid #888;
-  box-shadow: 1px 1px 1px grey;
+  // border-radius: 5px;
+  border: 3px solid black;
+  box-shadow: -4px 4px 0px cyan;
   white-space: nowrap;
+  transition: .2s box-shadow;
 
   label {
     font-family: serif;
     font-weight: normal;
   }
   .google__button__icon {
-    background: url('https://developers.google.com/identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
+    position: relative;
+    top: 0.7rem;
+    left: 1.1rem;
+    // TODO .png
+    // background: url('/images/google__sign__in__logo.png') transparent 5px 50% no-repeat;
     display: inline-block;
     vertical-align: middle;
     width: 42px;
@@ -27,6 +31,7 @@
     vertical-align: middle;
     // padding-left: 42px;
     padding-right: 42px;
+    padding-left: 22px;
     font-size: 14px;
     font-weight: bold;
     /* Use the Roboto font that is loaded in the <head> */
@@ -36,6 +41,7 @@
 
 .google__button:hover {
   cursor: pointer;
+  box-shadow: -8px 8px 0px cyan;
 }
 
 
@@ -93,4 +99,8 @@
 }
 .hub__custom__stripe__checkout__button:hover {
   box-shadow: -4px 4px 0px rgba(255,46,182,1);
+}
+
+.google__button:hover {
+
 }

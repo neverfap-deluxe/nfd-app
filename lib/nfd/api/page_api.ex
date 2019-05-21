@@ -52,4 +52,24 @@ defmodule Nfd.API.Page do
   def coaching(client) do
     get(client, "/coaching/index.json")
   end
+
+  def post_relapse_academy(client) do
+    get(client, "/post_relapse_academy/index.json")
+  end
+
+  def emergency(client) do
+    get(client, "/emergency/index.json")
+  end
+
+  def neverfap_deluxe_league(client) do
+    get(client, "/neverfap_deluxe_league/index.json")
+  end
+
+  def helpful_neverfappers_academy(client) do
+    get(client, "/helpful_neverfappers_academy/index.json")
+  end
+
+  def summary(client) do
+    get(client, "/summary/index.json")
+  end
 end

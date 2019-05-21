@@ -14,15 +14,17 @@ config :nfd,
   ecto_repos: [Nfd.Repo],
   base_url: "https://neverfapdeluxe.com/",
   author: "Julius Reade",
-  logo: "/images/logo.png",
+  logo: "https://neverfapdeluxe.com/images/logo.png",
+  logo__small: "https://neverfapdeluxe.com/images/logo__small.png",
   google_analytics_url: "UA-132863786-1",
+  website_name: "NeverFap Deluxe",
 
   social_facebook_url: "https://www.facebook.com/NeverFap-Deluxe-2203366683036015/",
   social_twitter_url: "https://twitter.com/NeverFapDeluxe",
   social_reddit_url: "https://www.reddit.com/r/NeverFapDeluxe",
   social_reddit_user_url: "https://www.reddit.com/user/NeverFapDeluxe",
   social_patreon_url: "https://www.patreon.com/NeverFapDeluxe",
-  social_discord_url: "https://discord.gg/TuwARWk",
+  social_discord_url: "https://discord.gg/YETRkSj",
 
   general_type: "generalemail",
   kickstarter_type: "neverfapdeluxekickstarter",
@@ -91,7 +93,7 @@ config :nfd, Nfd.Scheduler,
     # {"0 18-6/2 * * *", fn -> :mnesia.backup('/var/backup/mnesia') end},
 
     # Email Scheduler - Runs every midnight:
-    # {"@daily", {Emails, :email_scheduler, []}}, # "0 12 * * *    
+    {"@daily", {Emails, :email_scheduler, []}}, # "0 12 * * *
 
     # Sitemap Scheduler - Runs every midnight:
     {"@daily", {Sitemaps, :generate, []}}, # "0 12 * * *

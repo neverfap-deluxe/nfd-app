@@ -44,4 +44,6 @@ EXPOSE 4000
 # CMD ["mix", "do", "ecto.setup,", "phx.server"]
 
 # The iex actually doeComprehensive NoFap Guides nothing.
-CMD ["iex", "-S", "mix", "do", "ecto.setup,", "phx.server"]
+CMD ["iex", "-S", "mix", "do", "ecto.prod,", "phx.server"]
+
+

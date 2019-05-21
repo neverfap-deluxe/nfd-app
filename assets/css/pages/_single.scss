@@ -67,6 +67,7 @@
         display: block;
         // list-style: none;
         font-size: 1.1rem;
+        line-height: 1.7rem;
         margin-bottom: 0.4rem;
 
         strong {
@@ -146,6 +147,8 @@
 
 @media screen and (min-width: 1280px) {
   .single__wrapper {
-    margin-left: 280px;
+    margin: 0 auto!important;
+    margin-top: 2rem!important;
+    margin-bottom: 2rem!important;
   }
 }

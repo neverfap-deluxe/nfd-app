@@ -291,9 +291,14 @@ defmodule Nfd.Account do
 
   """
   def create_subscriber(attrs \\ %{}) do
+    IO.inspect attrs
+
     %Subscriber{}
     |> Subscriber.changeset(attrs)
     |> Repo.insert()
+
+    # My additional modification
+    # get_subscriber_email(attrs.subscriber_email)
   end
 
   @doc """

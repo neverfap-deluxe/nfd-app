@@ -1,0 +1,28 @@
+.emergency__page {
+  background: white;
+  color: black;
+  // border: 5px solid rgba(255,46,182,1);
+
+  .emergency__title {
+    text-shadow: -3px 3px rgba(255,46,182,1);
+    font-size: 8rem;
+    line-height: 7.5rem;
+    margin: 0!important;
+    padding: 6rem;
+  }
+}
+
+.emergency__one__job {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background: cyan;
+  color: white;
+}
+
+.emergency__right__now {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background: white;
+  color: cyan;
+  border: 5px solid cyan;
+}

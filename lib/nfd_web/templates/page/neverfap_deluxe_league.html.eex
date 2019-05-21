@@ -1,0 +1,10 @@
+<div class="single__wrapper">   
+  <h1 class="single__title">NeverFap Deluxe League <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <div class="single__content" style="margin-bottom: 0;">
+    <p>Welcome to NeverFap Deluxe League!</p>
+    <p>For more information please checkout the official NeverFap Deluxe League website!</p>
+    <p><a class="link" href="https://league.neverfapdeluxe.com/">https://league.neverfapdeluxe.com/</a></p>
+  </div>
+</div>
+
+<%= partial "links/patreon.html", assigns %>

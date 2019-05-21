@@ -79,7 +79,7 @@ defmodule Mix.Tasks.Nfd.Seed do
           status: "in_progress",
           description: "Want to learn more about meditation and best practices? The 10 day meditation primer is an excellent place to start.",
           display_name: "10 Day Meditation Primer",
-          premium: false,
+          premium: true,
           price: 9.99,
           slug: "ten-day-meditation-primer"
         })
@@ -94,7 +94,7 @@ defmodule Mix.Tasks.Nfd.Seed do
         status: "in_progress",
         description: "Learn more about your awareness with our 28 day awareness challenge.",
         display_name: "28 Day Awareness Challenge",
-        premium: false,
+        premium: true,
         price: 14.99,
         slug: "twenty-eight-day-awareness-challenge"
       })

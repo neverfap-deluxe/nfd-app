@@ -6,15 +6,18 @@
     <%#= partial "header.html", assigns %>
 
     <main role="main" class="main" id="content">
-      <!-- The 404 page should be a page that has all the content on the website. -->
       <div class="single__wrapper">   
-        <h1 class="single__title">404 <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
+        <h1 class="single__title">404 <img src="/images/logo.png" class="logo__square" alt=""/></h2>
         <div class="single__content" style="margin-bottom: 0;">
           <p>Unfortunately, the page you're looking for doesn't exist.</p>
-          <p>That's okay. You're still no less of an amazing individual.</p>
-          <a class="link articles_link"href="/">Home</a>
+          <p>That's okay. You're still no less of an amazing individual. Here are a complete list of all the pages on the website so I can help you find what you're looking for ^^</p>
+          <p>Otherwise, you may be permanently stuck in this void of non-existence, and in fact you may no longer be using the internet at all.</p>
+          <p>Best of luck.</p>
+          <a class="link" href="/">/</a>
         </div>
       </div>
+
+      <%= partial "everything_module.html", %{ is_mobile_menu: false } %>
 
       <%#= partial "links/patreon.html", assigns %>
 

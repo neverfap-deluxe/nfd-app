@@ -41,4 +41,11 @@ defmodule Nfd.API.Content do
     get(client, "/quotes/index.json")
   end
 
+  def meditation(client, meditation_name) do
+    get(client, "/meditations/" <> meditation_name <> "/index.json")
+  end
+
+  def meditations(client) do
+    get(client, "/meditations/index.json")
+  end
 end

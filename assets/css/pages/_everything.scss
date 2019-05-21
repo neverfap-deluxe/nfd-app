@@ -13,13 +13,29 @@
   }
 
   .everything__sub__title {
-    
+    background: white;
+    padding: 1.6rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .everything__sub__sub__title {
+    background: white;
+    padding: 1.6rem;
+    margin-top: 0.6rem;
+    margin-bottom: 2rem;
+    box-shadow: -5px 5px 0px 0px black;
   }
 
   .everything__section {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+  }
+
+  .everything__item--smaller {
+    padding: 0.2rem!important;
+    padding-left: 1rem!important;
+    margin-bottom: 1rem;
   }
 
   .everything__item {
@@ -46,6 +62,9 @@
     // width: 100%;
 
     transition: .2s box-shadow;
+    .everything__item__title__menu {
+
+    }
 
     .everything__item__title {
 
@@ -53,6 +72,7 @@
     .everything__item__description {
 
     }
+
   }
 
 

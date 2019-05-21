@@ -2,14 +2,14 @@ defmodule Nfd.EmailTemplates do
 
   def run_seven_day_kickstarter(count) do
     case count do
-      0 -> { "template_seven_day_kickstarter_0.html", "7 Day NeverFap Deluxe Kickstarter - The Beginning - Day 0" }
-      1 -> { "template_seven_day_kickstarter_0.html", "7 Day NeverFap Deluxe Kickstarter - The Meditation - Day 1" }
-      2 -> { "template_seven_day_kickstarter_1.html", "7 Day NeverFap Deluxe Kickstarter - The Awareness - Day 2" }
-      3 -> { "template_seven_day_kickstarter_2.html", "7 Day NeverFap Deluxe Kickstarter - The Calmness - Day 3" }
-      4 -> { "template_seven_day_kickstarter_3.html", "7 Day NeverFap Deluxe Kickstarter - The Trust - Day 4" }
-      5 -> { "template_seven_day_kickstarter_4.html", "7 Day NeverFap Deluxe Kickstarter - The Relapse - Day 5" }
-      6 -> { "template_seven_day_kickstarter_5.html", "7 Day NeverFap Deluxe Kickstarter - The Ambition - Day 6" }
-      7 -> { "template_seven_day_kickstarter_6.html", "7 Day NeverFap Deluxe Kickstarter - The Consistency - Day 7" }
+      0 -> { "template_seven_day_kickstarter_0.html", "7 Day NeverFap Deluxe Kickstarter - #{Application.get_env(:nfd, :kickstarter_day_0_title)} - Day 0" }
+      1 -> { "template_seven_day_kickstarter_1.html", "7 Day NeverFap Deluxe Kickstarter - #{Application.get_env(:nfd, :kickstarter_day_1_title)} - Day 1" }
+      2 -> { "template_seven_day_kickstarter_2.html", "7 Day NeverFap Deluxe Kickstarter - #{Application.get_env(:nfd, :kickstarter_day_2_title)} - Day 2" }
+      3 -> { "template_seven_day_kickstarter_3.html", "7 Day NeverFap Deluxe Kickstarter - #{Application.get_env(:nfd, :kickstarter_day_3_title)} - Day 3" }
+      4 -> { "template_seven_day_kickstarter_4.html", "7 Day NeverFap Deluxe Kickstarter - #{Application.get_env(:nfd, :kickstarter_day_4_title)} - Day 4" }
+      5 -> { "template_seven_day_kickstarter_5.html", "7 Day NeverFap Deluxe Kickstarter - #{Application.get_env(:nfd, :kickstarter_day_5_title)} - Day 5" }
+      6 -> { "template_seven_day_kickstarter_6.html", "7 Day NeverFap Deluxe Kickstarter - #{Application.get_env(:nfd, :kickstarter_day_6_title)} - Day 6" }
+      7 -> { "template_seven_day_kickstarter_7.html", "7 Day NeverFap Deluxe Kickstarter - #{Application.get_env(:nfd, :kickstarter_day_7_title)} - Day 7" }
     end
   end
 

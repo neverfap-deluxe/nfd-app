@@ -1,13 +1,25 @@
-<%= if @wip do %>
-  <div class="everything__item everything__item__greyed">
-    <h3 class="everything__item__title"><%= @title %></h3>
-    <p class="everything__item__description"><%= @description %></p>
-    <span class="everything__wip">Work in progress</span>
-
-  </div>      
+<%= if @is_mobile_menu do %>
+  <%= if @wip do %>
+    <div class="everything__item everything__item--smaller everything__item__greyed">
+      <h3 class="everything__item__title"><%= @title %></h3>
+      <!-- <span class="everything__wip">Work in progress</span> -->
+    </div>
+  <% else %>
+    <a class="everything__item everything__item--smaller" href="<%= @url %>">
+      <h3 class="everything__item__title"><%= @title %></h3>
+    </a>
+  <% end %>
 <% else %>
-  <a class="everything__item" href="<%= @url %>">
-    <h3 class="everything__item__title"><%= @title %></h3>
-    <p class="everything__item__description"><%= @description %></p>
-  </a>
+  <%= if @wip do %>
+    <div class="everything__item everything__item__greyed">
+      <h3 class="everything__item__title"><%= @title %></h3>
+      <p class="everything__item__description"><%= @description %></p>
+      <span class="everything__wip">Work in progress</span>
+    </div>      
+  <% else %>
+    <a class="everything__item" href="<%= @url %>">
+      <h3 class="everything__item__title"><%= @title %></h3>
+      <p class="everything__item__description"><%= @description %></p>
+    </a>
+  <% end %>
 <% end %>

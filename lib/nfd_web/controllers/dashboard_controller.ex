@@ -17,6 +17,22 @@ defmodule NfdWeb.DashboardController do
 
     collections_audio = Content.list_audio_courses()
     collections_email = Content.list_email_campaigns()
+    # collections_email_available = 
+    #   collections_email_raw 
+    #     |> Enum.filter(fn(collection) ->
+    #       collection_added_to_access_list = Enum.find(collections_access_list, fn(access_list) -> access_list.collection_id == collection.id end)
+    #       if collection_added_to_access_list, do: false, else: true
+    #     end)
+
+    # collections_email_purchased = collections_email_raw |> Enum.filter()
+    #   collections_email_available = 
+    #     collections_email_raw 
+    #       |> Enum.filter(fn(collection) ->
+    #         collection_added_to_access_list = Enum.find(collections_access_list, fn(access_list) -> access_list.collection_id == collection.id end)
+    #         if collection_added_to_access_list, do: true, else: false
+    #       end)
+
+    # IO.inspect collections_access_list
 
     { _count_property, subscribed_property } = Email.collection_slug_to_subscribed_property("general-newsletter")
     is_subscribed = Map.fetch!(subscriber, subscribed_property)
@@ -157,7 +173,9 @@ defmodule NfdWeb.DashboardController do
 
   defp check_subscriber_exists_create_subscriber(user_email, user_id) do
     case Account.create_subscriber(%{ subscriber_email: user_email, user_id: user_id }) do
-      {:ok, subscriber} -> subscriber
+      {:ok, subscriber} -> 
+        # NOTE: I think there's an issue where this only sometimes returns the subscriber_email.        
+        subscriber
       {:error, _error} -> EmailLogs.error_email_log("#{user_email} - #{user_id} - Could not create subscriber - :check_subscriber_exists_create_subscriber.")
     end
   end

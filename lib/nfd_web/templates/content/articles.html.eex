@@ -1,10 +1,10 @@
 
-<div class="single__wrapper">
-
-  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt="" style="margin-right: 1rem;" /> <a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#need a link to all the website content, instead?</p></a></h2>
+<div class="single__wrapper">   
+  
+  <h1 class="single__title">Articles <img src="/images/logo.png" class="logo__square" alt="" style="margin-right: 1rem;" /> <a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#need a link to all the website content, instead?</p></a></h2>
 
   <div class="single__content">
-    <p>Here is a complete list of all of the contextual articles here on my amazingly useful website, NeverFap Deluxe!</p>
+    <p>Here are a complete list of all of the contextual articles here on my amazingly useful website, NeverFap Deluxe!</p>
     <p>If instead if you're looking for a more structured approach towards addressing your porn addiction, then I recommend checking out our <a class="link" href="/courses">NeverFap Deluxe Courses</a> section!</p>
     <p>If however you were interested in browsing the complete list of mental health practices here on NeverFap Deluxe, please check out the suitably-named <a class="link" href="/practices">NeverFap Deluxe Practices</a> page.</p>
     <p>You may sort articles by latest or category.</p>

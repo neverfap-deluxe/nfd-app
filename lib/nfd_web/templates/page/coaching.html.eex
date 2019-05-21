@@ -1,25 +1,66 @@
 <div class="single__wrapper">   
-  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
+  <h1 class="single__title">Coaching <img src="/images/logo.png" class="logo__square" alt=""/></h2>
   <div class="single__content" style="margin-bottom: 0;">
-    <p>I offer personal porn addiction recovery coaching for people seeking much more targeted help for their porn addiction.</p>
-    <p>In most cases, the articles and courses contained within this website should provide you with all the knowledge you require in order to </p>
-    <p>There really are only a few scenarios in which you may want to consider personal coaching from me:</p>
+    <p>I offer porn addiction recovery coaching for people seeking more targeted help with their porn addiction.</p>
+    <p>In most cases, the articles and courses contained within this website should provide you with all the skills and knowledge you require in order to help you overcome your porn addiction.</p>
+    <p>However, it can be difficult to do alone.</p>
+    <p>As outlined in <a class="link" href="/articles/my-personal-porn-recovery-journey/">My Personal Porn Recovery Journey</a> one of the big things which helped me overcome my porn addiction was coming out to my partner about my mental health issues.</p>
+    <p>Which obviously can be an incredibly difficult thing for you to do, if you don't feel as if you have anyone you can trust to talk about your mental health issues with.</p>
+    <p>I have certainly been in that position before and can understand what it's like, which is why I've decided to offer personal coaching as a service.</p>
+    <p>It's also the reason why I run an <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> Discord channel, so users can get that level of interaction with other people on some level.</p>
+  </div>
+</div>
 
-    <p>- You want to beat this thing quicker, and are happy to pay a premium for it.</p>
-    <p>- You're struggling to understand how to effectively practice meditation and other awareness exercises, and you're seeking guided help.</p>
-    <p>- You want to ask a question face-to-face to me about your porn addiction recovery.</p>
-    <p>- You're seeking advice on a recommended routine of mental health practice.</p>
-    <p>- You just wanna say hi, because why the hell not.</p>
+<%= partial "links/discord.html", assigns %>
+  
+<div class="single__wrapper">   
+  <div class="single__content" style="margin-bottom: 0;">
+    <h1>Here are <u style="border-bottom: 4px solid cyan; padding-bottom: 0rem;">some of the reasons</u> to consider personal coaching.</h1>
+
+    <p>Ultimately only you can decide whether you belive it's worth your time and money.</p>
+    <p>I'm simply here to help.</p>
+
+    <div style="border-top: 3px solid cyan;"></div>
+    <h2 class="banner__points banner__points--coaching">You require another human being to help you keep motivated and empathise with you.</h2>
+    <div style="border-top: 3px solid cyan;"></div>
+    <h2 class="banner__points banner__points--coaching">You want to beat this thing quicker, and are happy to pay a premium for it.</h2>
+    <div style="border-top: 3px solid cyan;"></div>
+    <h2 class="banner__points banner__points--coaching">You struggle to understand how to effectively practice meditation and other awareness exercises, and you're seeking guided help.</h2>
+    <div style="border-top: 3px solid cyan;"></div>
+    <h2 class="banner__points banner__points--coaching">You want to ask a question face-to-face to me about your porn addiction recovery.</h2>
+    <div style="border-top: 3px solid cyan;"></div>
+    <h2 class="banner__points banner__points--coaching">You're seeking advice on a recommended routine of mental health practice.</h2>
+    <div style="border-top: 3px solid cyan;"></div>
+    <h2 class="banner__points banner__points--coaching">You just wanna say hi, because why the hell not!?</h2>
+    <!-- <div class="show__large" style="border-top: 3px solid cyan;"></div> -->
+
+  </div>
+</div>
+  
+<div class="magenta__banner">
+  <div class="magenta__banner__title__container">
+    <h2 class="magenta__banner__title">Pricing.</br>Pricing.</br>Pricing.</br></h2>
+  </div>
+</div>
+  
+<div class="single__wrapper">   
+  <div class="single__content" style="margin-bottom: 0;">
 
     <h3>I charge $45 for an initial 30 minute consultation.</h3>
-    <h3>Then it's $90 per hour for any on-going sessions that you feel like you need.</h3>
+    <h3>Then I charge $90 per hour for any on-going sessions that you feel are necessary, which will usually occur on a weekly basis.</h3>
 
-    <p>Here's the thing, I can usually tell a person within a few minutes.</p>
-    <p>Often because most porn addicts are the same in terms of feelings, fears and doubts, and almost all of them are doing the exact wrong things.</p>
-    <p>For a lot of people, that initial 30 minutes is all they need, because they might only have a few on-going questions or are simply seeking routine.</p>
-    <p>On-going sessions can be helpful if you've been struggling for a long time, and you really need someone to keep your accountable and tell it to you straight.</p>
-    <p>In almost all these cases, the issue is that the client fails to stick to their routine. You distrust the process. You lose. It's that simple.</p>
-    <p>Of course, that's why I'm here to help.</p>
+    <p>Here's the thing. I've dealt with an extraordinary amount of porn addicts, so I can usually tell a person within a few minutes.</p>
+    <p>I can tell if it's going to take them years to beat this thing, because of their inherent refusal to trust the process.</p>
+    <p>I can tell if they're going to struggle with meditation, because they fail to understand the importance of letting go.</p>
+    <p>I can almost instantly recognise anything, not only because I've personally been there before, but because of the behaviours I observe from the porn addicts I speak with everyday.</p>
+    <p>From enlightened hope to complete hopelessness at the cusp of relapse, it's honestly nothing new to me.</p>
+    <h3>The good news is that because I can identify these behaviours, I can also help you become aware of them.</h3>
+    <p>Which is 90% of the battle.</p>
+    <p>For a lot of people, that initial 30 minutes is all they'll need, because they might only have a few on-going questions or are simply seeking routine.</p>
+    <p>However, for the particularly stubborn (certainly I was one of them) on-going sessions can be helpful to keep you on track and have someone tell it to you straight.</p>
+    <p>In almost all cases, the issue with stubborn clients is that they'll refuse to stick to the routine, and then complain about relapsing as if they could have never seen it coming.</p>
+    <p>Ah yes, the great veneer of denial, sticking out it's ugly head as it cackles at you like a murder of crows. Been there before. It sucks. I totally get it. Let's change that.</p>
+    <p>You distrust the process. You lose. It's that simple. I've said it a million times before, and I'll say it for another million if I have to.</p>
   </div>
 </div>
 
@@ -29,9 +70,10 @@
   <div class="single__content" style="margin-bottom: 0;">
     <h2>Next Steps</h2>
     <p>If you're still interested in having me coach you, then there's two things you need to do.</p>
-    <p>Firstly, create a NeverFap Deluxe Account. You may register <%= link to: Routes.pow_registration_path(@conn, :new), class: "link" do %>here<% end %> or sign in <%= link to: Routes.pow_session_path(@conn, :new), class: "link" do %>here<% end %>.</p>
-    <p>This step is important, because it's essentially how you'll pay for the coaching.</p>
-    <p>Secondly, get in touch via email so I can learn a bit more about you, and so we can arrange a time.</p>
+    <p>Firstly, you'll need to create a NeverFap Deluxe Account. There are links in the banner below.</p>
+    <p>This first step is important, because it's essentially how you'll pay for the coaching in the beautifully designed dashboard that I've put together.</p>
+    <p>Secondly, get in touch via email (or via <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Discord</a>) so I can learn a bit more about you, as well as so we can arrange a time.</p>
+    <p>I'm personally located in Melbourne Australia. (GMT+11:00)</p>
   </div>
 </div>
 

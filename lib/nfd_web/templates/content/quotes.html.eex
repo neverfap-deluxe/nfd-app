@@ -4,31 +4,19 @@
   <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
 
   <div class="single__content">
-
+    <p>Essentially, this is where you can see a list of the visual items on the website.</p>
   </div>
 </div>
 
 <%= partial "links/patreon.html", assigns %>
 
 <div class="single__wrapper">
-  <h3 class="popular__latest__options__title">Articles</h3>
-  <div class="popular__latest__options">
-    <h3 class="button__click button__on popular__latest__options--guide" id="articles_latest_plain_click">Latest (plain text)</h3>
-    <h3 class="button__click button__off popular__latest__options--guide" id="articles_latest_click">Latest</h3>
-    <h3 class="button__click button__off popular__latest__options--guide" id="articles_category_click">Category</h3>
-  </div>
-
-  <div class="posts__off posts--guide" id="articles_latest_posts">
-    <%= partial "list/articles_latest.html", %{ items: @articles, tag_type: "context" } %>
-  </div>
-
-  <div class="posts__on posts--guide" id="articles_latest_plain_posts">
-    <%= partial "list/articles_latest_plain_text.html", %{ items: @articles, tag_type: "context" } %>
-  </div>
-
-  <div class="posts__off posts--guide" id="articles_category_posts">
-    <%= partial "list/articles_category.html", %{ items: @articles, tag_type: "context" } %>
-  </div>
+  <h3 class="popular__latest__options__title">Quotes</h3>
+  <%= Enum.map(@quotes, fn(quote) -> %>
+    <div class="quote__item">
+      <img src="<%= quote.image_url %>" alt="quote__title">
+    </div>
+  <% end ) %>
 </div>
 <%= partial "links/loginregister_top.html", assigns %>
 
