@@ -74,14 +74,22 @@ const generateTextTitle = (text) => `
   </mj-text>
 `;
 
+const generateTextTitleCentre = (text) => `
+  <mj-text color="#35393d" font-size="16px" padding-top="20px" align="center">
+  <strong>${text}</strong>
+  </mj-text>
+`;
+
 const generateTextBold = (text) => `
   <mj-text color="#35393d" font-size="20px" line-height="30px">
     <strong>${text}</strong>
   </mj-text>
 `;
 
-const generateButton = () => `
-
+const generateButton = (link, text) => `
+  <mj-button padding-top="0px" background-color="white" color="black" border="4px solid cyan;" href="${link}">
+    ${text}
+  </mj-button>
 `;
 
 const generate = () => `
@@ -96,35 +104,48 @@ const generate = () => `
 `;
 
 const parseFile = (fileName) => {
-  // maybe I just need a
-  // text parser utili
+  // TODO: Fix Regex.
+  const withinQuotesRegex = new RegExp(/\"[\S ]+\"/, );
 
-  parser.addRule(/\#[\S]+/ig, function(tag) {
-    // Return the tag minus the `#` and surrond with html tags
-    
-    return "<span class=\"tag\">" + tag.substr(1) + "</span>";
+  // generate text 
+  parser.addRule(/\#[\S ]+/ig, function(text) {
+    return generateText(text.substr(1));
   });
 
-  parser.addRule(/-{3}/ig, function(tag) {
-    // Return the tag minus the `#` and surrond with html tags
-    
-    return "<span class=\"tag\">" + tag.substr(1) + "</span>";
+  // generate text bold
+  parser.addRule(/\#\#[\S ]+/ig, function(text) {
+    return generateTextBold(text.substr(1));
+  });
+  
+  // generate text title
+  parser.addRule(/[\S]+/ig, function(text) {
+    return generateTextTitle(text.substr(1));
   });
 
+  // generate text title centre
+  parser.addRule(/nfd_center_title [\S]+/ig, function(text) {
+    return generateTextTitleCentre(text.substr(1));
+  });
 
-  parser.render("Some text #iamahashtag foo bar.");
+  // generate button
+  parser.addRule(/\nfd_button [\S]+/ig, function(text) {
+    // TODO get regex of whatever is in quotes
+    const title = withinQuotesRegex.test(text)
+    return generateButton(text.substr(1), title);
+  });
 
+  // generate divider 
+  parser.addRule(/-{3}/ig, function(text) {
+    return generateDivider(text.substr(1));
+  });
 
   // seven day kickstarter
-  for (let i = 0; i < 8; i++) {
-    const fileName = `template_seven_day_kickstarter_${i}.mjml`;
-    const file = fse.readFileSync(`src/${fileName}`, itemsComplete, [{}]);
-
-    // do parsing stuff.
-    generateDivider
-    generateText
-    generateTextTitle
-    generateTextBold
-    generateButton
-  }
+  // for (let i = 0; i < 8; i++) {
+    // const fileName = `template_seven_day_kickstarter_${i}.mjml`;
+    const fileName = `template_seven_day_kickstarter_1.mjml`;
+    const file = fse.readFileSync(`email_seven_day_kickstarter_md/${fileName}`, itemsComplete, [{}]);
+    const parsedFile = parser.render(file);
+    console.log(parsedFile)
+    fse.outputFileSync(`email_seven_day_kickstarter_md_output/${fileName}`, parsedFile, [{}]);
+  // }
 };

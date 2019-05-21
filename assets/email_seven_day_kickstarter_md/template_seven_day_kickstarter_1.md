@@ -1,5 +1,6 @@
 day: 1
-title: The Trust 
+title: The trust 
+
 
 #Welcome to the trust.
   
@@ -35,7 +36,7 @@ Perhaps it's simply not in your personality to follow instructions. Maybe you fa
 
 All amateur mistakes which lead to despair, relapse and hopelessness. 
 
-Trust me when I say that I've seen it a literally a thousand times before, and that it's the reason why you're still a porn adict.  </mj-text>  
+Trust me when I say that I've seen it a literally a thousand times before, and that it's the reason why you're still a porn adict.   
 
 Because it takes people that long to finally realise that there simply is no alternative to hard work and commitment.
 
