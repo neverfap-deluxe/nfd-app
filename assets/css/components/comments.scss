@@ -1,0 +1,52 @@
+
+.comment__list {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.comment__item {
+  display: flex;
+  flex-direction: column;
+
+  .comment__user__item {
+    display: flex;
+
+    .comment__user__item--left {
+      .comment__user__item__avatar {
+
+      }
+    }
+
+    .comment__user__item--right {
+      display: flex;
+      flex-direction: column;
+
+      .comment__user__item__name {
+
+      }
+      .comment__user__item__date {
+
+      }
+    }
+  }
+  .comment__message {
+
+  }
+  .comment__reply {
+    .comment__reply__button {
+
+    }
+  }
+}
+
+
+
+.comment__create__message {
+  .comment__create__message__title {
+
+  }
+  .comment__create__message__sub__title {
+
+  }
+}

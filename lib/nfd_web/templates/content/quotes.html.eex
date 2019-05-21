@@ -1,13 +1,10 @@
 
-<div class="single__wrapper">   
-  
+<div class="single__wrapper">
+
   <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
 
   <div class="single__content">
-    <!-- <p>A complete list of all of the contextual articles here on my amazingly useful website, NeverFap Deluxe!</p>
-    <p>If instead if you're looking for a more structured approach towards addressing your porn addiction, then I recommend checking out our <a class="link" href="/courses">NeverFap Deluxe Courses</a> section!</p>
-    <p>If however you were interested in browsing the complete list of mental health practices here on NeverFap Deluxe, please check out the suitably-named <a class="link" href="/practices">NeverFap Deluxe Practices</a> page.</p>
-    <p>You may sort articles by latest or category.</p> -->
+
   </div>
 </div>
 
@@ -20,20 +17,20 @@
     <h3 class="button__click button__off popular__latest__options--guide" id="articles_latest_click">Latest</h3>
     <h3 class="button__click button__off popular__latest__options--guide" id="articles_category_click">Category</h3>
   </div>
-  
+
   <div class="posts__off posts--guide" id="articles_latest_posts">
     <%= partial "list/articles_latest.html", %{ items: @articles, tag_type: "context" } %>
   </div>
-  
+
   <div class="posts__on posts--guide" id="articles_latest_plain_posts">
     <%= partial "list/articles_latest_plain_text.html", %{ items: @articles, tag_type: "context" } %>
   </div>
-  
+
   <div class="posts__off posts--guide" id="articles_category_posts">
     <%= partial "list/articles_category.html", %{ items: @articles, tag_type: "context" } %>
   </div>
 </div>
 <%= partial "links/loginregister_top.html", assigns %>
-  
+
 
 <script src='<%= Routes.static_path(@conn, "/js/articles.js") %>'></script>

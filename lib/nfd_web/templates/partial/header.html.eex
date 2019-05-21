@@ -12,22 +12,12 @@
     </a>
 
     <a id="link__articles" class="header__link__wrapper" href="/articles">
-      <!-- <%#=/*  <div style="position:relative;">  %> -->
         <li id='articles__click' class="header__link">Articles</li>
-        <!-- <%#=/*  <div id='articles__dropdown'>
-          <a class="header__dropdown__link__wrapper" href="/articles/grid">
-            <li class="header__dropdown__link">Grid</li>
-          </a>
-        </div>      %>
-      <%#  </div>  %> -->
     </a>
 
-    <!-- <a id="link__practices" class="header__link__wrapper" href="/practices">
+    <a id="link__practices" class="header__link__wrapper" href="/practices">
       <li class="header__link">Practices</li>
-    </a> -->
-    <!-- <a id="link__courses" class="header__link__wrapper" href="/courses">
-      <li class="header__link">Courses</li>
-    </a> -->
+    </a>
 
     <a id="link__podcast" class="header__link__wrapper" href="/podcast">
       <li class="header__link">Podcast</li>
@@ -41,7 +31,16 @@
       <li class="header__link">About</li>
     </a>
   </ul>
+
+  <div class="header__sub header__banner__home"></div>
+  <div class="header__sub header__banner__guide"></div>
+  <div class="header__sub header__banner__articles"></div>
+  <div class="header__sub header__banner__practices"></div>
+  <div class="header__sub header__banner__podcast"></div>
+  <div class="header__sub header__banner__community"></div>
+  <div class="header__sub header__banner__about"></div>
 </nav>
+
 
 <!-- Home | Guide | Articles | Podcast | Community | About -->
 

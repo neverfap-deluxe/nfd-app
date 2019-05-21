@@ -1,0 +1,63 @@
+
+<div class="comment__list">
+  <%= Enum.map(@comments, fn(comment) -> %>
+    <!-- <%= partial "comment_item.html", %{ podcast: podcast } %> -->
+    <div class="comment__item">
+      <div class="comment__user__item">
+        <div class="comment__user__item--left">
+          <img class="comment__user__item__avatar" src="<%= comment.avatar %>" />
+        </div>
+        <div class="comment__user__item--right">
+          <div class="comment__user__item__name"><%= comment. %></div>
+          <div class="comment__user__item__date"><%= comment. %></div>
+        </div>
+      </div>
+
+      <div class="comment__message">
+          <%= comment.message %>
+      </div>
+      <div class="comment__reply">
+        <div class="comment__reply__button">
+
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+<div class="comment__create__message">
+  <div class="comment__create__message__title">
+    Leave A Reply
+  </div>
+  <div class="comment__create__message__sub__title">
+    Your email address will not be published. Required fields are marked *
+  </div>
+
+
+  <div class="form__wrapper form__wrapper--full-width">
+    <%= form_for @contact_form_changeset, Routes.function_path(@conn, :article_message_form_post), fn f -> %>
+      <div class="form__input__container">
+        <%= error_tag f, :message %>
+        <%= textarea f, :message, [placeholder: "Comment", class: "form__input form__textarea"] %>
+        <%= error_tag f, :name %>
+        <%= text_input f, :name, [placeholder: "Name", class: "form__input"] %>
+        <%= error_tag f, :email %>
+        <%= text_input f, :email, [placeholder: "Email", class: "form__input"] %>
+
+
+        Save my name, email, and website in this browser for the next time I comment.
+
+        // maybe use the cookies for this.
+        // conn.cookies
+
+        <%= raw Recaptcha.Template.display %>
+      </div>
+
+      <div class="form__submission__container">
+        <%= submit "Send", [class: "form__button"]  %>
+      </div>
+    <% end %>
+  </div>
+</div>
+

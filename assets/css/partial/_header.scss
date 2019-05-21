@@ -1,4 +1,30 @@
+.header__sub {
+  position: absolute;
+}
+.header__banner__home {
+  display: none;
+}
+.header__banner__guide {
+  display: none;
+}
+.header__banner__articles {
+  display: none;
+}
+.header__banner__practices {
+  display: none;
+}
+.header__banner__podcast {
+  display: none;
+}
+.header__banner__community {
+  display: none;
+}
+.header__banner__about {
+  display: none;
+}
+
 .header {
+  position: 
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,7 +48,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
+
     margin: 0;
     padding: 0;
     // height: 100%;
@@ -37,16 +63,16 @@
 
       .header__link {
         display: flex;
-        align-items: center;  
+        align-items: center;
         justify-content: center;
-  
+
         height: 3.4rem;
         min-width: 6.5rem;
 
         color: white;
         font-size: 1rem;
         font-family: 'Noto Sans', 'Lato', sans-serif!important;
-      }  
+      }
     }
     .header__link__wrapper:hover {
       // background: rgb(243, 243, 243);
@@ -95,7 +121,7 @@
     line-height: 1rem;
     text-shadow: -2px 2px 0px black;
     text-decoration: none;
-    color: white;  
+    color: white;
   }
 
   .header__logo:hover {
@@ -108,7 +134,7 @@
 }
 
 #link__premium {
-  
+
   .header__link {
   // border-bottom: 5px solid rgb(0, 255, 0);
   // color: black;
@@ -128,7 +154,7 @@
       .header__link__wrapper {
         .header__link {
           padding-left: 8px;
-          padding-right: 8px;  
+          padding-right: 8px;
         }
       }
     }
@@ -141,7 +167,7 @@
     .header__links {
       // border-right: 5px solid black;
       // border-left: 5px solid black;
-  
+
       .header__link__wrapper {
         // border-bottom: 5px solid black;
 
