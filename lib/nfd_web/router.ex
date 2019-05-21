@@ -47,6 +47,9 @@ defmodule NfdWeb.Router do
     get "/helpful-neverfappers-academy", PageController, :helpful_neverfappers_academy
     get "/summary", PageController, :summary
     
+    get "/test", PageController, :test
+    get "/final", PageController, :final
+    
     get "/apple_podcast.xml", PageController, :apple_podcast_xml
 
     get "/articles", ContentController, :articles

@@ -1,9 +1,97 @@
 .header__sub {
+  display: flex;
+  padding: 0.5rem;
   position: absolute;
   top: 3.4rem;
   width: 100%;
-  height: 400px;
+  height: 190px;
   background: lighten(orange, 10%);
   box-shadow: -5px 5px 0px 0px cyan;
   z-index: 200;
 }
+.header__banner__home {
+  display: none;
+}
+.header__banner__guide {
+  display: none;
+}
+.header__banner__articles {
+  display: none;
+}
+.header__banner__practices {
+  display: none;
+}
+.header__banner__podcast {
+  display: none;
+}
+.header__banner__community {
+  display: none;
+}
+.header__banner__about {
+  display: none;
+}
+
+// .header__banner__home:hover {
+//   display: flex;
+// }
+// .header__banner__guide:hover {
+//   display: flex;
+// }
+// .header__banner__articles:hover {
+//   display: flex;
+// }
+// .header__banner__practices:hover {
+//   display: flex;
+// }
+// .header__banner__podcast:hover {
+//   display: flex;
+// }
+// .header__banner__community:hover {
+//   display: flex;
+// }
+// .header__banner__about:hover {
+//   display: flex;
+// }
+
+// #link__home:hover + .header__banner__home {
+//   display: flex;
+// }
+// #link__guide:hover + .header__banner__guide {
+//   display: flex;
+// }
+// #link__articles:hover + .header__banner__articles {
+//   display: flex;
+// }
+// #link__practices:hover + .header__banner__practices {
+//   display: flex;
+// }
+// #link__podcast:hover + .header__banner__podcast {
+//   display: flex;
+// }
+// #link__community:hover + .header__banner__community {
+//   display: flex;
+// }
+// #link__about:hover + .header__banner__about {
+//   display: flex;
+// }
+
+
+// .header__module {
+//   flex: 1;
+//   margin: 0.4rem;
+//   padding: 1rem;
+//   background: white;
+//   color: black;
+//   h3, h2, p {
+//     margin: 0;
+//   }
+//   h3 {
+//     display: inline-block;
+//     padding: 0.6rem;
+//     color: white;
+
+//     background: black;
+//     // border: 4px solid white;
+//     // box-shadow: -5px 5px 0px 0px cyan;
+//   }
+// }

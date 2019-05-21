@@ -9,6 +9,12 @@ defmodule NfdWeb.FunctionController do
   alias Nfd.API.Page
   alias Nfd.Meta
 
+  def message_form_post(conn, %{"contact_form" => contact_form}) do
+    name = contact_form["name"]
+    email = contact_form["email"]
+    message = contact_form["message"]
+  end
+
   def contact_form_post(conn, %{"contact_form" => contact_form}) do
     name = contact_form["name"]
     email = contact_form["email"]
@@ -16,7 +22,7 @@ defmodule NfdWeb.FunctionController do
 
     # TODO: Need to test
     case Recaptcha.verify(contact_form["g-recaptcha-response"]) do
-      {:ok, _response} -> 
+      {:ok, _response} ->
         case Account.create_contact_form(contact_form) do
           {:ok, _contact_form} ->
             EmailLogs.new_contact_form_email(name, email, message)

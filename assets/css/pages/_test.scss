@@ -1,0 +1,34 @@
+.homepage__splitter--test {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  margin-left: 7rem;
+}
+
+.homepage__section--test--black {
+  position: relative;
+  border: 7px solid black;
+  padding: 3rem;
+}
+
+.nfd__logo__stamp {
+
+}
+
+.account__info__title--test {
+  width: 200px;
+}
+
+.homepage__tldr--signature--top {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  border: 4px solid white;
+  color: white;
+  background: black;
+  font-size: 1.4rem;
+  margin: 1.6rem;
+}

@@ -19,7 +19,7 @@ config :nfd,
   google_analytics_url: "UA-132863786-1",
   website_name: "NeverFap Deluxe",
 
-  social_facebook_url: "https://www.facebook.com/NeverFap-Deluxe-2203366683036015/",
+  social_facebook_url: "https://www.facebook.com/NeverFapDeluxe",
   social_twitter_url: "https://twitter.com/NeverFapDeluxe",
   social_reddit_url: "https://www.reddit.com/r/NeverFapDeluxe",
   social_reddit_user_url: "https://www.reddit.com/user/NeverFapDeluxe",

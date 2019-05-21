@@ -1,0 +1,16 @@
+<div class="single__wrapper">   
+  <h1 class="single__title">Final</h2>
+  <div class="single__content" style="margin-bottom: 0;">
+  </div>
+</div>
+
+
+<div class="homepage__content">
+  <div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+
+  <div class="homepage__section homepage__tldr" style="margin-top: 2rem!important;">
+    <!-- <h1 style="text-shadow: -2px 2px cyan;">In summary, here's what you'll be practicing consistently.</h1> -->
+    <h2>10 minutes of meditation each day.</h2>
+    <div class="homepage__tldr--signature">NeverFap Deluxe.</div>
+  </div>
+</div>

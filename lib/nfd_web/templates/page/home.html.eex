@@ -5,7 +5,7 @@
     <h1 class="homepage__hero__title">NeverFap <span class="deluxe__font">Deluxe</span></h1>
     <h2 class="homepage__hero__title__secondary">The Porn Addiction Recovery Process.</h2>
   </div>
-  
+
   <%= partial "links/patreon.html", assigns %>
   <%= partial "home/who.html", assigns %>
 
@@ -28,7 +28,7 @@
   
   <div class="account__info">
     <p class="account__info__title">Before we get started on the main course, here is some <span class="delicious__promotion">delicious</span> promotion. <i class="em em-admission_tickets"></i></p>
-  </div>     
+  </div>
   <div class="homepage__splitter">
     <div class="homepage__splitter__box homepage__splitter__box--top">
       <div>
@@ -214,62 +214,6 @@
 
   <%= partial "home/how_do_you_develop_healthy_coping_mechanisms.html", assigns %>
 
-  <style>
-    .cyan__box__border {
-      border: 4px solid cyan; 
-      box-shadow: -3px 3px 0px 0px rgba(255,46,182,1);
-      padding: 0.6rem;
-      /* background: black;
-      color: white; */
-      /* display: inline-block; */
-    }
-
-    .h1__black {
-      display: flex;
-      flex-direction: column;
-
-      position: relative;
-      background: black;
-      /* box-shadow: -7px 7px 0px 0px rgba(255,46,182,1); */
-      color: white;
-      padding: 1rem;
-
-    }
-
-    .box__abs {
-      display: none;
-
-      /* font-size: 2rem; */
-      position: absolute;
-      padding: 0;
-      bottom: 0;
-      right: 0;
-    }
-
-    .home__dot {
-      display: none;
-    }
-
-    @media screen and (min-width: 420px) {
-      .h1__black {
-      }
-    }
-    @media screen and (min-width: 768px) {
-      .h1__black {
-        display: block;
-        padding: 3rem;
-        padding-bottom: 20rem;
-      }
-      .box__abs {
-        display: block;
-        padding: 1rem;
-      }
-      .home__dot {
-        display: inline;
-      }
-    }
-
-</style>
   <div class="homepage__section">
     <h2>It's simple.</h2>
     <h1 class="h1__black">With <span class="cyan__box__border" style="z-index: 400;">Practice</span> and <span class="cyan__box__border">Consistency</span><span class="home__dot">.</span> </i> <div class="box__abs">NeverFap Deluxe.</div></h1> <!-- <i class="em em-man_climbing"> -->

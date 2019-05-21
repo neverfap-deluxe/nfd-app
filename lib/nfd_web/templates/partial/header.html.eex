@@ -3,41 +3,15 @@
     <h1 class="header__logo">NeverFap <span class="deluxe__font">Deluxe</span> <i class="em em-rainbow"></i></h1>
   </a>  %> -->
   <ul class="header__links">
+
+    <!-- HOME -->
     <a id="link__home" class="header__link__wrapper" href="/">
-      <li class="header__link">Home</li>
+      <li class="header__link">Home</li>  
     </a>
-
-    <a id="link__guide" class="header__link__wrapper header__link__wrapper--main" href="/guide">
-      <li class="header__link">Guide</li>
-    </a>
-
-    <a id="link__articles" class="header__link__wrapper" href="/articles">
-        <li id='articles__click' class="header__link">Articles</li>
-    </a>
-
-    <a id="link__practices" class="header__link__wrapper" href="/practices">
-      <li class="header__link">Practices</li>
-    </a>
-
-    <a id="link__podcast" class="header__link__wrapper header__link__wrapper--disappear" href="/podcast">
-      <li class="header__link">Podcast</li>
-    </a>
-
-    <a id="link__community" class="header__link__wrapper header__link__wrapper--disappear" href="/community">
-      <li class="header__link">Community</li>
-    </a>
-
-    <a id="link__about" class="header__link__wrapper header__link__wrapper--disappear" href="/about">
-      <li class="header__link">About</li>
-    </a>
-
-  </ul>
-
     <div class="header__sub header__banner__home">
       <div class="header__module">
-        <h3>NeverFap Deluxe</h3>
-        <h2>The king of porn recovery processes <i class="em em-crown"></i></h2>
-        <h4>Never </h4>
+        <h3 style="margin-bottom: 1.4rem;">NeverFap Deluxe</h3>
+        <h2>Featuring: The Reade&copy;</h2>
       </div>
       <div class="header__module">
         <p>NeverFap Deluxe is a porn recovery process which focuses on the use of meditation and awareness in order to develop control over our minds.</p>
@@ -45,14 +19,23 @@
     </div>
 
     <!-- Guide -->
+    <a id="link__guide" class="header__link__wrapper header__link__wrapper--main" href="/guide">
+      <li class="header__link">Guide</li>
+    </a>
     <div class="header__sub header__banner__guide">
       <div class="header__module">
         <h3>NeverFap Deluxe Guide</h3>
         <a href="/articles">View all</a>
       </div>
     </div>
-
+      
+      
     <!-- Articles -->
+    <a id="link__articles" class="header__link__wrapper" href="/articles">
+      <li id='articles__click' class="header__link">Articles</li>
+    </a>
+
+    <!-- @conn.assigns.item -->
     <div class="header__sub header__banner__articles">
       <div class="header__module">
         <h3>Latest Article</h3>
@@ -74,7 +57,11 @@
       </div>
     </div>
 
+
     <!-- Practices -->
+    <a id="link__practices" class="header__link__wrapper" href="/practices">
+      <li class="header__link">Practices</li>
+    </a>
     <div class="header__sub header__banner__practices">
       <div class="header__module">
         <h3>Latest Practice</h3>
@@ -95,8 +82,12 @@
         <a href="/practices/observe-your-senses">Observe Your Senses</a>
       </div>
     </div>
+      
 
     <!-- PODCAST -->
+    <a id="link__podcast" class="header__link__wrapper header__link__wrapper--disappear" href="/podcast">
+      <li class="header__link">Podcast</li>
+    </a>
     <div class="header__sub header__banner__podcast">
       <div class="header__module">
         <h3>The NeverFap Deluxe Podcast</h3>
@@ -104,23 +95,32 @@
         <a href="/practices">View all</a>
       </div>
     </div>
+  
 
     <!-- COMMUNITY -->
+    <a id="link__community" class="header__link__wrapper header__link__wrapper--disappear" href="/community">
+      <li class="header__link">Community</li>
+    </a>
     <div class="header__sub header__banner__community">
       <!-- Maybe talk about the #accountability program -->
       <div class="header__module">
         <h3>Become part of the NeverFap Deluxe Community!</h3>
       </div>
       <div class="header__module header__module--discord">
-        <h3>NeverFapDeluxe Discord</h3>
+        <h3>Discord</h3>
         <a href=""></a>
       </div>
       <div class="header__module header__module--reddit">
-        <h3>r/NeverFapDeluxe Reddit</h3>
+        <h3>r/NeverFapDeluxe</h3>
         <a href=""></a>
       </div>
     </div>
+  
 
+    <!-- ABOUT -->
+    <a id="link__about" class="header__link__wrapper header__link__wrapper--disappear" href="/about">
+      <li class="header__link">About</li>
+    </a>
     <div class="header__sub header__banner__about">
       <div class="header__module">
         <h3>Learn more about NeverFap Deluxe</h3>
@@ -132,11 +132,16 @@
 
       </div>
       <div class="header__module">
-        <h3>Contact Daddy Reade</h3>
+        <h3>Contact</h3>
         <p>Send a message to someone who clearly has self-estee</p>
         <a href="/contact"></a>
       </div>
     </div>
+  </ul>
+
+
+
+
 
 
 </nav>
