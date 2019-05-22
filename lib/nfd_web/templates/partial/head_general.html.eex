@@ -4,7 +4,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="<%= Application.get_env(:nfd, :author) %>">
   <meta name="robots" content="index, follow">
-  
+
+  <!-- Pinterest -->
+  <meta name="p:domain_verify" content="de920ffe0c5b72cfe6ba80f2b5a56b9c"/>
+
   <%= if Map.has_key?(@conn.assigns, :item) do %>
     <% title = page_title @conn.assigns.item["section"], @conn.assigns.item["title"] %>
     
