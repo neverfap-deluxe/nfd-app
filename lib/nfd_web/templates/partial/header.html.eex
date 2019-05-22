@@ -139,11 +139,7 @@
     </div>
   </ul>
 
-
-
-
-
-
+  <%= partial "mobile_menu_overlay.html", assigns %>
 </nav>
 
 

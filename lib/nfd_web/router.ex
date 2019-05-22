@@ -39,6 +39,7 @@ defmodule NfdWeb.Router do
     get "/terms-and-conditions", PageController, :terms_and_conditions
     get "/accountability-program", PageController, :accountability
     get "/new-fap-deluxe-reddit-guidelines", PageController, :reddit_guidelines
+    get "/new-neverfapper-reddit-guidelines", PageController, :reddit_guidelines
     get "/everything", PageController, :everything
     get "/coaching", PageController, :coaching
     get "/post-relapse-academy", PageController, :post_relapse_academy
@@ -79,6 +80,8 @@ defmodule NfdWeb.Router do
 
     # General functions
     post "/send_message", FunctionController, :contact_form_post
+    post "/send_comment", FunctionController, :comment_form_post
+
     get "/message_success", FunctionController, :send_message_success
     get "/message_failed", FunctionController, :send_message_failed
   

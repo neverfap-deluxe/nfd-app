@@ -35,10 +35,13 @@ defmodule NfdWeb.ContentController do
         if response.body["data"]["draft"] == false do 
           {:ok, articlesResponse} = client |> Content.articles()
 
+          comments = Meta.list_collection_access_by_page_id(response.body["data"]["page_id"])
+          comment_form_changeset = Meta.Comment.changeset(%Meta.Comment{}, %{})
+
           { previousArticle, nextArticle } = getPreviousNextArticle(articlesResponse.body["data"]["articles"] |> Enum.reverse(), response.body["data"]);
           seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
 
-          conn |> render("article.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, previousArticle: previousArticle, nextArticle: nextArticle, page_type: page_type)  
+          conn |> render("article.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, previousArticle: previousArticle, nextArticle: nextArticle, page_type: page_type, comments: comments, comment_form_changeset: comment_form_changeset)  
         else 
           render_404_page(conn)
         end

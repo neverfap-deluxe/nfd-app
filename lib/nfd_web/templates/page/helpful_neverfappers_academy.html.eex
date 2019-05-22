@@ -3,7 +3,7 @@
   <div class="single__content" style="margin-bottom: 0;">
     <p>Welcome to the Helpful NeverFappers Academy!</p>
     <p>Essentially the Helpful NeverFappers Academy is an extension of our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> program on Discord.</p>
-    <p>It's a volunteer program to help others with porn addiction, by providing others with the advice in regards to the NeverFap Deluxe method of overcoming porn addiction.</p>
+    <p>It's a volunteer program to help others with porn addiction, by providing others with the advice in regards to the NeverFap Deluxe Method of overcoming porn addiction.</p>
     
     <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
 

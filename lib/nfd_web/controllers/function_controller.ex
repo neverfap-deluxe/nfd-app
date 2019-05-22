@@ -6,13 +6,39 @@ defmodule NfdWeb.FunctionController do
   alias Nfd.EmailLogs
 
   alias Nfd.API
+  alias Nfd.API.Content
   alias Nfd.API.Page
   alias Nfd.Meta
 
-  def message_form_post(conn, %{"contact_form" => contact_form}) do
-    name = contact_form["name"]
-    email = contact_form["email"]
-    message = contact_form["message"]
+  def comment_form_post(conn, %{"comment_form" => comment_form}) do
+    # I need to figure out about user_id and all those things.
+    name = comment_form["name"]
+    email = comment_form["email"]
+    message = comment_form["message"]
+
+    # TODO: It will need to get the slug from conn, I think.
+    slug = "hello"
+
+    case Meta.create_comment(comment_form) do
+      {:ok, _comment_form} ->
+        EmailLogs.new_comment_form_email(name, email, message)
+        redirect_back(conn) 
+      {:error, comment_form_changeset} ->
+        page_type = "content"
+        client = API.is_localhost(conn.host) |> API.api_client()
+
+        case client |> Content.article(slug) do
+          {:ok, response} ->
+            # Meta.increment_visit_count(response.body["data"])
+            comments = Meta.list_collection_access_by_page_id(response.body["data"]["page_id"])
+            comment_form_changeset = Meta.Comment.changeset(%Meta.Comment{}, %{})  
+
+            conn |> render("article.html", item: response.body["data"], comment_form_changeset: comment_form_changeset, page_type: page_type)
+          {:error, _error} ->
+            conn |> put_view(NfdWeb.ErrorView) |> render("404.html")
+        end
+
+    end
   end
 
   def contact_form_post(conn, %{"contact_form" => contact_form}) do

@@ -126,4 +126,69 @@ defmodule Nfd.MetaTest do
       assert %Ecto.Changeset{} = Meta.change_subscription_email(subscription_email)
     end
   end
+
+  describe "comments" do
+    alias Nfd.Meta.Comment
+
+    @valid_attrs %{depth: 42, message: "some message", parent_message_id: "some parent_message_id", visit_count: 42}
+    @update_attrs %{depth: 43, message: "some updated message", parent_message_id: "some updated parent_message_id", visit_count: 43}
+    @invalid_attrs %{depth: nil, message: nil, parent_message_id: nil, visit_count: nil}
+
+    def comment_fixture(attrs \\ %{}) do
+      {:ok, comment} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Meta.create_comment()
+
+      comment
+    end
+
+    test "list_comments/0 returns all comments" do
+      comment = comment_fixture()
+      assert Meta.list_comments() == [comment]
+    end
+
+    test "get_comment!/1 returns the comment with given id" do
+      comment = comment_fixture()
+      assert Meta.get_comment!(comment.id) == comment
+    end
+
+    test "create_comment/1 with valid data creates a comment" do
+      assert {:ok, %Comment{} = comment} = Meta.create_comment(@valid_attrs)
+      assert comment.depth == 42
+      assert comment.message == "some message"
+      assert comment.parent_message_id == "some parent_message_id"
+      assert comment.visit_count == 42
+    end
+
+    test "create_comment/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Meta.create_comment(@invalid_attrs)
+    end
+
+    test "update_comment/2 with valid data updates the comment" do
+      comment = comment_fixture()
+      assert {:ok, %Comment{} = comment} = Meta.update_comment(comment, @update_attrs)
+      assert comment.depth == 43
+      assert comment.message == "some updated message"
+      assert comment.parent_message_id == "some updated parent_message_id"
+      assert comment.visit_count == 43
+    end
+
+    test "update_comment/2 with invalid data returns error changeset" do
+      comment = comment_fixture()
+      assert {:error, %Ecto.Changeset{}} = Meta.update_comment(comment, @invalid_attrs)
+      assert comment == Meta.get_comment!(comment.id)
+    end
+
+    test "delete_comment/1 deletes the comment" do
+      comment = comment_fixture()
+      assert {:ok, %Comment{}} = Meta.delete_comment(comment)
+      assert_raise Ecto.NoResultsError, fn -> Meta.get_comment!(comment.id) end
+    end
+
+    test "change_comment/1 returns a comment changeset" do
+      comment = comment_fixture()
+      assert %Ecto.Changeset{} = Meta.change_comment(comment)
+    end
+  end
 end

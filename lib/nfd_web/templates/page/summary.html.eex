@@ -5,4 +5,6 @@
   </div>
 </div>
 
-<%= partial "links/patreon.html", assigns %>
+<%= partial "reddit_question_banner.html", assigns %>
+
+<%#= partial "links/patreon.html", assigns %>

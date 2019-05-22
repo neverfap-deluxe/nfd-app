@@ -3,6 +3,8 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+
+  margin-top: 3rem;
 }
 
 .comment__item {
@@ -44,9 +46,12 @@
 
 .comment__create__message {
   .comment__create__message__title {
-
+    font-size: 2rem;
+    scroll-margin-top: 2rem;
+    margin-bottom: 2rem;
   }
   .comment__create__message__sub__title {
-
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
   }
 }

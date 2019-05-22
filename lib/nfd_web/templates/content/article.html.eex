@@ -25,6 +25,8 @@
   </div>
 
   <%= partial "share_buttons.html", %{permalink: @item["permalink"] } %>
+
+  <%#= partial "comments/comments_list.html", assigns %>
   <%= partial "next_prev_buttons.html", %{nextArticle: @nextArticle, previousArticle: @previousArticle } %>
 </div>
 
