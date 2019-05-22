@@ -347,7 +347,7 @@
     <h1>Next Steps</h1>
     <p>If that isn't enough for you, then feel free to get involved with our <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">r/NeverFapDeluxe</a> Reddit Community!</p>
     <p>We even have hilariously terrible memes such as this one:</p>
-    <img src="/images/one-does-not-simply.jpg" />
+    <img style="width: 100%;" src="/images/one-does-not-simply.jpg" />
   </div>
 </div>
 
