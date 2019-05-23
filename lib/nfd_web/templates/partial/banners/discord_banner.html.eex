@@ -2,9 +2,9 @@
 <div class="discord__banner">
   
   <h2 class="discord__banner__title">Need some help to keep accountable?</h2>
-  <div style="height: 2px; width: 100%; background: cyan;"></div>
+  <div style="height: 2px; width: 100%; background: #00ffee;"></div>
   <div style="height: 2px; width: 100%; background: rgba(255,46,182,1);"></div>
-  <div style="height: 2px; width: 100%; background: cyan;"></div>
+  <div style="height: 2px; width: 100%; background: #00ffee;"></div>
   <div style="height: 2px; width: 100%; background: rgba(255,46,182,1);"></div>
 
   <h3 class="discord__banner__title--secondary">Join our #accountability Discord channel and recieve daily support!</h3>
@@ -43,9 +43,9 @@
     </div>
   </h3>
 
-  <div style="height: 2px; width: 100%; background: cyan;"></div>
+  <div style="height: 2px; width: 100%; background: #00ffee;"></div>
   <div style="height: 2px; width: 100%; background: rgba(255,46,182,1);"></div>
-  <div style="height: 2px; width: 100%; background: cyan;"></div>
+  <div style="height: 2px; width: 100%; background: #00ffee;"></div>
   <div style="height: 2px; width: 100%; background: rgba(255,46,182,1);"></div>
 
 

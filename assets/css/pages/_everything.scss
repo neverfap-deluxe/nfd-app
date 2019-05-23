@@ -28,7 +28,7 @@
 
   .everything__section {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
   }
 
@@ -39,6 +39,8 @@
   }
 
   .everything__item {
+    flex: 1;
+    min-width: 150px;
     display: block;
     // display: flex;
     // justify-content: space-between;
@@ -110,7 +112,7 @@
     }
 
     .everything__item:hover {
-      box-shadow: -10px 10px 0px 0px cyan;
+      box-shadow: -10px 10px 0px 0px #00ffee;
     }
   }
 }
@@ -134,6 +136,7 @@
     }
 
     .everything__item {
+      flex: initial;
       max-width: 400px;
       width: 43%;
 

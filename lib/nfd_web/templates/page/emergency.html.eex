@@ -13,7 +13,7 @@
     <div class="single__wrapper">
       <div class="single__content">
         <h1>Because I like you.</h1>
-        <h1>I'm going to give you a <u style="border-bottom: 4px solid cyan; padding-bottom: 0rem; color: cyan; border-bottom: 4px solid white;">task</u> to do.</h1>
+        <h1>I'm going to give you a <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem; color: #00ffee; border-bottom: 4px solid white;">task</u> to do.</h1>
         <h2>Can I trust you to do this for me?</h2>
       </div>
     </div>

@@ -21,12 +21,12 @@
   cursor: pointer;
   transition: box-shadow .3s;
 
-  // border: 3px solid cyan;   
-  box-shadow: -5px 5px 0px 0px cyan;
+  // border: 3px solid #00ffee;   
+  box-shadow: -5px 5px 0px 0px #00ffee;
 
   .five__principles__list__page {
     .five__principles__item__page {
-      border-bottom: 5px solid cyan;
+      border-bottom: 5px solid #00ffee;
       top: 1rem;
 
       transform: scale(1) rotate(-2deg) skew(-10deg);

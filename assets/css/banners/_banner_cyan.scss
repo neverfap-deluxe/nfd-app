@@ -2,11 +2,11 @@
   box-sizing: border-box;
   // margin-top: 1.5rem;
   // margin-bottom: 1.5rem;
-  border-top: 1px solid cyan;
-  border-bottom: 1px solid cyan;
+  border-top: 1px solid #00ffee;
+  border-bottom: 1px solid #00ffee;
 
   width: 100%;
-  background: cyan;
+  background: #00ffee;
   box-shadow: 0 14px 56px 0 rgba(0, 0, 0, 0.2), 0 12px 29px 0 rgba(0, 0, 0, 0.01);
 
   margin-top: 4rem;
@@ -18,7 +18,7 @@
 
   .cyan__banner__title {
     font-size: 1.2rem;
-    border: 1px solid cyan;
+    border: 1px solid #00ffee;
     margin-top: 0;
     margin-bottom: 0;
 
@@ -54,8 +54,8 @@
     margin-top: 2rem;
     margin-bottom: 1rem;
 
-    border-top: 4px solid cyan;
-    border-bottom: 2px solid cyan;
+    border-top: 4px solid #00ffee;
+    border-bottom: 2px solid #00ffee;
 
     .cyan__banner__title--lead {
     }

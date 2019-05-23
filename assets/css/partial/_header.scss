@@ -74,7 +74,7 @@
     .header__link__wrapper:hover {
       // background: rgb(243, 243, 243);
       background: lighten(orange, 10%);
-      box-shadow: -5px 5px 0px 0px cyan;
+      box-shadow: -5px 5px 0px 0px #00ffee;
     }
 
     // .header__link__wrapper:hover .header__link {
@@ -122,7 +122,7 @@
   }
 
   .header__logo:hover {
-    background: cyan;
+    background: #00ffee;
   }
 
   .deluxe__font {
@@ -135,7 +135,7 @@
   .header__link {
   // border-bottom: 5px solid rgb(0, 255, 0);
   // color: black;
-  // border-bottom: 5px solid cyan;
+  // border-bottom: 5px solid #00ffee;
   }
 }
 

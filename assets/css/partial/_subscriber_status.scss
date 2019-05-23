@@ -10,7 +10,7 @@
     margin-top: 0.5rem;
     // margin-bottom: 2rem;
 
-    box-shadow: -5px 5px 0px 0px cyan;  
+    box-shadow: -5px 5px 0px 0px #00ffee;  
     padding: 0.8rem; 
     cursor: pointer;
   
@@ -18,7 +18,7 @@
   }
 
   .subscribe__button:hover {
-    box-shadow: -10px 10px 0px 0px cyan;
+    box-shadow: -10px 10px 0px 0px #00ffee;
     bottom: -5px;
     left: -5px;
   }

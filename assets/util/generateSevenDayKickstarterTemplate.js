@@ -87,7 +87,7 @@ const generateTextBold = (text) => `
 `;
 
 const generateButton = (link, text) => `
-  <mj-button padding-top="0px" background-color="white" color="black" border="4px solid cyan;" href="${link}">
+  <mj-button padding-top="0px" background-color="white" color="black" border="4px solid #00ffee;" href="${link}">
     ${text}
   </mj-button>
 `;

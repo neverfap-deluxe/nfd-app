@@ -3,9 +3,6 @@
   <span class="mobile__span"></span>
   <span class="mobile__span"></span>
 </div>
-
-<div id="mobile__menu__overlay__background__id" class="mobile__menu__overlay__background">
-</div>
   
 <div id="mobile__menu__overlay__id" class="mobile__menu__overlay">
   <%= partial "everything_module.html", %{ is_mobile_menu: true } %>

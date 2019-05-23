@@ -1,19 +1,38 @@
 <div class="single__wrapper">   
   <h1 class="single__title">Community <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+
+  <div class="page__index">
+    <h1>Index</h1>
+
+    <ol class="index__items">
+      <a href="#nfd_com"><li class="index__item index__item--nfd"><img class="account__nfd__button__logo" src="/images/logo.png" alt=""/> NFD Account</li></a>
+      <a href="#discord_com"><li class="index__item"><img class="account__discord__button__logo" src="/images/discord__logo.png"/> <span class="discord__text">Discord</span></li></a>
+      <a href="#reddit_com"><li class="index__item"><img class="account__reddit__button__logo" src="/images/reddit__logo.png" />  Reddit</li></a>
+      <a href="#patreon_com"><li class="index__item"><img class="account__patreon__button__logo" src="/images/patreon__logo.jpg" />  Patreon</li></a>
+      <!-- <a href="#instagram_com"><li class="index__item"><img class="account__instagram__button__logo" src="/images/instagram__logo.png"/>  Instagram</li></a> -->
+      <a href="#facebook_com"><li class="index__item"><img class="account__facebook__button__logo" src="/images/facebook__logo.png"/>  Facebook</li></a>
+      <a href="#twitter_com"><li class="index__item"><img class="account__twitter__button__logo" src="/images/twitter__logo__blue.png" />  Twitter</li></a>
+      <!-- <a href="#tumblr_com"><li class="index__item"><img class="account__tumblr__button__logo" src="/images/tumblr__logo.png"/>  Tumblr</li></a>
+      <a href="#pintrest_com"><li class="index__item"><img class="account__pintrest__button__logo" src="/images/pintrest__logo.png"/>  Pintrest</li></a> -->
+
+    </ol>
+  </div>
+    
   <div class="single__content" style="margin-bottom: 0;">
     <p>Join the NeverFap Deluxe Community!</p>
     <p>There are a heap of different ways you can interact with the NeverFap Deluxe Community, whether you want to chat with others, or even follow NeverFap Deluxe on social media.</p>
     <p>In addition, we offer a variety of unique content that is available only when you register for a NeverFap Deluxe Account.</p>
     <p>This includes things like helpful email campaigns to help you keep on track with your porn recovery, as well as a bunch of audio courses to teach you meditation and awareness best practices.</p>
   </div>
+
 </div>
 
 <div class="account__info account__info--margin-top">
-  <p class="account__info__title">Thank you for coming to the website! Does that make us best friends now!?</p>
+  <p class="account__info__title">Thank you for coming to the website! Does that make us best friends now!? <i class="em em-sparkling_heart"></i><i class="em em-sparkling_heart"></i><i class="em em-sparkling_heart"></i></p>
 </div>
 
 <div class="single__wrapper single__wrapper--community">
-  <div class="single__content" >
+  <div id="nfd_com" class="single__content" >
     <h2>NeverFap Deluxe Account</h2>
     <p>When you sign up for a NeverFap Deluxe Account, you gain access to a variety of free and premium email campaigns.</p>
 
@@ -34,7 +53,7 @@
 <%= partial "links/loginregister.html", assigns %>
 
 <div class="single__wrapper single__wrapper--community">
-  <div class="single__content">
+  <div id="discord_com" class="single__content">
     <h2>Discord</h2>
     <p>I've setup a Discord channel if you're interested in having a chat or if you have any questions about NeverFap Deluxe. It's also a great opportunity to introduce yourself and get to know our small but active community.</p>
     <p>In addition, I also offer an accountability program via our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel that has been designed to help you commit to your mental health, and motivate you by seeing what others are doing.</p>
@@ -50,7 +69,7 @@
 <%= partial "links/discord.html", assigns %>
 
 <div class="single__wrapper single__wrapper--community">
-  <div class="single__content">
+  <div id="reddit_com" class="single__content">
     <h2>Reddit</h2>
     <p>Yes, that's right.</p>
     <p>We have our very own subreddit.</p>
@@ -70,20 +89,29 @@
   
 
 <div class="single__wrapper single__wrapper--community">
-    <div class="single__content">
-      <h2>Patreon</h2>
-      <p>I recommend checking out my Patreon if you're looking to track the progress I make on the website.</p>
-      <!-- TODO: Here's an example of an update I post -->
-      <p>I post weekly updates of all the work I put towards NeverFap Deluxe, so it's an amazing place to keep up-to-date with all the essential happenings of this wonderful resource.</p>
-      <p>In addition, you're more than welcome to commit a monthly financial contribution towards the website if you so please.</p>
-    </div>
+  <div id="patreon_com" class="single__content">
+    <h2>Patreon</h2>
+    <p>I recommend checking out my Patreon if you're looking to track the progress I make on the website.</p>
+    <!-- TODO: Here's an example of an update I post -->
+    <p>I post weekly updates of all the work I put towards NeverFap Deluxe, so it's an amazing place to keep up-to-date with all the essential happenings of this wonderful resource.</p>
+    <p>In addition, you're more than welcome to commit a monthly financial contribution towards the website if you so please.</p>
   </div>
-  
-  <%= partial "links/patreon.html", assigns %>
-  
+</div>
 
+<%= partial "links/patreon.html", assigns %>
+  
+<!-- 
 <div class="single__wrapper single__wrapper--community">
-  <div class="single__content">
+  <div id="instagram_com" class="single__content">
+    <h2>Instagram</h2>
+    <p>word.</p>
+  </div>
+</div>
+
+<%#= partial "links/instagram.html", assigns %> -->
+  
+<div class="single__wrapper single__wrapper--community">
+  <div id="facebook_com" class="single__content">
     <h2>Facebook</h2>
     <p>Wanna join the Facebook page?</p>
     <p>Sorry, what's that?</p>
@@ -94,7 +122,7 @@
 <%= partial "links/facebook.html", assigns %>
 
 <div class="single__wrapper single__wrapper--community">
-  <div class="single__content">
+  <div id="twitter_com" class="single__content">
     <h2>Twitter</h2>
     <p>Maybe you enjoy a lighter shade of blue, than compared to a darker shade of blue.</p>
     <p>Maybe you're colour blind.</p>
@@ -103,3 +131,23 @@
 </div>
 
 <%= partial "links/twitter.html", assigns %>
+
+
+<!-- <div class="single__wrapper single__wrapper--community">
+  <div id="tumblr_com" class="single__content">
+    <h2>Tumblr</h2>
+    <p></p>
+  </div>
+</div>
+
+<%#= partial "links/tumblr.html", assigns %>
+  
+<div class="single__wrapper single__wrapper--community">
+  <div id="pintrest_com" class="single__content">
+    <h2>Pintrest</h2>
+    <p></p>
+  </div>
+</div>
+
+<%#= partial "links/pintrest.html", assigns %>
+   -->

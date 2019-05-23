@@ -132,7 +132,7 @@
   .five__principles__guide__item::before {
     @include principle__item__before();
     width: 100%;
-    background-color: cyan;
+    background-color: #00ffee;
     height: 8px;
   }
 }
@@ -180,7 +180,7 @@
   }
 
   .post__five__principles__item--balance-over-reward {
-    color: cyan;
+    color: #00ffee;
   }
 
   .post__five__principles__item--struggle-over-none {

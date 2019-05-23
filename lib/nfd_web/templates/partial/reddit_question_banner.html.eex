@@ -25,9 +25,9 @@
   </div>  
 </div>
 
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: cyan;"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 8px; background: cyan;"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 12px; background: cyan;"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 16px; background: cyan;"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 20px; background: cyan;"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 24px; background: cyan;"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 8px; background: #00ffee;"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 12px; background: #00ffee;"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 16px; background: #00ffee;"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 20px; background: #00ffee;"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 24px; background: #00ffee;"></div>

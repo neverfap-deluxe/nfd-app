@@ -12,6 +12,8 @@ defmodule NfdWeb.FunctionController do
 
   def comment_form_post(conn, %{"comment_form" => comment_form}) do
     # I need to figure out about user_id and all those things.
+    IO.inspect "hyeyy"
+
     name = comment_form["name"]
     email = comment_form["email"]
     message = comment_form["message"]
@@ -19,6 +21,7 @@ defmodule NfdWeb.FunctionController do
     # TODO: It will need to get the slug from conn, I think.
     slug = "hello"
 
+    
     case Meta.create_comment(comment_form) do
       {:ok, _comment_form} ->
         EmailLogs.new_comment_form_email(name, email, message)
@@ -37,7 +40,6 @@ defmodule NfdWeb.FunctionController do
           {:error, _error} ->
             conn |> put_view(NfdWeb.ErrorView) |> render("404.html")
         end
-
     end
   end
 

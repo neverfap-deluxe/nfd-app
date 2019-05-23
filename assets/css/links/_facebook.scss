@@ -15,14 +15,6 @@
     margin: 0!important;
     cursor: pointer;
   
-    .account__facebook__button__logo {
-      width: 20px;
-      height: 20px;
-
-      position: relative;
-      left: 0rem;
-      top: -0.1rem;
-    }
   
     .account__facebook__button__text {
       color: white;
@@ -40,6 +32,15 @@
   .account__facebook__button__container:hover {
     opacity: 0.9;
   }
+}
+
+.account__facebook__button__logo {
+  width: 20px;
+  height: 20px;
+
+  position: relative;
+  left: 0rem;
+  top: -0.1rem;
 }
 
 .account__facebook__button__text--display {

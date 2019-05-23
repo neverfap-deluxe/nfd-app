@@ -3,6 +3,9 @@
   <%= partial "hub/head_hub.html", assigns %>
 
   <body>
+      <div id="mobile__menu__overlay__background__id" class="mobile__menu__overlay__background">
+        </div>
+        
     <div class="hub">
       <%= partial "header.html", assigns %>
       

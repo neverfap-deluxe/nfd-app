@@ -41,7 +41,7 @@
 .header__dropdown__link__wrapper:hover {
   // background: rgb(243, 243, 243);
   background: lighten(orange, 10%);
-  box-shadow: -5px 5px 0px 0px cyan;
+  box-shadow: -5px 5px 0px 0px #00ffee;
 }
 
 @media screen and (min-width: 420px) {
@@ -96,7 +96,7 @@
     left: 0;
     position: relative;
     border: 5px solid black;
-    box-shadow: -5px 5px 0px 0px cyan;
+    box-shadow: -5px 5px 0px 0px #00ffee;
     color: black;
     padding: 0.4rem;
     padding-left: 1.2rem;
@@ -119,7 +119,7 @@
     position: relative;
     border: 5px solid grey;
     color: grey;
-    box-shadow: -5px 5px 0px 0px cyan;
+    box-shadow: -5px 5px 0px 0px #00ffee;
 
     padding: 0.4rem;
     padding-left: 1.2rem;

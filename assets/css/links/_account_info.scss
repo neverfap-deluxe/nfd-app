@@ -19,10 +19,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 5px solid cyan;
-  border-bottom: 5px solid cyan;
+  border-top: 5px solid #00ffee;
+  border-bottom: 5px solid #00ffee;
   // padding-top: 2rem;
-  // border-bottom: 5px solid cyan;
+  // border-bottom: 5px solid #00ffee;
 
   min-height: 3rem;
 
@@ -56,7 +56,7 @@
     cursor: pointer;
 
     margin-right: 0.6rem;
-    box-shadow: -5px 5px 0px 0px cyan;
+    box-shadow: -5px 5px 0px 0px #00ffee;
 
     transition: box-shadow .3s;
     .account__info__button__text {  

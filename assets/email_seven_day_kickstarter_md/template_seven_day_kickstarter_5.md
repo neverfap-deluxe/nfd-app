@@ -59,7 +59,7 @@ For further information on this FREE program, please checkout our #accountabilit
 
 ## #accountability guidelines
                 
-<mj-button padding-top="0px" background-color="white" color="black" border="4px solid cyan;" href="https://neverfapdeluxe.com/accountability-program/">link</mj-button>
+<mj-button padding-top="0px" background-color="white" color="black" border="4px solid #00ffee;" href="https://neverfapdeluxe.com/accountability-program/">link</mj-button>
 
   ---
   

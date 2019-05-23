@@ -15,24 +15,24 @@
   
 <div class="single__wrapper">   
   <div class="single__content" style="margin-bottom: 0;">
-    <h1>Here are <u style="border-bottom: 4px solid cyan; padding-bottom: 0rem;">some of the reasons</u> to consider personal coaching.</h1>
+    <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some of the reasons</u> to consider personal coaching.</h1>
 
     <p>Ultimately only you can decide whether you belive it's worth your time and money.</p>
     <p>I'm simply here to help.</p>
 
-    <div style="border-top: 3px solid cyan;"></div>
+    <div style="border-top: 3px solid #00ffee;"></div>
     <h2 class="banner__points banner__points--coaching">You require another human being to help you keep motivated and empathise with you.</h2>
-    <div style="border-top: 3px solid cyan;"></div>
+    <div style="border-top: 3px solid #00ffee;"></div>
     <h2 class="banner__points banner__points--coaching">You want to beat this thing quicker, and are happy to pay a premium for it.</h2>
-    <div style="border-top: 3px solid cyan;"></div>
+    <div style="border-top: 3px solid #00ffee;"></div>
     <h2 class="banner__points banner__points--coaching">You struggle to understand how to effectively practice meditation and other awareness exercises, and you're seeking guided help.</h2>
-    <div style="border-top: 3px solid cyan;"></div>
+    <div style="border-top: 3px solid #00ffee;"></div>
     <h2 class="banner__points banner__points--coaching">You want to ask a question face-to-face to me about your porn addiction recovery.</h2>
-    <div style="border-top: 3px solid cyan;"></div>
+    <div style="border-top: 3px solid #00ffee;"></div>
     <h2 class="banner__points banner__points--coaching">You're seeking advice on a recommended routine of mental health practice.</h2>
-    <div style="border-top: 3px solid cyan;"></div>
+    <div style="border-top: 3px solid #00ffee;"></div>
     <h2 class="banner__points banner__points--coaching">You just wanna say hi, because why the hell not!?</h2>
-    <!-- <div class="show__large" style="border-top: 3px solid cyan;"></div> -->
+    <!-- <div class="show__large" style="border-top: 3px solid #00ffee;"></div> -->
 
   </div>
 </div>

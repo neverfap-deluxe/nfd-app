@@ -14,15 +14,7 @@
     // padding: 0.8rem;
     margin: 0!important;
     cursor: pointer;
-  
-    .account__discord__button__logo {
-      width: 27px;
-      height: 27px;
-
-      position: relative;
-      left: 0rem;
-    }
-  
+    
     .account__discord__button__text {
       color: white;
       margin: 0;
@@ -40,6 +32,15 @@
     opacity: 0.9;
   }
 }
+
+.account__discord__button__logo {
+  width: 27px;
+  height: 27px;
+
+  position: relative;
+  left: 0rem;
+}
+
 
 .account__discord__button__text--display {
   display: none;
