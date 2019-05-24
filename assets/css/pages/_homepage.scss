@@ -115,6 +115,13 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
   color: white;
 
+  .homepage__hero__sub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .header {
     .mobile__menu__overlay__button {
       display: none;
@@ -196,6 +203,53 @@
         // color: black;
       }
     }
+
+    .header__banner__home:hover {
+      display: none;
+    }
+    .header__banner__guide:hover {
+      display: none;
+    }
+    .header__banner__articles:hover {
+      display: none;
+    }
+    .header__banner__practices:hover {
+      display: none;
+    }
+    .header__banner__podcast:hover {
+      display: none;
+    }
+    .header__banner__community:hover {
+      display: none;
+    }
+    .header__banner__about:hover {
+      display: none;
+    }
+
+    #link__home:hover + .header__banner__home {
+      display: none;
+    }
+    #link__guide:hover + .header__banner__guide {
+      display: none;
+    }
+    #link__articles:hover + .header__banner__articles {
+      display: none;
+    }
+    #link__practices:hover + .header__banner__practices {
+      display: none;
+    }
+    #link__podcast:hover + .header__banner__podcast {
+      display: none;
+    }
+    #link__community:hover + .header__banner__community {
+      display: none;
+    }
+    #link__about:hover + .header__banner__about {
+      display: none;
+    }
+
+    
+    
   }
 
   .homepage__hero__title {
@@ -745,6 +799,54 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .homepage__hero {
+    .header {
+      .header__banner__home:hover {
+        display: flex;
+      }
+      .header__banner__guide:hover {
+        display: flex;
+      }
+      .header__banner__articles:hover {
+        display: flex;
+      }
+      .header__banner__practices:hover {
+        display: flex;
+      }
+      .header__banner__podcast:hover {
+        display: flex;
+      }
+      .header__banner__community:hover {
+        display: flex;
+      }
+      .header__banner__about:hover {
+        display: flex;
+      }
+
+      #link__home:hover + .header__banner__home {
+        display: flex;
+      }
+      #link__guide:hover + .header__banner__guide {
+        display: flex;
+      }
+      #link__articles:hover + .header__banner__articles {
+        display: flex;
+      }
+      #link__practices:hover + .header__banner__practices {
+        display: flex;
+      }
+      #link__podcast:hover + .header__banner__podcast {
+        display: flex;
+      }
+      #link__community:hover + .header__banner__community {
+        display: flex;
+      }
+      #link__about:hover + .header__banner__about {
+        display: flex;
+      }
+    }
+  }
+
   .homepage__splitter--podcast {
     flex-direction: row!important;
   }

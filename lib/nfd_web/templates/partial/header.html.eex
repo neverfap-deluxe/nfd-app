@@ -4,40 +4,51 @@
   </a>  %> -->
   <ul class="header__links">
 
+
     <!-- HOME -->
     <a id="link__home" class="header__link__wrapper" href="/">
       <li class="header__link">Home</li>  
     </a>
     <div class="header__sub header__banner__home">
-      <div class="header__module">
-        <h3 style="margin-bottom: 1.4rem;">NeverFap Deluxe</h3>
-        <h2>Featuring: The Reade&copy;</h2>
+      <div class="header__module" style="cursor: initial;">
+        <div style="display: flex; align-items: flex-start; justify-content: space-between;">
+          <h3 class="h3__yus" style="margin-bottom: 1.4rem;">NeverFap <span class="deluxe__font--only">Deluxe</span></h3>
+          <h3 class="h3__reade">The Reade &copy;</h3>
+        </div>
+        <h2>The King Of Porn Addiction Recovery. <i class="em em-crown"></i></h2>
       </div>
-      <div class="header__module">
+      <div class="header__module" style="cursor: initial;">
         <p>NeverFap Deluxe is a porn recovery process which focuses on the use of meditation and awareness in order to develop control over our minds.</p>
       </div>
     </div>
+
 
     <!-- Guide -->
     <a id="link__guide" class="header__link__wrapper header__link__wrapper--main" href="/guide">
       <li class="header__link">Guide</li>
     </a>
     <div class="header__sub header__banner__guide">
-      <div class="header__module">
-        <h3>NeverFap Deluxe Guide</h3>
-        <a href="/articles">View all</a>
-      </div>
-      <div class="header__module">
-        <h3>NeverFap Deluxe Summary</h3>
-        <a href="/articles">View all</a>
-      </div>
-      <div class="header__module">
-        <h3>7 Day NeverFap Deluxe Kickstarter</h3>
-        <a href="/articles">View all</a>
-      </div>
+      <a href="/guide" class="header__module header__module--flex">
+        <h3 class="h3__yus">
+          NeverFap Deluxe Guide
+          <span class="h3__tiny">/guide</span>
+        </h3>
+      </a>
+      <a href="/summary" class="header__module header__module--flex">
+        <h3 class="h3__yus">
+          NeverFap Deluxe Summary
+          <span class="h3__tiny">/summary</span>        
+        </h3>
+      </a>
+      <a href="/seven-day-neverfap-deluxe-kickstarter/" class="header__module header__module--flex">
+        <h3 class="h3__yus">
+          7 Day NeverFap Deluxe Kickstarter
+          <span class="h3__tiny">/seven-day-neverfap-deluxe-kickstarter</span>                
+        </h3>
+      </a>
     </div>
       
-      
+
     <!-- Articles -->
     <a id="link__articles" class="header__link__wrapper" href="/articles">
       <li id='articles__click' class="header__link">Articles</li>
@@ -45,24 +56,12 @@
 
     <!-- @conn.assigns.item -->
     <div class="header__sub header__banner__articles">
-      <div class="header__module">
-        <h3>Latest Article</h3>
-        <p>Title</p>
-        <p>Date</p>
-        <a href="">View</a>
-      </div>
-
-      <div class="header__module">
-        <h3>NeverFap Deluxe Articles</h3>
-        <p>Learn more about </p>
-        <a href="/articles">View all</a>
-      </div>
-
-      <div class="header__module">
-        <h3>Understand the importance of meditation.</h3>
-        <p>T</p>
-        <a href="/articles/observe-your-senses">Observe Your Senses</a>
-      </div>
+      <a href="/articles" class="header__module header__module--flex">
+        <h3 class="h3__yus">
+          NeverFap Deluxe Articles
+          <span class="h3__tiny">/articles</span>                        
+        </h3>
+      </a>
     </div>
 
 
@@ -71,57 +70,59 @@
       <li class="header__link">Practices</li>
     </a>
     <div class="header__sub header__banner__practices">
-      <div class="header__module">
-        <h3>Latest Practice</h3>
-        <p>Title</p>
-        <p>Date</p>
-        <a href="">View</a>
-      </div>
-
-      <div class="header__module">
-        <h3>NeverFap Deluxe Practices</h3>
-        <p>Learn more about </p>
-        <a href="/practices">View all</a>
-      </div>
-
-      <div class="header__module">
-        <h3>Need help with meditation?</h3>
-        <p>Observe your senses covers the basics of it :D</p>
-        <a href="/practices/observe-your-senses">Observe Your Senses</a>
-      </div>
+      <a href="/practices" class="header__module">
+        <h3 class="h3__yus">
+          NeverFap Deluxe Practices
+          <span class="h3__tiny">/practices</span>                        
+        </h3>
+      </a>
+      <!-- <a href="/practices/observe-your-senses" class="header__module">
+        <h3>NeverFap Deluxe Meditation</h3>
+      </a> -->
     </div>
       
-
     <!-- PODCAST -->
     <a id="link__podcast" class="header__link__wrapper header__link__wrapper--disappear" href="/podcast">
       <li class="header__link">Podcast</li>
     </a>
     <div class="header__sub header__banner__podcast">
-      <div class="header__module">
-        <h3>The NeverFap Deluxe Podcast</h3>
-        <p>Learn more about </p>
-        <a href="/practices">View all</a>
+      <a href="/podcast" class="header__module">
+        <h3 class="h3__yus">
+          Podcast
+          <span class="h3__tiny">/podcast</span>                                      
+        </h3>
+      </a>
+
+      <div class="header__module" style="cursor: initial;">
+        <p>Available on iTunes, Spotify and Castbox.</p>
       </div>
     </div>
-  
 
     <!-- COMMUNITY -->
     <a id="link__community" class="header__link__wrapper header__link__wrapper--disappear" href="/community">
       <li class="header__link">Community</li>
     </a>
     <div class="header__sub header__banner__community">
-      <!-- Maybe talk about the #accountability program -->
-      <div class="header__module">
-        <h3>Become part of the NeverFap Deluxe Community!</h3>
+      <div class="header__module" style="cursor: initial;">
+        <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_discord_url) %>"><img class="header__discord__button__logo" src="/images/discord__logo.png"/></a>
+        <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_reddit_url) %>"><img class="header__reddit__button__logo" src="/images/reddit__logo.png" /></a>
+        <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_facebook_url) %>"><img class="header__facebook__button__logo" src="/images/facebook__logo.png"/></a>
+        <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_patreon_url) %>"><img class="header__patreon__button__logo" src="/images/patreon__logo.jpg" /></a>
+        <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_twitter_url) %>"><img class="header__twitter__button__logo" src="/images/twitter__logo__blue.png" /></a>
       </div>
-      <div class="header__module header__module--discord">
-        <h3>Discord</h3>
-        <a href=""></a>
-      </div>
-      <div class="header__module header__module--reddit">
-        <h3>r/NeverFapDeluxe</h3>
-        <a href=""></a>
-      </div>
+  
+      <a href="/accountability-program" class="header__module">
+        <h3 class="h3__yus">
+          #accountability program
+          <span class="h3__tiny">/accountability-program</span>                                      
+        </h3>
+      </a>
+      <a href="/new-neverfapper-reddit-guidelines" class="header__module">
+        <h3 class="h3__yus">
+          r/NeverFapDeluxe
+          <span class="h3__tiny">/new-neverfapper-reddit-guidelines</span>                                      
+        </h3>
+      </a>
     </div>
   
 
@@ -130,20 +131,18 @@
       <li class="header__link">About</li>
     </a>
     <div class="header__sub header__banner__about">
-      <div class="header__module">
-        <h3>Learn more about NeverFap Deluxe</h3>
-
-      </div>
-      <div class="header__module">
-        <h3>NeverFap Deluxe League</h3>
-        <p>Learn more about the NeverFap Deluxe League</p>
-
-      </div>
-      <div class="header__module">
-        <h3>Contact</h3>
-        <p>Send a message to someone who clearly has self-estee</p>
-        <a href="/contact"></a>
-      </div>
+      <a href="/about" class="header__module">
+        <h3 class="h3__yus">
+          About NeverFap Deluxe
+          <span class="h3__tiny">/about</span>
+        </h3>
+      </a>
+      <a href="/contact" class="header__module">
+        <h3 class="h3__yus">
+          Contact Daddy Reade
+          <span class="h3__tiny">/contact</span>
+        </h3>
+      </a>
     </div>
   </ul>
 

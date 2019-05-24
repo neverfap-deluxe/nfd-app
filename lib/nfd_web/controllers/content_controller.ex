@@ -157,8 +157,9 @@ defmodule NfdWeb.ContentController do
 
     case client |> Content.quotes() do
       {:ok, response} ->
+        check_api_response_for_404(conn, response.status)
         Meta.increment_visit_count(response.body["data"])
-        conn |> render("quotes.html", item: response.body["data"], item: response.body["data"]["quotes"], page_type: page_type)
+        conn |> render("quotes.html", item: response.body["data"], items: response.body["data"]["quotes"], page_type: page_type)
       {:error, _error} ->
         render_404_page(conn)
     end

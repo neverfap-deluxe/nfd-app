@@ -2,8 +2,10 @@
   <%= partial "links/loginregister_top.html", assigns %>
   <div class="homepage__hero">
     <%= partial "header.html", assigns %>
-    <h1 class="homepage__hero__title">NeverFap <span class="deluxe__font">Deluxe</span></h1>
-    <h2 class="homepage__hero__title__secondary">The Porn Addiction Recovery Process.</h2>
+    <div class="homepage__hero__sub">
+      <h1 class="homepage__hero__title" style="display: inline-block;">NeverFap <span class="deluxe__font">Deluxe</span></h1>
+      <h2 class="homepage__hero__title__secondary">The Porn Addiction Recovery Process.</h2>    
+    </div>
   </div>
 
   <%= partial "links/patreon.html", assigns %>
