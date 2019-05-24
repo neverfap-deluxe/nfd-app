@@ -12,8 +12,8 @@
     <div class="header__sub header__banner__home">
       <div class="header__module" style="cursor: initial;">
         <div style="display: flex; align-items: flex-start; justify-content: space-between;">
-          <h3 class="h3__yus" style="margin-bottom: 1.4rem;">NeverFap <span class="deluxe__font--only">Deluxe</span></h3>
-          <h3 class="h3__reade">The Reade &copy;</h3>
+          <h3 class="h3__yus h3__header" style="margin-bottom: 1.1rem;">NeverFap <span class="deluxe__font--only">Deluxe</span></h3>
+          <h3 class="h3__reade h3__header">The Reade &copy;</h3>
         </div>
         <h2>The King Of Porn Addiction Recovery. <i class="em em-crown"></i></h2>
       </div>
