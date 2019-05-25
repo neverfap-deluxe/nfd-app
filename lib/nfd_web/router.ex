@@ -47,9 +47,12 @@ defmodule NfdWeb.Router do
     get "/neverfap-deluxe-league", PageController, :neverfap_deluxe_league
     get "/helpful-neverfappers-academy", PageController, :helpful_neverfappers_academy
     get "/summary", PageController, :summary
+    get "/donations", PageController, :donations
+    get "/promote-neverfap-deluxe", PageController, :promote_neverfap_deluxe
     
     get "/test", PageController, :test
-    get "/final", PageController, :final
+    get "/season-one", PageController, :season_one
+    get "/season-two", PageController, :season_two
     
     get "/apple_podcast.xml", PageController, :apple_podcast_xml
 

@@ -47,6 +47,8 @@ defmodule Nfd.Sitemaps do
         add Helpers.page_path(Endpoint, :neverfap_deluxe_league), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :helpful_neverfappers_academy), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :summary), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :donations), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :promote_neverfap_deluxe), priority: 0.5, changefreq: "weekly", expires: nil
 
         add Helpers.content_path(Endpoint, :articles), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.content_path(Endpoint, :practices), priority: 0.5, changefreq: "weekly", expires: nil

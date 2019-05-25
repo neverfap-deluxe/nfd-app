@@ -141,8 +141,11 @@ defmodule NfdWeb.ContentController do
       {:ok, response} ->
         check_api_response_for_404(conn, response.status)
         Meta.increment_visit_count(response.body["data"])
+        {:ok, podcastsResponse} = client |> Content.podcasts()
+        { previousArticle, nextArticle } = getPreviousNextArticle(podcastsResponse.body["data"]["podcasts"] |> Enum.reverse(), response.body["data"]);
+
         if response.body["data"]["draft"] == false do 
-          conn |> render("podcast.html", item: response.body["data"], page_type: page_type)
+          conn |> render("podcast.html", item: response.body["data"], page_type: page_type, previousArticle: previousArticle, nextArticle: nextArticle)
         else 
           render_404_page(conn)
         end
@@ -160,7 +163,7 @@ defmodule NfdWeb.ContentController do
         check_api_response_for_404(conn, response.status)
         Meta.increment_visit_count(response.body["data"])
         conn |> render("quotes.html", item: response.body["data"], items: response.body["data"]["quotes"], page_type: page_type)
-      {:error, _error} ->
+      {:error, error} ->
         render_404_page(conn)
     end
   end
@@ -175,8 +178,12 @@ defmodule NfdWeb.ContentController do
         Meta.increment_visit_count(response.body["data"])
         # {:ok, dt} = Timex.parse(response.body["data"]["date"], "{ISO:Extended:Z}")
         # Okay, I just realised that we don't need to check time, because netlify won't bulid posts with a date set to the future :D
+        {:ok, quotesResponse} = client |> Content.quotes()
+
+        { previousArticle, nextArticle } = getPreviousNextArticle(quotesResponse.body["data"]["quotes"] |> Enum.reverse(), response.body["data"]);
+
         if response.body["data"]["draft"] == false do 
-          conn |> render("quote.html", item: response.body["data"], page_type: page_type)
+          conn |> render("quote.html", item: response.body["data"], previousArticle: previousArticle, nextArticle: nextArticle, page_type: page_type)
         else
           render_404_page(conn)
         end

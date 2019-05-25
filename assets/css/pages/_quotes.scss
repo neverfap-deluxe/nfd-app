@@ -1,6 +1,45 @@
-.quote__list {
-  .quote__item {
+.single__wrapper--quotes {
+  margin-top: 2rem;
+}
 
+.quote__list {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  flex-wrap: wrap;
+  .quote__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .quote__image {
+      max-width: 280px; 
+      margin: 10px;
+      width: 100%;
+    }
   }  
 }
 
+.single__quote {
+  .quote__item {
+    .quote__image {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .quote__list {
+    margin: 0 auto;
+    width: 750px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .quote__list {
+    margin: 0 auto;
+    width: 1000px;
+  }
+}

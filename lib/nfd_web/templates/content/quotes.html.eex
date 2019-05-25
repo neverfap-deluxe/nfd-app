@@ -1,23 +1,30 @@
 
 <div class="single__wrapper">
 
-  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <h2 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
 
   <div class="single__content">
-    <p>Essentially, this is where you can see a list of the visual items on the website.</p>
+    <p>Essentially, this is where you can view a list of all the various visual items on the website. This is in addition to new ones I've personally created! It will slowly be populated in due time :D</p>
   </div>
 </div>
 
 <%= partial "links/patreon.html", assigns %>
 
-<div class="single__wrapper">
-  <h3 class="popular__latest__options__title">Quotes</h3>
+<!-- <div class="single__wrapper">
+  <div class="single__content">
+    <h2>Quotes</h2>
+  </div>
+</div>
+   -->
+
+<div class="single__wrapper--quotes">
   <div class="quote__list">
     <%= Enum.map(@items, fn(quote) -> %>
+    <a href='/quotes/<%= quote["slug"] %>'>  
       <div class="quote__item">
-  
-        <img src="<%= quote.image_url %>" alt="quote__title">
+        <img class="quote__image" src='<%= quote["image_url"] %>' alt='<%= quote["title"] %>'>
       </div>
+    </a>
     <% end ) %>
   </div>
 </div>

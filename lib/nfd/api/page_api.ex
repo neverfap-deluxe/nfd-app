@@ -72,4 +72,12 @@ defmodule Nfd.API.Page do
   def summary(client) do
     get(client, "/summary/index.json")
   end
+
+  def donations(client) do
+    get(client, "/donations/index.json")
+  end
+
+  def promote_neverfap_deluxe(client) do
+    get(client, "/promote_neverfap_deluxe/index.json")
+  end
 end

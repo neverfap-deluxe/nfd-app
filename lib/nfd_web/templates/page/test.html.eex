@@ -6,7 +6,7 @@
 </div>
 
 <div class="homepage__content">
-  <div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+  <div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
   <div class="homepage__section homepage__tldr" style="margin-top: 2rem!important;">
     <!-- <h1 style="text-shadow: -2px 2px #00ffee;">In summary, here's what you'll be practicing consistently.</h1> -->
@@ -14,58 +14,32 @@
     <div class="homepage__tldr--signature">NeverFap Deluxe.</div>
   </div>
 
-  <div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+  <div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
-  <div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+  <div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
   <div style="width: 400px;" class="homepage__section homepage__section--test--black">
-    <h1 style="margin-bottom: 4rem;">Relapse is a form of <u style="border-bottom: 4px solid rgba(255,46,182,1); padding-bottom: 0rem;">self-harm</u></br> you tool.</h1>
+    <h1 style="margin-bottom: 4rem;">word <u style="border-bottom: 4px solid rgba(255,46,182,1); padding-bottom: 0rem;">self-harm</u></br> you tool.</h1>
     <div class="homepage__tldr--signature">NeverFap Deluxe.</div>
   </div>
   
 </div>
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
 <div class="account__info">
-  <p class="account__info__title account__info__title--test">You already know what's good for you. Now go out and <span class="delicious__promotion">cherish</span> yourself, sweetheart. <i class="em em-admission_tickets"></i></p>
+  <p class="account__info__title account__info__title--test">word <span class="delicious__promotion">cherish</span> yourself, sweetheart. <i class="em em-admission_tickets"></i></p>
 </div>
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+
+
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
 <div class="account__info">
-  <p class="account__info__title account__info__title--test">Please stop relapsing.</br> It's not cool. <i class="em em-v"></i></p>
+  <p class="account__info__title account__info__title--test">If you've lost balance it's because you've <span class="delicious__promotion">failed</span> to remain calm and collected. <i class="em em-man_in_lotus_position"></i></p>
 </div>
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
-
-<div class="account__info">
-  <p class="account__info__title account__info__title--test">The process is your best friend. <i class="em em-v"></i></p>
-</div>
-  
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
-
-<div class="account__info">
-  <p class="account__info__title account__info__title--test">You either work with the process, or against it. Choose wisely. <i class="em em-v"></i></p>
-</div>
-  
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
-
-<div class="account__info">
-  <p class="account__info__title account__info__title--test">We all have the choice. However only if we respect ourselves. <i class="em em-v"></i></p>
-</div>
-  
-- 
-
-
-
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
-
-<div class="account__info">
-  <p class="account__info__title account__info__title--test">If you've lost balance it's because you've <span class="delicious__promotion">failed</span> to remain calm and collected. <i class="em em-v"></i></p>
-</div>
-
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
 <div style="margin-bottom: 2px; border-bottom: 5px solid #00ffee;"></div>
 <div style="margin-bottom: 2px; border-bottom: 5px solid rgba(255,46,182,1);"></div>
@@ -79,58 +53,19 @@
 <div style="margin-bottom: 2px; border-bottom: 5px solid rgba(255,46,182,1);"></div>
 <div style="margin-bottom: 2px; border-bottom: 5px solid #00ffee;"></div>
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
 
-<div class="homepage__splitter--test">
-  <div class="homepage__splitter">
-    <div class="homepage__splitter__box homepage__splitter__box--top">
-      <div>
-        <h2 class="homepage__splitter__box__title">#accountability program</h2>
-        <p>Maybe you're just lookin' for a "support group" to share cuddles with!? Well, The Reade&copy; has you covered!</p>
-        <p>Join our Discord Server today. It's sexy.</p>
-        <a class="homepage__splitter__box__button homepage__splitter__box__button--pink" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Participate</a>    
-      </div>
-    </div>
-  </div>
-</div>
-
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
-
-<div class="homepage__splitter--test">
-  <div class="homepage__splitter homepage__splitter--podcast">
-    <div class="homepage__splitter__box">
-      <div>
-        <h2 class="homepage__splitter__box__title">The NeverFap Deluxe Podcast</h2>
-        <p>Can't be bothered reading for the next 5 minutes? Well, unfortuately that's just too bad and I'm going to have to ask you to read anyway!</p>
-        <p>Listen to the NeverFap Deluxe Podcast, you slacka!</p>
-        <a class="homepage__splitter__box__button" href="https://neverfapdeluxe.com/podcast">Listen</a>    
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
 
 <div class="magenta__banner">
   <div class="magenta__banner__title__container">
-    <h2 class="magenta__banner__title">You see, overcoming porn addiction isn't really about <span class="text-flicker-out-glow">porn</span>.</h2>
+    <h2 class="magenta__banner__title">word.</h2>
   </div>
 </div>
   
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
 
-
-<div class="magenta__banner">
-  <div class="magenta__banner__title__container">
-    <h2 class="magenta__banner__title">You can't cheat your mental health. It knows when you've been slacking.</h2>
-  </div>
-</div>
-
-
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
 <div class="homepage__section homepage__section--test--black">
   <div class="five__principles__guide" style="margin-bottom: 2.5rem;">
@@ -145,26 +80,12 @@
 </div>
 
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
 <div class="unhealthy__banner">
   <div class="homepage__section__closer homepage__section--test--black" style="width: 400px;">
-    <span class="articles__link--magenta cursor__default">Hello!</span>
-    <h2 class="banner__points">Don't forget your daily meditatiおn!</h2>
-    <div style="border-top: 3px solid black;"></div>
-    <!-- <div class="homepage__tldr--signature--top" style="top: 1.2rem;">NeverFap Deluxe.</div> -->
-  </div>
-
-  <div class="homepage__section__closer homepage__section--test--black" style="width: 400px;">
-    <span class="articles__link--magenta cursor__default">It's just your mental health.</span>
-    <h2 class="banner__points">Only the most important thing you have as a modern human being.</h2>
-    <div style="border-top: 3px solid black;"></div>
-    <!-- <div class="homepage__tldr--signature--top" style="top: 1.2rem;">NeverFap Deluxe.</div> -->
-  </div>
-
-  <div class="homepage__section__closer homepage__section--test--black" style="width: 400px;">
-    <span class="articles__link--magenta cursor__default">If I may ask.</span>
-    <h2 class="banner__points">Do you have a strategy in place to not take your emotions personally?</h2>
+    <span class="articles__link--magenta cursor__default">word!</span>
+    <h2 class="banner__points">word!</h2>
     <div style="border-top: 3px solid black;"></div>
     <!-- <div class="homepage__tldr--signature--top" style="top: 1.2rem;">NeverFap Deluxe.</div> -->
   </div>
@@ -174,40 +95,23 @@
 
 <div class="cyan__banner">
   <div class="homepage__section__closer homepage__section--test--black" style="width: 400px;">
-    <span class="articles__link--magenta cursor__default" style="border: 5px solid rgba(255,46,182,1);">Who knew.</span>
-    <h2 class="banner__points">You'd end up developing a serious addiction.</h2>
+    <span class="articles__link--magenta cursor__default" style="border: 5px solid rgba(255,46,182,1);">word.</span>
+    <h2 class="banner__points">word.</h2>
     <div style="border-top: 3px solid white;"></div>
     <!-- <div class="homepage__tldr--signature--top" style="top: 1.2rem;">NeverFap Deluxe.</div> -->
   </div>
   
-  <div class="homepage__section__closer homepage__section--test--black" style="width: 400px;">
-    <span class="articles__link--magenta cursor__default" style="border: 5px solid rgba(255,46,182,1);">You have a mental health problem.</span>
-    <h2 class="banner__points">Which is why it's important to work on mental health solutions.</h2>
-    <div style="border-top: 3px solid white;"></div>
-    <!-- <div class="homepage__tldr--signature--top" style="top: 1.2rem;">NeverFap Deluxe.</div> -->
-  </div>
-  
-  <div class="homepage__section__closer homepage__section--test--black" style="width: 400px;">
-    <span class="articles__link--magenta cursor__default" style="border: 5px solid rgba(255,46,182,1);">NeverFap Deluxe is easy when you're calm.</span>
-    <h2 class="banner__points">So why have you been making it so hard for yourself!?</h2>
-    <div style="border-top: 3px solid white;"></div>
-    <!-- <div class="homepage__tldr--signature--top" style="top: 1.2rem;">NeverFap Deluxe.</div> -->
-  </div>
 </div>
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
 <div class="homepage__section">
   <ul class="five__principles__list__main">
-    <span><li class="five__principles__item__main">Choice over mind</li></span>
-    <span><li class="five__principles__item__main">Balance over reward</li></span>
-    <span><li class="five__principles__item__main">Struggle over none</li></span>
-    <span><li class="five__principles__item__main">Awareness over all</li></span>
-    <span><li class="five__principles__item__main__judgement">Uncondition over judgement</li></span>
+    <span><li class="five__principles__item__main">word</li></span>
   </ul>
 </div>
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
 <div class="homepage__section">
 
@@ -223,21 +127,15 @@
   <div style="border-top: 3px solid #00ffee;"></div>
 </div>
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
 <div class="homepage__section">
-  <h1 class="h1__black">With <span class="cyan__box__border" style="z-index: 400;">Practice</span> and <span class="cyan__box__border">Consistency</span><span class="home__dot">.</span> </i> <div class="box__abs">NeverFap Deluxe.</div></h1> <!-- <i class="em em-man_climbing"> -->
+  <h1 class="h1__black">WORD <span class="cyan__box__border" style="z-index: 400;">Practice</span> and <span class="cyan__box__border">Consistency</span><span class="home__dot">.</span> </i> <div class="box__abs">NeverFap Deluxe.</div></h1> <!-- <i class="em em-man_climbing"> -->
 </div>
 
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
 
-<div class="homepage__section">
-  <h1 class="h1__black">Do not <span class="cyan__box__border" style="z-index: 400;">Fight</span> or you will <span class="cyan__box__border">Struggle</span><span class="home__dot">. Relax Baby.</span> </i> <div class="box__abs">NeverFap Deluxe.</div></h1> <!-- <i class="em em-man_climbing"> -->
-</div>
-
-
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
 <div class="black__banner">
   <div class="black__banner__title__container">
@@ -264,7 +162,7 @@
 </div>
   
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
 
 <div class="homepage__section">
@@ -275,35 +173,35 @@
   <p class="account__info__title">This is your mana. You'll need as much of this stuff as you can and as a result, you'll always need to work on your <u><b>awareness</b></u>.</p>
 </div>    
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
 <!-- <div style="width: 500px; margin-left: 6rem"> -->
   <div style="margin-bottom: 1rem; height: 4px; background: #00ffee;"></div>
   <div class="homepage__section homepage__section--no-margin">
-    <h1>Are</h1>
+    <h1>Word</h1>
   </div>
   <div style="margin-bottom: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
   <div class="homepage__section homepage__section--no-margin">
-    <h1>You</h1>
+    <h1>word</h1>
   </div>
   <div style="margin-bottom: 1rem; height: 4px; background: #00ffee;"></div>
   <div class="homepage__section homepage__section--no-margin">
-    <h1>Feeling</h1>
+    <h1>word</h1>
   </div>
   <div style="margin-bottom: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
   <div class="homepage__section homepage__section--no-margin">
-    <h1>Deluxe?</h1>
+    <h1>word?</h1>
   </div>
   <div style="margin-bottom: 1rem; height: 4px; background: #00ffee;"></div>
   
   <p>text: AYFD?</p> 
 <!-- </div> -->
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
 
 <div class="homepage__section homepage__section--no-margin">
-  <h1>Fucking Meditate Already.</h1>
+  <h1>Word.</h1>
 </div>
 <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
 <div style="margin-bottom: 1rem; height: 4px; background: #00ffee;"></div>
@@ -321,7 +219,7 @@
 <div style="margin-bottom: 1rem; height: 192px; background: #00ffee;"></div>
 
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
 
 <div style="margin-bottom: 1rem; margin-top: 1rem; height: 24px; background: rgba(255,46,182,1);"></div>
@@ -359,32 +257,32 @@
 <div style="margin-bottom: 1rem; margin-top: 1rem; height: 24px; background: #00ffee;"></div>
 
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
 
 <div class="email__campaign__full__width" style="position: relative; width: 500px; height: 660px; margin-left: 6rem;">
-  <h1 class="email__campaign__title">7 Day NeverFap Deluxe Kickstarter</h1>
+  <h1 class="email__campaign__title">word</h1>
   <div class="homepage__tldr--signature">NeverFap Deluxe.</div>
 </div>
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
 <div class="email__campaign__full__width" style="position: relative; width: 500px; margin-left: 6rem;">
   <div class="email__campaign__box__two">
-    <h2 class="email__campaign__sub__title">Get started with your NeverFap Deluxe Journey today.</h2>
+    <h2 class="email__campaign__sub__title">word.</h2>
   </div>
   <div class="homepage__tldr--signature">NeverFap Deluxe.</div>
 </div>
 
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
 <div class="email__campaign__full__width" style="position: relative; width: 500px; height: 500px; margin-left: 6rem;">
   <div class="email__campaign__box__two">
     <div class="email__campaign__text__container">
       <div class="email__day__container">
         <div class="email__day__container__item">
-          <h1>Any form of distraction is an <span>Unhealthy Coping Mechanism</span>.</h1>
+          <h1>word.</h1>
         </div>
       </div>
     </div>
@@ -394,18 +292,32 @@
   
 
 
-<div style="margin-top: 6rem; margin-bottom: 6rem;"></div>
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
 
-<div class="email__campaign__full__width" style="position: relative; width: 500px; height: 500px; margin-left: 6rem;">
-  <div class="email__campaign__box__two">
-    <div class="email__campaign__text__container">
-      <div class="email__day__container">
-        <div class="email__day__container__item">
-          <h1>There's nothing sexy about relapse.</h1>
-        </div>
+<div class="homepage__splitter--test">
+  <div class="homepage__splitter">
+    <div class="homepage__splitter__box homepage__splitter__box--top">
+      <div>
+        <h2 class="homepage__splitter__box__title">#accountability program</h2>
+        <p>Maybe you're just lookin' for a "support group" to share cuddles with!? Well, The Reade&copy; has you covered!</p>
+        <p>Join our Discord Server today. It's sexy.</p>
+        <a class="homepage__splitter__box__button homepage__splitter__box__button--pink" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Participate</a>    
       </div>
     </div>
   </div>
-  <div class="homepage__tldr--signature">NeverFap Deluxe.</div>
 </div>
-  
+
+<div style="margin-top: 12rem; margin-bottom: 12rem;"></div>
+
+<div class="homepage__splitter--test">
+  <div class="homepage__splitter homepage__splitter--podcast">
+    <div class="homepage__splitter__box">
+      <div>
+        <h2 class="homepage__splitter__box__title">The NeverFap Deluxe Podcast</h2>
+        <p>Can't be bothered reading for the next 5 minutes? Well, unfortuately that's just too bad and I'm going to have to ask you to read anyway!</p>
+        <p>Listen to the NeverFap Deluxe Podcast, you slacka!</p>
+        <a class="homepage__splitter__box__button" href="https://neverfapdeluxe.com/podcast">Listen</a>    
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="single__wrapper">   
+  <h1 class="single__title">Donations <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
+  <div class="single__content" style="margin-bottom: 0;">
+    <p>Thank you for deciding to donate to NeverFap Deluxe!</p>
+    <p>Essentially, there are few different ways you can donate.</p>
+
+  </div>
+</div>
+
+<%= partial "links/patreon.html", assigns %>
