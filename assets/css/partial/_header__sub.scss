@@ -206,7 +206,18 @@
   .header__facebook__button__logo:hover {
     top: -0.4rem;
   }
-  
+
+  .header__instagram__button__logo {
+    position: relative;
+    width: 31px;
+    height: 31px;
+    top: 0;
+    transition: .2s top;
+  }
+  .header__instagram__button__logo:hover {
+    top: -0.4rem;
+  }
+
   .header__twitter__button__logo {
     position: relative;
     width: 30px;

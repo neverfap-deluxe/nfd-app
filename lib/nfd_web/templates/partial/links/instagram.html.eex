@@ -1,0 +1,10 @@
+<div class="account__info">
+  <p class="account__info__title">Check out our Instagram for visual updates to NeverFap Deluxe!</p>
+  <div class="account__buttons">
+    
+    <a class="account__instagram__button__container" href="<%= Application.get_env(:nfd, :instagram_url) %>">
+      <img class="account__instagram__button__logo" src="/images/instagram__logo.png" />
+      <p class="account__instagram__button__text"><span class="account__instagram__button__text--display">INSTAGRAM </span> ACCOUNT</p>
+    </a>
+  </div>
+</div>

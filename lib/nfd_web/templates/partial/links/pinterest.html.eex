@@ -1,0 +1,10 @@
+<div class="account__info">
+  <p class="account__info__title">Check out my Pinterest for a display of NeverFap Deluxe Quotes!</p>
+  <div class="account__buttons">
+    
+    <a class="account__pinterest__button__container" href="<%= Application.get_env(:nfd, :social_pinterest_url) %>">
+      <img class="account__pinterest__button__logo" src="/images/pinterest__logo.png" />
+      <p class="account__pinterest__button__text"><span class="account__pinterest__button__text--display">PINTEREST </span>ACCOUNT</p>
+    </a>
+  </div>
+</div>

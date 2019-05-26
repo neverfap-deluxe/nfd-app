@@ -115,6 +115,7 @@
       <div class="header__module" style="cursor: initial;">
         <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_discord_url) %>"><img class="header__discord__button__logo" src="/images/discord__logo.png"/></a>
         <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_reddit_url) %>"><img class="header__reddit__button__logo" src="/images/reddit__logo.png" /></a>
+        <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_instagram_url) %>"><img class="header__instagram__button__logo" src="/images/instagram__logo.png"/></a>
         <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_facebook_url) %>"><img class="header__facebook__button__logo" src="/images/facebook__logo.png"/></a>
         <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_patreon_url) %>"><img class="header__patreon__button__logo" src="/images/patreon__logo.jpg" /></a>
         <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_twitter_url) %>"><img class="header__twitter__button__logo" src="/images/twitter__logo__blue.png" /></a>

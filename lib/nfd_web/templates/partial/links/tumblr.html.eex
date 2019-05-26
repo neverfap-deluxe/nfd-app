@@ -1,0 +1,10 @@
+<div class="account__info">
+  <p class="account__info__title">Check out my Tumblr for a display of NeverFap Deluxe Quotes!</p>
+  <div class="account__buttons">
+    
+    <a class="account__tumblr__button__container" href="<%= Application.get_env(:nfd, :social_tumblr_url) %>">
+      <img class="account__tumblr__button__logo" src="/images/tumblr__logo__blue.png" />
+      <p class="account__tumblr__button__text"><span class="account__tumblr__button__text--display">TUMBLR </span>ACCOUNT</p>
+    </a>
+  </div>
+</div>

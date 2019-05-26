@@ -9,11 +9,11 @@
       <a href="#discord_com"><li class="index__item"><img class="account__discord__button__logo" src="/images/discord__logo.png"/> <span class="discord__text">Discord</span></li></a>
       <a href="#reddit_com"><li class="index__item"><img class="account__reddit__button__logo" src="/images/reddit__logo.png" />  Reddit</li></a>
       <a href="#patreon_com"><li class="index__item"><img class="account__patreon__button__logo" src="/images/patreon__logo.jpg" />  Patreon</li></a>
-      <!-- <a href="#instagram_com"><li class="index__item"><img class="account__instagram__button__logo" src="/images/instagram__logo.png"/>  Instagram</li></a> -->
+      <a href="#instagram_com"><li class="index__item"><img class="account__instagram__button__logo" src="/images/instagram__logo.png"/>  Instagram</li></a>
       <a href="#facebook_com"><li class="index__item"><img class="account__facebook__button__logo" src="/images/facebook__logo.png"/>  Facebook</li></a>
       <a href="#twitter_com"><li class="index__item"><img class="account__twitter__button__logo" src="/images/twitter__logo__blue.png" />  Twitter</li></a>
-      <!-- <a href="#tumblr_com"><li class="index__item"><img class="account__tumblr__button__logo" src="/images/tumblr__logo.png"/>  Tumblr</li></a>
-      <a href="#pinterest_com"><li class="index__item"><img class="account__pinterest__button__logo" src="/images/pinterest__logo.png"/>  pinterest</li></a> -->
+      <a href="#tumblr_com"><li class="index__item"><img class="account__tumblr__button__logo" src="/images/tumblr__logo__blue.png"/>  Tumblr</li></a>
+      <a href="#pinterest_com"><li class="index__item"><img class="account__pinterest__button__logo" src="/images/pinterest__logo.png"/>  Pinterest</li></a>
 
     </ol>
   </div>
@@ -61,7 +61,7 @@
     <p>Obviously we all live in different time zones, however I check it frequently and respond as promptly as I can.</p>
     <p>I'm personally located in Melbourne, Australia. (GMT+11:00)</p>
 
-    <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+    <!-- <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe> -->
 
   </div>
 </div>
@@ -100,15 +100,17 @@
 
 <%= partial "links/patreon.html", assigns %>
   
-<!-- 
+
 <div class="single__wrapper single__wrapper--community">
   <div id="instagram_com" class="single__content">
     <h2>Instagram</h2>
-    <p>word.</p>
+    <p>So yes, I have an Instagram account.</p>
+    <p>I essentially use it to post the visual elements that I create for the website, so if you're into flashy colours with quotes written by The Reade&copy; himself then please feel free to check it out.</p>
+    <p>Don't worry, it's kosher.</p>
   </div>
 </div>
 
-<%#= partial "links/instagram.html", assigns %> -->
+<%= partial "links/instagram.html", assigns %>
   
 <div class="single__wrapper single__wrapper--community">
   <div id="facebook_com" class="single__content">
@@ -133,21 +135,25 @@
 <%= partial "links/twitter.html", assigns %>
 
 
-<!-- <div class="single__wrapper single__wrapper--community">
+<div class="single__wrapper single__wrapper--community">
   <div id="tumblr_com" class="single__content">
     <h2>Tumblr</h2>
-    <p></p>
+    <p>Tumblr used to be my thing back in the day.</p>
+    <p>I actually used solely to find women and in fact, it's how I met my current partner of 5+ years so there ya go. You sick pervert, wanting to know more about my very intimate relationship.</p>
+    <p>You know, I really should write a guide to Tumblr dating, I think that would sell really well on the interwebs.</p>
   </div>
 </div>
 
-<%#= partial "links/tumblr.html", assigns %>
+<%= partial "links/tumblr.html", assigns %>
   
 <div class="single__wrapper single__wrapper--community">
   <div id="pinterest_com" class="single__content">
-    <h2>pinterest</h2>
-    <p></p>
+    <h2>Pinterest</h2>
+    <p>Sooooo, yeah we have a Pinterest account.</p>
+    <p>I put the visual elements on the website there, so if that's your kind of thing then go crazy and just like, sit in front of a screen and just stare at them, or whatever floats your boat.</p>
+    <p>You know, I've never really used Pinterest before, so who knows. I have no idea what the appeal is, but gud for you buddy.</p>
   </div>
 </div>
 
-<%#= partial "links/pinterest.html", assigns %>
-   -->
+<%= partial "links/pinterest.html", assigns %>
+  

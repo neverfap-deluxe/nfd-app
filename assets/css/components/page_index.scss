@@ -14,19 +14,23 @@
 
   .index__items {
     .index__item--nfd {
-      margin-bottom: 0.6rem!important;
+      // margin-bottom: -0.4rem!important;
+      position: relative;
+      top: 0.5rem;
     }
 
     .index__item {
       cursor: pointer;
       color: black;
-      margin-bottom: 1rem;
+      // margin-bottom: 1rem;
       padding: 0.5rem;
-      padding-top: 0.7rem;
-      padding-bottom: 0.9rem;
-      // border-bottom: 5px solid white;
-
-      transition: 0.4s border-bottom, 0.4s box-shadow;
+      // padding-top: 0.7rem;
+      // padding-bottom: 0.9rem;
+      
+      border-top: 5px solid white;
+      border-bottom: 5px solid white;
+      
+      // transition: 0.4s border-bottom, 0.4s box-shadow;
 
       .discord__text {
         position: relative;
@@ -59,6 +63,13 @@
         width: 24px;
         top: 0.3rem;
       }
+      .account__instagram__button__logo {
+        position: relative;
+        margin-right: 0.2rem;
+        height: 24px;
+        width: 24px;
+        top: 0.3rem;
+      }
       .account__facebook__button__logo {
         margin-right: 0.2rem;
         height: 24px;
@@ -71,6 +82,19 @@
         width: 24px;
         top: 0.3rem;
       }
+      .account__tumblr__button__logo {
+        margin-right: 0.2rem;
+        height: 24px;
+        width: 24px;
+        top: 0.3rem;
+      }
+      .account__pinterest__button__logo {
+        margin-right: 0.2rem;
+        height: 24px;
+        width: 24px;
+        top: 0.3rem;
+      }
+
     } 
     
     .index__item:hover {
