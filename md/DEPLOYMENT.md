@@ -1,3 +1,22 @@
+# Generating graphics
+
+http://cssbox.sourceforge.net/webvector/
+
+java -jar webvector-4.15.jar https://neverfapdeluxe.com/season_one hello.png png
+
+http://cutycapt.sourceforge.net/
+
+  % sudo apt-get install subversion libqt4-webkit libqt4-dev g++
+  % svn co svn://svn.code.sf.net/p/cutycapt/code/ cutycapt
+  % cd cutycapt/CutyCapt
+  % qmake
+  % make
+  % ./CutyCapt --url=http://www.example.org --out=example.png
+
+https://wkhtmltopdf.org/
+https://wkhtmltopdf.org/downloads.html
+
+
 
 # Some Phoenix Framework Stuff
 https://alexgaribay.com/2016/02/12/seeding-your-phoenix-app-for-different-mix-environments/
@@ -8,7 +27,7 @@ $ docker exec --interactive --tty example_web_1 /bin/bash
 
 CMD [“mix”, “do”, “ecto.create,”, “ecto.migrate,”, “phoenix.server”]
 
-# Setup 
+# Setup
 https://docs.travis-ci.com/user/encryption-keys/
 https://github.com/dwyl/learn-travis/blob/master/encrypted-ssh-keys-deployment.md
 https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys/to-existing-droplet/
