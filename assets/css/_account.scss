@@ -35,6 +35,9 @@
 
 
   .header {
+    .mobile__menu__overlay__button {
+      display: none;
+    }
 
     .header__links {
       border-top: 5px solid black;

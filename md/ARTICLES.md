@@ -70,6 +70,8 @@ __Created/Done__
 
 __TODO__
 
+- Article: Ways which people sabotage their recovery (not having a mental health routine, for example.)
+
 - Killing the complexity monster.
 - It's hard to struggle with what you understand
 - Creating healthy NeverFap expectations

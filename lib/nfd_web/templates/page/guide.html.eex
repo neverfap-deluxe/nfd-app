@@ -408,7 +408,7 @@
   </div>
 </div>
 
-<%= partial "links/loginregister_top.html", assigns %>
+<%= partial "links/loginregister_top--without-mobile.html", assigns %>
 
 <script src='/js/guide.js'></script>
 

@@ -22,7 +22,7 @@
     <% end ) %>
   </div>
 </div>
-<%= partial "links/loginregister_top.html", assigns %>
+<%= partial "links/loginregister_top--without-mobile.html", assigns %>
 
 
 <script src='<%= Routes.static_path(@conn, "/js/articles.js") %>'></script>
