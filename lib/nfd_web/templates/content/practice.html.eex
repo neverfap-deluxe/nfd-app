@@ -7,11 +7,12 @@
       <span><h3 class="homepage__process__title">tldr;</h3></span>
       <span><h3 class="homepage__process__subtitle"><%= @item["category"] %></h3></span>
     </div>
-
-    <%= if @item["what"] do %><div class="homepage__process__text homepage__process__text--practice"><b>What</b><p><%= raw @item["what"] %></p></div><% end %>
-    <%= if @item["how"] do %><div class="homepage__process__text homepage__process__text--practice"><b>How</b><p><%= raw @item["how"] %></p></div><% end %>
-    <%= if @item["when"] do %><div class="homepage__process__text homepage__process__text--practice"><b>When</b><p><%= raw @item["when"] %></p></div><% end %>
-    <%= if @item["duration"] do %><div class="homepage__process__text homepage__process__text--practice"><b>Duration</b><p><%= raw @item["duration"] %></p></div><% end %>
+    <!-- <div style="display: flex;"> -->
+      <%= if @item["what"] do %><div class="homepage__process__text homepage__process__text--practice"><b>What</b><p><%= raw @item["what"] %></p></div><% end %>
+      <%= if @item["how"] do %><div class="homepage__process__text homepage__process__text--practice"><b>How</b><p><%= raw @item["how"] %></p></div><% end %>
+      <%= if @item["when"] do %><div class="homepage__process__text homepage__process__text--practice"><b>When</b><p><%= raw @item["when"] %></p></div><% end %>
+      <%= if @item["duration"] do %><div class="homepage__process__text homepage__process__text--practice"><b>Duration</b><p><%= raw @item["duration"] %></p></div><% end %>    
+    <!-- </div> -->
   </div>
   <span><span class="homepage__process__link"><%= @item["date"] %></span></span>  
 </div>

@@ -13,7 +13,7 @@
       <a href="#facebook_com"><li class="index__item"><img class="account__facebook__button__logo" src="/images/facebook__logo.png"/>  Facebook</li></a>
       <a href="#twitter_com"><li class="index__item"><img class="account__twitter__button__logo" src="/images/twitter__logo__blue.png" />  Twitter</li></a>
       <!-- <a href="#tumblr_com"><li class="index__item"><img class="account__tumblr__button__logo" src="/images/tumblr__logo.png"/>  Tumblr</li></a>
-      <a href="#pintrest_com"><li class="index__item"><img class="account__pintrest__button__logo" src="/images/pintrest__logo.png"/>  Pintrest</li></a> -->
+      <a href="#pinterest_com"><li class="index__item"><img class="account__pinterest__button__logo" src="/images/pinterest__logo.png"/>  pinterest</li></a> -->
 
     </ol>
   </div>
@@ -143,11 +143,11 @@
 <%#= partial "links/tumblr.html", assigns %>
   
 <div class="single__wrapper single__wrapper--community">
-  <div id="pintrest_com" class="single__content">
-    <h2>Pintrest</h2>
+  <div id="pinterest_com" class="single__content">
+    <h2>pinterest</h2>
     <p></p>
   </div>
 </div>
 
-<%#= partial "links/pintrest.html", assigns %>
+<%#= partial "links/pinterest.html", assigns %>
    -->
