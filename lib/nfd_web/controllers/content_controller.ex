@@ -199,7 +199,7 @@ defmodule NfdWeb.ContentController do
 
     case client |> Content.meditations() do
       {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
+        Meta.increment_visit_count(response.body["data"])    
         conn |> render("meditations.html", item: response.body["data"], meditations: response.body["data"]["meditations"] |> Enum.reverse(), page_type: page_type)
       {:error, _error} ->
         render_404_page(conn)
@@ -214,8 +214,11 @@ defmodule NfdWeb.ContentController do
       {:ok, response} ->
         check_api_response_for_404(conn, response.status)
         Meta.increment_visit_count(response.body["data"])
+        {:ok, meditationsResponse} = client |> Content.meditations()
+        { previousArticle, nextArticle } = getPreviousNextArticle(meditationsResponse.body["data"]["meditations"] |> Enum.reverse(), response.body["data"]);
+
         if response.body["data"]["draft"] == false do 
-          conn |> render("meditation.html", item: response.body["data"], page_type: page_type)
+          conn |> render("meditation.html", item: response.body["data"], previousArticle: previousArticle, nextArticle: nextArticle, page_type: page_type)
         else 
           render_404_page(conn)
         end
