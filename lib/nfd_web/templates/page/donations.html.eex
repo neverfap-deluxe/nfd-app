@@ -2,9 +2,25 @@
   <h1 class="single__title">Donations <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
   <div class="single__content" style="margin-bottom: 0;">
     <p>Thank you for deciding to donate to NeverFap Deluxe!</p>
-    <p>Essentially, there are few different ways you can donate.</p>
-
+    <p>Essentially, there are two different ways you can donate to NeverFap Deluxe.</p>
+    <p>The first is via Patreon which I would recommend if you're hoping to make continual payments, like say, $5 on a per-monthly basis.</p>
+    <p>The great thing about Patreon is that my progress and donations are all public on the Patreon platform, and in fact it has a number of different tiers you can choose depending on how much you'd like to donate.</p>
+    <p>(of course, it still maintains your anonymity if you so choose, it's more others can see what I make)</p>
   </div>
 </div>
 
 <%= partial "links/patreon.html", assigns %>
+
+<div class="single__wrapper">   
+  <div class="single__content" style="margin-bottom: 0;">
+    <p>The second way you can donate is via Paypal, which is preferred if you'd like to make a once-off, no-fuss payment to The Reade &copy; and you already have a PayPal account.</p>
+    <p>Either way, I'm grateful that you've decided to pledge some money towards all the hard work that goes into making this a reality.</p>
+    <p>It helps maintain NeverFap Deluxe as a largely free resource for everyone, regardless of age, gender, wealth or privilege.</p>
+    <!-- TODO: Actually put a link for the Donations button for paypal AND Patreon-->
+  </div>
+</div>
+
+<%#= partial "links/paypal.html", assigns %>
+
+  
+

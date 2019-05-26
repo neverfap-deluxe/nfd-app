@@ -1,6 +1,18 @@
 <div class="single__wrapper">   
   <h1 class="single__title">Summary <img src="/images/logo.png" class="logo__square" alt=""/></h2>
   <div class="single__content" style="margin-bottom: 0;">
+    <p>Here's a basic summary of NeverFap Deluxe!</p>
+    <p>For a much more in-depth overview of NeverFap Deluxe there really is no substitute to reading the <a class="link" href="/">NeverFap Deluxe Homepage</a>. It's written a bit like a visual novel too, so it's significantly more engaging!</p>
+    <p>With that said, this summary is also pretty neat, and I know a lot of people appreciate it as a refresher to all the basic concepts of NeverFap Deluxe.</p>
+    <p>Otherwise, you may also benefit from the <a class="link" href="">7 Day NeverFap Deluxe Kickstarter</a> which covers a lot of the high-level concepts of NeverFap Deluxe in a broad way.</p>
+  </div>
+</div>
+
+<%= partial "links/patreon.html", assigns %>
+
+<div class="single__wrapper">   
+  <div class="single__content" style="margin-bottom: 0;">
+    <h1>Introduction</h1>
     <%= raw @item["content"] %>
   </div>
 </div>

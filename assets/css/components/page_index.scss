@@ -12,11 +12,17 @@
   // background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
   // color: white;
 
+  .page__index__title {
+    margin: 0!important;
+  }
+
   .index__items {
     .index__item--nfd {
       // margin-bottom: -0.4rem!important;
       position: relative;
       top: 0.5rem;
+      margin-right: 0.2rem!important;
+
     }
 
     .index__item {
@@ -38,58 +44,58 @@
       }
       .account__nfd__button__logo {
         position: relative;
-        // margin-right: 0.2rem;
+        margin-right: 0.4rem;
         height: 28px;
         width: 28px;
-        top: 0.5rem;
+        top: 0.4rem;
         left: -0.05rem;
       }
       .account__discord__button__logo {
-        margin-right: 0.2rem;
+        margin-right: 0.6rem;
         height: 34px;
         width: 34px;
         top: 0.6rem;
         left: -0.3rem;
       }
       .account__reddit__button__logo {
-        margin-right: 0.2rem;
+        margin-right: 0.6rem;
         height: 24px;
         width: 24px;
-        top: 0.2rem;
+        top: 0.3rem;
       }
       .account__patreon__button__logo {
-        margin-right: 0.2rem;
+        margin-right: 0.6rem;
         height: 24px;
         width: 24px;
         top: 0.3rem;
       }
       .account__instagram__button__logo {
         position: relative;
-        margin-right: 0.2rem;
+        margin-right: 0.6rem;
         height: 24px;
         width: 24px;
         top: 0.3rem;
       }
       .account__facebook__button__logo {
-        margin-right: 0.2rem;
+        margin-right: 0.6rem;
         height: 24px;
         width: 24px;
         top: 0.3rem;
       }
       .account__twitter__button__logo {
-        margin-right: 0.2rem;
+        margin-right: 0.6rem;
         height: 24px;
         width: 24px;
         top: 0.3rem;
       }
       .account__tumblr__button__logo {
-        margin-right: 0.2rem;
+        margin-right: 0.6rem;
         height: 24px;
         width: 24px;
         top: 0.3rem;
       }
       .account__pinterest__button__logo {
-        margin-right: 0.2rem;
+        margin-right: 0.6rem;
         height: 24px;
         width: 24px;
         top: 0.3rem;
@@ -99,7 +105,7 @@
     
     .index__item:hover {
       // background: lightgrey;
-      border-bottom: 5px solid #00ffee;
+      text-shadow: -2px 2px rgba(255,46,182,1);
     }
   }
 }

@@ -16,7 +16,7 @@
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Login", url: "/session/new", description: "Login to your NeverFap Deluxe Account and subscribe to a variety of premium guides and free courses." } %>      
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Register", url: "/registration/new", description: "Register for a NeverFap Deluxe Account and explore the wonderful word of reasonably-priced written content." } %>      
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Coaching", url: "/coaching", description: "Recieve professional help from someone who's already figured it all out, and who can provide you with the support you need." } %>
-      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "Donations", url: "/donations", description: "Feel like making a financial contribution to The Reade&copy;? Well, now you can via our Patreon and Paypal channels!" } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Donations", url: "/donations", description: "Feel like making a financial contribution to The Reade&copy;? Well, now you can via our Patreon and Paypal channels!" } %>
     </div>
 
     <h2 class="everything__sub__sub__title">Content Pages.</h2>
@@ -43,7 +43,7 @@
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "#NewNeverFapper Reddit Guidelines", url: "/new-fap-deluxe-reddit-guidelines", description: "Learn how you can recieve free advice by posting in our NeverFap Deluxe subreddit, with the #NewNeverFapper hashtag." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "NeverFap Deluxe League", url: "/neverfap-deluxe-league", description: "Join the NeverFap Deluxe League and learn how you can easily overcome your porn addiction with the support of others." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Helpful NeverFappers Academy", url: "/helpful-neverfappers-academy", description: "Join the Helpful NeverFappers Academy and accelerate your and learn how you can easily overcome your porn addiction with the support of others." } %>
-      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "Promote NeverFap Deluxe", url: "/promote-neverfap-deluxe", description: "Want to help build the NeverFap Deluxe brand and spread awareness of the harm of porn addiction? Please keep reading!" } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Promote NeverFap Deluxe", url: "/promote-neverfap-deluxe", description: "Want to help build the NeverFap Deluxe brand and spread awareness of the harm of porn addiction? Please keep reading!" } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "NeverFap Deluxe Emergency", url: "/emergency", description: "Need to calm down? Check out our NeverFap Deluxe Emergency page for more instructions. Remember, relaxation is key." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "Post Relapse Academy", url: "/post-relapse-academy", description: "Maybe you're struggling with the NeverFap Deluxe Method of overcoming porn addiction? Well, perhaps there is something deeper going on." } %>
     </div>
@@ -52,9 +52,12 @@
     <div class="everything__section">
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Facebook", url: Application.get_env(:nfd, :social_facebook_url), description: "NeverFap Deluxe Facebook page." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Twitter", url: Application.get_env(:nfd, :social_twitter_url), description: "NeverFap Deluxe Twitter account. " } %>
-      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Reddit", url: Application.get_env(:nfd, :social_reddit_url), description: "NeverFap Deluxe Reddit account." } %>
-      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Discord", url: Application.get_env(:nfd, :social_discord_url), description: "NeverFap Deluxe Discord account." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Reddit", url: Application.get_env(:nfd, :social_reddit_url), description: "NeverFap Deluxe Reddit subreddit." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Discord", url: Application.get_env(:nfd, :social_discord_url), description: "NeverFap Deluxe Discord channel." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Patreon", url: Application.get_env(:nfd, :social_patreon_url), description: "NeverFap Deluxe Patreon account." } %>    
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Instagram", url: Application.get_env(:nfd, :social_instagram_url), description: "NeverFap Deluxe Instagram account." } %>    
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Pinterest", url: Application.get_env(:nfd, :social_pinterest_url), description: "NeverFap Deluxe Pinterest account." } %>    
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Tumblr", url: Application.get_env(:nfd, :social_tumblr_url), description: "NeverFap Deluxe Tumblr account." } %>    
     </div>
 
     <h2 class="everything__sub__sub__title">Misc</h2>

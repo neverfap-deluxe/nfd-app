@@ -1,11 +1,81 @@
 <div class="single__wrapper">   
-    <h1 class="single__title">Promote NeverFap Deluxe <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
-    <div class="single__content" style="margin-bottom: 0;">
-      <p>Thank you for considering helping out with NeverFap Deluxe cause!</p>  
-      <p>As you may know, I spend a lot of my time building this brand to ensure that it's the best resource possible in 1order to help people trying to overcome porn addiction.</p>
-      <p>However, I also can't do it alone! With your help, we can really grow this thing and make it into something huge!</p>
+  <h1 class="single__title">Promote NeverFap Deluxe <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
+  <div class="single__content" style="margin-bottom: 0;">
+    <p>Thank you for considering helping out with NeverFap Deluxe!</p>  
+    <p>As you may know, I spend a lot of my time building this brand to ensure that it can become the best possible resource for everyone irrespective of age, gender, wealth or privilege.</p>
+    <p>My aim is to help as many people as possible who are trying to overcome their porn addiction, so we can finally kill this beast once and for all.</p>
+    <p>However, I can't do it alone.</p>
+    <p>There's only so much my two hands can do everyday, and with your support we can grow this thing into something huge and help millions of people suffering from this awful addiction.</p>
+    <p>And like all movements, it begins with awareness.</p>
+  </div>
+</div>
+
+<%= partial "links/patreon.html", assigns %>
+
+<div class="single__wrapper">   
+  <div class="single__content" style="margin-bottom: 0;">
+    <h2>NeverFap Deluxe Marketing</h2>
+    
+    <p>Currently my biggest challenge is marketing. Not only is it hugely time consuming, however it's something which also detracts from my ability to create and focus on building content.</p>
+    <p>Certainly, any amount of effort spent towards helping us spread the website, guide and our various platforms to others, goes an incredibly long way towards helping us provide people with the help they deserve.</p>
+    <p>In order to assist you, here are some things you can do which will grow the brand and spread the word out there:</p>  
+  </div>
+</div>
+
+<div class="guide__banner" style="border-bottom: 4px solid black;">
+  <div class="guide__suggestion__container">
+    <div class="black__banner__title__container">
+      <h2 class="black__banner__title black__banner__title--reddit__guidelines">NeverFap Deluxe Marketing</h2>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Sign up to all our social media accounts on our various platforms.</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Interact with the NeverFap Deluxe community on Discord, Reddit, Instagram etc.</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Share NeverFap Deluxe with your family and friends.</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Privately message users who may be struggling with porn addiction.</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Post about your NeverFap Deluxe experience on forums, social media etc.</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Create related social media accounts to promote NeverFap Deluxe.</p>
     </div>
   </div>
+</div>
+
+<div class="single__wrapper">   
+  <div class="single__content" style="margin-bottom: 0;">
+    <h2>NeverFap Deluxe Volunteers</h2>
+    <p>Our marketing efforts aside, we also benefit greatly from passionate volunteers who are looking to help NeverFap Deluxe manage a lot of the services that it currently offers!</p>
+    <p>We appreciate skills of all kinds, whether you believe you're great at talking with people and offering support, adept and creating social media content or even if you think you would make a suitable moderator on one of our many platforms!</p>
+    <p>Here is a list of the awesome ways you can contribute:</p>
+  </div>
+</div>
+
+<div class="guide__banner" style="border-bottom: 4px solid black;">
+  <div class="guide__suggestion__container">
+    <div class="black__banner__title__container">
+      <h2 class="black__banner__title black__banner__title--reddit__guidelines">NeverFap Deluxe Volunteers</h2>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Create awesome logos and artwork for NeverFap Deluxe.</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Develop awesome landing pages and apps for NeverFap Deluxe.</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Moderate and facilitate discussion our Discord/Reddit platforms.</p>
+      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Manage one of our many social media accounts!</p>
+    </div>
+  </div>
+</div>
   
-  <%= partial "links/patreon.html", assigns %>
+<div class="single__wrapper">
+  <div class="single__content" style="margin-bottom: 0;">
+    <h2>NeverFap Deluxe Donations</h2>
+    <p>Of course, the other way with which you can support our movement is to pledge some money financially.</p>
+    <p>All money goes back into supporting the development of NeverFap Deluxe, whether it be the purchasing of equipment in order to produce better podcasts or as is desperately needed in my case, a new computer in order to develop these things a lot faster.</p>
+    <p>(I'm currently stuck with this 2012 macbook pro and it's soooooo slow)</p>
+    <p>You can learn more about these options on our <a class="link" href="/donations">Donations</a> page.</p>
+  </div>
+</div>
+
+<%= partial "links/patreon.html", assigns %>
+
+<div class="single__wrapper">   
+  <div class="single__content" style="margin-bottom: 0;">
+    <h2>Thank you!</h2>
+    <p>Regardless of whether you decide to help contribute or not, you being on this website and taking the time explore my ideas and help address your own mental health challenges is support enough!</p>
+    <p>I wish you best of luck with your journey, and I hope you continue to derive value from NeverFap Deluxe.</p>
+  </div>
+</div>
+
   
+<%= partial "reddit_question_banner.html", assigns %>

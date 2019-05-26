@@ -7,6 +7,8 @@ __TODO__
 - NoFap needs a serious overhaul
 - The key thing to understand about practice. It's not so much about whether you're aware of what you're learning, because often for the first few weeks, this can be oblivious to us. What it's truly about is committing our brain to the motions of practice, which provides physical changes which isn't oblivious in a real sense.
 
+NoFap vs NeverFap Deluxe
+
 Simply by engaging in these positive activities, we change the brain.
 
 The game here is to change the brain, one step at a time. Each step we make changes our brain. Gradually over time, it will all make sense. 

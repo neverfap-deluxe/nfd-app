@@ -1,0 +1,75 @@
+.account__buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 160px;
+
+  margin-top: 1rem;
+  margin-right: 1rem;
+
+  .account__paypal__button__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background: rgb(249, 104, 84);
+    box-sizing: border-box;
+    width: 7.7rem;
+    height: 2.25rem;
+
+    padding: 0.3rem;
+    // padding: 0.8rem;
+    margin: 0!important;
+    cursor: pointer;
+  
+    .account__paypal__button__text {
+      color: white;
+      margin: 0;
+      font-size: 0.69rem;
+      position: relative;
+      letter-spacing: 0.5px;
+      // top: 0.05rem;
+      right: 0.27rem;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+    }
+  }  
+
+  .account__paypal__button__container:hover {
+    opacity: 0.9;
+  }
+}
+  
+.account__paypal__button__logo {
+  width: 27px;
+  height: 27px;
+
+  position: relative;
+  left: 0rem;
+}
+
+.account__paypal__button__text--display {
+  display: none;
+}
+
+@media screen and (min-width: 420px) {
+  .account__paypal__button__text--display {
+    display: inline;
+  }
+
+  .account__buttons {
+    margin-top: 0;
+    flex-direction: row;
+
+    .account__paypal__button__container {
+      width: 11.5rem;
+    }
+  }  
+}
+
+
+@media screen and (min-width: 768px) {
+
+}
