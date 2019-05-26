@@ -1,37 +1,35 @@
 <div class="single__wrapper">   
-  <h1 class="single__title">Meditation <img src="/images/logo.png" class="logo__square" alt="" style="margin-right: 1rem;"/> <a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#need a link to all the website content, instead?</p></a></h2>
+  <h1 class="single__title">Guided Meditations <img src="/images/logo.png" class="logo__square" alt="" style="margin-right: 1rem;"/> <a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#need a link to all the website content, instead?</p></a></h2>
 
   <div class="single__content">
-    <!-- https://neverfapdeluxe.com/practices/observe-your-senses -->
-    <!-- The importance of meditation -->
+    <p>Here are a complete list of all of the guided meditations here on my amazingly useful website, NeverFap Deluxe!</p>
+    <p>I produce them on a weekly basis and they can be downloaded as a podcast on iTunes, Castbox and Spotify. They are also avaliable on <a class="link" href="https://soundcloud.com/neverfapdeluxe">SoundCloud</a>.</p>
+    <p>Before diving into these guided meditations however, it's best that you first read about what meditation actually is as a practice, as well as how it can benefit you. Article: <a href="/articles/the-importance-of-meditation-for-porn-addiction/"class="link">The Importance Of Meditation For Porn Addiction</a></p>
+    <p>In addition, please read <a class="link" href="/practices/observe-your-senses">Observe Your Senses</a> in order to gain a better understanding of how to actually practice meditation.</p>
 
-    <p>Here are a complete list of all of the contextual meditations here on my amazingly useful website, NeverFap Deluxe!</p>
-    <p>I currently produce them on a weekly basis and they can be downloaded as a podcast on iTunes, Castbox, Spotify and Soundcloud.</p>
     <iframe src="https://castbox.fm/app/castbox/player/id2113294?v=4.1.190428&autoplay=0" frameborder="0" width="100%" height="300"></iframe>
   </div>
 </div>
 
 <%= partial "links/patreon.html", assigns %>
 
-<div class="single__wrapper">
-  <h3 class="popular__latest__options__title">Meditations</h3>
-  <div class="popular__latest__options">
-    <h3 class="button__click button__on popular__latest__options--guide" id="articles_latest_plain_click">Latest (plain text)</h3>
-    <h3 class="button__click button__off popular__latest__options--guide" id="articles_latest_click">Latest</h3>
-  </div>
-  
-  <div class="posts__off posts--guide" id="articles_latest_posts">
-    <%= partial "list/articles_latest.html", %{ items: @meditations, tag_type: "context" } %>
-  </div>
-  
-  <div class="posts__on posts--guide" id="articles_latest_plain_posts">
-    <%= partial "list/articles_latest_plain_text.html", %{ items: @meditations, tag_type: "context" } %>
-  </div>
-  
-  <div class="posts__off posts--guide" id="articles_category_posts">
-    <%= partial "list/articles_category.html", %{ items: @meditations, tag_type: "context" } %>
+<div class="single__wrapper">   
+  <h1 style="margin-bottom: 3rem;">Guided Meditation List</h1>
+  <div class="podcast__item__container">
+    <%= Enum.map(@meditations, fn(meditation) -> %>
+      <div class="podcast__item">
+        <a href='/meditation/<%= meditation["slug"] %>'><h1 style="margin-bottom: 0;"><%= meditation["title"] %></h1></a>
+        <h3 style="margin-bottom: 1rem;"><%= raw meditation["content"] %></h3>
+        <div class="podcast__item__bottom">
+          <a class="link articles__link" href='<%= meditation["podcast_url"] %>'>episode link</a>
+          <!-- <audio controls src='<%= meditation["podcast_url"] %>'>
+            Your browser does not support the <code>audio</code> element.
+          </audio>   -->
+        </div>
+      </div>
+    <% end ) %>
   </div>
 </div>
-<%= partial "links/loginregister_top.html", assigns %>
+
 
 <script src='<%= Routes.static_path(@conn, "/js/articles.js") %>'></script>

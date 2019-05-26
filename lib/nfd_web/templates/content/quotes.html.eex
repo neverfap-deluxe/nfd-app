@@ -5,17 +5,11 @@
 
   <div class="single__content">
     <p>Essentially, this is where you can view a list of all the various visual items on the website. This is in addition to new ones I've personally created! It will slowly be populated in due time :D</p>
+    <!-- Mention how they're also available on pinterest etc. -->
   </div>
 </div>
 
 <%= partial "links/patreon.html", assigns %>
-
-<!-- <div class="single__wrapper">
-  <div class="single__content">
-    <h2>Quotes</h2>
-  </div>
-</div>
-   -->
 
 <div class="single__wrapper--quotes">
   <div class="quote__list">

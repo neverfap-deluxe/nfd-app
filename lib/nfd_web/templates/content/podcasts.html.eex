@@ -1,5 +1,5 @@
 <div class="single__wrapper">   
-  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <h1 class="single__title">NeverFap Deluxe Podcast <img src="/images/logo.png" class="logo__square" alt=""/></h2>
 
   <div class="single__content">
     <p>The NeverFap Deluxe Podcast is a fornightly podcast about porn addiction recovery. It aims to be informative, silly and somewhat hopelessly chic.</p>
@@ -31,5 +31,3 @@
     <% end ) %>
   </div>
 </div>
-
-<%= partial "links/loginregister_top.html", assigns %>

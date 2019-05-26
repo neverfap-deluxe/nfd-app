@@ -82,9 +82,12 @@
           <span class="h3__tiny">/practices</span>                        
         </h3>
       </a>
-      <!-- <a href="/practices/observe-your-senses" class="header__module">
-        <h3>NeverFap Deluxe Meditation</h3>
-      </a> -->
+      <a href="/meditation" class="header__module">
+        <h3 class="h3__yus">
+          NeverFap Deluxe Guided Meditation
+          <span class="h3__tiny">/meditation</span>                        
+        </h3>
+      </a>
     </div>
       
     <!-- PODCAST -->
