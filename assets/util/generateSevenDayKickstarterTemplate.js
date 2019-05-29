@@ -34,12 +34,12 @@ const generateSection = (dayNumber, title) => `
   </mj-section>
 `;
 
-const generateWrapper = () => `
+const generateWrapper = (content) => `
   <mj-wrapper padding-top="0" padding-bottom="0" css-class="body-section">
     <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
       <mj-column width="100%">
 
-        ${parseFile()}
+        ${content}
 
         <!-- Divider -->
         <mj-text color="#35393d" font-size="16px"></mj-text>
@@ -92,18 +92,18 @@ const generateButton = (link, text) => `
   </mj-button>
 `;
 
-const generate = () => `
+const generate = (content) => `
   <mjml>
     ${generateHead(0)}
     <mj-body background-color="#E7E7E7" width="600px">
       ${generateSection(0, "The beginning")}
-      ${generateWrapper()}
+      ${generateWrapper(content)}
       <mj-include path="../email_partials/seven_day_bottom.mjml"/>
     </mj-body>  
   </mlmj>
 `;
 
-const parseFile = (fileName) => {
+const parseFile = () => {
   // TODO: Fix Regex.
   const withinQuotesRegex = new RegExp(/\"[\S ]+\"/, );
 
@@ -142,10 +142,14 @@ const parseFile = (fileName) => {
   // seven day kickstarter
   // for (let i = 0; i < 8; i++) {
     // const fileName = `template_seven_day_kickstarter_${i}.mjml`;
-    const fileName = `template_seven_day_kickstarter_1.mjml`;
-    const file = fse.readFileSync(`email_seven_day_kickstarter_md/${fileName}`, itemsComplete, [{}]);
+    const fileName = `template_seven_day_kickstarter_1.md`;
+    const file = fse.readFileSync(`templates/email_seven_day_kickstarter_md/${fileName}`, [{}]);
     const parsedFile = parser.render(file);
     console.log(parsedFile)
-    fse.outputFileSync(`email_seven_day_kickstarter_md_output/${fileName}`, parsedFile, [{}]);
+    const parsedContent = generate(parsedFile)
+
+    fse.outputFileSync(`email_seven_day_kickstarter_md_output/${fileName}`, parsedContent, [{}]);
   // }
 };
+
+parseFile();

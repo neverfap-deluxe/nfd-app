@@ -1,0 +1,142 @@
+<div class="single__wrapper">   
+  <h1 class="single__title">Never Fap <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
+  <div class="single__content" style="margin-bottom: 0;">
+    <p>Welcome to NeverFap Deluxe!</p>
+  </div>
+</div>
+
+<%= partial "links/patreon.html", assigns %>
+
+<div class="single__wrapper">
+  <div class="single__content" >
+    <p>While everyone is aware of the NoFap movement, no one actually seems to be able to effectively explain how to achieve NoFap with any sort of coherence or consistency.</p>
+    <p>Most of the materials I could find online ranged from various theories on how to manage porn cravings and emotions using ineffective and unhealthy coping mechanisms.</p>
+    <p>To personal advice from existing porn addicts who's opinion seemed to change depending on the day of the week, as per their unpredictable schedule of relapse and mania.</p>
+    <p>I mean, you wouldn't trust financial advice from someone with a gambling problem, so why should you treat your porn addiction recovery any differently?</p>
+
+    <hr class="hr3"/>
+    <h3>That's when I knew there was an opportunity to create a website that could save people years attempting to overcome their porn addiction.</h3>
+    <hr class="hr3__bottom"/>
+
+    <p>Introducing NeverFap Deluxe.</p>
+    <p>A comprehensive online step-by-step how-to guide which explains exactly what you need to do to overcome porn addiction.</p>
+    <p>Based upon the healthy coping mechanisms I've developed over the years, which I use on a daily basis to help keep my mind calm, balanced and under control.</p>
+    <p>No more excuses. No more compromises.</p>
+    <p>This is the real deal.</p>
+    <!-- <p><a class="link" href="/articles/what-makes-neverfap-so-different/">This is the real deal.</a></p> -->
+    <!-- <p>If I had to describe what NeverFap Deluxe is, I would describe it as an online resource that is dedicated to teaching people healthy coping mechanisms.</p>
+    <p>Ultimately, effective porn recovery is about learning healthy coping mechanisms which are designed to be empower you in a sustainable way.</p> -->
+  </div>
+</div>
+
+<%= partial "links/loginregister.html", assigns %>
+
+<div class="single__wrapper">
+  <div class="single__content">
+    <p>In order to teach you to adapt to these healthy coping mechanisms, NeverFap Deluxe maintains one goal.</p>
+    <!-- which I strongly believe is key to helping you effectively overcome your porn addiction -->
+    
+    <hr class="hr3"/>
+    <h3>Ultimately, I believe the process of overcoming porn addiction should be deceptively simple.</h3>
+    <hr class="hr3__bottom"/>
+    <p>With the right information and guidance, I believe overcoming porn addiction can be an incredibly straight-forward process that anyone can partake at any point in their life.</p>
+    <p>A process which doesn't discriminate against how smart you are, against how much knowledge you already have about your porn addiction, nor concern who you are today. </p>
+    <p>I have put a lot of effort into ensuring that the information on this website is fun, engaging and accessible so that it becomes as clear as daylight as to why this process works, as well as how you can comfortably commit to it without hesitation.</p>
+    <p>This means reading the articles and guides on this website until it becomes second-nature to you, as well as committing to your daily routine of meditation and awareness practice.</p>
+    <p>It is the very reason why NeverFap Deluxe is so effective at helping you overcome porn addiction.</p>
+    <p>Because it just makes sense.</p>
+  </div>
+</div>
+
+<%= partial "links/discord.html", assigns %>
+
+<div class="single__wrapper">
+    <div class="single__content">
+      <h2>Next Steps</h2>
+      <p>If you haven't yet already, I highly recommend checking out the <a class="link" href="/">NeverFap Deluxe Homepage</a>.</p>
+      <p>It explores in great detail what you can expect from NeverFap Deluxe, as well as serve as an introduction into some of the skills you'll be learning from the materials on this website.</p>
+      <p>We then recommend checking out the <a class="link" href="/guide">NeverFap Deluxe Guide</a> which follows on from the homepage, and provides additional knowledge and context.</p>
+      <p>From there you can check out the various articles and practices which have been designed to help you better understand yourself, as well provide you with tangible exercises you can practice on a daily basis.</p>
+      <p>The groundwork is all there for you to succeed and help you become your best version of yourself.</p>
+      <p>All you need to do is commit to the practices and provide your mental health with the attention it deserves.</p>
+      <p>NeverFap Deluxe is here to help.</p>
+    </div>
+  </div>
+
+<%= partial "links/reddit.html", assigns %>
+
+<div class="single__wrapper" id="contact__form">   
+  <h1 class="single__title">Contact <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <div class="single__content">
+    <p>If you would like to get in touch, please provide your name, email and message, and I will get back to you as soon as possible!</p>
+  </div>    
+
+  <!-- Original Contact Form -->
+  <div class="form__wrapper form__wrapper--full-width">
+    <form class="form" action="https://formspree.io/admin@neverfapdeluxe.com" method="POST">  
+      <div class="form__input__container">
+        <input class="form__input" type=text: placeholder="Name" name='name'/>
+        <input class="form__input" type="email" placeholder="Email" name='_replyTo'/>
+        <textarea class="form__input form__textarea" type=text: placeholder="Message" name='message'></textarea>
+      </div>
+    
+      <div class="form__submission__container">
+        <button class="form__button" type="submit" value="Send">Send</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- New Contact Form -->
+  <!-- <div class="form__wrapper form__wrapper--full-width">
+    <%= form_for @contact_form_changeset, Routes.function_path(@conn, :contact_form_post), fn f -> %> 
+      <div class="form__input__container">
+        <%= error_tag f, :name %>
+        <%= text_input f, :name, [placeholder: "Name", class: "form__input"] %>
+        <%= error_tag f, :email %>
+        <%= text_input f, :email, [placeholder: "Email", class: "form__input"] %>
+        <%= error_tag f, :message %>
+        <%= textarea f, :message, [placeholder: "Message", class: "form__input form__textarea"] %>
+        <%= raw Recaptcha.Template.display %>
+
+      </div>
+    
+      <div class="form__submission__container">
+        <%= submit "Send", [class: "form__button"]  %>
+      </div>
+    <% end %>
+  </div> -->
+  
+</div>
+
+
+
+
+<!-- <div class="single__wrapper">
+  <div class="single__content">
+    <h2>Our Mission</h2>
+    <p>We have a really simple goal.</p>
+
+    <hr class="hr3"/>
+    <h3>We want you to change the way you think about porn addiction.</h3>
+    <hr class="hr3__bottom"/>
+
+    <p>The truth is that overcoming pornography addiction is deceptively simple.</p>
+
+    <h2>The Five Fundamental Principles of NeverFap</h2>
+    <p>Compromising of five fundamental principles, the NeverFap method of eliminating porn addiction could honestly not be any simpler, and we've broken it down so you don't have to.</p>
+    <p>These principles will form the basis of everything you will learn, whether you decide to get started with the courses, read the articles or practice the mental health exercises.</p>
+    <p>These principles are:</p>
+    
+    <div class="five__principles__list__main">
+      <span><div class="five__principles__item__main">Choice over mind</div></span>
+      <span><div class="five__principles__item__main">Balance over reward</div></span>
+      <span><div class="five__principles__item__main">Struggle over none</div></span>
+      <span><div class="five__principles__item__main">Awareness over all</div></span>
+      <span><div class="five__principles__item__main">Uncondition over judgement</div></span>
+    </div>
+    
+    <div class="button__wrapper">
+      <a class="button button__secondary" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles Of NeverFap.</a>
+    </div>
+  </div>
+</div> -->

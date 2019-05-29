@@ -288,6 +288,19 @@ defmodule NfdWeb.PageController do
     end
   end
 
+  def never_fap(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Page.never_fap() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])
+        conn |> render("never_fap.html", item: response.body["data"], page_type: page_type)
+      {:error, _error} -> 
+        render_404_page(conn)
+    end
+  end
+
   # Images
   def test(conn, _params) do
     conn |> render("test.html")

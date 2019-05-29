@@ -16,7 +16,7 @@
     <%= raw @item["content"] %>
   </div>
 </div>
-<!-- 
+<!--
 <%= partial "links/patreon.html", assigns %>
 
 <div class="single__wrapper">   

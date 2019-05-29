@@ -49,6 +49,7 @@ defmodule NfdWeb.Router do
     get "/summary", PageController, :summary
     get "/donations", PageController, :donations
     get "/promote-neverfap-deluxe", PageController, :promote_neverfap_deluxe
+    get "/never-fap", PageController, :never_fap
     
     get "/test", PageController, :test
     get "/season-one", PageController, :season_one

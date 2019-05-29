@@ -80,4 +80,8 @@ defmodule Nfd.API.Page do
   def promote_neverfap_deluxe(client) do
     get(client, "/promote_neverfap_deluxe/index.json")
   end
+
+  def never_fap(client) do
+    get(client, "/never_fap/index.json")
+  end
 end
