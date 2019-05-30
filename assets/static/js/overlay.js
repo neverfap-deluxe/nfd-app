@@ -1,5 +1,7 @@
 var overlay = document.querySelector('#mobile__menu__overlay__id');
 var overlay__background = document.querySelector('#mobile__menu__overlay__background__id');
+// var overlay__background__colour = document.querySelector('.everything__container__outer');
+// var overlay__within = document.querySelector('.overlay__within');
 
 var overlay__button = document.querySelector('#mobile__menu__overlay__button__id');
 var overlay__button__close = document.querySelector('#mobile__overlay__close__id');
@@ -34,10 +36,12 @@ overlay__button__close.onclick = function(event) {
   overlayState = false;
   overlay.style.display = 'none';
   overlay__background.style.display = 'none';
+  // overlay__background__colour.style.background = 'initial';
 }
 
 overlay__button.onclick = function(event) {
   overlayState = true;
   overlay.style.display = 'block';
   overlay__background.style.display = 'block';
+  // overlay__background__colour.style.background = 'lightgrey';
 }

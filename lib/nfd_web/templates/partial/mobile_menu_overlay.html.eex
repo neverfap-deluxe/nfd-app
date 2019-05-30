@@ -8,8 +8,8 @@
   <%= partial "everything_module.html", %{ is_mobile_menu: true } %>
 </div>
   
+<div class="overlay__within">
 
-<div style='opacity: 1;'>
 </div>
 
 

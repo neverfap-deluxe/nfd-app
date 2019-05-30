@@ -27,7 +27,9 @@ defmodule Nfd.Sitemaps do
          {:ok, coursesResponse} <- (client |> Content.courses()),
          {:ok, podcastsResponse} <- (client |> Content.podcasts()),
          {:ok, quotesResponse} <- (client |> Content.quotes()),
-         {:ok, meditationsResponse} <- (client |> Content.meditations())
+         {:ok, meditationsResponse} <- (client |> Content.meditations()),
+         {:ok, blogsResponse} <- (client |> Content.blogs()),
+         {:ok, updatesResponse} <- (client |> Content.updates())
     do 
       create do
         add Helpers.page_path(Endpoint, :home), priority: 0.5, changefreq: "weekly", expires: nil
@@ -57,6 +59,8 @@ defmodule Nfd.Sitemaps do
         add Helpers.content_path(Endpoint, :podcasts), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.content_path(Endpoint, :quotes), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.content_path(Endpoint, :meditations), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.content_path(Endpoint, :blogs), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.content_path(Endpoint, :updates), priority: 0.5, changefreq: "weekly", expires: nil
 
         Enum.each(articlesResponse.body["data"]["articles"], fn(article) ->
           add Helpers.content_path(Endpoint, :article, article["slug"]), priority: 0.5, changefreq: "weekly", expires: nil                    
@@ -80,6 +84,14 @@ defmodule Nfd.Sitemaps do
 
         Enum.each(meditationsResponse.body["data"]["meditations"], fn(meditationArg) ->
           add Helpers.content_path(Endpoint, :meditation, meditationArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil                  
+        end)
+
+        Enum.each(blogsResponse.body["data"]["blogs"], fn(blogArg) ->
+          add Helpers.content_path(Endpoint, :blog, blogArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil                  
+        end)
+
+        Enum.each(updatesResponse.body["data"]["updates"], fn(updateArg) ->
+          add Helpers.content_path(Endpoint, :update, updateArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil                  
         end)
 
         # TODO: Will also need to configure the individual days, once they're created.

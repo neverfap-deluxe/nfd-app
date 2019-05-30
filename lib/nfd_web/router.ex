@@ -69,6 +69,10 @@ defmodule NfdWeb.Router do
     get "/quotes/:slug", ContentController, :quote
     get "/meditation", ContentController, :meditations
     get "/meditation/:slug", ContentController, :meditation
+    get "/blog", ContentController, :blogs
+    get "/blog/:slug", ContentController, :blog
+    get "/updates", ContentController, :updates
+    get "/updates/:slug", ContentController, :update
 
     get "/seven-day-neverfap-deluxe-kickstarter", ContentEmailController, :seven_day_kickstarter
     get "/seven-day-neverfap-deluxe-kickstarter/:day", ContentEmailController, :seven_day_kickstarter_single

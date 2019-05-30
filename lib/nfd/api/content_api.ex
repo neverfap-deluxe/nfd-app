@@ -48,4 +48,20 @@ defmodule Nfd.API.Content do
   def meditations(client) do
     get(client, "/meditations/index.json")
   end
+
+  def blog(client, blog_name) do
+    get(client, "/blogs/" <> blog_name <> "/index.json")
+  end
+
+  def blogs(client) do
+    get(client, "/blogs/index.json")
+  end
+
+  def update(client, update_name) do
+    get(client, "/updates/" <> update_name <> "/index.json")
+  end
+
+  def updates(client) do
+    get(client, "/updates/index.json")
+  end
 end

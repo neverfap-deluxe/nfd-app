@@ -227,6 +227,75 @@ defmodule NfdWeb.ContentController do
     end
   end
 
+
+  def blogs(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Content.blogs() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])    
+        conn |> render("blogs.html", item: response.body["data"], blogs: response.body["data"]["blogs"] |> Enum.reverse(), page_type: page_type)
+      {:error, _error} ->
+        render_404_page(conn)
+    end
+  end
+
+  def blog(conn, %{"slug" => slug}) do
+    page_type = "content"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Content.blog(slug) do
+      {:ok, response} ->
+        check_api_response_for_404(conn, response.status)
+        Meta.increment_visit_count(response.body["data"])
+        {:ok, blogsResponse} = client |> Content.blogs()
+        { previousArticle, nextArticle } = getPreviousNextArticle(blogsResponse.body["data"]["blogs"] |> Enum.reverse(), response.body["data"]);
+
+        if response.body["data"]["draft"] == false do 
+          conn |> render("blog.html", item: response.body["data"], previousArticle: previousArticle, nextArticle: nextArticle, page_type: page_type)
+        else 
+          render_404_page(conn)
+        end
+      {:error, _error} ->
+        render_404_page(conn)
+    end
+  end
+
+  def updates(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Content.updates() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])    
+        conn |> render("updates.html", item: response.body["data"], updates: response.body["data"]["updates"] |> Enum.reverse(), page_type: page_type)
+      {:error, _error} ->
+        render_404_page(conn)
+    end
+  end
+
+  def update(conn, %{"slug" => slug}) do
+    page_type = "content"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Content.update(slug) do
+      {:ok, response} ->
+        check_api_response_for_404(conn, response.status)
+        Meta.increment_visit_count(response.body["data"])
+        {:ok, updatesResponse} = client |> Content.updates()
+        { previousArticle, nextArticle } = getPreviousNextArticle(updatesResponse.body["data"]["updates"] |> Enum.reverse(), response.body["data"]);
+
+        if response.body["data"]["draft"] == false do 
+          conn |> render("update.html", item: response.body["data"], previousArticle: previousArticle, nextArticle: nextArticle, page_type: page_type)
+        else 
+          render_404_page(conn)
+        end
+      {:error, _error} ->
+        render_404_page(conn)
+    end
+  end
+
   defp check_api_response_for_404(conn, status) do
     if status != 200, do: render_404_page(conn)
   end

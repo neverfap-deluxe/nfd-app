@@ -106,37 +106,37 @@ const generate = (content) => `
 const parseFile = () => {
   // TODO: Fix Regex.
   const withinQuotesRegex = new RegExp(/\"[\S ]+\"/, );
-
+  
   // generate text 
-  parser.addRule(/\#[\S ]+/ig, function(text) {
-    return generateText(text.substr(1));
+  parser.addRule(/[\S ]+/ig, function(text) {
+    return generateText(text);
   });
 
   // generate text bold
   parser.addRule(/\#\#[\S ]+/ig, function(text) {
-    return generateTextBold(text.substr(1));
+    return generateTextBold(text);
   });
   
   // generate text title
-  parser.addRule(/[\S]+/ig, function(text) {
-    return generateTextTitle(text.substr(1));
+  parser.addRule(/\#[\S ]+/ig, function(text) {
+    return generateTextTitle(text);
   });
 
   // generate text title centre
-  parser.addRule(/nfd_center_title [\S]+/ig, function(text) {
-    return generateTextTitleCentre(text.substr(1));
+  parser.addRule(/nfd_center_title [\S ]+/ig, function(text) {
+    return generateTextTitleCentre(text);
   });
 
   // generate button
-  parser.addRule(/\nfd_button [\S]+/ig, function(text) {
+  parser.addRule(/nfd_button [\S ]+/ig, function(text) {
     // TODO get regex of whatever is in quotes
     const title = withinQuotesRegex.test(text)
-    return generateButton(text.substr(1), title);
+    return generateButton(text, title);
   });
 
   // generate divider 
   parser.addRule(/-{3}/ig, function(text) {
-    return generateDivider(text.substr(1));
+    return generateDivider(text);
   });
 
   // seven day kickstarter
@@ -144,7 +144,8 @@ const parseFile = () => {
     // const fileName = `template_seven_day_kickstarter_${i}.mjml`;
     const fileName = `template_seven_day_kickstarter_1.md`;
     const file = fse.readFileSync(`templates/email_seven_day_kickstarter_md/${fileName}`, [{}]);
-    const parsedFile = parser.render(file);
+
+    const parsedFile = parser.render(file.toString());
     console.log(parsedFile)
     const parsedContent = generate(parsedFile)
 
