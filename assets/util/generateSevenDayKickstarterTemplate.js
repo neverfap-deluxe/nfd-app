@@ -92,11 +92,11 @@ const generateButton = (link, text) => `
   </mj-button>
 `;
 
-const generate = (content) => `
+const generate = (content, day, title) => `
   <mjml>
-    ${generateHead(0)}
+    ${generateHead(day)}
     <mj-body background-color="#E7E7E7" width="600px">
-      ${generateSection(0, "The beginning")}
+      ${generateSection(day, title)}
       ${generateWrapper(content)}
       <mj-include path="../email_partials/seven_day_bottom.mjml"/>
     </mj-body>  
@@ -104,34 +104,29 @@ const generate = (content) => `
 `;
 
 const parseFile = () => {
-  // TODO: Fix Regex.
   const withinQuotesRegex = new RegExp(/\"[\S ]+\"/, );
-  
-  // generate text 
-  parser.addRule(/[\S ]+/ig, function(text) {
-    return generateText(text);
+  let title;
+  let day;
+
+  parser.addRule(/title: [\S ]+/ig, function(text) {
+    title = text.split(':')[1].trim();
+    return '';
   });
 
-  // generate text bold
-  parser.addRule(/\#\#[\S ]+/ig, function(text) {
-    return generateTextBold(text);
-  });
-  
-  // generate text title
-  parser.addRule(/\#[\S ]+/ig, function(text) {
-    return generateTextTitle(text);
+  parser.addRule(/day: [\S ]+/ig, function(text) {
+    day = text.split(':')[1].trim();
+    return '';
   });
 
   // generate text title centre
-  parser.addRule(/nfd_center_title [\S ]+/ig, function(text) {
-    return generateTextTitleCentre(text);
+  parser.addRule(/nfd_center_title [\S ]+/ig, function(text) {    
+    // TODO regex to capture everything within 
+    return generateTextTitleCentre(withinQuotesRegex.test(text));
   });
 
   // generate button
   parser.addRule(/nfd_button [\S ]+/ig, function(text) {
-    // TODO get regex of whatever is in quotes
-    const title = withinQuotesRegex.test(text)
-    return generateButton(text, title);
+    return generateButton(text, withinQuotesRegex.test(text));
   });
 
   // generate divider 
@@ -139,18 +134,33 @@ const parseFile = () => {
     return generateDivider(text);
   });
 
+  // generate text bold
+  parser.addRule(/\#\# [\S ]+/ig, function(text) {
+    return generateTextBold(text.slice(3));
+  });
+  
+  // generate text title
+  parser.addRule(/\# [\S ]+/ig, function(text) {
+    return generateTextTitle(text.slice(2));
+  });
+
+  // generate text 
+  parser.addRule(/[\S ]+/ig, function(text) {
+    if (text.length !== 2) {
+      return generateText(text);
+    }
+  });
+
   // seven day kickstarter
-  // for (let i = 0; i < 8; i++) {
-    // const fileName = `template_seven_day_kickstarter_${i}.mjml`;
-    const fileName = `template_seven_day_kickstarter_1.md`;
-    const file = fse.readFileSync(`templates/email_seven_day_kickstarter_md/${fileName}`, [{}]);
+  for (let i = 0; i < 8; i++) {
+    const fileName = `template_seven_day_kickstarter_${i}`;
+    const file = fse.readFileSync(`templates/email_seven_day_kickstarter_md/${fileName}.md`, [{}]);
 
     const parsedFile = parser.render(file.toString());
-    console.log(parsedFile)
-    const parsedContent = generate(parsedFile)
+    const parsedContent = generate(parsedFile, day, title)
 
-    fse.outputFileSync(`email_seven_day_kickstarter_md_output/${fileName}`, parsedContent, [{}]);
-  // }
+    fse.outputFileSync(`templates/email_seven_day_kickstarter/${fileName}.mjml`, parsedContent, [{}]);
+  }
 };
 
 parseFile();

@@ -27,6 +27,8 @@ defmodule NfdWeb.FunctionController do
         EmailLogs.new_comment_form_email(name, email, message)
         redirect_back(conn) 
       {:error, comment_form_changeset} ->
+        IO.inspect "hyeyy"
+
         page_type = "content"
         client = API.is_localhost(conn.host) |> API.api_client()
 

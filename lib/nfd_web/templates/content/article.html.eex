@@ -17,8 +17,6 @@
 
 <%= partial "links/patreon.html", assigns %>
 
-
-
 <div class="single__wrapper">
   <div class="single__content">
     <%= raw @item["content"] %>
@@ -26,7 +24,7 @@
 
   <%= partial "share_buttons.html", %{permalink: @item["permalink"] } %>
 
-  <%#= partial "comments/comments_list.html", assigns %>
+  <%= partial "comments/comments_list.html", assigns %>
   <%= partial "next_prev_buttons.html", %{nextArticle: @nextArticle, previousArticle: @previousArticle } %>
 </div>
 

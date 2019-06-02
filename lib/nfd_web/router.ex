@@ -50,7 +50,12 @@ defmodule NfdWeb.Router do
     get "/donations", PageController, :donations
     get "/promote-neverfap-deluxe", PageController, :promote_neverfap_deluxe
     get "/never-fap", PageController, :never_fap
+
+    get "/desktop-app", PageController, :desktop_app
+    get "/mobile-app", PageController, :mobile_app
+    get "/chrome-extension", PageController, :chrome_extension
     
+    # Images
     get "/test", PageController, :test
     get "/season-one", PageController, :season_one
     get "/season-two", PageController, :season_two

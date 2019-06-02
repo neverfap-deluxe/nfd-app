@@ -2,7 +2,7 @@
   <mjml>
     
   <mj-head>
-    <mj-title>NeverFap Deluxe Seven Day Kickstarter | Day 0</mj-title>
+    <mj-title>NeverFap Deluxe Seven Day Kickstarter | Day 1</mj-title>
     <mj-preview>NeverFap Deluxe Seven Day Kickstarter Preview</mj-preview>
     <mj-attributes>
       <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-all>
@@ -23,8 +23,8 @@
         <span style="color: #979797; font-weight: normal">-</span>
       </mj-text>
       <mj-text color="white" align="center" font-size="13px" padding-top="0" font-weight="bold" text-transform="uppercase" letter-spacing="1px" line-height="20px">
-        Day 0
-        <br/> The beginning
+        Day 1
+        <br/> The trust
       </mj-text>
 
       <mj-image src="https://f002.backblazeb2.com/file/neverfapdeluxeemail/email__header.png" width="600px" alt="" padding="0" href="https://neverfapdeluxe.com" />
@@ -41,7 +41,7 @@
 
 
 
-  <mj-text color="#212b35" font-weight="bold" font-size="20px">
+  <mj-text color="#35393d" font-size="16px">
     #Welcome to the trust.
   </mj-text>
 
@@ -78,8 +78,8 @@
 
 
 
-  <mj-text color="#35393d" font-size="20px" line-height="30px">
-    <strong>##You simply follow the instructions and everything will literally fall into place.</strong>
+  <mj-text color="#35393d" font-size="16px">
+    ##You simply follow the instructions and everything will literally fall into place.
   </mj-text>
 
 
@@ -117,7 +117,7 @@
 
 
   <mj-text color="#35393d" font-size="20px" line-height="30px">
-    <strong>## In other words, a lot of us seem to have a difficult time trusting and sticking to the process.</strong>
+    <strong>In other words, a lot of us seem to have a difficult time trusting and sticking to the process.</strong>
   </mj-text>
 
 
@@ -160,8 +160,8 @@
 
 
 
-  <mj-text color="#35393d" font-size="20px" line-height="30px">
-    <strong>##Always trust the process.</strong>
+  <mj-text color="#35393d" font-size="16px">
+    ##Always trust the process.
   </mj-text>
 
 
@@ -231,7 +231,7 @@
 
 
 
-  <mj-text color="#212b35" font-weight="bold" font-size="20px">
+  <mj-text color="#35393d" font-size="16px">
     #Next steps.
   </mj-text>
 

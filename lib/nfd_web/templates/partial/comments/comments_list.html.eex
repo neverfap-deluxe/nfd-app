@@ -57,7 +57,7 @@
         <!-- // maybe use the cookies for this.
         // conn.cookies -->
 
-        <%= raw Recaptcha.Template.display %>
+        <%#= raw Recaptcha.Template.display %>
       </div>
 
       <div class="form__submission__container">

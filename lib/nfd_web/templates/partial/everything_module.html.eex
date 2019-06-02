@@ -41,11 +41,18 @@
     <div class="everything__section">
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Accountability Program", url: "/accountability-program", description: "Join the NeverFap Deluxe Discord channel and learn to keep yourself accountable for your mental health." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "#NewNeverFapper Reddit Guidelines", url: "/new-fap-deluxe-reddit-guidelines", description: "Learn how you can recieve free advice by posting in our NeverFap Deluxe subreddit, with the #NewNeverFapper hashtag." } %>
-      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "NeverFap Deluxe League", url: "/neverfap-deluxe-league", description: "Join the NeverFap Deluxe League and learn how you can easily overcome your porn addiction with the support of others." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Helpful NeverFappers Academy", url: "/helpful-neverfappers-academy", description: "Join the Helpful NeverFappers Academy and accelerate your and learn how you can easily overcome your porn addiction with the support of others." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "Promote NeverFap Deluxe", url: "/promote-neverfap-deluxe", description: "Want to help build the NeverFap Deluxe brand and spread awareness of the harm of porn addiction? Please keep reading!" } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "NeverFap Deluxe Emergency", url: "/emergency", description: "Need to calm down? Check out our NeverFap Deluxe Emergency page for more instructions. Remember, relaxation is key." } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "Post Relapse Academy", url: "/post-relapse-academy", description: "Maybe you're struggling with the NeverFap Deluxe Method of overcoming porn addiction? Well, perhaps there is something deeper going on." } %>
+    </div>
+
+    <h2 class="everything__sub__sub__title">Apps</h2>
+    <div class="everything__section">
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "NeverFap Deluxe League", url: "/neverfap-deluxe-league", description: "Join the NeverFap Deluxe League and learn how you can easily overcome your porn addiction with the support of others." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "NeverFap Deluxe Mobile App", url: "/mobile-app", description: "Read all the NeverFap Deluxe articles and practices on your mobile phone! Available on both Android and iOS." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "NeverFap Deluxe Desktop App", url: "/desktop-app", description: "Want to receive all that NeverFap Deluxe goodness to your very own desktop, laptop or PC? Well, now you can lucky person." } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "NeverFap Deluxe Chrome Extension", url: "/chrome-extension", description: "Download the NeverFap Deluxe Chrome Extension and receive our free NeverFap Deluxe Guided Meditations." } %>
     </div>
 
     <h2 class="everything__sub__sub__title">Social Media</h2>

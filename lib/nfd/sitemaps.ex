@@ -53,6 +53,10 @@ defmodule Nfd.Sitemaps do
         add Helpers.page_path(Endpoint, :promote_neverfap_deluxe), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :never_fap), priority: 0.5, changefreq: "weekly", expires: nil
 
+        add Helpers.page_path(Endpoint, :mobile_app), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :desktop_app), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :chrome_extension), priority: 0.5, changefreq: "weekly", expires: nil
+
         add Helpers.content_path(Endpoint, :articles), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.content_path(Endpoint, :practices), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.content_path(Endpoint, :courses), priority: 0.5, changefreq: "weekly", expires: nil

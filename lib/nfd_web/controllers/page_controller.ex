@@ -301,6 +301,45 @@ defmodule NfdWeb.PageController do
     end
   end
 
+  def desktop_app(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Page.desktop_app() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])
+        conn |> render("desktop_app.html", item: response.body["data"], page_type: page_type)
+      {:error, _error} -> 
+        render_404_page(conn)
+    end
+  end
+
+  def mobile_app(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Page.mobile_app() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])
+        conn |> render("mobile_app.html", item: response.body["data"], page_type: page_type)
+      {:error, _error} -> 
+        render_404_page(conn)
+    end
+  end
+
+  def chrome_extension(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Page.chrome_extension() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])
+        conn |> render("chrome_extension.html", item: response.body["data"], page_type: page_type)
+      {:error, _error} -> 
+        render_404_page(conn)
+    end
+  end
+
   # Images
   def test(conn, _params) do
     conn |> render("test.html")
