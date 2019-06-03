@@ -1,19 +1,13 @@
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <h1 class="single__title">Coaching <img src="/images/logo.png" class="logo__square" alt=""/></h2>
   <div class="single__content" style="margin-bottom: 0;">
-    <p>I offer porn addiction recovery coaching for people seeking more targeted help with their porn addiction.</p>
-    <p>In most cases, the articles and courses contained within this website should provide you with all the skills and knowledge you require in order to help you overcome your porn addiction.</p>
-    <p>However, it can be difficult to do alone.</p>
-    <p>As outlined in <a class="link" href="/articles/my-personal-porn-recovery-journey/">My Personal Porn Recovery Journey</a> one of the big things which helped me overcome my porn addiction was coming out to my partner about my mental health issues.</p>
-    <p>Which obviously can be an incredibly difficult thing for you to do, if you don't feel as if you have anyone you can trust to talk about your mental health issues with.</p>
-    <p>I have certainly been in that position before and can understand what it's like, which is why I've decided to offer personal coaching as a service.</p>
-    <p>It's also the reason why I run an <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> Discord channel, so users can get that level of interaction with other people on some level.</p>
+    <%= raw child_content(@item["children"], "coaching-intro") %>
   </div>
 </div>
 
 <%= partial "links/discord.html", assigns %>
-  
-<div class="single__wrapper">   
+
+<div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
     <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some of the reasons</u> to consider personal coaching.</h1>
 
@@ -36,16 +30,15 @@
 
   </div>
 </div>
-  
+
 <div class="magenta__banner">
   <div class="magenta__banner__title__container">
     <h2 class="magenta__banner__title">Pricing.</br>Pricing.</br>Pricing.</br></h2>
   </div>
 </div>
-  
-<div class="single__wrapper">   
-  <div class="single__content" style="margin-bottom: 0;">
 
+<div class="single__wrapper">
+  <div class="single__content" style="margin-bottom: 0;">
     <h3>I charge $45 for an initial 30 minute consultation.</h3>
     <h3>Then I charge $90 per hour for any on-going sessions that you feel are necessary, which will usually occur on a weekly basis.</h3>
 
@@ -66,7 +59,7 @@
 
 <%= partial "links/patreon.html", assigns %>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
     <h2>Next Steps</h2>
     <p>If you're still interested in having me coach you, then there's two things you need to do.</p>

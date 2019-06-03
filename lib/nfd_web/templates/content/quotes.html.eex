@@ -1,11 +1,9 @@
 
 <div class="single__wrapper">
-
   <h2 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
 
   <div class="single__content">
-    <p>Essentially, this is where you can view a list of all the various visual items on the website. This is in addition to new ones I've personally created! It will slowly be populated in due time :D</p>
-    <!-- Mention how they're also available on pinterest etc. -->
+    <%= raw @item["content"] %>
   </div>
 </div>
 
@@ -14,7 +12,7 @@
 <div class="single__wrapper--quotes">
   <div class="quote__list">
     <%= Enum.map(@items, fn(quote) -> %>
-    <a href='/quotes/<%= quote["slug"] %>'>  
+    <a href='/quotes/<%= quote["slug"] %>'>
       <div class="quote__item">
         <img class="quote__image" src='<%= quote["image_url"] %>' alt='<%= quote["title"] %>'>
       </div>

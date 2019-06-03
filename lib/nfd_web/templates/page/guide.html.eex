@@ -1,7 +1,7 @@
 <div class="single__wrapper">
   <h1 class="single__title">Guide <img src="/images/logo.png" class="logo__square" alt="" style="margin-right: 1rem;"/><a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#need a link to all the website content, instead?</p></a></h2>
   <div class="single__content">
-    <!-- TODO -->
+    <%= raw child_content(@item["children"], "guide-intro") %>
   </div>
 </div>
 
@@ -9,14 +9,15 @@
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0rem;"/>
-    <!-- TODO -->
+    <%= raw child_content(@item["children"], "guide-trust-the-process") %>
   </div>
 </div>
 
 <%= partial "links/patreon.html", assigns %>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
+    <%= raw child_content(@item["children"], "guide-meat") %>
   </div>
 </div>
 
@@ -71,7 +72,7 @@
   </div>
 </div>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
     <div class="guide__suggestion">
       <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
@@ -83,7 +84,7 @@
     <p>In order to do this, we will be posting a daily journal into the NeverFap Deluxe Discord <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel.</p>
     <p>Can't be bothered?</p>
     <p>Well, that's the reason why it takes 5 years on average of people to overcome their porn addiction. You distrust the process, you lose the game. It's honestly that simple.</p>
-    
+
     <p>Furthermore, it's a great opportunity to see what everyone else is doing in terms of their healthy coping mechanisms, as well as understand the steps they're taking on a daily basis to get 90+ days with their progress.</p>
     <p>Another great thing about <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> is the tight-nit community we have on the channel. Because we're small, you get the care and attention you deserve and I always respond to messages within 24 hours.</p>
     <p>Oh, and let's not forget the acknowledgement process! We acknowledge each other's journal entries with with emojis, and it's a great motivator to see that other people are following the same journey that you are.</p>
@@ -93,7 +94,7 @@
 
 <%= partial "links/discord.html", assigns %>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
     <div class="guide__suggestion">
       <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
@@ -124,12 +125,12 @@
     <p>They are fantastic resources which provide in-depth analysis of issues related to porn addiction recovery, and are referenced throughout the website.</p>
     <p>Here are some of my top picks.</p>
 
-    <p class="guide__link__container"><a class="guide__link" href="/articles/my-personal-porn-recovery-journey/">My Personal Porn Recovery Journey</a></br> 
+    <p class="guide__link__container"><a class="guide__link" href="/articles/my-personal-porn-recovery-journey/">My Personal Porn Recovery Journey</a></br>
       Learn a bit more about my porn recovery journey, as well as how I managed to eventually kick the habit.</p>
-    <p class="guide__link__container"><a class="guide__link" href="articles/the-importance-of-meditation-for-porn-addiction/">The Importance Of Meditation For Porn Addiction</a></br> 
+    <p class="guide__link__container"><a class="guide__link" href="articles/the-importance-of-meditation-for-porn-addiction/">The Importance Of Meditation For Porn Addiction</a></br>
       Learn about the power of meditation and how it can help you with your porn addiction recovery.</p>
-    <p class="guide__link__container"><a class="guide__link" href="/articles/introduction-to-the-neverfap-deluxe-guide/">The Five Fundamental Principles Of NeverFap</a></br> 
-      Learn about some of the fundamental rules and principles of NeverFap Deluxe.</p>  
+    <p class="guide__link__container"><a class="guide__link" href="/articles/introduction-to-the-neverfap-deluxe-guide/">The Five Fundamental Principles Of NeverFap</a></br>
+      Learn about some of the fundamental rules and principles of NeverFap Deluxe.</p>
   </div>
 </div>
 
@@ -139,14 +140,14 @@
   </div>
 </div>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
     <div class="guide__suggestion">
       <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
       <h1>NeverFap Deluxe Practices</h1>
     </div>
     <h3>Develop a greater understanding of awareness and meditation best practices.</h3>
-  
+
     <p>NeverFap Deluxe Practices focus solely on verifiable steps you can do on a daily basis to help you build awareness and calmness.</p>
     <p>At a bare minimum you should be meditating everyday, usually for 10 minutes before bed (at least that's what most people find easiest, myself included).</p>
     <p>To be quite honest, 100% of the actual recovery process in terms of effective change is nothing more than meditation.</p>
@@ -155,11 +156,11 @@
     <p>That's because convincing you to actually treat your mental health seriously is 85% of the battle. It's the primary thing most people struggle with, otherwise you wouldn't have become a porn addict within the first place.</p>
     <p>Regardless, here are some exercises that I recommend.</p>
 
-    <p class="guide__link__container"><a class="guide__link" href="/practices/observe-your-senses/">Observe Your Senses</a></br> 
+    <p class="guide__link__container"><a class="guide__link" href="/practices/observe-your-senses/">Observe Your Senses</a></br>
       Our primary meditation exercise, which is the sole exercise we recommend that you practice every day.</p>
-    <p class="guide__link__container"><a class="guide__link" href="/practices/slow-down-time/">Slow Down Time</a></br> 
+    <p class="guide__link__container"><a class="guide__link" href="/practices/slow-down-time/">Slow Down Time</a></br>
       This exercise is great as an introduction to calmness.</p>
-    <p class="guide__link__container"><a class="guide__link" href="/practices/dissolve-your-visual-field/">Dissolve Your Visual Field</a></br> 
+    <p class="guide__link__container"><a class="guide__link" href="/practices/dissolve-your-visual-field/">Dissolve Your Visual Field</a></br>
       This is an excellent visual exercise which is designed to shatter your ego.</p>
   </div>
 </div>
@@ -171,7 +172,7 @@
 </div>
 
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <div class="guide__suggestion">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
@@ -184,7 +185,7 @@
       <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="100%" height="300"></iframe>
     </div>
   </div>
-  
+
   <%= partial "banners/podcast_banner.html", assigns %>
 
 
@@ -218,11 +219,11 @@
     <p>This is why we have such a strong emphasis on practice and consistency. There are no special tricks, nor shortcuts. There is only your commitment to your mental health.</p>
   </div>
 </div>
-  
+
 
 <%= partial "links/discord.html", assigns %>
 
-<div class="single__wrapper">      
+<div class="single__wrapper">
   <h2>Content List</h2>
   <p>If you'd like to dive into some of our articles, feel free to explore the range of articles, practices and courses sorted by category.</p>
 
@@ -234,7 +235,7 @@
     <h3 class="button__click button__off popular__latest__options--guide" id="awareness_over_all_click">Awareness over all</h3>
     <h3 class="button__click button__off popular__latest__options--guide" id="uncondition_over_judgement_click">Uncondition over judgement</h3>
   </div>
-  
+
   <div class="post__on posts--guide" id="introduction_posts">
     <%= partial "guide/category_posts.html", %{ items: @articles, post_category: "introduction" } %>
   </div>
@@ -268,13 +269,13 @@
 
 
 
-<!-- 
+<!--
 
 <div class="guide__banner">
   <div class="single__wrapper">
     <h2>NeverFap Deluxe Courses</h2>
 
-    <p class="guide__link__container"><a class="guide__link" href="/courses/introduction/">Introduction course</a></br> 
+    <p class="guide__link__container"><a class="guide__link" href="/courses/introduction/">Introduction course</a></br>
       Is great as a beginning resource if you'd like to learn some of the rules and principles of NeverFap Deluxe.</p>
 
   </div>
@@ -293,7 +294,7 @@
 
 
 
-<!-- <%#  
+<!-- <%#
     <h2>Getting Started</h2>
 
     <p>Before you begin, I highly recommend becoming familiar with <a class="link" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles of NeverFap</a>.</p>
@@ -301,7 +302,7 @@
 
     <div class="button__wrapper">
       <a
-        class="button button__secondary" 
+        class="button button__secondary"
         href="/articles/the-five-fundamental-principles-of-neverfap"
         >Learn More About The Five Principles.</a
       >
@@ -315,7 +316,7 @@
 
     <div class="button__wrapper">
       <a
-        class="button button__secondary" 
+        class="button button__secondary"
         href="/articles"
         >NeverFap Deluxe Articles.</a
       >
@@ -328,10 +329,10 @@
     <p>My recommended approach is to start with <a class="link" href="/practices/observe-your-senses">Observe Your Senses</a> (which will be the core exercise you will practice every single day) and then to pick one additional exercise to practice throughout the day.</p>
 
     <h2>Article Types</h2>
-    
+
     <div class="button__wrapper">
       <a
-        class="button button__secondary" 
+        class="button button__secondary"
         href="/practices"
         >NeverFap Deluxe Practices.</a
       >
@@ -345,7 +346,7 @@
 
     <div class="button__wrapper">
       <a
-        class="button button__secondary" 
+        class="button button__secondary"
         href="/articles/the-five-fundamental-principles-of-neverfap"
         >Learn More About The Five Principles.</a
       >

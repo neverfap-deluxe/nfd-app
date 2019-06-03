@@ -1,19 +1,15 @@
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <h1 class="single__title">Promote NeverFap Deluxe <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
   <div class="single__content" style="margin-bottom: 0;">
-    <!-- TODO PUT IN INTRO -->
+    <%= raw child_content(@item["children"], "promote_neverfap_deluxe-intro") %>
   </div>
 </div>
 
 <%= partial "links/patreon.html", assigns %>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
-    <h2>NeverFap Deluxe Marketing</h2>
-    
-    <p>Currently my biggest challenge is marketing. Not only is it hugely time consuming, however it's something which also detracts from my ability to create and focus on building content.</p>
-    <p>Certainly, any amount of effort spent towards helping us spread the website, guide and our various platforms to others, goes an incredibly long way towards helping us provide people with the help they deserve.</p>
-    <p>In order to assist you, here are some things you can do which will grow the brand and spread the word out there:</p>  
+    <%= raw child_content(@item["children"], "promote_neverfap_deluxe-marketing") %>
   </div>
 </div>
 
@@ -33,12 +29,9 @@
   </div>
 </div>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
-    <h2>NeverFap Deluxe Volunteers</h2>
-    <p>Our marketing efforts aside, we also benefit greatly from passionate volunteers who are looking to help NeverFap Deluxe manage a lot of the services that it currently offers!</p>
-    <p>We appreciate skills of all kinds, whether you believe you're great at talking with people and offering support, adept and creating social media content or even if you think you would make a suitable moderator on one of our many platforms!</p>
-    <p>Here is a list of the awesome ways you can contribute:</p>
+    <%= raw child_content(@item["children"], "promote_neverfap_deluxe-volunteers") %>
   </div>
 </div>
 
@@ -53,7 +46,7 @@
     </div>
   </div>
 </div>
-  
+
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
     <h2>NeverFap Deluxe Donations</h2>
@@ -66,7 +59,7 @@
 
 <%= partial "links/patreon.html", assigns %>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
     <h2>Thank you!</h2>
     <p>Regardless of whether you decide to help contribute or not, you being on this website and taking the time explore my ideas and help address your own mental health challenges is support enough!</p>
@@ -74,5 +67,5 @@
   </div>
 </div>
 
-  
+
 <%= partial "reddit_question_banner.html", assigns %>

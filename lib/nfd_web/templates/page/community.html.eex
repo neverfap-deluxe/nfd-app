@@ -1,4 +1,4 @@
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <h1 class="single__title">Community <img src="/images/logo.png" class="logo__square" alt=""/></h2>
 
   <div class="page__index">
@@ -17,14 +17,10 @@
       <a href="#pinterest_com"><li class="index__item"><img class="account__pinterest__button__logo" src="/images/pinterest__logo.png"/>  Pinterest</li></a>
     </ol>
   </div>
-    
-  <div class="single__content" style="margin-bottom: 0;">
-    <p>Join the NeverFap Deluxe Community!</p>
-    <p>There are a heap of different ways you can interact with the NeverFap Deluxe Community, whether you want to chat with others, or even follow NeverFap Deluxe on social media.</p>
-    <p>In addition, we offer a variety of unique content that is available only when you register for a NeverFap Deluxe Account.</p>
-    <p>This includes things like helpful email campaigns to help you keep on track with your porn recovery, as well as a bunch of audio courses to teach you meditation and awareness best practices.</p>
-  </div>
 
+  <div class="single__content" style="margin-bottom: 0;">
+    <%= raw child_content(@item["children"], "community-intro") %>
+  </div>
 </div>
 
 <div class="account__info account__info--margin-top">
@@ -40,13 +36,13 @@
 
     <h3 class="articles__link cursor__default">7 Day NeverFap Deluxe Kickstarter</h3>
     <p>With our FREE 7 Day NeverFap Deluxe Kickstarter, we explain the ropes of how you can get started with the NeverFap Deluxe Method of overcoming porn addiction.</p>
-    
+
     <h3 class="articles__link cursor__default">10 Day Meditation Primer</h3>
     <p>Feeling a bit confused about meditation? The 10 Day Meditation Primer is designed to explain what meditation is, how it works, as well as what you can do to get started and practicing straight-away.</p>
 
     <h3 class="articles__link cursor__default">28 Day Awareness Challenge</h3>
     <p>The 28 Day Awareness Challenge consists of a series of challenges which you can focus on each day, designed to increase your awareness.</p>
-    
+
   </div>
 </div>
 
@@ -86,7 +82,7 @@
 </div>
 
 <%= partial "links/reddit.html", assigns %>
-  
+
 
 <div class="single__wrapper single__wrapper--community">
   <div id="patreon_com" class="single__content">
@@ -99,7 +95,7 @@
 </div>
 
 <%= partial "links/patreon.html", assigns %>
-  
+
 
 <div class="single__wrapper single__wrapper--community">
   <div id="instagram_com" class="single__content">
@@ -111,7 +107,7 @@
 </div>
 
 <%= partial "links/instagram.html", assigns %>
-  
+
 <div class="single__wrapper single__wrapper--community">
   <div id="facebook_com" class="single__content">
     <h2>Facebook</h2>
@@ -145,7 +141,7 @@
 </div>
 
 <%= partial "links/youtube.html", assigns %>
-  
+
 
 <div class="single__wrapper single__wrapper--community">
   <div id="tumblr_com" class="single__content">
@@ -157,7 +153,7 @@
 </div>
 
 <%= partial "links/tumblr.html", assigns %>
-  
+
 <div class="single__wrapper single__wrapper--community">
   <div id="pinterest_com" class="single__content">
     <h2>Pinterest</h2>
@@ -168,4 +164,3 @@
 </div>
 
 <%= partial "links/pinterest.html", assigns %>
-  

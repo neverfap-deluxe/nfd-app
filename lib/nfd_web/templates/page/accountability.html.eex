@@ -1,17 +1,13 @@
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>
   <div class="single__content">
-    <p>Welcome to the NeverFap Deluxe Accountabilty Program!</p>
-    <p>This program has been designed to help you commit to your mental health, by providing you with the motivation and awareness to stick with your daily meditation and mental health routine.</p>
-    <p>It has been designed with our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel in mind as that's where most our participants are posting, however you're more than welcome to use this as a personal journaling technique.</p>
-    <p>Although certainly, part of the value comes from reading the healthy coping mechanisms others post about in the channel.</p>
-    <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+    <%= raw child_content(@item["children"], "accountability-intro") %>
   </div>
 </div>
 
 <%= partial "links/discord.html", assigns %>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <div class="single__content">
     <h2>The Accountability Process</h2>
     <p>Here's how the process works.</p>
@@ -22,12 +18,12 @@
     <p>The idea is that we want to be focusing on positive change, because that is ultimately that the process of recovery is about.</p>
     <p>Replacing negative habits with positive habits.</p>
     <p>Therefore, in order for this to be effective you will need to provide two key details:</p>
-    
+
     <hr class="hrul"/>
       <ul>
         <li>- Today's date</li>
-        <li>- A list of healthy coping mechanisms you practiced for that day.</li>  
-        <li>- A list of things you're going to do differently tomorrow.</li>  
+        <li>- A list of healthy coping mechanisms you practiced for that day.</li>
+        <li>- A list of things you're going to do differently tomorrow.</li>
       </ul>
     <hr class="hrul__bottom"/>
 
@@ -42,7 +38,7 @@
 
 <%= partial "links/discord.html", assigns %>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <div class="single__content">
     <h2>The NeverFap Deluxe Discord Bot</h2>
     <p>Aside from the <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> system I've created, I've also spent an absurd amount of time building the NeverFap Deluxe Bot which is designed to assist you with the process.</p>
@@ -50,11 +46,11 @@
     <hr class="hrul"/>
       <ul>
         <li>- It will automatically keep track of all your <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> posts.</li>
-        <li>- It will send you a reminder of yesterday's post, so that you don't forget what you set out to improve.</li> 
-        <li>- It will message you on key milestones with advice, as well as remind you if you haven't been posting in a while.</li>  
-        <li>- It will let you know if people have reacted to your post.</li>  
-        <li>- It will post a daily tally of people's posts and what day they're up to.</li>  
-        <li>- And so much more!</li>  
+        <li>- It will send you a reminder of yesterday's post, so that you don't forget what you set out to improve.</li>
+        <li>- It will message you on key milestones with advice, as well as remind you if you haven't been posting in a while.</li>
+        <li>- It will let you know if people have reacted to your post.</li>
+        <li>- It will post a daily tally of people's posts and what day they're up to.</li>
+        <li>- And so much more!</li>
       </ul>
     <hr class="hrul__bottom"/>
     <p>Certainly, I've put literal months into developing this thing, and for good reason: The bot has statistically increased engagement on the Discord channel, and it genuinely helps keep you on track.</p>
@@ -64,7 +60,7 @@
 
 <%= partial "links/discord.html", assigns %>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <div class="single__content">
     <h2>Accountability Examples</h2>
 
@@ -79,7 +75,7 @@
         <p>- Read the NeverFap Homepage.</p>
       </div>
     </div>
-    
+
     <div class="accountability__example__container">
       <h2>Date: 13-10-18</h2>
       <h3>Meditation streak: 21 days</h3>
@@ -87,7 +83,7 @@
         <p>- Meditated ten minutes before bed.</p>
         <p>- Meditated fifteen minutes on the way to work.</p>
         <p>- Practiced <a class="link" href="/practices/observe">Observe Your Senses</a> for 20 minutes.</p>
-        <p>- Made a conscious effort not to look at women in public.</p>    
+        <p>- Made a conscious effort not to look at women in public.</p>
       </div>
     </div>
 
