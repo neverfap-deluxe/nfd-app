@@ -242,19 +242,7 @@ defmodule NfdWeb.PageController do
 
     case client |> Page.summary() do
       {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        conn |> render("summary.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
-        render_404_page(conn)
-    end
-  end
-
-  def summary(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.summary() do
-      {:ok, response} ->
+        # IO.inspect List. response.body["data"]["children"][0]
         Meta.increment_visit_count(response.body["data"])
         conn |> render("summary.html", item: response.body["data"], page_type: page_type)
       {:error, _error} -> 

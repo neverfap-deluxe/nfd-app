@@ -118,7 +118,8 @@
         <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_instagram_url) %>"><img class="header__instagram__button__logo" src="/images/instagram__logo.png"/></a>
         <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_facebook_url) %>"><img class="header__facebook__button__logo" src="/images/facebook__logo.png"/></a>
         <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_twitter_url) %>"><img class="header__twitter__button__logo" src="/images/twitter__logo__blue.png" /></a>
-        <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_patreon_url) %>"><img class="header__patreon__button__logo" src="/images/patreon__logo.jpg" /></a>
+        <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_youtube_url) %>"><img class="header__youtube__button__logo" src="/images/youtube__logo__rounded.png"/></a>
+        <!-- <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_patreon_url) %>"><img class="header__patreon__button__logo" src="/images/patreon__logo.jpg" /></a> -->
       </div>
   
       <a href="/accountability-program" class="header__module">

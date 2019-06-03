@@ -28,6 +28,7 @@ config :nfd,
   social_instagram_url: "https://www.instagram.com/neverfap_deluxe",
   social_tumblr_url: "https://neverfapdeluxe.tumblr.com/",
   social_pinterest_url: "https://www.pinterest.com.au/neverfapdeluxe/",
+  social_youtube_url: "https://www.youtube.com/channel/UCHiMNZ86_zwW1RebKDcZEoQ/",
 
   general_type: "generalemail",
   kickstarter_type: "neverfapdeluxekickstarter",

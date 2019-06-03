@@ -1,0 +1,9 @@
+<div class="account__info">
+  <p class="account__info__title">Checkout some of our delicious video content.</p>
+  <div class="account__buttons">
+    <a class="account__youtube__button__container" href="<%= Application.get_env(:nfd, :social_youtube_url) %>">
+      <img class="account__youtube__button__logo" src="/images/youtube__logo__rounded.png" />
+      <p class="account__youtube__button__text">YOUTUBE <span class="account__youtube__button__text--display">CHANNEL</span></p>
+    </a>
+  </div>
+</div>

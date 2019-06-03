@@ -1,9 +1,7 @@
 <div class="single__wrapper">   
   <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
   <div class="single__content" style="margin-bottom: 0;">
-    <p>I am currently offering free advice to people looking for additional help for their porn addiction recovery journey.</p>
-    <p>Not only to help you answer any questions you may have, but also to ensure that NeverFap Deluxe remains an amazing and accessible resource for both beginners and veterans alike.</p>
-    <p>In order to receive a detailed break-down of next steps to take with your porn addiction recovery, all you have to do is post in the NeverFap Deluxe Subreddit with the tag <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewNeverFapper</a>.</p>
+    <!-- TODO -->
   </div>
 </div>
 
@@ -43,7 +41,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="single__wrapper">   
   <div class="single__content" style="margin-bottom: 0;">

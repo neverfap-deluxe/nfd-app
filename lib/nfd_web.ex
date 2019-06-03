@@ -82,6 +82,10 @@ defmodule NfdWeb do
           pre_title <> title
       end
 
+      def child_content(list, name) do 
+        Enum.find(list, fn(item) -> item["slug"] == name end)["content"]
+      end
+
       def iterate_json_collection(collection) do
         if length(collection) != 1 do 
           collection |> Enum.join(", ")

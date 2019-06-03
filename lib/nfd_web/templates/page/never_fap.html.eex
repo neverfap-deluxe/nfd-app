@@ -1,8 +1,8 @@
 <div class="single__wrapper">   
   <h1 class="single__title">Never Fap <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
+    
   <div class="single__content" style="margin-bottom: 0;">
-    <p>Never Fap is a term used to describe the porn addiction recovery process.</p>
-    <p>It is fully open-source for your pleasure.</p>
+    <%= raw @item["content"] %>
   </div>
 </div>
 

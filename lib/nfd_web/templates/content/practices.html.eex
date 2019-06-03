@@ -1,14 +1,9 @@
 <div class="single__wrapper">   
-  
   <h1 class="single__title">Practices <img src="/images/logo.png" class="logo__square" alt=""/><a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#need a link to all the website content, instead?</p></a></h2>
 
   <div class="single__content">
-    <p>A complete list of all of the mental health practices here on NeverFap Deluxe. Yipee!</p>
-    <p>If instead if you're looking for a more structured approach towards addressing your porn addiction, then I recommend checking out our <a href="/courses" class="link" >NeverFap Deluxe Courses</a> section!</p>
-    <p>If however you were searching for a complete list of all our contextual articles on the website, please check out the impeccably arranged <a class="link"  href="/articles">NeverFap Deluxe Articles</a> page.</p>
-    <p>You may sort practices by latest or category.</p>
+    <%= raw @item["content"] %>
   </div>
-
 </div>
 
 <%= partial "links/patreon.html", assigns %>

@@ -185,6 +185,17 @@
   .header__reddit__button__logo:hover {
     top: -0.4rem;
   }
+
+  .header__youtube__button__logo {
+    position: relative;
+    width: 31px;
+    height: 31px;
+    top: 0;
+    transition: .2s top;
+  }
+  .header__youtube__button__logo:hover {
+    top: -0.4rem;
+  }
   
   .header__patreon__button__logo {
     position: relative;

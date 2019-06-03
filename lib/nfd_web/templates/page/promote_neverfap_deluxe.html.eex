@@ -1,12 +1,7 @@
 <div class="single__wrapper">   
   <h1 class="single__title">Promote NeverFap Deluxe <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
   <div class="single__content" style="margin-bottom: 0;">
-    <p>Thank you for considering helping out with NeverFap Deluxe!</p>  
-    <p>As you may know, I spend a lot of my time building this brand to ensure that it can become the best possible resource for everyone irrespective of age, gender, wealth or privilege.</p>
-    <p>My aim is to help as many people as possible who are trying to overcome their porn addiction, so we can finally kill this beast once and for all.</p>
-    <p>However, I can't do it alone.</p>
-    <p>There's only so much my two hands can do everyday, and with your support we can grow this thing into something huge and help millions of people suffering from this awful addiction.</p>
-    <p>And like all movements, it begins with awareness.</p>
+    <!-- TODO PUT IN INTRO -->
   </div>
 </div>
 

@@ -12,9 +12,9 @@
       <a href="#instagram_com"><li class="index__item"><img class="account__instagram__button__logo" src="/images/instagram__logo.png"/>  Instagram</li></a>
       <a href="#facebook_com"><li class="index__item"><img class="account__facebook__button__logo" src="/images/facebook__logo.png"/>  Facebook</li></a>
       <a href="#twitter_com"><li class="index__item"><img class="account__twitter__button__logo" src="/images/twitter__logo__blue.png" />  Twitter</li></a>
+      <a href="#youtube_com"><li class="index__item"><img class="account__youtube__button__logo" src="/images/youtube__logo__rounded.png" />  YouTube</li></a>
       <a href="#tumblr_com"><li class="index__item"><img class="account__tumblr__button__logo" src="/images/tumblr__logo__blue.png"/>  Tumblr</li></a>
       <a href="#pinterest_com"><li class="index__item"><img class="account__pinterest__button__logo" src="/images/pinterest__logo.png"/>  Pinterest</li></a>
-
     </ol>
   </div>
     
@@ -134,6 +134,18 @@
 
 <%= partial "links/twitter.html", assigns %>
 
+
+<div class="single__wrapper single__wrapper--community">
+  <div id="youtube_com" class="single__content">
+    <h2>YouTube</h2>
+    <p>NeverFap Deluxe has a YouTube Channel!</p>
+    <p>At this point it mostly features the NeverFap Deluxe Podcast as well as the Guided Meditation Series, however I hope to make some proper videos at some point.</p>
+    <p>Please subscribe!</p>
+  </div>
+</div>
+
+<%= partial "links/youtube.html", assigns %>
+  
 
 <div class="single__wrapper single__wrapper--community">
   <div id="tumblr_com" class="single__content">

@@ -2,12 +2,7 @@
   <h1 class="single__title">Guided Meditations <img src="/images/logo.png" class="logo__square" alt="" style="margin-right: 1rem;"/> <a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#need a link to all the website content, instead?</p></a></h2>
 
   <div class="single__content">
-    <p>Here are a complete list of all of the guided meditations here on my amazingly useful website, NeverFap Deluxe!</p>
-    <p>I produce them on a weekly basis and they can be downloaded as a podcast on iTunes, Castbox and Spotify. They are also avaliable on <a class="link" href="https://soundcloud.com/neverfapdeluxe">SoundCloud</a>.</p>
-    <p>Before diving into these guided meditations however, it's best that you first read about what meditation actually is as a practice, as well as how it can benefit you. Article: <a href="/articles/the-importance-of-meditation-for-porn-addiction/"class="link">The Importance Of Meditation For Porn Addiction</a></p>
-    <p>In addition, please read <a class="link" href="/practices/observe-your-senses">Observe Your Senses</a> in order to gain a better understanding of how to actually practice meditation.</p>
-
-    <iframe src="https://castbox.fm/app/castbox/player/id2113294?v=4.1.190428&autoplay=0" frameborder="0" width="100%" height="300"></iframe>
+    <%= raw @item["content"] %>
   </div>
 </div>
 
@@ -22,14 +17,10 @@
         <h3 style="margin-bottom: 1rem;"><%= raw meditation["content"] %></h3>
         <div class="podcast__item__bottom">
           <a class="link articles__link" href='<%= meditation["podcast_url"] %>'>episode link</a>
-          <!-- <audio controls src='<%= meditation["podcast_url"] %>'>
-            Your browser does not support the <code>audio</code> element.
-          </audio>   -->
         </div>
       </div>
     <% end ) %>
   </div>
 </div>
-
 
 <script src='<%= Routes.static_path(@conn, "/js/articles.js") %>'></script>

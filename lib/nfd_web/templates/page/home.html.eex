@@ -89,8 +89,11 @@
   
   <div class="homepage__section">
     <h1>How it works.</h1>
-    <h2>It takes approximately 90 days to overcome porn addiction.</h2> <!-- <i class="em em-tent"></i> -->
-    <h3>It's called the <u>NeverFap Deluxe 90 Day Rule</u>, because those without healthy coping mechanisms rarely make it past 90 days.</h3>
+    <!-- <div class="homepage__feature__box"> -->
+      <h2>It takes approximately 90 days to overcome porn addiction.</h2> <!-- <i class="em em-tent"></i> -->
+      <h3>It's called the <u>NeverFap Deluxe 90 Day Rule</u>, because those without healthy coping mechanisms rarely make it past 90 days.</h3>    
+      <!-- <div class="homepage__tldr--signature">NeverFap Deluxe.</div>
+    </div> -->
     <p>In other words, if you can make it past 90 days without relapsing, then it most likely means you've developed effective control over your mind.</p>
     <p style="margin-top: 2rem; margin-bottom: 1rem;"><span class="articles__link cursor__default" style="text-decoration: none; margin-left:0.7rem;">NeverFap Deluxe aims to teach you this control.</p></span>
 

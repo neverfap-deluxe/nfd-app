@@ -1,14 +1,9 @@
 
 <div class="single__wrapper">   
-  
   <h1 class="single__title">Blogs <img src="/images/logo.png" class="logo__square" alt="" style="margin-right: 1rem;" /> <a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#need a link to all the website content, instead?</p></a></h2>
 
   <div class="single__content">
-    <p>Welcome to the NeverFap Deluxe Blogs section, where users, fans and strange kangaroos of NeverFap Deluxe post their experiences with the NeverFap Deluxe Method of overcoming porn addiction!</p>
-    <p>All submissions are welcome! If you have an idea for a blog/article you've written, or perhaps you've already written one, feel free to send it over.</p>
-    <p><a class="link" href="/contact">Click here</a> to contact Daddy Reade!</p>
-    <p>Otherwise, please send me a DM on Discord or Reddit.</p>
-    <p>We don't currently have any submissions (that's okay!) although maybe you can be the first :D</p>
+    <%= raw @item["content"] %>
   </div>
 </div>
 
@@ -20,5 +15,5 @@
     <%= partial "list/articles_latest_plain_text.html", %{ items: @blogs, tag_type: "context" } %>
   </div>
 </div>
-<%= partial "links/loginregister_top--without-mobile.html", assigns %>
 
+<%= partial "links/loginregister_top--without-mobile.html", assigns %>

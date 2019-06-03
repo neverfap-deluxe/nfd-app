@@ -2,12 +2,15 @@ defmodule NfdWeb.ContentController do
   use NfdWeb, :controller
   use Timex
   
+  alias Nfd.Redirects
+
   alias Nfd.API
   alias Nfd.API.Content
 
   alias Nfd.Meta
   alias Nfd.Account.Subscriber
 
+  
   plug :put_layout, "general.html"
 
   def articles(conn, _params) do
@@ -27,7 +30,9 @@ defmodule NfdWeb.ContentController do
     page_type = "content"
     client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> Content.article(slug) do
+    verified_slug = Redirects.redirect(conn, slug, "article")
+
+    case client |> Content.article(verified_slug) do
       {:ok, response} ->
         check_api_response_for_404(conn, response.status)
         Meta.increment_visit_count(response.body["data"])
@@ -67,7 +72,9 @@ defmodule NfdWeb.ContentController do
     page_type = "content"
     client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> Content.practice(slug) do
+    verified_slug = Redirects.redirect(conn, slug, "practice")
+
+    case client |> Content.practice(verified_slug) do
       {:ok, response} ->
         check_api_response_for_404(conn, response.status)
         Meta.increment_visit_count(response.body["data"])
@@ -104,7 +111,9 @@ defmodule NfdWeb.ContentController do
     page_type = "content"
     client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> Content.course(slug) do
+    verified_slug = Redirects.redirect(conn, slug, "course")
+
+    case client |> Content.course(verified_slug) do
       {:ok, response} ->
         check_api_response_for_404(conn, response.status)
         Meta.increment_visit_count(response.body["data"])
@@ -137,7 +146,9 @@ defmodule NfdWeb.ContentController do
     page_type = "content"
     client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> Content.podcast(slug) do
+    verified_slug = Redirects.redirect(conn, slug, "podcast")
+
+    case client |> Content.podcast(verified_slug) do
       {:ok, response} ->
         check_api_response_for_404(conn, response.status)
         Meta.increment_visit_count(response.body["data"])
@@ -172,7 +183,9 @@ defmodule NfdWeb.ContentController do
     page_type = "content"
     client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> Content.quote(slug) do
+    verified_slug = Redirects.redirect(conn, slug, "quote")
+
+    case client |> Content.quote(verified_slug) do
       {:ok, response} ->
         check_api_response_for_404(conn, response.status)
         Meta.increment_visit_count(response.body["data"])
@@ -210,7 +223,9 @@ defmodule NfdWeb.ContentController do
     page_type = "content"
     client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> Content.meditation(slug) do
+    verified_slug = Redirects.redirect(conn, slug, "meditation")
+
+    case client |> Content.meditation(verified_slug) do
       {:ok, response} ->
         check_api_response_for_404(conn, response.status)
         Meta.increment_visit_count(response.body["data"])
@@ -245,7 +260,9 @@ defmodule NfdWeb.ContentController do
     page_type = "content"
     client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> Content.blog(slug) do
+    verified_slug = Redirects.redirect(conn, slug, "blog")
+
+    case client |> Content.blog(verified_slug) do
       {:ok, response} ->
         check_api_response_for_404(conn, response.status)
         Meta.increment_visit_count(response.body["data"])
@@ -279,7 +296,9 @@ defmodule NfdWeb.ContentController do
     page_type = "content"
     client = API.is_localhost(conn.host) |> API.api_client()
 
-    case client |> Content.update(slug) do
+    verified_slug = Redirects.redirect(conn, slug, "update")
+
+    case client |> Content.update(verified_slug) do
       {:ok, response} ->
         check_api_response_for_404(conn, response.status)
         Meta.increment_visit_count(response.body["data"])
