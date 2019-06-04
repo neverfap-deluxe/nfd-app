@@ -9,53 +9,21 @@
 
       <h3>Course overview</h3>
       <div class="email__day__container">
-        <div class="email__day__container__item">
-          <h4 class="email__day__container__item__title"><%= Application.get_env(:nfd, :kickstarter_day_0_title) %><br/> Day 0</h4>
-          <p class="email__day__container__item__text">A brief introduction into the series, as well as what to expect over the coming days.</p>
-        </div>
-        <div class="email__day__container__item">
-          <h4 class="email__day__container__item__title"><%= Application.get_env(:nfd, :kickstarter_day_1_title) %><br/> Day 1</h4>
-          <p class="email__day__container__item__text">Learn about why it's important to trust the process, as well as the consequences if you don't.</p>
-        </div>
-        <div class="email__day__container__item">
-          <h4 class="email__day__container__item__title"><%= Application.get_env(:nfd, :kickstarter_day_2_title) %><br/> Day 2</h4>
-          <p class="email__day__container__item__text">Understand the importance of awareness as your power for conscious action.</p>
-        </div>
-        <div class="email__day__container__item">
-          <h4 class="email__day__container__item__title"><%= Application.get_env(:nfd, :kickstarter_day_3_title) %><br/> Day 3</h4>
-          <p class="email__day__container__item__text">Understand how calmness makes you deadly effective in your day-to-day life.</p>
-        </div>
-        <div class="email__day__container__item">
-          <h4 class="email__day__container__item__title"><%= Application.get_env(:nfd, :kickstarter_day_4_title) %><br/> Day 4</h4>
-          <p class="email__day__container__item__text">Learn how meditation ties in both awareness and calmness into a suitable practice.</p>
-        </div>
-        <div class="email__day__container__item">
-          <h4 class="email__day__container__item__title"><%= Application.get_env(:nfd, :kickstarter_day_5_title) %><br/> Day 5</h4>
-          <p class="email__day__container__item__text">Understand what relapse means in the broader context of your porn addiction recovery.</p>
-        </div>
-        <div class="email__day__container__item">
-          <h4 class="email__day__container__item__title"><%= Application.get_env(:nfd, :kickstarter_day_6_title) %><br/> Day 6</h4>
-          <p class="email__day__container__item__text">Develop an appreciation for consistency and learn to respect consistent practice.</p>
-        </div>
-        <div class="email__day__container__item">
-          <h4 class="email__day__container__item__title"><%= Application.get_env(:nfd, :kickstarter_day_7_title) %><br/> Day 7</h4>
-          <p class="email__day__container__item__text">Understand the power of community and how it can help you overcome your porn addiction.</p>
-        </div>
+        <%= Enum.map(@item["days"], fn(item) -> %>
+          <div class="email__day__container__item">
+            <h4 class="email__day__container__item__title"><%= item["title"] %><br/> Day <%= item["day"] %></h4>
+            <p class="email__day__container__item__text"><%= item["description"] %></p>
+          </div>
+        <% end ) %>
       </div>
     </div>
   </div>
 
-
   <div class="seven__day__kickstarter__banner__box">
     <div class="seven__day__kickstarter__banner__list">
-      <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_0_title) %> - Day 0</p>
-      <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_1_title) %> - Day 1</p>
-      <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_2_title) %> - Day 2</p>
-      <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_3_title) %> - Day 3</p>
-      <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_4_title) %> - Day 4</p>
-      <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_5_title) %> - Day 5</p>
-      <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_6_title) %> - Day 6</p>
-      <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_7_title) %> - Day 7</p>
+      <%= Enum.map(@item["days"], fn(item) -> %>
+        <p class="seven__day__kickstarter__banner__item"><%= item["title"] %> - Day <%= item["day"] %></p>
+      <% end ) %>
     </div>
 
     <div class="seven__day__kickstarter__banner__form">

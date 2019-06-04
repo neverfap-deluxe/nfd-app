@@ -6,6 +6,7 @@ defmodule Nfd.Sitemaps do
 
   alias Nfd.API
   alias Nfd.API.Content
+  alias Nfd.API.ContentEmail
 
   # For testing: Nfd.Sitemaps.generate()
   # iex -S mix do phx.server
@@ -29,8 +30,10 @@ defmodule Nfd.Sitemaps do
          {:ok, quotesResponse} <- (client |> Content.quotes()),
          {:ok, meditationsResponse} <- (client |> Content.meditations()),
          {:ok, blogsResponse} <- (client |> Content.blogs()),
-         {:ok, updatesResponse} <- (client |> Content.updates())
-    do 
+         {:ok, updatesResponse} <- (client |> Content.updates()),
+         {:ok, sdkResponse} <- (client |> Content.seven_day_kickstarter()),
+
+    do
       create do
         add Helpers.page_path(Endpoint, :home), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :guide), priority: 0.5, changefreq: "weekly", expires: nil
@@ -67,15 +70,15 @@ defmodule Nfd.Sitemaps do
         add Helpers.content_path(Endpoint, :updates), priority: 0.5, changefreq: "weekly", expires: nil
 
         Enum.each(articlesResponse.body["data"]["articles"], fn(article) ->
-          add Helpers.content_path(Endpoint, :article, article["slug"]), priority: 0.5, changefreq: "weekly", expires: nil                    
+          add Helpers.content_path(Endpoint, :article, article["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
         end)
 
         Enum.each(practicesResponse.body["data"]["practices"], fn(practice) ->
-          add Helpers.content_path(Endpoint, :practice, practice["slug"]), priority: 0.5, changefreq: "weekly", expires: nil                    
+          add Helpers.content_path(Endpoint, :practice, practice["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
         end)
 
         Enum.each(coursesResponse.body["data"]["courses"], fn(course) ->
-          add Helpers.content_path(Endpoint, :course, course["slug"]), priority: 0.5, changefreq: "weekly", expires: nil                    
+          add Helpers.content_path(Endpoint, :course, course["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
         end)
 
         Enum.each(podcastsResponse.body["data"]["podcasts"], fn(podcast) ->
@@ -83,19 +86,23 @@ defmodule Nfd.Sitemaps do
         end)
 
         Enum.each(quotesResponse.body["data"]["quotes"], fn(quoteArg) ->
-          add Helpers.content_path(Endpoint, :quote, quoteArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil                  
+          add Helpers.content_path(Endpoint, :quote, quoteArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
         end)
 
         Enum.each(meditationsResponse.body["data"]["meditations"], fn(meditationArg) ->
-          add Helpers.content_path(Endpoint, :meditation, meditationArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil                  
+          add Helpers.content_path(Endpoint, :meditation, meditationArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
         end)
 
         Enum.each(blogsResponse.body["data"]["blogs"], fn(blogArg) ->
-          add Helpers.content_path(Endpoint, :blog, blogArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil                  
+          add Helpers.content_path(Endpoint, :blog, blogArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
         end)
 
         Enum.each(updatesResponse.body["data"]["updates"], fn(updateArg) ->
-          add Helpers.content_path(Endpoint, :update, updateArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil                  
+          add Helpers.content_path(Endpoint, :update, updateArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
+        end)
+
+        Enum.each(sdkResponse.body["data"]["days"], fn(updateArg) ->
+          add Helpers.content_path(Endpoint, :twenty_eight_day_awareness_single, updateArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
         end)
 
         # TODO: Will also need to configure the individual days, once they're created.
@@ -104,7 +111,7 @@ defmodule Nfd.Sitemaps do
         add Helpers.content_email_path(Endpoint, :twenty_eight_day_awareness), priority: 0.5, changefreq: "weekly", expires: nil
       end
     end
-    
+
     ping()
-  end 
+  end
 end

@@ -33,16 +33,7 @@ config :nfd,
   general_type: "generalemail",
   kickstarter_type: "neverfapdeluxekickstarter",
   meditation_primer_type: "meditationprimer",
-  awareness_challenge_type: "awarenesschallenge",
-
-  kickstarter_day_0_title: "Introduction",
-  kickstarter_day_1_title: "The Trust",
-  kickstarter_day_2_title: "The Awareness",
-  kickstarter_day_3_title: "The Calmness",
-  kickstarter_day_4_title: "The Meditation",
-  kickstarter_day_5_title: "The Relapse",
-  kickstarter_day_6_title: "The Consistency",
-  kickstarter_day_7_title: "The Community"
+  awareness_challenge_type: "awarenesschallenge"
 
 # Configures the endpoint
 config :nfd, NfdWeb.Endpoint,
@@ -64,11 +55,11 @@ config :phoenix, :json_library, Jason
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
 
-# if Mix.env() == :dev do 
+# if Mix.env() == :dev do
 #   import_config "#{Mix.env()}.secret.exs"
 # end
 
-# CUSTOM CONFIG 
+# CUSTOM CONFIG
 
 config :tesla, adapter: Tesla.Adapter.Hackney
 
