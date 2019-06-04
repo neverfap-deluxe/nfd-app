@@ -345,6 +345,19 @@ defmodule NfdWeb.PageController do
     end
   end
 
+  def neverfap_deluxe_open_source(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Page.neverfap_deluxe_open_source() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])
+        conn |> render("neverfap_deluxe_open_source.html", item: response.body["data"], page_type: page_type)
+      {:error, _error} ->
+        render_404_page(conn)
+    end
+  end
+
   # Images
   def test(conn, _params) do
     conn |> render("test.html")

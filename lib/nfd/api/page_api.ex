@@ -100,4 +100,8 @@ defmodule Nfd.API.Page do
   def chrome_extension(client) do
     get(client, "/chrome_extension/index.json")
   end
+
+  def neverfap_deluxe_open_source(client) do
+    get(client, "/neverfap_deluxe_open_source/index.json")
+  end
 end

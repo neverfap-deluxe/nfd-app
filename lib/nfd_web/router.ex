@@ -30,39 +30,51 @@ defmodule NfdWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-    get "/guide", PageController, :guide
     get "/community", PageController, :community
     get "/about", PageController, :about
     get "/contact", PageController, :contact
-    get "/disclaimer", PageController, :disclaimer
-    get "/privacy", PageController, :privacy
-    get "/terms-and-conditions", PageController, :terms_and_conditions
+    get "/everything", PageController, :everything
+    get "/coaching", PageController, :coaching
+
+    # INITIATIVES
     get "/accountability-program", PageController, :accountability
     get "/new-fap-deluxe-reddit-guidelines", PageController, :reddit_guidelines
     get "/new-neverfapper-reddit-guidelines", PageController, :reddit_guidelines
-    get "/everything", PageController, :everything
-    get "/coaching", PageController, :coaching
+    get "/helpful-neverfappers-academy", PageController, :helpful_neverfappers_academy
+    get "/promote-neverfap-deluxe", PageController, :promote_neverfap_deluxe
+    get "/donations", PageController, :donations
+
+    # GUIDES 
+    get "/guide", PageController, :guide
+    get "/summary", PageController, :summary
+    get "/neverfap-deluxe-bible", PageController, :neverfap_deluxe_bible
     get "/post-relapse-academy", PageController, :post_relapse_academy
     get "/emergency", PageController, :emergency
-    get "/neverfap-deluxe-league", PageController, :neverfap_deluxe_league
-    get "/neverfap-deluxe-bible", PageController, :neverfap_deluxe_bible
-    get "/helpful-neverfappers-academy", PageController, :helpful_neverfappers_academy
-    get "/summary", PageController, :summary
-    get "/donations", PageController, :donations
-    get "/promote-neverfap-deluxe", PageController, :promote_neverfap_deluxe
-    get "/never-fap", PageController, :never_fap
 
+    # APPS
     get "/desktop-app", PageController, :desktop_app
     get "/mobile-app", PageController, :mobile_app
     get "/chrome-extension", PageController, :chrome_extension
+    get "/neverfap-deluxe-league", PageController, :neverfap_deluxe_league
+    get "/neverfap-deluxe-open-source", PageController, :neverfap_deluxe_open_source
 
-    # Images
+    # MISC
+    get "/never-fap", PageController, :never_fap
+
+    # LEGAL
+    get "/disclaimer", PageController, :disclaimer
+    get "/privacy", PageController, :privacy
+    get "/terms-and-conditions", PageController, :terms_and_conditions
+
+    # IMAGES
     get "/test", PageController, :test
     get "/season-one", PageController, :season_one
     get "/season-two", PageController, :season_two
 
+    # PODCAST
     get "/apple_podcast.xml", PageController, :apple_podcast_xml
 
+    # CONTENT
     get "/articles", ContentController, :articles
     get "/articles/:slug", ContentController, :article
     get "/practices", ContentController, :practices
@@ -80,12 +92,11 @@ defmodule NfdWeb.Router do
     get "/updates", ContentController, :updates
     get "/updates/:slug", ContentController, :update
 
+    # CONTENT_EMAIL
     get "/seven-day-neverfap-deluxe-kickstarter", ContentEmailController, :seven_day_kickstarter
     get "/seven-day-neverfap-deluxe-kickstarter/:day", ContentEmailController, :seven_day_kickstarter_single
-
     get "/twenty-eight-day-awareness-challenge", ContentEmailController, :twenty_eight_day_awareness
     get "/twenty-eight-day-awareness-challenge/:day", ContentEmailController, :twenty_eight_day_awareness_single
-
     get "/ten-day-meditation-primer", ContentEmailController, :ten_day_meditation
     get "/ten-day-meditation-primer/:day", ContentEmailController, :ten_day_meditation_single
    end
