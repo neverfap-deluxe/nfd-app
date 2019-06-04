@@ -88,4 +88,16 @@ defmodule Nfd.API.Page do
   def never_fap(client) do
     get(client, "/never_fap/index.json")
   end
+
+  def desktop_app(client) do
+    get(client, "/desktop_app/index.json")
+  end
+
+  def mobile_app(client) do
+    get(client, "/mobile_app/index.json")
+  end
+
+  def chrome_extension(client) do
+    get(client, "/chrome_extension/index.json")
+  end
 end
