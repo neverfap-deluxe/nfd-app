@@ -49,11 +49,7 @@
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
-    <h2>NeverFap Deluxe Donations</h2>
-    <p>Of course, the other way with which you can support our movement is to pledge some money financially.</p>
-    <p>All money goes back into supporting the development of NeverFap Deluxe, whether it be the purchasing of equipment in order to produce better podcasts or as is desperately needed in my case, a new computer in order to develop these things a lot faster.</p>
-    <p>(I'm currently stuck with this 2012 macbook pro and it's soooooo slow)</p>
-    <p>You can learn more about these options on our <a class="link" href="/donations">Donations</a> page.</p>
+    <%= raw child_content(@item["children"], "promote_neverfap_deluxe-donations") %>
   </div>
 </div>
 
@@ -61,11 +57,8 @@
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
-    <h2>Thank you!</h2>
-    <p>Regardless of whether you decide to help contribute or not, you being on this website and taking the time explore my ideas and help address your own mental health challenges is support enough!</p>
-    <p>I wish you best of luck with your journey, and I hope you continue to derive value from NeverFap Deluxe.</p>
+    <%= raw child_content(@item["children"], "promote_neverfap_deluxe-thank-you") %>
   </div>
 </div>
-
 
 <%= partial "reddit_question_banner.html", assigns %>
