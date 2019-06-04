@@ -102,7 +102,7 @@ defmodule Nfd.Sitemaps do
         end)
 
         Enum.each(sdkResponse.body["data"]["days"], fn(updateArg) ->
-          add Helpers.content_path(Endpoint, :twenty_eight_day_awareness_single, updateArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
+          add Helpers.content_email_path(Endpoint, :seven_day_kickstarter_single, updateArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
         end)
 
         # TODO: Will also need to configure the individual days, once they're created.
