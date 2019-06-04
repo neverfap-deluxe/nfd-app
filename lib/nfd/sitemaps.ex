@@ -31,7 +31,7 @@ defmodule Nfd.Sitemaps do
          {:ok, meditationsResponse} <- (client |> Content.meditations()),
          {:ok, blogsResponse} <- (client |> Content.blogs()),
          {:ok, updatesResponse} <- (client |> Content.updates()),
-         {:ok, sdkResponse} <- (client |> Content.seven_day_kickstarter())
+         {:ok, sdkResponse} <- (client |> ContentEmail.seven_day_kickstarter())
     do
       create do
         add Helpers.page_path(Endpoint, :home), priority: 0.5, changefreq: "weekly", expires: nil
