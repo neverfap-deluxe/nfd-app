@@ -4,7 +4,7 @@
     <%= partial "header.html", assigns %>
     <div class="homepage__hero__sub">
       <h1 class="homepage__hero__title" style="display: inline-block;">NeverFap <span class="deluxe__font">Deluxe</span></h1>
-      <h2 class="homepage__hero__title__secondary">The Porn Addiction Recovery Process.</h2>    
+      <h2 class="homepage__hero__title__secondary">The Porn Addiction Recovery Process.</h2>
     </div>
   </div>
 
@@ -22,12 +22,12 @@
       Because once you intuitively understand how something works, you will
       <u>commit to it forever.</u> <i class="em em-v"></i>
     </p>
-    <p>Please keep reading if you'd like to learn more.</p> 
+    <p>Please keep reading if you'd like to learn more.</p>
     <p>Sincerely,</p>
     <p><i class="em em-sparkling_heart"></i> Daddy Reade. <i class="em em-sparkling_heart"></i></p>
     <!-- <p>Continue below to learn more.</p> -->
   </div>
-  
+
   <div class="account__info">
     <p class="account__info__title">Before we get started on the main course, here is some <span class="delicious__promotion">delicious</span> promotion. <i class="em em-admission_tickets"></i></p>
   </div>
@@ -37,11 +37,11 @@
         <h2 class="homepage__splitter__box__title">#accountability program</h2>
         <p>Maybe you're just lookin' for a "support group" to share cuddles with!? Well, The Reade&copy; has you covered!</p>
         <p>Join our Discord Server today. It's sexy.</p>
-        <a class="homepage__splitter__box__button homepage__splitter__box__button--pink" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Participate</a>    
+        <a class="homepage__splitter__box__button homepage__splitter__box__button--pink" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Participate</a>
       </div>
     </div>
     <div class="homepage__splitter__divider">
-    </div>  
+    </div>
     <div class="homepage__splitter__box homepage__splitter__box--discord">
       <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
     </div>
@@ -53,7 +53,7 @@
 
   <div class="homepage__splitter homepage__splitter--podcast">
     <div class="homepage__splitter__box homepage__splitter__box--top homepage__splitter__box--podcast">
-      <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="500" height="500"></iframe>        
+      <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="500" height="500"></iframe>
     </div>
     <div class="homepage__splitter__divider">
     </div>
@@ -62,15 +62,20 @@
         <h2 class="homepage__splitter__box__title">The NeverFap Deluxe Podcast</h2>
         <p>Can't be bothered reading for the next 5 minutes? Well, unfortuately that's just too bad and I'm going to have to ask you to read anyway!</p>
         <p>Listen to the NeverFap Deluxe Podcast, you slacka!</p>
-        <a class="homepage__splitter__box__button" href="https://neverfapdeluxe.com/podcast">Listen</a>    
+        <a class="homepage__splitter__box__button" href="https://neverfapdeluxe.com/podcast">Listen</a>
       </div>
     </div>
   </div>
-  
+
+  <div>
+    <h2>Let's not forget these goodies</h2>
+    
+  </div>
+
   <div class="account__info">
     <p class="account__info__title">OMFG!? You survived the promotion. <i class="em em-confetti_ball"></i> Well done.<i class="em em-confetti_ball"></i></p>
   </div>
-  
+
   <div class="homepage__section homepage__tldr">
     <h1>tldr;</h1>
     <h2>Essentially, it boils down to 10 minutes of meditation each day.</h2>
@@ -86,12 +91,12 @@
   <div class="account__info account__info--margin-top">
     <p class="account__info__title">Here's a more in-depth review of NeverFap Deluxe.</i></p>
   </div>
-  
+
   <div class="homepage__section">
     <h1>How it works.</h1>
     <!-- <div class="homepage__feature__box"> -->
       <h2>It takes approximately 90 days to overcome porn addiction.</h2> <!-- <i class="em em-tent"></i> -->
-      <h3>It's called the <u>NeverFap Deluxe 90 Day Rule</u>, because those without healthy coping mechanisms rarely make it past 90 days.</h3>    
+      <h3>It's called the <u>NeverFap Deluxe 90 Day Rule</u>, because those without healthy coping mechanisms rarely make it past 90 days.</h3>
       <!-- <div class="homepage__tldr--signature">NeverFap Deluxe.</div>
     </div> -->
     <p>In other words, if you can make it past 90 days without relapsing, then it most likely means you've developed effective control over your mind.</p>
@@ -105,7 +110,7 @@
   </div>
 
   <%= partial "home/a_lot_of_bad_over_90_days.html", assigns %>
-  
+
   <div class="homepage__section">
     <h1>...and it's these situations where <span style="color: rgba(255,46,182,1);">unhealthy coping mechanisms</span> crumble.</h1>
     <h2>This is where 90% of relapse happens.</h2>
@@ -144,7 +149,7 @@
       <h3>Commit to long-term thinking.</h3>
     </div>
   </div>
-  <div class="account__info"><p class="account__info__title">The skill we talk about most on this website is <u>meditation</u>. You'll learn a lot more about it soon.</p></div>      
+  <div class="account__info"><p class="account__info__title">The skill we talk about most on this website is <u>meditation</u>. You'll learn a lot more about it soon.</p></div>
   <div class="homepage__section homepage__section--adapt">
     <h1>Control which <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">anyone can learn</u> with practice and consistency.</h1>
     <h3>Right now. <i class="em em-male-technologist"></i></h3>
@@ -280,18 +285,18 @@
 
     <div class="button__wrapper">
       <a
-        class="button button__secondary" 
+        class="button button__secondary"
         href="/new-fap-deluxe-reddit-guidelines"
         >#NewNeverFapper submission guidelines.</a
       >
     </div>
-    
+
     <p>There's simply too much useful content on this website that it's hard to know where you should focus.</p>
     <p>Not to mention, everyone is truly different in terms of their life circumstances and a strong focus of NeverFap Deluxe is helping you get it right the first time.</p>
     <h2>Regardless, here are some basic guidelines. <i class="em em-golfer"></i></h2>
   </div>
 
-  <%= partial "home/healthy_coping_mechanisms_guidelines.html", assigns %>  
+  <%= partial "home/healthy_coping_mechanisms_guidelines.html", assigns %>
 
   <div class="homepage__section">
     <p>On the other hand, if you haven't seen a pair of pants in weeks because you've been glued to your computer screen in a haze of dysphoria and pre-cum. <i class="em em-wilted_flower"></i></p>
@@ -302,7 +307,7 @@
     <p>It's how I personally got started.</p>
     <p>Now you can too.</p>
   </div>
-<!-- 
+<!--
   <div class="homepage__section">
     <div class="simple__banner">
       <p>Put simply.</p>
@@ -312,7 +317,7 @@
   </div> -->
 
   <%#= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, seven_day_kickstarter_changeset: @seven_day_kickstarter_changeset } %>
-  
+
   <div class="homepage__section">
     <h2>So without further ado...</h2>
     <h3>(Elaborating on these two ideas of <u>awareness</u> and <u>calmness</u>)</h3>
@@ -392,7 +397,7 @@
 
 
   <!-- <div class="seven_day_kickstarter_cont">
-    7 day kickstarter plan. 
+    7 day kickstarter plan.
   </div> -->
 
 
@@ -423,7 +428,7 @@
       <li class="homepage__hero__principle__item">Balance over reward</li>
     </ul>
   </div>
-  
+
   <div class="homepage__section">
     <h3>You're doing it wrong. <i class="em em-x"></i></h3>
     <hr />

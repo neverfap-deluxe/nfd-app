@@ -4,7 +4,7 @@ defmodule NfdWeb.PageController do
   alias Nfd.API
   alias Nfd.API.Page
   alias Nfd.API.Content
-  
+
   alias Nfd.Meta
   alias Nfd.Account.Subscriber
   alias Nfd.Account.ContactForm
@@ -14,7 +14,7 @@ defmodule NfdWeb.PageController do
   def home(conn, _params) do
     page_type = "page"
     client = API.is_localhost(conn.host) |> API.api_client()
-     
+
     seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
 
     case client |> Page.home() do
@@ -23,7 +23,7 @@ defmodule NfdWeb.PageController do
         {:ok, articlesResponse} = client |> Content.articles()
 
         conn |> render("home.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -39,7 +39,7 @@ defmodule NfdWeb.PageController do
         Meta.increment_visit_count(response.body["data"])
         {:ok, articlesResponse} = client |> Content.articles()
         conn |> render("guide.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -53,7 +53,7 @@ defmodule NfdWeb.PageController do
         Meta.increment_visit_count(response.body["data"])
         {:ok, articlesResponse} = client |> Content.articles()
         conn |> render("community.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -63,12 +63,12 @@ defmodule NfdWeb.PageController do
     client = API.is_localhost(conn.host) |> API.api_client()
 
     contact_form_changeset = ContactForm.changeset(%ContactForm{}, %{name: "", email: "", message: ""})
-    
+
     case client |> Page.about() do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("about.html", item: response.body["data"], contact_form_changeset: contact_form_changeset, page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -81,11 +81,11 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("contact.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
-  
+
   def disclaimer(conn, _params) do
     page_type = "page"
     client = API.is_localhost(conn.host) |> API.api_client()
@@ -94,7 +94,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("disclaimer.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -107,7 +107,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("privacy.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -121,7 +121,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("terms_and_conditions.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -140,7 +140,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("accountability.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -153,7 +153,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("reddit_guidelines.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -166,7 +166,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("everything.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -179,7 +179,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("coaching.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -192,7 +192,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("post_relapse_academy.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -205,7 +205,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("emergency.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -218,7 +218,20 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("neverfap_deluxe_league.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
+        render_404_page(conn)
+    end
+  end
+
+  def neverfap_deluxe_bible(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Page.neverfap_deluxe_bible() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])
+        conn |> render("neverfap_deluxe_bible.html", item: response.body["data"], page_type: page_type)
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -231,7 +244,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("helpful_neverfappers_academy.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -245,7 +258,7 @@ defmodule NfdWeb.PageController do
         # IO.inspect List. response.body["data"]["children"][0]
         Meta.increment_visit_count(response.body["data"])
         conn |> render("summary.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -258,7 +271,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("donations.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -271,7 +284,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("promote_neverfap_deluxe.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -284,7 +297,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("never_fap.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -297,7 +310,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("desktop_app.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -310,7 +323,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("mobile_app.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -323,7 +336,7 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         conn |> render("chrome_extension.html", item: response.body["data"], page_type: page_type)
-      {:error, _error} -> 
+      {:error, _error} ->
         render_404_page(conn)
     end
   end
@@ -342,17 +355,17 @@ defmodule NfdWeb.PageController do
   end
 
 
-  def apple_podcast_xml(conn, _params) do 
+  def apple_podcast_xml(conn, _params) do
     client = API.is_localhost(conn.host) |> API.api_client()
 
     case Tesla.get(client, "http://rss.castbox.fm/everest/aab82e46f0cd4791b1c8ddc19d5158c3.xml") do
       {:ok, response} ->
         regex = ~r/https:\/\/s3.castbox.fm(\/*[a-zA-Z0-9])*.png/
-        # does_match = Regex.match?(regex, "https://s3.castbox.fm/89/8f/d7/ab55544abb81506d8240808921.png") |> IO.inspect 
-        
+        # does_match = Regex.match?(regex, "https://s3.castbox.fm/89/8f/d7/ab55544abb81506d8240808921.png") |> IO.inspect
+
         new_xml = Regex.replace(regex, response.body, "https://neverfapdeluxe.com/images/logo_podcast.png", global: true)
 
-        conn 
+        conn
           |> put_resp_content_type("text/xml")
           |> send_resp(200, new_xml)
 
@@ -361,8 +374,8 @@ defmodule NfdWeb.PageController do
     end
   end
 
-  defp render_404_page(conn) do 
-    conn 
+  defp render_404_page(conn) do
+    conn
       |> put_view(NfdWeb.ErrorView)
       |> render("404.html")
   end

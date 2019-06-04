@@ -45,6 +45,7 @@ defmodule NfdWeb.Router do
     get "/post-relapse-academy", PageController, :post_relapse_academy
     get "/emergency", PageController, :emergency
     get "/neverfap-deluxe-league", PageController, :neverfap_deluxe_league
+    get "/neverfap-deluxe-bible", PageController, :neverfap_deluxe_bible
     get "/helpful-neverfappers-academy", PageController, :helpful_neverfappers_academy
     get "/summary", PageController, :summary
     get "/donations", PageController, :donations
@@ -54,12 +55,12 @@ defmodule NfdWeb.Router do
     get "/desktop-app", PageController, :desktop_app
     get "/mobile-app", PageController, :mobile_app
     get "/chrome-extension", PageController, :chrome_extension
-    
+
     # Images
     get "/test", PageController, :test
     get "/season-one", PageController, :season_one
     get "/season-two", PageController, :season_two
-    
+
     get "/apple_podcast.xml", PageController, :apple_podcast_xml
 
     get "/articles", ContentController, :articles
@@ -81,13 +82,15 @@ defmodule NfdWeb.Router do
 
     get "/seven-day-neverfap-deluxe-kickstarter", ContentEmailController, :seven_day_kickstarter
     get "/seven-day-neverfap-deluxe-kickstarter/:day", ContentEmailController, :seven_day_kickstarter_single
+
     get "/twenty-eight-day-awareness-challenge", ContentEmailController, :twenty_eight_day_awareness
     get "/twenty-eight-day-awareness-challenge/:day", ContentEmailController, :twenty_eight_day_awareness_single
+
     get "/ten-day-meditation-primer", ContentEmailController, :ten_day_meditation
     get "/ten-day-meditation-primer/:day", ContentEmailController, :ten_day_meditation_single
    end
 
-  # Functions 
+  # Functions
   scope "/", NfdWeb do
     pipe_through :browser
 
@@ -97,7 +100,7 @@ defmodule NfdWeb.Router do
 
     get "/message_success", FunctionController, :send_message_success
     get "/message_failed", FunctionController, :send_message_failed
-  
+
     # Subscription functions
     post "/confirm_subscription", SubscriptionController, :add_subscription_validate_matrix
     get "/subscription_success", SubscriptionController, :confirm_subscription_validate_matrix
