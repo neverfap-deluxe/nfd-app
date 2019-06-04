@@ -1,0 +1,55 @@
+<div class="homepage__goodies">
+  <!-- <h2>Let's not forget these goodies</h2> -->
+  <div class="homepage__goodies__list">
+    <a class="homepage__goodies__item__link__wrapper" href="/neverfap">
+      <div class="homepage__goodies__item">
+        <h4 class="homepage__goodies__item__title"><span class="homepage__goodies__item__neverfap">NeverFap Deluxe</span> Bible</h4>
+      </div>
+    </a>
+    <a class="homepage__goodies__item__link__wrapper" href="/">
+      <div class="homepage__goodies__item">
+        <h4 class="homepage__goodies__item__title"><span class="homepage__goodies__item__neverfap">NeverFap Deluxe</span> Guided Meditation Series</h4>
+      </div>  
+    </a>
+    <a class="homepage__goodies__item__link__wrapper" href="/">
+      <div class="homepage__goodies__item">
+        <h4 class="homepage__goodies__item__title">7 Day <span class="homepage__goodies__item__neverfap">NeverFap Deluxe</span> Kickstarter</h4>
+      </div>    
+    </a>
+    <a class="homepage__goodies__item__link__wrapper" href="/">
+      <div class="homepage__goodies__item">
+        <h4 class="homepage__goodies__item__title"><span class="homepage__goodies__item__neverfap">NeverFap Deluxe</span> Chrome Extension</h4>
+      </div>
+    </a>
+    <a class="homepage__goodies__item__link__wrapper" href="/">
+      <div class="homepage__goodies__item">
+        <h4 class="homepage__goodies__item__title"><span class="homepage__goodies__item__neverfap">NeverFap Deluxe</span> Firefox Extension</h4>
+      </div>  
+    </a>
+    <a class="homepage__goodies__item__link__wrapper" href="/">
+      <div class="homepage__goodies__item">
+        <h4 class="homepage__goodies__item__title"><span class="homepage__goodies__item__neverfap">NeverFap Deluxe</span> Subreddit</h4>
+      </div>  
+    </a>
+    <a class="homepage__goodies__item__link__wrapper" href="/">
+      <div class="homepage__goodies__item">
+        <h4 class="homepage__goodies__item__title"><span class="homepage__goodies__item__neverfap">NeverFap Deluxe</span> YouTube Channel</h4>
+      </div>  
+    </a>
+    <a class="homepage__goodies__item__link__wrapper" href="/">
+      <div class="homepage__goodies__item">
+        <h4 class="homepage__goodies__item__title"><span class="homepage__goodies__item__neverfap">NeverFap Deluxe</span> Twitter Account</h4>
+      </div>     
+    </a>
+    <a class="homepage__goodies__item__link__wrapper" href="/">
+      <div class="homepage__goodies__item">
+        <h4 class="homepage__goodies__item__title"><span class="homepage__goodies__item__neverfap">NeverFap Deluxe</span> Instagram Account</h4>
+      </div>     
+    </a>   
+    <a class="homepage__goodies__item__link__wrapper" href="/">
+      <div class="homepage__goodies__item">
+        <h4 class="homepage__goodies__item__title"><span class="homepage__goodies__item__neverfap">NeverFap Deluxe</span> Facebook Page</h4>
+      </div>     
+    </a>   
+  </div>
+</div>

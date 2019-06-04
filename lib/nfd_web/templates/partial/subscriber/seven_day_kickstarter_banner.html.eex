@@ -8,15 +8,11 @@
 
     <div class="seven__day__kickstarter__banner__box">
       <div class="seven__day__kickstarter__banner__list">
-        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_0_title) %> - Day 0</p>
-        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_1_title) %> - Day 1</p>
-        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_2_title) %> - Day 2</p>
-        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_3_title) %> - Day 3</p>
-        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_4_title) %> - Day 4</p>
-        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_5_title) %> - Day 5</p>
-        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_6_title) %> - Day 6</p>
-        <p class="seven__day__kickstarter__banner__item"><%= Application.get_env(:nfd, :kickstarter_day_7_title) %> - Day 7</p>
+        <%= Enum.map(@item["days"], fn(item) -> %>
+          <p class="seven__day__kickstarter__banner__item"><%= item["title"] %> - Day <%= item["day"] %></p>
+        <% end ) %>
       </div>
+      
       
       <div class="seven__day__kickstarter__banner__form">
         <p>Discover the basics of the NeverFap Deluxe Method with our 7 Day Kickstarter Guide!</p>

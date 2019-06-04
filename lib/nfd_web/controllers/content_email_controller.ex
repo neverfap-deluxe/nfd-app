@@ -48,7 +48,9 @@ defmodule NfdWeb.ContentEmailController do
     case client |> ContentEmail.seven_day_kickstarter() do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
-        conn |> render("seven_day_kickstarter.html", item: response.body["data"], seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, page_type: page_type)
+        {:ok, sdkResponse} = client |> ContentEmail.seven_day_kickstarter()
+
+        conn |> render("seven_day_kickstarter.html", item: response.body["data"], seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, sdkItem: sdkResponse.body["data"], page_type: page_type)
       {:error, _error} ->
         conn 
         |> put_view(NfdWeb.ErrorView)

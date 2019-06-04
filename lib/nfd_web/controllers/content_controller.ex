@@ -6,6 +6,7 @@ defmodule NfdWeb.ContentController do
 
   alias Nfd.API
   alias Nfd.API.Content
+  alias Nfd.API.ContentEmail
 
   alias Nfd.Meta
   alias Nfd.Account.Subscriber
@@ -39,6 +40,7 @@ defmodule NfdWeb.ContentController do
         # TODO: Check condition if date is below/in front of
         if response.body["data"]["draft"] == false do 
           {:ok, articlesResponse} = client |> Content.articles()
+          {:ok, sdkResponse} = client |> ContentEmail.seven_day_kickstarter()
 
           comments = Meta.list_collection_access_by_page_id(response.body["data"]["page_id"])
           comment_form_changeset = Meta.Comment.changeset(%Meta.Comment{}, %{})
@@ -46,7 +48,7 @@ defmodule NfdWeb.ContentController do
           { previousArticle, nextArticle } = getPreviousNextArticle(articlesResponse.body["data"]["articles"] |> Enum.reverse(), response.body["data"]);
           seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
 
-          conn |> render("article.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, previousArticle: previousArticle, nextArticle: nextArticle, page_type: page_type, comments: comments, comment_form_changeset: comment_form_changeset)  
+          conn |> render("article.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, previousArticle: previousArticle, nextArticle: nextArticle, page_type: page_type, comments: comments, sdkItem: sdkResponse.body["data"], comment_form_changeset: comment_form_changeset)  
         else 
           render_404_page(conn)
         end
@@ -81,11 +83,12 @@ defmodule NfdWeb.ContentController do
         if response.body["data"]["draft"] == false do 
           {:ok, articlesResponse} = client |> Content.articles()
           {:ok, practicesResponse} = client |> Content.practices()
+          {:ok, sdkResponse} = client |> ContentEmail.seven_day_kickstarter()
 
           { previousArticle, nextArticle } = getPreviousNextArticle(practicesResponse.body["data"]["practices"] |> Enum.reverse(), response.body["data"]);
           seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
           
-          conn |> render("practice.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), practices: practicesResponse.body["data"]["practices"] |> Enum.reverse(), seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, previousArticle: previousArticle, nextArticle: nextArticle, page_type: page_type)
+          conn |> render("practice.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), practices: practicesResponse.body["data"]["practices"] |> Enum.reverse(), seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, previousArticle: previousArticle, nextArticle: nextArticle, sdkItem: sdkResponse.body["data"], page_type: page_type)
         else
           render_404_page(conn)
         end

@@ -47,6 +47,6 @@
   </div>
 </div>
 
-<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, seven_day_kickstarter_changeset: @seven_day_kickstarter_changeset } %>
+<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @sdkItem, seven_day_kickstarter_changeset: @seven_day_kickstarter_changeset } %>
 <div style="margin-top: 5rem;"></div>
 <%= partial "links/loginregister.html", assigns %>

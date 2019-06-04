@@ -4,6 +4,7 @@ defmodule NfdWeb.PageController do
   alias Nfd.API
   alias Nfd.API.Page
   alias Nfd.API.Content
+  alias Nfd.API.ContentEmail
 
   alias Nfd.Meta
   alias Nfd.Account.Subscriber
@@ -21,8 +22,9 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         {:ok, articlesResponse} = client |> Content.articles()
+        {:ok, sdkResponse} = client |> ContentEmail.seven_day_kickstarter()
 
-        conn |> render("home.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, page_type: page_type)
+        conn |> render("home.html", layout: {NfdWeb.LayoutView, "home.html"}, item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, sdkItem: sdkResponse.body["data"], page_type: page_type)
       {:error, _error} ->
         render_404_page(conn)
     end
@@ -38,7 +40,9 @@ defmodule NfdWeb.PageController do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
         {:ok, articlesResponse} = client |> Content.articles()
-        conn |> render("guide.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, page_type: page_type)
+        {:ok, sdkResponse} = client |> ContentEmail.seven_day_kickstarter()
+
+        conn |> render("guide.html", item: response.body["data"], articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(), seven_day_kickstarter_changeset: seven_day_kickstarter_changeset, sdkItem: sdkResponse.body["data"], page_type: page_type)
       {:error, _error} ->
         render_404_page(conn)
     end

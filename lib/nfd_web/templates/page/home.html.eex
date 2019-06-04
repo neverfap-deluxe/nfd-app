@@ -50,6 +50,7 @@
   <!-- <div class="account__info account__info--margin-top">
     <p class="account__info__title">Oh wait, you want more promotion?</p>
   </div>       -->
+  <%#= partial "home/goodies.html", assigns %>
 
   <div class="homepage__splitter homepage__splitter--podcast">
     <div class="homepage__splitter__box homepage__splitter__box--top homepage__splitter__box--podcast">
@@ -67,10 +68,6 @@
     </div>
   </div>
 
-  <div>
-    <h2>Let's not forget these goodies</h2>
-    
-  </div>
 
   <div class="account__info">
     <p class="account__info__title">OMFG!? You survived the promotion. <i class="em em-confetti_ball"></i> Well done.<i class="em em-confetti_ball"></i></p>
@@ -154,8 +151,6 @@
     <h1>Control which <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">anyone can learn</u> with practice and consistency.</h1>
     <h3>Right now. <i class="em em-male-technologist"></i></h3>
   </div>
-
-
 
   <div class="show__large" style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
 
@@ -316,7 +311,7 @@
     </div>
   </div> -->
 
-  <%#= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, seven_day_kickstarter_changeset: @seven_day_kickstarter_changeset } %>
+  <%#= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @sdkItem, seven_day_kickstarter_changeset: @seven_day_kickstarter_changeset } %>
 
   <div class="homepage__section">
     <h2>So without further ado...</h2>
