@@ -78,17 +78,7 @@
       <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
       <h1>Accountability Program</h1>
     </div>
-    <h3>Train your capacity for awareness by keeping track of your mental health progress.</h3>
-
-    <p>The first thing we are going to do is put in place a system of accountability that is designed to not only get us excited, but also help us keep on top of the healthy coping mechanisms we practice everyday.</p>
-    <p>In order to do this, we will be posting a daily journal into the NeverFap Deluxe Discord <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel.</p>
-    <p>Can't be bothered?</p>
-    <p>Well, that's the reason why it takes 5 years on average of people to overcome their porn addiction. You distrust the process, you lose the game. It's honestly that simple.</p>
-
-    <p>Furthermore, it's a great opportunity to see what everyone else is doing in terms of their healthy coping mechanisms, as well as understand the steps they're taking on a daily basis to get 90+ days with their progress.</p>
-    <p>Another great thing about <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> is the tight-nit community we have on the channel. Because we're small, you get the care and attention you deserve and I always respond to messages within 24 hours.</p>
-    <p>Oh, and let's not forget the acknowledgement process! We acknowledge each other's journal entries with with emojis, and it's a great motivator to see that other people are following the same journey that you are.</p>
-    <p>For a set of useful guidelines on the NeverFap Deluxe Accountability Program, please check this <a class="link" href="/accountability-program">web page</a>.</p>
+    <%= raw child_content(@item["children"], "guide-accountability-program") %>
   </div>
 </div>
 
@@ -100,14 +90,7 @@
       <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
       <h1>7 Day NeverFap Deluxe Kickstarter</h1>
     </div>
-    <h3>Learn more about the NeverFap Deluxe Method within a seven day period.</h3>
-
-    <p>Well, well, well.</p>
-    <p>The 7 Day NeverFap Deluxe Kickstarter is an email campaign I've put together which aims to teach you a little bit more about the inner workings of NeverFap Deluxe, as well as recommend you various NeverFap Articles and Practices.</p>
-    <p>It covers a range of core topics which are vital for helping you overcome your porn addiction, delivered straight to your email address each day over the course of a week.</p>
-    <p>We also feature a range of other useful guides and courses which become available if you sign up for a FREE NeverFap Deluxe Account.</p>
-    <p>If you'd like to learn more about the 7 Day NeverFap Deluxe Kickstarter, I've put together this fancy <a class="link" href="/seven-day-neverfap-deluxe-kickstarter/">landing page</a> which explores in greater detail what you will learn.</p>
-    <p>It is highly recommended for newcomers to NeverFap Deluxe or those who would simply like more information on how best to approach their porn addiction.</p>
+    <%= raw child_content(@item["children"], "guide-seven-day-kickstarter") %>
   </div>
 </div>
 
@@ -119,11 +102,7 @@
       <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
       <h1>NeverFap Deluxe Articles</h1>
     </div>
-    <h3>Learn more about the inner workings of porn addiction recovery and the power of mental health.</h3>
-
-    <p>NeverFap Deluxe Articles are designed to provide you with a better understanding behind the how and why of porn addiction recovery.</p>
-    <p>They are fantastic resources which provide in-depth analysis of issues related to porn addiction recovery, and are referenced throughout the website.</p>
-    <p>Here are some of my top picks.</p>
+    <%= raw child_content(@item["children"], "guide-never-fap-deluxe-articles") %>
 
     <p class="guide__link__container"><a class="guide__link" href="/articles/my-personal-porn-recovery-journey/">My Personal Porn Recovery Journey</a></br>
       Learn a bit more about my porn recovery journey, as well as how I managed to eventually kick the habit.</p>
@@ -146,15 +125,7 @@
       <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
       <h1>NeverFap Deluxe Practices</h1>
     </div>
-    <h3>Develop a greater understanding of awareness and meditation best practices.</h3>
-
-    <p>NeverFap Deluxe Practices focus solely on verifiable steps you can do on a daily basis to help you build awareness and calmness.</p>
-    <p>At a bare minimum you should be meditating everyday, usually for 10 minutes before bed (at least that's what most people find easiest, myself included).</p>
-    <p>To be quite honest, 100% of the actual recovery process in terms of effective change is nothing more than meditation.</p>
-    <p>However, because humans are silly and will refuse to commit (not to mention, we do silly things like get addicted to porn), I've dedicated a good 85% of this website towards convincing you why you should commit.</p>
-    <p>With the other 15% actually focused on meditation exercises and practices.</p>
-    <p>That's because convincing you to actually treat your mental health seriously is 85% of the battle. It's the primary thing most people struggle with, otherwise you wouldn't have become a porn addict within the first place.</p>
-    <p>Regardless, here are some exercises that I recommend.</p>
+    <%= raw child_content(@item["children"], "guide-never-fap-deluxe-practices") %>
 
     <p class="guide__link__container"><a class="guide__link" href="/practices/observe-your-senses/">Observe Your Senses</a></br>
       Our primary meditation exercise, which is the sole exercise we recommend that you practice every day.</p>
@@ -171,23 +142,17 @@
   </div>
 </div>
 
-
 <div class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <div class="guide__suggestion">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
         <h1>NeverFap Deluxe Podcast</h1>
       </div>
-      <h3>Learn more about porn addiction recovery in audio form!</h3>
-      <p>The NeverFap Deluxe Podcast is a fornightly podcast about porn addiction recovery. It aims to be informative, silly and somewhat hopelessly chic.</p>
-      <p>I wanted to have some fun with this one, it's a bit rediculous at times, but I'd also think to think that's equally as informative as it is oddly sensual.</p>
-      <p>The podcast is primarily available on Castbox and Spotify.</p>
-      <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="100%" height="300"></iframe>
+      <%= raw child_content(@item["children"], "guide-never-fap-deluxe-podcast") %>
     </div>
   </div>
 
   <%= partial "banners/podcast_banner.html", assigns %>
-
 
   <div class="cyan__banner">
     <div style="background: white;">
