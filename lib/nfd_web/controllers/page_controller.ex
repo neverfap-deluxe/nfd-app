@@ -408,6 +408,8 @@ defmodule NfdWeb.PageController do
   end
 
   def open_source(conn, _params) do
+
+    # send_to_page(conn, "page", :open_source)
     page_type = "page"
     client = API.is_localhost(conn.host) |> API.api_client()
 
@@ -426,8 +428,15 @@ defmodule NfdWeb.PageController do
     end
   end
 
-  # defp send_to_page(page_type, "open_source") do
-  #   apply()
+  # defp send_to_page(conn, page_type, page_symbol) do
+  #   client = API.is_localhost(conn.host) |> API.api_client()
+  #   case client |> apply(Page, page_symbol) do
+  #     {:ok, response} ->
+  #       Meta.increment_visit_count(response.body["data"])
+
+  #     {:error, _error} ->
+  #       render_404_page(conn)
+  #   end
   # end
 
   # defp get_page_information(page_type) do
@@ -454,9 +463,7 @@ defmodule NfdWeb.PageController do
     case Tesla.get(client, "http://rss.castbox.fm/everest/aab82e46f0cd4791b1c8ddc19d5158c3.xml") do
       {:ok, response} ->
         regex = ~r/https:\/\/s3.castbox.fm(\/*[a-zA-Z0-9])*.png/
-
         # does_match = Regex.match?(regex, "https://s3.castbox.fm/89/8f/d7/ab55544abb81506d8240808921.png") |> IO.inspect
-
         new_xml =
           Regex.replace(
             regex,
