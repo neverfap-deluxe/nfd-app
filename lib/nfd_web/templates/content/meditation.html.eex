@@ -12,7 +12,7 @@
 
 <div class="single__wrapper">
   <%= partial "share_buttons.html", %{permalink: @item["permalink"] } %>
-  <%= partial "next_prev_buttons.html", %{nextArticle: @nextArticle, previousArticle: @previousArticle } %>
+  <%= partial "next_prev_buttons.html", %{nextItem: @collections.nextItem, previousItem: @collections.previousItem } %>
 </div>
 
 

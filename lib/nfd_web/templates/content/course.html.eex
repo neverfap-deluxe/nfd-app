@@ -44,12 +44,12 @@
 <div class="single__wrapper">
   <h2>Course Articles</h2>
   <p>These articles have been written to help you better understand what the <%= @item["title"] %> means, as well as how it will help you overcome your porn addiction.</p>
-  <%= partial "courses/articles_by_category.html", %{ category_type: @item["category"], items: @articles } %>
+  <%= partial "courses/articles_by_category.html", %{ category_type: @item["category"], items: @collections.articles } %>
 
   <h2>Course Practices</h2>
   <p>These practices entail the exercises you will perform in order to improve skills related to <%= @item["title"] %>. They should be performed in a specific order.</p>
 
-  <%= partial "courses/practices_by_category.html", %{ category_type: @item["category"], items: @practices } %>
+  <%= partial "courses/practices_by_category.html", %{ category_type: @item["category"], items: @collections.practices } %>
 </div>
 
 <%= partial "links/loginregister.html", assigns %>

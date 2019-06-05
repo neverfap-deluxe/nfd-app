@@ -6,7 +6,6 @@ defmodule Nfd.Sitemaps do
 
   alias Nfd.API
   alias Nfd.API.Content
-  alias Nfd.API.ContentEmail
 
   # For testing: Nfd.Sitemaps.generate()
   # iex -S mix do phx.server
@@ -23,15 +22,15 @@ defmodule Nfd.Sitemaps do
   def generate do
     client = "https://neverfapdeluxe.netlify.com" |> API.api_client()
 
-    with {:ok, articlesResponse} <- (client |> Content.articles()),
-         {:ok, practicesResponse} <- (client |> Content.practices()),
-         {:ok, coursesResponse} <- (client |> Content.courses()),
-         {:ok, podcastsResponse} <- (client |> Content.podcasts()),
-         {:ok, quotesResponse} <- (client |> Content.quotes()),
-         {:ok, meditationsResponse} <- (client |> Content.meditations()),
-         {:ok, blogsResponse} <- (client |> Content.blogs()),
-         {:ok, updatesResponse} <- (client |> Content.updates()),
-         {:ok, sdkResponse} <- (client |> ContentEmail.seven_day_kickstarter())
+    with {:ok, articlesResponse} <- (client |> Page.articles()),
+         {:ok, practicesResponse} <- (client |> Page.practices()),
+         {:ok, coursesResponse} <- (client |> Page.courses()),
+         {:ok, podcastsResponse} <- (client |> Page.podcasts()),
+         {:ok, quotesResponse} <- (client |> Page.quotes()),
+         {:ok, meditationsResponse} <- (client |> Page.meditations()),
+         {:ok, blogsResponse} <- (client |> Page.blogs()),
+         {:ok, updatesResponse} <- (client |> Page.updates()),
+         {:ok, sdkResponse} <- (client |> Page.seven_day_kickstarter())
     do
       create do
         # GENERAL

@@ -10,10 +10,10 @@
       <h3>Course overview</h3>
       <div class="email__day__container">
         <%= Enum.map(@item["days"], fn(item) -> %>
-          <div class="email__day__container__item">
+          <a class="email__day__container__item" href='<%= Routes.content_email_path(@conn, :seven_day_kickstarter_single, item["slug"]) %>'>
             <h4 class="email__day__container__item__title"><%= item["title"] %><br/> Day <%= item["day"] %></h4>
             <p class="email__day__container__item__text"><%= item["description"] %></p>
-          </div>
+          </a>
         <% end ) %>
       </div>
     </div>
@@ -28,7 +28,7 @@
 
     <div class="seven__day__kickstarter__banner__form">
       <p>Discover the basics of the NeverFap Deluxe Method with our 7 Day Kickstarter Guide!</p>
-      <%= form_for @seven_day_kickstarter_changeset, Routes.subscription_path(@conn, :add_subscription_validate_matrix), [target: "_blank"], fn f -> %>
+      <%= form_for @collections.seven_day_kickstarter_changeset, Routes.subscription_path(@conn, :add_subscription_validate_matrix), [target: "_blank"], fn f -> %>
         <%= text_input f, :subscriber_email, [placeholder: "email", class: "banner__input"] %>
         <%= submit "Submit", [class: "banner__submit"]  %>
         <!-- First matrix is general, second matrix is seven day. -->

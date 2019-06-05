@@ -1,236 +1,47 @@
 defmodule NfdWeb.PageController do
   use NfdWeb, :controller
 
-  alias Nfd.API
-  alias Nfd.API.Page
-  alias Nfd.API.Content
-  alias Nfd.API.ContentEmail
+  alias NfdWeb.Fetch
 
-  alias Nfd.Meta
-  alias Nfd.Account.Subscriber
-  alias Nfd.Account.ContactForm
+  # GENERAL
+  def home(conn, _params), do: Fetch.fetch_page(conn, :home, "home.html", [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset])
+  def about(conn, _params), do: Fetch.fetch_page(conn, :about, "general.html", [:contact_form_changeset])
+  def contact(conn, _params), do: Fetch.fetch_page(conn, :contact, "general.html", [])
+  def community(conn, _params), do: Fetch.fetch_page(conn, :community, "general.html", [])
+  def donations(conn, _params), do: Fetch.fetch_page(conn, :donations, "general.html", [])
+  def everything(conn, _params), do: Fetch.fetch_page(conn, :everything, "general.html", [])
 
-  plug :put_layout, "general.html"
+  # GUIDES
+  def guide(conn, _params), do: Fetch.fetch_page(conn, :guide, "general.html", [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset])
+  def summary(conn, _params), do: Fetch.fetch_page(conn, :summary, "general.html", [])
+  def neverfap_deluxe_bible(conn, _params), do: Fetch.fetch_page(conn, :neverfap_deluxe_bible, "general.html", [])
+  def emergency(conn, _params), do: Fetch.fetch_page(conn, :emergency, "home.html", [])
+  def post_relapse_academy(conn, _params), do: Fetch.fetch_page(conn, :post_relapse_academy, "home.html", [])
 
-  def home(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
+  # LEGAL
+  def disclaimer(conn, _params), do: Fetch.fetch_page(conn, :disclaimer, "general.html", [])
+  def privacy(conn, _params), do: Fetch.fetch_page(conn, :privacy, "general.html", [])
+  def terms_and_conditions(conn, _params), do: Fetch.fetch_page(conn, :terms_and_conditions, "general.html", [])
 
-    seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
-
-    case client |> Page.home() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        {:ok, articlesResponse} = client |> Content.articles()
-        {:ok, sdkResponse} = client |> ContentEmail.seven_day_kickstarter()
-
-        conn
-        |> render("home.html",
-          layout: {NfdWeb.LayoutView, "home.html"},
-          item: response.body["data"],
-          articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(),
-          seven_day_kickstarter_changeset: seven_day_kickstarter_changeset,
-          sdkItem: sdkResponse.body["data"],
-          page_type: page_type
-        )
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-
-  def post_relapse_academy(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.post_relapse_academy() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-
-        conn
-        |> render("post_relapse_academy.html",
-          layout: {NfdWeb.LayoutView, "home.html"},
-          item: response.body["data"],
-          page_type: page_type
-        )
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def emergency(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.emergency() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-
-        conn
-        |> render("emergency.html",
-          layout: {NfdWeb.LayoutView, "home.html"},
-          item: response.body["data"],
-          page_type: page_type
-        )
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def guide(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
-
-    case client |> Page.guide() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        {:ok, articlesResponse} = client |> Content.articles()
-        {:ok, sdkResponse} = client |> ContentEmail.seven_day_kickstarter()
-
-        conn
-        |> render("guide.html",
-          item: response.body["data"],
-          articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(),
-          seven_day_kickstarter_changeset: seven_day_kickstarter_changeset,
-          sdkItem: sdkResponse.body["data"],
-          page_type: page_type
-        )
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def community(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.community() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        {:ok, articlesResponse} = client |> Content.articles()
-
-        conn
-        |> render("community.html",
-          item: response.body["data"],
-          articles: articlesResponse.body["data"]["articles"] |> Enum.reverse(),
-          page_type: page_type
-        )
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def about(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    contact_form_changeset =
-      ContactForm.changeset(%ContactForm{}, %{name: "", email: "", message: ""})
-
-    case client |> Page.about() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-
-        conn
-        |> render("about.html",
-          item: response.body["data"],
-          contact_form_changeset: contact_form_changeset,
-          page_type: page_type
-        )
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-
-  # def about(conn, _params), do: fetch_page(conn, "page", :contact, "general.html", [:contact_form_changeset])
-
-
-  def contact(conn, _params), do: fetch_page(conn, "page", :contact, "general.html")
-  def disclaimer(conn, _params), do: fetch_page(conn, "page", :disclaimer, "general.html")
-  def privacy(conn, _params), do: fetch_page(conn, "page", :privacy, "general.html")
-  def terms_and_conditions(conn, _params), do: fetch_page(conn, "page", :terms_and_conditions, "general.html")
-
-  def accountability(conn, _params), do: fetch_page(conn, "page", :accountability, "general.html")
-  def reddit_guidelines(conn, _params), do: fetch_page(conn, "page", :reddit_guidelines, "general.html")
-  def everything(conn, _params), do: fetch_page(conn, "page", :everything, "general.html")
-  def coaching(conn, _params), do: fetch_page(conn, "page", :coaching, "general.html")
-  def donations(conn, _params), do: fetch_page(conn, "page", :donations, "general.html")
-  def summary(conn, _params), do: fetch_page(conn, "page", :summary, "general.html")
-  def neverfap_deluxe_bible(conn, _params), do: fetch_page(conn, "page", :neverfap_deluxe_bible, "general.html")
+  # PROGRAMS
+  def accountability(conn, _params), do: Fetch.fetch_page(conn, :accountability, "general.html", [])
+  def reddit_guidelines(conn, _params), do: Fetch.fetch_page(conn, :reddit_guidelines, "general.html", [])
+  def coaching(conn, _params), do: Fetch.fetch_page(conn, :coaching, "general.html", [])
 
   # VOLUNTEER
-  def helpful_neverfap_counsel(conn, _params), do: fetch_page(conn, "page", :helpful_neverfap_counsel, "general.html")
-  def engineering_corps(conn, _params), do: fetch_page(conn, "page", :engineering_corps, "general.html")
-  def marketing_department(conn, _params), do: fetch_page(conn, "page", :marketing_department, "general.html")
+  def helpful_neverfap_counsel(conn, _params), do: Fetch.fetch_page(conn, :helpful_neverfap_counsel, "general.html", [])
+  def engineering_corps(conn, _params), do: Fetch.fetch_page(conn, :engineering_corps, "general.html", [])
+  def marketing_department(conn, _params), do: Fetch.fetch_page(conn, :marketing_department, "general.html", [])
 
   # APPS
-  def desktop_app(conn, _params), do: fetch_page(conn, "page", :desktop_app, "general.html")
-  def mobile_app(conn, _params), do: fetch_page(conn, "page", :mobile_app, "general.html")
-  def chrome_extension(conn, _params), do: fetch_page(conn, "page", :chrome_extension, "general.html")
-  def open_source(conn, _params), do: fetch_page(conn, "page", :open_source, "general.html")
-  def neverfap_deluxe_league(conn, _params), do: fetch_page(conn, "page", :neverfap_deluxe_league, "general.html")
+  def desktop_app(conn, _params), do: Fetch.fetch_page(conn, :desktop_app, "general.html", [])
+  def mobile_app(conn, _params), do: Fetch.fetch_page(conn, :mobile_app, "general.html", [])
+  def chrome_extension(conn, _params), do: Fetch.fetch_page(conn, :chrome_extension, "general.html", [])
+  def open_source(conn, _params), do: Fetch.fetch_page(conn, :open_source, "general.html", [])
+  def neverfap_deluxe_league(conn, _params), do: Fetch.fetch_page(conn, :neverfap_deluxe_league, "general.html", [])
 
   # MISC
-  def never_fap(conn, _params), do: fetch_page(conn, "page", :never_fap, "general.html")
-
-  defp fetch_page(conn, page_type, page_symbol, page_layout) do
-    client = API.is_localhost(conn.host) |> API.api_client()
-    case apply(Nfd.API.Page, page_symbol, [client]) do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-
-        # collections = fetch_collections(collection_array, client)
-
-        conn
-        |> render(
-          "#{Atom.to_string(page_symbol)}.html",
-          layout: { NfdWeb.LayoutView, page_layout },
-          item: response.body["data"],
-          # collections: collections,
-          page_type: page_type
-        )
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  # defp fetch_collections(collection_array, client) do
-  #   Enum.reduce(
-  #     collection_array,
-  #     %{},
-  #     fn x, acc ->
-  #       case x do
-  #         :articles ->
-  #           {:ok, articlesResponse} = client |> Content.articles()
-  #           articles = articlesResponse.body["data"]["articles"] |> Enum.reverse()
-  #           Map.put(acc, :articles, articles)
-
-  #         :practices ->
-  #           {:ok, practicesResponse} = client |> Content.practices()
-  #           practices = practicesResponse.body["data"]["practices"] |> Enum.reverse()
-  #           Map.put(acc, :practices, practices)
-
-  #         :contact_form_changeset ->
-  #           contact_form_changeset = ContactForm.changeset(%ContactForm{}, %{name: "", email: "", message: ""})
-  #           Map.put(acc, :contact_form_changeset, contact_form_changeset)
-
-  #         :seven_day_kickstarter_changeset ->
-  #           seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
-
-  #         _ ->
-  #       end
-  #     end)
-  # end
+  def never_fap(conn, _params), do: Fetch.fetch_page(conn, :never_fap, "general.html", [])
 
   # Images
   def test(conn, _params), do: conn |> render("test.html")

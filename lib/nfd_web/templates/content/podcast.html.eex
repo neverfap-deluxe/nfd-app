@@ -1,6 +1,6 @@
 
 <div class="single__wrapper">   
-  <h1 class="single__title" style="margin-bottom: 1rem;">Podcast <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <h1 class="single__title" style="margin-bottom: 1rem;"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
 
   <div style="margin-top: 1.4rem;">
     <%= raw @item["podcast_player"] %>
@@ -9,17 +9,12 @@
   <h3 style="margin-bottom: 2rem;"><%= raw @item["content"] %></h3>
   <div class="podcast__item__bottom">
     <a class="link articles__link" href='<%= @item["podcast_url"] %>'>episode link</a>
-
-<!--     
-    <audio controls src='<%= @item["podcast_url"] %>'>
-      Your browser does not support the <code>audio</code> element.
-    </audio>   -->
   </div>
 </div>
 
 <div class="single__wrapper">
   <%= partial "share_buttons.html", %{permalink: @item["permalink"] } %>
-  <%= partial "next_prev_buttons.html", %{nextArticle: @nextArticle, previousArticle: @previousArticle } %>
+  <%= partial "next_prev_buttons.html", %{nextItem: @collections.nextItem, previousItem: @collections.previousItem } %>
 </div>
   
 

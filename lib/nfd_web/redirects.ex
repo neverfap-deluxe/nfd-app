@@ -1,8 +1,7 @@
-defmodule Nfd.Redirects do
+defmodule NfdWeb.Redirects do
   use NfdWeb, :controller
 
   def redirect(conn, slug, type) do
-    
     case type do
       "article" -> redirect_article(conn, slug)
       "practice" -> redirect_practice(conn, slug)
@@ -12,6 +11,9 @@ defmodule Nfd.Redirects do
       "meditation" -> redirect_meditation(conn, slug)
       "blog" -> redirect_blog(conn, slug)
       "update" -> redirect_update(conn, slug)
+      "seven_day_kickstarter_single" -> redirect_seven_day_kickstarter_single(conn, slug)
+      "ten_day_meditation_single" -> redirect_ten_day_meditation_single(conn, slug)
+      "twenty_eight_day_awareness_single" -> redirect_twenty_eight_day_awareness_single(conn, slug)
       _ -> slug
     end
   end
@@ -75,4 +77,23 @@ defmodule Nfd.Redirects do
       _ -> slug
     end
   end
+
+  def redirect_seven_day_kickstarter_single(conn, slug) do 
+    case slug do
+      _ -> slug
+    end
+  end
+
+  def redirect_ten_day_meditation_single(conn, slug) do 
+    case slug do
+      _ -> slug
+    end
+  end
+
+  def redirect_twenty_eight_day_awareness_single(conn, slug) do 
+    case slug do
+      _ -> slug
+    end
+  end
+
 end

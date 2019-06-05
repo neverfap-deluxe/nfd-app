@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <%= partial "next_prev_buttons.html", %{nextArticle: @nextArticle, previousArticle: @previousArticle } %>
+  <%= partial "next_prev_buttons.html", %{nextItem: @collections.nextItem, previousItem: @collections.previousItem } %>
 </div>
 
 <%= partial "links/patreon.html", assigns %>

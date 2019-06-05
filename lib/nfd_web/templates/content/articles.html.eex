@@ -17,15 +17,15 @@
   </div>
 
   <div class="posts__off posts--guide" id="articles_latest_posts">
-    <%= partial "list/articles_latest.html", %{ items: @articles, tag_type: "context" } %>
+    <%= partial "list/articles_latest.html", %{ items: @collections.articles, tag_type: "context" } %>
   </div>
 
   <div class="posts__on posts--guide" id="articles_latest_plain_posts">
-    <%= partial "list/articles_latest_plain_text.html", %{ items: @articles, tag_type: "context" } %>
+    <%= partial "list/articles_latest_plain_text.html", %{ items: @collections.articles, tag_type: "context" } %>
   </div>
 
   <div class="posts__off posts--guide" id="articles_category_posts">
-    <%= partial "list/articles_category.html", %{ items: @articles, tag_type: "context" } %>
+    <%= partial "list/articles_category.html", %{ items: @collections.articles, tag_type: "context" } %>
   </div>
 </div>
 

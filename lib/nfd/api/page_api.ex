@@ -40,4 +40,19 @@ defmodule Nfd.API.Page do
   def disclaimer(client), do: get(client, "/disclaimer/index.json")
   def privacy(client), do: get(client, "/privacy/index.json")
   def terms_and_conditions(client), do: get(client, "/terms_and_conditions/index.json")
+
+  # CONTENT PAGES
+  def articles(client), do: get(client, "/articles/index.json")
+  def practices(client), do: get(client, "/practices/index.json")
+  def courses(client), do: get(client, "/courses/index.json")
+  def podcasts(client), do: get(client, "/podcast/index.json")
+  def quotes(client), do: get(client, "/quotes/index.json")
+  def meditations(client), do: get(client, "/meditations/index.json")
+  def blogs(client), do: get(client, "/blogs/index.json")
+  def updates(client), do: get(client, "/updates/index.json")
+
+  # CONTENT EMAIL PAGES
+  def seven_day_kickstarter(client), do: get(client, "/seven_day_kickstarter/index.json")
+  def ten_day_meditation(client), do: get(client, "/ten_day_meditation/index.json")
+  def twenty_eight_day_awareness(client), do: get(client, "/twenty_eight_day_awareness/index.json")
 end
