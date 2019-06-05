@@ -5,6 +5,7 @@ defmodule Nfd.Sitemaps do
   import Ecto.Query, warn: false
 
   alias Nfd.API
+  alias Nfd.API.Page
   alias Nfd.API.Content
 
   # For testing: Nfd.Sitemaps.generate()
