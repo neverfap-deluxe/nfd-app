@@ -29,34 +29,39 @@ defmodule NfdWeb.Router do
   scope "/", NfdWeb do
     pipe_through :browser
 
+    # GENERAL
     get "/", PageController, :home
-    get "/community", PageController, :community
     get "/about", PageController, :about
     get "/contact", PageController, :contact
-    get "/everything", PageController, :everything
-    get "/coaching", PageController, :coaching
-
-    # INITIATIVES
-    get "/accountability-program", PageController, :accountability
-    get "/new-fap-deluxe-reddit-guidelines", PageController, :reddit_guidelines
-    get "/new-neverfapper-reddit-guidelines", PageController, :reddit_guidelines
-    get "/helpful-neverfappers-academy", PageController, :helpful_neverfappers_academy
-    get "/promote-neverfap-deluxe", PageController, :promote_neverfap_deluxe
+    get "/community", PageController, :community
     get "/donations", PageController, :donations
+    get "/everything", PageController, :everything
 
-    # GUIDES 
+    # GUIDES
     get "/guide", PageController, :guide
     get "/summary", PageController, :summary
     get "/neverfap-deluxe-bible", PageController, :neverfap_deluxe_bible
     get "/post-relapse-academy", PageController, :post_relapse_academy
     get "/emergency", PageController, :emergency
 
+    # PROGRAMS
+    get "/accountability-program", PageController, :accountability
+    get "/new-fap-deluxe-reddit-guidelines", PageController, :reddit_guidelines
+    get "/new-neverfapper-reddit-guidelines", PageController, :reddit_guidelines
+    get "/coaching", PageController, :coaching
+
+    # VOLUNTEER
+    get "/helpful-neverfappers-academy", PageController, :helpful_neverfap_counsel
+    get "/helpful-neverfap-counsel", PageController, :helpful_neverfap_counsel
+    get "/engineering-corps", PageController, :engineering_corps
+    get "/marketing-department", PageController, :marketing_department
+
     # APPS
     get "/desktop-app", PageController, :desktop_app
     get "/mobile-app", PageController, :mobile_app
     get "/chrome-extension", PageController, :chrome_extension
     get "/neverfap-deluxe-league", PageController, :neverfap_deluxe_league
-    get "/neverfap-deluxe-open-source", PageController, :neverfap_deluxe_open_source
+    get "/neverfap-deluxe-open-source", PageController, :open_source
 
     # MISC
     get "/never-fap", PageController, :never_fap
@@ -94,12 +99,22 @@ defmodule NfdWeb.Router do
 
     # CONTENT_EMAIL
     get "/seven-day-neverfap-deluxe-kickstarter", ContentEmailController, :seven_day_kickstarter
-    get "/seven-day-neverfap-deluxe-kickstarter/:day", ContentEmailController, :seven_day_kickstarter_single
-    get "/twenty-eight-day-awareness-challenge", ContentEmailController, :twenty_eight_day_awareness
-    get "/twenty-eight-day-awareness-challenge/:day", ContentEmailController, :twenty_eight_day_awareness_single
+
+    get "/seven-day-neverfap-deluxe-kickstarter/:day",
+        ContentEmailController,
+        :seven_day_kickstarter_single
+
+    get "/twenty-eight-day-awareness-challenge",
+        ContentEmailController,
+        :twenty_eight_day_awareness
+
+    get "/twenty-eight-day-awareness-challenge/:day",
+        ContentEmailController,
+        :twenty_eight_day_awareness_single
+
     get "/ten-day-meditation-primer", ContentEmailController, :ten_day_meditation
     get "/ten-day-meditation-primer/:day", ContentEmailController, :ten_day_meditation_single
-   end
+  end
 
   # Functions
   scope "/", NfdWeb do
@@ -116,7 +131,10 @@ defmodule NfdWeb.Router do
     post "/confirm_subscription", SubscriptionController, :add_subscription_validate_matrix
     get "/subscription_success", SubscriptionController, :confirm_subscription_validate_matrix
     get "/unsubscribe", SubscriptionController, :unsubscribe_validate_matrix
-    get "/change_subscription_dashboard_func", DashboardController, :change_subscription_dashboard_func
+
+    get "/change_subscription_dashboard_func",
+        DashboardController,
+        :change_subscription_dashboard_func
   end
 
   scope "/", NfdWeb do
@@ -132,12 +150,15 @@ defmodule NfdWeb.Router do
 
     get "/dashboard/email_campaigns", DashboardController, :email_campaigns
     get "/dashboard/email_campaigns/:collection", DashboardController, :email_campaigns_collection
-    get "/dashboard/email_campaigns/:collection/:file", DashboardController, :email_campaigns_single
+
+    get "/dashboard/email_campaigns/:collection/:file",
+        DashboardController,
+        :email_campaigns_single
   end
 
   scope "/dev" do
     pipe_through [:browser]
-    forward "/mailbox", Plug.Swoosh.MailboxPreview, [base_path: "/dev/mailbox"]
+    forward "/mailbox", Plug.Swoosh.MailboxPreview, base_path: "/dev/mailbox"
   end
 
   pipeline :api do

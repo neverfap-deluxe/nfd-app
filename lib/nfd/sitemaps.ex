@@ -34,32 +34,46 @@ defmodule Nfd.Sitemaps do
          {:ok, sdkResponse} <- (client |> ContentEmail.seven_day_kickstarter())
     do
       create do
+        # GENERAL
         add Helpers.page_path(Endpoint, :home), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :guide), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :community), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :about), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :contact), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :disclaimer), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :privacy), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :terms_and_conditions), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :accountability), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :reddit_guidelines), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :community), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :donations), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :everything), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :coaching), priority: 0.5, changefreq: "weekly", expires: nil
+
+        # GUIDE
+        add Helpers.page_path(Endpoint, :guide), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :summary), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :neverfap_deluxe_bible), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :post_relapse_academy), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :emergency), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :neverfap_deluxe_league), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :neverfap_deluxe_bible), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :helpful_neverfappers_academy), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :summary), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :donations), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :promote_neverfap_deluxe), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :never_fap), priority: 0.5, changefreq: "weekly", expires: nil
 
+        # PROGRAMS
+        add Helpers.page_path(Endpoint, :accountability), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :reddit_guidelines), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :coaching), priority: 0.5, changefreq: "weekly", expires: nil
+
+        # VOLUNTEER
+        add Helpers.page_path(Endpoint, :helpful_neverfap_counsel), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :engineering_corps), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :marketing_department), priority: 0.5, changefreq: "weekly", expires: nil
+
+        # APPS
         add Helpers.page_path(Endpoint, :mobile_app), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :desktop_app), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :chrome_extension), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :neverfap_deluxe_league), priority: 0.5, changefreq: "weekly", expires: nil
 
+        # LEGAL
+        add Helpers.page_path(Endpoint, :disclaimer), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :privacy), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :terms_and_conditions), priority: 0.5, changefreq: "weekly", expires: nil
+
+        # MISC
+        add Helpers.page_path(Endpoint, :never_fap), priority: 0.5, changefreq: "weekly", expires: nil
+
+        # CONTENT
         add Helpers.content_path(Endpoint, :articles), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.content_path(Endpoint, :practices), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.content_path(Endpoint, :courses), priority: 0.5, changefreq: "weekly", expires: nil
