@@ -39,6 +39,47 @@ defmodule NfdWeb.PageController do
     end
   end
 
+
+  def post_relapse_academy(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Page.post_relapse_academy() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])
+
+        conn
+        |> render("post_relapse_academy.html",
+          layout: {NfdWeb.LayoutView, "home.html"},
+          item: response.body["data"],
+          page_type: page_type
+        )
+
+      {:error, _error} ->
+        render_404_page(conn)
+    end
+  end
+
+  def emergency(conn, _params) do
+    page_type = "page"
+    client = API.is_localhost(conn.host) |> API.api_client()
+
+    case client |> Page.emergency() do
+      {:ok, response} ->
+        Meta.increment_visit_count(response.body["data"])
+
+        conn
+        |> render("emergency.html",
+          layout: {NfdWeb.LayoutView, "home.html"},
+          item: response.body["data"],
+          page_type: page_type
+        )
+
+      {:error, _error} ->
+        render_404_page(conn)
+    end
+  end
+
   def guide(conn, _params) do
     page_type = "page"
     client = API.is_localhost(conn.host) |> API.api_client()
@@ -109,139 +150,42 @@ defmodule NfdWeb.PageController do
     end
   end
 
-  def contact(conn, _params) do
-    page_type = "page"
+  def contact(conn, _params), do: fetch_page(conn, "page", :contact)
+  def disclaimer(conn, _params), do: fetch_page(conn, "page", :disclaimer)
+  def privacy(conn, _params), do: fetch_page(conn, "page", :privacy)
+  def terms_and_conditions(conn, _params), do: fetch_page(conn, "page", :terms_and_conditions)
+
+  def accountability(conn, _params), do: fetch_page(conn, "page", :accountability)
+  def reddit_guidelines(conn, _params), do: fetch_page(conn, "page", :reddit_guidelines)
+  def everything(conn, _params), do: fetch_page(conn, "page", :everything)
+  def coaching(conn, _params), do: fetch_page(conn, "page", :coaching)
+  def donations(conn, _params), do: fetch_page(conn, "page", :donations)
+  def summary(conn, _params), do: fetch_page(conn, "page", :summary)
+  def neverfap_deluxe_bible(conn, _params), do: fetch_page(conn, "page", :neverfap_deluxe_bible)
+
+  # VOLUNTEER
+  def helpful_neverfap_counsel(conn, _params), do: fetch_page(conn, "page", :helpful_neverfap_counsel)
+  def engineering_corps(conn, _params), do: fetch_page(conn, "page", :engineering_corps)
+  def marketing_department(conn, _params), do: fetch_page(conn, "page", :marketing_department)
+
+  # APPS
+  def desktop_app(conn, _params), do: fetch_page(conn, "page", :desktop_app)
+  def mobile_app(conn, _params), do: fetch_page(conn, "page", :mobile_app)
+  def chrome_extension(conn, _params), do: fetch_page(conn, "page", :chrome_extension)
+  def open_source(conn, _params), do: fetch_page(conn, "page", :open_source)
+  def neverfap_deluxe_league(conn, _params), do: fetch_page(conn, "page", :neverfap_deluxe_league)
+
+  # MISC
+  def never_fap(conn, _params), do: fetch_page(conn, "page", :never_fap)
+
+  defp fetch_page(conn, page_type, page_symbol) do
     client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.contact() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        conn |> render("contact.html", item: response.body["data"], page_type: page_type)
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def disclaimer(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.disclaimer() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        conn |> render("disclaimer.html", item: response.body["data"], page_type: page_type)
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def privacy(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.privacy() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        conn |> render("privacy.html", item: response.body["data"], page_type: page_type)
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def terms_and_conditions(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.terms_and_conditions() do
+    case apply(Nfd.API.Page, page_symbol, [client]) do
       {:ok, response} ->
         Meta.increment_visit_count(response.body["data"])
 
         conn
-        |> render("terms_and_conditions.html", item: response.body["data"], page_type: page_type)
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def account(conn, _params) do
-    changeset = Pow.Plug.change_user(conn)
-
-    render(conn, "account.html", changeset: changeset)
-  end
-
-  def accountability(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.accountability() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        conn |> render("accountability.html", item: response.body["data"], page_type: page_type)
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def reddit_guidelines(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.reddit_guidelines() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-
-        conn
-        |> render("reddit_guidelines.html", item: response.body["data"], page_type: page_type)
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def everything(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.everything() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        conn |> render("everything.html", item: response.body["data"], page_type: page_type)
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def coaching(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.coaching() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        conn |> render("coaching.html", item: response.body["data"], page_type: page_type)
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def post_relapse_academy(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.post_relapse_academy() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-
-        conn
-        |> render("post_relapse_academy.html",
-          layout: {NfdWeb.LayoutView, "home.html"},
+        |> render("#{Atom.to_string(page_symbol)}.html",
           item: response.body["data"],
           page_type: page_type
         )
@@ -251,212 +195,14 @@ defmodule NfdWeb.PageController do
     end
   end
 
-  def emergency(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
+  defp fetch_collections() do
 
-    case client |> Page.emergency() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-
-        conn
-        |> render("emergency.html",
-          layout: {NfdWeb.LayoutView, "home.html"},
-          item: response.body["data"],
-          page_type: page_type
-        )
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
   end
-
-  def neverfap_deluxe_league(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.neverfap_deluxe_league() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-
-        conn
-        |> render("neverfap_deluxe_league.html", item: response.body["data"], page_type: page_type)
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def neverfap_deluxe_bible(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.neverfap_deluxe_bible() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-
-        conn
-        |> render("neverfap_deluxe_bible.html", item: response.body["data"], page_type: page_type)
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def helpful_neverfap_counsel(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.helpful_neverfap_counsel() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-
-        conn
-        |> render("helpful_neverfap_counsel.html",
-          item: response.body["data"],
-          page_type: page_type
-        )
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def summary(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.summary() do
-      {:ok, response} ->
-        # IO.inspect List. response.body["data"]["children"][0]
-        Meta.increment_visit_count(response.body["data"])
-        conn |> render("summary.html", item: response.body["data"], page_type: page_type)
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def donations(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.donations() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        conn |> render("donations.html", item: response.body["data"], page_type: page_type)
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def never_fap(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.never_fap() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        conn |> render("never_fap.html", item: response.body["data"], page_type: page_type)
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def desktop_app(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.desktop_app() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        conn |> render("desktop_app.html", item: response.body["data"], page_type: page_type)
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def mobile_app(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.mobile_app() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        conn |> render("mobile_app.html", item: response.body["data"], page_type: page_type)
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def chrome_extension(conn, _params) do
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.chrome_extension() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-        conn |> render("chrome_extension.html", item: response.body["data"], page_type: page_type)
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  def open_source(conn, _params) do
-
-    # send_to_page(conn, "page", :open_source)
-    page_type = "page"
-    client = API.is_localhost(conn.host) |> API.api_client()
-
-    case client |> Page.open_source() do
-      {:ok, response} ->
-        Meta.increment_visit_count(response.body["data"])
-
-        conn
-        |> render("open_source.html",
-          item: response.body["data"],
-          page_type: page_type
-        )
-
-      {:error, _error} ->
-        render_404_page(conn)
-    end
-  end
-
-  # defp send_to_page(conn, page_type, page_symbol) do
-  #   client = API.is_localhost(conn.host) |> API.api_client()
-  #   case client |> apply(Page, page_symbol) do
-  #     {:ok, response} ->
-  #       Meta.increment_visit_count(response.body["data"])
-
-  # 
-  #     {:error, _error} ->
-  #       render_404_page(conn)
-  #   end
-  # end
-
-  # defp get_page_information(page_type) do
-
-  # end
-
 
   # Images
-  def test(conn, _params) do
-    conn |> render("test.html")
-  end
-
-  def season_one(conn, _params) do
-    conn |> render("season_one.html")
-  end
-
-  def season_two(conn, _params) do
-    conn |> render("season_two.html")
-  end
+  def test(conn, _params), do: conn |> render("test.html")
+  def season_one(conn, _params), do: conn |> render("season_one.html")
+  def season_two(conn, _params), do: conn |> render("season_two.html")
 
   def apple_podcast_xml(conn, _params) do
     client = API.is_localhost(conn.host) |> API.api_client()
