@@ -49,6 +49,7 @@
 
     .homepage__goodies__item {
       display: flex;
+      position: relative;
       padding: 1.2rem;
       height: 80px;
 
@@ -66,6 +67,20 @@
 
       .homepage__goodies__item__title {
         
+      }
+      .homepage__goodies__item__image {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+
+        height: 30px;
+        width: 30px;
+      }
+      .homepage__goodies__item__image--text {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        text-shadow: -3px 3px rgba(255,46,182,1);
       }
     }
   }

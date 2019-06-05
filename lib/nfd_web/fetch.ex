@@ -49,7 +49,6 @@ defmodule NfdWeb.Fetch do
     end
   end
 
-
   defp fetch_collections(item, collection_array, client) do
     Enum.reduce(
       collection_array,

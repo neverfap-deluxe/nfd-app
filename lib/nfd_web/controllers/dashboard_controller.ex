@@ -7,140 +7,20 @@ defmodule NfdWeb.DashboardController do
 
   alias Nfd.Util.Email
 
+  alias NfdWeb.FetchDashboard 
+
   plug :put_layout, "hub.html"
 
-  def dashboard(conn, _params) do
-    user = Pow.Plug.current_user(conn)
-    create_collection_access_for_free_courses(user)
-    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
-    collections_access_list = Account.list_collection_access_by_user_id(user.id)
+  def dashboard(conn, _params), do: FetchDashboard.fetch_dashboard(conn, :dashboard, "", "", [:collections_email])
+  def dashboard_coaching(conn, _params), do: FetchDashboard.fetch_dashboard(conn, :dashboard_coaching, "", "", [:collections_email])
 
-    collections_audio = Content.list_audio_courses()
-    collections_email = Content.list_email_campaigns()
-    # collections_email_available = 
-    #   collections_email_raw 
-    #     |> Enum.filter(fn(collection) ->
-    #       collection_added_to_access_list = Enum.find(collections_access_list, fn(access_list) -> access_list.collection_id == collection.id end)
-    #       if collection_added_to_access_list, do: false, else: true
-    #     end)
+  def email_campaigns(conn, _params), do: FetchDashboard.fetch_dashboard(conn, :email_campaigns, "", "", [:collections_email])
+  def email_campaigns_collection(conn, %{"collection" => collection_slug}), do: FetchDashboard.fetch_dashboard(conn, :email_campaigns_collection, collection_slug, "", [:collection_email, :collections_email, :stripe_api_key])
+  def email_campaigns_file(conn, %{"collection" => collection_slug, "file" => file_slug}), do: FetchDashboard.fetch_dashboard(conn, :email_campaigns_file, collection_slug, file_slug, [:collection_email, :collections_email, :collections_email_file, :stripe_api_key])
 
-    # collections_email_purchased = collections_email_raw |> Enum.filter()
-    #   collections_email_available = 
-    #     collections_email_raw 
-    #       |> Enum.filter(fn(collection) ->
-    #         collection_added_to_access_list = Enum.find(collections_access_list, fn(access_list) -> access_list.collection_id == collection.id end)
-    #         if collection_added_to_access_list, do: true, else: false
-    #       end)
-
-    # IO.inspect collections_access_list
-
-    { _count_property, subscribed_property } = Email.collection_slug_to_subscribed_property("general-newsletter")
-    is_subscribed = Map.fetch!(subscriber, subscribed_property)
-
-    conn
-      |> put_flash(:info, "Welcome back!")
-      |> render("dashboard.html", user: user, subscriber: subscriber, collections_audio: collections_audio, collections_email: collections_email, collections_access_list: collections_access_list, is_subscribed: is_subscribed, subscribed_property: subscribed_property)
-  end
-
-  def dashboard_coaching(conn, _params) do
-    user = Pow.Plug.current_user(conn)
-    create_collection_access_for_free_courses(user)
-    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
-    collections_access_list = Account.list_collection_access_by_user_id(user.id)
-
-    collections_audio = Content.list_audio_courses()
-    collections_email = Content.list_email_campaigns()
-
-    { _count_property, subscribed_property } = Email.collection_slug_to_subscribed_property("general-newsletter")
-    is_subscribed = Map.fetch!(subscriber, subscribed_property)
-
-    conn
-      |> put_flash(:info, "Welcome back!")
-      |> render("dashboard_coaching.html", user: user, subscriber: subscriber, collections_audio: collections_audio, collections_email: collections_email, collections_access_list: collections_access_list, is_subscribed: is_subscribed, subscribed_property: subscribed_property)
-  end
-
-  
-  # Email Campaigns
-  def email_campaigns(conn, _params) do
-    user = Pow.Plug.current_user(conn)
-    create_collection_access_for_free_courses(user)
-    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
-
-    collections = Content.list_email_campaigns()
-    render(conn, "email_campaigns.html", subscriber: subscriber, collections: collections)
-  end
-
-  def email_campaigns_collection(conn, %{"collection" => collection_slug}) do
-    user = Pow.Plug.current_user(conn)
-    create_collection_access_for_free_courses(user)
-
-    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
-    collections_access_list = Account.list_collection_access_by_user_id(user.id)
-
-    collections = Content.list_email_campaigns()
-    collection = Content.get_collection_slug!(collection_slug)
-
-    { _count_property, subscribed_property } = Email.collection_slug_to_subscribed_property(collection_slug)
-    is_subscribed = Map.fetch!(subscriber, subscribed_property)
-
-    has_paid_for_collection =
-      collections_access_list
-        |> Enum.find(fn(collection) -> 
-          collection.collection_id == collection.id and collection.user_id == user.id
-        end)
-        
-    stripe_api_key = get_relevant_stripe_key(conn.host)
-    render(conn, "email_campaigns_collection.html", subscriber: subscriber, user: user, collections: collections, collection: collection, collections_access_list: collections_access_list, stripe_api_key: stripe_api_key, is_subscribed: is_subscribed, has_paid_for_collection: has_paid_for_collection, subscribed_property: subscribed_property)
-  end
-
-  def email_campaigns_file(conn, %{"collection" => collection, "file" => file}) do
-    user = Pow.Plug.current_user(conn)
-    create_collection_access_for_free_courses(user)
-
-    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
-
-    collections = Content.list_email_campaigns()
-    collection = Content.get_collection_slug!(collection)
-    file = Content.get_file_slug!(file)
-    render(conn, "email_campaigns_file.html", subscriber: subscriber, collections: collections, collection: collection, file: file)
-  end
-
-
-
-  # Audio Courses
-  def audio_courses(conn, _params) do
-    user = Pow.Plug.current_user(conn)
-    create_collection_access_for_free_courses(user)
-
-    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
-
-    collections = Content.list_audio_courses()
-    render(conn, "audio_courses.html", subscriber: subscriber, collections: collections)
-  end
-
-  def audio_courses_collection(conn, %{"collection" => collection}) do
-    user = Pow.Plug.current_user(conn)
-    create_collection_access_for_free_courses(user)
-
-    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
-
-    collections = Content.list_audio_courses()
-    collection = Content.get_collection_slug!(collection)
-    render(conn, "audio_courses_collection.html", subscriber: subscriber, collections: collections, collection: collection)
-  end
-
-  def audio_courses_file(conn, %{"collection" => collection, "file" => file}) do
-    user = Pow.Plug.current_user(conn)
-    create_collection_access_for_free_courses(user)
-
-    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
-
-    collections = Content.list_audio_courses()
-    collection = Content.get_collection_slug!(collection)
-    file = Content.get_file_slug!(file)
-    render(conn, "audio_courses_file.html", subscriber: subscriber, collections: collections, collection: collection, file: file)
-  end
-
+  def audio_campaigns(conn, _params), do: FetchDashboard.fetch_dashboard(conn, :audio_campaigns, "", "", [:collections_audio])
+  def audio_campaigns_collection(conn, %{"collection" => collection_slug}), do: FetchDashboard.fetch_dashboard(conn, :audio_campaigns_collection, collection_slug, "", [:collection_audio, :collections_audio, :stripe_api_key])
+  def audio_campaigns_file(conn, %{"collection" => collection_slug, "file" => file_slug}), do: FetchDashboard.fetch_dashboard(conn, :audio_campaigns_file, collection_slug, file_slug, [:collection_audio, :collections_audio, :collections_audio_file, :stripe_api_key])
 
 
   # Profile
@@ -200,7 +80,6 @@ defmodule NfdWeb.DashboardController do
       System.get_env("STRIPE_API_KEY")
     end
   end
-
 
 
   # Change subscription general
