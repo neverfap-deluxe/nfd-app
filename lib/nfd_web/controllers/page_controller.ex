@@ -434,6 +434,7 @@ defmodule NfdWeb.PageController do
   #     {:ok, response} ->
   #       Meta.increment_visit_count(response.body["data"])
 
+  # 
   #     {:error, _error} ->
   #       render_404_page(conn)
   #   end
