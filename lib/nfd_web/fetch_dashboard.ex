@@ -2,13 +2,10 @@ defmodule NfdWeb.FetchDashboard do
   use NfdWeb, :controller
 
   alias Nfd.Content
-
   alias Nfd.Account
   alias Nfd.EmailLogs
 
   alias Nfd.Util.Email
-
-  plug :put_layout, "hub.html"
 
   def fetch_dashboard(conn, page_symbol, collection_slug, file_slug, collection_array) do
     user = Pow.Plug.current_user(conn)
@@ -26,6 +23,7 @@ defmodule NfdWeb.FetchDashboard do
       |> put_flash(:info, "Welcome back!")
       |> render(
         "#{Atom.to_string(page_symbol)}.html",
+        layout: { NfdWeb.LayoutView, "hub.html" },
         user: user,
         subscriber: subscriber,
         collections_access_list: collections_access_list,

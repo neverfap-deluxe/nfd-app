@@ -9,7 +9,7 @@
       <!-- TODO: Purchased programs list. -->
 
       <div class="profile__options__container">
-        <%= link "Logout", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "subscribe__button" %>
+        <%#= link "Logout", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "subscribe__button" %>
   
         <%= link "Delete Account", to: Routes.dashboard_path(@conn, :profile_delete_confirmation), class: "subscribe__button delete__button" %> 
       </div>

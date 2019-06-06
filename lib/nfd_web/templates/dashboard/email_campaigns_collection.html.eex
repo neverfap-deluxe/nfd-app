@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <%= if @collections.has_paid_for_collection != nil or @collections.collection_email.premium or @collections.collection_email.price != 0.0 do %>
+  <%= if @collections.has_paid_for_collection == nil or @collections.collection_email.premium or @collections.collection_email.price != 0.0 do %>
     <div class="hub__main__area">
       <div class="hub__main__payment">
         <h2>Payment</h2>

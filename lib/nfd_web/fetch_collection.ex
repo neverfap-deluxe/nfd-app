@@ -85,9 +85,9 @@ defmodule NfdWeb.FetchCollection do
       :email_campaigns_collection -> [:collection_email, :collections_email, :stripe_api_key]
       :email_campaigns_file -> [:collection_email, :collections_email, :collections_email_file, :stripe_api_key]
 
-      :audio_campaigns -> [:collections_audio]
-      :audio_campaigns_collection -> [:collection_audio, :collections_audio, :stripe_api_key]
-      :audio_campaigns_file -> [:collection_audio, :collections_audio, :collections_audio_file, :stripe_api_key]
+      :audio_courses -> [:collections_audio]
+      :audio_courses_collection -> [:collection_audio, :collections_audio, :stripe_api_key]
+      :audio_courses_file -> [:collection_audio, :collections_audio, :collections_audio_file, :stripe_api_key]
 
       :profile -> []
       :profile_delete_confirmation -> []
