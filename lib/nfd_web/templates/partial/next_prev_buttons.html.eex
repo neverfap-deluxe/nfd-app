@@ -3,7 +3,7 @@
   <%= if @previousItem do %>
     <%= if @previousItem["title"] do %>
       <div class="button__wrapper">
-        <a class="button button__black_and_white" href='<%= @previousItem["permalink"] %>'>Previous Post | <span><%= @previousItem["title"] %></span></a>
+        <a class="button button__black_and_white" href='<%= Routes.content_path(@conn, @page_symbol, @previousItem["slug"]) %>'>Previous Post | <span><%= @previousItem["title"] %></span></a>
       </div>
     <% else %>
       <div style="width: 300px;"></div>
@@ -13,7 +13,7 @@
   <%= if @nextItem do %>
     <%= if @nextItem["title"] do %>
       <div class="button__wrapper">
-        <a class="button button__black_and_white" href='<%=@nextItem["permalink"] %>'>Next Post | <span><%= @nextItem["title"] %></span></a>
+        <a class="button button__black_and_white" href='<%= Routes.content_path(@conn, @page_symbol, @nextItem["slug"]) %>'>Next Post | <span><%= @nextItem["title"] %></span></a>
       </div>
     <% else %>
       <div style="width: 300px;"></div>  
