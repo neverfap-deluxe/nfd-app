@@ -11,7 +11,7 @@
 <div class="single__wrapper">
   <h3 class="popular__latest__options__title">Updates</h3>
   <div class="posts__on posts--guide" id="articles_latest_plain_posts">
-    <%= partial "list/articles_latest_plain_text.html", %{ items: @updates, tag_type: "context" } %>
+    <%= partial "list/articles_latest_plain_text.html", %{ conn: @conn, page_symbol: :update, items: @updates, tag_type: "context" } %>
   </div>
 </div>
 <%= partial "links/loginregister_top--without-mobile.html", assigns %>

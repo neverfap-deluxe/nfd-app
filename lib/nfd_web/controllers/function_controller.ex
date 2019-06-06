@@ -50,13 +50,17 @@ defmodule NfdWeb.FunctionController do
 
           {:error, contact_form_changeset} ->
             client = API.is_localhost(conn.host) |> API.api_client()
-            all_collections = %{ contact_form_changeset: contact_form_changeset }
-            Fetch.fetch_response_ok(conn, response, all_collections, :first_slug_symbol, "general.html", "page")
+            case apply(Page, first_slug_symbol, [client]) do
+              {:ok, response} ->
+                all_collections = %{ contact_form_changeset: contact_form_changeset }
+                Fetch.fetch_response_ok(conn, response, all_collections, first_slug_symbol, "general.html", "page")
+              {:error, error} -> Fetch.render_404_page(conn, error)
+            end          
         end
 
       {:error, errors} ->
-        EmailLogs.error_email_log("#{email} - #{message} - Could not verify captcha - function_controller.")
-        render(conn, "send_message_failed.html", message: message, error_message: "Could not verify Captcha")
+        EmailLogs.error_email_log("#{contact_form["email"]} - #{contact_form["message"]} - Could not verify captcha - function_controller.")
+        render(conn, "send_message_failed.html", message: contact_form["message"], error_message: "Could not verify Captcha")
     end
   end
 
