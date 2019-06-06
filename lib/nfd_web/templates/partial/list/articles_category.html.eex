@@ -7,7 +7,7 @@
     <%= Enum.map(@items, fn(item) -> %>
       <%= if Enum.find(item["categories"], &(&1 == "introduction")) do %>
         <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
-          <a class="post" href='<%= item["permalink"] %>'>
+          <a class="post" href='<%= Routes.content_path(@conn, @page_symbol, item["slug"]) %>'>
             <div class="post__left">
               <div class="post__five__principles">
                 <div class="post__five__principles__item post__five__principles__item--introduction">
@@ -30,7 +30,7 @@
     <%= Enum.map(@items, fn(item) -> %>
       <%= if Enum.find(item["categories"], &(&1 == "choice-over-mind")) do %>
         <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
-          <a class="post" href='<%= item["permalink"] %>'>
+          <a class="post" href='<%= Routes.content_path(@conn, @page_symbol, item["slug"]) %>'>
             <div class="post__left">
               <div class="post__five__principles">
                 <div class="post__five__principles__item post__five__principles__item--choice-over-mind">
@@ -54,7 +54,7 @@
     <%= Enum.map(@items, fn(item) -> %>
       <%= if Enum.find(item["categories"], &(&1 == "balance-over-reward")) do %>
         <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
-          <a class="post" href='<%= item["permalink"] %>'>
+          <a class="post" href='<%= Routes.content_path(@conn, @page_symbol, item["slug"]) %>'>
               <div class="post__left">
                 <div class="post__five__principles">
                   <div class="post__five__principles__item post__five__principles__item--balance-over-reward">
@@ -78,7 +78,7 @@
     <%= Enum.map(@items, fn(item) -> %>
       <%= if Enum.find(item["categories"], &(&1 == "struggle-over-none")) do %>
         <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
-          <a class="post" href='<%= item["permalink"] %>'>
+          <a class="post" href='<%= Routes.content_path(@conn, @page_symbol, item["slug"]) %>'>
               <div class="post__left">
                 <div class="post__five__principles">
                   <div class="post__five__principles__item post__five__principles__item--struggle-over-none">
@@ -102,7 +102,7 @@
     <%= Enum.map(@items, fn(item) -> %>
       <%= if Enum.find(item["categories"], &(&1 == "awareness-over-all")) do %>
         <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
-          <a class="post" href='<%= item["permalink"] %>'>
+          <a class="post" href='<%= Routes.content_path(@conn, @page_symbol, item["slug"]) %>'>
             <div class="post__left">
               <div class="post__five__principles">
                 <div class="post__five__principles__item post__five__principles__item--awareness-over-all">
@@ -125,7 +125,7 @@
     <%= Enum.map(@items, fn(item) -> %>
       <%= if Enum.find(item["categories"], &(&1 == "uncondition-over-judgement")) do %>
         <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
-          <a class="post" href='<%= item["permalink"] %>'>
+          <a class="post" href='<%= Routes.content_path(@conn, @page_symbol, item["slug"]) %>'>
             <div class="post__left">
               <div class="post__five__principles">
                 <div class="post__five__principles__item post__five__principles__item--uncondition-over-judgement">

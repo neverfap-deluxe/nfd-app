@@ -2,46 +2,47 @@ defmodule NfdWeb.PageController do
   use NfdWeb, :controller
 
   alias NfdWeb.Fetch
+  alias NfdWeb.FetchCollection
 
   # GENERAL
-  def home(conn, _params), do: Fetch.fetch_page(conn, :home, "home.html", [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset])
-  def about(conn, _params), do: Fetch.fetch_page(conn, :about, "general.html", [:contact_form_changeset])
-  def contact(conn, _params), do: Fetch.fetch_page(conn, :contact, "general.html", [])
-  def community(conn, _params), do: Fetch.fetch_page(conn, :community, "general.html", [])
-  def donations(conn, _params), do: Fetch.fetch_page(conn, :donations, "general.html", [])
-  def everything(conn, _params), do: Fetch.fetch_page(conn, :everything, "general.html", [])
+  def home(conn, _params), do: Fetch.fetch_page(conn, :home, "home.html", FetchCollection.fetch_collections_array(:home))
+  def about(conn, _params), do: Fetch.fetch_page(conn, :about, "general.html", FetchCollection.fetch_collections_array(:about))
+  def contact(conn, _params), do: Fetch.fetch_page(conn, :contact, "general.html", FetchCollection.fetch_collections_array(:contact))
+  def community(conn, _params), do: Fetch.fetch_page(conn, :community, "general.html", FetchCollection.fetch_collections_array(:community))
+  def donations(conn, _params), do: Fetch.fetch_page(conn, :donations, "general.html", FetchCollection.fetch_collections_array(:donations))
+  def everything(conn, _params), do: Fetch.fetch_page(conn, :everything, "general.html", FetchCollection.fetch_collections_array(:everything))
 
   # GUIDES
-  def guide(conn, _params), do: Fetch.fetch_page(conn, :guide, "general.html", [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset])
-  def summary(conn, _params), do: Fetch.fetch_page(conn, :summary, "general.html", [])
-  def neverfap_deluxe_bible(conn, _params), do: Fetch.fetch_page(conn, :neverfap_deluxe_bible, "general.html", [])
-  def emergency(conn, _params), do: Fetch.fetch_page(conn, :emergency, "home.html", [])
-  def post_relapse_academy(conn, _params), do: Fetch.fetch_page(conn, :post_relapse_academy, "home.html", [])
+  def guide(conn, _params), do: Fetch.fetch_page(conn, :guide, "general.html", FetchCollection.fetch_collections_array(:guide))
+  def summary(conn, _params), do: Fetch.fetch_page(conn, :summary, "general.html", FetchCollection.fetch_collections_array(:summary))
+  def neverfap_deluxe_bible(conn, _params), do: Fetch.fetch_page(conn, :neverfap_deluxe_bible, "general.html", FetchCollection.fetch_collections_array(:neverfap_deluxe_bible))
+  def emergency(conn, _params), do: Fetch.fetch_page(conn, :emergency, "home.html", FetchCollection.fetch_collections_array(:emergency))
+  def post_relapse_academy(conn, _params), do: Fetch.fetch_page(conn, :post_relapse_academy, "home.html", FetchCollection.fetch_collections_array(:post_relapse_academy))
 
   # LEGAL
-  def disclaimer(conn, _params), do: Fetch.fetch_page(conn, :disclaimer, "general.html", [])
-  def privacy(conn, _params), do: Fetch.fetch_page(conn, :privacy, "general.html", [])
-  def terms_and_conditions(conn, _params), do: Fetch.fetch_page(conn, :terms_and_conditions, "general.html", [])
+  def disclaimer(conn, _params), do: Fetch.fetch_page(conn, :disclaimer, "general.html", FetchCollection.fetch_collections_array(:disclaimer))
+  def privacy(conn, _params), do: Fetch.fetch_page(conn, :privacy, "general.html", FetchCollection.fetch_collections_array(:privacy))
+  def terms_and_conditions(conn, _params), do: Fetch.fetch_page(conn, :terms_and_conditions, "general.html", FetchCollection.fetch_collections_array(:terms_and_conditions))
 
   # PROGRAMS
-  def accountability(conn, _params), do: Fetch.fetch_page(conn, :accountability, "general.html", [])
-  def reddit_guidelines(conn, _params), do: Fetch.fetch_page(conn, :reddit_guidelines, "general.html", [])
-  def coaching(conn, _params), do: Fetch.fetch_page(conn, :coaching, "general.html", [])
+  def accountability(conn, _params), do: Fetch.fetch_page(conn, :accountability, "general.html", FetchCollection.fetch_collections_array(:accountability))
+  def reddit_guidelines(conn, _params), do: Fetch.fetch_page(conn, :reddit_guidelines, "general.html", FetchCollection.fetch_collections_array(:reddit_guidelines))
+  def coaching(conn, _params), do: Fetch.fetch_page(conn, :coaching, "general.html", FetchCollection.fetch_collections_array(:coaching))
 
   # VOLUNTEER
-  def helpful_neverfap_counsel(conn, _params), do: Fetch.fetch_page(conn, :helpful_neverfap_counsel, "general.html", [])
-  def engineering_corps(conn, _params), do: Fetch.fetch_page(conn, :engineering_corps, "general.html", [])
-  def marketing_department(conn, _params), do: Fetch.fetch_page(conn, :marketing_department, "general.html", [])
+  def helpful_neverfap_counsel(conn, _params), do: Fetch.fetch_page(conn, :helpful_neverfap_counsel, "general.html", FetchCollection.fetch_collections_array(:helpful_neverfap_counsel))
+  def engineering_corps(conn, _params), do: Fetch.fetch_page(conn, :engineering_corps, "general.html", FetchCollection.fetch_collections_array(:engineering_corps))
+  def marketing_department(conn, _params), do: Fetch.fetch_page(conn, :marketing_department, "general.html", FetchCollection.fetch_collections_array(:marketing_department))
 
   # APPS
-  def desktop_app(conn, _params), do: Fetch.fetch_page(conn, :desktop_app, "general.html", [])
-  def mobile_app(conn, _params), do: Fetch.fetch_page(conn, :mobile_app, "general.html", [])
-  def chrome_extension(conn, _params), do: Fetch.fetch_page(conn, :chrome_extension, "general.html", [])
-  def open_source(conn, _params), do: Fetch.fetch_page(conn, :open_source, "general.html", [])
-  def neverfap_deluxe_league(conn, _params), do: Fetch.fetch_page(conn, :neverfap_deluxe_league, "general.html", [])
+  def desktop_app(conn, _params), do: Fetch.fetch_page(conn, :desktop_app, "general.html", FetchCollection.fetch_collections_array(:desktop_app))
+  def mobile_app(conn, _params), do: Fetch.fetch_page(conn, :mobile_app, "general.html", FetchCollection.fetch_collections_array(:mobile_app))
+  def chrome_extension(conn, _params), do: Fetch.fetch_page(conn, :chrome_extension, "general.html", FetchCollection.fetch_collections_array(:chrome_extension))
+  def open_source(conn, _params), do: Fetch.fetch_page(conn, :open_source, "general.html", FetchCollection.fetch_collections_array(:open_source))
+  def neverfap_deluxe_league(conn, _params), do: Fetch.fetch_page(conn, :neverfap_deluxe_league, "general.html", FetchCollection.fetch_collections_array(:neverfap_deluxe_league))
 
   # MISC
-  def never_fap(conn, _params), do: Fetch.fetch_page(conn, :never_fap, "general.html", [])
+  def never_fap(conn, _params), do: Fetch.fetch_page(conn, :never_fap, "general.html", FetchCollection.fetch_collections_array(:never_fap))
 
   # Images
   def test(conn, _params), do: conn |> render("test.html")
@@ -67,14 +68,8 @@ defmodule NfdWeb.PageController do
         |> put_resp_content_type("text/xml")
         |> send_resp(200, new_xml)
 
-      {:error, _error} ->
-        render_404_page(conn)
+      {:error, error} ->
+        Fetch.render_404_page(conn, error)
     end
-  end
-
-  defp render_404_page(conn) do
-    conn
-    |> put_view(NfdWeb.ErrorView)
-    |> render("404.html")
   end
 end

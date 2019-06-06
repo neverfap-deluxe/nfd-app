@@ -1,5 +1,5 @@
 <div class="hub__email__challenges">
-  <h2 class="hub__main__title hub__main__title--email"><%= @collection.display_name %></h2>
+  <h2 class="hub__main__title hub__main__title--email"><%= @collections.collection_email.display_name %></h2>
   
   <div class="hub__main__back__container">
     <a class="hub__main__back" href="/dashboard/email_campaigns">
@@ -10,13 +10,13 @@
 
   <div class="hub__main__area">
     <div class="hub__main__area__content">
-      <p><b>Landing page:</b> <a class="link" href="/<%= @collection.slug %>">link</a></p>
+      <p><b>Landing page:</b> <a class="link" href="/<%= @collections.collection_email.slug %>">link</a></p>
       <!-- TODO: In order to show this, it needs to check if the program has been purchased first. If not, show button which allows you to do that. Assuming it's a paid course to begin with. -->
       <%= partial "subscriber_status.html", %{ conn: @conn, subscribed: @is_subscribed, subscribed_property: @subscribed_property, user_id: @user.id } %>
     </div>
   </div>
 
-  <%= if @has_paid_for_collection != nil or @collection.premium or @collection.price != 0.0 do %>
+  <%= if @collections.has_paid_for_collection == nil or @collections.collection_email.premium or @collections.collection_email.price != 0.0 do %>
     <div class="hub__main__area">
       <div class="hub__main__payment">
         <h2>Payment</h2>
@@ -28,14 +28,14 @@
         </div>
 
         <div class="hub__main__payment__course_information">
-          <h3>Course: <%= @collection.display_name %></h3>
-          <h3>Price: $<%= @collection.price %></h3>
+          <h3>Course: <%= @collections.collection_email.display_name %></h3>
+          <h3>Price: $<%= @collections.collection_email.price %></h3>
         </div>
 
         <div class="hub__main__payment__box">
           <div class="hub__main__payment__stripe">
             <h3>Credit Card</h3>
-            <%= partial "payment/stripe_checkout.html", %{stripe_api_key: @stripe_api_key, collection: @collection} %>
+            <%= partial "payment/stripe_checkout.html", %{stripe_api_key: @collections.stripe_api_key, collection: @collections.collection_email} %>
           </div>
           <div class="hub__main__payment__paypal">
             <h3>PayPal</h3>

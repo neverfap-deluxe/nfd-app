@@ -17,15 +17,15 @@
   </div>
   
   <div class="posts__off posts--guide" id="practices_latest_posts">
-    <%= partial "list/articles_latest.html", %{ items: @collections.practices, tag_type: "practice" } %>
+    <%= partial "list/articles_latest.html", %{ conn: @conn, page_symbol: :practice, items: @collections.practices, tag_type: "practice" } %>
   </div>
 
   <div class="posts__on posts--guide" id="practices_latest_plain_posts">
-    <%= partial "list/articles_latest_plain_text.html", %{ items: @collections.practices, tag_type: "practice" } %>
+    <%= partial "list/articles_latest_plain_text.html", %{ conn: @conn, page_symbol: :practice, items: @collections.practices, tag_type: "practice" } %>
   </div>
 
   <div class="posts__off posts--guide" id="practices_category_posts">
-    <%= partial "list/articles_category.html", %{ items: @collections.practices, tag_type: "practice" } %>
+    <%= partial "list/articles_category.html", %{ conn: @conn, page_symbol: :practice, items: @collections.practices, tag_type: "practice" } %>
   </div>
 </div>
 

@@ -2,7 +2,7 @@
   <div class="articles__list">
     <%= Enum.map(@items, fn(item) -> %>
       <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
-      <a class="post" href='<%= item["permalink"] %>'>
+      <a class="post" href='<%= Routes.content_path(@conn, @page_symbol, item["slug"]) %>'>
           <div class="post__left">
             <div class="post__five__principles">
               <%= if item["categories"] == "introduction" do %>

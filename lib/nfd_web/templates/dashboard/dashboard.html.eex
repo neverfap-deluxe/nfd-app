@@ -13,7 +13,7 @@
   <div class="hub__main__area">
     <div class="hub__main__area__content">
       <h2>Email Campaigns</h2>
-      <%= partial "hub/email_campaign_list.html", %{ collections_email: @collections_email, collections_access_list: @collections_access_list } %>
+      <%= partial "hub/email_campaign_list.html", %{ collections_email: @collections.collections_email, collections_access_list: @collections_access_list } %>
     </div>
   </div>
 
