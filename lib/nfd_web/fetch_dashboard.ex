@@ -102,7 +102,7 @@ defmodule NfdWeb.FetchDashboard do
   defp has_paid_for_collection(collections_access_list, collection, user) do
     collections_access_list
       |> Enum.find(fn(list_collection) ->
-        list_collection.collection_id == collection_audio.id and list_collection.user_id == user.id
+        list_collection.collection_id == collection.id and list_collection.user_id == user.id
       end)
   end
 
@@ -181,15 +181,5 @@ defmodule NfdWeb.FetchDashboard do
           _collection_access -> nil
         end
       end)
-  end
-
-  defp render_404_page(conn) do
-    conn
-      |> put_view(NfdWeb.ErrorView)
-      |> render("404.html")
-  end
-
-  defp check_api_response_for_404(conn, status) do
-    if status != 200, do: render_404_page(conn)
   end
 end

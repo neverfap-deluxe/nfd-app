@@ -13,9 +13,9 @@ defmodule NfdWeb.FunctionController do
   alias NfdWeb.Fetch
 
   def comment_form_post(conn, %{"comment_form" => comment_form}) do
-    first_slug = conn.path_info |> at(0)
+    first_slug = conn.path_info |> List.at(0)
     first_slug_symbol = String.to_atom(first_slug)
-    second_slug = conn.path_info |> at(1)
+    second_slug = conn.path_info |> List.at(1)
 
     case Meta.create_comment(comment_form) do
       {:ok, _comment_form} ->
@@ -29,7 +29,7 @@ defmodule NfdWeb.FunctionController do
             comment_form_changeset = Meta.Comment.changeset(%Meta.Comment{}, %{})
             typical_collections = Fetch.fetch_collections(FetchCollection.fetch_collections_array(first_slug_symbol))
             all_collections = Map.merge(typical_collections, %{ comment_form_changeset: comment_form_changeset })
-            Fetch.fetch_response_ok(conn, response, all_collections, "content")
+            Fetch.fetch_response_ok(conn, response, all_collections, first_slug_symbol, "general.html", "content")
           {:error, error} ->
             Fetch.render_404_page(conn, error)
         end

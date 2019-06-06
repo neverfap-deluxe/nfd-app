@@ -68,14 +68,8 @@ defmodule NfdWeb.PageController do
         |> put_resp_content_type("text/xml")
         |> send_resp(200, new_xml)
 
-      {:error, _error} ->
-        render_404_page(conn)
+      {:error, error} ->
+        Fetch.render_404_page(conn, error)
     end
-  end
-
-  defp render_404_page(conn) do
-    conn
-    |> put_view(NfdWeb.ErrorView)
-    |> render("404.html")
   end
 end

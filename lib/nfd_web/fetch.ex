@@ -20,8 +20,9 @@ defmodule NfdWeb.Fetch do
     case apply(Content, page_symbol, [client, verified_slug]) do
       {:ok, response} ->
         collections = fetch_collections(response.body["data"], collection_array, client)
-        fetch_response_ok(conn, response, collections, "content")
-      {:error, error} -> render_404_page(conn, error)
+        fetch_response_ok(conn, response, collections, page_symbol, page_layout, "content")
+      {:error, error} -> 
+        render_404_page(conn, error)
     end
   end
 
@@ -31,14 +32,14 @@ defmodule NfdWeb.Fetch do
     case apply(Page, page_symbol, [client]) do
       {:ok, response} ->
         collections = fetch_collections(response.body["data"], collection_array, client)
-        fetch_response_ok(conn, response, collections, page_type)
+        fetch_response_ok(conn, response, collections, page_symbol, page_layout, page_type)
       {:error, error} -> render_404_page(conn, error)
     end
   end
 
-  def fetch_response_ok(conn, response, collections, page_type) do
+  def fetch_response_ok(conn, response, collections, page_symbol, page_layout, page_type) do
     check_api_response_for_404(conn, response.status)
-    Meta.increment_visit_count(item)
+    Meta.increment_visit_count(response.body["data"])
     conn |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: response.body["data"], collections: collections, page_type: page_type)
   end
 
@@ -178,6 +179,6 @@ defmodule NfdWeb.Fetch do
   end
 
   def check_api_response_for_404(conn, status) do
-    if status != 200, do: render_404_page(conn)
+    if status != 200, do: render_404_page(conn, status)
   end
 end
