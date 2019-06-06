@@ -1,4 +1,4 @@
-defmodule NfdWeb.Fetch do 
+defmodule NfdWeb.Fetch do
   use NfdWeb, :controller
 
   alias Nfd.Meta
@@ -14,24 +14,14 @@ defmodule NfdWeb.Fetch do
   alias NfdWeb.Redirects
 
   def fetch_content(conn, page_symbol, slug, page_layout, collection_array) do
-    page_type = "content"
     client = API.is_localhost(conn.host) |> API.api_client()
     verified_slug = Redirects.redirect(conn, slug, Atom.to_string(page_symbol))
 
     case apply(Content, page_symbol, [client, verified_slug]) do
       {:ok, response} ->
-        item = response.body["data"]
-        check_api_response_for_404(conn, response.status)
-        Meta.increment_visit_count(item)
-        if response.body["data"]["draft"] == false do 
-          collections = fetch_collections(item, collection_array, client)
-          conn |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: item, collections: collections, page_type: page_type)
-        else 
-          render_404_page(conn)
-        end
-      {:error, error} ->
-        IO.inspect error
-        render_404_page(conn)
+        collections = fetch_collections(response.body["data"], collection_array, client)
+        fetch_response_ok(conn, response, collections, "content")
+      {:error, error} -> render_404_page(conn, error)
     end
   end
 
@@ -40,16 +30,19 @@ defmodule NfdWeb.Fetch do
     client = API.is_localhost(conn.host) |> API.api_client()
     case apply(Page, page_symbol, [client]) do
       {:ok, response} ->
-        item = response.body["data"]
-        Meta.increment_visit_count(item)
-        collections = fetch_collections(item, collection_array, client)
-        conn |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: item, collections: collections, page_type: page_type)
-      {:error, _error} ->
-        render_404_page(conn)
+        collections = fetch_collections(response.body["data"], collection_array, client)
+        fetch_response_ok(conn, response, collections, page_type)
+      {:error, error} -> render_404_page(conn, error)
     end
   end
 
-  defp fetch_collections(item, collection_array, client) do
+  def fetch_response_ok(conn, response, collections, page_type) do
+    check_api_response_for_404(conn, response.status)
+    Meta.increment_visit_count(item)
+    conn |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: response.body["data"], collections: collections, page_type: page_type)
+  end
+
+  def fetch_collections(item, collection_array, client) do
     Enum.reduce(
       collection_array,
       %{},
@@ -65,7 +58,7 @@ defmodule NfdWeb.Fetch do
               previousItem: previousItem,
               articles: articles
             })
-            
+
           :practices ->
             {:ok, practicesResponse} = client |> Page.practices()
             practices = practicesResponse.body["data"]["practices"] |> Enum.reverse()
@@ -95,7 +88,7 @@ defmodule NfdWeb.Fetch do
               previousItem: previousItem,
               updates: updates
             })
-  
+
           :blogs ->
             {:ok, blogsResponse} = client |> Page.blogs()
             blogs = blogsResponse.body["data"]["blogs"] |> Enum.reverse()
@@ -105,7 +98,7 @@ defmodule NfdWeb.Fetch do
               previousItem: previousItem,
               blogs: blogs
             })
-    
+
           :podcasts ->
             {:ok, podcastsResponse} = client |> Page.podcasts()
             podcasts = podcastsResponse.body["data"]["podcasts"] |> Enum.reverse()
@@ -115,7 +108,7 @@ defmodule NfdWeb.Fetch do
               previousItem: previousItem,
               podcasts: podcasts
             })
-  
+
           :meditations ->
             {:ok, meditationsResponse} = client |> Page.meditations()
             meditations = meditationsResponse.body["data"]["meditations"] |> Enum.reverse()
@@ -125,19 +118,19 @@ defmodule NfdWeb.Fetch do
               previousItem: previousItem,
               meditations: meditations
             })
-  
+
           :courses ->
             {:ok, coursesResponse} = client |> Page.courses()
             courses = coursesResponse.body["data"]["courses"] |> Enum.reverse()
             Map.put(acc, :courses, courses)
-  
+
           # CONTENT EMAIL
           :seven_day_kickstarter ->
             {:ok, sdkResponse} = client |> Page.seven_day_kickstarter()
             sdk_item = sdkResponse.body["data"]
             Map.put(acc, :sdk_item, sdk_item)
 
-          :comments -> 
+          :comments ->
             comments = Meta.list_collection_access_by_page_id(item["page_id"])
             Map.put(acc, :comments, comments)
 
@@ -145,11 +138,11 @@ defmodule NfdWeb.Fetch do
           :contact_form_changeset ->
             contact_form_changeset = ContactForm.changeset(%ContactForm{}, %{name: "", email: "", message: ""})
             Map.put(acc, :contact_form_changeset, contact_form_changeset)
-  
+
           :comment_form_changeset ->
             comment_form_changeset = Comment.changeset(%Comment{}, %{name: "", email: "", message: ""})
             Map.put(acc, :comment_form_changeset, comment_form_changeset)
-  
+
           :seven_day_kickstarter_changeset ->
             seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
             Map.put(acc, :seven_day_kickstarter_changeset, seven_day_kickstarter_changeset)
@@ -160,30 +153,31 @@ defmodule NfdWeb.Fetch do
       end)
   end
 
-  defp getPreviousnextItem(articles, currentArticle) do
-    articleValues = 
+  def getPreviousnextItem(articles, currentArticle) do
+    articleValues =
       Enum.reduce(articles, %{last: nil, values: [], correct: false, previousItem: nil, nextItem: nil}, fn article, acc ->
         if acc.correct do
           %{last: article, previousItem: acc.previousItem, nextItem: article, correct: false }
-        else  
-          if currentArticle["slug"] == article["slug"] do 
+        else
+          if currentArticle["slug"] == article["slug"] do
             %{last: article, previousItem: acc.last, nextItem: nil, correct: true }
-          else 
+          else
             %{last: article, previousItem: acc.previousItem, nextItem: acc.nextItem, correct: false}
           end
         end
       end)
-      
+
     { articleValues.previousItem, articleValues.nextItem }
   end
 
-  defp render_404_page(conn) do 
-    conn 
+  def render_404_page(conn, error) do
+    IO.inspect error
+    conn
       |> put_view(NfdWeb.ErrorView)
       |> render("404.html")
   end
 
-  defp check_api_response_for_404(conn, status) do
+  def check_api_response_for_404(conn, status) do
     if status != 200, do: render_404_page(conn)
   end
 end

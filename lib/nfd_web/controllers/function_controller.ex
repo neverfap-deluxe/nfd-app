@@ -10,37 +10,28 @@ defmodule NfdWeb.FunctionController do
   alias Nfd.API.Page
   alias Nfd.Meta
 
+  alias NfdWeb.Fetch
+
   def comment_form_post(conn, %{"comment_form" => comment_form}) do
-    # I need to figure out about user_id and all those things.
-    IO.inspect "hyeyy"
+    first_slug = conn.path_info |> at(0)
+    first_slug_symbol = String.to_atom(first_slug)
+    second_slug = conn.path_info |> at(1)
 
-    name = comment_form["name"]
-    email = comment_form["email"]
-    message = comment_form["message"]
-
-    # TODO: It will need to get the slug from conn, I think.
-    slug = "hello"
-
-    
     case Meta.create_comment(comment_form) do
       {:ok, _comment_form} ->
-        EmailLogs.new_comment_form_email(name, email, message)
-        redirect_back(conn) 
+        EmailLogs.new_comment_form_email(comment_form["name"], comment_form["email"], comment_form["message"])
+        redirect_back(conn)
       {:error, comment_form_changeset} ->
-        IO.inspect "hyeyy"
-
-        page_type = "content"
         client = API.is_localhost(conn.host) |> API.api_client()
 
-        case client |> Content.article(slug) do
+        case apply(Content, first_slug_symbol, [client, second_slug]) do
           {:ok, response} ->
-            # Meta.increment_visit_count(response.body["data"])
-            comments = Meta.list_collection_access_by_page_id(response.body["data"]["page_id"])
-            comment_form_changeset = Meta.Comment.changeset(%Meta.Comment{}, %{})  
-
-            conn |> render("article.html", item: response.body["data"], comment_form_changeset: comment_form_changeset, page_type: page_type)
-          {:error, _error} ->
-            conn |> put_view(NfdWeb.ErrorView) |> render("404.html")
+            comment_form_changeset = Meta.Comment.changeset(%Meta.Comment{}, %{})
+            typical_collections = Fetch.fetch_collections(FetchCollection.fetch_collections_array(first_slug_symbol))
+            all_collections = Map.merge(typical_collections, %{ comment_form_changeset: comment_form_changeset })
+            Fetch.fetch_response_ok(conn, response, all_collections, "content")
+          {:error, error} ->
+            Fetch.render_404_page(conn, error)
         end
     end
   end
@@ -56,8 +47,8 @@ defmodule NfdWeb.FunctionController do
         case Account.create_contact_form(contact_form) do
           {:ok, _contact_form} ->
             EmailLogs.new_contact_form_email(name, email, message)
-            render(conn, "send_message_success.html") 
-    
+            render(conn, "send_message_success.html")
+
           {:error, contact_form_changeset} ->
             page_type = "page"
             client = API.is_localhost(conn.host) |> API.api_client()
@@ -69,10 +60,23 @@ defmodule NfdWeb.FunctionController do
                 conn |> put_view(NfdWeb.ErrorView) |> render("404.html")
             end
         end
-        
+
       {:error, errors} ->
         EmailLogs.error_email_log("#{email} - #{message} - Could not verify captcha - function_controller.")
         render(conn, "send_message_failed.html", message: message, error_message: "Could not verify Captcha")
+    end
+  end
+
+  defp slug_to_symbol(slug) do
+    case slug do
+      "articles" -> :article
+      "practices" -> :practice
+      "courses" -> :course
+      "podcast" -> :podcast
+      "quotes" -> :quote
+      "meditation" -> :meditation
+      "blogs" -> :blog
+      "updates" -> :update
     end
   end
 
@@ -82,17 +86,6 @@ defmodule NfdWeb.FunctionController do
 
   def send_message_send_message_failed(conn, %{ "message" => message, "error_message" => error_message}) do
     render(conn, "send_message_failed.html", message: message, error_message: error_message)
-  end
-  
-  def delete_acount(conn, %{"user" => user}) do 
-    case Account.delete_user(user) do
-      {:ok, _empty_user} ->
-        Nfd.EmailLogs.user_deleted_email(user.email)
-        redirect(conn, to: Routes.page_path(conn, :home))
-
-      {:error, _error} -> 
-        redirect(conn, to: Routes.page_path(conn, :home))
-    end
   end
 
 end

@@ -1,4 +1,4 @@
-defmodule NfdWeb.FetchDashboard do 
+defmodule NfdWeb.FetchDashboard do
   use NfdWeb, :controller
 
   alias Nfd.Content
@@ -7,8 +7,6 @@ defmodule NfdWeb.FetchDashboard do
   alias Nfd.EmailLogs
 
   alias Nfd.Util.Email
-
-  alias NfdWeb.FetchDashboard 
 
   plug :put_layout, "hub.html"
 
@@ -27,12 +25,12 @@ defmodule NfdWeb.FetchDashboard do
     conn
       |> put_flash(:info, "Welcome back!")
       |> render(
-        "#{Atom.to_string(page_symbol)}.html", 
-        user: user, 
-        subscriber: subscriber, 
-        collections_access_list: collections_access_list, 
-        is_subscribed: is_subscribed, 
-        subscribed_property: subscribed_property, 
+        "#{Atom.to_string(page_symbol)}.html",
+        user: user,
+        subscriber: subscriber,
+        collections_access_list: collections_access_list,
+        is_subscribed: is_subscribed,
+        subscribed_property: subscribed_property,
         collections: collections
       )
   end
@@ -46,11 +44,7 @@ defmodule NfdWeb.FetchDashboard do
           # COLLECTIONS
           :collection_audio ->
             collection_audio = Content.get_collection_slug!(collection_slug)
-            has_paid_for_collection =
-              collections_access_list
-                |> Enum.find(fn(list_collection) -> 
-                  list_collection.collection_id == collection_audio.id and list_collection.user_id == user.id
-                end)
+            has_paid_for_collection = has_paid_for_collection(collections_access_list, collection_audio, user)
             Map.merge(acc, %{
               collection_audio: collection_audio,
               has_paid_for_collection: has_paid_for_collection
@@ -58,57 +52,59 @@ defmodule NfdWeb.FetchDashboard do
 
           :collection_email ->
             collection_email = Content.get_collection_slug!(collection_slug)
-            has_paid_for_collection =
-              collections_access_list
-                |> Enum.find(fn(list_collection) -> 
-                  list_collection.collection_id == collection_email.id and list_collection.user_id == user.id
-                end)
+            has_paid_for_collection = has_paid_for_collection(collections_access_list, collection_email, user)
             Map.merge(acc, %{
               collection_email: collection_email,
               has_paid_for_collection: has_paid_for_collection
             })
 
-          :collections_audio -> 
+          :collections_audio ->
             collections_audio = Content.list_audio_courses()
             Map.put(acc, :collections_audio, collections_audio)
 
-          :collections_email -> 
+          :collections_email ->
             collections_email = Content.list_email_campaigns()
             Map.put(acc, :collections_email, collections_email)
 
-          :collections_audio_file -> 
+          :collections_audio_file ->
             collections_audio_file = Content.get_file_slug!(file_slug)
             Map.put(acc, :collections_audio_file, collections_audio_file)
-            
-          :collections_email_file -> 
+
+          :collections_email_file ->
             collections_email_file = Content.get_file_slug!(file_slug)
             Map.put(acc, :collections_email_file, collections_email_file)
-  
-    
 
-            # collections_email_raw 
+            # No idea bout this, I'm sure it's relevant/useful.
+            # collections_email_raw
             #   |> Enum.filter(fn(collection) ->
             #     collection_added_to_access_list = Enum.find(collections_access_list, fn(access_list) -> access_list.collection_id == collection.id end)
             #     if collection_added_to_access_list, do: false, else: true
             #   end)
             # collections_email_purchased = collections_email_raw |> Enum.filter()
-            #   collections_email_available = 
-            #     collections_email_raw 
+            #   collections_email_available =
+            #     collections_email_raw
             #       |> Enum.filter(fn(collection) ->
             #         collection_added_to_access_list = Enum.find(collections_access_list, fn(access_list) -> access_list.collection_id == collection.id end)
             #         if collection_added_to_access_list, do: true, else: false
             #       end)
 
-            :stripe_api_key -> 
+            :stripe_api_key ->
               stripe_api_key = get_relevant_stripe_key(conn.host)
               Map.put(acc, :stripe_api_key, stripe_api_key)
-  
+
           _ ->
             acc
         end
       end)
     end
 
+
+  defp has_paid_for_collection(collections_access_list, collection, user) do
+    collections_access_list
+      |> Enum.find(fn(list_collection) ->
+        list_collection.collection_id == collection_audio.id and list_collection.user_id == user.id
+      end)
+  end
 
   # Check if subscriber exists
   defp check_subscriber_exists(user) do
@@ -121,16 +117,16 @@ defmodule NfdWeb.FetchDashboard do
 
   defp check_subscriber_exists_create_subscriber(user_email, user_id) do
     case Account.create_subscriber(%{ subscriber_email: user_email, user_id: user_id }) do
-      {:ok, subscriber} -> 
-        # NOTE: I think there's an issue where this only sometimes returns the subscriber_email.        
+      {:ok, subscriber} ->
+        # NOTE: I think there's an issue where this only sometimes returns the subscriber_email.
         subscriber
       {:error, _error} -> EmailLogs.error_email_log("#{user_email} - #{user_id} - Could not create subscriber - :check_subscriber_exists_create_subscriber.")
     end
   end
 
-  defp check_subscriber_exists_update_subscriber(subscriber, user) do 
+  defp check_subscriber_exists_update_subscriber(subscriber, user) do
     if subscriber.user_id != user.id do
-      case Account.update_subscriber(subscriber, %{user_id: user.id}) do 
+      case Account.update_subscriber(subscriber, %{user_id: user.id}) do
         {:ok, subscriber_with_user_id} -> subscriber_with_user_id
         {:error, _changeset} -> EmailLogs.error_email_log("#{subscriber.subscriber_email} - Could not update subscriber - :check_subscriber_exists_update_subscriber.")
       end
@@ -141,7 +137,7 @@ defmodule NfdWeb.FetchDashboard do
 
   # Helper Functions
   defp get_relevant_stripe_key(host) do
-    if host == "localhost" do 
+    if host == "localhost" do
       "pk_test_ShlsB93VF6UPAeaGzhC3Lmue"
     else
       System.get_env("STRIPE_API_KEY")
@@ -156,7 +152,7 @@ defmodule NfdWeb.FetchDashboard do
       nil -> redirect_back(conn, 1)
       subscriber ->
         if subscribed == "true", do: Account.update_subscriber(subscriber, %{ subscribed_property_atom => false })
-        if subscribed == "false", do: Account.update_subscriber(subscriber, %{ subscribed_property_atom => true }) 
+        if subscribed == "false", do: Account.update_subscriber(subscriber, %{ subscribed_property_atom => true })
         redirect_back(conn, 1)
     end
   end
@@ -172,11 +168,11 @@ defmodule NfdWeb.FetchDashboard do
     end
   end
 
-  def create_collection_access_for_free_courses(user) do 
+  def create_collection_access_for_free_courses(user) do
     ["seven-day-neverfap-deluxe-kickstarter"]
-      |> Enum.each(fn(slug) -> 
+      |> Enum.each(fn(slug) ->
         collection = Content.get_collection_slug!(slug)
-        case Account.get_collection_access_by_user_id_and_collection_id(user.id, collection.id) do 
+        case Account.get_collection_access_by_user_id_and_collection_id(user.id, collection.id) do
           nil ->
             case Account.create_collection_access(%{ user_id: user.id, collection_id: collection.id }) do
               {:ok, collection_access } -> collection_access
@@ -185,10 +181,10 @@ defmodule NfdWeb.FetchDashboard do
           _collection_access -> nil
         end
       end)
-  end 
+  end
 
-  defp render_404_page(conn) do 
-    conn 
+  defp render_404_page(conn) do
+    conn
       |> put_view(NfdWeb.ErrorView)
       |> render("404.html")
   end

@@ -11,7 +11,6 @@
 
   <%= partial "share_buttons.html", %{permalink: @item["permalink"] } %>
 
-  <%#= partial "comments/comments_list.html", %{conn: @conn, item: @item, comments: @collections.comments, comment_form_changeset: @collections.comment_form_changeset} %>
   <%= partial "next_prev_buttons.html", %{nextItem: @collections.nextItem, previousItem: @collections.previousItem } %>
 </div>
 
@@ -21,11 +20,11 @@
   <div class="single__content">
 
     <h2 style="margin-bottom: 1.9rem;">Latest Blogs</h2>
-    <%= partial "latest_posts.html", %{ items: @blogs } %>    
+    <%= partial "latest_posts.html", %{ items: @blogs } %>
 
     <div class="button__wrapper">
       <a
-        class="button" 
+        class="button"
         href="/blogs"
         >Want More Blogs?</a
       >
