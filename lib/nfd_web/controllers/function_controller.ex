@@ -1,25 +1,31 @@
 defmodule NfdWeb.FunctionController do
   use NfdWeb, :controller
 
+  alias Nfd.API
+  alias Nfd.API.Content
+  alias Nfd.API.Page
+
+  alias Nfd.Meta
   alias Nfd.Account
 
   alias Nfd.EmailLogs
 
-  alias Nfd.API
-  alias Nfd.API.Content
-  alias Nfd.API.Page
-  alias Nfd.Meta
-
   alias NfdWeb.Fetch
 
-  def comment_form_post(conn, %{"comment_form" => comment_form}) do
-    first_slug = conn.path_info |> List.at(0)
-    first_slug_symbol = String.to_atom(first_slug)
-    second_slug = conn.path_info |> List.at(1)
+  def comment_form_post(conn, %{"comment" => comment}) do
+    # TODO: conn.path_info doesn't work and returns "send_comment" I need to get previous route information.
+    {referer, value} = Enum.fetch!(conn.req_headers, 10)
+      
+    # String.split(value)
 
-    case Meta.create_comment(comment_form) do
-      {:ok, _comment_form} ->
-        EmailLogs.new_comment_form_email(comment_form["name"], comment_form["email"], comment_form["message"])
+    
+    first_slug = Enum.fetch!(conn.path_info, 0)
+    first_slug_symbol = String.to_atom(first_slug)
+    second_slug = Enum.fetch!(conn.path_info, 1)
+
+    case Meta.create_comment(comment) do
+      {:ok, _comment} ->
+        EmailLogs.new_comment_form_email(comment["name"], comment["email"], comment["message"])
         redirect_back(conn)
       {:error, comment_form_changeset} ->
         client = API.is_localhost(conn.host) |> API.api_client()
@@ -38,7 +44,7 @@ defmodule NfdWeb.FunctionController do
 
   # TODO: Need to test
   def contact_form_post(conn, %{"contact_form" => contact_form}) do
-    first_slug = conn.path_info |> List.at(0)
+    first_slug = Enum.fetch!(conn.path_info, 0)
     first_slug_symbol = String.to_atom(first_slug)
 
     case Recaptcha.verify(contact_form["g-recaptcha-response"]) do

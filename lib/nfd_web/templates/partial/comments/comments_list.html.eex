@@ -1,6 +1,6 @@
 
 <div class="comment__list">
-  <%= Enum.map(@comments, fn(comment) -> %>
+  <%= Enum.map(@comments.parents, fn(comment) -> %>
     <!-- <%#= partial "comment_item.html", %{ podcast: podcast } %> -->
     <div class="comment__item">
       <div class="comment__user__item">
