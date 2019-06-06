@@ -36,29 +36,22 @@ defmodule NfdWeb.FunctionController do
     end
   end
 
+  # TODO: Need to test
   def contact_form_post(conn, %{"contact_form" => contact_form}) do
-    name = contact_form["name"]
-    email = contact_form["email"]
-    message = contact_form["message"]
+    first_slug = conn.path_info |> List.at(0)
+    first_slug_symbol = String.to_atom(first_slug)
 
-    # TODO: Need to test
     case Recaptcha.verify(contact_form["g-recaptcha-response"]) do
       {:ok, _response} ->
         case Account.create_contact_form(contact_form) do
           {:ok, _contact_form} ->
-            EmailLogs.new_contact_form_email(name, email, message)
+            EmailLogs.new_contact_form_email(contact_form["name"], contact_form["email"], contact_form["message"])
             render(conn, "send_message_success.html")
 
           {:error, contact_form_changeset} ->
-            page_type = "page"
             client = API.is_localhost(conn.host) |> API.api_client()
-            case client |> Page.about() do
-              {:ok, response} ->
-                Meta.increment_visit_count(response.body["data"])
-                conn |> render("about.html", item: response.body["data"], contact_form_changeset: contact_form_changeset, page_type: page_type)
-              {:error, _error} ->
-                conn |> put_view(NfdWeb.ErrorView) |> render("404.html")
-            end
+            all_collections = %{ contact_form_changeset: contact_form_changeset }
+            Fetch.fetch_response_ok(conn, response, all_collections, :first_slug_symbol, "general.html", "page")
         end
 
       {:error, errors} ->
@@ -87,5 +80,4 @@ defmodule NfdWeb.FunctionController do
   def send_message_send_message_failed(conn, %{ "message" => message, "error_message" => error_message}) do
     render(conn, "send_message_failed.html", message: message, error_message: error_message)
   end
-
 end

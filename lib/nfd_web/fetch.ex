@@ -21,7 +21,7 @@ defmodule NfdWeb.Fetch do
       {:ok, response} ->
         collections = fetch_collections(response.body["data"], collection_array, client)
         fetch_response_ok(conn, response, collections, page_symbol, page_layout, "content")
-      {:error, error} -> 
+      {:error, error} ->
         render_404_page(conn, error)
     end
   end
@@ -132,6 +132,8 @@ defmodule NfdWeb.Fetch do
             Map.put(acc, :sdk_item, sdk_item)
 
           :comments ->
+            # TODO, I need to find a function to organise all these comments into composable collections, according to depth and parents.
+            # Maybe first, get all the 
             comments = Meta.list_collection_access_by_page_id(item["page_id"])
             Map.put(acc, :comments, comments)
 
