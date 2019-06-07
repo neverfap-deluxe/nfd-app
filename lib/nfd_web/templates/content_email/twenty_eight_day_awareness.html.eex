@@ -1,8 +1,29 @@
-<div class="single__wrapper">   
-  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
-  <div class="single__content" style="margin-bottom: 0;">
-    <p>28 Day Awareness Challenge</p>
+<div class="email__campaign__full__width">
+  <h1 class="email__campaign__title"><%= @item["title"] %></h1>
+
+  <div class="email__campaign__box__two">
+    <h2 class="email__campaign__sub__title">Improve your capacity for awareness today.</h2>
+
+    <div class="email__campaign__text__container">
+      <%= raw @item["content"] %>
+
+      <h3>Course overview</h3>
+      <div class="email__day__container">
+        <%= Enum.map(@item["days"], fn(item) -> %>
+          <a class="email__day__container__item" href='<%= Routes.content_email_path(@conn, :twenty_eight_day_awareness_single, item["slug"]) %>'>
+            <h4 class="email__day__container__item__title"><%= item["title"] %><br/> Day <%= item["day"] %></h4>
+            <p class="email__day__container__item__text"><%= item["description"] %></p>
+          </a>
+        <% end ) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="seven__day__kickstarter__banner__box">
+    <div class="seven__day__kickstarter__banner__list">
+      <%= Enum.map(@item["days"], fn(item) -> %>
+        <p class="seven__day__kickstarter__banner__item"><%= item["title"] %> - Day <%= item["day"] %></p>
+      <% end ) %>
+    </div>
   </div>
 </div>
-
-<%= partial "links/patreon.html", assigns %>

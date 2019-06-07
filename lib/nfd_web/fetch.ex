@@ -15,7 +15,7 @@ defmodule NfdWeb.Fetch do
 
   def fetch_content(conn, page_symbol, slug, page_layout, collection_array) do
     client = API.is_localhost(conn.host) |> API.api_client()
-    verified_slug = Redirects.redirect(conn, slug, Atom.to_string(page_symbol))
+    verified_slug = Redirects.redirect_content(conn, slug, Atom.to_string(page_symbol))
 
     case apply(Content, page_symbol, [client, verified_slug]) do
       {:ok, response} ->
@@ -51,90 +51,37 @@ defmodule NfdWeb.Fetch do
         case x do
           # COLLECTIONS
           :articles ->
-            {:ok, articlesResponse} = client |> Page.articles()
-            articles = articlesResponse.body["data"]["articles"] |> Enum.reverse()
-            { previousItem, nextItem } = getPreviousnextItem(articles, item);
-            Map.merge(acc, %{
-              nextItem: nextItem,
-              previousItem: previousItem,
-              articles: articles
-            })
+            merge_collection(client, :articles, acc, item)
 
           :practices ->
-            {:ok, practicesResponse} = client |> Page.practices()
-            practices = practicesResponse.body["data"]["practices"] |> Enum.reverse()
-            { previousItem, nextItem } = getPreviousnextItem(practices, item);
-            Map.merge(acc, %{
-              nextItem: nextItem,
-              previousItem: previousItem,
-              practices: practices
-            })
+            merge_collection(client, :practices, acc, item)
 
           :quotes ->
-            {:ok, quotesResponse} = client |> Page.quotes()
-            quotes = quotesResponse.body["data"]["quotes"] |> Enum.reverse()
-            { previousItem, nextItem } = getPreviousnextItem(quotes, item);
-            Map.merge(acc, %{
-              nextItem: nextItem,
-              previousItem: previousItem,
-              quotes: quotes
-            })
+            merge_collection(client, :quotes, acc, item)
 
           :updates ->
-            {:ok, updatesResponse} = client |> Page.updates()
-            updates = updatesResponse.body["data"]["updates"] |> Enum.reverse()
-            { previousItem, nextItem } = getPreviousnextItem(updates, item);
-            Map.merge(acc, %{
-              nextItem: nextItem,
-              previousItem: previousItem,
-              updates: updates
-            })
+            merge_collection(client, :updates, acc, item)
 
           :blogs ->
-            {:ok, blogsResponse} = client |> Page.blogs()
-            blogs = blogsResponse.body["data"]["blogs"] |> Enum.reverse()
-            { previousItem, nextItem } = getPreviousnextItem(blogs, item);
-            Map.merge(acc, %{
-              nextItem: nextItem,
-              previousItem: previousItem,
-              blogs: blogs
-            })
+            merge_collection(client, :blogs, acc, item)
 
           :podcasts ->
-            {:ok, podcastsResponse} = client |> Page.podcasts()
-            podcasts = podcastsResponse.body["data"]["podcasts"] |> Enum.reverse()
-            { previousItem, nextItem } = getPreviousnextItem(podcasts, item);
-            Map.merge(acc, %{
-              nextItem: nextItem,
-              previousItem: previousItem,
-              podcasts: podcasts
-            })
+            merge_collection(client, :podcasts, acc, item)
 
           :meditations ->
-            {:ok, meditationsResponse} = client |> Page.meditations()
-            meditations = meditationsResponse.body["data"]["meditations"] |> Enum.reverse()
-            { previousItem, nextItem } = getPreviousnextItem(meditations, item);
-            Map.merge(acc, %{
-              nextItem: nextItem,
-              previousItem: previousItem,
-              meditations: meditations
-            })
+            merge_collection(client, :meditations, acc, item)
 
           :courses ->
-            {:ok, coursesResponse} = client |> Page.courses()
-            courses = coursesResponse.body["data"]["courses"] |> Enum.reverse()
-            Map.put(acc, :courses, courses)
+            merge_collection(client, :courses, acc, item)
 
           # CONTENT EMAIL
           :seven_day_kickstarter ->
             {:ok, sdkResponse} = client |> Page.seven_day_kickstarter()
-            sdk_item = sdkResponse.body["data"]
-            Map.put(acc, :sdk_item, sdk_item)
+            seven_day_kickstarter = sdkResponse.body["data"]
+            Map.put(acc, :seven_day_kickstarter, seven_day_kickstarter)
 
           :comments ->
-            # TODO, I need to find a function to organise all these comments into composable collections, according to depth and parents.
-            # Maybe first, get all the 
-            comments = Meta.list_collection_access_by_page_id(item["page_id"])
+            comments = Meta.list_collection_access_by_page_id(item["page_id"]) |> organise_comments()
             Map.put(acc, :comments, comments)
 
           # CHANGESETS
@@ -150,27 +97,75 @@ defmodule NfdWeb.Fetch do
             seven_day_kickstarter_changeset = Subscriber.changeset(%Subscriber{}, %{})
             Map.put(acc, :seven_day_kickstarter_changeset, seven_day_kickstarter_changeset)
 
+          :ten_day_meditation_changeset ->
+            ten_day_meditation_changeset = Subscriber.changeset(%Subscriber{}, %{})
+            Map.put(acc, :ten_day_meditation_changeset, ten_day_meditation_changeset)
+
+          :twenty_eight_day_awareness_changeset ->
+            twenty_eight_day_awareness_changeset = Subscriber.changeset(%Subscriber{}, %{})
+            Map.put(acc, :twenty_eight_day_awareness_changeset, twenty_eight_day_awareness_changeset)
+
           _ ->
             acc
         end
       end)
   end
 
-  def getPreviousnextItem(articles, currentArticle) do
-    articleValues =
-      Enum.reduce(articles, %{last: nil, values: [], correct: false, previousItem: nil, nextItem: nil}, fn article, acc ->
+  def merge_collection(client, content_symbol, acc, item) do
+    {:ok, response} = apply(Page, content_symbol, [client])
+    collections = response.body["data"][Atom.to_string(content_symbol)] |> Enum.reverse()
+    { previous_item, next_item } = previous_next_item(collections, item);
+    Map.merge(acc, %{
+      content_symbol => collections,
+      next_item: next_item,
+      previous_item: previous_item
+    })
+  end
+
+  def organise_comments(comments) do
+    comments
+      |> Enum.filter(fn (comment) -> !comment.parent_message_id end)
+      |> Enum.reduce(
+        %{parents: []},
+        fn reduce_comment, acc ->
+          children_comments = recursive_find_comments(comments, reduce_comment, acc)
+          %{parents: acc.parents ++ Map.put(reduce_comment, :children, children_comments)}
+        end)
+      |> IO.inspect comments
+  end
+
+  def recursive_find_comments(comments, reduce_comment, acc) do
+    # Find the children of the comment
+    reduce_comment_children = Enum.filter(comments, fn (filter_comment) -> filter_comment.parent_message_id == reduce_comment.id end)
+
+    # if children then add them to current comment
+    if reduce_comment_children do
+      reduce_comment_children
+        |> Enum.map(fn (comment_child) ->
+          new_comment_child = Map.put(reduce_comment, :children, reduce_comment_children)
+          recursive_find_comments(comments, new_comment_child, acc)
+        end)
+    # if not children, then just pass back to the
+    else
+      %{child: reduce_comment}
+    end
+  end
+
+  def previous_next_item(articles, current_article) do
+    article_values =
+      Enum.reduce(articles, %{last: nil, values: [], correct: false, previous_item: nil, next_item: nil}, fn article, acc ->
         if acc.correct do
-          %{last: article, previousItem: acc.previousItem, nextItem: article, correct: false }
+          %{last: article, previous_item: acc.previous_item, next_item: article, correct: false }
         else
-          if currentArticle["slug"] == article["slug"] do
-            %{last: article, previousItem: acc.last, nextItem: nil, correct: true }
+          if current_article["slug"] == article["slug"] do
+            %{last: article, previous_item: acc.last, next_item: nil, correct: true }
           else
-            %{last: article, previousItem: acc.previousItem, nextItem: acc.nextItem, correct: false}
+            %{last: article, previous_item: acc.previous_item, next_item: acc.next_item, correct: false}
           end
         end
       end)
 
-    { articleValues.previousItem, articleValues.nextItem }
+    { article_values.previous_item, article_values.next_item }
   end
 
   def render_404_page(conn, error) do

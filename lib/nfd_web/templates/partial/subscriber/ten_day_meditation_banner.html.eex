@@ -1,0 +1,35 @@
+<div class="seven__day__kickstarter__banner">
+  <!-- <div class="banner__empty"></div> -->
+  <div class="banner__magenta"></div>
+  <div class="banner__cyan"></div>
+
+  <div class="seven__day__kickstarter__banner__inner">
+    <h1 class="seven__day__kickstarter__banner__title">7 Day NeverFap Deluxe Kickstarter</h1>
+
+    <div class="seven__day__kickstarter__banner__box">
+      <div class="seven__day__kickstarter__banner__list">
+        <%= Enum.map(@item["days"], fn(item) -> %>
+          <p class="seven__day__kickstarter__banner__item"><%= item["title"] %> - Day <%= item["day"] %></p>
+        <% end ) %>
+      </div>
+
+      <div class="seven__day__kickstarter__banner__form">
+        <p>Discover the basics of the NeverFap Deluxe Method with our 7 Day Kickstarter Guide!</p>
+        <%= form_for @seven_day_kickstarter_changeset, Routes.subscription_path(@conn, :add_subscription_validate_matrix), [target: "_blank"], fn f -> %>
+          <%= text_input f, :subscriber_email, [placeholder: "email", class: "banner__input"] %>
+          <%= submit "Submit", [class: "banner__submit"]  %>
+          <!-- First matrix is general, second matrix is seven day. -->
+          <%# TODO: Change the values. %>
+          <%= hidden_input f, :multiple_matrix, [value: "0h1-1h1"] %>
+          <%= hidden_input f, :main_matrix, [value: "1h1"] %>
+        <% end %>
+        <a class="seven__day__kickstarter__learn__more" href="/seven-day-neverfap-deluxe-kickstarter">Click here to learn more.</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner__cyan"></div>
+  <div class="banner__magenta"></div>
+  <!-- <div class="banner__empty"></div> -->
+</div>
+
