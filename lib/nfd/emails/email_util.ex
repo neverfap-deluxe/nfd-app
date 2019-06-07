@@ -12,11 +12,9 @@ defmodule Nfd.Util.Email do
       [true, true] -> true
       [_] -> false
       [_, _] -> false
-    end      
+    end
   end
   def validate_subscriber_is_already_subscribed(subscriber, main_matrix) do
-    IO.inspect subscriber
-
     case String.split(main_matrix, "h") do
       ["0", _] -> subscriber.subscribed == true
       ["1", _] -> subscriber.seven_day_kickstarter_subscribed == true
@@ -26,7 +24,7 @@ defmodule Nfd.Util.Email do
   end
   def main_matrix_to_type(main_matrix) do
     # Value: 0 - general, 1 kickstarter, 2 meditation, 3 awareness,
-    # Position: 0 - do nothing, 1 subscribe, 2 unsubscribe 
+    # Position: 0 - do nothing, 1 subscribe, 2 unsubscribe
     # "0h1-1h1" #value 0, pos 1; value 1, pos 1;
 
     { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type} = generate_course_types()
@@ -38,7 +36,7 @@ defmodule Nfd.Util.Email do
       ["3", _] -> awareness_challenge_type
     end
   end
-  def main_matrix_to_collection_seed_id(main_matrix) do 
+  def main_matrix_to_collection_seed_id(main_matrix) do
     case String.split(main_matrix, "h") do
       ["0", _] -> nil # This doesn't exist
       ["1", _] -> "068b52c1-cce1-4239-a345-1182ae528a41"
@@ -46,7 +44,7 @@ defmodule Nfd.Util.Email do
       ["3", _] -> "12ec4d76-3d93-42c5-8c2f-65bb146e4bd6"
     end
   end
-  def main_matrix_to_type_and_action(main_matrix) do    
+  def main_matrix_to_type_and_action(main_matrix) do
     { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type} = generate_course_types()
 
     case String.split(main_matrix, "h") do
@@ -74,7 +72,7 @@ defmodule Nfd.Util.Email do
       ^awareness_challenge_type -> {:twenty_eight_day_awareness_count, :twenty_eight_day_awareness_subscribed}
     end
   end
-  def collection_slug_to_type(collection_slug) do 
+  def collection_slug_to_type(collection_slug) do
     { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type } = generate_course_types()
 
     cond do
@@ -84,7 +82,7 @@ defmodule Nfd.Util.Email do
       collection_slug == "twenty-eight-day-awareness-challenge" -> awareness_challenge_type
     end
   end
-  def collection_slug_to_subscribed_property(collection_slug) do 
+  def collection_slug_to_subscribed_property(collection_slug) do
     type = collection_slug_to_type(collection_slug)
     type_to_subscriber_properties(type)
   end

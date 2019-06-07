@@ -4,7 +4,7 @@
   <div class="banner__cyan"></div>
 
   <div class="seven__day__kickstarter__banner__inner">
-    <h1 class="seven__day__kickstarter__banner__title">7 Day NeverFap Deluxe Kickstarter</h1>
+    <h1 class="seven__day__kickstarter__banner__title">10 Day NeverFap Deluxe Meditation Primer</h1>
 
     <div class="seven__day__kickstarter__banner__box">
       <div class="seven__day__kickstarter__banner__list">
@@ -14,16 +14,15 @@
       </div>
 
       <div class="seven__day__kickstarter__banner__form">
-        <p>Discover the basics of the NeverFap Deluxe Method with our 7 Day Kickstarter Guide!</p>
-        <%= form_for @seven_day_kickstarter_changeset, Routes.subscription_path(@conn, :add_subscription_validate_matrix), [target: "_blank"], fn f -> %>
+        <p>Discover the basics of awareness and meditation with our 10 Day Meditation Primer Guide!</p>
+        <%= form_for @ten_day_meditation_changeset, Routes.subscription_path(@conn, :add_subscription_validate_matrix), [target: "_blank"], fn f -> %>
           <%= text_input f, :subscriber_email, [placeholder: "email", class: "banner__input"] %>
           <%= submit "Submit", [class: "banner__submit"]  %>
-          <!-- First matrix is general, second matrix is seven day. -->
           <%# TODO: Change the values. %>
-          <%= hidden_input f, :multiple_matrix, [value: "0h1-1h1"] %>
-          <%= hidden_input f, :main_matrix, [value: "1h1"] %>
+          <%= hidden_input f, :multiple_matrix, [value: "0h1-2h1"] %>
+          <%= hidden_input f, :main_matrix, [value: "2h1"] %>
         <% end %>
-        <a class="seven__day__kickstarter__learn__more" href="/seven-day-neverfap-deluxe-kickstarter">Click here to learn more.</a>
+        <a class="seven__day__kickstarter__learn__more" href="<%= Routes.content_email_path(@conn, :ten_day_meditation) %>">Click here to learn more.</a>
       </div>
     </div>
   </div>
