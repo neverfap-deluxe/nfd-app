@@ -24,8 +24,8 @@
 
   <%= partial "share_buttons.html", %{permalink: @item["permalink"] } %>
 
-  <%= partial "comments/comments_list.html", %{conn: @conn, item: @item, comments: @collections.comments, comment_form_changeset: @collections.comment_form_changeset} %>
-  <%= partial "next_prev_buttons.html", %{conn: @conn, page_symbol: :article, nextItem: @collections.nextItem, previousItem: @collections.previousItem } %>
+  <%= partial "comments/comments_list.html", %{conn: @conn, item: @item, collections: @collections} %>
+  <%= partial "next_prev_buttons.html", %{conn: @conn, page_symbol: :article, next_item: @collections.next_item, previous_item: @collections.previous_item } %>
 </div>
 
 <%= partial "reddit_question_banner.html", assigns %>
@@ -47,6 +47,6 @@
   </div>
 </div>
 
-<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @collections.sdk_item, seven_day_kickstarter_changeset: @collections.seven_day_kickstarter_changeset } %>
+<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @collections.seven_day_kickstarter_changeset } %>
 <div style="margin-top: 5rem;"></div>
 <%= partial "links/loginregister.html", assigns %>

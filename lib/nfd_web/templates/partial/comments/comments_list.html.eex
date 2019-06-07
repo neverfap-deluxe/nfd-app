@@ -1,6 +1,6 @@
 <div class="comment__list">
-  <%= Enum.map(@comments, fn(comment) -> %>
-    <%= partial "comments/comment_item.html", %{ comment: comment } %>
+  <%= Enum.map(@collections.comments.parents, fn(comment) -> %>
+    <%= partial "comments/comment_item.html", %{ comment: comment, item: @item, collections: @collections } %>
   <% end) %>
 </div>
 
@@ -12,6 +12,6 @@
     Your email address will not be published. Required fields are marked *
   </div>
 
-  <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, comment_form_changeset: @collections.comment_form_changeset, depth: 0, parent_message_id: nil } %>
+  <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, collections: @collections, depth: 0, parent_message_id: nil } %>
 </div>
 

@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <%= partial "next_prev_buttons.html", %{conn: @conn, page_symbol: :quote, nextItem: @collections.nextItem, previousItem: @collections.previousItem } %>
+  <%= partial "next_prev_buttons.html", %{conn: @conn, page_symbol: :quote, next_item: @collections.next_item, previous_item: @collections.previous_item } %>
 </div>
 
 <%= partial "links/patreon.html", assigns %>

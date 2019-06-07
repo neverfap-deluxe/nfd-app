@@ -2,16 +2,15 @@
   <div class="comment__top__row">
     <div class="comment__user__item">
       <div class="comment__user__item--left">
-        <img class="comment__user__item__avatar" src="<%= @comment.avatar %>" />
+        <img class="comment__user__item__avatar" src="" />
       </div>
       <div class="comment__user__item--right">
-        <div class="comment__user__item__name"><%= @comment.title %></div>
-        <div class="comment__user__item__date"><%= @comment.date %></div>
+        <div class="comment__user__item__name"><%= @comment.name %></div>
+        <div class="comment__user__item__date"><%= @comment.created_at %></div>
       </div>
     </div>
   </div>
 
-  <%#  %>
   <div class="comment__message">
     <%= @comment.message %>
   </div>
@@ -23,6 +22,6 @@
       </div>
     </div>
 
-    <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, comment_form_changeset: @collections.comment_form_changeset, depth: @comment.depth + 1, parent_message_id: @item["id"]} %>
+    <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, collections: @collections, depth: @comment.depth + 1, parent_message_id: @comment["id"]} %>
   </div>
 </div>

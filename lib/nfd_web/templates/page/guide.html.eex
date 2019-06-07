@@ -94,7 +94,7 @@
   </div>
 </div>
 
-<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @collections.sdk_item, seven_day_kickstarter_changeset: @collections.seven_day_kickstarter_changeset } %>
+<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @collections.seven_day_kickstarter_changeset } %>
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">

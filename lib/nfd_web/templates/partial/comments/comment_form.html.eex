@@ -2,7 +2,7 @@
   <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
   <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
-  <%= form_for @comment_form_changeset, Routes.function_path(@conn, :comment_form_post), fn f -> %>
+  <%= form_for @collections.comment_form_changeset, Routes.function_path(@conn, :comment_form_post), fn f -> %>
     <div class="form__input__container">
       <%= error_tag f, :name %>
       <%= text_input f, :name, [placeholder: "Name", class: "form__input"] %>

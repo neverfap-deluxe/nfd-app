@@ -1,7 +1,7 @@
 defmodule NfdWeb.Redirects do
   use NfdWeb, :controller
 
-  def redirect(conn, slug, type) do
+  def redirect_content(conn, slug, type) do
     case type do
       "article" -> redirect_article(conn, slug)
       "practice" -> redirect_practice(conn, slug)

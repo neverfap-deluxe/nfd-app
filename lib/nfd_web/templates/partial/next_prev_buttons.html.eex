@@ -1,19 +1,19 @@
 
 <div class="single__next__prev">
-  <%= if @previousItem do %>
-    <%= if @previousItem["title"] do %>
+  <%= if @previous_item do %>
+    <%= if @previous_item["title"] do %>
       <div class="button__wrapper">
-        <a class="button button__black_and_white" href='<%= Routes.content_path(@conn, @page_symbol, @previousItem["slug"]) %>'>Previous Post | <span><%= @previousItem["title"] %></span></a>
+        <a class="button button__black_and_white" href='<%= Routes.content_path(@conn, @page_symbol, @previous_item["slug"]) %>'>Previous Post | <span><%= @previous_item["title"] %></span></a>
       </div>
     <% else %>
       <div style="width: 300px;"></div>
     <% end %>
   <% end %>
 
-  <%= if @nextItem do %>
-    <%= if @nextItem["title"] do %>
+  <%= if @next_item do %>
+    <%= if @next_item["title"] do %>
       <div class="button__wrapper">
-        <a class="button button__black_and_white" href='<%= Routes.content_path(@conn, @page_symbol, @nextItem["slug"]) %>'>Next Post | <span><%= @nextItem["title"] %></span></a>
+        <a class="button button__black_and_white" href='<%= Routes.content_path(@conn, @page_symbol, @next_item["slug"]) %>'>Next Post | <span><%= @next_item["title"] %></span></a>
       </div>
     <% else %>
       <div style="width: 300px;"></div>  
