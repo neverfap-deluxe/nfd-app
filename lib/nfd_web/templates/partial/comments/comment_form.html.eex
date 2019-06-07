@@ -1,0 +1,31 @@
+<div class="form__wrapper form__wrapper--full-width">
+  <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+  <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+  <%= form_for @comment_form_changeset, Routes.function_path(@conn, :comment_form_post), fn f -> %>
+    <div class="form__input__container">
+      <%= error_tag f, :name %>
+      <%= text_input f, :name, [placeholder: "Name", class: "form__input"] %>
+
+      <%= error_tag f, :email %>
+      <%= text_input f, :email, [placeholder: "Email", class: "form__input"] %>
+
+      <%= error_tag f, :message %>
+      <%= textarea f, :message, [placeholder: "Comment", class: "form__input form__textarea"] %>
+
+      <%= hidden_input f, :depth, [value: @depth] %>
+      <%= hidden_input f, :page_id, [value: @item["page_id"]] %>
+      <%= hidden_input f, :parent_message_id, [value: @parent_message_id] %>
+
+      <!-- Save my name, email, and website in this browser for the next time I comment. -->
+      <!-- // maybe use the cookies for this.
+      // conn.cookies -->
+
+      <%#= raw Recaptcha.Template.display %>
+    </div>
+
+    <div class="form__submission__container">
+      <%= submit "Send", [class: "form__button"]  %>
+    </div>
+  <% end %>
+</div>

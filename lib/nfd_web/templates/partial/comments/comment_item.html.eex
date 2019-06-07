@@ -1,0 +1,28 @@
+<div class="comment__item">
+  <div class="comment__top__row">
+    <div class="comment__user__item">
+      <div class="comment__user__item--left">
+        <img class="comment__user__item__avatar" src="<%= @comment.avatar %>" />
+      </div>
+      <div class="comment__user__item--right">
+        <div class="comment__user__item__name"><%= @comment.title %></div>
+        <div class="comment__user__item__date"><%= @comment.date %></div>
+      </div>
+    </div>
+  </div>
+
+  <%#  %>
+  <div class="comment__message">
+    <%= @comment.message %>
+  </div>
+
+  <div class="comment__reply">
+    <div>
+      <div class="comment__reply__button">
+        Reply
+      </div>
+    </div>
+
+    <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, comment_form_changeset: @collections.comment_form_changeset, depth: @comment.depth + 1, parent_message_id: @item["id"]} %>
+  </div>
+</div>

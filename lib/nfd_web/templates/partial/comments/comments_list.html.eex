@@ -1,30 +1,8 @@
-
 <div class="comment__list">
   <%= Enum.map(@comments, fn(comment) -> %>
-    <!-- <%#= partial "comment_item.html", %{ podcast: podcast } %> -->
-    <div class="comment__item">
-      <div class="comment__user__item">
-        <div class="comment__user__item--left">
-          <img class="comment__user__item__avatar" src="<%= comment.avatar %>" />
-        </div>
-        <div class="comment__user__item--right">
-          <div class="comment__user__item__name"><%= comment.title %></div>
-          <div class="comment__user__item__date"><%= comment.date %></div>
-        </div>
-      </div>
-
-      <div class="comment__message">
-          <%= comment.message %>
-      </div>
-      <div class="comment__reply">
-        <div class="comment__reply__button">
-
-        </div>
-      </div>
-    </div>
-  <% end ) %>
+    <%= partial "comments/comment_item.html", %{ comment: comment } %>
+  <% end) %>
 </div>
-
 
 <div class="comment__create__message">
   <div class="comment__create__message__title">
@@ -34,36 +12,6 @@
     Your email address will not be published. Required fields are marked *
   </div>
 
-<!-- Add error changeset -->
-  <div class="form__wrapper form__wrapper--full-width">
-    <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-    <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-
-    <%= form_for @comment_form_changeset, Routes.function_path(@conn, :comment_form_post), fn f -> %>
-      <div class="form__input__container">
-        <%= error_tag f, :name %>
-        <%= text_input f, :name, [placeholder: "Name", class: "form__input"] %>
-
-        <%= error_tag f, :email %>
-        <%= text_input f, :email, [placeholder: "Email", class: "form__input"] %>  
-
-        <%= error_tag f, :message %>
-        <%= textarea f, :message, [placeholder: "Comment", class: "form__input form__textarea"] %>
-
-        <%= hidden_input f, :depth, [value: 0] %>
-        <%= hidden_input f, :page_id, [value: @item["page_id"]] %>
-
-        <!-- Save my name, email, and website in this browser for the next time I comment. -->
-        <!-- // maybe use the cookies for this.
-        // conn.cookies -->
-
-        <%#= raw Recaptcha.Template.display %>
-      </div>
-
-      <div class="form__submission__container">
-        <%= submit "Send", [class: "form__button"]  %>
-      </div>
-    <% end %>
-  </div>
+  <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, comment_form_changeset: @collections.comment_form_changeset, depth: 0, parent_message_id: nil } %>
 </div>
 
