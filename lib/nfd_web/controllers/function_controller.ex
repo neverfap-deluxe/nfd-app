@@ -29,7 +29,6 @@ defmodule NfdWeb.FunctionController do
 
         case apply(Content, first_slug_symbol, [client, second_slug]) do
           {:ok, response} ->
-            comment_form_changeset = Meta.Comment.changeset(%Meta.Comment{}, %{})
             typical_collections = Fetch.fetch_collections(response.body["data"], FetchCollection.fetch_collections_array(first_slug_symbol), client)
             all_collections = Map.merge(typical_collections, %{ comment_form_changeset: comment_form_changeset })
             Fetch.fetch_response_ok(conn, NfdWeb.ContentView, response, all_collections, first_slug_symbol, "general.html", "content")
