@@ -11,12 +11,13 @@ defmodule NfdWeb.FunctionController do
   alias Nfd.EmailLogs
 
   alias NfdWeb.Fetch
+  alias NfdWeb.FetchCollection
 
   def comment_form_post(conn, %{"comment" => comment}) do
     {referer, value} = Enum.fetch!(conn.req_headers, 10)
 
     first_slug = String.split(value, "/") |> Enum.fetch!(3)
-    first_slug_symbol = String.to_atom(first_slug)
+    first_slug_symbol = slug_to_symbol(first_slug)
     second_slug = String.split(value, "/") |> Enum.fetch!(4)
 
     case Meta.create_comment(comment) do
@@ -29,9 +30,9 @@ defmodule NfdWeb.FunctionController do
         case apply(Content, first_slug_symbol, [client, second_slug]) do
           {:ok, response} ->
             comment_form_changeset = Meta.Comment.changeset(%Meta.Comment{}, %{})
-            typical_collections = Fetch.fetch_collections(FetchCollection.fetch_collections_array(first_slug_symbol))
+            typical_collections = Fetch.fetch_collections(response.body["data"], FetchCollection.fetch_collections_array(first_slug_symbol), client)
             all_collections = Map.merge(typical_collections, %{ comment_form_changeset: comment_form_changeset })
-            Fetch.fetch_response_ok(conn, response, all_collections, first_slug_symbol, "general.html", "content")
+            Fetch.fetch_response_ok(conn, NfdWeb.ContentView, response, all_collections, first_slug_symbol, "general.html", "content")
           {:error, error} ->
             Fetch.render_404_page(conn, error)
         end
@@ -43,7 +44,7 @@ defmodule NfdWeb.FunctionController do
     {referer, value} = Enum.fetch!(conn.req_headers, 10)
 
     first_slug = String.split(value, "/") |> Enum.fetch!(3)
-    first_slug_symbol = String.to_atom(first_slug)
+    first_slug_symbol = slug_to_symbol(first_slug)
 
     case Recaptcha.verify(contact_form["g-recaptcha-response"]) do
       {:ok, _response} ->
@@ -57,7 +58,7 @@ defmodule NfdWeb.FunctionController do
             case apply(Page, first_slug_symbol, [client]) do
               {:ok, response} ->
                 all_collections = %{ contact_form_changeset: contact_form_changeset }
-                Fetch.fetch_response_ok(conn, response, all_collections, first_slug_symbol, "general.html", "page")
+                Fetch.fetch_response_ok(conn, NfdWeb.PageView, response, all_collections, first_slug_symbol, "general.html", "page")
               {:error, error} -> Fetch.render_404_page(conn, error)
             end
         end

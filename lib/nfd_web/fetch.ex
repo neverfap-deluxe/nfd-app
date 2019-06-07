@@ -13,34 +13,34 @@ defmodule NfdWeb.Fetch do
 
   alias NfdWeb.Redirects
 
-  def fetch_content(conn, page_symbol, slug, page_layout, collection_array) do
+  def fetch_content(conn, page_view, page_symbol, slug, page_layout, collection_array) do
     client = API.is_localhost(conn.host) |> API.api_client()
     verified_slug = Redirects.redirect_content(conn, slug, Atom.to_string(page_symbol))
 
     case apply(Content, page_symbol, [client, verified_slug]) do
       {:ok, response} ->
         collections = fetch_collections(response.body["data"], collection_array, client)
-        fetch_response_ok(conn, response, collections, page_symbol, page_layout, "content")
+        fetch_response_ok(conn, page_view, response, collections, page_symbol, page_layout, "content")
       {:error, error} ->
         render_404_page(conn, error)
     end
   end
 
-  def fetch_page(conn, page_symbol, page_layout, collection_array) do
+  def fetch_page(conn, page_view, page_symbol, page_layout, collection_array) do
     page_type = "page"
     client = API.is_localhost(conn.host) |> API.api_client()
     case apply(Page, page_symbol, [client]) do
       {:ok, response} ->
         collections = fetch_collections(response.body["data"], collection_array, client)
-        fetch_response_ok(conn, response, collections, page_symbol, page_layout, page_type)
+        fetch_response_ok(conn, page_view, response, collections, page_symbol, page_layout, page_type)
       {:error, error} -> render_404_page(conn, error)
     end
   end
 
-  def fetch_response_ok(conn, response, collections, page_symbol, page_layout, page_type) do
+  def fetch_response_ok(conn, page_view, response, collections, page_symbol, page_layout, page_type) do
     check_api_response_for_404(conn, response.status)
     Meta.increment_visit_count(response.body["data"])
-    conn |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: response.body["data"], collections: collections, page_type: page_type)
+    conn |> put_view(page_view) |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: response.body["data"], collections: collections, page_type: page_type)
   end
 
   def fetch_collections(item, collection_array, client) do
