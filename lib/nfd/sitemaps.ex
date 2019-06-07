@@ -5,6 +5,7 @@ defmodule Nfd.Sitemaps do
   import Ecto.Query, warn: false
 
   alias Nfd.API
+  alias Nfd.API.Page
   alias Nfd.API.Content
   alias Nfd.API.Page
 
@@ -21,8 +22,8 @@ defmodule Nfd.Sitemaps do
 
   # Generate
   def generate do
-    # client = "https://neverfapdeluxe.netlify.com" |> API.api_client()
-    client = "http://localhost:1313" |> API.api_client()
+    client = "https://neverfapdeluxe.netlify.com" |> API.api_client()
+    # client = "http://localhost:1313" |> API.api_client()
 
     with {:ok, articlesResponse} <- (client |> Page.articles()),
          {:ok, practicesResponse} <- (client |> Page.practices()),

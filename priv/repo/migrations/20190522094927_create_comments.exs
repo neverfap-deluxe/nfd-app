@@ -8,6 +8,8 @@ defmodule Nfd.Repo.Migrations.CreateComments do
       add :name, :string
       add :email, :string
       add :message, :string
+      add :email, :string
+      add :name, :string
       add :parent_message_id, :string
       add :user_id, references(:users, on_delete: :nothing, type: :binary_id)
       add :page_id, references(:pages, on_delete: :nothing, type: :binary_id)

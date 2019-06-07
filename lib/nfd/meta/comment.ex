@@ -19,8 +19,8 @@ defmodule Nfd.Meta.Comment do
   @doc false
   def changeset(comment, attrs) do
     comment
-    |> cast(attrs, [:name, :email, :depth, :message, :parent_message_id])
-    |> validate_required([:depth, :message, :parent_message_id])
+    |> cast(attrs, [:depth, :email, :name, :message, :parent_message_id])
+    |> validate_required([:depth, :email, :name, :message, :parent_message_id])
   end
 end
 
