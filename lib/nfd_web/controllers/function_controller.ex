@@ -13,15 +13,11 @@ defmodule NfdWeb.FunctionController do
   alias NfdWeb.Fetch
 
   def comment_form_post(conn, %{"comment" => comment}) do
-    # TODO: conn.path_info doesn't work and returns "send_comment" I need to get previous route information.
     {referer, value} = Enum.fetch!(conn.req_headers, 10)
-      
-    # String.split(value)
 
-    
-    first_slug = Enum.fetch!(conn.path_info, 0)
+    first_slug = String.split(value, "/") |> Enum.fetch!(3)
     first_slug_symbol = String.to_atom(first_slug)
-    second_slug = Enum.fetch!(conn.path_info, 1)
+    second_slug = String.split(value, "/") |> Enum.fetch!(4)
 
     case Meta.create_comment(comment) do
       {:ok, _comment} ->
@@ -44,7 +40,9 @@ defmodule NfdWeb.FunctionController do
 
   # TODO: Need to test
   def contact_form_post(conn, %{"contact_form" => contact_form}) do
-    first_slug = Enum.fetch!(conn.path_info, 0)
+    {referer, value} = Enum.fetch!(conn.req_headers, 10)
+
+    first_slug = String.split(value, "/") |> Enum.fetch!(3)
     first_slug_symbol = String.to_atom(first_slug)
 
     case Recaptcha.verify(contact_form["g-recaptcha-response"]) do
@@ -61,7 +59,7 @@ defmodule NfdWeb.FunctionController do
                 all_collections = %{ contact_form_changeset: contact_form_changeset }
                 Fetch.fetch_response_ok(conn, response, all_collections, first_slug_symbol, "general.html", "page")
               {:error, error} -> Fetch.render_404_page(conn, error)
-            end          
+            end
         end
 
       {:error, errors} ->

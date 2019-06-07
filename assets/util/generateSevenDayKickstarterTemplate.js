@@ -99,7 +99,7 @@ const generate = (content, day, title) => `
       ${generateSection(day, title)}
       ${generateWrapper(content)}
       <mj-include path="../email_partials/seven_day_bottom.mjml"/>
-    </mj-body>  
+    </mj-body>
   </mlmj>
 `;
 
@@ -119,8 +119,8 @@ const parseFile = () => {
   });
 
   // generate text title centre
-  parser.addRule(/nfd_center_title [\S ]+/ig, function(text) {    
-    // TODO regex to capture everything within 
+  parser.addRule(/nfd_center_title [\S ]+/ig, function(text) {
+    // TODO regex to capture everything within
     return generateTextTitleCentre(withinQuotesRegex.test(text));
   });
 
@@ -129,22 +129,22 @@ const parseFile = () => {
     return generateButton(text, withinQuotesRegex.test(text));
   });
 
-  // generate divider 
+  // generate divider
   parser.addRule(/-{3}/ig, function(text) {
     return generateDivider(text);
   });
 
   // generate text bold
-  parser.addRule(/\#\# [\S ]+/ig, function(text) {
+  parser.addRule(/\#\#\# [\S ]+/ig, function(text) {
     return generateTextBold(text.slice(3));
   });
-  
+
   // generate text title
-  parser.addRule(/\# [\S ]+/ig, function(text) {
+  parser.addRule(/\#\# [\S ]+/ig, function(text) {
     return generateTextTitle(text.slice(2));
   });
 
-  // generate text 
+  // generate text
   parser.addRule(/[\S ]+/ig, function(text) {
     if (text.length !== 2) {
       return generateText(text);
