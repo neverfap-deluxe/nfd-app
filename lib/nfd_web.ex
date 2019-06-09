@@ -16,6 +16,7 @@ defmodule NfdWeb do
   below. Instead, define any helper function in modules
   and import those modules here.
   """
+  # use Timex
 
   def controller do
     quote do
@@ -101,8 +102,8 @@ defmodule NfdWeb do
         {:ok, elixir_date} = Date.new(year, month, day)
 
         week_before_today = Date.add(Date.utc_today(), -7)
-
-        if elixir_date < week_before_today do
+        
+        if Timex.after?(elixir_date, week_before_today) do
           "new__collection__item"
         else 
           "none"
