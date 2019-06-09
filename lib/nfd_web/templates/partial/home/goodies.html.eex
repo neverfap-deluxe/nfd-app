@@ -59,7 +59,7 @@
   </a>
   <a class="homepage__goodies__item__link__wrapper" href="<%= Application.get_env(:nfd, :social_android_url) %>">
     <div class="homepage__goodies__item">
-      <h4 class="homepage__goodies__item__title">Mobile <span class="homepage__goodies__item__neverfap">NeverFap Deluxe</span> App</h4>
+      <h4 class="homepage__goodies__item__title">Mobile <span class="homepage__goodies__item__neverfap">NeverFap Deluxe</span> Android App</h4>
       <img class="homepage__goodies__item__image" src="/images/android__logo.png"/>
       <span class="h3__tiny__goodies">/mobile-app</span>        
     </div>
