@@ -16,7 +16,6 @@ defmodule NfdWeb do
   below. Instead, define any helper function in modules
   and import those modules here.
   """
-  use Timex
 
   def controller do
     quote do
