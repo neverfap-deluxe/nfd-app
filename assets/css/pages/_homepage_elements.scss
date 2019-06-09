@@ -18,101 +18,149 @@
 }
 
 .homepage__goodies {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(230px, auto);
   justify-content: center;
+
   padding: 1rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 
-  .homepage__goodies__list {
-    display: flex;
-    flex-wrap: wrap;
-    width: 1040px;
-    
-    .homepage__goodies__item__link__wrapper {
+  .homepage__goodies__item__link__wrapper {
+    color: black;
+    border: 4px solid white;
+    box-shadow: -5px 5px 0px 0px white;
+    margin-right: 0.6rem;
+    margin-bottom: 0.6rem;
+
+    transition: .2s;
+    position: relative;
+  }
+
+  .homepage__goodies__item__link__wrapper:hover {
+    border: 4px solid rgba(255,46,182,1);
+    box-shadow: -5px 5px 0px 0px #00ffee;
+  }
+
+  .homepage__goodies__item {
+    padding: 0.4rem;
+
+    .h3__tiny__goodies {
+      display: none;
+      font-size: 0.7rem;
+      line-height: 1rem;
+      background: white;
       color: black;
-      border: 4px solid white;
-      box-shadow: -5px 5px 0px 0px white;
-      margin-right: 0.6rem;
-      margin-bottom: 0.6rem;
-
-      transition: .2s;
-      width: 100%;
-
+      position: absolute; 
+      bottom: 10px;
+      left: 26px;
     }
 
-    .homepage__goodies__item__link__wrapper:hover {
-      border: 4px solid rgba(255,46,182,1);
-      box-shadow: -5px 5px 0px 0px #00ffee;
+    .homepage__goodies__item:hover .h3__tiny__goodies {
+      text-shadow: -2px 2px rgba(255,46,182,1);
+    }
+  
+    h4 {
+      margin: 0!important;
     }
 
-    .homepage__goodies__item {
-      display: flex;
-      position: relative;
-      padding: 1.2rem;
-      height: 80px;
+    .homepage__goodies__item__neverfap {
+      font-size: 1.4rem;
+      background: black;
+      color: white;
+      padding: 0.4rem;
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+      display: inline-block;
+    }
 
-      h4 {
-        line-height: 2.2rem;
-        margin: 0!important;
-      }
+    .homepage__goodies__item__title {
+      
+    }
+    .homepage__goodies__item__image {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
 
-      .homepage__goodies__item__neverfap {
-        font-size: 1.4rem;
-        background: black;
-        color: white;
-        padding: 0.4rem;
-      }
-
-      .homepage__goodies__item__title {
-        
-      }
-      .homepage__goodies__item__image {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-
-        height: 30px;
-        width: 30px;
-      }
-      .homepage__goodies__item__image--text {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        text-shadow: -3px 3px rgba(255,46,182,1);
-      }
+      // height: 30px;
+      width: 30px;
+      z-index: 10;
+    }
+    .homepage__goodies__item__image--text {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      text-shadow: -3px 3px rgba(255,46,182,1);
     }
   }
 }
 
-@media screen and (min-width: 570px) {
-  .homepage__goodies {
-  
-    .homepage__goodies__list {
-      
-      .homepage__goodies__item__link__wrapper {
-        width: initial;
-      }
-  
-      .homepage__goodies__item__link__wrapper:hover {
-      }
-  
-      .homepage__goodies__item {
-        width: 200px;
-        height: 160px;
-  
-        h4 {
-          
+.veteran__row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  grid-auto-rows: minmax(230px, auto);
+  justify-content: center;
 
-        }
+  padding: 2rem;
+  .veteran__module {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .articles__link--mini {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+    max-width: 18rem;
+    width: 100%;
+  }
+
+  .new__collection__item {
+    position: absolute;
+    right: -16px;
+    top: -5px;    
+    border: 2px solid black;
+    cursor: pointer;
+    
+    background: white;
+    padding: 0.2rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 570px) {
+  .veteran__row {
+    grid-template-columns: repeat(auto-fill, 300px); 
+  }
+
+  .homepage__goodies {
+    grid-template-columns: repeat(auto-fill, 250px);
   
-        .homepage__goodies__item__neverfap {
-        }
-  
-        .homepage__goodies__item__title {
-          
-        }
+    .homepage__goodies__item__link__wrapper {
+      width: initial;
+    }
+
+    .homepage__goodies__item__link__wrapper:hover {
+    }
+
+    .homepage__goodies__item {
+      padding: 1.2rem;
+      .h3__tiny__goodies {
+        display: block;
+        font-size: 0.6rem;
+      }
+
+      h4 {
+
+      }
+
+      .homepage__goodies__item__neverfap {
+      }
+
+      .homepage__goodies__item__title {
+        
       }
     }
   }

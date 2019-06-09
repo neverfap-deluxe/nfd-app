@@ -86,6 +86,29 @@ defmodule NfdWeb do
         Enum.find(list, fn(item) -> item["slug"] == name end)["content"]
       end
 
+      def child_title(list, name) do 
+        Enum.find(list, fn(item) -> item["slug"] == name end)["title"]
+      end
+
+      # TODO FINISH
+      def is_new(date) do 
+        split_date = String.split(date, "-")
+        
+        { year, _yes } = Enum.fetch!(split_date, 0) |> Integer.parse()
+        { month, _yes } = Enum.fetch!(split_date, 1) |> Integer.parse()
+        { day, _yes } = Enum.fetch!(split_date, 2) |> Integer.parse()
+
+        {:ok, elixir_date} = Date.new(year, month, day)
+
+        week_before_today = Date.add(Date.utc_today(), -7)
+
+        if elixir_date < week_before_today do
+          "new__collection__item"
+        else 
+          "none"
+        end
+      end
+
       def iterate_json_collection(collection) do
         if length(collection) != 1 do 
           collection |> Enum.join(", ")

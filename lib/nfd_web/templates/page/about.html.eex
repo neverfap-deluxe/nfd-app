@@ -25,6 +25,7 @@
 
 <div class="single__wrapper">
   <div class="single__content">
+    <%= raw child_title(@item["children"], "about-next-steps") %>
     <%= raw child_content(@item["children"], "about-next-steps") %>
   </div>
 </div>

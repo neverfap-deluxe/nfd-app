@@ -2,7 +2,12 @@
   <div class="articles__list">
     <%= Enum.map(@items, fn(item) -> %>
       <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
-        <span><a class="link articles__link" href='<%= Routes.content_path(@conn, @page_symbol, item["slug"]) %>'><%= item["date"] %> | <%= item["title"] %></a></span>
+        <span>
+          <a class="link articles__link" href='<%= Routes.content_path(@conn, @page_symbol, item["slug"]) %>'><%= item["date"] %> | <%= item["title"] %></a>
+        <!-- TODO: implement new tag -->
+          <span class='<%= is_new(item["date"]) %>'>New</span>
+        </span>
+
       <% end %>
     <% end ) %>
   </div>

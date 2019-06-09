@@ -9,6 +9,7 @@
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0rem;"/>
+    <%= raw child_title(@item["children"], "guide-trust-the-process") %>
     <%= raw child_content(@item["children"], "guide-trust-the-process") %>
   </div>
 </div>
@@ -17,6 +18,7 @@
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
+    <%= raw child_title(@item["children"], "guide-meat") %>
     <%= raw child_content(@item["children"], "guide-meat") %>
   </div>
 </div>
