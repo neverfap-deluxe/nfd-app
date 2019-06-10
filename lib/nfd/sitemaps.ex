@@ -45,9 +45,9 @@ defmodule Nfd.Sitemaps do
         add Helpers.page_path(Endpoint, :everything), priority: 0.5, changefreq: "weekly", expires: nil
 
         # GUIDE
+        add Helpers.page_path(Endpoint, :neverfap_deluxe_bible), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :guide), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :summary), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :neverfap_deluxe_bible), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :post_relapse_academy), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :emergency), priority: 0.5, changefreq: "weekly", expires: nil
 
@@ -62,6 +62,7 @@ defmodule Nfd.Sitemaps do
         add Helpers.page_path(Endpoint, :marketing_department), priority: 0.5, changefreq: "weekly", expires: nil
 
         # APPS
+        add Helpers.page_path(Endpoint, :open_source), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :mobile_app), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :desktop_app), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :chrome_extension), priority: 0.5, changefreq: "weekly", expires: nil

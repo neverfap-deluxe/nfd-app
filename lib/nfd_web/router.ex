@@ -51,7 +51,6 @@ defmodule NfdWeb.Router do
     get "/coaching", PageController, :coaching
 
     # VOLUNTEER
-    get "/helpful-neverfappers-academy", PageController, :helpful_neverfap_counsel
     get "/helpful-neverfap-counsel", PageController, :helpful_neverfap_counsel
     get "/engineering-corps", PageController, :engineering_corps
     get "/marketing-department", PageController, :marketing_department
