@@ -23,7 +23,7 @@ RUN mix local.hex --force \
   && mix local.rebar --force \
   && mix hex.info
 
-RUN mix deps.get --only prod
+RUN mix deps.get --only prod --no-archives-check
 
 RUN mix compile
 RUN cd assets && \
