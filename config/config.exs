@@ -47,10 +47,10 @@ config :nfd, NfdWeb.Endpoint,
   pubsub: [name: Nfd.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
-config :logger, :console,
-  format: "$time $metadata[$level] $message\n",
-  metadata: [:request_id],
-  level: :debug
+# config :logger, :console,
+#   format: "$time $metadata[$level] $message\n",
+#   metadata: [:request_id],
+#   level: :debug
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason

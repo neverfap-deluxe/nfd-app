@@ -43,8 +43,8 @@ defmodule NfdWeb do
 
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
-      use Timex 
 
+      use Timex 
       import NfdWeb.ErrorHelpers
       import NfdWeb.Gettext
       alias NfdWeb.Router.Helpers, as: Routes
