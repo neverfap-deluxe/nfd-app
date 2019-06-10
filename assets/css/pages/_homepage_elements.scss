@@ -17,44 +17,7 @@
   }
 }
 
-.homepage__goodies__header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-
-  max-width: 600px;
-  margin: 0 auto;
-  margin-top: 1.8rem;
-  .homepage__goodies__title {
-    box-shadow: -5px 5px 0px 0px black;
-
-    color: white;
-    border: 4px solid white;
-    background: black;
-
-    padding: 1rem;      
-
-    padding-left: 1.8rem;
-    padding-right: 1.8rem;
-
-    text-align: center;  
-    font-size: 2.9rem;
-    line-height: 4rem;
-
-    transition: 6s box-shadow;
-  }
-
-  .homepage__goodies__title:hover {
-    box-shadow: -30px 30px 0px 0px black;
-  }
-}
-
-
 .homepage__goodies {
-  position: relative;
-  
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
@@ -135,10 +98,8 @@
 }
 
 .veteran__row {
-  
   display: grid;
-  grid-template-columns: repeat(auto-fill, 300px); 
-  // grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 50px;
   grid-auto-rows: minmax(230px, auto);
   justify-content: center;
@@ -169,29 +130,9 @@
   }
 }
 
-.veteran__button {
-  color: black;
-  // border: 4px solid black;
-  box-shadow: -5px 5px 0px 0px cyan;
-  padding: 0.8rem;
-  transition: .2s box-shadow;
-  background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
-  background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
-  background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
-  background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
-  background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
-  color: white;  
-} 
-.veteran__button:hover {
-  box-shadow: -10px 10px 0px 0px cyan;
-}
-
-
 @media screen and (min-width: 570px) {
   .veteran__row {
-    // grid-template-columns: repeat(auto-fill, 300px); 
+    grid-template-columns: repeat(auto-fill, 300px); 
   }
 
   .homepage__goodies {

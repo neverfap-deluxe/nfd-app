@@ -16,29 +16,10 @@
 
   <div class="homepage__main">
     <!-- VETERAN NEVERFAPPERS -->
-    <div id="veteran-neverfapper-body">
-      <%#= partial "home/veteran_neverfappers.html", assigns %>
-    </div>
+    <%= partial "home/veteran_neverfappers.html", assigns %>
 
     <!-- NEW NEVERFAPPERS -->
     <div id="new-neverfapper-body">
-      <%= partial "home/veteran_neverfappers.html", assigns %>
-
-      <div style="margin-bottom: 1rem; margin-top: 6rem; height: 8px; background: rgba(255,46,182,1);"></div>
-      <div style="margin-bottom: 1rem; margin-top: 1rem; height: 6px; background: rgba(255,46,182,1);"></div>
-      <div class="account__info" style="border-top: 4px solid rgba(255,46,182,1);">
-        <p class="account__info__title">Here's a link to every <i class="em em-tada"></i> single <i class="em em-beers"></i> page <i class="em em-blue_book"></i> on NeverFap Deluxe.</p>
-        <div class="account__buttons">
-          <a class="account__info__button account__info__button--link" href='/everything'>
-            <div class="account__info__button__text">
-              Everything
-            </div>
-          </a> 
-        </div>
-      </div>
-      <div style="margin-bottom: 1rem; margin-top: 1rem; height: 6px; background: #00ffee;"></div>
-      <div style="margin-bottom: 6rem; margin-top: 1rem; height: 8px; background: #00ffee;"></div>
-  
       <%= partial "home/who.html", assigns %>
 
       <div class="homepage__hero homepage__hero--secondary">

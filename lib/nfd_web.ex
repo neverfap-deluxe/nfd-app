@@ -102,8 +102,8 @@ defmodule NfdWeb do
         {:ok, elixir_date} = Date.new(year, month, day)
 
         week_before_today = Date.add(Date.utc_today(), -7)
-        
-        if Timex.after?(elixir_date, week_before_today) do
+
+        if elixir_date < week_before_today do
           "new__collection__item"
         else 
           "none"

@@ -12,21 +12,18 @@
 
   }
 
-  .everything__sub__title--main {
-    background: white;
-    color: black;
-    padding: 1.6rem;
-    margin-top: 0.6rem;
-  }
-
   .everything__sub__title {
     background: white;
-    border: 4px solid black;
-    box-shadow: -5px 5px 0px 0px cyan;
-    color: black;
+    padding: 1.6rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .everything__sub__sub__title {
+    background: white;
     padding: 1.6rem;
     margin-top: 0.6rem;
-    margin-bottom: 2.6rem;
+    margin-bottom: 2rem;
+    box-shadow: -5px 5px 0px 0px black;
   }
 
   .everything__section {

@@ -1,49 +1,53 @@
-<div class="veteran__row">
-  <!-- Guides -->
+<div id="veteran-neverfapper-body">
+    
+  <div class="veteran__row">
+    <!-- Guides -->
 
-  <!-- Articles -->
-  <div class="veteran__module">
-    <h2>Articles</h2>
-    <div class="articles__list">
-      <%= Enum.map(@collections.articles |> Enum.take(5), fn(item) -> %>
-        <span style="position: relative;">
-          <a class="link articles__link articles__link--mini" href='<%= Routes.content_path(@conn, :article, item["slug"]) %>'><%= item["date"] %> | <%= item["title"] %></a>
-          <span class='<%= is_new(item["date"]) %>'>New</span>
-        </span>
-      <% end ) %>
+    <!-- Articles -->
+    <div class="veteran__module">
+      <h2>Articles</h2>
+      <div class="articles__list">
+        <%= Enum.map(@collections.articles |> Enum.take(5), fn(item) -> %>
+          <span style="position: relative;">
+            <a class="link articles__link articles__link--mini" href='<%= Routes.content_path(@conn, :article, item["slug"]) %>'><%= item["date"] %> | <%= item["title"] %></a>
+            <span class='<%= is_new(item["date"]) %>'>New</span>
+          </span>
+        <% end ) %>
+      </div>
+      
+      <a class="button" href="<%= Routes.content_path(@conn, :articles) %>">All articles</a>
+
+    </div>
+
+    <!-- Practices -->
+    <div class="veteran__module">
+      <h2>Practices</h2>
+      <div class="articles__list">
+        <%= Enum.map(@collections.practices |> Enum.take(5), fn(item) -> %>
+          <span style="position: relative;">
+            <a class="link articles__link articles__link--mini" href='<%= Routes.content_path(@conn, :practice, item["slug"]) %>'><%= item["date"] %> | <%= item["title"] %></a>
+            <span class='<%= is_new(item["date"]) %>'>New</span>
+          </span>
+        <% end ) %>
+      </div>
+      <a class="button" href="<%= Routes.content_path(@conn, :practices) %>">All practices</a>
+
+    </div>
+
+    <!-- Meditations -->
+    <div class="veteran__module">
+      <h2>Meditations</h2>
+      <div class="articles__list">
+        <%= Enum.map(@collections.meditations |> Enum.take(5), fn(item) -> %>
+          <span style="position: relative;">
+            <a class="link articles__link articles__link--mini" href='<%= Routes.content_path(@conn, :meditation, item["slug"]) %>'><%= item["date"] %> | <%= item["title"] %></a>
+            <span class='<%= is_new(item["date"]) %>'>New</span>          
+          </span>
+        <% end ) %>
+      </div>  
+      <a class="button" href="<%= Routes.content_path(@conn, :meditations) %>">All meditations</a>
+
     </div>
     
-    <a class="veteran__button" href="<%= Routes.content_path(@conn, :articles) %>">All articles</a>
-  </div>
-
-  <!-- Practices -->
-  <div class="veteran__module">
-    <h2>Practices</h2>
-    <div class="articles__list">
-      <%= Enum.map(@collections.practices |> Enum.take(5), fn(item) -> %>
-        <span style="position: relative;">
-          <a class="link articles__link articles__link--mini" href='<%= Routes.content_path(@conn, :practice, item["slug"]) %>'><%= item["date"] %> | <%= item["title"] %></a>
-          <span class='<%= is_new(item["date"]) %>'>New</span>
-        </span>
-      <% end ) %>
-    </div>
-    <a class="veteran__button" href="<%= Routes.content_path(@conn, :practices) %>">All practices</a>
-
-  </div>
-
-  <!-- Meditations -->
-  <div class="veteran__module">
-    <h2>Meditations</h2>
-    <div class="articles__list">
-      <%= Enum.map(@collections.meditations |> Enum.take(5), fn(item) -> %>
-        <span style="position: relative;">
-          <a class="link articles__link articles__link--mini" href='<%= Routes.content_path(@conn, :meditation, item["slug"]) %>'><%= item["date"] %> | <%= item["title"] %></a>
-          <span class='<%= is_new(item["date"]) %>'>New</span>          
-        </span>
-      <% end ) %>
-    </div>  
-    <a class="veteran__button" href="<%= Routes.content_path(@conn, :meditations) %>">All meditations</a>
-
-  </div>
-  
-</div>  
+  </div>  
+</div>
