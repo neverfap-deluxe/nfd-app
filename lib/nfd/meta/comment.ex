@@ -19,8 +19,9 @@ defmodule Nfd.Meta.Comment do
   @doc false
   def changeset(comment, attrs) do
     comment
-    |> cast(attrs, [:depth, :email, :name, :message, :parent_message_id])
-    |> validate_required([:depth, :email, :name, :message, :parent_message_id])
+    |> cast(attrs, [:depth, :email, :name, :message, :page_id, :parent_message_id])
+    |> foreign_key_constraint(:page_id)
+    |> validate_required([:depth, :email, :name, :message])
   end
 end
 
