@@ -57,6 +57,7 @@ input, label, button {
 }
 
 .articles__link {
+  position: relative;
   display: inline-block;
   margin-bottom: 1.5rem;
   transition: border-bottom .1s, color .1s;

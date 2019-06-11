@@ -155,18 +155,18 @@
     max-width: 18rem;
     width: 100%;
   }
+}
 
-  .new__collection__item {
-    position: absolute;
-    right: -16px;
-    top: -5px;
-    border: 2px solid black;
-    cursor: pointer;
+.new__collection__item {
+  position: absolute;
+  right: -20px;
+  top: -10px;
+  border: 2px solid black;
+  cursor: pointer;
 
-    background: white;
-    padding: 0.2rem;
-    font-size: 0.8rem;
-  }
+  background: white;
+  padding: 0.2rem;
+  font-size: 0.8rem;
 }
 
 .veteran__button {

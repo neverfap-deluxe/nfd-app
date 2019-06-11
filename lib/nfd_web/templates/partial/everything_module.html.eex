@@ -60,8 +60,8 @@
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "NeverFap Deluxe Open Source", url: "/neverfap-deluxe-open-source", description: "All NeverFap Deluxe applications are completely 100% open source! So feel free to help us build some stuff!" } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "NeverFap Deluxe Mobile App", url: "/mobile-app", description: "Maybe you would like to use NeverFap Deluxe on your mobile? Well, get excited!" } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "NeverFap Deluxe Chrome Extension", url: "/chrome-extension", description: "Get easy access to our guided meditations straight to your browser with the NeverFap Deluxe Chrome Plugin!" } %>
+      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: false, title: "NeverFap Deluxe League", url: "/neverfap-deluxe-league", description: "Maybe you would like to use NeverFap Deluxe on your desktop? Well, now you can!" } %>
       <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "NeverFap Deluxe Desktop App", url: "/desktop-app", description: "Maybe you would like to use NeverFap Deluxe on your desktop? Well, now you can!" } %>
-      <%= partial "everything_item.html", %{ is_mobile_menu: @is_mobile_menu, wip: true, title: "NeverFap Deluxe League", url: "/neverfap-deluxe-league", description: "Maybe you would like to use NeverFap Deluxe on your desktop? Well, now you can!" } %>
     </div>
 
     <!-- <h2 class="everything__sub__title">Social Media</h2>
