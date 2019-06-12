@@ -12,7 +12,7 @@
 <div class="single__wrapper--quotes">
   <div class="quote__list">
     <%= Enum.map(@collections.quotes, fn(quote) -> %>
-    <a href='/quotes/<%= quote["slug"] %>'>
+    <a href='/content_quotes/<%= quote["slug"] %>'>
       <div class="quote__item">
         <img class="quote__image" src='<%= quote["image_url"] %>' alt='<%= quote["title"] %>'>
       </div>
