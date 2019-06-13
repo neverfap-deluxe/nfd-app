@@ -13,5 +13,4 @@
   </div>
 </div>
 
-<%# TODO: Create this %>
-<%#= partial "links/paypal.html", assigns %>
+<%= partial "links/paypal.html", assigns %>

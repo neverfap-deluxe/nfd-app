@@ -33,6 +33,8 @@ config :nfd,
   social_chrome_url: "https://chrome.google.com/webstore/detail/neverfap-deluxe/fojalkcicjfcnekjmchgpbibinkpikgd",
   social_firefox_url: "https://addons.mozilla.org/en-US/firefox/addon/neverfap-deluxe/?src=search",
   social_android_url: "https://play.google.com/store/apps/details?id=com.ueno.nfdmobilev2",
+  social_ios_url: "null",
+  social_paypal_url: "https://www.paypal.me/neverfapdeluxe",
 
   general_type: "generalemail",
   kickstarter_type: "neverfapdeluxekickstarter",
