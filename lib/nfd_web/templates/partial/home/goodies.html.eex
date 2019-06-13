@@ -6,21 +6,20 @@
   <!-- <span class="delicious__promotion" style="position: absolute; top: 0; font-size: 0.7rem; overflow: hidden">promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion promotion</span> -->
 
   <!-- <h2>Let's not forget these goodies</h2> -->
-  <!-- <a class="homepage__goodies__item__link__wrapper" href="/neverfap">
+  <a class="homepage__goodies__item__link__wrapper" href="/neverfap-deluxe-bible">
     <div class="homepage__goodies__item">
-      <h4 class="homepage__goodies__item__title"><span class="homepage__goodies__item__neverfap">NeverFap Deluxe</span> Bible</h4>
+      <h4 class="homepage__goodies__item__title">The <span class="homepage__goodies__item__neverfap">NeverFap Deluxe</span> Bible</h4>
       <img class="homepage__goodies__item__image" src="/images/logo.png"/>
       <span class="h3__tiny__goodies">/neverfap-deluxe-bible</span>        
     </div>
-  </a> -->
-
-  <a class="homepage__goodies__item__link__wrapper" href="/guide">
+  </a>
+  <!-- <a class="homepage__goodies__item__link__wrapper" href="/guide">
     <div class="homepage__goodies__item">
       <h4 class="homepage__goodies__item__title">The <span class="homepage__goodies__item__neverfap">NeverFap Deluxe</span> Guide</h4>
       <img class="homepage__goodies__item__image" src="/images/logo.png"/>
       <span class="h3__tiny__goodies">/guide</span>
     </div>
-  </a>
+  </a> -->
   <a class="homepage__goodies__item__link__wrapper" href="/meditation">
     <div class="homepage__goodies__item">
       <h4 class="homepage__goodies__item__title">Guided <span class="homepage__goodies__item__neverfap">NeverFap Deluxe</span> Meditation Series</h4>

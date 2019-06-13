@@ -1,5 +1,7 @@
+
+<!-- TODO: Extend with different types. to have contact and everything link --> 
 <div class="single__wrapper">
-  <h1 class="single__title"><%= raw @title %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <h1 class="single__title"><%= raw @title %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>
   <div class="single__content" style="margin-bottom: 0;">
     <%= raw @content %>
   </div>
