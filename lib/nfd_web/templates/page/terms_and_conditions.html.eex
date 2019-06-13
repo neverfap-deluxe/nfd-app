@@ -1,8 +1,1 @@
-
-<div class="single__wrapper">    
-  <h1 class="single__title"><%= @item["title"] %></h1>
-  <div class="single__content">
-    <%= raw @item["content"] %>
-  </div>
-</div>
-  
+<%= partial "single_title_content.html", %{ title: @item["title"], content: @item["content"] } %>

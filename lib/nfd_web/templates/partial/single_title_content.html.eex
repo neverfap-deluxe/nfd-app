@@ -1,0 +1,6 @@
+<div class="single__wrapper">
+  <h1 class="single__title"><%= raw @title %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <div class="single__content" style="margin-bottom: 0;">
+    <%= raw @content %>
+  </div>
+</div>

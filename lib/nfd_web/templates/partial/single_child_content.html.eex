@@ -1,0 +1,5 @@
+<div class="single__wrapper">
+  <div class="single__content" style="margin-bottom: 0;">
+    <%= raw child_content(@children, @name) %>
+  </div>
+</div>
