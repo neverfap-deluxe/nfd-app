@@ -10,12 +10,18 @@ defmodule NfdWeb.FetchDashboard do
   alias Nfd.Patreon
 
   def fetch_dashboard(conn, page_symbol, collection_slug, file_slug, collection_array) do
+    # Get Subscriber + User
     user = Pow.Plug.current_user(conn)
-    create_collection_access_for_free_courses(user)
     subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
+
+    # Subscribe to 7 Day Kickstarter
+    create_collection_access_for_free_courses(user)
+
+    # Get Collections Access List
     collections_access_list = Account.list_collection_access_by_user_id(user.id)
 
-    create_collection_access_for_free_courses(user)
+    # Validate Patreon
+    check_patreon(conn.host, user)
 
     { _count_property, subscribed_property } = Email.collection_slug_to_subscribed_property("general-newsletter")
     is_subscribed = Map.fetch!(subscriber, subscribed_property)
@@ -147,6 +153,17 @@ defmodule NfdWeb.FetchDashboard do
       "pk_test_ShlsB93VF6UPAeaGzhC3Lmue"
     else
       System.get_env("STRIPE_API_KEY")
+    end
+  end
+
+  # check patreon
+  defp check_patreon(host, user) do
+    if user.patreon_linked do
+      if (user.patreon_expires_in) do
+        Patreon.refresh_user_patreon_information()
+      end
+
+      Patreon.check_patreon_tier(host, user)
     end
   end
 

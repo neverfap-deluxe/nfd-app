@@ -29,8 +29,8 @@ defmodule Nfd.Account.User do
     # field :patreon_linked, :boolean, default: false
     # field :patreon_user_id, :string
     # field :patreon_auth_token, :string
-    # field :patreon_auth_token_last_updated, :string
-    # field :patreon_auth_token_last_updated, :string
+    # field :patreon_refresh_token, :string
+    # field :patreon_expires_in, :string
 
     has_one :subscriber, Subscriber, on_delete: :delete_all
     has_many :collection_access, CollectionAccess, on_delete: :delete_all

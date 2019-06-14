@@ -19,29 +19,29 @@ defmodule NfdWeb.FetchCollection do
       :guides_post_relapse_academy -> []
 
       # LEGAL
-      :disclaimer -> []
-      :privacy -> []
-      :terms_and_conditions -> []
+      :legal_disclaimer -> []
+      :legal_privacy -> []
+      :legal_terms_and_conditions -> []
 
       # PROGRAMS
-      :accountability -> []
-      :reddit_guidelines -> []
-      :coaching -> []
+      :programs_accountability -> []
+      :programs_reddit_guidelines -> []
+      :programs_coaching -> []
 
       # VOLUNTEER
-      :helpful_neverfap_counsel -> []
-      :engineering_corps -> []
-      :marketing_department -> []
+      :volunteer_helpful_neverfap_counsel -> []
+      :volunteer_engineering_corps -> []
+      :volunteer_marketing_department -> []
 
       # APPS
-      :desktop_app -> []
-      :mobile_app -> []
-      :chrome_extension -> []
-      :open_source -> []
-      :neverfap_deluxe_league -> []
+      :apps_desktop_app -> []
+      :apps_mobile_app -> []
+      :apps_chrome_extension -> []
+      :apps_open_source -> []
+      :apps_neverfap_deluxe_league -> []
 
       # MISC
-      :never_fap -> []
+      :misc_never_fap -> []
 
       # CONTENT
       :articles -> [:articles]

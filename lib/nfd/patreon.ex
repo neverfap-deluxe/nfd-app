@@ -37,7 +37,7 @@ defmodule Nfd.Patreon do
       patreon_user_id: user_id,
       patreon_access_token: access_token,
       patreon_refresh_token: refresh_token,
-      patreon_expires_in: expires_in,
+      patreon_expires_in: expires_in
     })
   end
 
@@ -86,7 +86,6 @@ defmodule Nfd.Patreon do
       patreon_expires_in: expires_in
     })
   end
-
 
   # Helper Functions
   defp generate_base_url(host) do

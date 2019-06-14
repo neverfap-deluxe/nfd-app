@@ -47,31 +47,31 @@ defmodule NfdWeb.Router do
     get "/emergency", PageController, :guides_emergency
 
     # PROGRAMS
-    get "/accountability-program", PageController, :accountability
-    get "/new-fap-deluxe-reddit-guidelines", PageController, :reddit_guidelines
-    get "/new-neverfapper-reddit-guidelines", PageController, :reddit_guidelines
-    get "/coaching", PageController, :coaching
+    get "/accountability-program", PageController, :programs_accountability
+    get "/new-fap-deluxe-reddit-guidelines", PageController, :programs_reddit_guidelines
+    get "/new-neverfapper-reddit-guidelines", PageController, :programs_reddit_guidelines
+    get "/coaching", PageController, :programs_coaching
 
     # VOLUNTEER
-    get "/helpful-neverfappers-academy", PageController, :helpful_neverfap_counsel
-    get "/helpful-neverfap-counsel", PageController, :helpful_neverfap_counsel
-    get "/engineering-corps", PageController, :engineering_corps
-    get "/marketing-department", PageController, :marketing_department
+    get "/helpful-neverfappers-academy", PageController, :volunteer_helpful_neverfap_counsel
+    get "/helpful-neverfap-counsel", PageController, :volunteer_helpful_neverfap_counsel
+    get "/engineering-corps", PageController, :volunteer_engineering_corps
+    get "/marketing-department", PageController, :volunteer_marketing_department
 
     # APPS
-    get "/desktop-app", PageController, :desktop_app
-    get "/mobile-app", PageController, :mobile_app
-    get "/chrome-extension", PageController, :chrome_extension
-    get "/neverfap-deluxe-league", PageController, :neverfap_deluxe_league
-    get "/neverfap-deluxe-open-source", PageController, :open_source
+    get "/desktop-app", PageController, :apps_desktop_app
+    get "/mobile-app", PageController, :apps_mobile_app
+    get "/chrome-extension", PageController, :apps_chrome_extension
+    get "/neverfap-deluxe-league", PageController, :apps_neverfap_deluxe_league
+    get "/neverfap-deluxe-open-source", PageController, :apps_open_source
 
     # MISC
-    get "/never-fap", PageController, :never_fap
+    get "/never-fap", PageController, :misc_never_fap
 
     # LEGAL
-    get "/disclaimer", PageController, :disclaimer
-    get "/privacy", PageController, :privacy
-    get "/terms-and-conditions", PageController, :terms_and_conditions
+    get "/disclaimer", PageController, :legal_disclaimer
+    get "/privacy", PageController, :legal_privacy
+    get "/terms-and-conditions", PageController, :legal_terms_and_conditions
 
     # IMAGES
     get "/test", PageController, :test
