@@ -18,38 +18,49 @@ defmodule Nfd.Patreon do
       ]
     )
 
-    # information
+    # auth information
     access_token = response.body["data"]["access_token"]
     refresh_token = response.body["data"]["refresh_token"]
     expires_in = response.body["data"]["expires_in"]
+
+    # retrieve latest patreon information to update on the profile.
+    { :ok, identityResponse } = Tesla.get(
+      "https://www.patreon.com/api/oauth2/v2/identity?fields[user]=about,created,email,first_name,full_name,image_url,last_name,social_connections,thumb_url,url,vanity"
+    )
+
+    user_id = identityResponse["data"]["id"]
 
     # update user information
     user = Pow.Plug.current_user(conn)
     Account.update_user(user, %{
       patreon_linked: true,
+      patreon_user_id: user_id,
       patreon_access_token: access_token,
       patreon_refresh_token: refresh_token,
-      patreon_expires_in: expires_i]
+      patreon_expires_in: expires_in,
     })
-
-    # retrieve latest patreon information
-    base_url = generate_base_url(conn.host)
-    { :ok, response } = Tesla.get(
-      "",
-    )
-
-    # %{
-    #   access_token: response.body["data"]["access_token"],
-    #   refresh_token: response.body["data"]["refresh_token"],
-    #   expires_in: response.body["data"]["expires_in"],
-    #   scope: response.body["data"]["scope"],
-    #   token_type: response.body["data"]["token_type"]
-    # }
   end
 
-  def update_
+  def check_patreon_tier(user, conn) do
+    base_url = generate_base_url(conn.host)
+    { :ok, response } = Tesla.get(
+      "#{base_url}/#{user.patreon_user_id}?include=address,currently_entitled_tiers,user&fields[member]=full_name,is_follower,email,last_charge_date,last_charge_status,lifetime_support_cents,patron_status,currently_entitled_amount_cents,pledge_relationship_start,will_pay_amount_cents&fields%5Btier%5D=title&fields%5Buser%5D=full_name,hide_pledges",
+    )
 
-  def refresh_patreon_token(patreon_refresh_token) do
+    attributes = response["data"]["attributes"]
+    last_charge_status = attributes["last_charge_status"]
+    patron_status = attributes["patron_status"]
+
+    relationships = response["data"]["relationships"]
+    currently_entitled_tiers = relationships["currently_entitled_tiers"]["data"]
+
+    %{
+      is_valid_patron: last_charge_status == "Paid" and patron_status == "active_patron",
+      currently_entitled_tiers: currently_entitled_tiers
+    }
+  end
+
+  def refresh_user_patreon_information(patreon_refresh_token) do
     base_url = generate_base_url(conn.host)
     { :ok, response } = Tesla.get(
       "https://www.patreon.com/api/oauth2/token",
@@ -82,16 +93,17 @@ defmodule Nfd.Patreon do
     if host == "localhost" do
       "http://localhost:4000"
     else
-      "https://neverfapdeluxe.com/"
+      "https://neverfapdeluxe.com"
     end
   end
 
   defp generate_relevant_patreon_auth_url(host) do
     base_url = generate_base_url(host)
+    scope = "users pledges-to-me my-campaign campaigns.members"
     if host == "localhost" do
-      "#{base_url}?response_type=code&client_id=TODO&redirect_uri=#{base_url}/"
+      "#{base_url}?response_type=code&scope=#{scope}&client_id=TODO&redirect_uri=#{base_url}/validate_patreon"
     else
-      "#{base_url}?response_type=code&client_id=#{System.get_env("PATREON_CLIENT_KEY")}&redirect_uri=#{base_url}/"
+      "#{base_url}?response_type=code&scope=#{scope}&client_id=#{System.get_env("PATREON_CLIENT_KEY")}&redirect_uri=#{base_url}/validate_patreon"
     end
   end
 

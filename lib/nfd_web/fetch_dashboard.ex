@@ -94,10 +94,9 @@ defmodule NfdWeb.FetchDashboard do
 
             :patreon_auth ->
               patreon_authorise_url = Patreon.generate_relevant_patreon_auth_url(conn.host)
-              patreon_client_key = Patreon.get_relevant_patreon_client_key(conn.host)
+              # user
               Map.merge(acc, %{
                 patreon_authorise_url: patreon_authorise_url,
-                patreon_client_key: patreon_client_key
               })
           _ ->
             acc
