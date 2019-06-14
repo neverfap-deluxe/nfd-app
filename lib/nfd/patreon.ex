@@ -5,6 +5,28 @@ defmodule Nfd.Patreon do
 
   authorize_patreon_url = "https://www.patreon.com/oauth2/authorize"
 
+  def fetch_patreon(host, user) do
+    if user.patreon_linked do
+      expires_in_date = Timex.format!(user.patreon_expires_in, "{ISO:Extended}")
+      seven_days_before_today = Timex.shift(Timex.today, days: 7)
+
+      # check if date is already expired
+      if Timex.after?(expires_in_date, Today.today)) do
+        %{
+          is_valid_patron: false,
+          currently_entitled_tiers: []
+        }
+
+      # if not expired check if it should be validated
+      else
+        if Timex.before?(Timex.today, seven_days_before_today) do
+          Patreon.refresh_user_patreon_information()
+        end
+        Patreon.check_patreon_tier(host, user)
+      end
+    end
+  end
+
   def validate_patreon_code(conn, code) do
     base_url = generate_base_url(conn.host)
     { :ok, response } = Tesla.get(

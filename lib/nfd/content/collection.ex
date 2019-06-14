@@ -26,4 +26,11 @@ defmodule Nfd.Content.Collection do
     |> cast(attrs, [:seed_id, :slug, :display_name, :status, :description, :type, :premium])
     |> validate_required([:slug, :display_name, :status, :description, :type, :premium])
   end
+
+  defp has_paid_for_collection(collections_access_list, collection, user) do
+    collections_access_list
+      |> Enum.find(fn(list_collection) ->
+        list_collection.collection_id == collection.id and list_collection.user_id == user.id
+      end)
+  end
 end

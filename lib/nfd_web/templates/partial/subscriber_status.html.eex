@@ -1,4 +1,4 @@
 <div class="subscriber__status">
-  <p class="status"><b>Status:</b> <span class="<%= if @subscribed == true do %> status__green <% else %> status__red <% end %>"><%= subscribed_status @subscribed %></span></p> 
-  <a href="<%= Routes.dashboard_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_id, subscribed_property: @subscribed_property) %>" class="button subscribe__button"><%= subscribed_status_text @subscribed %></a>  
+  <p class="status"><b>Status:</b> <span class="<%= if @subscribed == true do %> status__green <% else %> status__red <% end %>"><%= subscribed_status @subscribed %></span></p>
+  <a href="<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_id, subscribed_property: @subscribed_property) %>" class="button subscribe__button"><%= subscribed_status_text @subscribed %></a>
 </div>

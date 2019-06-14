@@ -2,30 +2,40 @@ defmodule NfdWeb.FetchDashboard do
   use NfdWeb, :controller
 
   alias Nfd.Content
-  alias Nfd.Account
+  alias Nfd.Content.Collection
+
   alias Nfd.EmailLogs
+
+  alias Nfd.Account
+  alias Nfd.Account.CollectionAccess
+  alias Nfd.Account.Subscriber
 
   alias Nfd.Util.Email
 
   alias Nfd.Patreon
+  alias Nfd.Stripe
+
+  use Timex
 
   def fetch_dashboard(conn, page_symbol, collection_slug, file_slug, collection_array) do
-    # Get Subscriber + User
+    # Get Subscriber and User
     user = Pow.Plug.current_user(conn)
-    subscriber = Pow.Plug.current_user(conn) |> check_subscriber_exists()
+    subscriber = Pow.Plug.current_user(conn) |> Subscriber.check_subscriber_exists()
 
     # Subscribe to 7 Day Kickstarter
-    create_collection_access_for_free_courses(user)
+    CollectionAccess.create_collection_access_for_free_courses(user)
 
     # Get Collections Access List
     collections_access_list = Account.list_collection_access_by_user_id(user.id)
 
     # Validate Patreon
-    check_patreon(conn.host, user)
+    { is_valid_patron, currently_entitled_tiers } = Patreon.fetch_patreon(conn.host, user)
 
+    # Check which campaigns user is subscribed to
     { _count_property, subscribed_property } = Email.collection_slug_to_subscribed_property("general-newsletter")
     is_subscribed = Map.fetch!(subscriber, subscribed_property)
 
+    # Fetch collections
     collections = fetch_dashboard_collections(conn, collection_array, collections_access_list, collection_slug, file_slug, user)
     conn
       |> put_flash(:info, "Welcome back!")
@@ -65,12 +75,10 @@ defmodule NfdWeb.FetchDashboard do
             })
 
           :collections_audio ->
-            collections_audio = Content.list_audio_courses()
-            Map.put(acc, :collections_audio, collections_audio)
+            Map.put(acc, :collections_audio, Content.list_audio_courses())
 
           :collections_email ->
-            collections_email = Content.list_email_campaigns()
-            Map.put(acc, :collections_email, collections_email)
+            Map.put(acc, :collections_email, Content.list_email_campaigns())
 
           :collections_audio_file ->
             collections_audio_file = Content.get_file_slug!(file_slug)
@@ -95,7 +103,7 @@ defmodule NfdWeb.FetchDashboard do
             #       end)
 
             :stripe_api_key ->
-              stripe_api_key = get_relevant_stripe_key(conn.host)
+              stripe_api_key = Stripe.get_relevant_stripe_key(conn.host)
               Map.put(acc, :stripe_api_key, stripe_api_key)
 
             :patreon_auth ->
@@ -109,100 +117,4 @@ defmodule NfdWeb.FetchDashboard do
         end
       end)
     end
-
-
-  defp has_paid_for_collection(collections_access_list, collection, user) do
-    collections_access_list
-      |> Enum.find(fn(list_collection) ->
-        list_collection.collection_id == collection.id and list_collection.user_id == user.id
-      end)
-  end
-
-  # Check if subscriber exists
-  defp check_subscriber_exists(user) do
-    # Check is subscriber email already exists.
-    case Account.get_subscriber_email(user.email) do
-      nil -> check_subscriber_exists_create_subscriber(user.email, user.id)
-      subscriber -> check_subscriber_exists_update_subscriber(subscriber, user)
-    end
-  end
-
-  defp check_subscriber_exists_create_subscriber(user_email, user_id) do
-    case Account.create_subscriber(%{ subscriber_email: user_email, user_id: user_id }) do
-      {:ok, subscriber} ->
-        # NOTE: I think there's an issue where this only sometimes returns the subscriber_email.
-        subscriber
-      {:error, _error} -> EmailLogs.error_email_log("#{user_email} - #{user_id} - Could not create subscriber - :check_subscriber_exists_create_subscriber.")
-    end
-  end
-
-  defp check_subscriber_exists_update_subscriber(subscriber, user) do
-    if subscriber.user_id != user.id do
-      case Account.update_subscriber(subscriber, %{user_id: user.id}) do
-        {:ok, subscriber_with_user_id} -> subscriber_with_user_id
-        {:error, _changeset} -> EmailLogs.error_email_log("#{subscriber.subscriber_email} - Could not update subscriber - :check_subscriber_exists_update_subscriber.")
-      end
-    else
-      subscriber
-    end
-  end
-
-  # Helper Functions
-  defp get_relevant_stripe_key(host) do
-    if host == "localhost" do
-      "pk_test_ShlsB93VF6UPAeaGzhC3Lmue"
-    else
-      System.get_env("STRIPE_API_KEY")
-    end
-  end
-
-  # check patreon
-  defp check_patreon(host, user) do
-    if user.patreon_linked do
-      if (user.patreon_expires_in) do
-        Patreon.refresh_user_patreon_information()
-      end
-
-      Patreon.check_patreon_tier(host, user)
-    end
-  end
-
-  # Change subscription general
-  def change_subscription_dashboard_func(conn, %{"subscribed" => subscribed, "user_id" => user_id, "subscribed_property" => subscribed_property}) do
-    subscribed_property_atom = String.to_atom(subscribed_property)
-
-    case Account.get_subscriber_user_id(user_id) do
-      nil -> redirect_back(conn, 1)
-      subscriber ->
-        if subscribed == "true", do: Account.update_subscriber(subscriber, %{ subscribed_property_atom => false })
-        if subscribed == "false", do: Account.update_subscriber(subscriber, %{ subscribed_property_atom => true })
-        redirect_back(conn, 1)
-    end
-  end
-
-  def reset_subscription_dashboard_func(conn, %{"subscribed" => subscribed, "user_id" => user_id, "count_property" => count_property}) do
-    count_property_atom = String.to_atom(count_property)
-
-    case Account.get_subscriber_user_id(user_id) do
-      nil -> redirect(conn, to: Routes.dashboard_path(conn, :dashboard))
-      subscriber ->
-        Account.update_subscriber(subscriber, %{ count_property_atom => 0 })
-        redirect_back(conn, 1)
-    end
-  end
-
-  def create_collection_access_for_free_courses(user) do
-    ["seven-day-neverfap-deluxe-kickstarter"]
-      |> Enum.each(fn(slug) ->
-        collection = Content.get_collection_slug!(slug)
-        case Account.get_collection_access_by_user_id_and_collection_id(user.id, collection.id) do
-          nil ->
-            case Account.create_collection_access(%{ user_id: user.id, collection_id: collection.id }) do
-              {:ok, collection_access } -> collection_access
-              {:error, _error} -> nil
-            end
-          _collection_access -> nil
-        end
-      end)
-  end
 end

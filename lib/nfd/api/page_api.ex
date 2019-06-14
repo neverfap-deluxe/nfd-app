@@ -8,6 +8,7 @@ defmodule Nfd.API.Page do
   def general_contact(client), do: get(client, "/general_contact/index.json")
   def general_donations(client), do: get(client, "/general_donations/index.json")
   def general_everything(client), do: get(client, "/general_everything/index.json")
+  def general_premium(client), do: get(client, "/general_premium/index.json")
 
   # GUIDE
   def guides_guide(client), do: get(client, "/guides_guide/index.json")

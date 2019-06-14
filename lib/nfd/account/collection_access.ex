@@ -20,4 +20,19 @@ defmodule Nfd.Account.CollectionAccess do
     |> cast(attrs, [:collection_id, :user_id])
     |> validate_required([:collection_id, :user_id])
   end
+
+  def create_collection_access_for_free_courses(user) do
+    ["seven-day-neverfap-deluxe-kickstarter"]
+      |> Enum.each(fn(slug) ->
+        collection = Content.get_collection_slug!(slug)
+        case Account.get_collection_access_by_user_id_and_collection_id(user.id, collection.id) do
+          nil ->
+            case Account.create_collection_access(%{ user_id: user.id, collection_id: collection.id }) do
+              {:ok, collection_access } -> collection_access
+              {:error, _error} -> nil
+            end
+          _collection_access -> nil
+        end
+      end)
+  end
 end

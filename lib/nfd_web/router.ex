@@ -1,4 +1,3 @@
-
 defmodule NfdWeb.Router do
   use NfdWeb, :router
   use Pow.Phoenix.Router
@@ -114,23 +113,20 @@ defmodule NfdWeb.Router do
   scope "/", NfdWeb do
     pipe_through :browser
 
-    # General functions
-    post "/send_message", FunctionController, :contact_form_post
-    post "/send_comment", FunctionController, :comment_form_post
+    # MESSAGE
+    post "/send_comment", MessageController, :comment_form_post
+    post "/send_message", MessageController, :contact_form_post
+    get "/message_success", MessageController, :send_contact_form_success
+    get "/message_failed", MessageController, :send_contact_form_failed
 
-    get "/message_success", FunctionController, :send_message_success
-    get "/message_failed", FunctionController, :send_message_failed
-
-    get "/validate_patreon", FunctionController, :validate_patreon
-
-    # Subscription functions
+    # SUBSCRIPTION
     post "/confirm_subscription", SubscriptionController, :add_subscription_validate_matrix
     get "/subscription_success", SubscriptionController, :confirm_subscription_validate_matrix
     get "/unsubscribe", SubscriptionController, :unsubscribe_validate_matrix
 
-    get "/change_subscription_dashboard_func",
-        DashboardController,
-        :change_subscription_dashboard_func
+    # FUNCTION
+    get "/validate_patreon", FunctionController, :validate_patreon
+    get "/change_subscription_dashboard_func", FunctionController, :change_subscription_dashboard_func
   end
 
   scope "/", NfdWeb do
@@ -147,9 +143,7 @@ defmodule NfdWeb.Router do
     get "/dashboard/email_campaigns", DashboardController, :email_campaigns
     get "/dashboard/email_campaigns/:collection", DashboardController, :email_campaigns_collection
 
-    get "/dashboard/email_campaigns/:collection/:file",
-        DashboardController,
-        :email_campaigns_single
+    get "/dashboard/email_campaigns/:collection/:file", DashboardController, :email_campaigns_single
   end
 
   scope "/dev" do
