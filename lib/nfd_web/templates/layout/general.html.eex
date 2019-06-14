@@ -3,17 +3,19 @@
   <%= partial "head_general.html", assigns %>
 
   <body>
-    <div id="mobile__menu__overlay__background__id" class="mobile__menu__overlay__background">
-      </div>
-        
-    <%= partial "header.html", assigns %>
-
-    <main role="main" class="main" id="content">
-      <%= render @view_module, @view_template, assigns %>
-    </main>
-    <%= partial "footer.html", assigns %>
-
-    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <!-- <div class="left__sidebar__container">yo</div>
+    <div> -->
+      <div id="mobile__menu__overlay__background__id" class="mobile__menu__overlay__background"></div>
+      
+      <%= partial "header.html", assigns %>
+  
+      <main role="main" class="main" id="content">
+        <%= render @view_module, @view_template, assigns %>
+      </main>
+      <%= partial "footer.html", assigns %>
+  
+      <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>    
+    // </div>
   </body>
 
 </html>

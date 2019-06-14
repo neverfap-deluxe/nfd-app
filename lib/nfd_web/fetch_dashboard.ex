@@ -29,16 +29,18 @@ defmodule NfdWeb.FetchDashboard do
     collections_access_list = Account.list_collection_access_by_user_id(user.id)
 
     # Validate Patreon
-    { is_valid_patron, currently_entitled_tiers } = Patreon.fetch_patreon(conn.host, user)
+    patreon = Patreon.fetch_patreon(conn, user)
 
     # Check which campaigns user is subscribed to
     { _count_property, subscribed_property } = Email.collection_slug_to_subscribed_property("general-newsletter")
     is_subscribed = Map.fetch!(subscriber, subscribed_property)
 
+    info_message = if patreon.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."
+
     # Fetch collections
     collections = fetch_dashboard_collections(conn, collection_array, collections_access_list, collection_slug, file_slug, user)
     conn
-      |> put_flash(:info, "Welcome back!")
+      |> put_flash(:info, info_message)
       |> render(
         "#{Atom.to_string(page_symbol)}.html",
         layout: { NfdWeb.LayoutView, "hub.html" },
@@ -47,7 +49,10 @@ defmodule NfdWeb.FetchDashboard do
         collections_access_list: collections_access_list,
         is_subscribed: is_subscribed,
         subscribed_property: subscribed_property,
-        collections: collections
+        collections: collections,
+        is_valid_patron: patreon.is_valid_patron, 
+        currently_entitled_tiers: patreon.currently_entitled_tiers, 
+        token_expired: patreon.token_expired
       )
   end
 
@@ -60,7 +65,7 @@ defmodule NfdWeb.FetchDashboard do
           # COLLECTIONS
           :collection_audio ->
             collection_audio = Content.get_collection_slug!(collection_slug)
-            has_paid_for_collection = has_paid_for_collection(collections_access_list, collection_audio, user)
+            has_paid_for_collection = Collection.has_paid_for_collection(collections_access_list, collection_audio, user)
             Map.merge(acc, %{
               collection_audio: collection_audio,
               has_paid_for_collection: has_paid_for_collection
@@ -68,7 +73,7 @@ defmodule NfdWeb.FetchDashboard do
 
           :collection_email ->
             collection_email = Content.get_collection_slug!(collection_slug)
-            has_paid_for_collection = has_paid_for_collection(collections_access_list, collection_email, user)
+            has_paid_for_collection = Collection.has_paid_for_collection(collections_access_list, collection_email, user)
             Map.merge(acc, %{
               collection_email: collection_email,
               has_paid_for_collection: has_paid_for_collection
@@ -106,9 +111,9 @@ defmodule NfdWeb.FetchDashboard do
               stripe_api_key = Stripe.get_relevant_stripe_key(conn.host)
               Map.put(acc, :stripe_api_key, stripe_api_key)
 
-            :patreon_auth ->
+            :patreon_auth_url ->
               Map.merge(acc, %{
-                url: Patreon.generate_relevant_patreon_auth_url(conn.host)
+                patreon_auth_url: Patreon.generate_relevant_patreon_auth_url(conn.host)
               })
           _ ->
             acc

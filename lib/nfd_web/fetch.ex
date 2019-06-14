@@ -31,7 +31,7 @@ defmodule NfdWeb.Fetch do
     client = API.is_localhost(conn.host) |> API.api_client()
     case apply(Page, page_symbol, [client]) do
       {:ok, response} ->
-        collections = fetch_collections(response.body["data"], collection_array, page_symbol, client)
+        collections = fetch_collections(response.body["data"], collection_array, client)
         fetch_response_ok(conn, page_view, response, collections, page_symbol, page_layout, page_type)
       {:error, error} -> render_404_page(conn, error)
     end
@@ -43,22 +43,21 @@ defmodule NfdWeb.Fetch do
     conn |> put_view(page_view) |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: response.body["data"], collections: collections, page_type: page_type)
   end
 
-  def fetch_collections(item, collection_array, page_symbol, client) do
+  def fetch_collections(item, collection_array, client) do
     Enum.reduce(
       collection_array,
       %{},
       fn x, acc ->
         case x do
           # COLLECTIONS
-          :articles ->
-          :practices ->
-          :quotes ->
-          :updates ->
-          :blogs ->
-          :podcasts ->
-          :meditations ->
-          :courses ->
-            merge_collection(client, page_symbol, acc, item)
+          :articles -> merge_collection(client, :articles, acc, item)
+          :practices -> merge_collection(client, :practices, acc, item)
+          :quotes -> merge_collection(client, :quotes, acc, item)
+          :updates -> merge_collection(client, :updates, acc, item)
+          :blogs -> merge_collection(client, :blogs, acc, item)
+          :podcasts -> merge_collection(client, :podcasts, acc, item)
+          :meditations -> merge_collection(client, :meditations, acc, item)
+          :courses -> merge_collection(client, :courses, acc, item)
 
           :comments ->
             comments = Meta.list_collection_access_by_page_id(item["page_id"]) |> Comment.organise_comments()
@@ -70,7 +69,7 @@ defmodule NfdWeb.Fetch do
             Map.put(acc, :contact_form_changeset, contact_form_changeset)
 
           :comment_form_changeset ->
-            comment_form_changeset = Comment.changeset(%Comment{}, %{name: "", email: "", message: ""})
+            comment_form_changeset = Comment.changeset(%Comment{}, %{name: "", email: "", message: "", page_id: "", depth: 0})
             Map.put(acc, :comment_form_changeset, comment_form_changeset)
 
           # CONTENT EMAIL
@@ -79,11 +78,10 @@ defmodule NfdWeb.Fetch do
             seven_day_kickstarter = sdkResponse.body["data"]
             Map.put(acc, :seven_day_kickstarter, seven_day_kickstarter)
 
-          :seven_day_kickstarter_changeset ->
-          :ten_day_meditation_changeset ->
-          :twenty_eight_day_awareness_changeset ->
-            Map.put(acc, page_symbol, Subscriber.changeset(%Subscriber{}, %{}))
-
+          :seven_day_kickstarter_changeset -> Map.put(acc, :seven_day_kickstarter_changeset, Subscriber.changeset(%Subscriber{}, %{}))
+          :ten_day_meditation_changeset -> Map.put(acc, :ten_day_meditation_changeset, Subscriber.changeset(%Subscriber{}, %{}))
+          :twenty_eight_day_awareness_changeset -> Map.put(acc, :twenty_eight_day_awareness_changeset, Subscriber.changeset(%Subscriber{}, %{}))
+            
           _ ->
             acc
         end
@@ -93,7 +91,7 @@ defmodule NfdWeb.Fetch do
   defp merge_collection(client, content_symbol, acc, item) do
     {:ok, response} = apply(Page, content_symbol, [client])
     collections = response.body["data"][Atom.to_string(content_symbol)] |> Enum.reverse()
-    { previous_item, next_item } = Page.previous_next_item(collections, item);
+    { previous_item, next_item } = Nfd.Meta.Page.previous_next_item(collections, item);
     Map.merge(acc, %{
       content_symbol => collections,
       next_item: next_item,

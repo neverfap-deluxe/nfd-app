@@ -2,6 +2,9 @@ defmodule Nfd.Account.CollectionAccess do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Nfd.Content
+  alias Nfd.Account
+
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id

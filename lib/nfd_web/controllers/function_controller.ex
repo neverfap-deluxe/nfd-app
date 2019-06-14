@@ -9,7 +9,7 @@ defmodule NfdWeb.FunctionController do
   # PATREON
 
   def validate_patreon(conn, %{"code" => code}) do
-    values = Patreon.validate_patreon_code(code, conn.host)
+    values = Patreon.validate_patreon_code(conn, code)
   end
 
   # SUBSCRIPTION

@@ -79,7 +79,7 @@ defmodule NfdWeb.FetchCollection do
       :twenty_eight_day_awareness_single -> [:twenty_eight_day_awareness]
 
       # DASHBOARD
-      :dashboard -> [:collections_email]
+      :dashboard -> [:collections_email, :patreon_auth_url]
       :dashboard_coaching -> [:collections_email]
 
       :email_campaigns -> [:collections_email]

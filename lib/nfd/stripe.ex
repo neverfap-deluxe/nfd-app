@@ -1,5 +1,4 @@
 defmodule Nfd.Stripe do
-
   # Helper Functions
   def get_relevant_stripe_key(host) do
     if host == "localhost" do
@@ -7,5 +6,9 @@ defmodule Nfd.Stripe do
     else
       System.get_env("STRIPE_API_KEY")
     end
+  end
+
+  def update_collection_information do 
+
   end
 end

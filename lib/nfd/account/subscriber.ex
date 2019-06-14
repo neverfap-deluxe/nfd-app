@@ -2,6 +2,9 @@ defmodule Nfd.Account.Subscriber do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Nfd.Account
+  alias Nfd.EmailLogs
+  
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "subscribers" do

@@ -22,10 +22,13 @@ defmodule NfdWeb.MessageController do
 
     case Meta.create_comment(comment) do
       {:ok, _comment} ->
+        IO.inspect "yes1"
+
         EmailLogs.new_comment_form_email(comment["name"], comment["email"], comment["message"])
         redirect_back(conn)
 
       {:error, comment_form_changeset} ->
+        IO.inspect comment_form_changeset
         client = API.is_localhost(conn.host) |> API.api_client()
 
         case apply(Content, first_slug_symbol, [client, second_slug]) do
@@ -42,17 +45,10 @@ defmodule NfdWeb.MessageController do
             all_collections =
               Map.merge(typical_collections, %{comment_form_changeset: comment_form_changeset})
 
-            Fetch.fetch_response_ok(
-              conn,
-              NfdWeb.ContentView,
-              response,
-              all_collections,
-              first_slug_symbol,
-              "general.html",
-              "content"
-            )
+            Fetch.fetch_response_ok(conn, NfdWeb.ContentView, response, all_collections, first_slug_symbol, "general.html", "content")
 
           {:error, error} ->
+            IO.inspect error
             Fetch.render_404_page(conn, error)
         end
     end

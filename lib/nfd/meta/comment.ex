@@ -2,6 +2,10 @@ defmodule Nfd.Meta.Comment do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Nfd.Meta.Page
+  alias Nfd.Account.User
+  alias Nfd.Account.Subscriber
+
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "comments" do
@@ -9,9 +13,13 @@ defmodule Nfd.Meta.Comment do
     field :name, :string
     field :email, :string
     field :message, :string
-    field :parent_message_id, :string
-    field :user_id, :binary_id
-    field :page_id, :binary_id
+    
+    # so the reason why this is a field and not a reference is because the foreign key is a id and not page_id
+    # although ideally it would be a reference, I'm just not sure how to do this.
+    field :page_id, :binary_id 
+
+    belongs_to :parent_message, Comment, foreign_key: :parent_message_id
+    belongs_to :user, User, foreign_key: :user_id
 
     timestamps()
   end
@@ -19,8 +27,10 @@ defmodule Nfd.Meta.Comment do
   @doc false
   def changeset(comment, attrs) do
     comment
-    |> cast(attrs, [:depth, :email, :name, :message, :parent_message_id])
-    |> validate_required([:depth, :email, :name, :message, :parent_message_id])
+    |> cast(attrs, [:depth, :email, :name, :message, :parent_message_id, :page_id, :user_id])
+    |> foreign_key_constraint(:user_id)
+    |> foreign_key_constraint(:parent_message_id)
+    |> validate_required([:depth, :email, :name, :message, :page_id])
   end
 
   def organise_comments(comments) do

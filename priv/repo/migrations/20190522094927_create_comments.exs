@@ -8,16 +8,18 @@ defmodule Nfd.Repo.Migrations.CreateComments do
       add :name, :string
       add :email, :string
       add :message, :string
-      add :email, :string
-      add :name, :string
-      add :parent_message_id, :string
+      
+      add :parent_message_id, references(:comments, on_delete: :nothing, type: :binary_id)
       add :user_id, references(:users, on_delete: :nothing, type: :binary_id)
-      add :page_id, references(:pages, on_delete: :nothing, type: :binary_id)
+      
+      # NOTE: This is not elegant and should be a foreign key
+      # add :page_id, references(:pages, on_delete: :nothing, type: :binary_id)
+      add :page_id, :binary_id
 
       timestamps()
     end
 
     create index(:comments, [:user_id])
-    create index(:comments, [:page_id])
+    # create index(:comments, [:page_id])
   end
 end
