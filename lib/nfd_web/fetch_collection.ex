@@ -9,6 +9,7 @@ defmodule NfdWeb.FetchCollection do
       :community -> []
       :donations -> []
       :everything -> []
+      :premium -> []
 
       # GUIDES
       :guide -> [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset]

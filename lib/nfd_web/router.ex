@@ -1,3 +1,4 @@
+
 defmodule NfdWeb.Router do
   use NfdWeb, :router
   use Pow.Phoenix.Router
@@ -30,19 +31,20 @@ defmodule NfdWeb.Router do
     pipe_through :browser
 
     # GENERAL
-    get "/", PageController, :home
-    get "/about", PageController, :about
-    get "/contact", PageController, :contact
-    get "/community", PageController, :community
-    get "/donations", PageController, :donations
-    get "/everything", PageController, :everything
+    get "/", PageController, :general_home
+    get "/about", PageController, :general_about
+    get "/contact", PageController, :general_contact
+    get "/community", PageController, :general_community
+    get "/donations", PageController, :general_donations
+    get "/everything", PageController, :general_everything
+    get "/premium", PageController, :general_premium
 
     # GUIDES
-    get "/guide", PageController, :guide
-    get "/summary", PageController, :summary
-    get "/neverfap-deluxe-bible", PageController, :neverfap_deluxe_bible
-    get "/post-relapse-academy", PageController, :post_relapse_academy
-    get "/emergency", PageController, :emergency
+    get "/guide", PageController, :guides_guide
+    get "/summary", PageController, :guides_summary
+    get "/neverfap-deluxe-bible", PageController, :guides_neverfap_deluxe_bible
+    get "/post-relapse-academy", PageController, :guides_post_relapse_academy
+    get "/emergency", PageController, :guides_emergency
 
     # PROGRAMS
     get "/accountability-program", PageController, :accountability

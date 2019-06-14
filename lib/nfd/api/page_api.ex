@@ -2,19 +2,19 @@ defmodule Nfd.API.Page do
   use Tesla
 
   # GENERAL
-  def home(client), do: get(client, "/general_home/index.json")
-  def community(client), do: get(client, "/general_community/index.json")
-  def about(client), do: get(client, "/general_about/index.json")
-  def contact(client), do: get(client, "/general_contact/index.json")
-  def donations(client), do: get(client, "/general_donations/index.json")
-  def everything(client), do: get(client, "/general_everything/index.json")
+  def general_home(client), do: get(client, "/general_home/index.json")
+  def general_community(client), do: get(client, "/general_community/index.json")
+  def general_about(client), do: get(client, "/general_about/index.json")
+  def general_contact(client), do: get(client, "/general_contact/index.json")
+  def general_donations(client), do: get(client, "/general_donations/index.json")
+  def general_everything(client), do: get(client, "/general_everything/index.json")
 
   # GUIDE
-  def guide(client), do: get(client, "/guides_guide/index.json")
-  def summary(client), do: get(client, "/guides_summary/index.json")
-  def neverfap_deluxe_bible(client), do: get(client, "/guides_neverfap_deluxe_bible/index.json")
-  def post_relapse_academy(client), do: get(client, "/guides_post_relapse_academy/index.json")
-  def emergency(client), do: get(client, "/guides_emergency/index.json")
+  def guides_guide(client), do: get(client, "/guides_guide/index.json")
+  def guides_summary(client), do: get(client, "/guides_summary/index.json")
+  def guides_neverfap_deluxe_bible(client), do: get(client, "/guides_neverfap_deluxe_bible/index.json")
+  def guides_post_relapse_academy(client), do: get(client, "/guides_post_relapse_academy/index.json")
+  def guides_emergency(client), do: get(client, "/guides_emergency/index.json")
 
   # PROGRAMS
   def accountability(client), do: get(client, "/programs_accountability/index.json")

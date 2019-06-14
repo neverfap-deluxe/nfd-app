@@ -5,19 +5,20 @@ defmodule NfdWeb.PageController do
   alias NfdWeb.FetchCollection
 
   # GENERAL
-  def home(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :home, "home.html", FetchCollection.fetch_collections_array(:home))
-  def about(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :about, "general.html", FetchCollection.fetch_collections_array(:about))
-  def contact(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :contact, "general.html", FetchCollection.fetch_collections_array(:contact))
-  def community(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :community, "general.html", FetchCollection.fetch_collections_array(:community))
-  def donations(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :donations, "general.html", FetchCollection.fetch_collections_array(:donations))
-  def everything(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :everything, "general.html", FetchCollection.fetch_collections_array(:everything))
+  def general_home(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :general_home, "home.html", FetchCollection.fetch_collections_array(:general_home))
+  def general_about(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :general_about, "general.html", FetchCollection.fetch_collections_array(:general_about))
+  def general_contact(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :general_contact, "general.html", FetchCollection.fetch_collections_array(:general_contact))
+  def general_community(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :general_community, "general.html", FetchCollection.fetch_collections_array(:general_community))
+  def general_donations(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :general_donations, "general.html", FetchCollection.fetch_collections_array(:general_donations))
+  def general_everything(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :general_everything, "general.html", FetchCollection.fetch_collections_array(:general_everything))
+  def general_premium(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :general_premium, "general.html", FetchCollection.fetch_collections_array(:general_premium))
 
   # GUIDES
-  def guide(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :guide, "general.html", FetchCollection.fetch_collections_array(:guide))
-  def summary(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :summary, "general.html", FetchCollection.fetch_collections_array(:summary))
-  def neverfap_deluxe_bible(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :neverfap_deluxe_bible, "general.html", FetchCollection.fetch_collections_array(:neverfap_deluxe_bible))
-  def emergency(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :emergency, "home.html", FetchCollection.fetch_collections_array(:emergency))
-  def post_relapse_academy(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :post_relapse_academy, "home.html", FetchCollection.fetch_collections_array(:post_relapse_academy))
+  def guides_guide(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :guides_guide, "general.html", FetchCollection.fetch_collections_array(:guides_guide))
+  def guides_summary(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :guides_summary, "general.html", FetchCollection.fetch_collections_array(:guides_summary))
+  def guides_neverfap_deluxe_bible(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :guides_neverfap_deluxe_bible, "general.html", FetchCollection.fetch_collections_array(:guides_neverfap_deluxe_bible))
+  def guides_emergency(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :guides_emergency, "home.html", FetchCollection.fetch_collections_array(:guides_emergency))
+  def guides_post_relapse_academy(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :guides_post_relapse_academy, "home.html", FetchCollection.fetch_collections_array(:guides_post_relapse_academy))
 
   # LEGAL
   def disclaimer(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :disclaimer, "general.html", FetchCollection.fetch_collections_array(:disclaimer))

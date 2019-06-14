@@ -37,19 +37,20 @@ defmodule Nfd.Sitemaps do
     do
       create do
         # GENERAL
-        add Helpers.page_path(Endpoint, :home), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :about), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :contact), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :community), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :donations), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :everything), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :general_home), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :general_about), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :general_contact), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :general_community), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :general_donations), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :general_everything), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :general_premium), priority: 0.5, changefreq: "weekly", expires: nil
 
         # GUIDE
-        add Helpers.page_path(Endpoint, :guide), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :summary), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :neverfap_deluxe_bible), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :post_relapse_academy), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :emergency), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :guides_guide), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :guides_summary), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :guides_neverfap_deluxe_bible), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :guides_post_relapse_academy), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :guides_emergency), priority: 0.5, changefreq: "weekly", expires: nil
 
         # PROGRAMS
         add Helpers.page_path(Endpoint, :accountability), priority: 0.5, changefreq: "weekly", expires: nil
