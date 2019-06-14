@@ -3,20 +3,20 @@ defmodule NfdWeb.FetchCollection do
     case name do
       # PAGE CONTROLLERS
       # GENERAL
-      :home -> [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :about -> [:contact_form_changeset]
-      :contact -> []
-      :community -> []
-      :donations -> []
-      :everything -> []
-      :premium -> []
+      :general_home -> [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
+      :general_about -> [:contact_form_changeset]
+      :general_contact -> []
+      :general_community -> []
+      :general_donations -> []
+      :general_everything -> []
+      :general_premium -> []
 
       # GUIDES
-      :guide -> [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :summary -> []
-      :neverfap_deluxe_bible -> []
-      :emergency -> []
-      :post_relapse_academy -> []
+      :guides_guide -> [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
+      :guides_summary -> []
+      :guides_neverfap_deluxe_bible -> []
+      :guides_emergency -> []
+      :guides_post_relapse_academy -> []
 
       # LEGAL
       :disclaimer -> []
