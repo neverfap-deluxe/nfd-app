@@ -41,5 +41,4 @@
       <p>Reddit: <a href="<%= Application.get_env(:nfd, :social_reddit_url) %>"><%= Application.get_env(:nfd, :social_reddit_url) %></a></p>
     </div>
   </div>
-
 </div>
