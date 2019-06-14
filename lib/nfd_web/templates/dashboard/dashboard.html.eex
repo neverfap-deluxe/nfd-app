@@ -1,12 +1,15 @@
 <div class="hub__dashboard">
   <h2 class="hub__main__title">Dashboard</h2>
-  
+
   <div class="hub__main__area">
     <div class="hub__main__area__content">
       <h2>Updates</h2>
       <p>If you'd like to keep up to date on future products as they're released, please subscribe to our newsletter!</p>
-
       <%= partial "subscriber_status.html", %{ conn: @conn, subscribed: @is_subscribed, subscribed_property: @subscribed_property, user_id: @user.id } %>
+
+      <%# <h2>Linking Your Patron Account</h2>
+
+      <a href="">Link Patreon</a> %>
     </div>
   </div>
 
@@ -17,7 +20,7 @@
     </div>
   </div>
 
-  <div class="hub__main__area">    
+  <div class="hub__main__area">
     <div class="hub__main__area__content">
       <h2>Audio Courses</h2>
       <div class="hub__main__audio">
@@ -27,7 +30,7 @@
     </div>
   </div>
 
-  <div class="hub__main__area">    
+  <div class="hub__main__area">
     <div class="hub__main__area__content">
       <h2>Links</h2>
       <p>Website: <a href="https://neverfapdeluxe.com">https://neverfapdeluxe.com/</a></p>

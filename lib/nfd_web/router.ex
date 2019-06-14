@@ -119,6 +119,8 @@ defmodule NfdWeb.Router do
     get "/message_success", FunctionController, :send_message_success
     get "/message_failed", FunctionController, :send_message_failed
 
+    get "/validate_patreon", FunctionController, :validate_patreon
+
     # Subscription functions
     post "/confirm_subscription", SubscriptionController, :add_subscription_validate_matrix
     get "/subscription_success", SubscriptionController, :confirm_subscription_validate_matrix

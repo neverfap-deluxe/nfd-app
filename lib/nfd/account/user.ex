@@ -26,6 +26,10 @@ defmodule Nfd.Account.User do
     field :last_name, :string
     field :slug, :string
 
+    # field :patreon_linked, :boolean, default: false
+    # field :patreon_auth_token, :string
+    # field :patreon_auth_token_last_updated, :string
+
     has_one :subscriber, Subscriber, on_delete: :delete_all
     has_many :collection_access, CollectionAccess, on_delete: :delete_all
 

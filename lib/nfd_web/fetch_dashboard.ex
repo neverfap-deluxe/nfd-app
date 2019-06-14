@@ -7,6 +7,8 @@ defmodule NfdWeb.FetchDashboard do
 
   alias Nfd.Util.Email
 
+  alias Nfd.Patreon
+
   def fetch_dashboard(conn, page_symbol, collection_slug, file_slug, collection_array) do
     user = Pow.Plug.current_user(conn)
     create_collection_access_for_free_courses(user)
@@ -90,6 +92,13 @@ defmodule NfdWeb.FetchDashboard do
               stripe_api_key = get_relevant_stripe_key(conn.host)
               Map.put(acc, :stripe_api_key, stripe_api_key)
 
+            :patreon_auth ->
+              patreon_authorise_url = Patreon.generate_relevant_patreon_auth_url(conn.host)
+              patreon_client_key = Patreon.get_relevant_patreon_client_key(conn.host)
+              Map.merge(acc, %{
+                patreon_authorise_url: patreon_authorise_url,
+                patreon_client_key: patreon_client_key
+              })
           _ ->
             acc
         end

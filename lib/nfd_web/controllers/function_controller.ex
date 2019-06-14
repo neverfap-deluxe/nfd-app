@@ -13,6 +13,13 @@ defmodule NfdWeb.FunctionController do
   alias NfdWeb.Fetch
   alias NfdWeb.FetchCollection
 
+  alias Nfd.Patreon
+
+  def validate_patreon(conn, %{"code" => code}) do
+    values = Patreon.validate_patreon_code(code, conn.host)
+
+  end
+
   def comment_form_post(conn, %{"comment" => comment}) do
     {referer, value} = Enum.fetch!(conn.req_headers, 10)
 
