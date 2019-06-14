@@ -90,7 +90,7 @@ defmodule NfdWeb.Fetch do
       end)
   end
 
-  def merge_collection(client, content_symbol, acc, item) do
+  defp merge_collection(client, content_symbol, acc, item) do
     {:ok, response} = apply(Page, content_symbol, [client])
     collections = response.body["data"][Atom.to_string(content_symbol)] |> Enum.reverse()
     { previous_item, next_item } = Page.previous_next_item(collections, item);
@@ -108,7 +108,7 @@ defmodule NfdWeb.Fetch do
       |> render("404.html")
   end
 
-  def check_api_response_for_404(conn, status) do
+  defp check_api_response_for_404(conn, status) do
     if status != 200, do: render_404_page(conn, status)
   end
 end

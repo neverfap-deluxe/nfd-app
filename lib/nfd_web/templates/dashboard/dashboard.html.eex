@@ -7,9 +7,10 @@
       <p>If you'd like to keep up to date on future products as they're released, please subscribe to our newsletter!</p>
       <%= partial "subscriber_status.html", %{ conn: @conn, subscribed: @is_subscribed, subscribed_property: @subscribed_property, user_id: @user.id } %>
 
-      <%# <h2>Linking Your Patron Account</h2>
+      <h2>Link Your Patreon Account</h2>
+      <p>By becoming a NeverFap Deluxe Patron you receive a number of the paid ad s</p>
 
-      <a href="">Link Patreon</a> %>
+      <a href="<%=  %>">Link Patreon</a>
     </div>
   </div>
 
