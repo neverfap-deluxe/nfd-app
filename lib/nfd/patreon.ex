@@ -5,7 +5,7 @@ defmodule Nfd.Patreon do
 
   authorize_patreon_url = "https://www.patreon.com/oauth2/authorize"
 
-  def validate_patreon_code(code, conn) do
+  def validate_patreon_code(conn, code) do
     base_url = generate_base_url(conn.host)
     { :ok, response } = Tesla.get(
       "https://www.patreon.com/oauth2/authorize",
@@ -41,10 +41,10 @@ defmodule Nfd.Patreon do
     })
   end
 
-  def check_patreon_tier(user, conn) do
+  def check_patreon_tier(conn, user) do
     base_url = generate_base_url(conn.host)
     { :ok, response } = Tesla.get(
-      "#{base_url}/#{user.patreon_user_id}?include=address,currently_entitled_tiers,user&fields[member]=full_name,is_follower,email,last_charge_date,last_charge_status,lifetime_support_cents,patron_status,currently_entitled_amount_cents,pledge_relationship_start,will_pay_amount_cents&fields%5Btier%5D=title&fields%5Buser%5D=full_name,hide_pledges",
+      "#{base_url}/#{user.patreon_user_id}?include=address,currently_entitled_tiers,user&fields[member]=full_name,is_follower,email,last_charge_date,last_charge_status,lifetime_support_cents,patron_status,currently_entitled_amount_cents,pledge_relationship_start,will_pay_amount_cents&fields%5Btier%5D=title&fields%5Buser%5D=full_name,hide_pledges"
     )
 
     attributes = response["data"]["attributes"]
@@ -60,7 +60,7 @@ defmodule Nfd.Patreon do
     }
   end
 
-  def refresh_user_patreon_information(patreon_refresh_token) do
+  def refresh_user_patreon_information(conn, patreon_refresh_token) do
     base_url = generate_base_url(conn.host)
     { :ok, response } = Tesla.get(
       "https://www.patreon.com/api/oauth2/token",
@@ -83,7 +83,7 @@ defmodule Nfd.Patreon do
       patreon_linked: true,
       patreon_access_token: access_token,
       patreon_refresh_token: refresh_token,
-      patreon_expires_in: expires_i]
+      patreon_expires_in: expires_in
     })
   end
 
