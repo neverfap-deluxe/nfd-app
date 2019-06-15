@@ -24,9 +24,6 @@ defmodule NfdWeb.MessageController do
 
     case Meta.create_comment(comment) do
       {:ok, comment} ->
-        IO.inspect "yes1"
-        IO.inspect comment
-
         EmailLogs.new_comment_form_email(comment.name, comment.email, comment.message)
         conn |> redirect(to: Routes.content_path(conn, first_slug_symbol, second_slug))
         
