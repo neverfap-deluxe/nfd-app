@@ -52,10 +52,16 @@ defmodule NfdWeb.Router do
     get "/coaching", PageController, :programs_coaching
 
     # VOLUNTEER
+<<<<<<< HEAD
     get "/helpful-neverfappers-academy", PageController, :volunteer_helpful_neverfap_counsel
     get "/helpful-neverfap-counsel", PageController, :volunteer_helpful_neverfap_counsel
     get "/engineering-corps", PageController, :volunteer_engineering_corps
     get "/marketing-department", PageController, :volunteer_marketing_department
+=======
+    get "/helpful-neverfap-counsel", PageController, :helpful_neverfap_counsel
+    get "/engineering-corps", PageController, :engineering_corps
+    get "/marketing-department", PageController, :marketing_department
+>>>>>>> production
 
     # APPS
     get "/desktop-app", PageController, :apps_desktop_app

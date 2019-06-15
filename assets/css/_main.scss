@@ -16,7 +16,10 @@ body {
   // display: flex;
   width: 100%;
   box-sizing: border-box;
-  border: 5px solid black;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
   margin: 0!important;
   background: rgb(253, 253, 253);
   position: relative;
@@ -55,6 +58,7 @@ input, label, button {
 }
 
 .articles__link {
+  position: relative;
   display: inline-block;
   margin-bottom: 1.5rem;
   transition: border-bottom .1s, color .1s;
@@ -73,6 +77,7 @@ input, label, button {
   box-shadow: -8px 8px 0px 0px black;
   border-bottom: 4px solid rgba(255,46,182,1)!important;
 }
+
 
 .articles__link--magenta {
   display: inline-block;
@@ -268,4 +273,8 @@ hr {
 }
 .contact__form__title-thing:hover {
   color: lighten(rgba(255,46,182,1), 10%);
+}
+
+.none {
+  display: none;
 }

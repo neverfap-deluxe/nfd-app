@@ -1,4 +1,9 @@
 language: elixir
+elixir:
+  - '1.8.2'
+otp_release:
+  - '22.0'
+
 sudo: enabled
 addons:
   ssh_known_hosts: 198.199.67.180
@@ -22,7 +27,7 @@ script:
   --build-arg JSON_API="$JSON_API" --build-arg HOST="$HOST" --build-arg POSTGRES_USER="$POSTGRES_USER"
   --build-arg POSTGRES_PASSWORD="$POSTGRES_PASSWORD" --build-arg POSTGRES_DB="$POSTGRES_DB"
   --build-arg POSTGRES_HOST="$POSTGRES_HOST" --build-arg SECRET_KEY_BASE="$SECRET_KEY_BASE"
-  --no-cache nfd-app
+  --no-cache --pull nfd-app
 after_script:
 - docker images
 before_deploy:

@@ -1,9 +1,4 @@
-<div class="single__wrapper">   
-  <h1 class="single__title">About <img src="/images/logo.png" class="logo__square" alt=""/><a href="#contact__form" class="link contact__form__title-thing" style="margin-left: 1rem;"><p style="display: inline-block;">#contact form</p></a></h2>
-  <div class="single__content" style="margin-bottom: 0;">
-    <%= raw child_content(@item["children"], "about-intro") %>
-  </div>
-</div>
+<%= partial "single_title_content.html", %{ title: @item["title"], content: child_content(@item["children"], "about-intro") } %>
 
 <%= partial "links/patreon.html", assigns %>
 
@@ -25,6 +20,7 @@
 
 <div class="single__wrapper">
   <div class="single__content">
+    <h1><%= raw child_title(@item["children"], "about-next-steps") %></h1>
     <%= raw child_content(@item["children"], "about-next-steps") %>
   </div>
 </div>

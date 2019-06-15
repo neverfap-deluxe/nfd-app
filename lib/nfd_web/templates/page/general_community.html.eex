@@ -15,6 +15,7 @@
       <a href="#youtube_com"><li class="index__item"><img class="account__youtube__button__logo" src="/images/youtube__logo__rounded.png" />  YouTube</li></a>
       <a href="#tumblr_com"><li class="index__item"><img class="account__tumblr__button__logo" src="/images/tumblr__logo__blue.png"/>  Tumblr</li></a>
       <a href="#pinterest_com"><li class="index__item"><img class="account__pinterest__button__logo" src="/images/pinterest__logo.png"/>  Pinterest</li></a>
+      <a href="#paypal_com"><li class="index__item"><img class="account__paypal__button__logo" src="/images/paypal__logo.png"/>  Paypal</li></a>
     </ol>
   </div>
 
@@ -164,3 +165,14 @@
 </div>
 
 <%= partial "links/pinterest.html", assigns %>
+
+<div class="single__wrapper single__wrapper--community">
+  <div id="paypal_com" class="single__content">
+    <h2>PayPal</h2>
+    <p>I do have a PayPal account for those who would like to donate to NeverFap Deluxe! A pretty penny, goes a very long way!</p>
+    <p>Every little bit counts, and helps grow NeverFap Deluxe into the sprawling empire it deserves.</p>
+  </div>
+</div>
+
+<%= partial "links/paypal.html", assigns %>
+  

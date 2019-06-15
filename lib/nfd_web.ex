@@ -44,6 +44,7 @@ defmodule NfdWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
+      use Timex 
       import NfdWeb.ErrorHelpers
       import NfdWeb.Gettext
       alias NfdWeb.Router.Helpers, as: Routes
@@ -84,6 +85,29 @@ defmodule NfdWeb do
 
       def child_content(list, name) do 
         Enum.find(list, fn(item) -> item["slug"] == name end)["content"]
+      end
+
+      def child_title(list, name) do 
+        Enum.find(list, fn(item) -> item["slug"] == name end)["title"]
+      end
+
+      # TODO FINISH
+      def is_new(date) do 
+        split_date = String.split(date, "-")
+        
+        { year, _yes } = Enum.fetch!(split_date, 0) |> Integer.parse()
+        { month, _yes } = Enum.fetch!(split_date, 1) |> Integer.parse()
+        { day, _yes } = Enum.fetch!(split_date, 2) |> Integer.parse()
+
+        {:ok, elixir_date} = Date.new(year, month, day)
+
+        week_before_today = Date.add(Date.utc_today(), -7)
+        
+        if Timex.after?(elixir_date, week_before_today) do
+          "new__collection__item"
+        else 
+          "none"
+        end
       end
 
       def iterate_json_collection(collection) do

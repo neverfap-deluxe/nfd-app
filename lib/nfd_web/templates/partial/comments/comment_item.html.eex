@@ -22,6 +22,6 @@
       </div>
     </div>
 
-    <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, collections: @collections, depth: @comment.depth + 1, parent_message_id: @comment["id"]} %>
+    <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, collections: @collections, depth: @comment.depth + 1, parent_message_id: @comment.id } %>
   </div>
 </div>

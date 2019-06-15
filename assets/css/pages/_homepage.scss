@@ -12,12 +12,20 @@
   // line-height: 4rem;
 }
 
-// @media screen and (min-width: 768px) {
-//   .h1__yus {
-//     font-size: 4rem;
-//     line-height: 5.5rem;
-//   }
-// }
+.homepage__main {
+  #veteran-neverfapper-body {
+    position: relative;  
+    display: none;
+    transition: .2s;
+    left: -100vw;
+  }
+
+  #new-neverfapper-body {
+    position: relative;  
+    transition: .2s;
+    left: 0;
+  }
+}
 
 .homepage__content {
   h1 {
@@ -120,6 +128,31 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+
+    .homepage__toggle {
+      position: absolute;
+      right: -30px;
+      top: 52px;
+
+      .homepage__toggle__button {
+        padding: 0.6rem;
+        background: white;
+        color: black;
+        box-shadow: -5px 5px 0px 0px #00ffee;
+
+        font-size: 0.8rem;
+
+        margin-bottom: 0.8rem;
+
+        transition: .2s;
+        cursor: pointer;
+      }
+
+      .homepage__toggle__button:hover {
+        box-shadow: -5px 5px 0px 0px black;
+      }
+    }
   }
 
   .header {

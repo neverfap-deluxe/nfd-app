@@ -12,6 +12,6 @@
     Your email address will not be published. Required fields are marked *
   </div>
 
-  <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, collections: @collections, depth: 0, parent_message_id: nil } %>
+  <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, collections: @collections, depth: 0, parent_message_id: "" } %>
 </div>
 

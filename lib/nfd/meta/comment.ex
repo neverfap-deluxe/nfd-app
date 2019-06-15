@@ -1,6 +1,9 @@
 defmodule Nfd.Meta.Comment do
   use Ecto.Schema
   import Ecto.Changeset
+  
+  alias Nfd.Account.User
+  alias Nfd.Meta.Page
 
   alias Nfd.Meta.Page
   alias Nfd.Account.User
@@ -14,12 +17,22 @@ defmodule Nfd.Meta.Comment do
     field :email, :string
     field :message, :string
     
+<<<<<<< HEAD
     # so the reason why this is a field and not a reference is because the foreign key is a id and not page_id
     # although ideally it would be a reference, I'm just not sure how to do this.
     field :page_id, :binary_id 
 
     belongs_to :parent_message, Comment, foreign_key: :parent_message_id
     belongs_to :user, User, foreign_key: :user_id
+=======
+    # has_one :parent_message_id, Comment, on_delete: :delete_all
+    # has_one :user_id, User, on_delete: :delete_all
+    # has_one :page_id, Page, on_delete: :delete_all
+
+    field :parent_message_id, :string
+    field :user_id, :binary_id
+    field :page_id, :binary_id
+>>>>>>> production
 
     timestamps()
   end
@@ -27,6 +40,7 @@ defmodule Nfd.Meta.Comment do
   @doc false
   def changeset(comment, attrs) do
     comment
+<<<<<<< HEAD
     |> cast(attrs, [:depth, :email, :name, :message, :parent_message_id, :page_id, :user_id])
     |> foreign_key_constraint(:user_id)
     |> foreign_key_constraint(:parent_message_id)
@@ -60,6 +74,12 @@ defmodule Nfd.Meta.Comment do
     else
       %{child: reduce_comment}
     end
+=======
+    |> cast(attrs, [:depth, :email, :name, :message, :page_id, :parent_message_id])
+    |> foreign_key_constraint(:parent_message_id)
+    |> foreign_key_constraint(:page_id)
+    |> validate_required([:depth, :email, :name, :message])
+>>>>>>> production
   end
 end
 

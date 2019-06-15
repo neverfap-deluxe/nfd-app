@@ -39,21 +39,7 @@
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
-    <h3>I charge $45 for an initial 30 minute consultation.</h3>
-    <h3>Then I charge $90 per hour for any on-going sessions that you feel are necessary, which will usually occur on a weekly basis.</h3>
-
-    <p>Here's the thing. I've dealt with an extraordinary amount of porn addicts, so I can usually tell a person within a few minutes.</p>
-    <p>I can tell if it's going to take them years to beat this thing, because of their inherent refusal to trust the process.</p>
-    <p>I can tell if they're going to struggle with meditation, because they fail to understand the importance of letting go.</p>
-    <p>I can almost instantly recognise anything, not only because I've personally been there before, but because of the behaviours I observe from the porn addicts I speak with everyday.</p>
-    <p>From enlightened hope to complete hopelessness at the cusp of relapse, it's honestly nothing new to me.</p>
-    <h3>The good news is that because I can identify these behaviours, I can also help you become aware of them.</h3>
-    <p>Which is 90% of the battle.</p>
-    <p>For a lot of people, that initial 30 minutes is all they'll need, because they might only have a few on-going questions or are simply seeking routine.</p>
-    <p>However, for the particularly stubborn (certainly I was one of them) on-going sessions can be helpful to keep you on track and have someone tell it to you straight.</p>
-    <p>In almost all cases, the issue with stubborn clients is that they'll refuse to stick to the routine, and then complain about relapsing as if they could have never seen it coming.</p>
-    <p>Ah yes, the great veneer of denial, sticking out it's ugly head as it cackles at you like a murder of crows. Been there before. It sucks. I totally get it. Let's change that.</p>
-    <p>You distrust the process. You lose. It's that simple. I've said it a million times before, and I'll say it for another million if I have to.</p>
+    <%= raw child_content(@item["children"], "coaching-cost") %>
   </div>
 </div>
 

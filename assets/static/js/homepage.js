@@ -24,3 +24,28 @@ popular__post__click.onclick = function(event) {
   latest__posts.style.display = 'none';
   popular__posts.style.display = 'block';
 } 
+
+
+// THIS IS FOR THE SPLIT VIEW FUNCTIONALITY
+// var new__neverfapper = document.querySelector('#new-neverfapper');
+// var new__neverfapper__body = document.querySelector('#new-neverfapper-body');
+
+// var veteran__neverfapper = document.querySelector('#veteran-neverfapper');
+// var veteran__neverfapper__body = document.querySelector('#veteran-neverfapper-body');
+
+// new__neverfapper.onclick = function(event) { 
+//   new__neverfapper__body.style.left = '0';
+//   veteran__neverfapper__body.style.left = '100vw';
+
+//   new__neverfapper__body.style.display = 'block';
+//   veteran__neverfapper__body.style.display = 'none';
+// }
+
+// veteran__neverfapper.onclick = function(event) { 
+//   new__neverfapper__body.style.left = '100vw';
+//   veteran__neverfapper__body.style.left = '0';
+
+//   new__neverfapper__body.style.display = 'none';
+//   veteran__neverfapper__body.style.display = 'block';
+// }
+

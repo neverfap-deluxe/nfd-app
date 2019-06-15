@@ -69,7 +69,11 @@ defmodule NfdWeb.Fetch do
             Map.put(acc, :contact_form_changeset, contact_form_changeset)
 
           :comment_form_changeset ->
+<<<<<<< HEAD
             comment_form_changeset = Comment.changeset(%Comment{}, %{name: "", email: "", message: "", page_id: "", depth: 0})
+=======
+            comment_form_changeset = Comment.changeset(%Comment{}, %{name: "", email: "", message: "", parent_message_id: "", depth: 0, page_id: item["page_id"]})
+>>>>>>> production
             Map.put(acc, :comment_form_changeset, comment_form_changeset)
 
           # CONTENT EMAIL

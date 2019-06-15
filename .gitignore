@@ -47,3 +47,5 @@ config/docker.env
 docker-compose.yml
 deploy_key
 /nginx/.env
+
+.elixir_ls

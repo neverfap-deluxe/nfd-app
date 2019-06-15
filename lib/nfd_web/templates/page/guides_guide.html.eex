@@ -1,14 +1,9 @@
-<div class="single__wrapper">
-  <h1 class="single__title">Guide <img src="/images/logo.png" class="logo__square" alt="" style="margin-right: 1rem;"/><a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#need a link to all the website content, instead?</p></a></h2>
-  <div class="single__content">
-    <%= raw child_content(@item["children"], "guide-intro") %>
-  </div>
-</div>
-
+<%= partial "single_title_content.html", %{ title: @item["title"], content: child_content(@item["children"], "guide-intro") } %>
 <%= partial "links/patreon.html", assigns %>
 
 <div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0rem;"/>
+  <div class="single__content" style="margin-bottom: 0rem;">
+    <h1><%= raw child_title(@item["children"], "guide-trust-the-process") %></h1>
     <%= raw child_content(@item["children"], "guide-trust-the-process") %>
   </div>
 </div>
@@ -17,6 +12,7 @@
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
+    <h1><%= raw child_title(@item["children"], "guide-meat") %></h1>
     <%= raw child_content(@item["children"], "guide-meat") %>
   </div>
 </div>

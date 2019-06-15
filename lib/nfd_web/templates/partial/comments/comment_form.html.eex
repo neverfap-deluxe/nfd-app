@@ -7,10 +7,10 @@
       <%= error_tag f, :name %>
       <%= text_input f, :name, [placeholder: "Name", class: "form__input"] %>
 
-      <%= error_tag f, :email %>
+      <div><%= error_tag f, :email %></div>
       <%= text_input f, :email, [placeholder: "Email", class: "form__input"] %>
 
-      <%= error_tag f, :message %>
+      <div><%= error_tag f, :message %></div>
       <%= textarea f, :message, [placeholder: "Comment", class: "form__input form__textarea"] %>
 
       <%= hidden_input f, :depth, [value: @depth] %>

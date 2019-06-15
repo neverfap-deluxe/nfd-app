@@ -1,10 +1,10 @@
 <div class="account__info">
-  <p class="account__info__title">Check out my paypal for updates on NeverFap Deluxe!</p>
+  <p class="account__info__title">Maybe you'd like to donate some money?</p>
   <div class="account__buttons">
     
     <a class="account__paypal__button__container" href="<%= Application.get_env(:nfd, :social_paypal_url) %>">
-      <img class="account__paypal__button__logo" src="/images/paypal__logo.jpg" />
-      <p class="account__paypal__button__text"><span class="account__paypal__button__text--display">BECOME A </span>PATRON</p>
+      <img class="account__paypal__button__logo" src="/images/paypal__logo.png" />
+      <p class="account__paypal__button__text"><span class="account__paypal__button__text--display">PAYPAL </span>DONATION</p>
     </a>
   </div>
 </div>

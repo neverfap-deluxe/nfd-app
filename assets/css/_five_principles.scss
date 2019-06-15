@@ -10,13 +10,13 @@
 
   border-bottom: 5px solid black;
   margin-bottom: 1.8rem;
-  
+
   position: relative;
   left: 1rem;
   display: inline-block;
   transform: scale(1) rotate(-2deg) skew(-20deg);
   z-index: 300; // was -1
-  
+
   background: none;
 }
 
@@ -59,8 +59,6 @@
   }
 }
 
-
-
 // PAGE CATEGORY
 .five__principles__list__page {
   @include principle__wrapper();
@@ -70,13 +68,11 @@
     @include principle__item();
     left: 0rem;
   }
-  
+
   .five__principles__item__page::before {
     @include principle__item__before();
-  }  
+  }
 }
-
-
 
 // HOMEPAGE HERO
 .homepage__hero__principle__wrapper {
@@ -99,7 +95,7 @@
   font-size: 1.3rem;
   top: .7rem;
   left: .2rem;
-}  
+}
 
 .homepage__hero__principle__item::before {
   @include principle__item__before();
@@ -127,7 +123,7 @@
     margin-top: 1rem;
     border-bottom: 5px solid rgba(255,46,182,1);
     // color: white;
-  }  
+  }
 
   .five__principles__guide__item::before {
     @include principle__item__before();
@@ -156,7 +152,7 @@
   position: absolute;
   right: 0.5rem;
   top: 1.5rem;
-  
+
   .post__five__principles__item {
     @include principle__item();
     left: -0.5rem;
@@ -184,16 +180,16 @@
   }
 
   .post__five__principles__item--struggle-over-none {
-    color: rgb(255, 203, 106); 
+    color: rgb(255, 203, 106);
   }
 
   .post__five__principles__item--awareness-over-all {
-    // color: rgb(116, 101, 255); 
-    color: white; 
+    // color: rgb(116, 101, 255);
+    color: white;
   }
 
   .post__five__principles__item--uncondition-over-judgement {
-    color: rgb(44, 255, 157); 
+    color: rgb(44, 255, 157);
     font-size: 0.9rem!important;
   }
 }
@@ -209,14 +205,14 @@
   .five__principles__guide--mobile {
     display: none;
   }
-  
+
   .five__principles__guide {
     display: block;
-    
+
     .five__principles__guide__item {
       width: initial;
       font-size: 1.1rem!important;
-    }  
+    }
   }
 
   .five__principles__list__main {
@@ -258,7 +254,7 @@
     .five__principles__guide__item {
       width: initial;
       font-size: 1.4rem!important;
-    }  
+    }
   }
 
   .five__principles__list__main {
@@ -266,7 +262,7 @@
     .five__principles__item__main {
       font-size: 1.75rem;
       margin-bottom: 2.1rem;
-    }  
+    }
     .five__principles__item__main__judgement {
       font-size: 1.75rem;
     }
