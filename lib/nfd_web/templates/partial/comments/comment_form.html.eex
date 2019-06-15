@@ -19,8 +19,12 @@
 
       <%= hidden_input f, :depth, [value: @depth] %>
       <%= hidden_input f, :page_id, [value: @item["page_id"]] %>
-      <%= hidden_input f, :parent_message_id, [value: @parent_message_id] %>
 
+      <%= inputs_for f, :parent_message, fn fp -> %>
+        <%= hidden_input fp, :id, [value: @parent_message_id] %>
+      <% end %>
+
+  
       <!-- Save my name, email, and website in this browser for the next time I comment. -->
       <!-- // maybe use the cookies for this.
       // conn.cookies -->

@@ -22,19 +22,26 @@ defmodule Nfd.Meta.Comment do
     # although ideally it would be a reference, I'm just not sure how to do this.
     field :page_id, :binary_id 
 
-    belongs_to :parent_message, Comment, foreign_key: :parent_message_id
+    belongs_to :parent_message, Nfd.Meta.Comment, foreign_key: :parent_message_id
     belongs_to :user, User, foreign_key: :user_id
 
     timestamps()
   end
 
+  # TODO: I still need to figure this out, in terms of getting the parent_id into the changeset in a meaningful way.
+
   @doc false
   def changeset(comment, attrs) do
     comment
-    |> cast(attrs, [:depth, :email, :name, :message, :page_id, :user_id])
-    |> cast_assoc(:user)
-    |> cast_assoc(:parent_message)
+    |> cast(attrs, [:depth, :email, :name, :message, :page_id])
+    # |> cast_assoc(:parent_message, with: &Nfd.Meta.Comment.id_changeset/2)
+    # |> cast_assoc(:user, with: &Nfd.Account.User.id_changeset/2)
     |> validate_required([:depth, :email, :name, :message, :page_id])
+  end
+
+  def id_changeset(comment, attrs) do
+    comment
+    |> cast(attrs, [:id])
   end
 
   def organise_comments(comments) do

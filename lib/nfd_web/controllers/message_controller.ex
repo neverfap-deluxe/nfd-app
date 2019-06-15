@@ -8,6 +8,7 @@ defmodule NfdWeb.MessageController do
   alias Nfd.Meta
   alias Nfd.Account
 
+  alias Nfd.Emails
   alias Nfd.EmailLogs
 
   alias NfdWeb.Fetch
@@ -22,9 +23,16 @@ defmodule NfdWeb.MessageController do
     first_slug_symbol = slug_to_symbol(first_slug)
     second_slug = String.split(value, "/") |> Enum.fetch!(4)
 
+    # TODO: Send the commenter that someone has responded to their comment.
+    IO.inspect comment
+
+    # TODO: I need to also get the email it was responding to, so they can know that someone has responded to their comment.
+    Emails.cast_comment_email(comment.name, comment.email, comment.message, value)
+
     case Meta.create_comment(comment) do
       {:ok, comment} ->
-        EmailLogs.new_comment_form_email(comment.name, comment.email, comment.message)
+        IO.inspect "yay"
+        EmailLogs.new_comment_form_email(comment.name, comment.email, comment.message, value)
         conn |> redirect(to: Routes.content_path(conn, first_slug_symbol, second_slug))
         
       {:error, comment_form_changeset} ->

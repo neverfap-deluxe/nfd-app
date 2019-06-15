@@ -1,7 +1,22 @@
 <% commentID = String.split(@comment.id, "-") |> List.first() %>
 <% avatar_url = if Map.has_key?(@user, :avatar_url), do: @user.avatar_url, else: "/images/logo.png" %>
+<% depth = (@comment.depth + 1) * 12 %>
+<% depth_colour = 
+  case @comment.depth do 
+    0 -> "cyan"
+    1 -> "rgba(255,46,182,1)"
+    2 -> "cyan"
+    3 -> "rgba(255,46,182,1)"
+    4 -> "cyan"
+    5 -> "rgba(255,46,182,1)"
+    6 -> "cyan"
+    7 -> "rgba(255,46,182,1)"
+    8 -> "cyan"
+    _ -> "cyan"
+  end
+%>
 
-<div class="comment__item">
+<div class="comment__item" style="border-left: <%= depth %>px solid <%= depth_colour %>;">
   <div class="comment__top__row">
     <div class="comment__user__item">
       <div class="comment__user__item--left">

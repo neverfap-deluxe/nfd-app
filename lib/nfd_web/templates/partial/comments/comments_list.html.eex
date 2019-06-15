@@ -1,10 +1,17 @@
 
 <div class="comment__list">
   <h2 style="margin-bottom: 2rem;">Comments</h2>
+  <%= if Enum.empty?(@collections.comments.parents) do %>
+  <div class="no__comments__container">
+    <h3 style="margin-bottom: 0rem;">There are no comments yet for this article!</h3>
+    <h4 class="link articles__link" style="margin-bottom: 4rem; display: inline-block;">You should totally be my first <3</h4>  
+  </div>
+  <% else %>
+    <%= Enum.map(@collections.comments.parents, fn(comment) -> %>
+      <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment, item: @item, collections: @collections } %>
+    <% end) %>
+  <% end %>
 
-  <%= Enum.map(@collections.comments.parents, fn(comment) -> %>
-    <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment, item: @item, collections: @collections } %>
-  <% end) %>
 </div>
 
 <div class="comment__create__message">

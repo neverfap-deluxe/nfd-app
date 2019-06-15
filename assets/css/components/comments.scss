@@ -2,6 +2,7 @@
 .comment__list {
   display: flex;
   justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
 
   margin-top: 3rem;
@@ -10,11 +11,14 @@
 .comment__item {
   display: flex;
   flex-direction: column;
+  width: 100%;
 
-  border: 4px solid black;
+  // border: 4px solid black;
+  
   padding: 1rem;
 
   margin-bottom: 2rem;
+  
 
   .comment__top__row {
 
@@ -84,6 +88,9 @@
   display: none;
   width: 100%;
   margin-top: 2rem;
+  border-left: 14px solid rgba(255,46,182,1);
+  padding-left: 1.6rem;
+  box-sizing: border-box;
 }
 
 .comment__reply__cancel__button {
@@ -93,6 +100,14 @@
 
 .comment__reply__button__container {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
+  padding-left: 1.4rem;
+}
+
+.no__comments__container {
+  border-left: 12px solid cyan;
+  padding-left: 1.6rem;
+  // padding: 1rem;
+  margin-bottom: 1.6rem;
 }
