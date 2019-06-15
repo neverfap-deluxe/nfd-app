@@ -14,6 +14,8 @@ defmodule NfdWeb.MessageController do
   alias NfdWeb.FetchCollection
 
   def comment_form_post(conn, %{"comment" => comment}) do
+    user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
+
     {referer, value} = Enum.fetch!(conn.req_headers, 10)
 
     first_slug = String.split(value, "/") |> Enum.fetch!(3)
@@ -26,8 +28,7 @@ defmodule NfdWeb.MessageController do
         IO.inspect comment
 
         EmailLogs.new_comment_form_email(comment.name, comment.email, comment.message)
-        # redirect_back(conn)
-        Fetch.fetch_content(conn, NfdWeb.ContentView, :article, second_slug, "general.html", FetchCollection.fetch_collections_array(:article))
+        conn |> redirect(to: Routes.content_path(conn, first_slug_symbol, second_slug))
         
       {:error, comment_form_changeset} ->
         IO.inspect comment_form_changeset
@@ -40,6 +41,7 @@ defmodule NfdWeb.MessageController do
             typical_collections =
               Fetch.fetch_collections(
                 response.body["data"],
+                user,
                 FetchCollection.fetch_collections_array(first_slug_symbol),
                 client
               )
@@ -47,7 +49,7 @@ defmodule NfdWeb.MessageController do
             all_collections =
               Map.merge(typical_collections, %{comment_form_changeset: comment_form_changeset})
 
-            Fetch.fetch_response_ok(conn, NfdWeb.ContentView, response, all_collections, first_slug_symbol, "general.html", "content")
+            Fetch.fetch_response_ok(conn, user, NfdWeb.ContentView, response, all_collections, first_slug_symbol, "general.html", "content")
 
           {:error, error} ->
             IO.inspect error
@@ -58,6 +60,8 @@ defmodule NfdWeb.MessageController do
 
   # TODO: Need to test
   def contact_form_post(conn, %{"contact_form" => contact_form}) do
+    user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
+
     {referer, value} = Enum.fetch!(conn.req_headers, 10)
 
     first_slug = String.split(value, "/") |> Enum.fetch!(3)
@@ -84,6 +88,7 @@ defmodule NfdWeb.MessageController do
 
                 Fetch.fetch_response_ok(
                   conn,
+                  user,
                   NfdWeb.PageView,
                   response,
                   all_collections,

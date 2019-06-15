@@ -3,7 +3,7 @@
   <h2 style="margin-bottom: 2rem;">Comments</h2>
 
   <%= Enum.map(@collections.comments.parents, fn(comment) -> %>
-    <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment, item: @item, collections: @collections } %>
+    <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment, item: @item, collections: @collections } %>
   <% end) %>
 </div>
 
@@ -12,6 +12,6 @@
     Leave A Reply
   </div>
 
-  <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, collections: @collections, depth: 0, parent_message_id: "" } %>
+  <%= partial "comments/comment_form.html", %{conn: @conn, user: @user, item: @item, collections: @collections, depth: 0, parent_message_id: "" } %>
 </div>
 

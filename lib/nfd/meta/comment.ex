@@ -1,5 +1,5 @@
 defmodule Nfd.Meta.Comment do
-  use Timex
+  # use Timex
   use Ecto.Schema
   import Ecto.Changeset
   
@@ -31,7 +31,7 @@ defmodule Nfd.Meta.Comment do
   @doc false
   def changeset(comment, attrs) do
     comment
-    |> cast(attrs, [:depth, :email, :name, :message, :parent_message_id, :page_id, :user_id])
+    |> cast(attrs, [:depth, :email, :name, :message, :page_id, :user_id])
     |> cast_assoc(:user)
     |> cast_assoc(:parent_message)
     |> validate_required([:depth, :email, :name, :message, :page_id])
@@ -65,19 +65,15 @@ defmodule Nfd.Meta.Comment do
     end
   end
 
+  # https://hexdocs.pm/timex/Timex.Format.DateTime.Formatters.Default.html
   def organise_date(comments) do
     comments 
       |> Enum.map(fn (comment) ->
-        commentDate = Timex.format!(comment.inserted_at, "{Y}-{M}-{D}")
-
-        IO.inspect commentDate
+        commentDate = Timex.format!(comment.inserted_at, "{Mfull} {D}, {YYYY}") <> " at " <> Timex.format!(comment.inserted_at, "{h24}:{m} {am}") 
         Map.merge(comment, %{
           inserted_at: commentDate
         })
       end)
-
   end
-
-
 end
 

@@ -1,6 +1,7 @@
 defmodule NfdWeb.Fetch do
   use NfdWeb, :controller
 
+
   alias Nfd.Meta
   alias Nfd.Meta.Comment
 
@@ -8,42 +9,47 @@ defmodule NfdWeb.Fetch do
   alias Nfd.API.Page
   alias Nfd.API.Content
 
+  alias Nfd.Account
   alias Nfd.Account.Subscriber
   alias Nfd.Account.ContactForm
 
   alias NfdWeb.Redirects
 
-  def fetch_content(conn, page_view, page_symbol, slug, page_layout, collection_array) do
+  def fetch_content(conn, page_view, page_symbol, slug, page_layout, collection_array) do    
+    user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
+
     client = API.is_localhost(conn.host) |> API.api_client()
     verified_slug = Redirects.redirect_content(conn, slug, Atom.to_string(page_symbol))
 
     case apply(Content, page_symbol, [client, verified_slug]) do
       {:ok, response} ->
-        collections = fetch_collections(response.body["data"], collection_array, client)
-        fetch_response_ok(conn, page_view, response, collections, page_symbol, page_layout, "content")
+        collections = fetch_collections(response.body["data"], user, collection_array, client)
+        fetch_response_ok(conn, user, page_view, response, collections, page_symbol, page_layout, "content")
       {:error, error} ->
         render_404_page(conn, error)
     end
   end
 
   def fetch_page(conn, page_view, page_symbol, page_layout, collection_array) do
+    user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
+    
     page_type = "page"
     client = API.is_localhost(conn.host) |> API.api_client()
     case apply(Page, page_symbol, [client]) do
       {:ok, response} ->
-        collections = fetch_collections(response.body["data"], collection_array, client)
-        fetch_response_ok(conn, page_view, response, collections, page_symbol, page_layout, page_type)
+        collections = fetch_collections(response.body["data"], user, collection_array, client)
+        fetch_response_ok(conn, user, page_view, response, collections, page_symbol, page_layout, page_type)
       {:error, error} -> render_404_page(conn, error)
     end
   end
 
-  def fetch_response_ok(conn, page_view, response, collections, page_symbol, page_layout, page_type) do
+  def fetch_response_ok(conn, user, page_view, response, collections, page_symbol, page_layout, page_type) do
     check_api_response_for_404(conn, response.status)
     Meta.increment_visit_count(response.body["data"])
-    conn |> put_view(page_view) |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: response.body["data"], collections: collections, page_type: page_type)
+    conn |> put_view(page_view) |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: response.body["data"], collections: collections, page_type: page_type, user: user)
   end
 
-  def fetch_collections(item, collection_array, client) do
+  def fetch_collections(item, user, collection_array, client) do
     Enum.reduce(
       collection_array,
       %{},
@@ -72,7 +78,9 @@ defmodule NfdWeb.Fetch do
             Map.put(acc, :contact_form_changeset, contact_form_changeset)
 
           :comment_form_changeset ->
-            comment_form_changeset = Comment.changeset(%Comment{}, %{name: "", email: "", message: "", parent_message_id: "", depth: 0, page_id: item["page_id"]})
+            name = if Map.has_key?(user, :first_name), do: "#{user.first_name} #{user.last_name}", else: ""
+
+            comment_form_changeset = Comment.changeset(%Comment{}, %{name: name, email: "", message: "", parent_message_id: "", depth: 0, page_id: item["page_id"]})
             Map.put(acc, :comment_form_changeset, comment_form_changeset)
 
           # CONTENT EMAIL

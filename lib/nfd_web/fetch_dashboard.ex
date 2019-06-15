@@ -19,8 +19,7 @@ defmodule NfdWeb.FetchDashboard do
 
   def fetch_dashboard(conn, page_symbol, collection_slug, file_slug, collection_array) do
     # Get Subscriber and User
-    user = Pow.Plug.current_user(conn).id |> Account.get_user!()
-    IO.inspect user
+    user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
     subscriber = Pow.Plug.current_user(conn) |> Subscriber.check_subscriber_exists()
 
     # Subscribe to 7 Day Kickstarter

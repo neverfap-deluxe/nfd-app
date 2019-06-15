@@ -2,20 +2,20 @@
   Your email address will not be published. Required fields are marked *
 </div>
 
-<div class="form__wrapper form__wrapper--full-width">
+<div class="form__wrapper form__wrapper--full-width" style="margin-bottom: 0!important;">
   <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
   <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
   <%= form_for @collections.comment_form_changeset, Routes.message_path(@conn, :comment_form_post), fn f -> %>
     <div class="form__input__container">
       <%= error_tag f, :name %>
-      <%= text_input f, :name, [placeholder: "Name", class: "form__input"] %>
+      <%= text_input f, :name, [placeholder: "Name*", required: true, class: "form__input"] %>
 
       <div><%= error_tag f, :email %></div>
-      <%= text_input f, :email, [placeholder: "Email", class: "form__input"] %>
+      <%= text_input f, :email, [placeholder: "Email*", required: true, class: "form__input"] %>
 
       <div><%= error_tag f, :message %></div>
-      <%= textarea f, :message, [placeholder: "Comment", class: "form__input form__textarea"] %>
+      <%= textarea f, :message, [placeholder: "Comment*", required: true, class: "form__input form__textarea"] %>
 
       <%= hidden_input f, :depth, [value: @depth] %>
       <%= hidden_input f, :page_id, [value: @item["page_id"]] %>

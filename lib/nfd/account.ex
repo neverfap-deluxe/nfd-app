@@ -43,6 +43,10 @@ defmodule Nfd.Account do
 
   """
   def get_user!(id), do: Repo.get!(User, id)
+
+  def get_user_pow!(nil), do: %{}
+  def get_user_pow!(user), do: Repo.get!(User, user.id)
+  
   def get_user_email(email), do: Repo.get_by(User, email: email)
   def get_user_id_non_error(id), do: Repo.get_by(User, id)
 

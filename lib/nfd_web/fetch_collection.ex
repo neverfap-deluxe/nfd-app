@@ -3,9 +3,9 @@ defmodule NfdWeb.FetchCollection do
     case name do
       # PAGE CONTROLLERS
       # GENERAL
-      :general_home -> [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
+      :general_home -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
       :general_about -> [:contact_form_changeset]
-      :general_contact -> []
+      :general_contact -> [:contact_form_changeset]
       :general_community -> []
       :general_donations -> []
       :general_everything -> []
