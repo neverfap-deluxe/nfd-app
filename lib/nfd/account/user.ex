@@ -10,6 +10,8 @@ defmodule Nfd.Account.User do
   alias Nfd.Account.Subscriber
   alias Nfd.Account.CollectionAccess
 
+  alias Nfd.Meta.Comment
+
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "users" do
@@ -36,6 +38,7 @@ defmodule Nfd.Account.User do
 
     has_one :subscriber, Subscriber, on_delete: :delete_all
     has_many :collection_access, CollectionAccess, on_delete: :delete_all
+    has_many :comments, Comment, on_delete: :delete_all
 
     timestamps()
   end

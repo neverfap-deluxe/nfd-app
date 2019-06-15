@@ -1,3 +1,10 @@
+<% commentID =  String.split(@comment.id, "-") |> List.first() %>
+<% 
+  commentDate = Timex.parse!(@comment.inserted_at, "{YYYY}-{0M}-{D}")
+  IO.inspect commentDate
+%>
+
+
 <div class="comment__item">
   <div class="comment__top__row">
     <div class="comment__user__item">
@@ -6,22 +13,40 @@
       </div>
       <div class="comment__user__item--right">
         <div class="comment__user__item__name"><%= @comment.name %></div>
-        <div class="comment__user__item__date"><%= @comment.created_at %></div>
+        <a id="comment<%= commentID %>" class="link comment__user__item__date"><%= @comment.inserted_at %></a>
       </div>
     </div>
   </div>
 
-  <div class="comment__message">
+  <div id="comment<%= commentID %>" class="comment__message">
     <%= @comment.message %>
   </div>
 
   <div class="comment__reply">
     <div>
-      <div class="comment__reply__button">
+      <div class="button subscribe__button comment__reply__button" id='comment<%= commentID %>Button'>
         Reply
       </div>
     </div>
-
-    <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, collections: @collections, depth: @comment.depth + 1, parent_message_id: @comment.id } %>
+    <div class="comment__reply__container__open" id='comment<%= commentID %>Container' class="">
+      <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, collections: @collections, depth: @comment.depth + 1, parent_message_id: @comment.id } %>
+    </div>
   </div>
 </div>
+
+<script>
+  var comment<%= commentID %>Button = document.querySelector("#comment<%= commentID %>Button");
+  var comment<%= commentID %>Container = document.querySelector("#comment<%= commentID %>Container");
+  var comment<%= commentID %>Open = false;
+
+  // var comment open 
+  comment<%= commentID %>Button.onclick = function(event) {
+    if (comment<%= commentID %>Open === false) {
+      comment<%= commentID %>Container.style.display = 'block';
+      comment<%= commentID %>Open = true;
+    } else {
+      comment<%= commentID %>Container.style.display = 'none';
+      comment<%= commentID %>Open = false;
+    }
+  }
+</script>

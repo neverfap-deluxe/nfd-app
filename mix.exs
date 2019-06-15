@@ -61,6 +61,7 @@ defmodule Nfd.MixProject do
 
       {:quantum, "~> 2.3"},
       {:timex, "~> 3.0"},
+      {:qdate, "~> 0.4.3"},
       {:sitemap, "~> 1.1"},
 
       {:navigation_history, "~> 0.2.2"},

@@ -1,15 +1,15 @@
+
 <div class="comment__list">
+  <h2 style="margin-bottom: 2rem;">Comments</h2>
+
   <%= Enum.map(@collections.comments.parents, fn(comment) -> %>
-    <%= partial "comments/comment_item.html", %{ comment: comment, item: @item, collections: @collections } %>
+    <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment, item: @item, collections: @collections } %>
   <% end) %>
 </div>
 
 <div class="comment__create__message">
   <div class="comment__create__message__title">
     Leave A Reply
-  </div>
-  <div class="comment__create__message__sub__title">
-    Your email address will not be published. Required fields are marked *
   </div>
 
   <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, collections: @collections, depth: 0, parent_message_id: "" } %>

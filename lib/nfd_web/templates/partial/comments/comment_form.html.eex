@@ -1,3 +1,7 @@
+<div class="comment__create__message__sub__title">
+  Your email address will not be published. Required fields are marked *
+</div>
+
 <div class="form__wrapper form__wrapper--full-width">
   <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
   <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>

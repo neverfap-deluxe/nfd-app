@@ -21,12 +21,14 @@ defmodule NfdWeb.MessageController do
     second_slug = String.split(value, "/") |> Enum.fetch!(4)
 
     case Meta.create_comment(comment) do
-      {:ok, _comment} ->
+      {:ok, comment} ->
         IO.inspect "yes1"
+        IO.inspect comment
 
-        EmailLogs.new_comment_form_email(comment["name"], comment["email"], comment["message"])
-        redirect_back(conn)
-
+        EmailLogs.new_comment_form_email(comment.name, comment.email, comment.message)
+        # redirect_back(conn)
+        Fetch.fetch_content(conn, NfdWeb.ContentView, :article, second_slug, "general.html", FetchCollection.fetch_collections_array(:article))
+        
       {:error, comment_form_changeset} ->
         IO.inspect comment_form_changeset
         client = API.is_localhost(conn.host) |> API.api_client()
