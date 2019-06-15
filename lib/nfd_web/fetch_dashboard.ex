@@ -19,7 +19,8 @@ defmodule NfdWeb.FetchDashboard do
 
   def fetch_dashboard(conn, page_symbol, collection_slug, file_slug, collection_array) do
     # Get Subscriber and User
-    user = Pow.Plug.current_user(conn)
+    user = Pow.Plug.current_user(conn).id |> Account.get_user!()
+    IO.inspect user
     subscriber = Pow.Plug.current_user(conn) |> Subscriber.check_subscriber_exists()
 
     # Subscribe to 7 Day Kickstarter
@@ -41,6 +42,7 @@ defmodule NfdWeb.FetchDashboard do
     collections = fetch_dashboard_collections(conn, collection_array, collections_access_list, collection_slug, file_slug, user)
     conn
       |> put_flash(:info, info_message)
+      |> put_view(NfdWeb.DashboardView)
       |> render(
         "#{Atom.to_string(page_symbol)}.html",
         layout: { NfdWeb.LayoutView, "hub.html" },

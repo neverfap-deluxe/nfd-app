@@ -6,10 +6,15 @@ defmodule NfdWeb.FunctionController do
 
   alias Nfd.Patreon
 
+  alias NfdWeb.FetchCollection
+  alias NfdWeb.FetchDashboard
+
   # PATREON
 
   def validate_patreon(conn, %{"code" => code}) do
-    values = Patreon.validate_patreon_code(conn, code)
+    Patreon.validate_patreon_code(conn, code)
+    
+    FetchDashboard.fetch_dashboard(conn, :dashboard, "", "", FetchCollection.fetch_collections_array(:dashboard))
   end
 
   # SUBSCRIPTION

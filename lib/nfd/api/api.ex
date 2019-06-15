@@ -12,7 +12,7 @@ defmodule Nfd.API do
   def api_client(api_endpoint) do
     middleware = [
       {Tesla.Middleware.BaseUrl, api_endpoint},
-      Tesla.Middleware.JSON,
+      Tesla.Middleware.JSON
     ]
 
     Tesla.client(middleware)
