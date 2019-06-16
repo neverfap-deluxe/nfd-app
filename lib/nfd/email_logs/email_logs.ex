@@ -23,7 +23,7 @@ defmodule Nfd.EmailLogs do
   end
 
   def new_comment_form_email(name, email, message, referer_value) do
-    cast_log("New Comment Form Submission: " <> name <> " - " <> email, "Email: " <> email <> ", Message: " <> message <> " - " <> "Referer: " <> referer_value) |> process_log()
+    cast_log("New Comment Form Submission: " <> name <> " - " <> email, "Email: " <> email <> ", Message: " <> message <> ", Referer: " <> referer_value) |> process_log()
   end
 
   def user_deleted_email(email) do

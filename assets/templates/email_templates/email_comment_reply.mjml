@@ -19,6 +19,10 @@
           Message: <%= @message %>
         </mj-text>
 
+        <mj-text line-height="20px">
+          Click on the link below if you would like to respond, otherwise thank you for participating in NeverFap Deluxe!
+        </mj-text>
+
         <!-- TODO: add the id into the href -->
         <mj-button 
           background-color="#F45E43"
