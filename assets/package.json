@@ -11,6 +11,7 @@
     "k": "npm run -s k0 & npm run -s k1 & npm run -s k2 & npm run -s k3 & npm run -s k4 & npm run -s k5 & npm run -s k6 & npm run -s k7",
     "m": "npm run -s m0",
     "a": "npm run -s a0",
+    "e": "npm run -s mjml-ec & npm run -s mjml-rp & npm run -s mjml-ecs & npm run -s mjml-esc & npm run -s mjml-escs & npm run -s mjml-ecm & npm run -s mjml-ecr",
     "three_a": "npm run -s three_a1",
     "three_c": "npm run -s three_c1",
     "three_m": "npm run -s three_m1",
@@ -70,7 +71,9 @@
     "mjml-rp": "npx mjml --watch ./templates/email_templates/reset_password.mjml -o ../lib/nfd_web/templates/pow_reset_password/mailer/reset_password.html.eex",
     "mjml-ecs": "npx mjml --watch ./templates/email_templates/email_user_confirmation_success_followup.mjml -o ../lib/nfd_web/templates/subscription_template/template_email_user_confirmation_success_followup.html.eex",
     "mjml-esc": "npx mjml --watch ./templates/email_templates/email_subscription_confirmation.mjml -o ../lib/nfd_web/templates/subscription_template/template_email_subscription_confirmation.html.eex",
-    "mjml-escs": "npx mjml --watch ./templates/email_templates/email_subscription_confirmation_success.mjml -o ../lib/nfd_web/templates/subscription_template/template_email_subscription_confirmation_success.html.eex"
+    "mjml-escs": "npx mjml --watch ./templates/email_templates/email_subscription_confirmation_success.mjml -o ../lib/nfd_web/templates/subscription_template/template_email_subscription_confirmation_success.html.eex",
+    "mjml-ecm": "npx mjml --watch ./templates/email_templates/email_comment_made.mjml -o ../lib/nfd_web/templates/subscription_template/template_email_comment_made.html.eex",
+    "mjml-ecr": "npx mjml --watch ./templates/email_templates/email_comment_reply.mjml -o ../lib/nfd_web/templates/subscription_template/template_email_comment_reply.html.eex"
   },
   "dependencies": {
     "axios": "^0.19.0",

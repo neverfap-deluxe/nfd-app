@@ -1,0 +1,31 @@
+<mjml>
+  <mj-head>
+    <mj-title>NeverFap Deluxe | Email Comment Reply</mj-title>
+  </mj-head>
+  <mj-body>
+
+    <!-- Intro text -->
+    <mj-section background-color="#fafafa" padding-top="70px" padding-bottom="70px">
+      <mj-column width="400px">
+        <mj-text font-size="25px" line-height="35px" font-family="Helvetica Neue" padding-bottom="20px">
+          Someone replied to your comment on <%= @referer %>
+        </mj-text>
+
+        <mj-text line-height="20px">
+          Name: <%= @name %>
+        </mj-text>
+
+        <mj-text line-height="20px">
+          Message: <%= @message %>
+        </mj-text>
+
+        <!-- TODO: add the id into the href -->
+        <mj-button 
+          background-color="#F45E43"
+          border-radius="0px"
+          href="https://neverfapdeluxe.com/<%= @referer %>">Reply</mj-button>
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>

@@ -17,32 +17,29 @@ defmodule NfdWeb.MessageController do
   def comment_form_post(conn, %{"comment" => comment}) do
     user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
 
-    {referer, value} = Enum.find(conn.req_headers, fn({ key, value}) -> key == "referer" end)
+    {referer_key, referer_value} = Enum.find(conn.req_headers, fn({ key, value}) -> key == "referer" end)
 
-    IO.inspect value
+    IO.inspect referer_value
 
-    first_slug = String.split(value, "/") |> Enum.fetch!(3)
+    first_slug = String.split(referer_value, "/") |> Enum.fetch!(3)
     first_slug_symbol = slug_to_symbol(first_slug)
-    second_slug = String.split(value, "/") |> Enum.fetch!(4)
-
-    # TODO: Send the commenter that someone has responded to their comment.
-
-    # TODO: I need to also get the email it was responding to, so they can know that someone has responded to their comment.
-    # Emails.cast_comment_email(comment["name"], comment["email"], comment["message"], value)
+    second_slug = String.split(referer_value, "/") |> Enum.fetch!(4)
 
     comment_with_parent_messge_id = 
-      if comment["parent_message_id"] == "" do
-        Map.delete(comment, "parent_message_id")
-      else 
-        comment
-        # Map.merge(comment, %{ "parent_message_id" => UUID.string_to_binary!(comment["parent_message_id"]) })
-      end
-
-    IO.inspect comment_with_parent_messge_id
+      if comment["parent_message_id"] == "", do: Map.delete(comment, "parent_message_id"), else: comment
 
     case Meta.create_comment(comment_with_parent_messge_id) do
       {:ok, comment} ->
-        EmailLogs.new_comment_form_email(comment.name, comment.email, comment.message, value)
+        # send email to commenter
+        Emails.cast_comment_made_email(comment.email, comment.message, referer_value)
+        EmailLogs.new_comment_form_email(comment.name, comment.email, comment.message, referer_value)
+         
+        # TODO: This will only get immediate parent comments, not successive parent comments.
+        if comment.parent_message_id do 
+          parent_comment = Meta.get_comment!(comment.parent_message_id)
+          Emails.cast_comment_reply_email(parent_comment.email, comment.name, comment.message, referer_value)
+        end
+
         conn |> redirect(to: Routes.content_path(conn, first_slug_symbol, second_slug))
         
       {:error, comment_form_changeset} ->
@@ -77,7 +74,7 @@ defmodule NfdWeb.MessageController do
   def contact_form_post(conn, %{"contact_form" => contact_form}) do
     user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
 
-    {referer, value} = Enum.find(conn.req_headers, fn({ key, value}) -> key == "referer" end)
+    {referer_key, value} = Enum.find(conn.req_headers, fn({ key, value}) -> key == "referer" end)
 
     first_slug = String.split(value, "/") |> Enum.fetch!(3)
     first_slug_symbol = slug_to_symbol(first_slug)

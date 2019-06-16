@@ -78,14 +78,20 @@ defmodule Nfd.Emails do
     end
   end
 
-  def cast_comment_email(name, email, message, referer_value) do
-    template = "TODO"
-    subject = "TODO"
+  def cast_comment_made_email(email, message, referer) do
     %Swoosh.Email{}
       |> to(email)
       |> from({"NeverFap Deluxe", "admin@neverfapdeluxe.com"})
-      |> subject(subject)
-      |> render_body(template, %{name: name, email: email, message: message, referer_value: referer_value})
+      |> subject("You made a comment on #{referer}!")
+      |> render_body("template_email_comment_made.html", %{message: message, referer: referer})
+  end
+
+  def cast_comment_reply_email(email, name, message, referer) do
+    %Swoosh.Email{}
+      |> to(email)
+      |> from({"NeverFap Deluxe", "admin@neverfapdeluxe.com"})
+      |> subject("#{name} relpied to your comment on #{referer}!")
+      |> render_body("template_email_comment_reply.html", %{name: name, message: message, referer: referer})
   end
 
   def cast_course_email(subscriber, subject, template, unsubscribe_url) do
