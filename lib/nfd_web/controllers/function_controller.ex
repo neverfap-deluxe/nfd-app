@@ -14,7 +14,7 @@ defmodule NfdWeb.FunctionController do
   def validate_patreon(conn, %{"code" => code}) do
     Patreon.validate_patreon_code(conn, code)
     
-    FetchDashboard.fetch_dashboard(conn, :dashboard, "", "", FetchCollection.fetch_collections_array(:dashboard))
+    redirect(conn, to: Routes.dashboard_path(conn, :dashboard))
   end
 
   # SUBSCRIPTION

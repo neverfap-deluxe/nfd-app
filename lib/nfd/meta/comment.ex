@@ -20,10 +20,13 @@ defmodule Nfd.Meta.Comment do
     
     # so the reason why this is a field and not a reference is because the foreign key is a id and not page_id
     # although ideally it would be a reference, I'm just not sure how to do this.
-    field :page_id, :binary_id 
+    field :page_id, :binary_id
+    field :parent_message_id, :binary_id
+    field :user_id, :binary_id
 
-    belongs_to :parent_message, Nfd.Meta.Comment, foreign_key: :parent_message_id
-    belongs_to :user, User, foreign_key: :user_id
+    # okay, so you only need these belongs_to associations when you ALSO want to insert those objects. 
+    # belongs_to :parent_message, Nfd.Meta.Comment, foreign_key: :parent_message_id
+    # belongs_to :user, User, foreign_key: :user_id
 
     timestamps()
   end
@@ -33,7 +36,7 @@ defmodule Nfd.Meta.Comment do
   @doc false
   def changeset(comment, attrs) do
     comment
-    |> cast(attrs, [:depth, :email, :name, :message, :page_id])
+    |> cast(attrs, [:depth, :email, :name, :message, :page_id, :parent_message_id, :user_id])
     # |> cast_assoc(:parent_message, with: &Nfd.Meta.Comment.id_changeset/2)
     # |> cast_assoc(:user, with: &Nfd.Account.User.id_changeset/2)
     |> validate_required([:depth, :email, :name, :message, :page_id])
@@ -49,26 +52,33 @@ defmodule Nfd.Meta.Comment do
       |> Enum.filter(fn (comment) -> !comment.parent_message_id end)
       |> Enum.reduce(
         %{parents: []},
-        fn reduce_comment, acc ->
-          children_comments = recursive_find_comments(comments, reduce_comment, acc)
-          %{parents: acc.parents ++ [Map.put(reduce_comment, :children, children_comments)]}
+        fn parent_comment, acc ->
+          parent_with_children = recursive_find_comments(comments, parent_comment, acc)
+          %{parents: acc.parents ++ [parent_with_children]}
         end)
   end
 
-  defp recursive_find_comments(comments, reduce_comment, acc) do
-    # Find the children of the comment
-    reduce_comment_children = Enum.filter(comments, fn (filter_comment) -> filter_comment.parent_message_id == reduce_comment.id end)
+  defp recursive_find_comments(comments, parent_comment, acc) do
+    # Find the children of this parent
+    comment_children = Enum.filter(comments, fn (child_comment) -> child_comment.parent_message_id == parent_comment.id end)
+    parent_with_children = Map.put(parent_comment, :children, comment_children)
+    # IO.inspect 'parent_comment'
+    # IO.inspect parent_comment
 
-    # if children then add them to current comment
-    if reduce_comment_children do
-      reduce_comment_children
-        |> Enum.map(fn (comment_child) ->
-          new_comment_child = Map.put(reduce_comment, :children, reduce_comment_children)
-          recursive_find_comments(comments, new_comment_child, acc)
-        end)
+    # IO.inspect 'parent_with_children'
+    # IO.inspect parent_with_children
+
     # if not children, then just pass back to the
+    if Enum.empty?(parent_with_children.children) do
+      parent_with_children
     else
-      %{child: reduce_comment}
+      new_children =
+        parent_with_children.children
+          |> Enum.map(fn (comment_child) ->
+            recursive_find_comments(comments, comment_child, acc)
+          end)
+
+        Map.put(parent_with_children, :children, new_children)
     end
   end
 

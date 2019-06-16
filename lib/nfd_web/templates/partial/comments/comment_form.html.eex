@@ -8,23 +8,33 @@
 
   <%= form_for @collections.comment_form_changeset, Routes.message_path(@conn, :comment_form_post), fn f -> %>
     <div class="form__input__container">
+      <div class="comment__create__message__promotion">
+        <div style="line-height: 1.6rem; margin-bottom: 0.5rem;">Tired of filling in your details each time you want to comment?</div>
+        <div>Sign up for an account today!</div>
+        <div class="comment__create__message__promotion__buttons">
+          <a href="/session/new" class="button subscribe__button comment__create__message__promotion__buttons--button">Email</a>
+          <%= partial "auth/google_button.html", %{ class: "comment__create__message__promotion__buttons--button" } %>
+        </div>
+      </div>
+          
       <%= error_tag f, :name %>
       <%= text_input f, :name, [placeholder: "Name*", required: true, class: "form__input"] %>
 
       <div><%= error_tag f, :email %></div>
-      <%= text_input f, :email, [placeholder: "Email*", required: true, class: "form__input"] %>
+      <%= email_input f, :email, [placeholder: "Email*", required: true, class: "form__input"] %>
 
       <div><%= error_tag f, :message %></div>
       <%= textarea f, :message, [placeholder: "Comment*", required: true, class: "form__input form__textarea"] %>
 
       <%= hidden_input f, :depth, [value: @depth] %>
       <%= hidden_input f, :page_id, [value: @item["page_id"]] %>
+      <%= hidden_input f, :parent_message_id, [value: @parent_message_id] %>
+      <%= hidden_input f, :user_id %>
 
-      <%= inputs_for f, :parent_message, fn fp -> %>
-        <%= hidden_input fp, :id, [value: @parent_message_id] %>
-      <% end %>
+      <!-- <%#= inputs_for f, :parent_message, fn fp -> %>
+        <%#= hidden_input fp, :id, [value: @parent_message_id] %>
+      <%# end %> -->
 
-  
       <!-- Save my name, email, and website in this browser for the next time I comment. -->
       <!-- // maybe use the cookies for this.
       // conn.cookies -->

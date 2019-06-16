@@ -39,6 +39,8 @@ defmodule NfdWeb.FetchDashboard do
 
     info_message = if patreon.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."
 
+    IO.inspect user
+
     # Fetch collections
     collections = fetch_dashboard_collections(conn, collection_array, collections_access_list, collection_slug, file_slug, user)
     conn

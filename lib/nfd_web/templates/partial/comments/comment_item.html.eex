@@ -1,22 +1,23 @@
 <% commentID = String.split(@comment.id, "-") |> List.first() %>
 <% avatar_url = if Map.has_key?(@user, :avatar_url), do: @user.avatar_url, else: "/images/logo.png" %>
 <% depth = (@comment.depth + 1) * 12 %>
-<% depth_colour = 
+<% depth_number = 
   case @comment.depth do 
-    0 -> "cyan"
-    1 -> "rgba(255,46,182,1)"
-    2 -> "cyan"
-    3 -> "rgba(255,46,182,1)"
-    4 -> "cyan"
-    5 -> "rgba(255,46,182,1)"
-    6 -> "cyan"
-    7 -> "rgba(255,46,182,1)"
-    8 -> "cyan"
-    _ -> "cyan"
+    0 -> "0"
+    1 -> "1"
+    2 -> "2"
+    3 -> "3"
+    4 -> "4"
+    5 -> "5"
+    6 -> "6"
+    7 -> "7"
+    8 -> "8"
+    9 -> "9"
+    _ -> "_"
   end
 %>
 
-<div class="comment__item" style="border-left: <%= depth %>px solid <%= depth_colour %>;">
+<div id="comment<%= commentID %>Click" class="comment__item comment__item__<%= depth_number %>">
   <div class="comment__top__row">
     <div class="comment__user__item">
       <div class="comment__user__item--left">
@@ -24,7 +25,7 @@
       </div>
       <div class="comment__user__item--right">
         <div class="comment__user__item__name"><%= @comment.name %></div>
-        <a id="comment<%= commentID %>" class="link comment__user__item__date"><%= @comment.inserted_at %></a>
+        <a href="#comment<%= commentID %>Click" class="link comment__user__item__date"><%= @comment.inserted_at %></a>
       </div>
     </div>
   </div>

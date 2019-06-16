@@ -70,8 +70,6 @@ defmodule NfdWeb.Fetch do
               |> Comment.organise_date()
               |> Comment.organise_comments()
 
-            IO.inspect comments
-
             Map.put(acc, :comments, comments)
 
           # MESSAGE CHANGESETS
@@ -80,8 +78,10 @@ defmodule NfdWeb.Fetch do
             Map.put(acc, :contact_form_changeset, contact_form_changeset)
 
           :comment_form_changeset ->
+            id = if Map.has_key?(user, :id), do: user.id, else: ""
             name = if Map.has_key?(user, :first_name), do: "#{user.first_name} #{user.last_name}", else: ""
-            comment_form_changeset = Comment.changeset(%Comment{}, %{name: name, email: "", message: "", parent_message_id: "", depth: 0, page_id: item["page_id"]})
+            email = if Map.has_key?(user, :email), do: user.email, else: ""
+            comment_form_changeset = Comment.changeset(%Comment{}, %{name: name, email: email, message: "", parent_message_id: "", user_id: id, depth: 0, page_id: item["page_id"]})
             Map.put(acc, :comment_form_changeset, comment_form_changeset)
 
           # CONTENT EMAIL

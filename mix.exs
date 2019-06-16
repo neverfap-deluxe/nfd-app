@@ -55,6 +55,7 @@ defmodule Nfd.MixProject do
       {:gen_smtp, "~> 0.12"},
       {:certifi, "~> 2.4", override: true},
       {:ssl_verify_fun, "~> 1.1"},
+      {:uuid, "~> 1.1"},
       
       # stripe
       {:stripity_stripe, "~> 2.0.0"},

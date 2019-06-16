@@ -1,6 +1,7 @@
 .google__button {
-  display: block;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   background: white;
   border: 5px solid black;;
 
@@ -8,30 +9,22 @@
   // border-radius: 5px;
   border: 3px solid black;
   box-shadow: -4px 4px 0px #00ffee;
-  white-space: nowrap;
   transition: .2s box-shadow;
+
+  padding-left: 30px;
+  padding-right: 30px;
+
+  height: 45px;
+  min-width: 200px;
 
   label {
     font-family: serif;
     font-weight: normal;
   }
   .google__button__icon {
-    position: relative;
-    top: 0.7rem;
-    left: 1.1rem;
-    // TODO .png
-    // background: url('/images/google__sign__in__logo.png') transparent 5px 50% no-repeat;
-    display: inline-block;
-    vertical-align: middle;
-    width: 42px;
-    height: 42px;
+    height: 23px;
   }
   .google__button__text {
-    display: inline-block;
-    vertical-align: middle;
-    // padding-left: 42px;
-    padding-right: 42px;
-    padding-left: 22px;
     font-size: 14px;
     font-weight: bold;
     /* Use the Roboto font that is loaded in the <head> */

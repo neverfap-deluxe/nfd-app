@@ -1,17 +1,109 @@
-
 <div class="comment__list">
   <h2 style="margin-bottom: 2rem;">Comments</h2>
   <%= if Enum.empty?(@collections.comments.parents) do %>
-  <div class="no__comments__container">
-    <h3 style="margin-bottom: 0rem;">There are no comments yet for this article!</h3>
-    <h4 class="link articles__link" style="margin-bottom: 4rem; display: inline-block;">You should totally be my first <3</h4>  
-  </div>
+    <div class="no__comments__container">
+      <h3 style="margin-bottom: 0rem;">There are no comments yet for this article!</h3>
+      <h4 class="link articles__link" style="margin-bottom: 4rem; display: inline-block;">You should totally be my first <3</h4>  
+    </div>
   <% else %>
     <%= Enum.map(@collections.comments.parents, fn(comment) -> %>
-      <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment, item: @item, collections: @collections } %>
+      <%= if Enum.empty?(comment.children) do %>
+        <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment, item: @item, collections: @collections } %>
+      <% else %>
+        <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment, item: @item, collections: @collections } %>
+
+        <!-- CHILDREN 1 -->
+        <%= Enum.map(comment.children, fn(comment_one) -> %>
+          <%= if Enum.empty?(comment_one.children) do %>
+            <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_one, item: @item, collections: @collections } %>
+          <% else %>
+            <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_one, item: @item, collections: @collections } %>
+
+            <!-- CHILDREN 2 -->
+            <%= Enum.map(comment_one.children, fn(comment_two) -> %>
+              <%= if Enum.empty?(comment_two.children) do %>
+                <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_two, item: @item, collections: @collections } %>
+              <% else %>
+                <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_two, item: @item, collections: @collections } %>
+
+                <!-- CHILDREN 3 -->
+                <%= Enum.map(comment_two.children, fn(comment_three) -> %>
+                  <%= if Enum.empty?(comment_three.children) do %>
+                    <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_three, item: @item, collections: @collections } %>
+                  <% else %>
+                    <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_three, item: @item, collections: @collections } %>
+
+                    <!-- CHILDREN 4 -->
+                    <%= Enum.map(comment_three.children, fn(comment_four) -> %>
+                      <%= if Enum.empty?(comment_four.children) do %>
+                        <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_four, item: @item, collections: @collections } %>
+                      <% else %>
+                        <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_four, item: @item, collections: @collections } %>
+                        
+                        <!-- CHILDREN 5 -->
+                        <%= Enum.map(comment_four.children, fn(comment_five) -> %>
+                          <%= if Enum.empty?(comment_five.children) do %>
+                            <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_five, item: @item, collections: @collections } %>
+                          <% else %>
+                            <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_five, item: @item, collections: @collections } %>
+                            
+                            <!-- CHILDREN 6 -->
+                            <%= Enum.map(comment_five.children, fn(comment_six) -> %>
+                              <%= if Enum.empty?(comment_six.children) do %>
+                                <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_six, item: @item, collections: @collections } %>
+                              <% else %>
+                                <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_six, item: @item, collections: @collections } %>
+
+                                <!-- CHILDREN 7 -->
+                                <%= Enum.map(comment_six.children, fn(comment_seven) -> %>
+                                  <%= if Enum.empty?(comment_seven.children) do %>
+                                    <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_seven, item: @item, collections: @collections } %>
+                                  <% else %>
+                                    <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_seven, item: @item, collections: @collections } %>
+
+                                    <!-- CHILDREN 8 -->
+                                    <%= Enum.map(comment_seven.children, fn(comment_eight) -> %>
+                                      <%= if Enum.empty?(comment_eight.children) do %>
+                                        <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_eight, item: @item, collections: @collections } %>
+                                      <% else %>
+                                        <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_eight, item: @item, collections: @collections } %>
+
+                                        <!-- CHILDREN 9 -->
+                                        <%= Enum.map(comment_eight.children, fn(comment_nine) -> %>
+                                          <%= if Enum.empty?(comment_nine.children) do %>
+                                            <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_nine, item: @item, collections: @collections } %>
+                                          <% else %>
+                                            <%= partial "comments/comment_item.html", %{ conn: @conn, user: @user, comment: comment_nine, item: @item, collections: @collections } %>
+                                          <% end %>
+                                        <% end) %>
+
+                                      <% end %>
+                                    <% end) %>
+
+                                  <% end %>
+                                <% end) %>
+
+                              <% end %>
+                            <% end) %>
+
+                          <% end %>
+                        <% end) %>
+
+                      <% end %>
+                    <% end) %>
+
+                  <% end %>
+                <% end) %>
+
+              <% end %>
+            <% end) %>
+
+          <% end %>
+        <% end) %>
+        
+      <% end %>
     <% end) %>
   <% end %>
-
 </div>
 
 <div class="comment__create__message">
