@@ -4,11 +4,12 @@
   <div class="hub__main__area">
     <div class="hub__main__area__content">
 
-      <!-- <%= if @user.patreon_linked && @token_expired != false do %>
+      <%= if @user.patreon_linked and @is_valid_patron and @token_expired == false do %>
         <h2>Patreon Account Linked!</h2>
-        <p>Tier: </p>
-        <p>Cost: </p>
-        <p>Access: </p>
+        <p><%= @tier["attributes"]["title"] %></p>
+        <!-- <p>Cost: </p> -->
+        <%= raw @tier["attributes"]["description"] %>
+        <a href="<%= Routes.page_path(@conn, :general_premium)%>">Learn more about your benefits.</a>
       <% else %>
         <%= if @token_expired != false do %>
           <p class="alert alert-info" role="alert">
@@ -23,7 +24,7 @@
           <a class="button subscribe__button" style="margin-right: 1.2rem;" href="<%= @collections.patreon_auth_url %>">Link Patreon</a>  
           <a class="button subscribe__button" href="<%= Routes.page_path(@conn, :general_premium) %>">Learn More</a>      
         </div>
-      <% end %> -->
+      <% end %>
 
       <h2>Updates</h2>
       <p>If you'd like to keep up to date on future products as they're released, please subscribe to our newsletter!</p>

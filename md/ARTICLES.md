@@ -1,5 +1,8 @@
 ## NeverFap Introduction
 
+Books which impacted me the most.
+
+
 __TODO__
 - How NoFap is hurting the porn recovery industry (with their militant branding)
 - The problem with NoFap

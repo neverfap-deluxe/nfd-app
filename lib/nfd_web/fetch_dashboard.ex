@@ -31,6 +31,8 @@ defmodule NfdWeb.FetchDashboard do
     # Validate Patreon
     patreon = Patreon.fetch_patreon(conn, user)
 
+    IO.inspect patreon
+    
     # Check which campaigns user is subscribed to
     { _count_property, subscribed_property } = Email.collection_slug_to_subscribed_property("general-newsletter")
     is_subscribed = Map.fetch!(subscriber, subscribed_property)
@@ -52,7 +54,7 @@ defmodule NfdWeb.FetchDashboard do
         subscribed_property: subscribed_property,
         collections: collections,
         is_valid_patron: patreon.is_valid_patron, 
-        currently_entitled_tiers: patreon.currently_entitled_tiers, 
+        tier: patreon.tier, 
         token_expired: patreon.token_expired
       )
   end
