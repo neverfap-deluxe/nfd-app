@@ -1,2 +1,17 @@
-<%= partial "single_title_content.html", %{ title: @item["title"], content: @item["content"] } %>
+<%= partial "single_title_content.html", %{ title: @item["title"], content: child_content(@item["children"], "premium-intro") } %>
 <%= partial "links/patreon.html", assigns %>
+
+<div class="single__wrapper">
+  <div class="single__content">
+    <%= raw child_content(@item["children"], "premium-payment") %>
+  </div>
+</div>
+
+<%= partial "links/paypal.html", assigns %>
+
+<div class="single__wrapper">
+  <div class="single__content">
+    <%= raw child_content(@item["children"], "premium-tiers") %>
+  </div>
+</div>
+

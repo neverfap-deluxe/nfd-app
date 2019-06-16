@@ -14,12 +14,11 @@ defmodule NfdWeb.MessageController do
   alias NfdWeb.Fetch
   alias NfdWeb.FetchCollection
 
+  # NOTE: This should be suitable for any content based comments
   def comment_form_post(conn, %{"comment" => comment}) do
     user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
 
     {referer_key, referer_value} = Enum.find(conn.req_headers, fn({ key, value}) -> key == "referer" end)
-
-    IO.inspect referer_value
 
     first_slug = String.split(referer_value, "/") |> Enum.fetch!(3)
     first_slug_symbol = slug_to_symbol(first_slug)
