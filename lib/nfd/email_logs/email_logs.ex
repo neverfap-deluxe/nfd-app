@@ -26,7 +26,7 @@ defmodule Nfd.EmailLogs do
   end
 
   def new_comment_form_email(name, email, message, referer_value, comment_id, host) do
-    delete_comment_url = "#{host}/delete_comment?comment_id=#{comment_id}&delete_comment_secret={System.get_env("DELETE_COMMENT_SECRET")} "
+    delete_comment_url = "#{host}/delete_comment?comment_id=#{comment_id}&delete_comment_secret=#{System.get_env("DELETE_COMMENT_SECRET")} "
     cast_log("New Comment Form Submission: " <> name <> " - " <> email, "Email: " <> email <> "\n, Message: " <> message <> ", Referer: " <> referer_value <> ", Delete Url: " <> delete_comment_url) |> process_log()
   end
 

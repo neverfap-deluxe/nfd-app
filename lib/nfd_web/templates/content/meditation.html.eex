@@ -12,13 +12,11 @@
 
 <div class="single__wrapper">
   <%= partial "share_buttons.html", %{permalink: @item["permalink"] } %>
-  <%#= partial "comments/comments_list.html", %{conn: @conn, user: @user, item: @item, collections: @collections} %>
+  <%= partial "comments/comments_list.html", %{conn: @conn, user: @user, item: @item, collections: @collections} %>
   <%= partial "next_prev_buttons.html", %{conn: @conn, page_symbol: :meditation, next_item: @collections.next_item, previous_item: @collections.previous_item } %>
 </div>
 
-
 <%= partial "links/patreon.html", assigns %>
-
 <%= partial "reddit_question_banner.html", assigns %>
 
 <div style="margin-top: 5rem;"></div>

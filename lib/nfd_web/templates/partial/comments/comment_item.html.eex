@@ -16,10 +16,10 @@
     _ -> "_"
   end
 %>
-<%
+<%#
   <%# NOTE: User must also be logged in to upvote? %>
   <%# already_upvoted = Enum.find(@comment.upvotes, fn (upvote) -> upvote.user_id or upvote.email == end) %>
-%>
+<!-- %> -->
 
 <div id="comment<%= commentID %>Click" class="comment__item comment__item__<%= depth_number %>">
   <div class="comment__top__row">
@@ -57,7 +57,7 @@
 <script>
 
   var comment<%= commentID %>CancelButton = document.querySelector("#comment<%= commentID %>CancelButton");
-  var comment<%= commentIDButton = document.querySelector("#comment<%= commentID %>Button"); %>
+  var comment<%= commentID %>Button = document.querySelector("#comment<%= commentID %>Button"); 
   var comment<%= commentID %>Container = document.querySelector("#comment<%= commentID %>Container");
   var comment<%= commentID %>Open = false;
 

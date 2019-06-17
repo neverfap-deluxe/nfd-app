@@ -142,7 +142,7 @@ defmodule NfdWeb.MessageController do
       case Meta.delete_comment(comment) do
         {:ok, success} -> EmailLogs.serror_email_log("Comment deleted! - #{comment_id}")
         {:error, error} -> EmailLog.serror_email_log("Failed to delete comment - #{error}")
-      else
+      end
       EmailLogs.error_email_log("Could not delete comment without valid delete_comment_secret token.")
     end
   end

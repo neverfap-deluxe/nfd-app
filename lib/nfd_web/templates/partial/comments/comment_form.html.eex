@@ -8,14 +8,16 @@
 
   <%= form_for @collections.comment_form_changeset, Routes.message_path(@conn, :comment_form_post), fn f -> %>
     <div class="form__input__container">
-      <div class="comment__create__message__promotion">
-        <div style="line-height: 1.6rem; margin-bottom: 0.5rem;">Tired of filling in your details each time you want to comment?</div>
-        <div>Sign up for an account today!</div>
-        <div class="comment__create__message__promotion__buttons">
-          <a href="/session/new" class="button subscribe__button comment__create__message__promotion__buttons--button">Email</a>
-          <%= partial "auth/google_button.html", %{ class: "comment__create__message__promotion__buttons--button" } %>
+      <%= if @user == %{} do %>
+        <div class="comment__create__message__promotion">
+          <div style="line-height: 1.6rem; margin-bottom: 0.5rem;">Tired of filling in your details each time you want to comment?</div>
+          <div>Sign up for an account today!</div>
+          <div class="comment__create__message__promotion__buttons">
+            <a href="/session/new" class="button subscribe__button comment__create__message__promotion__buttons--button">Email</a>
+            <%= partial "auth/google_button.html", %{ class: "comment__create__message__promotion__buttons--button" } %>
+          </div>
         </div>
-      </div>
+      <%= end %>
           
       <%= error_tag f, :name %>
       <%= text_input f, :name, [placeholder: "Name*", required: true, class: "form__input"] %>
