@@ -1,8 +1,8 @@
 <% commentID = String.split(@comment.id, "-") |> List.first() %>
 <% avatar_url = if Map.has_key?(@user, :avatar_url), do: @user.avatar_url, else: "/images/logo.png" %>
 <% depth = (@comment.depth + 1) * 12 %>
-<% depth_number = 
-  case @comment.depth do 
+<% depth_number =
+  case @comment.depth do
     0 -> "0"
     1 -> "1"
     2 -> "2"
@@ -15,6 +15,10 @@
     9 -> "9"
     _ -> "_"
   end
+%>
+<%
+  <%# NOTE: User must also be logged in to upvote? %>
+  <%# already_upvoted = Enum.find(@comment.upvotes, fn (upvote) -> upvote.user_id or upvote.email == end) %>
 %>
 
 <div id="comment<%= commentID %>Click" class="comment__item comment__item__<%= depth_number %>">
@@ -43,7 +47,7 @@
         Cancel Reply
       </div>
     </div>
-    
+
     <div class="comment__reply__container__open" id='comment<%= commentID %>Container'>
       <%= partial "comments/comment_form.html", %{conn: @conn, user: @user, item: @item, collections: @collections, depth: @comment.depth + 1, parent_message_id: @comment.id } %>
     </div>
@@ -53,11 +57,14 @@
 <script>
 
   var comment<%= commentID %>CancelButton = document.querySelector("#comment<%= commentID %>CancelButton");
-  var comment<%= commentID %>Button = document.querySelector("#comment<%= commentID %>Button");
+  var comment<%= commentIDButton = document.querySelector("#comment<%= commentID %>Button"); %>
   var comment<%= commentID %>Container = document.querySelector("#comment<%= commentID %>Container");
   var comment<%= commentID %>Open = false;
 
-  // var comment open 
+  <%# var comment<%= commentID %>UpVoteButton = document.querySelector("#comment<%= commentID %>UpVoteButton"); %>
+  <%# var comment<%= commentID %>AlreadyUpvoted = false; %>
+
+  // var comment open
   comment<%= commentID %>Button.onclick = function(event) {
     if (comment<%= commentID %>Open === false) {
       comment<%= commentID %>Container.style.display = 'block';
@@ -75,4 +82,16 @@
     comment<%= commentID %>CancelButton.style.display = 'none';
     comment<%= commentID %>Open = false;
   }
+
+  <%# comment<%= commentID %>UpVoteButton.onclick = function(event) {
+    if (comment<%= commentID %>AlreadyUpvoted !== true) {
+      fetch('<%= @conn.host %>/upvote_comment?comment_id=@comment_id')
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(myJson) {
+          console.log(JSON.stringify(myJson));
+        });
+    } %>
+
 </script>

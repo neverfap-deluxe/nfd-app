@@ -11,7 +11,7 @@ defmodule Nfd.Meta do
   def increment_visit_count(page), do: get_page_by_page_id(page["page_id"]) |> increment_page_count(page)
   def increment_page_count(nil, originalPage), do: create_page(%{ page_id: originalPage["page_id"], page_title: originalPage["title"], visit_count: 1 })
   def increment_page_count(page, page_id), do: update_page(page, %{ visit_count: page.visit_count + 1 })
-  
+
   @doc """
   Returns the list of pages.
 
@@ -141,7 +141,7 @@ defmodule Nfd.Meta do
   #   # TODO: figure out how to use Repo.get, this is incorrect.
 
   # end
-  
+
 
   @doc """
   Creates a subscription_email.
@@ -223,7 +223,7 @@ defmodule Nfd.Meta do
     Repo.all(Comment)
   end
 
-  def list_collection_access_by_page_id(page_id) do 
+  def list_collection_access_by_page_id(page_id) do
     Repo.all(
       from c in Comment,
       where: [ page_id: ^page_id ]
@@ -279,6 +279,12 @@ defmodule Nfd.Meta do
   def update_comment(%Comment{} = comment, attrs) do
     comment
     |> Comment.changeset(attrs)
+    |> Repo.update()
+  end
+
+  def upvote_comment(%Comment{} = comment, attrs) do
+    comment
+    |> Comment.upvote_changeset(attrs)
     |> Repo.update()
   end
 

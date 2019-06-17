@@ -24,25 +24,25 @@ defmodule NfdWeb.MessageController do
     first_slug_symbol = slug_to_symbol(first_slug)
     second_slug = String.split(referer_value, "/") |> Enum.fetch!(4)
 
-    comment_with_parent_messge_id = 
+    comment_with_parent_messge_id =
       if comment["parent_message_id"] == "", do: Map.delete(comment, "parent_message_id"), else: comment
 
     case Meta.create_comment(comment_with_parent_messge_id) do
       {:ok, comment} ->
         # send email to commenter
-        Emails.cast_comment_made_email(comment.email, comment.message, referer_value) 
+        Emails.cast_comment_made_email(comment.email, comment.message, referer_value)
           |> Emails.process("cast_comment_made_email #{comment.email} #{comment.message} #{referer_value}" )
-        EmailLogs.new_comment_form_email(comment.name, comment.email, comment.message, referer_value)
-         
+        EmailLogs.new_comment_form_email(comment.name, comment.email, comment.message, referer_value, comment.id, conn.host)
+
         # TODO: This will only get immediate parent comments, not successive parent comments.
-        if comment.parent_message_id do 
+        if comment.parent_message_id do
           parent_comment = Meta.get_comment!(comment.parent_message_id)
           Emails.cast_comment_reply_email(parent_comment.email, comment.name, comment.message, referer_value)
             |> Emails.process("cast_comment_reply_email #{parent_comment.email} #{comment.name} #{comment.message} #{referer_value}" )
         end
 
         conn |> redirect(to: Routes.content_path(conn, first_slug_symbol, second_slug))
-        
+
       {:error, comment_form_changeset} ->
         IO.inspect comment_form_changeset
         client = API.is_localhost(conn.host) |> API.api_client()
@@ -127,6 +127,28 @@ defmodule NfdWeb.MessageController do
     end
   end
 
+  def upvote_comment(conn, %{"comment_id" => comment_id}) do
+    comment = Meta.get_comment!(comment_id)
+    # NOTE: It MUST be it's own collection, otherwise it won't work essentially :D
+    # Perhaps this should be it's own collection in the database, because it needs to have a user/email associated with it.
+    # case Meta.upvote_comment(comment_id, %{ upvote_tally: comment.upvote_tally + 1 }) do
+
+    # end
+  end
+
+  def comment_delete(conn, %{"comment_id" => comment_id, "delete_comment_secret" => delete_comment_secret}) do
+    if System.get_env("DELETE_COMMENT_SECRET") == delete_comment_secret do
+      comment = Meta.get_comment!(comment_id)
+      case Meta.delete_comment(comment) do
+        {:ok, success} -> EmailLogs.serror_email_log("Comment deleted! - #{comment_id}")
+        {:error, error} -> EmailLog.serror_email_log("Failed to delete comment - #{error}")
+      else
+      EmailLogs.error_email_log("Could not delete comment without valid delete_comment_secret token.")
+    end
+  end
+
+
+  # CONTACT FORM TEMPLATES
   def send_contact_form_success(conn, _params) do
     render(conn, "send_contact_form_success.html")
   end
@@ -138,6 +160,7 @@ defmodule NfdWeb.MessageController do
     render(conn, "send_contact_form_failed.html", message: message, error_message: error_message)
   end
 
+  # MESSAGE HELPERS
   defp slug_to_symbol(slug) do
     case slug do
       "articles" -> :article

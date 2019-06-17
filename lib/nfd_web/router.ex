@@ -114,8 +114,12 @@ defmodule NfdWeb.Router do
     pipe_through :browser
 
     # MESSAGE
+    get "/upvote_comment", MessageController, :comment_upvote
+    get "/delete_comment", MessageController, :comment_delete
+
     post "/send_comment", MessageController, :comment_form_post
     post "/send_message", MessageController, :contact_form_post
+
     get "/message_success", MessageController, :send_contact_form_success
     get "/message_failed", MessageController, :send_contact_form_failed
 

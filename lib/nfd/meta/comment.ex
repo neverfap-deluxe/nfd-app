@@ -2,7 +2,7 @@ defmodule Nfd.Meta.Comment do
   # use Timex
   use Ecto.Schema
   import Ecto.Changeset
-  
+
   alias Nfd.Account.User
   alias Nfd.Meta.Page
 
@@ -17,14 +17,15 @@ defmodule Nfd.Meta.Comment do
     field :name, :string
     field :email, :string
     field :message, :string
-    
+    # field :upvote_tally, :integer
+
     # so the reason why this is a field and not a reference is because the foreign key is a id and not page_id
     # although ideally it would be a reference, I'm just not sure how to do this.
     field :page_id, :binary_id
     field :parent_message_id, :binary_id
     field :user_id, :binary_id
 
-    # okay, so you only need these belongs_to associations when you ALSO want to insert those objects. 
+    # okay, so you only need these belongs_to associations when you ALSO want to insert those objects.
     # belongs_to :parent_message, Nfd.Meta.Comment, foreign_key: :parent_message_id
     # belongs_to :user, User, foreign_key: :user_id
 
@@ -45,6 +46,11 @@ defmodule Nfd.Meta.Comment do
   def id_changeset(comment, attrs) do
     comment
     |> cast(attrs, [:id])
+  end
+
+  def upvote_changeset(comment, attrs) do
+    comment
+    |> cast(attrs, [:upvote_tally])
   end
 
   def organise_comments(comments) do
@@ -84,9 +90,9 @@ defmodule Nfd.Meta.Comment do
 
   # https://hexdocs.pm/timex/Timex.Format.DateTime.Formatters.Default.html
   def organise_date(comments) do
-    comments 
+    comments
       |> Enum.map(fn (comment) ->
-        commentDate = Timex.format!(comment.inserted_at, "{Mfull} {D}, {YYYY}") <> " at " <> Timex.format!(comment.inserted_at, "{h24}:{m} {am}") 
+        commentDate = Timex.format!(comment.inserted_at, "{Mfull} {D}, {YYYY}") <> " at " <> Timex.format!(comment.inserted_at, "{h24}:{m} {am}")
         Map.merge(comment, %{
           inserted_at: commentDate
         })

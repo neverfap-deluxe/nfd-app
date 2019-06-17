@@ -51,22 +51,22 @@ defmodule NfdWeb.FetchCollection do
       :practice -> [:articles, :practices, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset]
 
       :courses -> [:courses]
-      :course -> [:articles, :practices]
+      :course -> [:articles, :practices, :comments, :comment_form_changeset]
 
       :podcasts -> [:podcasts]
-      :podcast -> [:podcasts]
+      :podcast -> [:podcasts, :comments, :comment_form_changeset]
 
       :quotes -> [:quotes]
-      :quote -> [:quotes]
+      :quote -> [:quotes, :comments, :comment_form_changeset]
 
       :meditations -> [:meditations]
-      :meditation -> [:meditations]
+      :meditation -> [:meditations, :comments, :comment_form_changeset]
 
       :blogs -> [:blogs]
-      :blog -> [:blogs]
+      :blog -> [:blogs, :comments, :comment_form_changeset]
 
       :updates -> [:updates]
-      :update -> [:updates]
+      :update -> [:updates, :comments, :comment_form_changeset]
 
       # CONTENT EMAIL
       :seven_day_kickstarter ->  [:seven_day_kickstarter, :seven_day_kickstarter_changeset]
