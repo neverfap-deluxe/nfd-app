@@ -1,8 +1,9 @@
 
 <mjml>
   
+  
 <mj-head>
-  <mj-title>NeverFap Deluxe Seven Day Kickstarter | Day undefined</mj-title>
+  <mj-title>NeverFap Deluxe Seven Day Kickstarter | Day 5</mj-title>
   <mj-preview>NeverFap Deluxe Seven Day Kickstarter Preview</mj-preview>
   <mj-attributes>
     <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-all>
@@ -23,13 +24,14 @@
       <span style="color: #979797; font-weight: normal">-</span>
     </mj-text>
     <mj-text color="white" align="center" font-size="13px" padding-top="0" font-weight="bold" text-transform="uppercase" letter-spacing="1px" line-height="20px">
-      Day undefined
-      <br/> undefined
+      Day 5
+      <br/> The Relapse
     </mj-text>
 
     <mj-image src="https://f002.backblazeb2.com/file/neverfapdeluxeemail/email__header.png" width="600px" alt="" padding="0" href="https://neverfapdeluxe.com" />
   </mj-column>
 </mj-section>
+
 
     
 <mj-wrapper padding-top="0" padding-bottom="0" css-class="body-section">
@@ -201,11 +203,42 @@
 
 
 
-<mj-button padding-top="0px" background-color="white" color="black" border="4px solid #00ffee;" href="{{< nfd_button "https://neverfapdeluxe.com/accountability-program/" "link" >}}">
-  true
+<mj-button padding-top="0px" background-color="white" color="black" border="4px solid #00ffee;" href="https://neverfapdeluxe.com/accountability-program/">
+  link
 </mj-button>
 
 
+
+
+<!-- Divider -->
+<mj-text color="#35393d" font-size="16px"></mj-text>
+<mj-divider border-color="#DFE3E8" border-width="1px" />
+<mj-text color="#35393d" font-size="16px"></mj-text>
+<!-- Divider -->
+
+
+
+<mj-text color="#212b35" font-weight="bold" font-size="20px">
+   Next steps.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  Hopefully this email provides some additional context in regards to the porn addiction recovery process.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  Tomorrow I want to talk about how we can effectively move forward, and commit to our porn addiction recovery.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  Thank you for reading and I'll see you here tomorrow.
+</mj-text>
 
 
 

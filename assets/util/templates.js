@@ -89,16 +89,21 @@ const generateButton = (link, text) => `
 </mj-button>
 `;
 
-const generate = (content, day, title) => `
-<mjml>
+const generateFullHead = (day, title) => `
   ${generateHead(day)}
   <mj-body background-color="#E7E7E7" width="600px">
     ${generateSection(day, title)}
-    ${generateWrapper(content)}
+`;
+
+const generate = (head, content) => `
+<mjml>
+  ${head}
+    ${content}
     <mj-include path="../email_partials/seven_day_bottom.mjml"/>
   </mj-body>
 </mlmj>
 `;
+
 
 module.exports = {
   generateHead,
@@ -110,5 +115,6 @@ module.exports = {
   generateTextTitleCentre,
   generateTextBold,
   generateButton,
+  generateFullHead,
   generate,
 }

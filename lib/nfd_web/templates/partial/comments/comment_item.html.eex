@@ -1,5 +1,7 @@
 <% commentID = String.split(@comment.id, "-") |> List.first() %>
 <!-- TODO: Okay, I need to figure out how to get the avatar of the user, if they exist. this will need to be fetched later, probably from a user POV -->
+<!-- I'm thinking it will always use user_id, and when linking Patreon, it will link all comments with the same email? Yeah, seems smart. -->
+<!-- But, this is in no way a priority, at all. -->
 <% avatar_url = "/images/logo.png" %>
 <% depth = (@comment.depth + 1) * 12 %>
 <% depth_number =

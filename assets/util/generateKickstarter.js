@@ -3,8 +3,8 @@ const axios = require('axios');
 const Parser = require("simple-text-parser");
 
 const {
-  generateHead,
-  generateSection,
+  // generateHead,
+  // generateSection,
   generateWrapper,
   generateDivider,
   generateText,
@@ -12,6 +12,7 @@ const {
   generateTextTitleCentre,
   generateTextBold,
   generateButton,
+  generateFullHead,
   generate,
 } = require('./templates');
 
@@ -20,49 +21,50 @@ const {
 } = require('./util');
 
 const parseFile = async () => {
-  const parser = new Parser();
-  const withinQuotesRegex = new RegExp(/\"[\S ]+\"/, );
+  const headParser = new Parser();
+  const contentParser = new Parser();
+  // const withinQuotesRegex = new RegExp(/\"[\S ]+\"/, );
   let title;
   let day;
 
-  parser.addRule(/title: [\S ]+/ig, function(text) {
+  headParser.addRule(/title: [\S ]+/ig, function(text) {
     title = text.split(':')[1].trim();
     return '';
   });
 
-  parser.addRule(/day: [\S ]+/ig, function(text) {
+  headParser.addRule(/day: [\S ]+/ig, function(text) {
     day = text.split(':')[1].trim();
     return '';
   });
 
   // generate text title centre
-  parser.addRule(/{{< nfd_center_title [\S ]+ >}}/ig, function(text) {
+  contentParser.addRule(/{{< nfd_center_title [\S ]+ >}}/ig, function(text) {
     // TODO regex to capture everything within
-    return generateTextTitleCentre(withinQuotesRegex.test(text));
+    return generateTextTitleCentre(text.split('"')[1]); // withinQuotesRegex.test(text)
   });
 
   // generate button
-  parser.addRule(/{{< nfd_button [\S ]+ >}}/ig, function(text) {
-    return generateButton(text, withinQuotesRegex.test(text));
+  contentParser.addRule(/{{< nfd_button [\S ]+ >}}/ig, function(text) {
+    return generateButton(text.split('"')[1], text.split('"')[3]);
   });
 
   // generate divider
-  parser.addRule(/-{3}/ig, function(text) {
+  contentParser.addRule(/8{3}/ig, function(text) {
     return generateDivider(text);
   });
 
   // generate text bold
-  parser.addRule(/\#\#\# [\S ]+/ig, function(text) {
+  contentParser.addRule(/\#\#\# [\S ]+/ig, function(text) {
     return generateTextBold(text.slice(3));
   });
 
   // generate text title
-  parser.addRule(/\#\# [\S ]+/ig, function(text) {
+  contentParser.addRule(/\#\# [\S ]+/ig, function(text) {
     return generateTextTitle(text.slice(2));
   });
 
   // generate text
-  parser.addRule(/[\S ]+/ig, function(text) {
+  contentParser.addRule(/[\S ]+/ig, function(text) {
     if (text.length !== 2) {
       return generateText(text);
     }
@@ -76,10 +78,16 @@ const parseFile = async () => {
     const response = await axios.get(fileName);
     const file = response.data;
     const { head, content } = getHead(file.toString());
-    const parsedFile = parser.render(content);
-    const parsedContent = generate(parsedFile, day, title)
 
-    fse.outputFileSync(`templates/email_seven_day_kickstarter/template_seven_day_kickstarter_${i}.mjml`, parsedContent, [{}]);
+    const parsedHead = headParser.render(head);
+    const parsedContent = contentParser.render(content);
+
+    const headText = generateFullHead(day, title.replace(/"/g,""));
+    const contentText = generateWrapper(parsedContent)
+
+    const completeText = generate(headText, contentText);
+
+    fse.outputFileSync(`templates/email_seven_day_kickstarter/template_seven_day_kickstarter_${i}.mjml`, completeText, [{}]);
   }
 };
 
