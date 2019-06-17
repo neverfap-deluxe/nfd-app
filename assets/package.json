@@ -12,13 +12,30 @@
     "m": "npm run -s m0",
     "a": "npm run -s a0",
     "e": "npm run -s mjml-ec & npm run -s mjml-rp & npm run -s mjml-ecs & npm run -s mjml-esc & npm run -s mjml-escs & npm run -s mjml-ecm & npm run -s mjml-ecr",
-    "three_a": "npm run -s three_a1",
-    "three_c": "npm run -s three_c1",
-    "three_m": "npm run -s three_m1",
-    "three_a0": "npx mjml --watch ./templates/email_seven_day_kickstarter/template_seven_day_kickstarter_0.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_day_kickstarter_0.html.eex",
-    "three_a1": "npx mjml --watch ./templates/email_seven_day_kickstarter/template_seven_day_kickstarter_1.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_day_kickstarter_1.html.eex",
-    "three_a2": "npx mjml --watch ./templates/email_seven_day_kickstarter/template_seven_day_kickstarter_2.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_day_kickstarter_2.html.eex",
-    "three_a3": "npx mjml --watch ./templates/email_seven_day_kickstarter/template_seven_day_kickstarter_3.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_day_kickstarter_3.html.eex",
+
+    "vol_1": "npm run -s three_a1",
+    "vol_2": "npm run -s three_c1",
+    "vol_3": "npm run -s three_m1",
+
+    "vol_1_0": "npx mjml --watch ./templates/email_seven_week_awareness_vol_1/template_seven_week_awareness_vol_1_0.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_week_awareness_vol_1_0.html.eex",
+    "vol_1_1": "npx mjml --watch ./templates/email_seven_week_awareness_vol_1/template_seven_week_awareness_vol_1_1.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_week_awareness_vol_1_1.html.eex",
+    "vol_1_2": "npx mjml --watch ./templates/email_seven_week_awareness_vol_1/template_seven_week_awareness_vol_1_2.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_week_awareness_vol_1_2.html.eex",
+    "vol_1_3": "npx mjml --watch ./templates/email_seven_week_awareness_vol_1/template_seven_week_awareness_vol_1_3.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_week_awareness_vol_1_3.html.eex",
+    "vol_1_4": "npx mjml --watch ./templates/email_seven_week_awareness_vol_1/template_seven_week_awareness_vol_1_4.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_week_awareness_vol_1_4.html.eex",
+    "vol_1_5": "npx mjml --watch ./templates/email_seven_week_awareness_vol_1/template_seven_week_awareness_vol_1_5.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_week_awareness_vol_1_5.html.eex",
+    "vol_1_6": "npx mjml --watch ./templates/email_seven_week_awareness_vol_1/template_seven_week_awareness_vol_1_6.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_week_awareness_vol_1_6.html.eex",
+    "vol_1_7": "npx mjml --watch ./templates/email_seven_week_awareness_vol_1/template_seven_week_awareness_vol_1_7.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_week_awareness_vol_1_7.html.eex",
+
+    "vol_1_0": "npx mjml --watch ./templates/email_seven_week_awareness_vol_1/template_seven_week_awareness_vol_1_0.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_week_awareness_vol_1_0.html.eex",
+    "vol_1_1": "npx mjml --watch ./templates/email_seven_week_awareness_vol_1/template_seven_week_awareness_vol_1_1.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_week_awareness_vol_1_1.html.eex",
+    "vol_1_2": "npx mjml --watch ./templates/email_seven_week_awareness_vol_1/template_seven_week_awareness_vol_1_2.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_week_awareness_vol_1_2.html.eex",
+    "vol_1_3": "npx mjml --watch ./templates/email_seven_week_awareness_vol_1/template_seven_week_awareness_vol_1_3.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_week_awareness_vol_1_3.html.eex",
+    "vol_1_4": "npx mjml --watch ./templates/email_seven_week_awareness_vol_1/template_seven_week_awareness_vol_1_4.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_week_awareness_vol_1_4.html.eex",
+    "vol_1_5": "npx mjml --watch ./templates/email_seven_week_awareness_vol_1/template_seven_week_awareness_vol_1_5.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_week_awareness_vol_1_5.html.eex",
+    "vol_1_6": "npx mjml --watch ./templates/email_seven_week_awareness_vol_1/template_seven_week_awareness_vol_1_6.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_week_awareness_vol_1_6.html.eex",
+    "vol_1_7": "npx mjml --watch ./templates/email_seven_week_awareness_vol_1/template_seven_week_awareness_vol_1_7.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_week_awareness_vol_1_7.html.eex",
+
+
     "k0": "npx mjml --watch ./templates/email_seven_day_kickstarter/template_seven_day_kickstarter_0.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_day_kickstarter_0.html.eex",
     "k1": "npx mjml --watch ./templates/email_seven_day_kickstarter/template_seven_day_kickstarter_1.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_day_kickstarter_1.html.eex",
     "k2": "npx mjml --watch ./templates/email_seven_day_kickstarter/template_seven_day_kickstarter_2.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_day_kickstarter_2.html.eex",
@@ -27,6 +44,7 @@
     "k5": "npx mjml --watch ./templates/email_seven_day_kickstarter/template_seven_day_kickstarter_5.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_day_kickstarter_5.html.eex",
     "k6": "npx mjml --watch ./templates/email_seven_day_kickstarter/template_seven_day_kickstarter_6.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_day_kickstarter_6.html.eex",
     "k7": "npx mjml --watch ./templates/email_seven_day_kickstarter/template_seven_day_kickstarter_7.mjml -o ../lib/nfd_web/templates/subscription_template/template_seven_day_kickstarter_7.html.eex",
+
     "m0": "npx mjml --watch ./templates/email_ten_day_meditation/template_ten_day_meditation_0.mjml -o ../lib/nfd_web/templates/subscription_template/template_ten_day_meditation_0.html.eex",
     "m1": "npx mjml --watch ./templates/email_ten_day_meditation/template_ten_day_meditation_1.mjml -o ../lib/nfd_web/templates/subscription_template/template_ten_day_meditation_1.html.eex",
     "m2": "npx mjml --watch ./templates/email_ten_day_meditation/template_ten_day_meditation_2.mjml -o ../lib/nfd_web/templates/subscription_template/template_ten_day_meditation_2.html.eex",
@@ -38,6 +56,7 @@
     "m8": "npx mjml --watch ./templates/email_ten_day_meditation/template_ten_day_meditation_8.mjml -o ../lib/nfd_web/templates/subscription_template/template_ten_day_meditation_8.html.eex",
     "m9": "npx mjml --watch ./templates/email_ten_day_meditation/template_ten_day_meditation_9.mjml -o ../lib/nfd_web/templates/subscription_template/template_ten_day_meditation_9.html.eex",
     "m10": "npx mjml --watch ./templates/email_ten_day_meditation/template_ten_day_meditation_10.mjml -o ../lib/nfd_web/templates/subscription_template/template_ten_day_meditation_10.html.eex",
+
     "a0": "npx mjml --watch ./templates/email_twenty_eight_day_awareness/template_twenty_eight_day_awareness_0.mjml -o ../lib/nfd_web/templates/subscription_template/nfd_web/templates/twenty_eight_day_awareness/template_twenty_eight_day_awareness_0.html.eex",
     "a1": "npx mjml --watch ./templates/email_twenty_eight_day_awareness/template_twenty_eight_day_awareness_1.mjml -o ../lib/nfd_web/templates/subscription_template/template_twenty_eight_day_awareness_1.html.eex",
     "a2": "npx mjml --watch ./templates/email_twenty_eight_day_awareness/template_twenty_eight_day_awareness_2.mjml -o ../lib/nfd_web/templates/subscription_template/template_twenty_eight_day_awareness_2.html.eex",
@@ -67,6 +86,7 @@
     "a26": "npx mjml --watch ./templates/email_twenty_eight_day_awareness/template_twenty_eight_day_awareness_26.mjml -o ../lib/nfd_web/templates/subscription_template/template_twenty_eight_day_awareness_26.html.eex",
     "a27": "npx mjml --watch ./templates/email_twenty_eight_day_awareness/template_twenty_eight_day_awareness_27.mjml -o ../lib/nfd_web/templates/subscription_template/template_twenty_eight_day_awareness_27.html.eex",
     "a28": "npx mjml --watch ./templates/email_twenty_eight_day_awareness/template_twenty_eight_day_awareness_28.mjml -o ../lib/nfd_web/templates/subscription_template/template_twenty_eight_day_awareness_28.html.eex",
+
     "mjml-ec": "npx mjml --watch ./templates/email_templates/email_confirmation.mjml -o ../lib/nfd_web/templates/pow_email_confirmation/mailer/email_confirmation.html.eex",
     "mjml-rp": "npx mjml --watch ./templates/email_templates/reset_password.mjml -o ../lib/nfd_web/templates/pow_reset_password/mailer/reset_password.html.eex",
     "mjml-ecs": "npx mjml --watch ./templates/email_templates/email_user_confirmation_success_followup.mjml -o ../lib/nfd_web/templates/subscription_template/template_email_user_confirmation_success_followup.html.eex",
