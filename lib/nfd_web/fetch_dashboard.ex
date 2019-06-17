@@ -113,8 +113,12 @@ defmodule NfdWeb.FetchDashboard do
             #       end)
 
             :stripe_api_key ->
-              stripe_api_key = Stripe.get_relevant_stripe_key(conn.host)
+              stripe_api_key = System.get_env("STRIPE_API_KEY")
               Map.put(acc, :stripe_api_key, stripe_api_key)
+
+            :paypal_api_key ->
+              paypal_api_key = System.get_env("PAYPAL_API_KEY")
+              Map.put(acc, :paypal_api_key, paypal_api_key)
 
             :patreon_auth_url ->
               Map.merge(acc, %{

@@ -148,6 +148,10 @@ defmodule NfdWeb.Router do
     get "/dashboard/email_campaigns/:collection", DashboardController, :email_campaigns_collection
 
     get "/dashboard/email_campaigns/:collection/:file", DashboardController, :email_campaigns_single
+
+    # PAYMENT
+    post "/paypal_payment", PaymentController, :paypal_collection_payment
+    post "/stripe_payment", PaymentController, :stripe_collection_payment
   end
 
   scope "/dev" do

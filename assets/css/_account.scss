@@ -266,12 +266,11 @@
 }
 
 .help-block {
-  color: red;
-
+  color: white;
+  text-decoration: underline;
   position: absolute;
-  font-size: 0.7rem;
-  top: 0.2rem;
-  right: 0rem;
+  top: 0rem;
+  right: 0;
 }
 
 .alert {
