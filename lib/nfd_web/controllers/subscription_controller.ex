@@ -73,7 +73,7 @@ defmodule NfdWeb.SubscriptionController do
   end
 
   defp confirm_subscription_update_subscription(conn, subscriber, multiple_matrix, main_matrix, conn) do 
-    { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type} = Email.generate_course_types()
+    { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type, awareness_seven_week_vol_1_type, awareness_seven_week_vol_2_type, awareness_seven_week_vol_3_type, awareness_seven_week_vol_4_type } = Nfd.Util.Email.generate_course_types()
     
     update_subscription_object = Enum.map(String.split(multiple_matrix, "-"), fn(main_matrix) ->
       # NOTE: If there is no multiple, then it will just be ["0", "1"]
@@ -82,6 +82,10 @@ defmodule NfdWeb.SubscriptionController do
         { ^kickstarter_type, action } -> confirm_subscription_action(subscriber, action, kickstarter_type)
         { ^meditation_primer_type, action } -> confirm_subscription_action(subscriber, action, meditation_primer_type)
         { ^awareness_challenge_type, action } -> confirm_subscription_action(subscriber, action, awareness_challenge_type)
+        { ^awareness_seven_week_vol_1_type, action } -> confirm_subscription_action(subscriber, action, awareness_seven_week_vol_1_type)
+        { ^awareness_seven_week_vol_2_type, action } -> confirm_subscription_action(subscriber, action, awareness_seven_week_vol_2_type)
+        { ^awareness_seven_week_vol_3_type, action } -> confirm_subscription_action(subscriber, action, awareness_seven_week_vol_3_type)
+        { ^awareness_seven_week_vol_4_type, action } -> confirm_subscription_action(subscriber, action, awareness_seven_week_vol_4_type)
       end
     end)
 
@@ -187,13 +191,17 @@ defmodule NfdWeb.SubscriptionController do
 
   def unsubscribe_subscriber(conn, subscriber, main_matrix) do
     course_name = Email.main_matrix_to_type(main_matrix) |> Email.generate_course_name_from_type()
-    { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type} = Email.generate_course_types()
+    { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type, awareness_seven_week_vol_1_type, awareness_seven_week_vol_2_type, awareness_seven_week_vol_3_type, awareness_seven_week_vol_4_type } = Nfd.Util.Email.generate_course_types()
       
     case Email.main_matrix_to_type(main_matrix) do
       ^general_type -> unsubscribe_subscriber_action(conn, subscriber, general_type, course_name)
       ^kickstarter_type -> unsubscribe_subscriber_action(conn, subscriber, kickstarter_type, course_name)
       ^meditation_primer_type -> unsubscribe_subscriber_action(conn, subscriber, meditation_primer_type, course_name)
       ^awareness_challenge_type -> unsubscribe_subscriber_action(conn, subscriber, awareness_challenge_type, course_name)
+      ^awareness_seven_week_vol_1_type -> unsubscribe_subscriber_action(conn, subscriber, awareness_seven_week_vol_1_type, course_name) 
+      ^awareness_seven_week_vol_2_type -> unsubscribe_subscriber_action(conn, subscriber, awareness_seven_week_vol_2_type, course_name) 
+      ^awareness_seven_week_vol_3_type -> unsubscribe_subscriber_action(conn, subscriber, awareness_seven_week_vol_3_type, course_name) 
+      ^awareness_seven_week_vol_4_type -> unsubscribe_subscriber_action(conn, subscriber, awareness_seven_week_vol_4_type, course_name) 
     end
   end
 

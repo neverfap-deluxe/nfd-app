@@ -12,7 +12,7 @@ defmodule Nfd.Repo.Migrations.CreateSubscribers do
       add :seven_day_kickstarter_count, :integer, default: 0, null: false
       add :ten_day_meditation_subscribed, :boolean, default: false, null: false
       add :ten_day_meditation_count, :integer, default: 0, null: false
-
+      
       # add :three_day_awareness_subscribed, :boolean, default: false, null: false
       # add :three_day_awareness_count, :integer, default: 0, null: false
       # add :three_day_calmness_subscribed, :boolean, default: false, null: false

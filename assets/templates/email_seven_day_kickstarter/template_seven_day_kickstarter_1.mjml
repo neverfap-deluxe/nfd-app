@@ -1,160 +1,239 @@
+
 <mjml>
-    <mj-head>
-      <mj-title>NeverFap Deluxe Seven Day Kickstarter | Day 1</mj-title>
-      <mj-preview>NeverFap Deluxe Seven Day Kickstarter Preview</mj-preview>
-      <mj-attributes>
-        <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-all>
-        <mj-text font-weight="400" font-size="16px" color="#000000" line-height="24px" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-text>
-      </mj-attributes>
-      <mj-style inline="inline">
-        .body-section { -webkit-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15); -moz-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15); box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15); }
-      </mj-style>
-    </mj-head>
+  
+<mj-head>
+  <mj-title>NeverFap Deluxe Seven Day Kickstarter | Day undefined</mj-title>
+  <mj-preview>NeverFap Deluxe Seven Day Kickstarter Preview</mj-preview>
+  <mj-attributes>
+    <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-all>
+    <mj-text font-weight="400" font-size="16px" color="#000000" line-height="24px" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-text>
+  </mj-attributes>
+  <mj-style inline="inline">
+    .body-section { -webkit-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15); -moz-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15); box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15); }
+  </mj-style>
+</mj-head>
+
+  <mj-body background-color="#E7E7E7" width="600px">
     
-    <mj-body background-color="#E7E7E7" width="600px">
+<mj-section full-width="full-width" background-color="linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%)" padding-bottom="0">
+  <mj-column width="100%">
+    <mj-text color="#ffffff" font-weight="bold" align="center" text-transform="uppercase" font-size="16px" letter-spacing="1px" padding-top="30px">
+      NeverFap Deluxe
+      <br/>
+      <span style="color: #979797; font-weight: normal">-</span>
+    </mj-text>
+    <mj-text color="white" align="center" font-size="13px" padding-top="0" font-weight="bold" text-transform="uppercase" letter-spacing="1px" line-height="20px">
+      Day undefined
+      <br/> undefined
+    </mj-text>
 
-      <mj-section full-width="full-width" background-color="linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%)" padding-bottom="0">
-        <mj-column width="100%">
-          <mj-text color="#ffffff" font-weight="bold" align="center" text-transform="uppercase" font-size="16px" letter-spacing="1px" padding-top="30px">
-            NeverFap Deluxe
-            <br/>
-            <span style="color: #979797; font-weight: normal">-</span>
-          </mj-text>
-          <mj-text color="white" align="center" font-size="13px" padding-top="0" font-weight="bold" text-transform="uppercase" letter-spacing="1px" line-height="20px">
-            Day 1
-            <br/> The Trust
-          </mj-text>
-  
-          <mj-image src="https://f002.backblazeb2.com/file/neverfapdeluxeemail/email__header.png" width="600px" alt="" padding="0" href="https://google.com" />
-        </mj-column>
-      </mj-section>
+    <mj-image src="https://f002.backblazeb2.com/file/neverfapdeluxeemail/email__header.png" width="600px" alt="" padding="0" href="https://neverfapdeluxe.com" />
+  </mj-column>
+</mj-section>
 
-      <mj-wrapper padding-top="0" padding-bottom="0" css-class="body-section">
-        <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
-          <mj-column width="100%">
-  <mj-text color="#212b35" font-weight="bold" font-size="20px">
-    Welcome to the trust.
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    Before we begin exploring some of these high-level concepts.
-  </mj-text> 
-  <mj-text color="#35393d" font-size="16px">
-    There's a very important idea that I must first introduce to you, and it's an idea that will largely dictate the outcome of your  recovery.
-  </mj-text> 
-  <mj-text color="#35393d" font-size="16px">
-    In order to introduce this idea, I want to start off by saying that the process of overcoming porn addiction is deceptively simple.
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    Honestly, it's as simple as working through the practices on the website, committing to a daily routine of meditation and ensuring that you put your mental health first above all.
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    There's no guesswork required. No logical analysis of your past in some attempt to uncover childhood trauma, and furthermore it's a process which doesn't discriminate against who you are, nor how much knowledge you may currently have about the porn addiction recovery process. 
-  </mj-text>
-            
-	<mj-text color="#35393d" font-size="20px" line-height="30px">
-    <strong>You simply follow the instructions and everything will literally fall into place.</strong>
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    Now.
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    Get this.
-  </mj-text>       
-  <mj-text color="#35393d" font-size="16px">
-    For whatever reason humans have this really weird habit of making even the most simple things as complex and as convoluted as possible. 
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    We fail to do the thing we said we would, even though we mentally committed to it moments ago. We sabotage ourselves with self-doubt, fear and helplessness for no particular reason. We let our emotions dictate what we should be doing, as opposed to rational thought.
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    In a lot of cases, we choose to outright ignore best practice because we think we know better, even going as far as to do absolutely everything but commit to the exercises, only to fall back into a cycle of relapse and then complain as if they could have never seen it coming.
-  </mj-text>
-  <mj-text color="#35393d" font-size="20px" line-height="30px">
-    <strong>In other words, a lot of us seem to have a difficult time trusting and sticking to the process.</strong>
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    Perhaps it's simply not in your personality to follow instructions. Maybe you fail to appreciate the immediate benefits of these actions, and therefore assume that they're all pointless. Maybe you simply decided to stop committing, because you made the assumption that your mental health would be fine following one week of meditation.
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    All amateur mistakes which lead to despair, relapse and hopelessness. 
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    Trust me when I say that I've seen it a literally a thousand times before, and that it's the reason why you're still a porn adict.  </mj-text>  
-  <mj-text color="#35393d" font-size="16px">
-    Furthermore, it's the reason why it takes 5 years on average for the typical porn addict to overcome their porn addiction.
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    Because it takes people that long to finally realise that there simply is no alternative to hard work and commitment.
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    Averages simply don't lies.
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    So what I'm about to tell you is the absolute most important piece of advice you'll ever receive in regards to your porn addiction recovery:
-  </mj-text>
-  <mj-text color="#35393d" font-size="20px">
-    <strong>Always trust the process.</strong>
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    No matter how awful, average or fantastic you feel. No matter what you personally believe in regards to the process. No matter how far you think you are along. No matter what your mind is telling you contrary to the process.
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    You must absolutely 100% trust the process, because the process is always right.
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    If you don't follow the process you will absolutely suffer and you will repeat the same mistakes time and time again.
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    If I tell you that it's of vital importance for you to meditate every single day for the rest of your life, then you absolutely must commit to that practice every single day for the rest of your life.
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    Remember that I am here to help you and save you time and ensure you don't make the same mistakes that myself and millions of others have made, and may continue to make on a daily basis.
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    I am not here to make your life harder. I am here to help you, and that is my commitment.
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    If you stick to the exercises, you will be fine and you will overcome your porn addiction. 
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    Usually within a matter of months.
-  </mj-text>
-  <mj-text color="#35393d" font-size="16px">
-    You have been informed.      
-  </mj-text>
-  
+    
+<mj-wrapper padding-top="0" padding-bottom="0" css-class="body-section">
+  <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
+    <mj-column width="100%">
 
-  <!-- Divider -->
-  <mj-text color="#35393d" font-size="16px"></mj-text>
-  <mj-divider border-color="#DFE3E8" border-width="1px" />
-  <mj-text color="#35393d" font-size="16px"></mj-text>
-  <!-- Divider -->
-  
+      
 
-  <mj-text color="#212b35" font-weight="bold" font-size="20px">
-    Next steps.
-  </mj-text>
-  
-  <mj-text color="#35393d" font-size="16px">
-    Tomorrow we'll begin exploring the concept of awareness, and what this means for our porn addiction recovery.
-  </mj-text>
 
-  <mj-text color="#35393d" font-size="16px" padding-top="20px">
-    Thank you for reading and I'll see you here tomorrow.
-  </mj-text>
 
-  <!-- Divider -->
-  <mj-text color="#35393d" font-size="16px"></mj-text>
-  <mj-divider border-color="#DFE3E8" border-width="1px" />
-  <mj-text color="#35393d" font-size="16px"></mj-text>
-  <!-- Divider -->
-  <mj-image src="https://f002.backblazeb2.com/file/neverfapdeluxeemail/email__header__assort.png" alt="" />
-  
-        </mj-column>
-      </mj-section>
-    </mj-wrapper>
-  
+<mj-text color="#35393d" font-size="20px" line-height="30px">
+  <strong> Welcome to the trust.</strong>
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  Before we begin exploring some of these high-level concepts.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  There's a very important idea that I must first introduce to you, and it's an idea that will largely dictate the outcome of your  recovery.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  In order to introduce this idea, I want to start off by saying that the process of overcoming porn addiction is deceptively simple.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  Honestly, it's as simple as working through the practices on the website, committing to a daily routine of meditation and ensuring that you put your mental health first above all.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  There's no guesswork required. No logical analysis of your past in some attempt to uncover childhood trauma, and furthermore it's a process which doesn't discriminate against who you are, nor how much knowledge you may currently have about the porn addiction recovery process.
+</mj-text>
+
+
+
+
+<mj-text color="#35393d" font-size="20px" line-height="30px">
+  <strong> You simply follow the instructions and everything will literally fall into place.</strong>
+</mj-text>
+
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  Now.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  Get this.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  For whatever reason humans have this really weird habit of making even the most simple things as complex and as convoluted as possible.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  We fail to do the thing we said we would, even though we mentally committed to it moments ago. We sabotage ourselves with self-doubt, fear and helplessness for no particular reason. We let our emotions dictate what we should be doing, as opposed to rational thought.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  In a lot of cases, we choose to outright ignore best practice because we think we know better, even going as far as to do absolutely everything but commit to the exercises, only to fall back into a cycle of relapse and then complain as if they could have never seen it coming.
+</mj-text>
+
+
+
+
+<mj-text color="#35393d" font-size="20px" line-height="30px">
+  <strong> In other words, a lot of us seem to have a difficult time trusting and sticking to the process.</strong>
+</mj-text>
+
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  Perhaps it's simply not in your personality to follow instructions. Maybe you fail to appreciate the immediate benefits of these actions, and therefore assume that they're all pointless. Maybe you simply decided to stop committing, because you made the assumption that your mental health would be fine following one week of meditation.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  All amateur mistakes which lead to despair, relapse and hopelessness.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  Trust me when I say that I've seen it a literally a thousand times before, and that it's the reason why you're still a porn adict.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  Because it takes people that long to finally realise that there simply is no alternative to hard work and commitment.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  Averages simply don't lies.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  So what I'm about to tell you is the absolute most important piece of advice you'll ever receive in regards to your porn addiction recovery:
+</mj-text>
+
+
+
+
+<mj-text color="#35393d" font-size="20px" line-height="30px">
+  <strong> Always trust the process.</strong>
+</mj-text>
+
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  No matter how awful, average or fantastic you feel. No matter what you personally believe in regards to the process. No matter how far you think you are along. No matter what your mind is telling you contrary to the process.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  You must absolutely 100% trust the process, because the process is always right.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  If you don't follow the process you will absolutely suffer and you will repeat the same mistakes time and time again.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  If I tell you that it's of vital importance for you to meditate every single day for the rest of your life, then you absolutely must commit to that practice every single day for the rest of your life.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  Remember that I am here to help you and save you time and ensure you don't make the same mistakes that myself and millions of others have made, and may continue to make on a daily basis.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  I am not here to make your life harder. I am here to help you, and that is my commitment.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  If you stick to the exercises, you will be fine and you will overcome your porn addiction.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  Usually within a matter of months.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  You have been informed.
+</mj-text>
+
+
+
+
+
+      <!-- Divider -->
+      <mj-text color="#35393d" font-size="16px"></mj-text>
+      <mj-divider border-color="#DFE3E8" border-width="1px" />
+      <mj-text color="#35393d" font-size="16px"></mj-text>
+      <!-- Divider -->
+
+      <mj-image src="https://f002.backblazeb2.com/file/neverfapdeluxeemail/email__header__assort.png" alt="" />
+
+    </mj-column>
+  </mj-section>
+</mj-wrapper>
+
     <mj-include path="../email_partials/seven_day_bottom.mjml"/>
-
-    </mj-body>
-  </mjml>
+  </mj-body>
+</mlmj>

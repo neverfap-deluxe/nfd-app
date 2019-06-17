@@ -15,6 +15,9 @@ const {
   generate,
 } = require('./templates');
 
+const {
+  getHead
+} = require('./util');
 
 const parseFile = async () => {
   const parser = new Parser();
@@ -49,12 +52,12 @@ const parseFile = async () => {
   });
 
   // generate text bold
-  parser.addRule(/\#\# [\S ]+/ig, function(text) {
+  parser.addRule(/\#\#\# [\S ]+/ig, function(text) {
     return generateTextBold(text.slice(3));
   });
 
   // generate text title
-  parser.addRule(/\# [\S ]+/ig, function(text) {
+  parser.addRule(/\#\# [\S ]+/ig, function(text) {
     return generateTextTitle(text.slice(2));
   });
 
@@ -72,7 +75,8 @@ const parseFile = async () => {
     const fileName = `${baseUrl}/email_seven_day_kickstarter/sdk-day-${i}.md`;
     const response = await axios.get(fileName);
     const file = response.data;
-    const parsedFile = parser.render(file.toString());
+    const { head, content } = getHead(file.toString());
+    const parsedFile = parser.render(content);
     const parsedContent = generate(parsedFile, day, title)
 
     fse.outputFileSync(`templates/email_seven_day_kickstarter/template_seven_day_kickstarter_${i}.mjml`, parsedContent, [{}]);
@@ -80,3 +84,14 @@ const parseFile = async () => {
 };
 
 parseFile();
+
+
+// for (let i = 0; i < 8; i++) {
+//   const fileName = `template_seven_day_kickstarter_${i}`;
+//   const file = fse.readFileSync(`templates/email_seven_day_kickstarter_md/${fileName}.md`, [{}]);
+
+//   const parsedFile = parser.render(file.toString());
+//   const parsedContent = generate(parsedFile, day, title)
+
+//   fse.outputFileSync(`templates/email_seven_day_kickstarter/${fileName}.mjml`, parsedContent, [{}]);
+// }
