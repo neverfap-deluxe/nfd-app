@@ -3,6 +3,7 @@
 
 <div class="single__wrapper">
   <div class="single__content">
+    <h1>Payment Options</h1>
     <%= raw child_content(@item["children"], "premium-payment") %>
   </div>
 </div>
@@ -11,6 +12,7 @@
 
 <div class="single__wrapper">
   <div class="single__content">
+    <h1>Tiers</h1>
     <%= raw child_content(@item["children"], "premium-tiers") %>
   </div>
 </div>
