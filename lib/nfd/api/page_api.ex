@@ -56,4 +56,9 @@ defmodule Nfd.API.Page do
   def seven_day_kickstarter(client), do: get(client, "/email_seven_day_kickstarter/index.json")
   def ten_day_meditation(client), do: get(client, "/email_ten_day_meditation/index.json")
   def twenty_eight_day_awareness(client), do: get(client, "/email_twenty_eight_day_awareness/index.json")
+
+  def seven_week_awareness_vol_1(client), do: get(client, "/email_seven_week_awareness_vol_1/index.json")
+  def seven_week_awareness_vol_2(client), do: get(client, "/email_seven_week_awareness_vol_2/index.json")
+  def seven_week_awareness_vol_3(client), do: get(client, "/email_seven_week_awareness_vol_3/index.json")
+  def seven_week_awareness_vol_4(client), do: get(client, "/email_seven_week_awareness_vol_4/index.json")
 end

@@ -85,14 +85,21 @@ defmodule NfdWeb.Fetch do
             Map.put(acc, :comment_form_changeset, comment_form_changeset)
 
           # CONTENT EMAIL
-          :seven_day_kickstarter ->
-            {:ok, sdkResponse} = client |> Page.seven_day_kickstarter()
-            seven_day_kickstarter = sdkResponse.body["data"]
-            Map.put(acc, :seven_day_kickstarter, seven_day_kickstarter)
+          :seven_day_kickstarter -> acc |> fetch_content_email(client, :seven_day_kickstarter)
+          :ten_day_meditation -> acc |> fetch_content_email(client, :ten_day_meditation)
+          :twenty_eight_day_awareness -> acc |> fetch_content_email(client, :twenty_eight_day_awareness)
+          :seven_week_awareness_vol_1 -> acc |> fetch_content_email(client, :seven_week_awareness_vol_1)
+          :seven_week_awareness_vol_2 -> acc |> fetch_content_email(client, :seven_week_awareness_vol_2)
+          :seven_week_awareness_vol_3 -> acc |> fetch_content_email(client, :seven_week_awareness_vol_3)
+          :seven_week_awareness_vol_4 -> acc |> fetch_content_email(client, :seven_week_awareness_vol_4)
 
-          :seven_day_kickstarter_changeset -> Map.put(acc, :seven_day_kickstarter_changeset, Subscriber.changeset(%Subscriber{}, %{}))
-          :ten_day_meditation_changeset -> Map.put(acc, :ten_day_meditation_changeset, Subscriber.changeset(%Subscriber{}, %{}))
-          :twenty_eight_day_awareness_changeset -> Map.put(acc, :twenty_eight_day_awareness_changeset, Subscriber.changeset(%Subscriber{}, %{}))
+          :seven_day_kickstarter_changeset -> acc |> fetch_subscriber_changeset(:seven_day_kickstarter_changeset)
+          :ten_day_meditation_changeset -> acc |> fetch_subscriber_changeset(:ten_day_meditation_changeset)
+          :twenty_eight_day_awareness_changeset -> acc |> fetch_subscriber_changeset(:twenty_eight_day_awareness_changeset)
+          :seven_week_awareness_vol_1_changeset -> acc |> fetch_subscriber_changeset(:seven_week_awareness_vol_1_changeset)
+          :seven_week_awareness_vol_2_changeset -> acc |> fetch_subscriber_changeset(:seven_week_awareness_vol_2_changeset)
+          :seven_week_awareness_vol_3_changeset -> acc |> fetch_subscriber_changeset(:seven_week_awareness_vol_3_changeset)
+          :seven_week_awareness_vol_4_changeset -> acc |> fetch_subscriber_changeset(:seven_week_awareness_vol_4_changeset)
             
           _ ->
             acc
@@ -109,6 +116,16 @@ defmodule NfdWeb.Fetch do
       next_item: next_item,
       previous_item: previous_item
     })
+  end
+
+  defp fetch_content_email(acc, client, symbol) do
+    {:ok, response} = apply(Page, symbol, [client])
+    data = response.body["data"]
+    Map.put(acc, :seven_day_kickstarter, data)
+  end
+
+  defp fetch_subscriber_changeset(acc, symbol) do
+    Map.put(acc, symbol, Subscriber.changeset(%Subscriber{}, %{}))
   end
 
   def render_404_page(conn, error) do

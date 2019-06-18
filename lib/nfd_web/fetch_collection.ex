@@ -78,6 +78,18 @@ defmodule NfdWeb.FetchCollection do
       :twenty_eight_day_awareness ->  [:twenty_eight_day_awareness, :twenty_eight_day_awareness_changeset]
       :twenty_eight_day_awareness_single -> [:twenty_eight_day_awareness]
 
+      :seven_week_awareness_vol_1 ->  [:seven_week_awareness_vol_1, :seven_week_awareness_vol_1_changeset]
+      :seven_week_awareness_vol_1_single -> [:twenty_eight_day_awareness]
+
+      :seven_week_awareness_vol_2 ->  [:seven_week_awareness_vol_2, :seven_week_awareness_vol_2_changeset]
+      :seven_week_awareness_vol_2_single -> [:twenty_eight_day_awareness]
+
+      :seven_week_awareness_vol_3 ->  [:seven_week_awareness_vol_3, :seven_week_awareness_vol_3_changeset]
+      :seven_week_awareness_vol_3_single -> [:twenty_eight_day_awareness]
+
+      :seven_week_awareness_vol_4 ->  [:seven_week_awareness_vol_4, :seven_week_awareness_vol_4_changeset]
+      :seven_week_awareness_vol_4_single -> [:twenty_eight_day_awareness]
+
       # DASHBOARD
       :dashboard -> [:collections_email, :patreon_auth_url]
       :dashboard_coaching -> [:collections_email]

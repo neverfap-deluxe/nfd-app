@@ -1,0 +1,29 @@
+<div class="email__campaign__full__width">
+  <h1 class="email__campaign__title"><%= @item["title"] %></h1>
+
+  <div class="email__campaign__box__two">
+    <h2 class="email__campaign__sub__title">Seven Week Awareness Vol 1.</h2>
+
+    <div class="email__campaign__text__container">
+      <%= raw @item["content"] %>
+
+      <h3>Course overview</h3>
+      <div class="email__day__container">
+        <%= Enum.map(@item["days"], fn(item) -> %>
+          <a class="email__day__container__item" href='<%= Routes.content_email_path(@conn, :seven_week_awareness_vol_1_single, item["slug"]) %>'>
+            <h4 class="email__day__container__item__title"><%= item["title"] %><br/> Week <%= item["day"] %></h4>
+            <p class="email__day__container__item__text"><%= item["description"] %></p>
+          </a>
+        <% end ) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="seven__day__kickstarter__banner__box">
+    <div class="seven__day__kickstarter__banner__list">
+      <%= Enum.map(@item["days"], fn(item) -> %>
+        <p class="seven__day__kickstarter__banner__item"><%= item["title"] %> - Week <%= item["day"] %></p>
+      <% end ) %>
+    </div>
+  </div>
+</div>

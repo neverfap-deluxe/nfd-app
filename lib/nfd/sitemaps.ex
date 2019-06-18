@@ -33,7 +33,13 @@ defmodule Nfd.Sitemaps do
          {:ok, meditationsResponse} <- (client |> Page.meditations()),
          {:ok, blogsResponse} <- (client |> Page.blogs()),
          {:ok, updatesResponse} <- (client |> Page.updates()),
-         {:ok, sdkResponse} <- (client |> Page.seven_day_kickstarter())
+
+         {:ok, sdkResponse} <- (client |> Page.seven_day_kickstarter()),
+         {:ok, tdmResponse} <- (client |> Page.ten_day_meditation()),
+         {:ok, vol1Response} <- (client |> Page.seven_week_awareness_vol_1()),
+         {:ok, vol2Response} <- (client |> Page.seven_week_awareness_vol_2()),
+         {:ok, vol3Response} <- (client |> Page.seven_week_awareness_vol_3()),
+         {:ok, vol4Response} <- (client |> Page.seven_week_awareness_vol_4())
     do
       create do
         # GENERAL
@@ -86,6 +92,7 @@ defmodule Nfd.Sitemaps do
         add Helpers.content_path(Endpoint, :blogs), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.content_path(Endpoint, :updates), priority: 0.5, changefreq: "weekly", expires: nil
 
+        # CONTENT SINGLE
         Enum.each(articlesResponse.body["data"]["articles"], fn(article) ->
           add Helpers.content_path(Endpoint, :article, article["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
         end)
@@ -118,14 +125,36 @@ defmodule Nfd.Sitemaps do
           add Helpers.content_path(Endpoint, :update, updateArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
         end)
 
+        # CONTENT EMAIL
+        add Helpers.content_email_path(Endpoint, :seven_day_kickstarter), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.content_email_path(Endpoint, :ten_day_meditation), priority: 0.5, changefreq: "weekly", expires: nil
+        # add Helpers.content_email_path(Endpoint, :twenty_eight_day_awareness), priority: 0.5, changefreq: "weekly", expires: nil
+        
+        # CONTENT EMAIL SINGLE
         Enum.each(sdkResponse.body["data"]["days"], fn(updateArg) ->
           add Helpers.content_email_path(Endpoint, :seven_day_kickstarter_single, updateArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
         end)
 
-        # TODO: Will also need to configure the individual days, once they're created.
-        add Helpers.content_email_path(Endpoint, :seven_day_kickstarter), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.content_email_path(Endpoint, :ten_day_meditation), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.content_email_path(Endpoint, :twenty_eight_day_awareness), priority: 0.5, changefreq: "weekly", expires: nil
+        Enum.each(tdmResponse.body["data"]["days"], fn(updateArg) ->
+          add Helpers.content_email_path(Endpoint, :ten_day_meditation_single, updateArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
+        end)
+
+        Enum.each(vol1Response.body["data"]["days"], fn(updateArg) ->
+          add Helpers.content_email_path(Endpoint, :seven_week_awareness_vol_1_single, updateArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
+        end)
+
+        Enum.each(vol2Response.body["data"]["days"], fn(updateArg) ->
+          add Helpers.content_email_path(Endpoint, :seven_week_awareness_vol_2_single, updateArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
+        end)
+
+        Enum.each(vol3Response.body["data"]["days"], fn(updateArg) ->
+          add Helpers.content_email_path(Endpoint, :seven_week_awareness_vol_3_single, updateArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
+        end)
+
+        Enum.each(vol4Response.body["data"]["days"], fn(updateArg) ->
+          add Helpers.content_email_path(Endpoint, :seven_week_awareness_vol_4_single, updateArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
+        end)
+
       end
     end
 
