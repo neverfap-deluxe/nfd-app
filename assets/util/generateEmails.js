@@ -17,7 +17,7 @@ const parseFile = async () => {
     // SEVEN DAY KICKSTARTER
     generateEmails('email_seven_day_kickstarter', `sdk-day-${i}`, `template_seven_day_kickstarter_${i}.mjml`, contentParser);
 
-    // NOTE: Maybe These need the content from the actual practices website, or perhaps they should simply link to the correct  
+    // NOTE: Maybe These need the content from the actual practices website, or perhaps they should simply link to the correct
 
     // SEVEN WEEK AWARENESS CHALLENGE
     generateEmails('email_seven_week_awareness_vol_1', `eswa-vol1-day-${i}`, `template_seven_week_awareness_vol_1_${i}.mjml`, contentParser);
@@ -28,7 +28,7 @@ const parseFile = async () => {
 
   for (let i = 0; i < 11; i++) {
     // TEN DAY MEDITATION PRIMER
-    // generateEmails('email_ten_day_meditation', `tdm-day-${i}`, `template_ten_day_meditation_${i}.mjml`, contentParser);
+    generateEmails('email_ten_day_meditation', `tdm-day-${i}`, `template_ten_day_meditation_${i}.mjml`, contentParser);
   }
 
 };

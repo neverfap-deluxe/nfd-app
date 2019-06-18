@@ -50,6 +50,7 @@ const generateEmails = async (collection, item, template_item, contentParser) =>
 
     fse.outputFileSync(`templates/${collection}/${template_item}`, completeText, [{}]);
   } catch (error) {
+    console.log(fileName);
     throw new Error(`${error} - ${fileName}`);
   }
 }
