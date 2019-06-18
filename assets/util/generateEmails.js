@@ -26,7 +26,7 @@ const parseFile = async () => {
 
   for (let i = 0; i < 11; i++) {
     // TEN DAY MEDITATION PRIMER
-    generateEmails('email_ten_day_meditation', `tdm-day-${i}`, `template_ten_day_meditation_${i}.mjml`, contentParser);
+    // generateEmails('email_ten_day_meditation', `tdm-day-${i}`, `template_ten_day_meditation_${i}.mjml`, contentParser);
   }
 
 };
