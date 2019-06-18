@@ -17,6 +17,8 @@ const parseFile = async () => {
     // SEVEN DAY KICKSTARTER
     generateEmails('email_seven_day_kickstarter', `sdk-day-${i}`, `template_seven_day_kickstarter_${i}.mjml`, contentParser);
 
+    // NOTE: Maybe These need the content from the actual practices website, or perhaps they should simply link to the correct  
+
     // SEVEN WEEK AWARENESS CHALLENGE
     generateEmails('email_seven_week_awareness_vol_1', `eswa-vol1-day-${i}`, `template_seven_week_awareness_vol_1_${i}.mjml`, contentParser);
     generateEmails('email_seven_week_awareness_vol_2', `eswa-vol2-day-${i}`, `template_seven_week_awareness_vol_2_${i}.mjml`, contentParser);
