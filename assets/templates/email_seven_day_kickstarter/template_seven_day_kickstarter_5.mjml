@@ -210,6 +210,37 @@
 
 
 
+<!-- Divider -->
+<mj-text color="#35393d" font-size="16px"></mj-text>
+<mj-divider border-color="#DFE3E8" border-width="1px" />
+<mj-text color="#35393d" font-size="16px"></mj-text>
+<!-- Divider -->
+
+
+
+<mj-text color="#212b35" font-weight="bold" font-size="20px">
+   Next steps.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  Hopefully this email provides some additional context in regards to the porn addiction recovery process.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  Tomorrow I want to talk about how we can effectively move forward, and commit to our porn addiction recovery.
+</mj-text>
+
+
+
+<mj-text color="#35393d" font-size="16px">
+  Thank you for reading and I'll see you here tomorrow.
+</mj-text>
+
+
 
       <!-- Divider -->
       <mj-text color="#35393d" font-size="16px"></mj-text>
