@@ -41,24 +41,6 @@
       
 
 
-<mj-text color="#35393d" font-size="16px">
-  Hello, and welcome to the 10 Day Meditation Primer!
-</mj-text>
-
-
-
-<mj-text color="#35393d" font-size="16px">
-  This series has been designed to help those new to meditation, as well serve as a strong foundation for those wanting to learn more about meditation best practice.
-</mj-text>
-
-
-
-<mj-text color="#35393d" font-size="16px">
-  Each day takes you through different ideas. 
-</mj-text>
-
-
-
       <!-- Divider -->
       <mj-text color="#35393d" font-size="16px"></mj-text>
       <mj-divider border-color="#DFE3E8" border-width="1px" />

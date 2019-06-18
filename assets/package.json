@@ -6,11 +6,14 @@
     "watch": "npx webpack --mode development --watch",
     "generate_image_prod": "cd ./image_generate && java -jar webvector-4.15.jar https://neverfapdeluxe.com/final season.png png",
     "generate_image": "cd ./image_generate && java -jar webvector-4.15.jar http://localhost:4000/final season.png png",
-    "gen7": "node ./util/generateKickstarter.js",
+
+    "genEmails": "node ./util/generateEmails.js",
+
     "mjml": "npm run -s mjml-ec & npm run -s mjml-rp & npm run -s mjml-ecs & npm run -s mjml-esc & npm run -s mjml-escs",
     "k": "npm run -s k0 & npm run -s k1 & npm run -s k2 & npm run -s k3 & npm run -s k4 & npm run -s k5 & npm run -s k6 & npm run -s k7",
     "m": "npm run -s m0",
     "a": "npm run -s a0",
+
     "e": "npm run -s mjml-ec & npm run -s mjml-rp & npm run -s mjml-ecs & npm run -s mjml-esc & npm run -s mjml-escs & npm run -s mjml-ecm & npm run -s mjml-ecr",
     "vol": "npm run -s vol_1 & npm run -s vol_2 & npm run -s vol_3 & npm run -s vol_4",
     "vol_1": "npm run -s vol_1_0 & npm run -s vol_1_1 & npm run -s vol_1_2 & npm run -s vol_1_3 & npm run -s vol_1_4 & npm run -s vol_1_5 & npm run -s vol_1_6 & npm run -s vol_1_7",

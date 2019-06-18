@@ -10,7 +10,7 @@
     <li>Identifying and understanding my various mental disorders. </li>
     <li>Properly understanding what life being 'porn free' actually means.</li>
     <li>Learning to value and invest in myself.</li>
-  </ul> 
+  </ul>
 -->
 
 
@@ -123,3 +123,18 @@
       </div>
     </div>
 %>
+
+
+
+
+// generateKickstarter
+
+// for (let i = 0; i < 8; i++) {
+//   const fileName = `template_seven_day_kickstarter_${i}`;
+//   const file = fse.readFileSync(`templates/email_seven_day_kickstarter_md/${fileName}.md`, [{}]);
+
+//   const parsedFile = parser.render(file.toString());
+//   const parsedContent = generate(parsedFile, day, title)
+
+//   fse.outputFileSync(`templates/email_seven_day_kickstarter/${fileName}.mjml`, parsedContent, [{}]);
+// }

@@ -25,30 +25,33 @@ const getHead = (fileContents) => {
 }
 
 const generateEmails = async (collection, item, template_item, contentParser) => {
-  const baseUrl = 'https://neverfapdeluxe.netlify.com/md';
-  // const baseUrl = 'http://localhost:1313/md';
+  try {
+    const baseUrl = 'https://neverfapdeluxe.netlify.com/md';
+    // const baseUrl = 'http://localhost:1313/md';
 
-  const fileName = `${baseUrl}/${collection}/${item}.md`;
-  const response = await axios.get(fileName);
-  const file = response.data;
-  const { head, content } = getHead(file.toString());
+    const fileName = `${baseUrl}/${collection}/${item}.md`;
+    const response = await axios.get(fileName);
+    const file = response.data;
 
-  const getHeadTitleRegex = /title: [\S ]+/ig
-  const getHeadDayRegex = /day: [\S ]+/ig
+    const { head, content } = getHead(file.toString());
 
-  const title = head.match(getHeadTitleRegex)[0].split(':')[1].trim();
-  const day = head.match(getHeadDayRegex)[0].split(':')[1].trim();
+    const getHeadTitleRegex = /title: [\S ]+/ig
+    const getHeadDayRegex = /day: [\S ]+/ig
 
-  // headParser.render(head);
-  const parsedContent = contentParser.render(content);
+    const title = head.match(getHeadTitleRegex)[0].split(':')[1].trim();
+    const day = head.match(getHeadDayRegex)[0].split(':')[1].trim();
 
-  const headText = generateFullHead(day, title.replace(/"/g,""));
-  const contentText = generateWrapper(parsedContent)
+    const parsedContent = contentParser.render(content);
 
-  const completeText = generate(headText, contentText);
+    const headText = generateFullHead(day, title.replace(/"/g, ""));
+    const contentText = generateWrapper(parsedContent)
 
-  fse.outputFileSync(`templates/${collection}/${template_item}`, completeText, [{}]);
+    const completeText = generate(headText, contentText);
 
+    fse.outputFileSync(`templates/${collection}/${template_item}`, completeText, [{}]);
+  } catch (error) {
+    throw new Error(`${error} - ${fileName}`);
+  }
 }
 
 module.exports = {
