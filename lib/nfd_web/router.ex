@@ -107,6 +107,19 @@ defmodule NfdWeb.Router do
 
     get "/ten-day-meditation-primer", ContentEmailController, :ten_day_meditation
     get "/ten-day-meditation-primer/:slug", ContentEmailController, :ten_day_meditation_single
+
+    # get "/seven-week-awareness-challenge-vol-1", ContentEmailController, :seven_week_awareness_vol_1
+    # get "/seven-week-awareness-challenge-vol-1/:slug", ContentEmailController, :seven_week_awareness_vol_1_single
+
+    # get "/seven-week-awareness-challenge-vol-2", ContentEmailController, :seven_week_awareness_vol_2
+    # get "/seven-week-awareness-challenge-vol-2/:slug", ContentEmailController, :seven_week_awareness_vol_2_single
+
+    # get "/seven-week-awareness-challenge-vol-3", ContentEmailController, :seven_week_awareness_vol_3
+    # get "/seven-week-awareness-challenge-vol-3/:slug", ContentEmailController, :seven_week_awareness_vol_3_single
+
+    # get "/seven-week-awareness-challenge-vol-4", ContentEmailController, :seven_week_awareness_vol_4
+    # get "/seven-week-awareness-challenge-vol-4/:slug", ContentEmailController, :seven_week_awareness_vol_4_single
+
   end
 
   # Functions

@@ -13,4 +13,9 @@ defmodule Nfd.API.Content do
   def seven_day_kickstarter_single(client, slug), do: get(client, "/email_seven_day_kickstarter/" <> slug <> "/index.json")
   def ten_day_meditation_single(client, slug), do: get(client, "/email_ten_day_meditation/" <> slug <> "/index.json")
   def twenty_eight_day_awareness_single(client, slug), do: get(client, "/email_twenty_eight_day_awareness/" <> slug <> "/index.json")
+
+  # def seven_week_awareness_vol_1_single(client, slug), do: get(client, "/email_seven_week_awareness_vol_1/" <> slug <> "/index.json")
+  # def seven_week_awareness_vol_2_single(client, slug), do: get(client, "/email_seven_week_awareness_vol_2/" <> slug <> "/index.json")
+  # def seven_week_awareness_vol_3_single(client, slug), do: get(client, "/email_seven_week_awareness_vol_3/" <> slug <> "/index.json")
+  # def seven_week_awareness_vol_4_single(client, slug), do: get(client, "/email_seven_week_awareness_vol_4/" <> slug <> "/index.json")
 end
