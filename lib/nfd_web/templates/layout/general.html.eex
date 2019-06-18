@@ -7,12 +7,12 @@
     <div> -->
       <div id="mobile__menu__overlay__background__id" class="mobile__menu__overlay__background"></div>
       
-      <%= partial "header.html", assigns %>
+      <%= partial "layout/header.html", assigns %>
   
       <main role="main" class="main" id="content">
         <%= render @view_module, @view_template, assigns %>
       </main>
-      <%= partial "footer.html", assigns %>
+      <%= partial "layout/footer.html", assigns %>
   
       <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>    
   </body>

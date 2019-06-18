@@ -1,7 +1,7 @@
 <%= partial "links/loginregister_top.html", assigns %>
 
 <div class="accounts__wrapper">
-  <%= partial "header.html", assigns %>
+  <%= partial "layout/header.html", assigns %>
 
   <h1 class="accounts__wrapper__title">Edit profile</h1>
     
@@ -48,4 +48,4 @@
     </div>
   </div>
 </div>
-<%= partial "footer.html", assigns %>
+<%= partial "layout/footer.html", assigns %>

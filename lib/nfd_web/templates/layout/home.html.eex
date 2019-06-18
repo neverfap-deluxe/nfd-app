@@ -6,7 +6,7 @@
     </div>
         
     <%= render @view_module, @view_template, assigns %>
-    <%= partial "footer.html", assigns %>
+    <%= partial "layout/footer.html", assigns %>
   </body>
   <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/homepage.js") %>'></script>
   <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>

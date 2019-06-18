@@ -24,4 +24,4 @@
   </div>
 </div>
 
-<%= partial "footer.html", assigns %>
+<%= partial "layout/footer.html", assigns %>

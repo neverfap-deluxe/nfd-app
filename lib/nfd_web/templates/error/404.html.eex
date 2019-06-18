@@ -3,7 +3,7 @@
   <%= partial "head_general.html", assigns %>
 
   <body>
-    <%#= partial "header.html", assigns %>
+    <%#= partial "layout/header.html", assigns %>
 
     <main role="main" class="main" id="content">
       <div class="single__wrapper">   
@@ -22,7 +22,7 @@
       <%#= partial "links/patreon.html", assigns %>
 
     </main>
-    <%#= partial "footer.html", assigns %>
+    <%#= partial "layout/footer.html", assigns %>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
 

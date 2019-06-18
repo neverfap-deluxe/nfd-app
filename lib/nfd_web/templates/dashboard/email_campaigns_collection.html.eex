@@ -5,14 +5,14 @@
     <a class="hub__main__back" href="/dashboard/email_campaigns">
       Back to Email Campaigns
     </a>
-    <%= partial "email_countdown_timer.html", assigns %>
+    <%= partial "dashboard/email_countdown_timer.html", assigns %>
   </div>
 
   <div class="hub__main__area">
     <div class="hub__main__area__content">
       <p><b>Landing page:</b> <a class="link" href="/<%= @collections.collection_email.slug %>">link</a></p>
       <!-- TODO: In order to show this, it needs to check if the program has been purchased first. If not, show button which allows you to do that. Assuming it's a paid course to begin with. -->
-      <%= partial "subscriber_status.html", %{ conn: @conn, subscribed: @is_subscribed, subscribed_property: @subscribed_property, user_id: @user.id } %>
+      <%= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: @is_subscribed, subscribed_property: @subscribed_property, user_id: @user.id } %>
     </div>
   </div>
 

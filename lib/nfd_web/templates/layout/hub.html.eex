@@ -7,7 +7,7 @@
         </div>
         
     <div class="hub">
-      <%= partial "header.html", assigns %>
+      <%= partial "layout/header.html", assigns %>
       
       <main role="main" class="hub__bottom">
         <%= partial "hub/sidebar.html", assigns %>

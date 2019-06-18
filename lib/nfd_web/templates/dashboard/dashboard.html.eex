@@ -33,7 +33,7 @@
 
       <h2>Updates</h2>
       <p>If you'd like to keep up to date on future products as they're released, please subscribe to our newsletter!</p>
-      <%= partial "subscriber_status.html", %{ conn: @conn, subscribed: @is_subscribed, subscribed_property: @subscribed_property, user_id: @user.id } %>
+      <%= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: @is_subscribed, subscribed_property: @subscribed_property, user_id: @user.id } %>
     </div>
   </div>
 

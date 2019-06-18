@@ -1,0 +1,44 @@
+<div class="posts">
+  <!-- NOTE: this is incorrect, it should sort by latest date first :) -->
+  <%= @items |> Enum.take(10) |> Enum.map(fn(item) -> %>
+    <a class="post" href='<%= item["permalink"] %>'>
+      <div class="post__left">
+        <div class="post__five__principles">
+          <%= if item["categories"] == "introduction" do %>
+            <div class="post__five__principles__item post__five__principles__item--introduction">
+              Introduction
+            </div>
+          <% end %>
+          <%= if item["categories"] == "choice-over-mind" do %>
+            <div class="post__five__principles__item post__five__principles__item--choice-over-mind">
+              Choice over mind
+            </div>
+          <% end %>
+          <%= if item["categories"] == "balance-over-reward" do %> 
+            <div class="post__five__principles__item post__five__principles__item--balance-over-reward">
+              Balance over reward
+            </div>
+          <% end %>
+          <%= if item["categories"] == "struggle-over-none" do %> 
+            <div class="post__five__principles__item post__five__principles__item--struggle-over-none">
+              Struggle over none
+            </div>
+          <% end %>
+          <%= if item["categories"] == "awareness-over-all" do %> 
+            <div class="post__five__principles__item post__five__principles__item--awareness-over-all">
+              Awareness over all
+            </div>
+          <% end %>
+          <%= if item["categories"] == "uncondition-over-judgement" do %> 
+            <div class="post__five__principles__item post__five__principles__item--uncondition-over-judgement">
+              Uncondition over judgement
+            </div>
+          <% end %>
+        </div>
+        <h5 class="post__date"><%= item["date"] %></h5>
+        <h4 class="post__title"><%= item["title"] %></h4>    
+      </div>
+    </a>
+  <% end ) %>
+</div>
+  

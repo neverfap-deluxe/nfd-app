@@ -29,5 +29,5 @@
 
 
 
-<%= partial "reddit_question_banner.html", assigns %>
+<%= partial "banners/reddit_question_banner.html", assigns %>
 

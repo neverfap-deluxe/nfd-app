@@ -1,7 +1,7 @@
 <div class="homepage__content">
   <%= partial "links/loginregister_top.html", assigns %>
   <div class="homepage__hero">
-    <%= partial "header.html", assigns %>
+    <%= partial "layout/header.html", assigns %>
     <div class="homepage__hero__sub">
       <h1 class="homepage__hero__title" style="display: inline-block;">NeverFap <span class="deluxe__font">Deluxe</span></h1>
       <h2 class="homepage__hero__title__secondary">The Porn Addiction Recovery Process.</h2>
@@ -422,7 +422,7 @@
           <%= partial "home/introduction_posts.html", %{ items: @collections.articles } %>
         </div>
         <div class="post__off" id="latest__posts">
-          <%= partial "latest_posts.html", %{ items: @collections.articles } %>
+          <%= partial "content/latest_posts.html", %{ items: @collections.articles } %>
         </div>
       </div>
 
