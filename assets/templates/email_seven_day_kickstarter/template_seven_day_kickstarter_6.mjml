@@ -191,33 +191,6 @@
 
 
 
-<!-- Divider -->
-<mj-text color="#35393d" font-size="16px"></mj-text>
-<mj-divider border-color="#DFE3E8" border-width="1px" />
-<mj-text color="#35393d" font-size="16px"></mj-text>
-<!-- Divider -->
-
-
-
-
-<mj-text color="#212b35" font-weight="bold" font-size="20px">
-   Next steps.
-</mj-text>
-
-
-
-<mj-text color="#35393d" font-size="16px">
-  Tomorrow we'll go into the power of community and how it can help you with your porn addiction recovery.
-</mj-text>
-
-
-
-<mj-text color="#35393d" font-size="16px">
-  Thank you for reading and I'll see you here tomorrow.
-</mj-text>
-
-
-
 
       <!-- Divider -->
       <mj-text color="#35393d" font-size="16px"></mj-text>

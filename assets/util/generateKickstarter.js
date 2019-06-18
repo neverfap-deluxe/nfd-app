@@ -1,41 +1,39 @@
-const fse = require('fs-extra');
-const axios = require('axios');
 const Parser = require("simple-text-parser");
 
 const {
-  // generateHead,
-  // generateSection,
-  generateWrapper,
   generateDivider,
   generateText,
   generateTextTitle,
   generateTextTitleCentre,
   generateTextBold,
   generateButton,
+
+  generateWrapper,
   generateFullHead,
   generate,
 } = require('./templates');
 
 const {
-  getHead
+  getHead,
+  generateEmails,
 } = require('./util');
 
 const parseFile = async () => {
-  const headParser = new Parser();
+  // const headParser = new Parser();
   const contentParser = new Parser();
   // const withinQuotesRegex = new RegExp(/\"[\S ]+\"/, );
-  let title;
-  let day;
+  // let title;
+  // let day;
 
-  headParser.addRule(/title: [\S ]+/ig, function(text) {
-    title = text.split(':')[1].trim();
-    return '';
-  });
+  // headParser.addRule(/title: [\S ]+/ig, function(text) {
+  //   title = text.split(':')[1].trim();
+  //   return '';
+  // });
 
-  headParser.addRule(/day: [\S ]+/ig, function(text) {
-    day = text.split(':')[1].trim();
-    return '';
-  });
+  // headParser.addRule(/day: [\S ]+/ig, function(text) {
+  //   day = text.split(':')[1].trim();
+  //   return '';
+  // });
 
   // generate text title centre
   contentParser.addRule(/{{< nfd_center_title [\S ]+ >}}/ig, function(text) {
@@ -70,24 +68,28 @@ const parseFile = async () => {
     }
   });
 
+  const baseUrl = 'https://neverfapdeluxe.netlify.com/md';
+
   for (let i = 0; i < 8; i++) {
-    const baseUrl = 'https://neverfapdeluxe.netlify.com/md';
+    const kickstarterEmail = generateEmails('email_seven_day_kickstarter', `sdk-day-${i}`, `template_seven_day_kickstarter_${i}.mjml`, contentParser);
+
     // const baseUrl = 'http://localhost:1313/md';
 
-    const fileName = `${baseUrl}/email_seven_day_kickstarter/sdk-day-${i}.md`;
-    const response = await axios.get(fileName);
-    const file = response.data;
-    const { head, content } = getHead(file.toString());
+    // const fileName = `${baseUrl}/email_seven_day_kickstarter/sdk-day-${i}.md`;
+    // const response = await axios.get(fileName);
+    // const file = response.data;
+    // const { head, content } = getHead(file.toString());
 
-    const parsedHead = headParser.render(head);
-    const parsedContent = contentParser.render(content);
+    // const parsedHead = headParser.render(head);
+    // const parsedContent = contentParser.render(content);
 
-    const headText = generateFullHead(day, title.replace(/"/g,""));
-    const contentText = generateWrapper(parsedContent)
+    // const headText = generateFullHead(day, title.replace(/"/g,""));
+    // const contentText = generateWrapper(parsedContent)
 
-    const completeText = generate(headText, contentText);
+    // const completeText = generate(headText, contentText);
 
-    fse.outputFileSync(`templates/email_seven_day_kickstarter/template_seven_day_kickstarter_${i}.mjml`, completeText, [{}]);
+    // fse.outputFileSync(`templates/email_seven_day_kickstarter/template_seven_day_kickstarter_${i}.mjml`, completeText, [{}]);
+
   }
 };
 
