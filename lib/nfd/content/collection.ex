@@ -13,6 +13,8 @@ defmodule Nfd.Content.Collection do
     field :premium, :boolean, default: false
     field :slug, :string
     field :price, :float
+    field :stripe_sku, :string
+    field :stripe_description, :string
 
     has_many :files, Nfd.Content.File
     # TODO: has_many, collection_access

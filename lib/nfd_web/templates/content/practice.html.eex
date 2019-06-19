@@ -15,6 +15,11 @@
     <!-- </div> -->
   </div>
   <span><span class="homepage__process__link"><%= @item["date"] %></span></span>
+
+  <div class="homepage__page">
+    Sign up to the 
+  </div>
+
 </div>
 
 <%= partial "links/patreon.html", assigns %>

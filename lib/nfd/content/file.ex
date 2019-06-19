@@ -11,7 +11,7 @@ defmodule Nfd.Content.File do
     field :description, :string
     field :display_name, :string
     field :file_url, :string
-    field :premium, :boolean, default: false
+    field :premium, :boolean, default: true
     field :slug, :string
 
     # field :collection_id, :binary_id

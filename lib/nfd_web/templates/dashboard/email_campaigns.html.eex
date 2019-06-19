@@ -4,14 +4,14 @@
     <a class="hub__main__back" href="/dashboard">
       Back to Dashboard
     </a>
-    <!-- <a class="hub__main__back" href="/dashboard/email_campaigns">
+    <!-- <a class="hub__main__back" href="/dashboard/courses">
       Back to Email Campaigns
     </a> -->
   </div>
   
   <div class="hub__main__area">    
     <div class="hub__main__area__content">
-      <%= partial "hub/email_campaign_list.html", %{ collections_email: @collections.collections_email} %>
+      <%= partial "hub/email_campaign_list.html", %{ courses: @collections.courses} %>
     </div>
   </div>
 </div>

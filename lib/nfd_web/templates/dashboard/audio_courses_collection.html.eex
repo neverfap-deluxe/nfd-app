@@ -5,7 +5,7 @@
     <a class="hub__main__back" href="/dashboard">
       Back to Dashboard
     </a>
-    <a class="hub__main__back" href="/dashboard/email_campaigns">
+    <a class="hub__main__back" href="/dashboard/courses">
       Back to Email Campaigns
     </a>
   </div>

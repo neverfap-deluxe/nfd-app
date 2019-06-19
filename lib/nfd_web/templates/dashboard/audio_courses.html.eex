@@ -5,7 +5,7 @@
     <div class="hub__main__area__content">
       <p>There are no audio courses, as of yet. Please feel free to check out the NeverFap Deluxe podcast while I figure out how to deliver the best possible experience for you.</p> 
       <a style="margin-bottom: 1rem; margin-top: 1rem;"href="/podcast" class="button subscribe__button">NeverFap Deluxe Podcast</a>
-      <p>Alternatively, there are some pretty amazing email challenges that I've created, and they can be found <a class="link" href="/dashboard/email_campaigns">here</a>.</p>
+      <p>Alternatively, there are some pretty amazing email challenges that I've created, and they can be found <a class="link" href="/dashboard/courses">here</a>.</p>
 
       <div class="hub__main__audio">
 

@@ -8,6 +8,11 @@ config :stripity_stripe,
   api_key: System.get_env("STRIPE_API_KEY_SECRET"),
   json_library: Jason
 
+config :pay_pal,
+  client_id: System.get_env("PAYPAL_API_KEY"),
+  client_secret: System.get_env("PAYPAL_API_SECRET"),
+  environment: :prod
+
 config :nfd, Nfd.SwooshMailer,
   adapter: Swoosh.Adapters.AmazonSES,
   region: "us-east-1",

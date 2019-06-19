@@ -66,10 +66,10 @@ defmodule Nfd.Emails do
         ^kickstarter_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Day NeverFap Deluxe Kickstarter - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
         ^meditation_primer_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Ten Day Meditation Primer - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
         ^awareness_challenge_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Twenty Eight Day Challenge - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
-        ^awareness_seven_week_vol_1_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Week Awareness Challenge - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
-        ^awareness_seven_week_vol_2_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Week Awareness Challenge - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
-        ^awareness_seven_week_vol_3_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Week Awareness Challenge - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
-        ^awareness_seven_week_vol_4_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Week Awareness Challenge - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
+        ^awareness_seven_week_vol_1_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Week Awareness Challenge Vol 1. - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
+        ^awareness_seven_week_vol_2_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Week Awareness Challenge Vol 2. - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
+        ^awareness_seven_week_vol_3_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Week Awareness Challenge Vol 3. - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
+        ^awareness_seven_week_vol_4_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Week Awareness Challenge Vol 4. - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
       end
       
       case type do

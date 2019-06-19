@@ -6,12 +6,12 @@
       <span>Dash</span>
     <% end %>
 
-    <%= link to: Routes.dashboard_path(@conn, :audio_courses), class: "hub__sidebar__button" do %>
+    <%= link to: Routes.dashboard_path(@conn, :ebooks), class: "hub__sidebar__button" do %>
       <i class="fas fa-file-audio"></i>
       <span>Audio</span>
     <% end %>
 
-    <%= link to: Routes.dashboard_path(@conn, :email_campaigns), class: "hub__sidebar__button" do %>
+    <%= link to: Routes.dashboard_path(@conn, :courses), class: "hub__sidebar__button" do %>
       <i class="fas fa-envelope-square"></i>
       <span>Email</span>
     <% end %>

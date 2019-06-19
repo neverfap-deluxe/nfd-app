@@ -58,7 +58,8 @@ defmodule Nfd.MixProject do
       {:uuid, "~> 1.1"},
       
       # stripe
-      {:stripity_stripe, "~> 2.0.0"},
+      {:stripity_stripe, "~> 2.4.0"},
+      {:pay_pal, "~> 0.0.5"},
 
       {:quantum, "~> 2.3"},
       {:timex, "~> 3.0"},

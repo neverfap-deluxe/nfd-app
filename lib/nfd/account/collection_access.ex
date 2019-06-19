@@ -5,7 +5,8 @@ defmodule Nfd.Account.CollectionAccess do
   alias Nfd.Content
   alias Nfd.Account
 
-
+  # NOTE: collection_id can refer to both collections and files. 
+  # It must be present for a file, otherwise they cannot have access to it.
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "collection_access" do
@@ -22,6 +23,11 @@ defmodule Nfd.Account.CollectionAccess do
     collection_access
     |> cast(attrs, [:collection_id, :user_id])
     |> validate_required([:collection_id, :user_id])
+  end
+
+  # TODO : For when a new email is sent out. 
+  def create_collection_access() do 
+    IO.inspect "hello"
   end
 
   def create_collection_access_for_free_courses(user) do

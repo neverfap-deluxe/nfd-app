@@ -153,18 +153,21 @@ defmodule NfdWeb.Router do
     get "/dashboard/profile", DashboardController, :profile
     get "/dashboard/delete_profile", DashboardController, :profile_delete_confirmation
 
-    get "/dashboard/audio_courses", DashboardController, :audio_courses
-    get "/dashboard/audio_courses/:collection", DashboardController, :audio_courses_collection
-    get "/dashboard/audio_courses/:collection/:file", DashboardController, :audio_courses_single
+    get "/dashboard/ebooks", DashboardController, :ebooks
+    get "/dashboard/ebooks/:collection", DashboardController, :ebooks_collection
+    get "/dashboard/ebooks/:collection/:file", DashboardController, :ebooks_single
 
-    get "/dashboard/email_campaigns", DashboardController, :email_campaigns
-    get "/dashboard/email_campaigns/:collection", DashboardController, :email_campaigns_collection
+    get "/dashboard/courses", DashboardController, :courses
+    get "/dashboard/courses/:collection", DashboardController, :courses_collection
 
-    get "/dashboard/email_campaigns/:collection/:file", DashboardController, :email_campaigns_single
+    get "/dashboard/courses/:collection/:file", DashboardController, :courses_single
 
     # PAYMENT
     post "/paypal_payment", PaymentController, :paypal_collection_payment
     post "/stripe_payment", PaymentController, :stripe_collection_payment
+
+    get "/purchase_success", PaymentController, :purchase_success
+    get "/purchase_cancel", PaymentController, :purchase_cancel
   end
 
   scope "/dev" do

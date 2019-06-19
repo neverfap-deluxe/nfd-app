@@ -18,6 +18,8 @@ defmodule NfdWeb.Fetch do
   def fetch_content(conn, page_view, page_symbol, slug, page_layout, collection_array) do    
     user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
 
+    content_specific_collection = fetch_collection_specific(user, page_symbol, slug)
+
     client = API.is_localhost(conn.host) |> API.api_client()
     verified_slug = Redirects.redirect_content(conn, slug, Atom.to_string(page_symbol))
 
@@ -105,6 +107,25 @@ defmodule NfdWeb.Fetch do
             acc
         end
       end)
+  end
+
+  defp fetch_collection_specific(user, page_symbol, slug) do 
+    case page_symbol do
+      :practice ->
+        if user do
+          # Get correct collection, based on slug, which would require looking at each file.
+          ebook
+
+        end
+      # :article -> %{}
+      # :course -> %{}
+      # :podcast -> %{}
+      # :quote -> %{}
+      # :meditation -> %{}
+      # :blog -> %{}
+      # :update -> %{}
+      _ -> %{}
+    end
   end
 
   defp merge_collection(client, content_symbol, acc, item) do

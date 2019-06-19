@@ -91,16 +91,16 @@ defmodule NfdWeb.FetchCollection do
       :seven_week_awareness_vol_4_single -> [:twenty_eight_day_awareness]
 
       # DASHBOARD
-      :dashboard -> [:collections_email, :patreon_auth_url]
-      :dashboard_coaching -> [:collections_email]
+      :dashboard -> [:courses, :patreon_auth_url]
+      :dashboard_coaching -> [:courses]
 
-      :email_campaigns -> [:collections_email]
-      :email_campaigns_collection -> [:collection_email, :collections_email, :stripe_api_key]
-      :email_campaigns_file -> [:collection_email, :collections_email, :collections_email_file, :stripe_api_key]
+      :courses -> [:courses]
+      :courses_collection -> [:course, :courses, :stripe_session, :stripe_api_key, :paypal_api_key]
+      :course_file -> [:course, :courses, :course_file]
 
-      :audio_courses -> [:collections_audio]
-      :audio_courses_collection -> [:collection_audio, :collections_audio, :stripe_api_key]
-      :audio_courses_file -> [:collection_audio, :collections_audio, :collections_audio_file, :stripe_api_key]
+      :ebooks -> [:ebooks]
+      :ebooks_collection -> [:ebook, :ebooks, :stripe_session, :stripe_api_key, :paypal_api_key]
+      :ebook_file -> [:ebook, :ebooks, :ebook_file]
 
       :profile -> []
       :profile_delete_confirmation -> []

@@ -1,58 +1,35 @@
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://checkout.stripe.com/checkout.js"></script>
 
-<button class="hub__custom__stripe__checkout__button">
+<button 
+  class="hub__custom__stripe__checkout__button"
+  id="checkout-button-<%= @collection.stripe_sku %>"
+  role="link"
+  >
   <!-- <img src="/images/stripe__rectangle.png"/> -->
   <img src="/images/stripe__square.png"/>
   <p>Checkout with card</p>
 </button>
 
+<div id="error-message"></div>
+
 <script>
-  var handler = StripeCheckout.configure({
-    key: "<%= @stripe_api_key %>",
-    image: 'https://neverfapdeluxe.com/images/logo__out.png',
-    locale: 'auto',
-    token: function(token) {
-      // token.id
-      // token.email
+  // TODO This needs to use the env.
+  const stripe = Stripe("<%= @collections.stripe_api_key %>");
 
-      console.log("done");
-      // You can access the token ID with `token.id`.
-      // Get the token ID to your server-side code for use.
-    }
-  });
-  
-  document.querySelector('.hub__custom__stripe__checkout__button').addEventListener('click', function(e) {
-    // Open Checkout with further options:
-    handler.open({
-      name: 'NeverFap Deluxe',
-      description: "<%= @collection.display_name %>",
-      currency: 'aud',
-      amount: <%= float_to_stripe_integer @collection.price %>
-    });
-    e.preventDefault();
-  });
-  
-  // Close Checkout on page navigation:
-  window.addEventListener('popstate', function() {
-    handler.close();
-  });
+  var checkoutButton = document.getElementById('checkout-button-sku_FHXc6hv9UGTuXl');
+      checkoutButton.addEventListener('click', function () {
+        stripe.redirectToCheckout({
+          sessionId: '<%= @collections.stripe_session.id %>',
+        })
+        .then(function (result) {
+          if (result.error) {
+            // If `redirectToCheckout` fails due to a browser or network
+            // error, display the localized error message to your customer.
+            var displayError = document.getElementById('error-message');
+            displayError.textContent = result.error.message;
+          }
+        });
+      });
 </script>
-
-
-<!-- Simple  -->
-<!-- 
-  <form action="your-server-side-code" method="POST">
-    <script
-      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-      data-key="pk_test_ShlsB93VF6UPAeaGzhC3Lmue"
-      data-amount="999"
-      data-name="Neverfapdeluxe"
-      data-description="Widget"
-      data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-      data-locale="auto"
-      data-currency="aud">
-    </script>
-  </form>
-    -->
-
-
 

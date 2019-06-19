@@ -29,11 +29,11 @@
       <div class="hub__main__payment__box">
         <div class="hub__main__payment__stripe">
           <h3>Credit Card</h3>
-          <%= partial "payment/stripe_checkout.html", %{stripe_api_key: @stripe_api_key, collection: @collection} %>
+          <%= partial "payment/stripe_checkout.html", %{collections: @collections, collection: @collections.course} %>
         </div>
         <div class="hub__main__payment__paypal">
           <h3>PayPal</h3>
-          <%= partial "payment/paypal_button.html", %{} %>
+          <%= partial "payment/paypal_checkout.html", %{ collections: @collections } %>
         </div>
       </div>
     </div>

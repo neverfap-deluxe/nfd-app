@@ -1,8 +1,8 @@
 <div class="hub__email__challenges">
-  <h2 class="hub__main__title hub__main__title--email"><%= @collections.collection_email.display_name %></h2>
+  <h2 class="hub__main__title hub__main__title--email"><%= @collections.course.display_name %></h2>
   
   <div class="hub__main__back__container">
-    <a class="hub__main__back" href="/dashboard/email_campaigns">
+    <a class="hub__main__back" href="/dashboard/courses">
       Back to Email Campaigns
     </a>
     <%= partial "dashboard/email_countdown_timer.html", assigns %>
@@ -10,39 +10,14 @@
 
   <div class="hub__main__area">
     <div class="hub__main__area__content">
-      <p><b>Landing page:</b> <a class="link" href="/<%= @collections.collection_email.slug %>">link</a></p>
+      <p><b>Landing page:</b> <a class="link" href="/<%= @collections.course.slug %>">link</a></p>
       <!-- TODO: In order to show this, it needs to check if the program has been purchased first. If not, show button which allows you to do that. Assuming it's a paid course to begin with. -->
       <%= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: @is_subscribed, subscribed_property: @subscribed_property, user_id: @user.id } %>
     </div>
   </div>
 
-  <%= if @collections.has_paid_for_collection == nil or @collections.collection_email.premium or @collections.collection_email.price != 0.0 do %>
-    <div class="hub__main__area">
-      <div class="hub__main__payment">
-        <h2>Payment</h2>
-        <div class="hub__main__area__content">
-          <p>We offer payment via Paypal or Credit Card.</p>
-          <p>The Purchase button will open a pop-up modal to Stripe Checkout, which will securely handle your Credit Card details via the Stripe API so your Credit Card information remains 100% secure.</p>
-          <p>The Paypal button will also open a pop-up modal for you to login to your Paypal account, where you can simply confirm the payment.</p>    
-          <!-- <p>Upon payment you will be returned to the dashboard, and you'll be able to access this course.</p> -->
-        </div>
-
-        <div class="hub__main__payment__course_information">
-          <h3>Course: <%= @collections.collection_email.display_name %></h3>
-          <h3>Price: $<%= @collections.collection_email.price %></h3>
-        </div>
-
-        <div class="hub__main__payment__box">
-          <div class="hub__main__payment__stripe">
-            <h3>Credit Card</h3>
-            <%= partial "payment/stripe_checkout.html", %{stripe_api_key: @collections.stripe_api_key, collection: @collections.collection_email} %>
-          </div>
-          <div class="hub__main__payment__paypal">
-            <h3>PayPal</h3>
-            <%= partial "payment/paypal_button.html", %{} %>
-          </div>
-        </div>
-      </div>
-    </div>
+  <%= if @collections.has_paid_for_collection == nil or @collections.course.premium or @collections.course.price != 0.0 do %>
+    <%= partial "dashboard/campaign_payment.html", %{ collections: @collections } %>
   <% end %>
+
 </div>

@@ -14,6 +14,7 @@ defmodule NfdWeb.FetchDashboard do
 
   alias Nfd.Patreon
   alias Nfd.Stripe
+  alias Nfd.Paypal
 
   use Timex
 
@@ -68,56 +69,60 @@ defmodule NfdWeb.FetchDashboard do
       fn x, acc ->
         case x do
           # COLLECTIONS
-          :collection_audio ->
-            collection_audio = Content.get_collection_slug!(collection_slug)
-            has_paid_for_collection = Collection.has_paid_for_collection(collections_access_list, collection_audio, user)
+          :ebook ->
+            ebook = Content.get_collection_slug!(collection_slug)
+            has_paid_for_collection = Collection.has_paid_for_collection(collections_access_list, ebook, user)
             Map.merge(acc, %{
-              collection_audio: collection_audio,
+              ebook: ebook,
               has_paid_for_collection: has_paid_for_collection
             })
 
-          :collection_email ->
-            collection_email = Content.get_collection_slug!(collection_slug)
-            has_paid_for_collection = Collection.has_paid_for_collection(collections_access_list, collection_email, user)
+          :course ->
+            course = Content.get_collection_slug!(collection_slug)
+            has_paid_for_collection = Collection.has_paid_for_collection(collections_access_list, course, user)
             Map.merge(acc, %{
-              collection_email: collection_email,
+              course: course,
               has_paid_for_collection: has_paid_for_collection
             })
 
-          :collections_audio ->
-            Map.put(acc, :collections_audio, Content.list_audio_courses())
+          :ebooks ->
+            Map.put(acc, :ebooks, Content.list_ebooks())
 
-          :collections_email ->
-            Map.put(acc, :collections_email, Content.list_email_campaigns())
+          :courses ->
+            Map.put(acc, :courses, Content.list_courses())
 
-          :collections_audio_file ->
-            collections_audio_file = Content.get_file_slug!(file_slug)
-            Map.put(acc, :collections_audio_file, collections_audio_file)
+          :ebook_file ->
+            ebook_file = Content.get_file_slug!(file_slug)
+            Map.put(acc, :ebook_file, ebook_file)
 
-          :collections_email_file ->
-            collections_email_file = Content.get_file_slug!(file_slug)
-            Map.put(acc, :collections_email_file, collections_email_file)
+          :course_file ->
+            course_file = Content.get_file_slug!(file_slug)
+            Map.put(acc, :course_file, course_file)
 
             # No idea bout this, I'm sure it's relevant/useful.
-            # collections_email_raw
+            # courses_raw
             #   |> Enum.filter(fn(collection) ->
             #     collection_added_to_access_list = Enum.find(collections_access_list, fn(access_list) -> access_list.collection_id == collection.id end)
             #     if collection_added_to_access_list, do: false, else: true
             #   end)
-            # collections_email_purchased = collections_email_raw |> Enum.filter()
-            #   collections_email_available =
-            #     collections_email_raw
+            # courses_purchased = courses_raw |> Enum.filter()
+            #   courses_available =
+            #     courses_raw
             #       |> Enum.filter(fn(collection) ->
             #         collection_added_to_access_list = Enum.find(collections_access_list, fn(access_list) -> access_list.collection_id == collection.id end)
             #         if collection_added_to_access_list, do: true, else: false
             #       end)
 
             :stripe_api_key ->
-              stripe_api_key = System.get_env("STRIPE_API_KEY")
+              stripe_api_key = Stripe.get_api_key(conn.host) 
               Map.put(acc, :stripe_api_key, stripe_api_key)
 
+            :stripe_session ->
+              stripe_session = Stripe.create_stripe_session(user, conn.host, collection_slug) 
+              Map.put(acc, :stripe_session, stripe_session)
+  
             :paypal_api_key ->
-              paypal_api_key = System.get_env("PAYPAL_API_KEY")
+              paypal_api_key = Paypal.get_api_key(conn.host)
               Map.put(acc, :paypal_api_key, paypal_api_key)
 
             :patreon_auth_url ->

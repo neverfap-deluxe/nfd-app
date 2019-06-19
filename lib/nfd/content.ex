@@ -25,11 +25,11 @@ defmodule Nfd.Content do
     Repo.all(Collection)
   end
 
-  def list_audio_courses do
+  def list_ebooks do
     Repo.all(from c in Collection, where: [type: "audio_course"], order_by: [asc: :status]) 
   end
 
-  def list_email_campaigns do
+  def list_courses do
     Repo.all(from c in Collection, where: [type: "email_campaign"], order_by: [asc: :status]) 
   end
 
