@@ -7,8 +7,8 @@ defmodule Nfd.Repo.Migrations.AlterCollectionAccess do
       add :stripe_description, :string
     end
 
-    # alter table(:collection_access) do
-    #   add :sku
-    # end
+    alter table(:files) do
+      add :bucket_name, :string
+    end
   end
 end

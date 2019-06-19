@@ -3,6 +3,8 @@ use Mix.Config
 config :nfd, Nfd.SwooshMailer,
   adapter: Swoosh.Adapters.Local
 
+config :b2_client, :backend, B2Client.Backend.Memory
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #

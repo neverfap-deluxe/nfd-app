@@ -1,4 +1,5 @@
 %{
+  "b2_client": {:hex, :b2_client, "0.0.2", "70ca76b23769d1cdcda6a6c1aab26dfb56d6c429d5a9e3de25fbb4c7616f1fcb", [:mix], [{:httpoison, "~> 0.9.0", [hex: :httpoison, repo: "hexpm", optional: false]}, {:poison, "~> 1.5 or ~> 2.0", [hex: :poison, repo: "hexpm", optional: false]}], "hexpm"},
   "certifi": {:hex, :certifi, "2.5.1", "867ce347f7c7d78563450a18a6a28a8090331e77fa02380b4a21962a65d36ee5", [:rebar3], [{:parse_trans, "~>3.3", [hex: :parse_trans, repo: "hexpm", optional: false]}], "hexpm"},
   "cf": {:hex, :cf, "0.2.1", "69d0b1349fd4d7d4dc55b7f407d29d7a840bf9a1ef5af529f1ebe0ce153fc2ab", [:rebar3], [], "hexpm"},
   "combine": {:hex, :combine, "0.10.0", "eff8224eeb56498a2af13011d142c5e7997a80c8f5b97c499f84c841032e429f", [:mix], [], "hexpm"},
@@ -9,7 +10,7 @@
   "datex": {:hex, :datex, "1.0.0", "29478d01fd394c6d785bba8d6e79cdd74fee3ae518ccb3ac5fc759a53ea715e2", [:mix], [], "hexpm"},
   "db_connection": {:hex, :db_connection, "2.1.0", "122e2f62c4906bf2e49554f1e64db5030c19229aa40935f33088e7d543aa79d0", [:mix], [{:connection, "~> 1.0.2", [hex: :connection, repo: "hexpm", optional: false]}], "hexpm"},
   "decimal": {:hex, :decimal, "1.7.0", "30d6b52c88541f9a66637359ddf85016df9eb266170d53105f02e4a67e00c5aa", [:mix], [], "hexpm"},
-  "ecto": {:hex, :ecto, "3.1.5", "07dfe89630857ea1a90fd5575c41b974696dae27071ac91bcbb7b769a15b66db", [:mix], [{:decimal, "~> 1.6", [hex: :decimal, repo: "hexpm", optional: false]}, {:jason, "~> 1.0", [hex: :jason, repo: "hexpm", optional: true]}], "hexpm"},
+  "ecto": {:hex, :ecto, "3.1.6", "e890bf66c1d4d8e2b8e010f7cba092a08139b55437bc3382371f72a6ee40757e", [:mix], [{:decimal, "~> 1.6", [hex: :decimal, repo: "hexpm", optional: false]}, {:jason, "~> 1.0", [hex: :jason, repo: "hexpm", optional: true]}], "hexpm"},
   "ecto_sql": {:hex, :ecto_sql, "3.1.5", "b5201fe99fa6bf6a93f64adb2d4976ded3d201f932b7c5bd4c44468642f4fb1f", [:mix], [{:db_connection, "~> 2.0", [hex: :db_connection, repo: "hexpm", optional: false]}, {:ecto, "~> 3.1.0", [hex: :ecto, repo: "hexpm", optional: false]}, {:mariaex, "~> 0.9.1", [hex: :mariaex, repo: "hexpm", optional: true]}, {:myxql, "~> 0.2.0", [hex: :myxql, repo: "hexpm", optional: true]}, {:postgrex, "~> 0.14.0 or ~> 0.15.0", [hex: :postgrex, repo: "hexpm", optional: true]}, {:telemetry, "~> 0.4.0", [hex: :telemetry, repo: "hexpm", optional: false]}], "hexpm"},
   "erlang_localtime": {:hex, :erlang_localtime, "1.0.0", "497dfd4d13523d3e0eecdcb8d6d59857cf642a17a6bdc6133ff906fdaf2aef21", [:rebar3], [], "hexpm"},
   "erlware_commons": {:hex, :erlware_commons, "0.20.0", "721f902031d0313e192fd4038c326f89415855cd1a5cf804ab04b314d0944146", [:rebar3], [{:cf, "0.2.1", [hex: :cf, repo: "hexpm", optional: false]}], "hexpm"},

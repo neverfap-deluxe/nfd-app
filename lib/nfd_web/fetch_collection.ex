@@ -3,108 +3,234 @@ defmodule NfdWeb.FetchCollection do
     case name do
       # PAGE CONTROLLERS
       # GENERAL
-      :general_home -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :general_about -> [:contact_form_changeset]
-      :general_contact -> [:contact_form_changeset]
-      :general_community -> []
-      :general_donations -> []
-      :general_everything -> []
-      :general_premium -> []
+      :general_home ->
+        [
+          :articles,
+          :practices,
+          :meditations,
+          :seven_day_kickstarter,
+          :seven_day_kickstarter_changeset
+        ]
+
+      :general_about ->
+        [:contact_form_changeset]
+
+      :general_contact ->
+        [:contact_form_changeset]
+
+      :general_community ->
+        []
+
+      :general_donations ->
+        []
+
+      :general_everything ->
+        []
+
+      :general_premium ->
+        []
 
       # GUIDES
-      :guides_guide -> [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :guides_summary -> []
-      :guides_neverfap_deluxe_bible -> []
-      :guides_emergency -> []
-      :guides_post_relapse_academy -> []
+      :guides_guide ->
+        [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
+
+      :guides_summary ->
+        []
+
+      :guides_neverfap_deluxe_bible ->
+        []
+
+      :guides_emergency ->
+        []
+
+      :guides_post_relapse_academy ->
+        []
 
       # LEGAL
-      :legal_disclaimer -> []
-      :legal_privacy -> []
-      :legal_terms_and_conditions -> []
+      :legal_disclaimer ->
+        []
+
+      :legal_privacy ->
+        []
+
+      :legal_terms_and_conditions ->
+        []
 
       # PROGRAMS
-      :programs_accountability -> []
-      :programs_reddit_guidelines -> []
-      :programs_coaching -> []
+      :programs_accountability ->
+        []
+
+      :programs_reddit_guidelines ->
+        []
+
+      :programs_coaching ->
+        []
 
       # VOLUNTEER
-      :volunteer_helpful_neverfap_counsel -> []
-      :volunteer_engineering_corps -> []
-      :volunteer_marketing_department -> []
+      :volunteer_helpful_neverfap_counsel ->
+        []
+
+      :volunteer_engineering_corps ->
+        []
+
+      :volunteer_marketing_department ->
+        []
 
       # APPS
-      :apps_desktop_app -> []
-      :apps_mobile_app -> []
-      :apps_chrome_extension -> []
-      :apps_open_source -> []
-      :apps_neverfap_deluxe_league -> []
+      :apps_desktop_app ->
+        []
+
+      :apps_mobile_app ->
+        []
+
+      :apps_chrome_extension ->
+        []
+
+      :apps_open_source ->
+        []
+
+      :apps_neverfap_deluxe_league ->
+        []
 
       # MISC
-      :misc_never_fap -> []
+      :misc_never_fap ->
+        []
 
       # CONTENT
-      :articles -> [:articles]
-      :article -> [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset]
+      :articles ->
+        [:articles]
 
-      :practices -> [:practices]
-      :practice -> [:articles, :practices, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset]
+      :article ->
+        [
+          :articles,
+          :seven_day_kickstarter,
+          :seven_day_kickstarter_changeset,
+          :comments,
+          :comment_form_changeset
+        ]
 
-      :courses -> [:courses]
-      :course -> [:articles, :practices, :comments, :comment_form_changeset]
+      :practices ->
+        [:practices]
 
-      :podcasts -> [:podcasts]
-      :podcast -> [:podcasts, :comments, :comment_form_changeset]
+      :practice ->
+        [
+          :articles,
+          :practices,
+          :seven_day_kickstarter,
+          :seven_day_kickstarter_changeset,
+          :comments,
+          :comment_form_changeset
+        ]
 
-      :quotes -> [:quotes]
-      :quote -> [:quotes, :comments, :comment_form_changeset]
+      :courses ->
+        [:courses]
 
-      :meditations -> [:meditations]
-      :meditation -> [:meditations, :comments, :comment_form_changeset]
+      :course ->
+        [:articles, :practices, :comments, :comment_form_changeset]
 
-      :blogs -> [:blogs]
-      :blog -> [:blogs, :comments, :comment_form_changeset]
+      :podcasts ->
+        [:podcasts]
 
-      :updates -> [:updates]
-      :update -> [:updates, :comments, :comment_form_changeset]
+      :podcast ->
+        [:podcasts, :comments, :comment_form_changeset]
+
+      :quotes ->
+        [:quotes]
+
+      :quote ->
+        [:quotes, :comments, :comment_form_changeset]
+
+      :meditations ->
+        [:meditations]
+
+      :meditation ->
+        [:meditations, :comments, :comment_form_changeset]
+
+      :blogs ->
+        [:blogs]
+
+      :blog ->
+        [:blogs, :comments, :comment_form_changeset]
+
+      :updates ->
+        [:updates]
+
+      :update ->
+        [:updates, :comments, :comment_form_changeset]
 
       # CONTENT EMAIL
-      :seven_day_kickstarter ->  [:seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :seven_day_kickstarter_single -> [:seven_day_kickstarter]
+      :seven_day_kickstarter ->
+        [:seven_day_kickstarter, :seven_day_kickstarter_changeset]
 
-      :ten_day_meditation ->  [:ten_day_meditation]
-      :ten_day_meditation_single -> [:ten_day_meditation]
+      :seven_day_kickstarter_single ->
+        [:seven_day_kickstarter]
 
-      :twenty_eight_day_awareness ->  [:twenty_eight_day_awareness, :twenty_eight_day_awareness_changeset]
-      :twenty_eight_day_awareness_single -> [:twenty_eight_day_awareness]
+      :ten_day_meditation ->
+        [:ten_day_meditation]
 
-      :seven_week_awareness_vol_1 ->  [:seven_week_awareness_vol_1, :seven_week_awareness_vol_1_changeset]
-      :seven_week_awareness_vol_1_single -> [:twenty_eight_day_awareness]
+      :ten_day_meditation_single ->
+        [:ten_day_meditation]
 
-      :seven_week_awareness_vol_2 ->  [:seven_week_awareness_vol_2, :seven_week_awareness_vol_2_changeset]
-      :seven_week_awareness_vol_2_single -> [:twenty_eight_day_awareness]
+      :twenty_eight_day_awareness ->
+        [:twenty_eight_day_awareness, :twenty_eight_day_awareness_changeset]
 
-      :seven_week_awareness_vol_3 ->  [:seven_week_awareness_vol_3, :seven_week_awareness_vol_3_changeset]
-      :seven_week_awareness_vol_3_single -> [:twenty_eight_day_awareness]
+      :twenty_eight_day_awareness_single ->
+        [:twenty_eight_day_awareness]
 
-      :seven_week_awareness_vol_4 ->  [:seven_week_awareness_vol_4, :seven_week_awareness_vol_4_changeset]
-      :seven_week_awareness_vol_4_single -> [:twenty_eight_day_awareness]
+      :seven_week_awareness_vol_1 ->
+        [:seven_week_awareness_vol_1, :seven_week_awareness_vol_1_changeset]
+
+      :seven_week_awareness_vol_1_single ->
+        [:twenty_eight_day_awareness]
+
+      :seven_week_awareness_vol_2 ->
+        [:seven_week_awareness_vol_2, :seven_week_awareness_vol_2_changeset]
+
+      :seven_week_awareness_vol_2_single ->
+        [:twenty_eight_day_awareness]
+
+      :seven_week_awareness_vol_3 ->
+        [:seven_week_awareness_vol_3, :seven_week_awareness_vol_3_changeset]
+
+      :seven_week_awareness_vol_3_single ->
+        [:twenty_eight_day_awareness]
+
+      :seven_week_awareness_vol_4 ->
+        [:seven_week_awareness_vol_4, :seven_week_awareness_vol_4_changeset]
+
+      :seven_week_awareness_vol_4_single ->
+        [:twenty_eight_day_awareness]
 
       # DASHBOARD
-      :dashboard -> [:courses, :patreon_auth_url]
-      :dashboard_coaching -> [:courses]
+      :dashboard ->
+        [:courses, :patreon_auth_url]
 
-      :courses -> [:courses]
-      :courses_collection -> [:course, :courses, :stripe_session, :stripe_api_key, :paypal_api_key]
-      :course_file -> [:course, :courses, :course_file]
+      :dashboard_coaching ->
+        [:courses]
 
-      :ebooks -> [:ebooks]
-      :ebooks_collection -> [:ebook, :ebooks, :stripe_session, :stripe_api_key, :paypal_api_key]
-      :ebook_file -> [:ebook, :ebooks, :ebook_file]
+      :courses ->
+        [:courses]
 
-      :profile -> []
-      :profile_delete_confirmation -> []
+      :course_collection ->
+        [:course, :courses, :stripe_session, :stripe_api_key, :paypal_api_key]
+
+      :course_file ->
+        [:course, :courses, :course_file]
+
+      :ebooks ->
+        [:ebooks]
+
+      :ebooks_collection ->
+        [:ebook, :ebooks, :stripe_session, :stripe_api_key, :paypal_api_key]
+
+      :ebook_file ->
+        [:ebook, :ebooks, :ebook_file]
+
+      :profile ->
+        []
+
+      :profile_delete_confirmation ->
+        []
     end
   end
-
 end

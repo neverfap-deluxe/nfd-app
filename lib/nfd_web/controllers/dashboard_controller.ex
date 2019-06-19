@@ -8,7 +8,7 @@ defmodule NfdWeb.DashboardController do
   def dashboard_coaching(conn, _params), do: FetchDashboard.fetch_dashboard(conn, :dashboard_coaching, "", "", FetchCollection.fetch_collections_array(:dashboard_coaching))
 
   def courses(conn, _params), do: FetchDashboard.fetch_dashboard(conn, :courses, "", "", FetchCollection.fetch_collections_array(:courses))
-  def courses_collection(conn, %{"collection" => collection_slug}), do: FetchDashboard.fetch_dashboard(conn, :courses_collection, collection_slug, "", FetchCollection.fetch_collections_array(:courses_collection))
+  def course_collection(conn, %{"collection" => collection_slug}), do: FetchDashboard.fetch_dashboard(conn, :course_collection, collection_slug, "", FetchCollection.fetch_collections_array(:course_collection))
   def course_file(conn, %{"collection" => collection_slug, "file" => file_slug}), do: FetchDashboard.fetch_dashboard(conn, :course_file, collection_slug, file_slug, FetchCollection.fetch_collections_array(:course_file))
 
   def ebooks(conn, _params), do: FetchDashboard.fetch_dashboard(conn, :ebooks, "", "", FetchCollection.fetch_collections_array(:ebooks))

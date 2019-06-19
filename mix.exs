@@ -56,10 +56,15 @@ defmodule Nfd.MixProject do
       {:certifi, "~> 2.4", override: true},
       {:ssl_verify_fun, "~> 1.1"},
       {:uuid, "~> 1.1"},
-      
+
       # stripe
       {:stripity_stripe, "~> 2.4.0"},
       {:pay_pal, "~> 0.0.5"},
+      {:b2_client, "~> 0.0.2"},
+
+      # The reason for this is because b2_client uses outdated versions
+      {:httpoison, "~> 1.4", override: true},
+      {:poison, "3.1.0", override: true},
 
       {:quantum, "~> 2.3"},
       {:timex, "~> 3.0"},

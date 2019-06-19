@@ -15,6 +15,7 @@ defmodule NfdWeb.FetchDashboard do
   alias Nfd.Patreon
   alias Nfd.Stripe
   alias Nfd.Paypal
+  alias Nfd.BackBlaze
 
   use Timex
 
@@ -31,16 +32,13 @@ defmodule NfdWeb.FetchDashboard do
 
     # Validate Patreon
     patreon = Patreon.fetch_patreon(conn, user)
-
     IO.inspect patreon
-    
+
     # Check which campaigns user is subscribed to
     { _count_property, subscribed_property } = Email.collection_slug_to_subscribed_property("general-newsletter")
     is_subscribed = Map.fetch!(subscriber, subscribed_property)
 
     info_message = if patreon.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."
-
-    IO.inspect user
 
     # Fetch collections
     collections = fetch_dashboard_collections(conn, collection_array, collections_access_list, collection_slug, file_slug, user)
@@ -56,8 +54,8 @@ defmodule NfdWeb.FetchDashboard do
         is_subscribed: is_subscribed,
         subscribed_property: subscribed_property,
         collections: collections,
-        is_valid_patron: patreon.is_valid_patron, 
-        tier: patreon.tier, 
+        is_valid_patron: patreon.is_valid_patron,
+        tier: patreon.tier,
         token_expired: patreon.token_expired
       )
   end
@@ -97,6 +95,8 @@ defmodule NfdWeb.FetchDashboard do
 
           :course_file ->
             course_file = Content.get_file_slug!(file_slug)
+            # TODO From course file, I need to get these details.
+            backblaze_contents = BackBlaze.get_file_contents()
             Map.put(acc, :course_file, course_file)
 
             # No idea bout this, I'm sure it's relevant/useful.
@@ -114,13 +114,13 @@ defmodule NfdWeb.FetchDashboard do
             #       end)
 
             :stripe_api_key ->
-              stripe_api_key = Stripe.get_api_key(conn.host) 
+              stripe_api_key = Stripe.get_api_key(conn.host)
               Map.put(acc, :stripe_api_key, stripe_api_key)
 
             :stripe_session ->
-              stripe_session = Stripe.create_stripe_session(user, conn.host, collection_slug) 
+              stripe_session = Stripe.create_stripe_session(user, conn.host, collection_slug)
               Map.put(acc, :stripe_session, stripe_session)
-  
+
             :paypal_api_key ->
               paypal_api_key = Paypal.get_api_key(conn.host)
               Map.put(acc, :paypal_api_key, paypal_api_key)
