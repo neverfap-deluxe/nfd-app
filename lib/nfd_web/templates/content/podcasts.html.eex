@@ -1,10 +1,10 @@
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <h1 class="single__title">NeverFap Deluxe Podcast <img src="/images/logo.png" class="logo__square" alt=""/></h2>
 
   <div class="single__content">
     <%= raw @item["content"] %>
   </div>
-  
+
   <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="100%" height="300"></iframe>
 </div>
 
@@ -12,10 +12,10 @@
   <%= partial "links/patreon.html", assigns %>
 </div>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <h1 style="margin-bottom: 3rem;">Episode List</h1>
   <div class="podcast__item__container">
-    <%= Enum.map(@collections.podcasts, fn(podcast) -> %>
+    <%= Enum.map(@content_collections.podcasts, fn(podcast) -> %>
       <div class="podcast__item">
         <a href='/podcast/<%= podcast["slug"] %>'><h1 style="margin-bottom: 0;"><%= podcast["title"] %></h1></a>
         <h3 style="margin-bottom: 1rem;"><%= raw podcast["content"] %></h3>

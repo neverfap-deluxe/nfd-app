@@ -1,8 +1,8 @@
 
 <div class="single__wrapper courses">
-  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>    
-  
-  <div class="homepage__process single__homepage__process">    
+  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>
+
+  <div class="homepage__process single__homepage__process">
     <div class="homepage__process__text homepage__process__text--practice">
       <b>Overview</b>
       <%= @item["overview"] %>
@@ -14,7 +14,7 @@
       <%= if @item["Learn3"] do %><p><%= raw @item["Learn3"] %></p><% end %>
     </div>
   </div>
-  <span><span class="homepage__process__link homepage__process__link--courses--single">Course <%= @item["Number"] %> of six.</span></span>  
+  <span><span class="homepage__process__link homepage__process__link--courses--single">Course <%= @item["Number"] %> of six.</span></span>
 
   <div class="single__content">
     <%= raw @item["content"] %>
@@ -44,12 +44,12 @@
 <div class="single__wrapper">
   <h2>Course Articles</h2>
   <p>These articles have been written to help you better understand what the <%= @item["title"] %> means, as well as how it will help you overcome your porn addiction.</p>
-  <%= partial "courses/articles_by_category.html", %{ category_type: @item["category"], items: @collections.articles } %>
+  <%= partial "courses/articles_by_category.html", %{ category_type: @item["category"], items:@content_collections.articles } %>
 
   <h2>Course Practices</h2>
   <p>These practices entail the exercises you will perform in order to improve skills related to <%= @item["title"] %>. They should be performed in a specific order.</p>
 
-  <%= partial "courses/practices_by_category.html", %{ category_type: @item["category"], items: @collections.practices } %>
+  <%= partial "courses/practices_by_category.html", %{ category_type: @item["category"], items:@content_collections.practices } %>
 </div>
 
 <%= partial "links/loginregister.html", assigns %>

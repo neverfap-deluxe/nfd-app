@@ -1,4 +1,4 @@
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <h1 class="single__title">Guided Meditations <img src="/images/logo.png" class="logo__square" alt="" style="margin-right: 1rem;"/> <a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#need a link to all the website content, instead?</p></a></h2>
 
   <div class="single__content">
@@ -8,10 +8,10 @@
 
 <%= partial "links/patreon.html", assigns %>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <h1 style="margin-bottom: 3rem;">Guided Meditation List</h1>
   <div class="podcast__item__container">
-    <%= Enum.map(@collections.meditations, fn(meditation) -> %>
+    <%= Enum.map(@content_collections.meditations, fn(meditation) -> %>
       <div class="podcast__item">
         <a href='<%= Routes.content_path(@conn, :meditation, meditation["slug"]) %>'><h1 style="margin-bottom: 0;"><%= meditation["title"] %></h1></a>
         <h3 style="margin-bottom: 1rem;"><%= raw meditation["content"] %></h3>

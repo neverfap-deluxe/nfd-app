@@ -5,7 +5,7 @@
     <div class="homepage__hero__sub">
       <h1 class="homepage__hero__title" style="display: inline-block;">NeverFap <span class="deluxe__font">Deluxe</span></h1>
       <h2 class="homepage__hero__title__secondary">The Porn Addiction Recovery Process.</h2>
-      
+
       <!-- <div class="homepage__toggle">
         <div id="new-neverfapper" class="homepage__toggle__button">New NeverFapper?</div>
         <div id="veteran-neverfapper" class="homepage__toggle__button">Veteran View</div>
@@ -33,12 +33,12 @@
             <div class="account__info__button__text">
               Everything
             </div>
-          </a> 
+          </a>
         </div>
       </div>
       <div style="margin-bottom: 1rem; margin-top: 1rem; height: 6px; background: #00ffee;"></div>
       <div style="margin-bottom: 6rem; margin-top: 1rem; height: 8px; background: #00ffee;"></div>
-  
+
       <%= partial "home/who.html", assigns %>
 
       <div class="homepage__hero homepage__hero--secondary">
@@ -419,10 +419,10 @@
           <h3 class="button__click button__off" id="latest">Latest</h3>
         </div>
         <div class="post__on" id="popular__posts">
-          <%= partial "home/introduction_posts.html", %{ items: @collections.articles } %>
+          <%= partial "home/introduction_posts.html", %{ items:@content_collections.articles } %>
         </div>
         <div class="post__off" id="latest__posts">
-          <%= partial "content/latest_posts.html", %{ items: @collections.articles, type: :article } %>
+          <%= partial "content/latest_posts.html", %{ items:@content_collections.articles, type: :article } %>
         </div>
       </div>
 

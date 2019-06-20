@@ -11,6 +11,8 @@ defmodule NfdWeb.FetchCollection do
   alias Nfd.Account.Subscriber
   alias Nfd.Account.ContactForm
 
+  alias FetchCollectionUtil
+
   def user_collections(conn, collection_array) do
     Enum.reduce(
       collection_array,
@@ -24,7 +26,6 @@ defmodule NfdWeb.FetchCollection do
 
           :patreon_access ->
             patreon_access = Patreon.fetch_patreon(conn, user)
-            IO.inspect(patreon_access)
             Map.put(acc, :patreon_access, patreon_access)
 
           :collections_access_list ->
@@ -45,15 +46,15 @@ defmodule NfdWeb.FetchCollection do
         case symbol do
           # CONTENT
           symbol when symbol in [:articles, :practices, :quotes, :updates, :blogs, :podcasts, :meditations, :courses] ->
-            merge_collection(client, symbol, acc, item)
+            acc |> FetchCollectionUtil.merge_collection(client, symbol, item)
 
           # CONTENT EMAIL
           symbol when symbol in [:seven_day_kickstarter, :ten_day_meditation, :twenty_eight_day_awareness, :seven_week_awareness_vol_1, :seven_week_awareness_vol_2, :seven_week_awareness_vol_3, :seven_week_awareness_vol_4] ->
-            acc |> fetch_content_email(client, symbol)
+            acc |> FetchCollectionUtil.fetch_content_email(client, symbol)
 
           # CONTENT EMAIL CHANGESET
           symbol when symbol in [:seven_day_kickstarter_changeset, :ten_day_meditation_changeset, :twenty_eight_day_awareness_changeset, :seven_week_awareness_vol_1_changeset, :seven_week_awareness_vol_2_changeset, :seven_week_awareness_vol_3_changeset, :seven_week_awareness_vol_4_changeset] ->
-            acc |> fetch_subscriber_changeset(symbol)
+            acc |> FetchCollectionUtil.fetch_subscriber_changeset(symbol)
 
           _ ->
             acc

@@ -1,4 +1,4 @@
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <h1 class="single__title">Practices <img src="/images/logo.png" class="logo__square" alt=""/><a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#need a link to all the website content, instead?</p></a></h2>
 
   <div class="single__content">
@@ -15,17 +15,17 @@
     <h3 class="button__click button__off popular__latest__options--guide" id="practices_latest_click">Latest</h3>
     <h3 class="button__click button__off popular__latest__options--guide" id="practices_category_click">Category</h3>
   </div>
-  
+
   <div class="posts__off posts--guide" id="practices_latest_posts">
-    <%= partial "list/articles_latest.html", %{ conn: @conn, page_symbol: :practice, items: @collections.practices, tag_type: "practice" } %>
+    <%= partial "list/articles_latest.html", %{ conn: @conn, page_symbol: :practice, items:@content_collections.practices, tag_type: "practice" } %>
   </div>
 
   <div class="posts__on posts--guide" id="practices_latest_plain_posts">
-    <%= partial "list/articles_latest_plain_text.html", %{ conn: @conn, page_symbol: :practice, items: @collections.practices, tag_type: "practice" } %>
+    <%= partial "list/articles_latest_plain_text.html", %{ conn: @conn, page_symbol: :practice, items:@content_collections.practices, tag_type: "practice" } %>
   </div>
 
   <div class="posts__off posts--guide" id="practices_category_posts">
-    <%= partial "list/articles_category.html", %{ conn: @conn, page_symbol: :practice, items: @collections.practices, tag_type: "practice" } %>
+    <%= partial "list/articles_category.html", %{ conn: @conn, page_symbol: :practice, items:@content_collections.practices, tag_type: "practice" } %>
   </div>
 </div>
 

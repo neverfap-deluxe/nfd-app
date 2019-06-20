@@ -25,7 +25,7 @@ defmodule NfdWeb.Fetch do
         content_collections = FetchCollection.content_collections(response.body["data"], collection_array, client)
         changeset_collections = FetchCollection.changeset_collections(response.body["data"], user, collection_array)
 
-        fetch_response_ok(conn, user, page_view, response, collections, page_symbol, page_layout, "content")
+        fetch_response_ok(conn, user, page_view, response, user_collections, content_collections, changeset_collections, page_symbol, page_layout, "content")
       {:error, error} ->
         render_404_page(conn, error)
     end
@@ -39,37 +39,27 @@ defmodule NfdWeb.Fetch do
         content_collections = FetchCollection.content_collections(response.body["data"], collection_array, client)
         changeset_collections = FetchCollection.changeset_collections(response.body["data"], user, collection_array)
 
-        fetch_response_ok(conn, user, page_view, response, collections, page_symbol, page_layout, "page")
+        fetch_response_ok(conn, user, page_view, response, user_collections, content_collections, changeset_collections, page_symbol, page_layout, "page")
       {:error, error} -> render_404_page(conn, error)
     end
   end
 
   def fetch_dashboard(conn, page_symbol, collection_slug, file_slug, collection_array) do
-
     user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
-    
+    api_key_collections = FetchCollection.api_key_collections(conn, [stripe_api_key, :stripe_session, :paypal_api_key, :patreon_auth_url])
+
     conn
-    |> put_flash(:info, (patreon.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."))
-    |> put_view(NfdWeb.DashboardView)
-    |> render(
-      "#{Atom.to_string(page_symbol)}.html",
-      layout: {NfdWeb.LayoutView, "hub.html"},
-      user: user,
-      subscriber: subscriber,
-      collections_access_list: collections_access_list,
-      is_subscribed: is_subscribed,
-      subscribed_property: subscribed_property,
-      collections: collections,
-      is_valid_patron: patreon.is_valid_patron,
-      tier: patreon.tier,
-      token_expired: patreon.token_expired
-    )
+      |> put_flash(:info, (patreon.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."))
+      |> put_view(NfdWeb.DashboardView)
+      |> render("#{Atom.to_string(page_symbol)}.html", layout: {NfdWeb.LayoutView, "hub.html"}, user_collections: user_collections)
   end
 
-  def fetch_response_ok(conn, user, page_view, response, collections, page_symbol, page_layout, page_type) do
+  def fetch_response_ok(conn, user, page_view, response, user_collections, content_collections, changeset_collections, page_symbol, page_layout, page_type) do
     check_api_response_for_404(conn, response.status)
     Meta.increment_visit_count(response.body["data"])
-    conn |> put_view(page_view) |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: response.body["data"], collections: collections, page_type: page_type, user: user)
+    conn
+      |> put_view(page_view)
+      |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: response.body["data"], user_collections: user_collections, content_collections: content_collections, changeset_collections: changeset_collections, page_type: page_type, user: user)
   end
 
   def render_404_page(conn, error) do

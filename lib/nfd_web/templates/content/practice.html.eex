@@ -17,7 +17,7 @@
   <span><span class="homepage__process__link"><%= @item["date"] %></span></span>
 
   <div class="homepage__page">
-    Sign up to the 
+    Sign up to the
   </div>
 
 </div>
@@ -28,7 +28,7 @@
   <div class="single__content">
     <%= raw @item["content"] %>
 
-    <%= partial "content/similar_practices.html", %{ practices: @collections.practices, category: @item["categories"] } %>
+    <%= partial "content/similar_practices.html", %{ practices:@content_collections.practices, category: @item["categories"] } %>
   </div>
 
 
@@ -42,7 +42,7 @@
 <div class="single__wrapper">
   <div class="single__content">
     <h2 style="margin-bottom: 1.9rem;">Latest Posts</h2>
-    <%= partial "content/latest_posts.html", %{ items: @collections.articles, type: :article } %>
+    <%= partial "content/latest_posts.html", %{ items:@content_collections.articles, type: :article } %>
 
     <div class="button__wrapper">
       <a
