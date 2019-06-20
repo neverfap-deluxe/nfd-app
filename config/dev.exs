@@ -3,7 +3,41 @@ use Mix.Config
 config :nfd, Nfd.SwooshMailer,
   adapter: Swoosh.Adapters.Local
 
-config :b2_client, :backend, B2Client.Backend.Memory
+# config :b2_client, :backend, B2Client.Backend.Memory
+
+config :stripity_stripe, 
+  api_key: System.get_env("STRIPE_API_TEST_KEY_SECRET"),
+  json_library: Jason
+
+config :pay_pal,
+  client_id: System.get_env("PAYPAL_API_TEST_KEY"),
+  client_secret: System.get_env("PAYPAL_API_TEST_SECRET"),
+  environment: :sandbox
+
+config :recaptcha,
+  public_key: System.get_env("GOOGLE_RECAPTCHA_CLIENT"),
+  secret: System.get_env("GOOGLE_RECAPTCHA_SECRET")
+
+config :nfd, :pow_assent,
+  providers:
+       [
+        # facebook: [
+        #   client_id: "REPLACE_WITH_CLIENT_ID",
+        #   client_secret: "REPLACE_WITH_CLIENT_SECRET",
+        #   strategy: PowAssent.Strategy.Facebook
+        # ],
+        google: [
+          client_id: System.get_env("GOOGLE_CLIENT_ID"),
+          client_secret: System.get_env("GOOGLE_CLIENT_SECRET"),
+          strategy: PowAssent.Strategy.Google
+        ],
+        discord: [
+          client_id: System.get_env("DISCORD_API_KEY"),
+          client_secret: System.get_env("DISCORD_API_KEY_SECRET"),
+          strategy: PowAssent.Strategy.Discord
+        ]
+      ]
+
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
