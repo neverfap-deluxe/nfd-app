@@ -17,7 +17,7 @@
             <%= partial "auth/google_button.html", %{ class: "comment__create__message__promotion__buttons--button" } %>
           </div>
         </div>
-      <%= end %>
+      <% end %>
           
       <%= error_tag f, :name %>
       <%= text_input f, :name, [placeholder: "Name*", required: true, class: "form__input"] %>

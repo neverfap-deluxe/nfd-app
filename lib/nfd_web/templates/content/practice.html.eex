@@ -42,7 +42,7 @@
 <div class="single__wrapper">
   <div class="single__content">
     <h2 style="margin-bottom: 1.9rem;">Latest Posts</h2>
-    <%= partial "content/latest_posts.html", %{ items: @collections.articles } %>
+    <%= partial "content/latest_posts.html", %{ items: @collections.articles, type: :article } %>
 
     <div class="button__wrapper">
       <a
