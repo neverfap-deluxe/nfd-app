@@ -93,15 +93,10 @@ defmodule NfdWeb.FetchDashboard do
             Map.merge(acc, %{ symbol => collection, tier_access_collection: tier_access_collection, has_paid_for_collection: has_paid_for_collection })
 
           # SINGLE COLLECTION FILES
-          :ebook_file ->
-            ebook_file = Content.get_file_slug!(file_slug)
-            Map.put(acc, :ebook_file, ebook_file)
-
-          :course_file ->
-            course_file = Content.get_file_slug!(file_slug)
-            # TODO From course file, I need to get these details.
+          symbol when symbol in [:ebook_file, :course_file] ->
+            file = Content.get_file_slug!(file_slug)
             # backblaze_contents = BackBlaze.get_file_contents()
-            Map.put(acc, :course_file, course_file)
+            Map.put(acc, symbol, file)
 
           # No idea bout this, I'm sure it's relevant/useful.
           # courses_raw
@@ -130,9 +125,7 @@ defmodule NfdWeb.FetchDashboard do
             Map.put(acc, :paypal_api_key, paypal_api_key)
 
           :patreon_auth_url ->
-            Map.merge(acc, %{
-              patreon_auth_url: Patreon.generate_relevant_patreon_auth_url(conn.host)
-            })
+            Map.merge(acc, %{ patreon_auth_url: Patreon.generate_relevant_patreon_auth_url(conn.host) })
 
           _ ->
             acc

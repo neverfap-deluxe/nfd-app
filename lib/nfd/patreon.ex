@@ -199,14 +199,14 @@ defmodule Nfd.Patreon do
   def tier_access_rights(patreon) do
     if (not patreon.token_expired and patreon.is_valid_patron) do
       case tier.amount_cents do
-        100 -> create_tier_access_rights([])
-        500 -> create_tier_access_rights([])
-        1000 -> create_tier_access_rights([:nfd_bible])
-        1500 -> create_tier_access_rights([:ebooks])
-        2500 -> create_tier_access_rights([:ebooks, :courses, :coaching])
-        5000 -> create_tier_access_rights([:ebooks, :courses, :coaching])
-        10000 -> create_tier_access_rights([:ebooks, :courses, :coaching])
-        15000 -> create_tier_access_rights([:ebooks, :courses, :coaching])
+        100 -> create_tier_access_rights([], patreon.tier)
+        500 -> create_tier_access_rights([], patreon.tier)
+        1000 -> create_tier_access_rights([:nfd_bible_access], patreon.tier)
+        1500 -> create_tier_access_rights([:ebooks_access], patreon.tier)
+        2500 -> create_tier_access_rights([:ebooks_access, :courses_access, :coaching_access], patreon.tier)
+        5000 -> create_tier_access_rights([:ebooks_access, :courses_access, :coaching_access], patreon.tier)
+        10000 -> create_tier_access_rights([:ebooks_access, :courses_access, :coaching_access], patreon.tier)
+        15000 -> create_tier_access_rights([:ebooks_access, :courses_access, :coaching_access], patreon.tier)
         _ -> []
       end
     else
@@ -214,8 +214,8 @@ defmodule Nfd.Patreon do
     end
   end
 
-  def create_tier_access_rights(access_list) do
-    Enum.reduce(access_list, %{}, fn access_item, acc ->
+  def create_tier_access_rights(access_list, patreon_tier) do
+    Enum.reduce(access_list, patreon_tier, fn access_item, acc ->
       Map.put(acc, access_item, true)
     end)
   end
