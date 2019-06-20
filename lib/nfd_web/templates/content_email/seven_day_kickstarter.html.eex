@@ -28,7 +28,7 @@
 
     <div class="seven__day__kickstarter__banner__form">
       <p>Discover the basics of the NeverFap Deluxe Method with our 7 Day Kickstarter Guide!</p>
-      <%= form_for @collections.seven_day_kickstarter_changeset, Routes.subscription_path(@conn, :add_subscription_validate_matrix), [target: "_blank"], fn f -> %>
+      <%= form_for @changeset_collections.seven_day_kickstarter_changeset, Routes.subscription_path(@conn, :add_subscription_validate_matrix), [target: "_blank"], fn f -> %>
         <%= text_input f, :subscriber_email, [placeholder: "email", class: "banner__input"] %>
         <%= submit "Submit", [class: "banner__submit"]  %>
         <!-- First matrix is general, second matrix is seven day. -->

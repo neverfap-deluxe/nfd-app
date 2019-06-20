@@ -1,4 +1,4 @@
-defmodule Nfd.API.Content do
+defmodule Nfd.API.ContentAPI do
   use Tesla
 
   def article(client, article_name), do: get(client, "/content_articles/" <> article_name <> "/index.json")

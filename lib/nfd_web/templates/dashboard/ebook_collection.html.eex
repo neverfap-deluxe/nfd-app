@@ -11,10 +11,8 @@
   </div>
 
   <div class="dashboard__main__area">
-    <p><%= @collection.display_name %></p>
-
-
-    <div class="dashboard__main__audio">
+    <p><%= @dashboard_collections.ebook.display_name %></p>
+    <div class="dashboard__main__ebook">
 
     </div>
   </div>

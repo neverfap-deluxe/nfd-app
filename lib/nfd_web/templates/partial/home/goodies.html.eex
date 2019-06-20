@@ -101,7 +101,7 @@
   <a class="homepage__goodies__item__link__wrapper" href="<%= Application.get_env(:nfd, :social_github_url) %>">
     <div class="homepage__goodies__item">
       <h4 class="homepage__goodies__item__title">GitHub <span class="homepage__goodies__item__neverfap">NeverFap Deluxe</span> Open Source</h4>
-      <img class="homepage__goodies__item__image" src="/images/gitdashboard__logo.png"/>
+      <img class="homepage__goodies__item__image" src="/images/github__logo.png"/>
       <span class="h3__tiny__goodies">/open-source</span>
     </div>
   </a>

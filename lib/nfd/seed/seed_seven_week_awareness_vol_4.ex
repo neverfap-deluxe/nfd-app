@@ -4,6 +4,7 @@ defmodule Nfd.SeedSWAVOL4 do
 
   alias Nfd.Content
   alias Nfd.Content.File
+  alias Nfd.Content.Collection
 
   def seed do
     case Content.get_collection_seed_id("b9bb282c-5238-4377-90e1-825de279376c") do
@@ -26,7 +27,7 @@ defmodule Nfd.SeedSWAVOL4 do
     end
   end
 
-  def seven_week_awareness_vol_4_files() do
+  def seven_week_awareness_vol_4_files(collection_id) do
     Repo.insert(%File{
       seed_id: "5592b769-cb4f-4e45-8c13-c463df3ccec3",
       type: "audio",
@@ -35,7 +36,8 @@ defmodule Nfd.SeedSWAVOL4 do
       bucket_name: "swavol3",
       file_url: "", # TODO
       premium: true,
-      slug: "annoy-yourself"
+      slug: "annoy-yourself",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "2a9559cf-2198-4caf-b88c-5cf2df697bb8",
@@ -45,7 +47,8 @@ defmodule Nfd.SeedSWAVOL4 do
       bucket_name: "swavol3",
       file_url: "", # TODO
       premium: true,
-      slug: "just-do-dont-think"
+      slug: "just-do-dont-think",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "30f9071f-afd2-47a8-9338-b263335539dd",
@@ -55,7 +58,8 @@ defmodule Nfd.SeedSWAVOL4 do
       bucket_name: "swavol3",
       file_url: "", # TODO
       premium: true,
-      slug: "fighting-spirit"
+      slug: "fighting-spirit",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "8b0c47dd-be8d-424f-b946-4aba5203fa16",
@@ -65,7 +69,8 @@ defmodule Nfd.SeedSWAVOL4 do
       bucket_name: "swavol3",
       file_url: "", # TODO
       premium: true,
-      slug: "every-30-minutes"
+      slug: "every-30-minutes",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "5fad0f7c-bb1b-4787-b5bd-3343c11e99cb",
@@ -75,7 +80,8 @@ defmodule Nfd.SeedSWAVOL4 do
       bucket_name: "swavol3",
       file_url: "", # TODO
       premium: true,
-      slug: "control-the-intonation-of-your-breath"
+      slug: "control-the-intonation-of-your-breath",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "efca617b-18f8-44db-989d-fb94a3d6180a",
@@ -85,7 +91,8 @@ defmodule Nfd.SeedSWAVOL4 do
       bucket_name: "swavol3",
       file_url: "", # TODO
       premium: true,
-      slug: "catching-the-odd-judge-out"
+      slug: "catching-the-odd-judge-out",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "9ba1372a-0f75-4374-ac95-81a5527093dc",
@@ -95,7 +102,8 @@ defmodule Nfd.SeedSWAVOL4 do
       bucket_name: "swavol3",
       file_url: "", # TODO
       premium: true,
-      slug: "focus-your-attention"
+      slug: "focus-your-attention",
+      collection_id: collection_id
     })
   end
 end

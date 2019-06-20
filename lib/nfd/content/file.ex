@@ -9,6 +9,7 @@ defmodule Nfd.Content.File do
     field :seed_id, :string
     field :type, :string
     field :description, :string
+    field :bucket_name, :string
     field :display_name, :string
     field :file_url, :string
     field :premium, :boolean, default: true

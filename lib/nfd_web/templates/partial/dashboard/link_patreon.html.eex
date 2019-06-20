@@ -1,17 +1,19 @@
-<%= if @user.patreon_linked and @token_expired == false do %>
-  <%= if @tier do %>
+<!-- TODO: Will need to work on this logic, I don't believe it is sound. -->
+
+<%= if @user_collections.user.patreon_linked and @user_collections.patreon_access.token_expired == false do %>
+  <%= if @user_collections.patreon_access.tier do %>
     <h2>Patreon Account Linked!</h2>
-    <p><%= @tier["attributes"]["title"] %></p>
-    <%= raw @tier["attributes"]["description"] %>
+    <p><%= @user_collections.patreon_access.tier["attributes"]["title"] %></p>
+    <%= raw @user_collections.patreon_access.tier["attributes"]["description"] %>
     <a class="button subscribe__button" href="<%= Routes.page_path(@conn, :general_premium)%>">Learn more about your benefits</a>
   <% else %>
     <h2>Patreon Account Linked!</h2>
-    <p>Your account is linked, however you have not signed up for any tiers!</p>
+    <p>Your account is linked, however you haven't signed up for any tiers!</p>
     <p>That's okay, you're still awesome :D</p>
     <a class="button subscribe__button" href="<%= Routes.page_path(@conn, :general_premium)%>">Learn more about Patreon tiers</a>
   <% end %>
 <% else %>
-  <%= if @token_expired != false do %>
+  <%= if @user_collections.patreon_access.token_expired != false do %>
     <p class="alert alert-info" role="alert">
       <%= get_flash(@conn, :info) %>
     </p>
@@ -21,7 +23,7 @@
   <p>Otherwise, learn about the benefits you receive by become a Patron!</p>
 
   <div style="display: flex;">
-    <a class="button subscribe__button" style="margin-right: 1.2rem;" href="<%= @collections.patreon_auth_url %>">Link Patreon</a>
+    <a class="button subscribe__button" style="margin-right: 1.2rem;" href="<%= @api_key_collections.patreon_auth_url %>">Link Patreon</a>
     <a class="button subscribe__button" href="<%= Routes.page_path(@conn, :general_premium) %>">Learn More</a>
   </div>
 <% end %>

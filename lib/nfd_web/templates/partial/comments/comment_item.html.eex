@@ -52,7 +52,7 @@
     </div>
 
     <div class="comment__reply__container__open" id='comment<%= commentID %>Container'>
-      <%= partial "comments/comment_form.html", %{conn: @conn, user: @user, item: @item, collections: @collections, depth: @comment.depth + 1, parent_message_id: @comment.id } %>
+      <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections, depth: @comment.depth + 1, parent_message_id: @comment.id } %>
     </div>
   </div>
 </div>
@@ -64,8 +64,8 @@
   var comment<%= commentID %>Container = document.querySelector("#comment<%= commentID %>Container");
   var comment<%= commentID %>Open = false;
 
-  <%# var comment<%= commentID %>UpVoteButton = document.querySelector("#comment<%= commentID %>UpVoteButton"); %>
-  <%# var comment<%= commentID %>AlreadyUpvoted = false; %>
+  // <%# var comment<%= commentID %>UpVoteButton = document.querySelector("#comment<%= commentID %>UpVoteButton"); %>
+  // <%# var comment<%= commentID %>AlreadyUpvoted = false; %>
 
   // var comment open
   comment<%= commentID %>Button.onclick = function(event) {
@@ -86,15 +86,15 @@
     comment<%= commentID %>Open = false;
   }
 
-  <%# comment<%= commentID %>UpVoteButton.onclick = function(event) {
-    if (comment<%= commentID %>AlreadyUpvoted !== true) {
-      fetch('<%= @conn.host %>/upvote_comment?comment_id=@comment_id')
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function(myJson) {
-          console.log(JSON.stringify(myJson));
-        });
-    } %>
+  // <%# comment<%= commentID %>UpVoteButton.onclick = function(event) {
+  //   if (comment<%= commentID %>AlreadyUpvoted !== true) {
+  //     fetch('<%= @conn.host %>/upvote_comment?comment_id=@comment_id')
+  //       .then(function(response) {
+  //         return response.json();
+  //       })
+  //       .then(function(myJson) {
+  //         console.log(JSON.stringify(myJson));
+  //       });
+  //   } %>
 
 </script>

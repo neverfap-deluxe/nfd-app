@@ -1,4 +1,4 @@
-<script src="https://www.paypal.com/sdk/js?client-id=<%= @collections.paypal_api_key %>"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=<%= @api_key_collections.paypal_api_key %>"></script>
 
 <div id='paypal_button' style="width: 300px;"></div>
 
@@ -9,7 +9,7 @@
       return actions.order.create({
         purchase_units: [{
           amount: {
-            value: <%= @collection.price %> // TODO: Send this in dynamically, also send in string.
+            value: <%= @dashboard_collections.course.price %> // TODO: Send this in dynamically, also send in string.
           }
         }]
       });
@@ -27,7 +27,7 @@
           },
           body: JSON.stringify({
             orderID: data.orderID,
-            collection_id: <%= @collection.id %>
+            collection_id: <%= @dashboard_collections.course.id %>
           })
         });
       });

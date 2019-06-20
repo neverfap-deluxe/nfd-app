@@ -3,32 +3,58 @@ defmodule NfdWeb.FetchCollection do
   alias Nfd.Meta
   alias Nfd.Meta.Comment
 
-  alias Nfd.API
-  alias Nfd.API.Page
-  alias Nfd.API.Content
-
   alias Nfd.Account
   alias Nfd.Account.Subscriber
   alias Nfd.Account.ContactForm
+  alias Nfd.Account.CollectionAccess
 
-  alias FetchCollectionUtil
+  alias Nfd.Patreon
+  alias Nfd.Stripe
+  alias Nfd.Paypal
+
+  alias NfdWeb.FetchCollectionUtil
+
+  alias Nfd.Util.Email
 
   def user_collections(conn, collection_array) do
     Enum.reduce(
       collection_array,
       %{},
       fn symbol, acc ->
-        user = Pow.Plug.current_user(conn)
+        user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
+        patreon_access = Patreon.fetch_patreon(conn, user)
         CollectionAccess.create_collection_access_for_free_courses(user)
         case symbol do
-          :user -> acc |> Map.merge(%{ user: user |> Account.get_user_pow!() })
+          :user -> acc |> Map.merge(%{ user: user })
           :subscriber -> acc |> Map.merge(%{ subscriber: user |> Subscriber.check_subscriber_exists() })
-          :patreon_access -> acc |> Map.merge(%{ patreon_access: Patreon.fetch_patreon(conn, user) })
-          :collections_access_list -> acc |> Map.merge(%{ collections_access_list: Account.list_collection_access_by_user_id(user.id) })
+          :patreon_access -> acc |> Map.merge(%{ patreon_access: patreon_access })
+          :collections_access_list -> acc |> Map.merge(%{ collections_access_list: Account.list_collection_access_by_user_id(Map.get(user, :id)) })
           _ -> acc
         end
       end)
   end
+
+  def item_collections(conn, item, page_symbol, verified_slug, user_collections, client) do
+    case page_symbol do
+      :article -> %{}
+      :practice -> FetchCollectionUtil.item_collection_practice(item, page_symbol, verified_slug, user_collections, client)
+      :course -> %{}
+      :podcast -> %{}
+      :quote -> %{}
+      :meditation -> %{}
+      :blog -> %{}
+      :update -> %{}
+
+      :seven_day_kickstarter_single -> %{}
+      :ten_day_meditation_single -> %{}
+      :twenty_eight_day_awareness_single -> %{}
+      :seven_week_awareness_vol_1_single -> %{}
+      :seven_week_awareness_vol_2_single -> %{}
+      :seven_week_awareness_vol_3_single -> %{}
+      :seven_week_awareness_vol_4_single -> %{}
+    end
+  end
+
 
   def content_collections(item, collection_array, client) do
     Enum.reduce(
@@ -42,9 +68,8 @@ defmodule NfdWeb.FetchCollection do
           symbol when symbol in [:seven_day_kickstarter, :ten_day_meditation, :twenty_eight_day_awareness, :seven_week_awareness_vol_1, :seven_week_awareness_vol_2, :seven_week_awareness_vol_3, :seven_week_awareness_vol_4] ->
             acc |> FetchCollectionUtil.fetch_content_email(client, symbol)
 
-          symbol when symbol in [:seven_day_kickstarter_changeset, :ten_day_meditation_changeset, :twenty_eight_day_awareness_changeset, :seven_week_awareness_vol_1_changeset, :seven_week_awareness_vol_2_changeset, :seven_week_awareness_vol_3_changeset, :seven_week_awareness_vol_4_changeset] ->
-            acc |> FetchCollectionUtil.fetch_subscriber_changeset(symbol)
-
+          :comments -> acc |> FetchCollectionUtil.fetch_page_comments(item["page_id"])
+  
           _ ->
             acc
         end
@@ -57,48 +82,36 @@ defmodule NfdWeb.FetchCollection do
       %{},
       fn symbol, acc ->
         case symbol do
-          :comments ->
-            comments = Meta.list_collection_access_by_page_id(item["page_id"])
-              |> Comment.organise_date()
-              |> Comment.organise_comments()
 
-            Map.put(acc, :comments, comments)
+          :contact_form_changeset -> acc |> ContactForm.get_contact_form_changeset()
+          :comment_form_changeset -> acc |> Comment.get_comment_form_changeset(user, item)
 
-          # MESSAGE CHANGESETS
-          :contact_form_changeset -> ContactForm.get_contact_form_changeset(acc)
-
-          :comment_form_changeset -> Comment.get_comment_form_changeset(acc, user)
-            name = if Map.has_key?(user, :first_name), do: "#{user.first_name} #{user.last_name}", else: ""
-            comment_form_changeset = Comment.changeset(%Comment{}, %{name: name, email: user[:email] or "", message: "", parent_message_id: "", user_id: user[:id] or "", depth: 0, page_id: item["page_id"]})
-            Map.put(acc, :comment_form_changeset, comment_form_changeset)
-
+          symbol when symbol in [:seven_day_kickstarter_changeset, :ten_day_meditation_changeset, :twenty_eight_day_awareness_changeset, :seven_week_awareness_vol_1_changeset, :seven_week_awareness_vol_2_changeset, :seven_week_awareness_vol_3_changeset, :seven_week_awareness_vol_4_changeset] ->
+            acc |> FetchCollectionUtil.fetch_subscriber_changeset(symbol)
+  
           _ ->
             acc
         end
       end)
   end
 
-  def dashboard_collections(conn, collection_array, collections_access_list, collection_slug, file_slug, user, patreon) do
+  def dashboard_collections(conn, collection_array, user_collections, collection_slug, file_slug) do
     Enum.reduce(
       collection_array,
       %{},
       fn symbol, acc ->
         case symbol do
-          # COLLECTION
-          :ebooks -> acc |> Map.merge(%{ ebooks: Content.list_ebooks_with_files() })
-          :courses -> acc |> Map.merge(%{ courses: Content.list_courses_with_files() })
+          :subscriber_property -> acc |> Map.merge(%{ subscriber_property: Email.collection_slug_to_type(collection_slug) })
 
-          # SINGLE COLLECTION
-          symbol when symbol in [:ebook, :course] ->
-            collection = Content.get_collection_slug_with_files!(collection_slug)
-            tier_access_collection = Patreon.tier_access_rights(patreon)
-            has_paid_for_collection = Collection.has_paid_for_collection(collections_access_list, collection, user, patreon)
-            Map.merge(acc, %{ symbol => collection, tier_access_collection: tier_access_collection, has_paid_for_collection: has_paid_for_collection })
+          :ebooks -> acc |> Map.merge(%{ ebooks: Nfd.Content.list_ebooks_with_files() })
+          :courses -> acc |> Map.merge(%{ courses: Nfd.Content.list_courses_with_files() })
 
-          # SINGLE COLLECTION FILES
+          symbol when symbol in [:ebook, :course] -> 
+            acc |> FetchCollectionUtil.fetch_single_dashboard_collection(symbol, collection_slug, user_collections)
+
           symbol when symbol in [:ebook_file, :course_file] ->
             # TODO BackBlaze
-            acc |> Map.merge(%{ symbol => Content.get_file_slug!(file_slug) })
+            acc |> Map.merge(%{ symbol => Nfd.Content.get_file_slug!(file_slug) })
 
           _ ->
             acc
@@ -107,14 +120,14 @@ defmodule NfdWeb.FetchCollection do
     )
   end
 
-  def api_key_collections(conn, collection_array, collection_slug, user) do
+  def api_key_collections(conn, collection_slug, user_collections, collection_array) do
     Enum.reduce(
       collection_array,
       %{},
       fn symbol, acc ->
         case symbol do
           :stripe_api_key -> acc |> Map.merge(%{ stripe_api_key: Stripe.get_api_key(conn.host) })
-          :stripe_session -> acc |> Map.merge(%{ stripe_session: Stripe.create_stripe_session(user, conn.host, collection_slug) })
+          :stripe_session -> acc |> Map.merge(%{ stripe_session: Stripe.create_stripe_session(user_collections.user, conn.host, collection_slug) })
           :paypal_api_key -> acc |> Map.merge(%{ paypal_api_key: Paypal.get_api_key(conn.host) })
           :patreon_auth_url -> acc |> Map.merge(%{ patreon_auth_url: Patreon.generate_relevant_patreon_auth_url(conn.host) })
           _ -> acc

@@ -74,12 +74,15 @@ defmodule Nfd.Account.Subscriber do
   end
 
   # Check if subscriber exists
-  def check_subscriber_exists(nil), do: nil
-  def check_subscriber_exists(user) do
+  def check_subscriber_exists(user) do 
     # Check is subscriber email already exists.
-    case Account.get_subscriber_email(user.email) do
-      nil -> check_subscriber_exists_create_subscriber(user.email, user.id)
-      subscriber -> check_subscriber_exists_update_subscriber(subscriber, user)
+    if Map.has_key?(user, :email) do 
+      case Account.get_subscriber_email(Map.get(user, :email)) do
+        nil -> check_subscriber_exists_create_subscriber(user.email, user.id)
+        subscriber -> check_subscriber_exists_update_subscriber(subscriber, user)
+      end
+    else 
+      %{}
     end
   end
 

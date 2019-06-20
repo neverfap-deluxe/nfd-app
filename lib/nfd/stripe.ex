@@ -31,7 +31,7 @@ defmodule Nfd.Stripe do
           name: collection.display_name,
           description: collection.description,
           images: ["https://neverfapdeluxe.com/images/logo__out__400.png"],
-          amount: collection.price * 100,
+          amount: (collection.price * 100) |> Kernel.trunc(),
           currency: "aud",
           quantity: 1
         }

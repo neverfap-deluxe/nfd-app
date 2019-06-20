@@ -1,0 +1,10 @@
+<div class="dashboard__email__challenges">
+  <h2 class="dashboard__main__title"><%= @dashboard_collections.course_file.display_name %></h2>
+
+  <div class="dashboard__main__area">
+
+    <div class="dashboard__main__ebook">
+
+    </div>
+  </div>
+</div>

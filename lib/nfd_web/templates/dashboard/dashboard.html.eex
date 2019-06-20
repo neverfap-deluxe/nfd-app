@@ -1,42 +1,43 @@
 <div class="dashboard">
-  <h2 class="dashboard__main__title">Dashboard</h2>
-
-  <div class="dashboard__main__area">
-    <div class="dashboard__main__area__content">
-
-      <%= partial "dashboard/link_patreon.html", %{ conn: @conn, user: @user, tier: @tier, collections: @collections, token_expired: @token_expired } %>
-
-      <h2>Updates</h2>
-      <p>If you'd like to keep up to date on future products as they're released, please subscribe to our newsletter!</p>
-      <%= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: @subscriber.subscribed, subscribed_property: :subscribed, user_id: @user.id } %>
+    <h2 class="dashboard__main__title">Dashboard</h2>
+  
+    <div class="dashboard__main__area">
+      <div class="dashboard__main__area__content">
+        <%= partial "dashboard/link_patreon.html", %{ conn: @conn, user_collections: @user_collections, api_key_collections: @api_key_collections, } %>
+  
+        <h2 style="margin-top: 3rem;">General Updates</h2>
+        <p>If you'd like to keep up to date on future products as they're released, please subscribe to our newsletter!</p>
+        <%= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: @user_collections.subscriber.subscribed, subscribed_property: :subscribed, user_id: @user_collections.user.id } %>
+      </div>
     </div>
-  </div>
-
-  <div class="dashboard__main__area">
-    <div class="dashboard__main__area__content">
-      <h2>Email Campaigns</h2>
-      <%= partial "hub/course_list.html", %{ courses: @collections.courses, collections_access_list: @collections_access_list } %>
+  
+    <div class="dashboard__main__area">
+      <div class="dashboard__main__area__content">
+        <h2>Courses</h2>
+        <%= partial "dashboard/course_list.html", %{ conn: @conn, dashboard_collections: @dashboard_collections } %>
+      </div>
     </div>
-  </div>
+  
+    <div class="dashboard__main__area">
+      <div class="dashboard__main__area__content">
+        <h2>Ebooks</h2>
+        <div class="dashboard__main__ebook">
+          <%= partial "dashboard/ebook_list.html", %{ conn: @conn, dashboard_collections: @dashboard_collections } %>
 
-  <div class="dashboard__main__area">
-    <div class="dashboard__main__area__content">
-      <h2>Audio Courses</h2>
-      <div class="dashboard__main__audio">
-        <p>There are no audio courses, as of yet. Please feel free to check out the NeverFap Deluxe podcast while I figure out how to deliver the best possible experience for you.</p>
-        <a style="margin-bottom: 1rem; margin-top: 1rem;"href="/podcast" class="button subscribe__button">NeverFap Deluxe Podcast</a>
+          <!-- <p>There are no audio courses, as of yet. Please feel free to check out the NeverFap Deluxe podcast while I figure out how to deliver the best possible experience for you.</p>
+          <a style="margin-bottom: 1rem; margin-top: 1rem;"href="/podcast" class="button subscribe__button">NeverFap Deluxe Podcast</a> -->
+        </div>
+      </div>
+    </div>
+  
+    <div class="dashboard__main__area">
+      <div class="dashboard__main__area__content">
+        <h2>Links</h2>
+        <p>Website: <a href="https://neverfapdeluxe.com">https://neverfapdeluxe.com/</a></p>
+        <p>Facebook: <a href="<%= Application.get_env(:nfd, :social_facebook_url) %>"><%= Application.get_env(:nfd, :social_facebook_url) %></a></p>
+        <p>Twitter: <a href="<%= Application.get_env(:nfd, :social_twitter_url) %>"><%= Application.get_env(:nfd, :social_twitter_url) %></a></p>
+        <p>Discord: <a href="<%= Application.get_env(:nfd, :social_discord_url) %>"><%= Application.get_env(:nfd, :social_discord_url) %></a></p>
+        <p>Reddit: <a href="<%= Application.get_env(:nfd, :social_reddit_url) %>"><%= Application.get_env(:nfd, :social_reddit_url) %></a></p>
       </div>
     </div>
   </div>
-
-  <div class="dashboard__main__area">
-    <div class="dashboard__main__area__content">
-      <h2>Links</h2>
-      <p>Website: <a href="https://neverfapdeluxe.com">https://neverfapdeluxe.com/</a></p>
-      <p>Facebook: <a href="<%= Application.get_env(:nfd, :social_facebook_url) %>"><%= Application.get_env(:nfd, :social_facebook_url) %></a></p>
-      <p>Twitter: <a href="<%= Application.get_env(:nfd, :social_twitter_url) %>"><%= Application.get_env(:nfd, :social_twitter_url) %></a></p>
-      <p>Discord: <a href="<%= Application.get_env(:nfd, :social_discord_url) %>"><%= Application.get_env(:nfd, :social_discord_url) %></a></p>
-      <p>Reddit: <a href="<%= Application.get_env(:nfd, :social_reddit_url) %>"><%= Application.get_env(:nfd, :social_reddit_url) %></a></p>
-    </div>
-  </div>
-</div>

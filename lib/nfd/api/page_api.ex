@@ -1,4 +1,4 @@
-defmodule Nfd.API.Page do
+defmodule Nfd.API.PageAPI do
   use Tesla
 
   # GENERAL

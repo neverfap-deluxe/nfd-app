@@ -1,0 +1,52 @@
+<div class="dashboard__email__challenges">
+  <h2 class="dashboard__main__title dashboard__main__title--email"><%= @dashboard_collections.course.display_name %></h2>
+
+  <div class="dashboard__main__back__container">
+    <a class="dashboard__main__back" href="/dashboard/courses">
+      Back to Email Campaigns
+    </a>
+    <%= partial "dashboard/email_countdown_timer.html", assigns %>
+  </div>
+
+  <div class="dashboard__main__area">
+    <div class="dashboard__main__area__content">
+      <p><b>Landing page:</b> <a class="link" href="/<%= @dashboard_collections.course.slug %>">link</a></p>
+      <!-- TODO: In order to show this, it needs to check if the program has been purchased first. If not, show button which allows you to do that. Assuming it's a paid course to begin with. -->
+      <!-- TODO: I was wrong, I must get this -->
+      <%= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: Map.get(@user_collections.subscriber, @dashboard_collections.subscriber_property), subscribed_property: @dashboard_collections.subscriber_property, user_id: @user_collections.user.id } %>
+    </div>
+  </div>
+
+  <div class="dashboard__main__area">
+    <!-- List Course Files -->
+    <%= if @dashboard_collections.course.files do %>
+      <div class="dashboard__collection__files">
+        <%= Enum.map(@dashboard_collections.course.files, fn (file) -> %>
+          <a class="dashboard__collection__file" href="<%= Routes.dashboard_path(@conn, :course_file, @dashboard_collections.course.slug, file.slug) %>">
+            <p><%= file.display_name %></p>
+          </a>
+        <% end) %>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Payment Module -->
+  <%= if (@dashboard_collections.course.has_paid_for_collection == nil or @user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 != :ebook))) and @dashboard_collections.course.premium do %>
+    <%= partial "dashboard/campaign_payment.html", %{ dashboard_collections: @dashboard_collections, api_key_collections: @api_key_collections } %>
+  <% end %>
+
+  <%= if @dashboard_collections.course.has_paid_for_collection do %>
+    <div class="dashboard__main__area">
+      <p>You already have access to this course </p>
+      <div>You have already purchased!</div>
+    </div>
+  <% end %>
+
+  <%= if @user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == :ebook)) do  %>
+    <div class="dashboard__main__area">
+      <p>You already have access to this course </p>
+      <div>You have already purchased!</div>
+    </div>
+  <% end %>
+
+</div>

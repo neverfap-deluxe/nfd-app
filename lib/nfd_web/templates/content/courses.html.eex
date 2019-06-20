@@ -15,22 +15,22 @@
 
   </div>
   <!-- Introduction -->
-  <%= partial "courses/course_box.html", %{ items: @collections.courses, course_type: "introduction" } %>
+  <%= partial "courses/course_box.html", %{ items: @content_collections.courses, course_type: "introduction" } %>
   
   <!-- Choice over mind -->
-  <%= partial "courses/course_box.html", %{ items: @collections.courses, course_type: "choice-over-mind" } %>
+  <%= partial "courses/course_box.html", %{ items: @content_collections.courses, course_type: "choice-over-mind" } %>
   
   <!-- Balance over reward -->
-  <%= partial "courses/course_box.html", %{ items: @collections.courses, course_type: "balance-over-reward" } %>
+  <%= partial "courses/course_box.html", %{ items: @content_collections.courses, course_type: "balance-over-reward" } %>
 
   <!-- Awareness over all -->
-  <%= partial "courses/course_box.html", %{ items: @collections.courses, course_type: "awareness-over-all" } %>
+  <%= partial "courses/course_box.html", %{ items: @content_collections.courses, course_type: "awareness-over-all" } %>
 
   <!-- Struggle over none -->
-  <%= partial "courses/course_box.html", %{ items: @collections.courses, course_type: "struggle-over-none" } %>
+  <%= partial "courses/course_box.html", %{ items: @content_collections.courses, course_type: "struggle-over-none" } %>
 
   <!-- Uncondition over judgement -->
-  <%= partial "courses/course_box.html", %{ items: @collections.courses, course_type: "uncondition-over-judgement" } %>
+  <%= partial "courses/course_box.html", %{ items: @content_collections.courses, course_type: "uncondition-over-judgement" } %>
 </div>
 
 <%= partial "links/patreon.html", assigns %>

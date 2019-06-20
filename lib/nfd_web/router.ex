@@ -100,53 +100,22 @@ defmodule NfdWeb.Router do
 
     # CONTENT_EMAIL
     get "/seven-day-neverfap-deluxe-kickstarter", ContentEmailController, :seven_day_kickstarter
+    get "/seven-day-neverfap-deluxe-kickstarter/:slug", ContentEmailController, :seven_day_kickstarter_single
 
-    get "/seven-day-neverfap-deluxe-kickstarter/:slug",
-        ContentEmailController,
-        :seven_day_kickstarter_single
-
-    get "/twenty-eight-day-awareness-challenge",
-        ContentEmailController,
-        :twenty_eight_day_awareness
-
-    get "/twenty-eight-day-awareness-challenge/:slug",
-        ContentEmailController,
-        :twenty_eight_day_awareness_single
+    get "/twenty-eight-day-awareness-challenge", ContentEmailController, :twenty_eight_day_awareness
+    get "/twenty-eight-day-awareness-challenge/:slug", ContentEmailController, :twenty_eight_day_awareness_single
 
     get "/ten-day-meditation-primer", ContentEmailController, :ten_day_meditation
     get "/ten-day-meditation-primer/:slug", ContentEmailController, :ten_day_meditation_single
 
-    get "/seven-week-awareness-challenge-vol-1",
-        ContentEmailController,
-        :seven_week_awareness_vol_1
-
-    get "/seven-week-awareness-challenge-vol-1/:slug",
-        ContentEmailController,
-        :seven_week_awareness_vol_1_single
-
-    get "/seven-week-awareness-challenge-vol-2",
-        ContentEmailController,
-        :seven_week_awareness_vol_2
-
-    get "/seven-week-awareness-challenge-vol-2/:slug",
-        ContentEmailController,
-        :seven_week_awareness_vol_2_single
-
-    get "/seven-week-awareness-challenge-vol-3",
-        ContentEmailController,
-        :seven_week_awareness_vol_3
-
-    get "/seven-week-awareness-challenge-vol-3/:slug",
-        ContentEmailController,
-        :seven_week_awareness_vol_3_single
-
-    get "/seven-week-awareness-challenge-vol-4",
-        ContentEmailController,
-        :seven_week_awareness_vol_4
-
-    get "/seven-week-awareness-challenge-vol-4/:slug",
-        ContentEmailController,
-        :seven_week_awareness_vol_4_single
+    get "/seven-week-awareness-challenge-vol-1", ContentEmailController, :seven_week_awareness_vol_1
+    get "/seven-week-awareness-challenge-vol-1/:slug", ContentEmailController, :seven_week_awareness_vol_1_single
+    get "/seven-week-awareness-challenge-vol-2", ContentEmailController, :seven_week_awareness_vol_2
+    get "/seven-week-awareness-challenge-vol-2/:slug", ContentEmailController, :seven_week_awareness_vol_2_single
+    get "/seven-week-awareness-challenge-vol-3", ContentEmailController, :seven_week_awareness_vol_3
+    get "/seven-week-awareness-challenge-vol-3/:slug", ContentEmailController, :seven_week_awareness_vol_3_single
+    get "/seven-week-awareness-challenge-vol-4", ContentEmailController, :seven_week_awareness_vol_4
+    get "/seven-week-awareness-challenge-vol-4/:slug", ContentEmailController, :seven_week_awareness_vol_4_single
   end
 
   # Functions
@@ -184,13 +153,12 @@ defmodule NfdWeb.Router do
     get "/dashboard/delete_profile", DashboardController, :profile_delete_confirmation
 
     get "/dashboard/ebooks", DashboardController, :ebooks
-    get "/dashboard/ebooks/:collection", DashboardController, :ebooks_collection
-    get "/dashboard/ebooks/:collection/:file", DashboardController, :ebooks_single
+    get "/dashboard/ebooks/:collection", DashboardController, :ebook_collection
+    get "/dashboard/ebooks/:collection/:file", DashboardController, :ebook_file
 
     get "/dashboard/courses", DashboardController, :courses
     get "/dashboard/courses/:collection", DashboardController, :course_collection
-
-    get "/dashboard/courses/:collection/:file", DashboardController, :courses_single
+    get "/dashboard/courses/:collection/:file", DashboardController, :course_file
 
     # PAYMENT
     post "/paypal_payment", PaymentController, :paypal_collection_payment

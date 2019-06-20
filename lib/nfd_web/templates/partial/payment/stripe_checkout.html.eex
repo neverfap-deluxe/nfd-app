@@ -3,7 +3,7 @@
 
 <button
   class="dashboard__custom__stripe__checkout__button"
-  id="checkout-button-<%= @collection.stripe_sku %>"
+  id="checkout-button-<%= @dashboard_collections.course.stripe_sku %>"
   role="link"
   >
   <!-- <img src="/images/stripe__rectangle.png"/> -->
@@ -15,12 +15,12 @@
 
 <script>
   // TODO This needs to use the env.
-  const stripe = Stripe("<%= @collections.stripe_api_key %>");
+  const stripe = Stripe("<%= @api_key_collections.stripe_api_key %>");
 
-  var checkoutButton = document.getElementById('checkout-button-sku_FHXc6hv9UGTuXl');
+  var checkoutButton = document.getElementById('checkout-button-<%= @dashboard_collections.course.stripe_sku %>');
       checkoutButton.addEventListener('click', function () {
         stripe.redirectToCheckout({
-          sessionId: '<%= @collections.stripe_session.id %>',
+          sessionId: '<%= @api_key_collections.stripe_session.id %>',
         })
         .then(function (result) {
           if (result.error) {

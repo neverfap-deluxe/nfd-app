@@ -43,5 +43,7 @@ defmodule Mix.Tasks.Nfd.Seed do
     Nfd.SeedSWAVOL2.seed()
     Nfd.SeedSWAVOL3.seed()
     Nfd.SeedSWAVOL4.seed()
+
+    Nfd.SeedEBOOKS.seed()
   end
 end

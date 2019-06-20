@@ -83,13 +83,13 @@ defmodule Nfd.Patreon do
       patreon_refresh_token: body["refresh_token"],
       patreon_expires_in: Timex.shift(Timex.now, days: 30)
     }) do
-      # {:ok, success} -> IO.inspect success
-      # {:error, error} -> IO.inspect error
+      {:ok, success} -> IO.inspect success
+      {:error, error} -> IO.inspect error
     end
   end
 
   def fetch_patreon(conn, user) do
-    if user.patreon_linked do
+    if Map.get(user, :patreon_linked) do
       expires_in_date = user.patreon_expires_in
       seven_days_before_today = Timex.shift(Timex.today, days: -7)
 
@@ -98,26 +98,28 @@ defmodule Nfd.Patreon do
         %{
           token_expired: true,
           is_valid_patron: false,
+          tier_access_list: [],
           tier: nil
         }
 
       # if not expired check if it should be validated
       else
         # TODO: No idea if this works or not.
-        # if Timex.after?(seven_days_before_today, expires_in_date) do
+        if Timex.after?(seven_days_before_today, expires_in_date) do
           refresh_user_patreon_information(conn, user)
 
           # I need to fetch it again, in case the token has changed
           refreshed_user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
           check_patreon_tier(conn, refreshed_user)
-        # else
-        #   check_patreon_tier(conn, user)
-        # end
+        else
+          check_patreon_tier(conn, user)
+        end
       end
     else
       %{
         token_expired: false,
         is_valid_patron: false,
+        tier_access_list: [],
         tier: nil
       }
     end
@@ -156,57 +158,70 @@ defmodule Nfd.Patreon do
     # IO.inspect user
     auth_client = auth_api_client(user.patreon_access_token)
 
-    { :ok, members_response } = auth_client |> get(members_url)
-    members_body = Jason.decode!(members_response.body)
+    case auth_client |> get(members_url) do 
+      { :ok, members_response } ->
+        members_body = Jason.decode!(members_response.body)
+        
+        if not Map.has_key?(members_body, "errors") do
+          # IO.inspect "members_body"
+          # IO.inspect members_body
 
-    if not Map.has_key?(members_body, "errors") do
-      # IO.inspect "members_body"
-      # IO.inspect members_body
+          tier_id =
+            case members_body["data"]["relationships"]["currently_entitled_tiers"]["data"] do
+              nil -> nil
+              [] -> nil
+              _ -> members_body["data"]["relationships"]["currently_entitled_tiers"]["data"] |> hd() |> Map.get("id")
+            end
 
-      tier_id =
-        case members_body["data"]["relationships"]["currently_entitled_tiers"]["data"] do
-          nil -> nil
-          [] -> nil
-          _ -> members_body["data"]["relationships"]["currently_entitled_tiers"]["data"] |> hd() |> Map.get("id")
+            # IO.inspect tier_id
+            # IO.inspect members_body["included"]
+          tier =
+            case members_body["included"] do
+              nil -> []
+              _ -> members_body["included"] |> Enum.find(fn(member) -> member["id"] == tier_id end)
+            end
+
+            # IO.inspect tier
+          # last_charge_status = members_body["data"]["attributes"]["last_charge_status"]
+          patron_status = members_body["data"]["attributes"]["patron_status"]
+
+          %{
+            token_expired: false,
+            is_valid_patron: patron_status == "active_patron",
+            tier_access_list: Patreon.tier_access_list(false, patron_status == "active_patron", tier),
+            tier: tier
+          }
+        else
+          %{
+            token_expired: false,
+            is_valid_patron: false,
+            tier_access_list: [],
+            tier: nil
+          }
         end
-
-        # IO.inspect tier_id
-        # IO.inspect members_body["included"]
-      tier =
-        case members_body["included"] do
-          nil -> []
-          _ -> members_body["included"] |> Enum.find(fn(member) -> member["id"] == tier_id end)
-        end
-
-        # IO.inspect tier
-      # last_charge_status = members_body["data"]["attributes"]["last_charge_status"]
-      patron_status = members_body["data"]["attributes"]["patron_status"]
-
-      %{
-        token_expired: false,
-        is_valid_patron: patron_status == "active_patron",
-        tier: tier
-      }
-    else
-      %{
-        token_expired: false,
-        is_valid_patron: false,
-        tier: nil
-      }
+        
+      {:error, _error} -> 
+        IO.inspect "Patreon offline"
+        %{
+          token_expired: false,
+          is_valid_patron: false,
+          tier_access_list: [],
+          tier: nil
+        }
     end
   end
 
-  def tier_access_rights(patreon) do
-    if (not patreon.token_expired and patreon.is_valid_patron) do
+  def tier_access_list(token_expired, is_valid_patron, tier) do
+    if (not token_expired and is_valid_patron) do
       case tier.amount_cents do
-        100 -> create_tier_access_rights([], patreon.tier)
-        500 -> create_tier_access_rights([], patreon.tier)
-        1000 -> create_tier_access_rights([:nfd_bible_access], patreon.tier)
-        1500 -> create_tier_access_rights([:ebooks_access], patreon.tier)
-        2500 -> create_tier_access_rights([:ebooks_access, :courses_access, :coaching_access], patreon.tier)
-        5000 -> create_tier_access_rights([:ebooks_access, :courses_access, :coaching_access], patreon.tier)
-        10000 -> create_tier_access_rights([:ebooks_access, :courses_access, :coaching_access], patreon.tier)
-        15000 -> create_tier_access_rights([:ebooks_access, :courses_access, :coaching_access], patreon.tier)
+        100 -> create_tier_access([], tier)
+        500 -> create_tier_access([], tier)
+        1000 -> create_tier_access([:nfd_bible_access], tier)
+        1500 -> create_tier_access([:ebooks_access], tier)
+        2500 -> create_tier_access([:ebooks_access, :courses_access, :coaching_access], tier)
+        5000 -> create_tier_access([:ebooks_access, :courses_access, :coaching_access], tier)
+        10000 -> create_tier_access([:ebooks_access, :courses_access, :coaching_access], tier)
+        15000 -> create_tier_access([:ebooks_access, :courses_access, :coaching_access], tier)
         _ -> []
       end
     else
@@ -214,8 +229,8 @@ defmodule Nfd.Patreon do
     end
   end
 
-  def create_tier_access_rights(access_list, patreon_tier) do
-    Enum.reduce(access_list, patreon_tier, fn access_item, acc ->
+  def create_tier_access(access_list, tier) do
+    Enum.reduce(access_list, %{}, fn access_item, acc ->
       Map.put(acc, access_item, true)
     end)
   end

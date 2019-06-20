@@ -6,9 +6,9 @@
   <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
   <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
-  <%= form_for @collections.comment_form_changeset, Routes.message_path(@conn, :comment_form_post), fn f -> %>
+  <%= form_for @changeset_collections.comment_form_changeset, Routes.message_path(@conn, :comment_form_post), fn f -> %>
     <div class="form__input__container">
-      <%= if @user == %{} do %>
+      <%= if @user_collections.user == %{} do %>
         <div class="comment__create__message__promotion">
           <div style="line-height: 1.6rem; margin-bottom: 0.5rem;">Tired of filling in your details each time you want to comment?</div>
           <div>Sign up for an account today!</div>

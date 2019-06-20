@@ -2,8 +2,8 @@ defmodule NfdWeb.MessageController do
   use NfdWeb, :controller
 
   alias Nfd.API
-  alias Nfd.API.Content
-  alias Nfd.API.Page
+  alias Nfd.API.ContentAPI
+  alias Nfd.API.PageAPI
 
   alias Nfd.Meta
   alias Nfd.Account
@@ -47,12 +47,12 @@ defmodule NfdWeb.MessageController do
         IO.inspect comment_form_changeset
         client = API.is_localhost(conn.host) |> API.api_client()
 
-        case apply(Content, first_slug_symbol, [client, second_slug]) do
+        case apply(ContentAPI, first_slug_symbol, [client, second_slug]) do
           {:ok, response} ->
-            collection_array = FetchCollection.fetch_access_array(first_slug_symbol)
+            collection_array = FetchAccess.fetch_access_array(first_slug_symbol)
             user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
             content_collections = FetchCollection.content_collections(response.body["data"], collection_array, client)
-            changeset_collections = FetchCollection.changeset_collections(response.body["data"], user, collection_array) |> Map.merge(%{comment_form_changeset: comment_form_changeset})
+            changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array) |> Map.merge(%{comment_form_changeset: comment_form_changeset})
 
             Fetch.fetch_response_ok(conn, user, NfdWeb.ContentView, response, user_collections, content_collections, changeset_collections, first_slug_symbol, "general.html", "content")
           {:error, error} ->
@@ -86,12 +86,12 @@ defmodule NfdWeb.MessageController do
           {:error, contact_form_changeset} ->
             client = API.is_localhost(conn.host) |> API.api_client()
 
-            case apply(Page, first_slug_symbol, [client]) do
+            case apply(PageAPI, first_slug_symbol, [client]) do
               {:ok, response} ->
-                collection_array = FetchCollection.fetch_access_array(first_slug_symbol)
+                collection_array = FetchAccess.fetch_access_array(first_slug_symbol)
                 user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
                 content_collections = FetchCollection.content_collections(response.body["data"], collection_array, client)
-                changeset_collections = FetchCollection.changeset_collections(response.body["data"], user, collection_array) |> Map.merge(%{comment_form_changeset: comment_form_changeset})
+                changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array) |> Map.merge(%{contact_form_changeset: contact_form_changeset})
 
                 Fetch.fetch_response_ok(conn, user, NfdWeb.ContentView, response, user_collections, content_collections, changeset_collections, first_slug_symbol, "general.html", "page")
               {:error, error} ->

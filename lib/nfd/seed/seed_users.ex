@@ -2,7 +2,6 @@ defmodule Nfd.SeedUsers do
   alias Nfd.Repo
   # import Ecto
 
-
   alias Nfd.Account
   alias Nfd.Account.User
 

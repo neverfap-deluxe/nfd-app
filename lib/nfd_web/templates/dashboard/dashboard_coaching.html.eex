@@ -8,7 +8,7 @@
   <div class="dashboard__main__area">
     <div class="dashboard__main__area__content">
     <p>Coaching services information page: <a class="link" href="/coaching">link</a></p>
-    <p>Coaching Minutes: <% %></p>
+    <p>Coaching Minutes:</p>
     </div>
   </div>
 
@@ -29,11 +29,11 @@
       <div class="dashboard__main__payment__box">
         <div class="dashboard__main__payment__stripe">
           <h3>Credit Card</h3>
-          <%= partial "payment/stripe_checkout.html", %{collections: @collections, collection: @collections.course} %>
+          <%#= partial "payment/stripe_checkout.html", %{api_key_collections: @api_key_collections, dashboard_collections: @dashboard_collections} %>
         </div>
         <div class="dashboard__main__payment__paypal">
           <h3>PayPal</h3>
-          <%= partial "payment/paypal_checkout.html", %{ collections: @collections } %>
+          <%#= partial "payment/paypal_checkout.html", %{dashboard_collections: @dashboard_collections} %>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@
 
   <div class="dashboard__main__area">
     <div class="dashboard__main__area__content">
-      <%= partial "hub/course_list.html", %{ courses: @collections.courses} %>
+      <%= partial "dashboard/course_list.html", %{ courses: @dashboard_collections.courses} %>
     </div>
   </div>
 </div>

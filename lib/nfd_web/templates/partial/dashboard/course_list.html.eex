@@ -1,7 +1,7 @@
 <!-- @collections_access_list -->
 
 <div class="dashboard__main__email">
-  <%= Enum.map(@courses, fn(collection) -> %>
+  <%= Enum.map(@dashboard_collections.courses, fn(collection) -> %>
     <div class="email__collection">
       <h3><%= collection.display_name %></h3>
       <p><%= collection.description %></p>

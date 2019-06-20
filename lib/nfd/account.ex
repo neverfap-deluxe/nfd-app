@@ -135,6 +135,7 @@ defmodule Nfd.Account do
     Repo.all(CollectionAccess)
   end
 
+  def list_collection_access_by_user_id(nil), do: []
   def list_collection_access_by_user_id(user_id) do 
     Repo.all(
       from c in CollectionAccess,
@@ -160,6 +161,7 @@ defmodule Nfd.Account do
   def get_collection_access!(id), do: Repo.get!(CollectionAccess, id)
   def get_collection_access_by_slug!(slug), do: Repo.get_by!(CollectionAccess, slug: slug)
 
+  def get_collection_access_by_user_id_and_collection_id(nil, collection_id), do: %{}
   def get_collection_access_by_user_id_and_collection_id(user_id, collection_id) do
     from(u in CollectionAccess, where: u.user_id == ^user_id or u.collection_id == ^collection_id) |> Repo.one
   end

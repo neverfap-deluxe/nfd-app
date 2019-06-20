@@ -10,6 +10,8 @@ defmodule Nfd.Meta.Comment do
   alias Nfd.Account.User
   alias Nfd.Account.Subscriber
 
+  alias Nfd.Meta.Comment
+
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "comments" do
@@ -53,9 +55,9 @@ defmodule Nfd.Meta.Comment do
     |> cast(attrs, [:upvote_tally])
   end
 
-  def get_comment_form_changeset(acc) do
-    name = if Map.has_key?(user, :first_name), do: "#{user.first_name} #{user.last_name}", else: ""
-    comment_form_changeset = Comment.changeset(%Comment{}, %{name: name, email: user[:email] or "", message: "", parent_message_id: "", user_id: user[:id] or "", depth: 0, page_id: item["page_id"]})
+  def get_comment_form_changeset(acc, user, item) do
+    name = if Map.get(user, :first_name), do: "#{Map.get(user, :first_name)} #{Map.get(user, :last_name)}", else: ""
+    comment_form_changeset = Comment.changeset(%Comment{}, %{name: name, email: Map.get(user, :email), message: "", parent_message_id: "", user_id: Map.get(user, :id), depth: 0, page_id: item["page_id"]})
     Map.put(acc, :comment_form_changeset, comment_form_changeset)
   end
 

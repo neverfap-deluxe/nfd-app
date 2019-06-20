@@ -36,7 +36,7 @@ defmodule Nfd.Account.CollectionAccess do
     |> Enum.each(fn slug ->
       collection = Content.get_collection_slug_with_files!(slug)
 
-      case Account.get_collection_access_by_user_id_and_collection_id(user.id, collection.id) do
+      case Account.get_collection_access_by_user_id_and_collection_id(Map.get(user, :id), collection.id) do
         nil ->
           case Account.create_collection_access(%{user_id: user.id, collection_id: collection.id}) do
             {:ok, collection_access} -> collection_access

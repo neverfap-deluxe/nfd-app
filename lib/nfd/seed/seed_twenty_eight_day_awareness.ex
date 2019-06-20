@@ -4,6 +4,7 @@ defmodule Nfd.SeedTEDA do
 
   alias Nfd.Content
   alias Nfd.Content.File
+  alias Nfd.Content.Collection
 
   def seed do
     case Content.get_collection_seed_id("068b52c1-cce1-4239-a345-1182ae528a41") do

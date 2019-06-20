@@ -9,18 +9,18 @@
     </div>
 
     <div class="dashboard__main__payment__course_information">
-      <h3>Course: <%= @collections.course.display_name %></h3>
-      <h3>Price: $<%= @collections.course.price %></h3>
+      <h3>Course: <%= @dashboard_collections.course.display_name %></h3>
+      <h3>Price: $<%= @dashboard_collections.course.price %></h3>
     </div>
 
     <div class="dashboard__main__payment__box">
       <div class="dashboard__main__payment__stripe">
         <h3>Credit Card</h3>
-        <%= partial "payment/stripe_checkout.html", %{collections: @collections, collection: @collections.course} %>
+        <%= partial "payment/stripe_checkout.html", %{api_key_collections: @api_key_collections, dashboard_collections: @dashboard_collections} %>
       </div>
       <div class="dashboard__main__payment__paypal">
         <h3>PayPal</h3>
-        <%= partial "payment/paypal_checkout.html", %{ collections: @collections } %>
+        <%= partial "payment/paypal_checkout.html", %{api_key_collections: @api_key_collections, dashboard_collections: @dashboard_collections} %>
       </div>
     </div>
   </div>

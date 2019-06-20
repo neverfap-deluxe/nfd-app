@@ -5,7 +5,7 @@
   <div class="veteran__module">
     <h2>Articles</h2>
     <div class="articles__list">
-      <%= Enum.map(@collections.articles |> Enum.take(5), fn(item) -> %>
+      <%= Enum.map(@content_collections.articles |> Enum.take(5), fn(item) -> %>
         <span style="position: relative;">
           <a class="link articles__link articles__link--mini" href='<%= Routes.content_path(@conn, :article, item["slug"]) %>'><%= item["date"] %> | <%= item["title"] %></a>
           <span class='<%= is_new(item["date"]) %>'>New</span>
@@ -20,7 +20,7 @@
   <div class="veteran__module">
     <h2>Practices</h2>
     <div class="articles__list">
-      <%= Enum.map(@collections.practices |> Enum.take(5), fn(item) -> %>
+      <%= Enum.map(@content_collections.practices |> Enum.take(5), fn(item) -> %>
         <span style="position: relative;">
           <a class="link articles__link articles__link--mini" href='<%= Routes.content_path(@conn, :practice, item["slug"]) %>'><%= item["date"] %> | <%= item["title"] %></a>
           <span class='<%= is_new(item["date"]) %>'>New</span>

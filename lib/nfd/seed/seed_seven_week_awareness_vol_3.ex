@@ -4,6 +4,7 @@ defmodule Nfd.SeedSWAVOL3 do
 
   alias Nfd.Content
   alias Nfd.Content.File
+  alias Nfd.Content.Collection
 
   def seed do
     case Content.get_collection_seed_id("c014f1c5-be89-455f-8f88-970c6cf70d5d") do

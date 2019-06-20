@@ -4,6 +4,7 @@ defmodule Nfd.SeedTDMP do
 
   alias Nfd.Content
   alias Nfd.Content.File
+  alias Nfd.Content.Collection
 
   def seed do
     case Content.get_collection_seed_id("943bd030-60e4-42da-a8c1-0c926c508374") do

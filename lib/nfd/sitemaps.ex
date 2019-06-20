@@ -5,9 +5,8 @@ defmodule Nfd.Sitemaps do
   import Ecto.Query, warn: false
 
   alias Nfd.API
-  alias Nfd.API.Page
-  alias Nfd.API.Content
-  alias Nfd.API.Page
+  alias Nfd.API.PageAPI
+  # alias Nfd.API.ContentAPI
 
   # For testing: Nfd.Sitemaps.generate()
   # iex -S mix do phx.server
@@ -25,14 +24,14 @@ defmodule Nfd.Sitemaps do
     client = "https://neverfapdeluxe.netlify.com" |> API.api_client()
     # client = "http://localhost:1313" |> API.api_client()
 
-    with {:ok, articlesResponse} <- (client |> Page.articles()),
-         {:ok, practicesResponse} <- (client |> Page.practices()),
-         {:ok, coursesResponse} <- (client |> Page.courses()),
-         {:ok, podcastsResponse} <- (client |> Page.podcasts()),
-         {:ok, quotesResponse} <- (client |> Page.quotes()),
-         {:ok, meditationsResponse} <- (client |> Page.meditations()),
-         {:ok, blogsResponse} <- (client |> Page.blogs()),
-         {:ok, updatesResponse} <- (client |> Page.updates()),
+    with {:ok, articlesResponse} <- (client |> PageAPI.articles()),
+         {:ok, practicesResponse} <- (client |> PageAPI.practices()),
+         {:ok, coursesResponse} <- (client |> PageAPI.courses()),
+         {:ok, podcastsResponse} <- (client |> PageAPI.podcasts()),
+         {:ok, quotesResponse} <- (client |> PageAPI.quotes()),
+         {:ok, meditationsResponse} <- (client |> PageAPI.meditations()),
+         {:ok, blogsResponse} <- (client |> PageAPI.blogs()),
+         {:ok, updatesResponse} <- (client |> PageAPI.updates()),
 
          {:ok, sdkResponse} <- (client |> Page.seven_day_kickstarter()),
          {:ok, tdmResponse} <- (client |> Page.ten_day_meditation()),

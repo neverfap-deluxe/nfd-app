@@ -90,7 +90,7 @@
   </div>
 </div>
 
-<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @collections.seven_day_kickstarter_changeset } %>
+<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @content_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
@@ -198,27 +198,27 @@
   </div>
 
   <div class="post__on posts--guide" id="introduction_posts">
-    <%= partial "guide/category_posts.html", %{ items:@content_collections.articles, post_category: "introduction" } %>
+    <%= partial "guide/category_posts.html", %{ items: @content_collections.articles, post_category: "introduction" } %>
   </div>
 
   <div class="post__off posts--guide" id="choice_over_mind_posts">
-    <%= partial "guide/category_posts.html", %{ items:@content_collections.articles, post_category: "choice-over-mind" } %>
+    <%= partial "guide/category_posts.html", %{ items: @content_collections.articles, post_category: "choice-over-mind" } %>
   </div>
 
   <div class="post__off posts--guide" id="balance_over_reward_posts">
-    <%= partial "guide/category_posts.html", %{ items:@content_collections.articles, post_category: "balance-over-reward" } %>
+    <%= partial "guide/category_posts.html", %{ items: @content_collections.articles, post_category: "balance-over-reward" } %>
   </div>
 
   <div class="post__off posts--guide" id="strugle_over_none_posts">
-    <%= partial "guide/category_posts.html", %{ items:@content_collections.articles, post_category: "struggle-over-none" } %>
+    <%= partial "guide/category_posts.html", %{ items: @content_collections.articles, post_category: "struggle-over-none" } %>
   </div>
 
   <div class="post__off posts--guide" id="awareness_over_all_posts">
-    <%= partial "guide/category_posts.html", %{ items:@content_collections.articles, post_category: "awareness-over-all" } %>
+    <%= partial "guide/category_posts.html", %{ items: @content_collections.articles, post_category: "awareness-over-all" } %>
   </div>
 
   <div class="post__off posts--guide" id="uncondition_over_judgement_posts">
-    <%= partial "guide/category_posts.html", %{ items:@content_collections.articles, post_category: "uncondition-over-judgement" } %>
+    <%= partial "guide/category_posts.html", %{ items: @content_collections.articles, post_category: "uncondition-over-judgement" } %>
   </div>
 </div>
 
