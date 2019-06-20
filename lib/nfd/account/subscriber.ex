@@ -4,7 +4,7 @@ defmodule Nfd.Account.Subscriber do
 
   alias Nfd.Account
   alias Nfd.EmailLogs
-  
+
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "subscribers" do
@@ -17,13 +17,13 @@ defmodule Nfd.Account.Subscriber do
     field :twenty_eight_day_awareness_count, :integer, default: 0
     field :twenty_eight_day_awareness_subscribed, :boolean, default: false
 
-    field :awareness_seven_week_vol_1_subscribed, :boolean, default: false 
+    field :awareness_seven_week_vol_1_subscribed, :boolean, default: false
     field :awareness_seven_week_vol_1_count, :integer, default: 0
-    field :awareness_seven_week_vol_2_subscribed, :boolean, default: false 
+    field :awareness_seven_week_vol_2_subscribed, :boolean, default: false
     field :awareness_seven_week_vol_2_count, :integer, default: 0
-    field :awareness_seven_week_vol_3_subscribed, :boolean, default: false 
+    field :awareness_seven_week_vol_3_subscribed, :boolean, default: false
     field :awareness_seven_week_vol_3_count, :integer, default: 0
-    field :awareness_seven_week_vol_4_subscribed, :boolean, default: false 
+    field :awareness_seven_week_vol_4_subscribed, :boolean, default: false
     field :awareness_seven_week_vol_4_count, :integer, default: 0
 
     # field :three_day_awareness_subscribed, :boolean, default: false
@@ -52,7 +52,7 @@ defmodule Nfd.Account.Subscriber do
       :seven_day_kickstarter_count,
       :ten_day_meditation_subscribed,
       :ten_day_meditation_count,
-      
+
       :awareness_seven_week_vol_1_subscribed,
       :awareness_seven_week_vol_1_count,
       :awareness_seven_week_vol_2_subscribed,
@@ -74,6 +74,7 @@ defmodule Nfd.Account.Subscriber do
   end
 
   # Check if subscriber exists
+  def check_subscriber_exists(nil), do: nil
   def check_subscriber_exists(user) do
     # Check is subscriber email already exists.
     case Account.get_subscriber_email(user.email) do
@@ -102,6 +103,6 @@ defmodule Nfd.Account.Subscriber do
     end
   end
 
-  
+
 
 end

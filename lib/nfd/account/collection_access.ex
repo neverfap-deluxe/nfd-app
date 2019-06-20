@@ -30,6 +30,7 @@ defmodule Nfd.Account.CollectionAccess do
     IO.inspect("hello")
   end
 
+  def create_collection_access_for_free_courses(nil), do: nil
   def create_collection_access_for_free_courses(user) do
     ["seven-day-neverfap-deluxe-kickstarter"]
     |> Enum.each(fn slug ->

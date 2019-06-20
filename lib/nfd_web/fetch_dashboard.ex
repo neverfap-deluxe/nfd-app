@@ -20,7 +20,7 @@ defmodule NfdWeb.FetchDashboard do
   use Timex
 
   def fetch_dashboard(conn, page_symbol, collection_slug, file_slug, collection_array) do
-    # Get Subscriber and User
+    # Get Subscriber and User 
     user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
     subscriber = Pow.Plug.current_user(conn) |> Subscriber.check_subscriber_exists()
 
@@ -75,62 +75,4 @@ defmodule NfdWeb.FetchDashboard do
     )
   end
 
-  defp fetch_dashboard_collections(conn, collection_array, collections_access_list, collection_slug, file_slug, user, patreon) do
-    Enum.reduce(
-      collection_array,
-      %{},
-      fn symbol, acc ->
-        case symbol do
-          # ALL COLLECTIONS
-          :ebooks -> Map.put(acc, :ebooks, Content.list_ebooks_with_files())
-          :courses -> Map.put(acc, :courses, Content.list_courses_with_files())
-
-          # SINGLE COLLECTION
-          symbol when symbol in [:ebook, :course] ->
-            collection = Content.get_collection_slug_with_files!(collection_slug)
-            tier_access_collection = Patreon.tier_access_rights(patreon)
-            has_paid_for_collection = Collection.has_paid_for_collection(collections_access_list, collection, user, patreon)
-            Map.merge(acc, %{ symbol => collection, tier_access_collection: tier_access_collection, has_paid_for_collection: has_paid_for_collection })
-
-          # SINGLE COLLECTION FILES
-          symbol when symbol in [:ebook_file, :course_file] ->
-            file = Content.get_file_slug!(file_slug)
-            # backblaze_contents = BackBlaze.get_file_contents()
-            Map.put(acc, symbol, file)
-
-          # No idea bout this, I'm sure it's relevant/useful.
-          # courses_raw
-          #   |> Enum.filter(fn(collection) ->
-          #     collection_added_to_access_list = Enum.find(collections_access_list, fn(access_list) -> access_list.collection_id == collection.id end)
-          #     if collection_added_to_access_list, do: false, else: true
-          #   end)
-          # courses_purchased = courses_raw |> Enum.filter()
-          #   courses_available =
-          #     courses_raw
-          #       |> Enum.filter(fn(collection) ->
-          #         collection_added_to_access_list = Enum.find(collections_access_list, fn(access_list) -> access_list.collection_id == collection.id end)
-          #         if collection_added_to_access_list, do: true, else: false
-          #       end)
-
-          :stripe_api_key ->
-            stripe_api_key = Stripe.get_api_key(conn.host)
-            Map.put(acc, :stripe_api_key, stripe_api_key)
-
-          :stripe_session ->
-            stripe_session = Stripe.create_stripe_session(user, conn.host, collection_slug)
-            Map.put(acc, :stripe_session, stripe_session)
-
-          :paypal_api_key ->
-            paypal_api_key = Paypal.get_api_key(conn.host)
-            Map.put(acc, :paypal_api_key, paypal_api_key)
-
-          :patreon_auth_url ->
-            Map.merge(acc, %{ patreon_auth_url: Patreon.generate_relevant_patreon_auth_url(conn.host) })
-
-          _ ->
-            acc
-        end
-      end
-    )
-  end
 end

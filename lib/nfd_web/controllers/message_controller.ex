@@ -12,7 +12,7 @@ defmodule NfdWeb.MessageController do
   alias Nfd.EmailLogs
 
   alias NfdWeb.Fetch
-  alias NfdWeb.FetchCollection
+  alias NfdWeb.FetchAccess
 
   # NOTE: This should be suitable for any content based comments
   def comment_form_post(conn, %{"comment" => comment}) do
@@ -55,7 +55,7 @@ defmodule NfdWeb.MessageController do
               Fetch.fetch_collections(
                 response.body["data"],
                 user,
-                FetchCollection.fetch_collections_array(first_slug_symbol),
+                FetchCollection.fetch_access_array(first_slug_symbol),
                 client
               )
 

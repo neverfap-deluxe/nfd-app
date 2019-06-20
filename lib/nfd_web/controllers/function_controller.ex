@@ -6,14 +6,14 @@ defmodule NfdWeb.FunctionController do
 
   alias Nfd.Patreon
 
-  alias NfdWeb.FetchCollection
+  alias NfdWeb.FetchAccess
   alias NfdWeb.FetchDashboard
 
   # PATREON
 
   def validate_patreon(conn, %{"code" => code}) do
     Patreon.validate_patreon_code(conn, code)
-    
+
     redirect(conn, to: Routes.dashboard_path(conn, :dashboard))
   end
 

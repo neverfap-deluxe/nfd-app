@@ -1,7 +1,6 @@
 defmodule NfdWeb.Fetch do
   use NfdWeb, :controller
 
-
   alias Nfd.Meta
   alias Nfd.Meta.Comment
 
@@ -15,17 +14,17 @@ defmodule NfdWeb.Fetch do
 
   alias NfdWeb.Redirects
 
+  alias NfdWeb.FetchCollection
+
   def fetch_content(conn, page_view, page_symbol, slug, page_layout, collection_array) do
-    user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
-
-    content_specific_collection = fetch_collection_specific(user, page_symbol, slug)
-
-    client = API.is_localhost(conn.host) |> API.api_client()
     verified_slug = Redirects.redirect_content(conn, slug, Atom.to_string(page_symbol))
-
+    client = API.is_localhost(conn.host) |> API.api_client()
     case apply(Content, page_symbol, [client, verified_slug]) do
       {:ok, response} ->
-        collections = fetch_collections(response.body["data"], user, collection_array, client)
+        user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
+        content_collections = FetchCollection.content_collections(response.body["data"], collection_array, client)
+        changeset_collections = FetchCollection.changeset_collections(response.body["data"], user, collection_array)
+
         fetch_response_ok(conn, user, page_view, response, collections, page_symbol, page_layout, "content")
       {:error, error} ->
         render_404_page(conn, error)
@@ -33,105 +32,44 @@ defmodule NfdWeb.Fetch do
   end
 
   def fetch_page(conn, page_view, page_symbol, page_layout, collection_array) do
-    user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
-
-    page_type = "page"
     client = API.is_localhost(conn.host) |> API.api_client()
     case apply(Page, page_symbol, [client]) do
       {:ok, response} ->
-        collections = fetch_collections(response.body["data"], user, collection_array, client)
-        fetch_response_ok(conn, user, page_view, response, collections, page_symbol, page_layout, page_type)
+        user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
+        content_collections = FetchCollection.content_collections(response.body["data"], collection_array, client)
+        changeset_collections = FetchCollection.changeset_collections(response.body["data"], user, collection_array)
+
+        fetch_response_ok(conn, user, page_view, response, collections, page_symbol, page_layout, "page")
       {:error, error} -> render_404_page(conn, error)
     end
+  end
+
+  def fetch_dashboard(conn, page_symbol, collection_slug, file_slug, collection_array) do
+
+    user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
+    
+    conn
+    |> put_flash(:info, (patreon.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."))
+    |> put_view(NfdWeb.DashboardView)
+    |> render(
+      "#{Atom.to_string(page_symbol)}.html",
+      layout: {NfdWeb.LayoutView, "hub.html"},
+      user: user,
+      subscriber: subscriber,
+      collections_access_list: collections_access_list,
+      is_subscribed: is_subscribed,
+      subscribed_property: subscribed_property,
+      collections: collections,
+      is_valid_patron: patreon.is_valid_patron,
+      tier: patreon.tier,
+      token_expired: patreon.token_expired
+    )
   end
 
   def fetch_response_ok(conn, user, page_view, response, collections, page_symbol, page_layout, page_type) do
     check_api_response_for_404(conn, response.status)
     Meta.increment_visit_count(response.body["data"])
     conn |> put_view(page_view) |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: response.body["data"], collections: collections, page_type: page_type, user: user)
-  end
-
-  def fetch_collections(item, user, collection_array, client) do
-    Enum.reduce(
-      collection_array,
-      %{},
-      fn symbol, acc ->
-        case symbol do
-          # COLLECTIONS
-          symbol when symbol in [:articles, :practices, :quotes, :updates, :blogs, :podcasts, :meditations, :courses] ->
-            merge_collection(client, symbol, acc, item)
-
-          :comments ->
-            comments = Meta.list_collection_access_by_page_id(item["page_id"])
-              |> Comment.organise_date()
-              |> Comment.organise_comments()
-
-            Map.put(acc, :comments, comments)
-
-          # MESSAGE CHANGESETS
-          :contact_form_changeset ->
-            contact_form_changeset = ContactForm.changeset(%ContactForm{}, %{name: "", email: "", message: ""})
-            Map.put(acc, :contact_form_changeset, contact_form_changeset)
-
-          :comment_form_changeset ->
-            id = if Map.has_key?(user, :id), do: user.id, else: ""
-            name = if Map.has_key?(user, :first_name), do: "#{user.first_name} #{user.last_name}", else: ""
-            email = if Map.has_key?(user, :email), do: user.email, else: ""
-            comment_form_changeset = Comment.changeset(%Comment{}, %{name: name, email: email, message: "", parent_message_id: "", user_id: id, depth: 0, page_id: item["page_id"]})
-            Map.put(acc, :comment_form_changeset, comment_form_changeset)
-
-          # CONTENT EMAIL
-          symbol when symbol in [:seven_day_kickstarter, :ten_day_meditation, :twenty_eight_day_awareness, :seven_week_awareness_vol_1, :seven_week_awareness_vol_2, :seven_week_awareness_vol_3, :seven_week_awareness_vol_4] ->
-            acc |> fetch_content_email(client, symbol)
-
-          # CONTENT EMAIL CHANGESET
-          symbol when symbol in [:seven_day_kickstarter_changeset, :ten_day_meditation_changeset, :twenty_eight_day_awareness_changeset, :seven_week_awareness_vol_1_changeset, :seven_week_awareness_vol_2_changeset, :seven_week_awareness_vol_3_changeset, :seven_week_awareness_vol_4_changeset] ->
-            acc |> fetch_subscriber_changeset(symbol)
-
-          _ ->
-            acc
-        end
-      end)
-  end
-
-  defp fetch_collection_specific(user, page_symbol, slug) do
-    case page_symbol do
-      :practice ->
-        if user do
-          # Get correct collection, based on slug, which would require looking at each file.
-          ebook
-
-        end
-      # :article -> %{}
-      # :course -> %{}
-      # :podcast -> %{}
-      # :quote -> %{}
-      # :meditation -> %{}
-      # :blog -> %{}
-      # :update -> %{}
-      _ -> %{}
-    end
-  end
-
-  defp merge_collection(client, content_symbol, acc, item) do
-    {:ok, response} = apply(Page, content_symbol, [client])
-    collections = response.body["data"][Atom.to_string(content_symbol)] |> Enum.reverse()
-    { previous_item, next_item } = Nfd.Meta.Page.previous_next_item(collections, item);
-    Map.merge(acc, %{
-      content_symbol => collections,
-      next_item: next_item,
-      previous_item: previous_item
-    })
-  end
-
-  defp fetch_content_email(acc, client, symbol) do
-    {:ok, response} = apply(Page, symbol, [client])
-    data = response.body["data"]
-    Map.put(acc, :seven_day_kickstarter, data)
-  end
-
-  defp fetch_subscriber_changeset(acc, symbol) do
-    Map.put(acc, symbol, Subscriber.changeset(%Subscriber{}, %{}))
   end
 
   def render_404_page(conn, error) do

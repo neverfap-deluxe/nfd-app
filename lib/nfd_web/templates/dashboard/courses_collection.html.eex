@@ -12,7 +12,7 @@
     <div class="dashboard__main__area__content">
       <p><b>Landing page:</b> <a class="link" href="/<%= @collections.course.slug %>">link</a></p>
       <!-- TODO: In order to show this, it needs to check if the program has been purchased first. If not, show button which allows you to do that. Assuming it's a paid course to begin with. -->
-      <%= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: @is_subscribed, subscribed_property: @subscribed_property, user_id: @user.id } %>
+      <%= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: @subscriber.subscribed, subscribed_property: :subscribed, user_id: @user.id } %>
     </div>
   </div>
 
@@ -31,7 +31,7 @@
   <%= if @collections.has_paid_for_collection == nil or @collections.course.premium do %>
     <%= partial "dashboard/campaign_payment.html", %{ collections: @collections } %>
   <% end %>
-  
+
   <%= if do  %>
     <div class="dashboard__main__area">
       <p>You already have access to this course </p>

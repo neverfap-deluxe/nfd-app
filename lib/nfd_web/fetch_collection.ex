@@ -1,110 +1,166 @@
 defmodule NfdWeb.FetchCollection do
-  def fetch_collections_array(name) do
-    case name do
-      # PAGE CONTROLLERS
-      # GENERAL
-      :general_home -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :general_about -> [:contact_form_changeset]
-      :general_contact -> [:contact_form_changeset]
-      :general_community -> []
-      :general_donations -> []
-      :general_everything -> []
-      :general_premium -> []
 
-      # GUIDES
-      :guides_guide -> [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :guides_summary -> []
-      :guides_neverfap_deluxe_bible -> []
-      :guides_emergency -> []
-      :guides_post_relapse_academy -> []
+  alias Nfd.Meta
+  alias Nfd.Meta.Comment
 
-      # LEGAL
-      :legal_disclaimer -> []
-      :legal_privacy -> []
-      :legal_terms_and_conditions -> []
+  alias Nfd.API
+  alias Nfd.API.Page
+  alias Nfd.API.Content
 
-      # PROGRAMS
-      :programs_accountability -> []
-      :programs_reddit_guidelines -> []
-      :programs_coaching -> []
+  alias Nfd.Account
+  alias Nfd.Account.Subscriber
+  alias Nfd.Account.ContactForm
 
-      # VOLUNTEER
-      :volunteer_helpful_neverfap_counsel -> []
-      :volunteer_engineering_corps -> []
-      :volunteer_marketing_department -> []
+  def user_collections(conn, collection_array) do
+    Enum.reduce(
+      collection_array,
+      %{},
+      fn symbol, acc ->
+        user = Pow.Plug.current_user(conn)
+        CollectionAccess.create_collection_access_for_free_courses(user)
+        case symbol do
+          :user -> Map.put(acc, :user, user |> Account.get_user_pow!())
+          :subscriber -> Map.put(acc, :subscriber, user |> Subscriber.check_subscriber_exists())
 
-      # APPS
-      :apps_desktop_app -> []
-      :apps_mobile_app -> []
-      :apps_chrome_extension -> []
-      :apps_open_source -> []
-      :apps_neverfap_deluxe_league -> []
+          :patreon_access ->
+            patreon_access = Patreon.fetch_patreon(conn, user)
+            IO.inspect(patreon_access)
+            Map.put(acc, :patreon_access, patreon_access)
 
-      # MISC
-      :misc_never_fap -> []
+          :collections_access_list ->
+            collections_access_list = Account.list_collection_access_by_user_id(user.id)
+            Map.put(acc, :collections_access_list, collections_access_list)
 
-      # CONTENT
-      :articles -> [:articles]
-      :article -> [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset]
+          _ ->
+            acc
+        end
+      end)
+  end
 
-      :practices -> [:practices]
-      :practice -> [:articles, :practices, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset]
+  def content_collections(item, collection_array, client) do
+    Enum.reduce(
+      collection_array,
+      %{},
+      fn symbol, acc ->
+        case symbol do
+          # CONTENT
+          symbol when symbol in [:articles, :practices, :quotes, :updates, :blogs, :podcasts, :meditations, :courses] ->
+            merge_collection(client, symbol, acc, item)
 
-      :courses -> [:courses]
-      :course -> [:articles, :practices, :comments, :comment_form_changeset]
+          # CONTENT EMAIL
+          symbol when symbol in [:seven_day_kickstarter, :ten_day_meditation, :twenty_eight_day_awareness, :seven_week_awareness_vol_1, :seven_week_awareness_vol_2, :seven_week_awareness_vol_3, :seven_week_awareness_vol_4] ->
+            acc |> fetch_content_email(client, symbol)
 
-      :podcasts -> [:podcasts]
-      :podcast -> [:podcasts, :comments, :comment_form_changeset]
+          # CONTENT EMAIL CHANGESET
+          symbol when symbol in [:seven_day_kickstarter_changeset, :ten_day_meditation_changeset, :twenty_eight_day_awareness_changeset, :seven_week_awareness_vol_1_changeset, :seven_week_awareness_vol_2_changeset, :seven_week_awareness_vol_3_changeset, :seven_week_awareness_vol_4_changeset] ->
+            acc |> fetch_subscriber_changeset(symbol)
 
-      :quotes -> [:quotes]
-      :quote -> [:quotes, :comments, :comment_form_changeset]
+          _ ->
+            acc
+        end
+      end)
+  end
 
-      :meditations -> [:meditations]
-      :meditation -> [:meditations, :comments, :comment_form_changeset]
+  def changeset_collections(item, user, collection_array) do
+    Enum.reduce(
+      collection_array,
+      %{},
+      fn symbol, acc ->
+        case symbol do
+          :comments ->
+            comments = Meta.list_collection_access_by_page_id(item["page_id"])
+              |> Comment.organise_date()
+              |> Comment.organise_comments()
 
-      :blogs -> [:blogs]
-      :blog -> [:blogs, :comments, :comment_form_changeset]
+            Map.put(acc, :comments, comments)
 
-      :updates -> [:updates]
-      :update -> [:updates, :comments, :comment_form_changeset]
+          # MESSAGE CHANGESETS
+          :contact_form_changeset ->
+            contact_form_changeset = ContactForm.changeset(%ContactForm{}, %{name: "", email: "", message: ""})
+            Map.put(acc, :contact_form_changeset, contact_form_changeset)
 
-      # CONTENT EMAIL
-      :seven_day_kickstarter ->  [:seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :seven_day_kickstarter_single -> [:seven_day_kickstarter]
+          :comment_form_changeset ->
+            name = if Map.has_key?(user, :first_name), do: "#{user.first_name} #{user.last_name}", else: ""
+            comment_form_changeset = Comment.changeset(%Comment{}, %{name: name, email: user[:email] or "", message: "", parent_message_id: "", user_id: user[:id] or "", depth: 0, page_id: item["page_id"]})
+            Map.put(acc, :comment_form_changeset, comment_form_changeset)
 
-      :ten_day_meditation ->  [:ten_day_meditation]
-      :ten_day_meditation_single -> [:ten_day_meditation]
+          _ ->
+            acc
+        end
+      end)
+  end
 
-      :twenty_eight_day_awareness ->  [:twenty_eight_day_awareness, :twenty_eight_day_awareness_changeset]
-      :twenty_eight_day_awareness_single -> [:twenty_eight_day_awareness]
+  def dashboard_collections(conn, collection_array, collections_access_list, collection_slug, file_slug, user, patreon) do
+    Enum.reduce(
+      collection_array,
+      %{},
+      fn symbol, acc ->
+        case symbol do
+          # COLLECTION
+          :ebooks -> Map.put(acc, :ebooks, Content.list_ebooks_with_files())
+          :courses -> Map.put(acc, :courses, Content.list_courses_with_files())
 
-      :seven_week_awareness_vol_1 ->  [:seven_week_awareness_vol_1, :seven_week_awareness_vol_1_changeset]
-      :seven_week_awareness_vol_1_single -> [:twenty_eight_day_awareness]
+          # SINGLE COLLECTION
+          symbol when symbol in [:ebook, :course] ->
+            collection = Content.get_collection_slug_with_files!(collection_slug)
+            tier_access_collection = Patreon.tier_access_rights(patreon)
+            has_paid_for_collection = Collection.has_paid_for_collection(collections_access_list, collection, user, patreon)
+            Map.merge(acc, %{ symbol => collection, tier_access_collection: tier_access_collection, has_paid_for_collection: has_paid_for_collection })
 
-      :seven_week_awareness_vol_2 ->  [:seven_week_awareness_vol_2, :seven_week_awareness_vol_2_changeset]
-      :seven_week_awareness_vol_2_single -> [:twenty_eight_day_awareness]
+          # SINGLE COLLECTION FILES
+          symbol when symbol in [:ebook_file, :course_file] ->
+            file = Content.get_file_slug!(file_slug)
+            # backblaze_contents = BackBlaze.get_file_contents()
+            Map.put(acc, symbol, file)
 
-      :seven_week_awareness_vol_3 ->  [:seven_week_awareness_vol_3, :seven_week_awareness_vol_3_changeset]
-      :seven_week_awareness_vol_3_single -> [:twenty_eight_day_awareness]
+          _ ->
+            acc
+        end
+      end
+    )
+  end
 
-      :seven_week_awareness_vol_4 ->  [:seven_week_awareness_vol_4, :seven_week_awareness_vol_4_changeset]
-      :seven_week_awareness_vol_4_single -> [:twenty_eight_day_awareness]
+  def api_key_collections(conn, collection_array, collection_slug, user) do
+    Enum.reduce(
+      collection_array,
+      %{},
+      fn symbol, acc ->
+        case symbol do
+          :stripe_api_key ->
+            stripe_api_key = Stripe.get_api_key(conn.host)
+            Map.put(acc, :stripe_api_key, stripe_api_key)
 
-      # DASHBOARD
-      :dashboard -> [:courses, :patreon_auth_url]
-      :dashboard_coaching -> [:courses]
+          :stripe_session ->
+            stripe_session = Stripe.create_stripe_session(user, conn.host, collection_slug)
+            Map.put(acc, :stripe_session, stripe_session)
 
-      :courses -> [:courses]
-      :course_collection -> [:course, :courses, :stripe_session, :stripe_api_key, :paypal_api_key]
-      :course_file -> [:course, :courses, :course_file]
+          :paypal_api_key ->
+            paypal_api_key = Paypal.get_api_key(conn.host)
+            Map.put(acc, :paypal_api_key, paypal_api_key)
 
-      :ebooks -> [:ebooks]
-      :ebooks_collection -> [:ebook, :ebooks, :stripe_session, :stripe_api_key, :paypal_api_key]
-      :ebook_file -> [:ebook, :ebooks, :ebook_file]
+          :patreon_auth_url ->
+            Map.merge(acc, %{ patreon_auth_url: Patreon.generate_relevant_patreon_auth_url(conn.host) })
 
-      :profile -> []
-      :profile_delete_confirmation -> []
-    end
+          _ ->
+            acc
+        end
+      end
+    )
   end
 
 end
+
+# No idea bout this, I'm sure it's relevant/useful.
+# courses_raw
+#   |> Enum.filter(fn(collection) ->
+#     collection_added_to_access_list = Enum.find(collections_access_list, fn(access_list) -> access_list.collection_id == collection.id end)
+#     if collection_added_to_access_list, do: false, else: true
+#   end)
+
+# courses_purchased = courses_raw |> Enum.filter()
+#   courses_available =
+#     courses_raw
+#       |> Enum.filter(fn(collection) ->
+#         collection_added_to_access_list = Enum.find(collections_access_list, fn(access_list) -> access_list.collection_id == collection.id end)
+#         if collection_added_to_access_list, do: true, else: false
+#       end)

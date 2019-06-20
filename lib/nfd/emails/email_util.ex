@@ -72,16 +72,16 @@ defmodule Nfd.Util.Email do
       ["3", "0"] -> { awareness_challenge_type, :nothing }
       ["3", "1"] -> { awareness_challenge_type, :subscribe }
       ["3", "2"] -> { awareness_challenge_type, :unsubscribe }
-      ["4", "0"] -> { awareness_seven_week_vol_1_type, :nothing }      
+      ["4", "0"] -> { awareness_seven_week_vol_1_type, :nothing }
       ["4", "1"] -> { awareness_seven_week_vol_1_type, :subscribe }
       ["4", "2"] -> { awareness_seven_week_vol_1_type, :unsubscribe }
-      ["5", "0"] -> { awareness_seven_week_vol_2_type, :nothing }      
+      ["5", "0"] -> { awareness_seven_week_vol_2_type, :nothing }
       ["5", "1"] -> { awareness_seven_week_vol_2_type, :subscribe }
       ["5", "2"] -> { awareness_seven_week_vol_2_type, :unsubscribe }
-      ["6", "0"] -> { awareness_seven_week_vol_3_type, :nothing }      
+      ["6", "0"] -> { awareness_seven_week_vol_3_type, :nothing }
       ["6", "1"] -> { awareness_seven_week_vol_3_type, :subscribe }
       ["6", "2"] -> { awareness_seven_week_vol_3_type, :unsubscribe }
-      ["7", "0"] -> { awareness_seven_week_vol_4_type, :nothing }      
+      ["7", "0"] -> { awareness_seven_week_vol_4_type, :nothing }
       ["7", "1"] -> { awareness_seven_week_vol_4_type, :subscribe }
       ["7", "2"] -> { awareness_seven_week_vol_4_type, :unsubscribe }
     end
@@ -100,24 +100,24 @@ defmodule Nfd.Util.Email do
       ^awareness_seven_week_vol_4_type -> {:awareness_seven_week_vol_4_count, :awareness_seven_week_vol_4_subscribed}
     end
   end
-  def collection_slug_to_type(collection_slug) do
-    { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type, awareness_seven_week_vol_1_type, awareness_seven_week_vol_2_type, awareness_seven_week_vol_3_type, awareness_seven_week_vol_4_type } = Nfd.Util.Email.generate_course_types()
+  # def collection_slug_to_type(collection_slug) do
+  #   { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type, awareness_seven_week_vol_1_type, awareness_seven_week_vol_2_type, awareness_seven_week_vol_3_type, awareness_seven_week_vol_4_type } = Nfd.Util.Email.generate_course_types()
 
-    cond do
-      collection_slug == "general-newsletter" -> general_type
-      collection_slug == "seven-day-neverfap-deluxe-kickstarter" -> kickstarter_type
-      collection_slug == "ten-day-meditation-primer" -> meditation_primer_type
-      collection_slug == "twenty-eight-day-awareness-challenge" -> awareness_challenge_type
-      collection_slug == "seven-week-awareness-challenge-vol-1"-> awareness_seven_week_vol_1_type
-      collection_slug == "seven-week-awareness-challenge-vol-2"-> awareness_seven_week_vol_2_type
-      collection_slug == "seven-week-awareness-challenge-vol-3"-> awareness_seven_week_vol_3_type
-      collection_slug == "seven-week-awareness-challenge-vol-4"-> awareness_seven_week_vol_4_type
-    end
-  end
-  def collection_slug_to_subscribed_property(collection_slug) do
-    type = collection_slug_to_type(collection_slug)
-    type_to_subscriber_properties(type)
-  end
+  #   cond do
+  #     collection_slug == "general-newsletter" -> general_type
+  #     collection_slug == "seven-day-neverfap-deluxe-kickstarter" -> kickstarter_type
+  #     collection_slug == "ten-day-meditation-primer" -> meditation_primer_type
+  #     collection_slug == "twenty-eight-day-awareness-challenge" -> awareness_challenge_type
+  #     collection_slug == "seven-week-awareness-challenge-vol-1"-> awareness_seven_week_vol_1_type
+  #     collection_slug == "seven-week-awareness-challenge-vol-2"-> awareness_seven_week_vol_2_type
+  #     collection_slug == "seven-week-awareness-challenge-vol-3"-> awareness_seven_week_vol_3_type
+  #     collection_slug == "seven-week-awareness-challenge-vol-4"-> awareness_seven_week_vol_4_type
+  #   end
+  # end
+  # def collection_slug_to_subscribed_property(collection_slug) do
+  #   type = collection_slug_to_type(collection_slug)
+  #   type_to_subscriber_properties(type)
+  # end
   def generate_confirmation_url(email, multiple_matrix, main_matrix), do: "#{NfdWeb.Endpoint.url()}/subscription_success?subscriber_email=#{email}&multiple_matrix=#{multiple_matrix}&main_matrix=#{main_matrix}"
   def generate_unsubscribe_url(main_matrix, email), do: "#{NfdWeb.Endpoint.url()}/unsubscribe?subscriber_email=#{email}&main_matrix=#{main_matrix}"
   def generate_course_name_from_type(type) do
