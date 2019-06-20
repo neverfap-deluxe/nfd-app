@@ -53,6 +53,12 @@ defmodule Nfd.Meta.Comment do
     |> cast(attrs, [:upvote_tally])
   end
 
+  def get_comment_form_changeset(acc) do
+    name = if Map.has_key?(user, :first_name), do: "#{user.first_name} #{user.last_name}", else: ""
+    comment_form_changeset = Comment.changeset(%Comment{}, %{name: name, email: user[:email] or "", message: "", parent_message_id: "", user_id: user[:id] or "", depth: 0, page_id: item["page_id"]})
+    Map.put(acc, :comment_form_changeset, comment_form_changeset)
+  end
+
   def organise_comments(comments) do
     comments
       |> Enum.filter(fn (comment) -> !comment.parent_message_id end)

@@ -36,15 +36,12 @@ defmodule NfdWeb.FetchCollection do
       %{},
       fn symbol, acc ->
         case symbol do
-          # CONTENT
           symbol when symbol in [:articles, :practices, :quotes, :updates, :blogs, :podcasts, :meditations, :courses] ->
             acc |> FetchCollectionUtil.merge_collection(client, symbol, item)
 
-          # CONTENT EMAIL
           symbol when symbol in [:seven_day_kickstarter, :ten_day_meditation, :twenty_eight_day_awareness, :seven_week_awareness_vol_1, :seven_week_awareness_vol_2, :seven_week_awareness_vol_3, :seven_week_awareness_vol_4] ->
             acc |> FetchCollectionUtil.fetch_content_email(client, symbol)
 
-          # CONTENT EMAIL CHANGESET
           symbol when symbol in [:seven_day_kickstarter_changeset, :ten_day_meditation_changeset, :twenty_eight_day_awareness_changeset, :seven_week_awareness_vol_1_changeset, :seven_week_awareness_vol_2_changeset, :seven_week_awareness_vol_3_changeset, :seven_week_awareness_vol_4_changeset] ->
             acc |> FetchCollectionUtil.fetch_subscriber_changeset(symbol)
 
@@ -68,11 +65,9 @@ defmodule NfdWeb.FetchCollection do
             Map.put(acc, :comments, comments)
 
           # MESSAGE CHANGESETS
-          :contact_form_changeset ->
-            contact_form_changeset = ContactForm.changeset(%ContactForm{}, %{name: "", email: "", message: ""})
-            Map.put(acc, :contact_form_changeset, contact_form_changeset)
+          :contact_form_changeset -> ContactForm.get_contact_form_changeset(acc)
 
-          :comment_form_changeset ->
+          :comment_form_changeset -> Comment.get_comment_form_changeset(acc, user)
             name = if Map.has_key?(user, :first_name), do: "#{user.first_name} #{user.last_name}", else: ""
             comment_form_changeset = Comment.changeset(%Comment{}, %{name: name, email: user[:email] or "", message: "", parent_message_id: "", user_id: user[:id] or "", depth: 0, page_id: item["page_id"]})
             Map.put(acc, :comment_form_changeset, comment_form_changeset)
@@ -90,8 +85,8 @@ defmodule NfdWeb.FetchCollection do
       fn symbol, acc ->
         case symbol do
           # COLLECTION
-          :ebooks -> Map.put(acc, :ebooks, Content.list_ebooks_with_files())
-          :courses -> Map.put(acc, :courses, Content.list_courses_with_files())
+          :ebooks -> acc |> Map.merge(%{ ebooks: Content.list_ebooks_with_files() })
+          :courses -> acc |> Map.merge(%{ courses: Content.list_courses_with_files() })
 
           # SINGLE COLLECTION
           symbol when symbol in [:ebook, :course] ->
@@ -102,9 +97,8 @@ defmodule NfdWeb.FetchCollection do
 
           # SINGLE COLLECTION FILES
           symbol when symbol in [:ebook_file, :course_file] ->
-            file = Content.get_file_slug!(file_slug)
-            # backblaze_contents = BackBlaze.get_file_contents()
-            Map.put(acc, symbol, file)
+            # TODO BackBlaze
+            acc |> Map.merge(%{ symbol => Content.get_file_slug!(file_slug) })
 
           _ ->
             acc
@@ -119,23 +113,11 @@ defmodule NfdWeb.FetchCollection do
       %{},
       fn symbol, acc ->
         case symbol do
-          :stripe_api_key ->
-            stripe_api_key = Stripe.get_api_key(conn.host)
-            Map.put(acc, :stripe_api_key, stripe_api_key)
-
-          :stripe_session ->
-            stripe_session = Stripe.create_stripe_session(user, conn.host, collection_slug)
-            Map.put(acc, :stripe_session, stripe_session)
-
-          :paypal_api_key ->
-            paypal_api_key = Paypal.get_api_key(conn.host)
-            Map.put(acc, :paypal_api_key, paypal_api_key)
-
-          :patreon_auth_url ->
-            Map.merge(acc, %{ patreon_auth_url: Patreon.generate_relevant_patreon_auth_url(conn.host) })
-
-          _ ->
-            acc
+          :stripe_api_key -> acc |> Map.merge(%{ stripe_api_key: Stripe.get_api_key(conn.host) })
+          :stripe_session -> acc |> Map.merge(%{ stripe_session: Stripe.create_stripe_session(user, conn.host, collection_slug) })
+          :paypal_api_key -> acc |> Map.merge(%{ paypal_api_key: Paypal.get_api_key(conn.host) })
+          :patreon_auth_url -> acc |> Map.merge(%{ patreon_auth_url: Patreon.generate_relevant_patreon_auth_url(conn.host) })
+          _ -> acc
         end
       end
     )

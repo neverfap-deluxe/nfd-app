@@ -18,4 +18,9 @@ defmodule Nfd.Account.ContactForm do
     |> cast(attrs, [:name, :email, :message])
     |> validate_required([:name, :email, :message])
   end
+
+  def get_contact_form_changeset(acc) do
+    contact_form_changeset = ContactForm.changeset(%ContactForm{}, %{name: "", email: "", message: ""})
+    Map.put(acc, :contact_form_changeset, contact_form_changeset)
+  end
 end
