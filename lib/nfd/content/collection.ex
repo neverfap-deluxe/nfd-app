@@ -29,7 +29,7 @@ defmodule Nfd.Content.Collection do
     |> validate_required([:slug, :display_name, :status, :description, :type, :premium])
   end
 
-  def has_paid_for_collection(collections_access_list, collection, user) do
+  def has_paid_for_collection(collections_access_list, collection, user, patreon) do
     collections_access_list
       |> Enum.find(fn(list_collection) ->
         list_collection.collection_id == collection.id and list_collection.user_id == user.id

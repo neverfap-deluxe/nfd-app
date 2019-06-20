@@ -8,7 +8,7 @@ defmodule Nfd.SeedTDMP do
   def seed do
     case Content.get_collection_seed_id("943bd030-60e4-42da-a8c1-0c926c508374") do
       nil ->
-        Repo.insert!(%Collection{
+        collection = Repo.insert!(%Collection{
           seed_id: "943bd030-60e4-42da-a8c1-0c926c508374",
           type: "course",
           status: "complete",
@@ -20,12 +20,13 @@ defmodule Nfd.SeedTDMP do
           price: 9.99,
           slug: "ten-day-meditation-primer"
         })
-        ten_day_meditation_files()
+        ten_day_meditation_files(collection.id)
+        
       _collection -> nil
     end
   end
 
-  def ten_day_meditation_files() do
+  def ten_day_meditation_files(collection_id) do
     Repo.insert(%File{
       seed_id: "36652b93-34e9-4bf8-8b15-97aab73fbeeb",
       type: "audio",
@@ -34,7 +35,8 @@ defmodule Nfd.SeedTDMP do
       bucket_name: "tdmp",
       file_url: "", # TODO
       premium: true,
-      slug: "meditation-basics"
+      slug: "meditation-basics",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "8aa47f35-ee3a-47e9-938c-48f61f24a893",
@@ -44,7 +46,8 @@ defmodule Nfd.SeedTDMP do
       bucket_name: "tdmp",
       file_url: "", # TODO
       premium: true,
-      slug: "understanding-the-purpose-of-meditation"
+      slug: "understanding-the-purpose-of-meditation",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "ef587626-1c38-48a9-9128-567585bea7a6",
@@ -54,7 +57,8 @@ defmodule Nfd.SeedTDMP do
       bucket_name: "tdmp",
       file_url: "", # TODO
       premium: true,
-      slug: "developing-our-capacity-for-awareness"
+      slug: "developing-our-capacity-for-awareness",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "3e81ca09-9a81-4626-af3b-e33bf72d7eaa",
@@ -64,7 +68,8 @@ defmodule Nfd.SeedTDMP do
       bucket_name: "tdmp",
       file_url: "", # TODO
       premium: true,
-      slug: "embracing-calmness"
+      slug: "embracing-calmness",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "a206a07e-3c1d-4ba6-9162-08c3887a8bb3",
@@ -74,7 +79,8 @@ defmodule Nfd.SeedTDMP do
       bucket_name: "tdmp",
       file_url: "", # TODO
       premium: true,
-      slug: "observe-what-you-see"
+      slug: "observe-what-you-see",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "ad833bb5-6754-4bd0-8434-4ab4bea90ac8",
@@ -84,7 +90,8 @@ defmodule Nfd.SeedTDMP do
       bucket_name: "tdmp",
       file_url: "", # TODO
       premium: true,
-      slug: "observe-what-you-hear"
+      slug: "observe-what-you-hear",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "7b455f3c-95be-4059-b854-29bb12387c0a",
@@ -94,7 +101,8 @@ defmodule Nfd.SeedTDMP do
       bucket_name: "tdmp",
       file_url: "", # TODO
       premium: true,
-      slug: "observe-what-you-feel"
+      slug: "observe-what-you-feel",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "34393ebd-f7fe-48b8-b1db-c39858c22710",
@@ -104,7 +112,8 @@ defmodule Nfd.SeedTDMP do
       bucket_name: "tdmp",
       file_url: "", # TODO
       premium: true,
-      slug: "feeling-empowered"
+      slug: "feeling-empowered",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "dd14c99f-7e08-4da6-ba59-011bc8c456ae",
@@ -114,7 +123,8 @@ defmodule Nfd.SeedTDMP do
       bucket_name: "tdmp",
       file_url: "", # TODO
       premium: true,
-      slug: "acknowledgement"
+      slug: "acknowledgement",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "9b9bcbd6-cceb-43fd-be8c-a671402941b5",
@@ -124,7 +134,8 @@ defmodule Nfd.SeedTDMP do
       bucket_name: "tdmp",
       file_url: "", # TODO
       premium: true,
-      slug: "acceptance"
+      slug: "acceptance",
+      collection_id: collection_id
     })
   end
 

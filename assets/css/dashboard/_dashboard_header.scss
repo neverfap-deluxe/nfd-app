@@ -1,4 +1,4 @@
-.hub__header {
+.dashboard__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -6,34 +6,33 @@
   margin: 0;
   height: 5rem;
 
-  .hub__header__logo {
+  .dashboard__header__logo {
     font-size: 1.6rem;
     margin: 0;
     margin-left: 1rem;
   }
 
-  .hub__header__logout {
+  .dashboard__header__logout {
     margin-right: 1.5rem;
   }
 
-  .hub__header__buttons {
+  .dashboard__header__buttons {
     display: flex;
     justify-content: center;
     align-items: center;
 
     flex-direction: column;
 
-    .hub__header__button {
+    .dashboard__header__button {
       display: flex;
       justify-content: center;
       align-items: center;
-  
-      
+
       width: 5rem;
       height: 5rem;
     }
 
-    .hub__header__button:hover {
+    .dashboard__header__button:hover {
       background: rgba(66, 62, 62, 0.1);
     }
   }

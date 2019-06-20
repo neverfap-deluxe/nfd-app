@@ -1,27 +1,27 @@
-<div class="hub__sidebar">
-  <div class="hub__sidebar__buttons">
-    
-    <%= link to: Routes.dashboard_path(@conn, :dashboard), class: "hub__sidebar__button" do %>
+<div class="dashboard__sidebar">
+  <div class="dashboard__sidebar__buttons">
+
+    <%= link to: Routes.dashboard_path(@conn, :dashboard), class: "dashboard__sidebar__button" do %>
       <i class="fas fa-home"></i>
       <span>Dash</span>
     <% end %>
 
-    <%= link to: Routes.dashboard_path(@conn, :ebooks), class: "hub__sidebar__button" do %>
+    <%= link to: Routes.dashboard_path(@conn, :ebooks), class: "dashboard__sidebar__button" do %>
       <i class="fas fa-file-audio"></i>
       <span>Audio</span>
     <% end %>
 
-    <%= link to: Routes.dashboard_path(@conn, :courses), class: "hub__sidebar__button" do %>
+    <%= link to: Routes.dashboard_path(@conn, :courses), class: "dashboard__sidebar__button" do %>
       <i class="fas fa-envelope-square"></i>
       <span>Email</span>
     <% end %>
 
-    <%= link to: Routes.dashboard_path(@conn, :profile), class: "hub__sidebar__button" do %>
+    <%= link to: Routes.dashboard_path(@conn, :profile), class: "dashboard__sidebar__button" do %>
     <i class="fas fa-user-circle"></i>
       <span>Profile</span>
     <% end %>
 
-    <%= link to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "hub__sidebar__button" do %>
+    <%= link to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "dashboard__sidebar__button" do %>
       <i class="fas fa-sign-out-alt"></i>
       <span>Logout</span>
     <% end %>

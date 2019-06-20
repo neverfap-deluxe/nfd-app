@@ -6,28 +6,27 @@ defmodule Nfd.SeedSWAVOL1 do
   alias Nfd.Content.File
 
   def seed do
-    # 7 Week Awareness Challenge Vol 1.
     case Content.get_collection_seed_id("fd5bf9cf-a0db-41c9-af52-c482f4701384") do
       nil ->
-        Repo.insert!(%Collection{
-        seed_id: "fd5bf9cf-a0db-41c9-af52-c482f4701384",
-        type: "course",
-        status: "in_progress",
-        stripe_sku: "NA",
-        stripe_description: "Learn more about your awareness with Vol 1. of our 7 week awareness challenge.",
-        description: "Learn more about your awareness with Vol 1. of our 7 week awareness challenge.",
-        display_name: "7 Week Awareness Challenge Vol 1.",
-        premium: true,
-        price: 14.99,
-        slug: "seven-week-awareness-challenge-vol-1"
-      })
-      seven_week_awareness_vol_1_files()
+        collection = Repo.insert!(%Collection{
+          seed_id: "fd5bf9cf-a0db-41c9-af52-c482f4701384",
+          type: "course",
+          status: "in_progress",
+          stripe_sku: "NA",
+          stripe_description: "Learn more about your awareness with Vol 1. of our 7 week awareness challenge.",
+          description: "Learn more about your awareness with Vol 1. of our 7 week awareness challenge.",
+          display_name: "7 Week Awareness Challenge Vol 1.",
+          premium: true,
+          price: 14.99,
+          slug: "seven-week-awareness-challenge-vol-1"
+        })
+      seven_week_awareness_vol_1_files(collection.id)
 
       _collection -> nil
     end
   end
 
-  def seven_week_awareness_vol_1_files() do
+  def seven_week_awareness_vol_1_files(collection_id) do
     Repo.insert(%File{
       seed_id: "dd5b4c6f-b8b1-4a2e-b30d-4bd7f081f9d2",
       type: "audio",
@@ -36,7 +35,8 @@ defmodule Nfd.SeedSWAVOL1 do
       bucket_name: "swavol1",
       file_url: "", # TODO
       premium: true,
-      slug: "expressing-gratitude"
+      slug: "expressing-gratitude",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "2ce626da-3930-4d2d-b394-3a8e52dd1f73",
@@ -46,7 +46,8 @@ defmodule Nfd.SeedSWAVOL1 do
       bucket_name: "swavol1",
       file_url: "", # TODO
       premium: true,
-      slug: "focus-on-your-finger-and-your-background"
+      slug: "focus-on-your-finger-and-your-background",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "aa792de7-e471-4d82-9215-dc73aeb94689",
@@ -56,7 +57,8 @@ defmodule Nfd.SeedSWAVOL1 do
       bucket_name: "swavol1",
       file_url: "", # TODO
       premium: true,
-      slug: "relax-everything"
+      slug: "relax-everything",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "af235f37-b0c4-4bc9-a171-9f71788b106c",
@@ -66,7 +68,8 @@ defmodule Nfd.SeedSWAVOL1 do
       bucket_name: "swavol1",
       file_url: "", # TODO
       premium: true,
-      slug: "slow-down-time"
+      slug: "slow-down-time",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "969f1b8d-1cfb-4112-a926-7a52eb4907db",
@@ -76,7 +79,8 @@ defmodule Nfd.SeedSWAVOL1 do
       bucket_name: "swavol1",
       file_url: "", # TODO
       premium: true,
-      slug: "identify-points-of-awareness-throughout-your-day"
+      slug: "identify-points-of-awareness-throughout-your-day",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "88975891-0011-4d5e-a537-eb83dc9f4a9e",
@@ -86,7 +90,8 @@ defmodule Nfd.SeedSWAVOL1 do
       bucket_name: "swavol1",
       file_url: "", # TODO
       premium: true,
-      slug: "can-you-look-through-walls"
+      slug: "can-you-look-through-walls",
+      collection_id: collection_id
     })
     Repo.insert(%File{
       seed_id: "053b4085-6673-464c-8665-283317077d7b",
@@ -96,7 +101,8 @@ defmodule Nfd.SeedSWAVOL1 do
       bucket_name: "swavol1",
       file_url: "", # TODO
       premium: true,
-      slug: "looking-straight-ahead"
+      slug: "looking-straight-ahead",
+      collection_id: collection_id
     })
   end
 end

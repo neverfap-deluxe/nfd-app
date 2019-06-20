@@ -2,17 +2,16 @@
   display: flex;
   flex-direction: column;
 
-  .hub__bottom {
+  .dashboard__bottom {
     display: flex;
     flex-direction: column;
   }
 }
 
-
-.hub__dashboard, 
-.hub__profile, 
-.hub__audio__courses, 
-.hub__email__challenges {
+.dashboard,
+.dashboard__profile,
+.dashboard__audio__courses,
+.dashboard__email__challenges {
   box-sizing: border-box;
   padding: 0.5rem;
   padding-top: 2rem;
@@ -20,7 +19,7 @@
 
   background: rgb(230, 229, 229);
 
-  .hub__main__title {
+  .dashboard__main__title {
     background: white;
     border: 4px solid #00ffee;
     padding: 3rem;
@@ -30,12 +29,11 @@
     margin-bottom: 3rem;
   }
 
-  .hub__main__title--email {
-    
+  .dashboard__main__title--email {
   }
 }
 
-.hub__main__back__container {
+.dashboard__main__back__container {
   display: flex;
   // flex-direction: column;
   margin-bottom: 1rem;
@@ -43,35 +41,34 @@
   position: relative;
   top: -1rem;
 
-  .hub__main__back {
+  .dashboard__main__back {
     background: white;
-    border: 4px solid rgba(255,46,182,1);
+    border: 4px solid rgba(255, 46, 182, 1);
     padding: 1rem;
     margin-right: 1rem;
     color: black;
-    transition: .2s box-shadow;
+    transition: 0.2s box-shadow;
   }
 
-  .hub__main__back:hover {
+  .dashboard__main__back:hover {
     box-shadow: -5px 5px 0px 0px #00ffee;
   }
 }
 
-.hub__main__area {
+.dashboard__main__area {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 
-  
   margin-bottom: 4rem;
   // box-shadow: -5px 5px 0px 0px rgba(255,46,182,1);
   // border: 4px solid rgba(255,46,182,1);
-  
+
   padding: 0.5rem;
   padding-top: 2rem;
   background: white;
-  
-  .hub__main__area__content {
+
+  .dashboard__main__area__content {
     width: 100%;
     margin-bottom: 2rem;
 
@@ -93,18 +90,18 @@
   }
 
   h2 {
-    margin-bottom: 1rem;  
+    margin-bottom: 1rem;
   }
 
   h3 {
     font-size: 1.3rem;
   }
-
 }
 
-.hub__main__audio, .hub__main__email {
+.dashboard__main__audio,
+.dashboard__main__email {
   margin-bottom: 2rem;
-  
+
   .email__collection {
     border: 4px solid black;
     padding: 1rem;
@@ -112,13 +109,12 @@
 
     h3 {
       margin-top: 0.5rem;
-
     }
 
     .email__collection__bottom {
       display: flex;
       align-items: center;
-      
+
       justify-content: space-between;
       width: 100%;
     }
@@ -126,19 +122,15 @@
 
   .audio__collection {
     h3 {
-      
     }
-
   }
 
   p {
-
   }
 }
 
-
 .delete__button {
-  color: red!important;
+  color: red !important;
 }
 
 .profile__options__container {
@@ -153,25 +145,25 @@
 }
 
 @media screen and (min-width: 768px) {
-  .hub__main__back__container {
+  .dashboard__main__back__container {
     // flex-direction: row;
   }
 
-  .hub__dashboard, 
-  .hub__profile, 
-  .hub__audio__courses, 
-  .hub__email__challenges {
+  .dashboard,
+  .dashboard__profile,
+  .dashboard__audio__courses,
+  .dashboard__email__challenges {
     padding: 3rem;
   }
 
   .hub {
-    .hub__bottom {
+    .dashboard__bottom {
       flex-direction: row;
     }
   }
-  .hub__main__area {
+  .dashboard__main__area {
     padding: 2rem;
-    .hub__main__area__content {
+    .dashboard__main__area__content {
       width: 600px;
     }
   }

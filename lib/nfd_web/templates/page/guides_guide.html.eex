@@ -123,11 +123,11 @@
     </div>
     <%= raw child_content(@item["children"], "guide-never-fap-deluxe-practices") %>
 
-    <p class="guide__link__container"><a class="guide__link" href="/practices/observe-your-senses/">Observe Your Senses</a></br>
+    <p class="guide__link__container"><a class="guide__link" href="/practices/observe-your-senses">Observe Your Senses</a></br>
       Our primary meditation exercise, which is the sole exercise we recommend that you practice every day.</p>
-    <p class="guide__link__container"><a class="guide__link" href="/practices/slow-down-time/">Slow Down Time</a></br>
+    <p class="guide__link__container"><a class="guide__link" href="/practices/slow-down-time">Slow Down Time</a></br>
       This exercise is great as an introduction to calmness.</p>
-    <p class="guide__link__container"><a class="guide__link" href="/practices/dissolve-your-visual-field/">Dissolve Your Visual Field</a></br>
+    <p class="guide__link__container"><a class="guide__link" href="/practices/dissolve-your-visual-field">Dissolve Your Visual Field</a></br>
       This is an excellent visual exercise which is designed to shatter your ego.</p>
   </div>
 </div>

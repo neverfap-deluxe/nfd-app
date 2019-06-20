@@ -1,9 +1,9 @@
-<div class="hub__audio__courses">
-  <h2 class="hub__main__title">Audio Courses</h2>
-  
-  <div class="hub__main__area">
-    <p>Come back soon!</p>    
-    <div class="hub__main__audio">
+<div class="dashboard__audio__courses">
+  <h2 class="dashboard__main__title">Audio Courses</h2>
+
+  <div class="dashboard__main__area">
+    <p>Come back soon!</p>
+    <div class="dashboard__main__audio">
 
     </div>
   </div>

@@ -1,0 +1,96 @@
+.dashboard__sidebar {
+  width: 100%;
+  height: 4rem;
+
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 46, 182, 1) 0%,
+    rgba(227, 152, 2, 1) 100%
+  ); /* ff3.6+ */
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    right top,
+    color-stop(0%, rgba(255, 46, 182, 1)),
+    color-stop(100%, rgba(227, 152, 2, 1))
+  ); /* safari4+,chrome */
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 46, 182, 1) 0%,
+    rgba(227, 152, 2, 1) 100%
+  ); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(
+    45deg,
+    rgba(255, 46, 182, 1) 0%,
+    rgba(227, 152, 2, 1) 100%
+  ); /* opera 11.10+ */
+  background: -ms-linear-gradient(
+    45deg,
+    rgba(255, 46, 182, 1) 0%,
+    rgba(227, 152, 2, 1) 100%
+  ); /* ie10+ */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 46, 182, 1) 0%,
+    rgba(227, 152, 2, 1) 100%
+  ); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
+  color: white;
+  border-right: 5px solid black;
+
+  .dashboard__sidebar__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: row;
+
+    .dashboard__sidebar__button {
+      .fas {
+        font-size: 1.3rem;
+      }
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      color: white;
+      width: 100%;
+      height: 4rem;
+
+      span {
+        display: inline-block;
+        margin-top: 0.2rem;
+        text-align: center;
+        font-size: 0.6rem;
+      }
+    }
+
+    .dashboard__sidebar__button:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .dashboard__sidebar {
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .dashboard__sidebar {
+    width: 6rem;
+    min-width: 4rem;
+    height: initial;
+
+    .dashboard__sidebar__buttons {
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .dashboard__sidebar {
+  }
+}

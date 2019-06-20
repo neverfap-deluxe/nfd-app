@@ -1,18 +1,18 @@
-<div class="hub__profile">
-    <h2 class="hub__main__title">Profile</h2>
-    
-    <div class="hub__main__area">
-      <div class="hub__main__area__content">
+<div class="dashboard__profile">
+    <h2 class="dashboard__main__title">Profile</h2>
+
+    <div class="dashboard__main__area">
+      <div class="dashboard__main__area__content">
         <h3>Options</h3>
-  
+
         <div class="profile__options__container">
           <p>Are you sure you would like to delete your account?</p>
-          
+
           <div class="profile__options__container">
-            <%= link "Yes", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "subscribe__button delete__button" %> 
-            <%= link "No", to: Routes.dashboard_path(@conn, :profile), class: "subscribe__button delete__button" %>     
+            <%= link "Yes", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "subscribe__button delete__button" %>
+            <%= link "No", to: Routes.dashboard_path(@conn, :profile), class: "subscribe__button delete__button" %>
           </div>
-        
+
         </div>
       </div>
     </div>

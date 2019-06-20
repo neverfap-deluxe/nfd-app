@@ -8,9 +8,7 @@ defmodule Nfd.Content do
 
   alias Nfd.Content.Collection
 
-
-  # def collection_slug_to_collection_access(collection_slug) do 
-
+  # def collection_slug_to_collection_access(collection_slug) do
 
   @doc """
   Returns the list of collections.
@@ -25,16 +23,13 @@ defmodule Nfd.Content do
     Repo.all(Collection)
   end
 
-  def list_ebooks do
-    Repo.all(from c in Collection, where: [type: "audio_course"], order_by: [asc: :status]) 
+  def list_ebooks_with_files do
+    Repo.all(from c in Collection, where: [type: "ebook"], order_by: [asc: :status], preload: [:files])
   end
 
-  def list_courses do
-    Repo.all(from c in Collection, where: [type: "email_campaign"], order_by: [asc: :status]) 
+  def list_courses_with_files do
+    Repo.all(from c in Collection, where: [type: "course"], order_by: [asc: :status], preload: [:files])
   end
-
-
-
 
   @doc """
   Gets a single collection.
@@ -51,7 +46,7 @@ defmodule Nfd.Content do
 
   """
   def get_collection!(id), do: Repo.get!(Collection, id)
-  def get_collection_slug!(slug), do: Repo.get_by!(Collection, slug: slug)
+  def get_collection_slug_with_files!(slug), do: Repo.get_by!(Collection, slug: slug) |> Repo.preload(:files)
   def get_collection_seed_id(seed_id), do: Repo.get_by(Collection, seed_id: seed_id)
 
   @doc """

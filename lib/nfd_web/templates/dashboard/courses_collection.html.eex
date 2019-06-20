@@ -1,23 +1,42 @@
-<div class="hub__email__challenges">
-  <h2 class="hub__main__title hub__main__title--email"><%= @collections.course.display_name %></h2>
-  
-  <div class="hub__main__back__container">
-    <a class="hub__main__back" href="/dashboard/courses">
+<div class="dashboard__email__challenges">
+  <h2 class="dashboard__main__title dashboard__main__title--email"><%= @collections.course.display_name %></h2>
+
+  <div class="dashboard__main__back__container">
+    <a class="dashboard__main__back" href="/dashboard/courses">
       Back to Email Campaigns
     </a>
     <%= partial "dashboard/email_countdown_timer.html", assigns %>
   </div>
 
-  <div class="hub__main__area">
-    <div class="hub__main__area__content">
+  <div class="dashboard__main__area">
+    <div class="dashboard__main__area__content">
       <p><b>Landing page:</b> <a class="link" href="/<%= @collections.course.slug %>">link</a></p>
       <!-- TODO: In order to show this, it needs to check if the program has been purchased first. If not, show button which allows you to do that. Assuming it's a paid course to begin with. -->
       <%= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: @is_subscribed, subscribed_property: @subscribed_property, user_id: @user.id } %>
     </div>
   </div>
 
-  <%= if @collections.has_paid_for_collection == nil or @collections.course.premium or @collections.course.price != 0.0 do %>
+  <!-- List course files -->
+  <%= if @collections.courses.files do %>
+    <div class="dashboard__collection__files">
+      <%= Enum.map(@collections.course.files, fn (file) ->
+        <a href="<%= Routes.dashboard_path(@conn, :course_file, file.slug) %>" class="dashboard__collection__file">
+          <p><%= file.display_name %></p>
+        </a>
+      end) %>
+    </div>
+  <% end %>
+
+  <!-- Payment Module -->
+  <%= if @collections.has_paid_for_collection == nil or @collections.course.premium do %>
     <%= partial "dashboard/campaign_payment.html", %{ collections: @collections } %>
+  <% end %>
+  
+  <%= if do  %>
+    <div class="dashboard__main__area">
+      <p>You already have access to this course </p>
+      <div>You have already purchased!</div>
+    </div>
   <% end %>
 
 </div>

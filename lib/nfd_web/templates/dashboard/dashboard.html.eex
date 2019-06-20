@@ -1,8 +1,8 @@
-<div class="hub__dashboard">
-  <h2 class="hub__main__title">Dashboard</h2>
+<div class="dashboard">
+  <h2 class="dashboard__main__title">Dashboard</h2>
 
-  <div class="hub__main__area">
-    <div class="hub__main__area__content">
+  <div class="dashboard__main__area">
+    <div class="dashboard__main__area__content">
       <%= if @user.patreon_linked and @token_expired == false do %>
         <%= if @tier do %>
           <h2>Patreon Account Linked!</h2>
@@ -26,8 +26,8 @@
         <p>Otherwise, learn about the benefits you receive by become a Patron!</p>
 
         <div style="display: flex;">
-          <a class="button subscribe__button" style="margin-right: 1.2rem;" href="<%= @collections.patreon_auth_url %>">Link Patreon</a>  
-          <a class="button subscribe__button" href="<%= Routes.page_path(@conn, :general_premium) %>">Learn More</a>      
+          <a class="button subscribe__button" style="margin-right: 1.2rem;" href="<%= @collections.patreon_auth_url %>">Link Patreon</a>
+          <a class="button subscribe__button" href="<%= Routes.page_path(@conn, :general_premium) %>">Learn More</a>
         </div>
       <% end %>
 
@@ -37,25 +37,25 @@
     </div>
   </div>
 
-  <div class="hub__main__area">
-    <div class="hub__main__area__content">
+  <div class="dashboard__main__area">
+    <div class="dashboard__main__area__content">
       <h2>Email Campaigns</h2>
-      <%= partial "hub/email_campaign_list.html", %{ courses: @collections.courses, collections_access_list: @collections_access_list } %>
+      <%= partial "hub/course_list.html", %{ courses: @collections.courses, collections_access_list: @collections_access_list } %>
     </div>
   </div>
 
-  <div class="hub__main__area">
-    <div class="hub__main__area__content">
+  <div class="dashboard__main__area">
+    <div class="dashboard__main__area__content">
       <h2>Audio Courses</h2>
-      <div class="hub__main__audio">
+      <div class="dashboard__main__audio">
         <p>There are no audio courses, as of yet. Please feel free to check out the NeverFap Deluxe podcast while I figure out how to deliver the best possible experience for you.</p>
         <a style="margin-bottom: 1rem; margin-top: 1rem;"href="/podcast" class="button subscribe__button">NeverFap Deluxe Podcast</a>
       </div>
     </div>
   </div>
 
-  <div class="hub__main__area">
-    <div class="hub__main__area__content">
+  <div class="dashboard__main__area">
+    <div class="dashboard__main__area__content">
       <h2>Links</h2>
       <p>Website: <a href="https://neverfapdeluxe.com">https://neverfapdeluxe.com/</a></p>
       <p>Facebook: <a href="<%= Application.get_env(:nfd, :social_facebook_url) %>"><%= Application.get_env(:nfd, :social_facebook_url) %></a></p>

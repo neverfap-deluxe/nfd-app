@@ -42,7 +42,7 @@ defmodule Nfd.Patreon do
     { :ok, response } = post("https://www.patreon.com/api/oauth2/token", mp, headers: [{"content-type", "x-www-form-urlencoded"}])
     body = Jason.decode!(response.body)
     auth_client = auth_api_client(body["access_token"])
-    
+
     identity_url = "identity?include=memberships&fields%5Buser%5D=about,created,email,first_name,full_name,image_url,last_name,social_connections,thumb_url,url,vanity"
 
     { :ok, identityResponse } = auth_client |> get(identity_url)
@@ -51,11 +51,11 @@ defmodule Nfd.Patreon do
     update_user_information(conn, identity_body, body)
   end
 
-  defp update_user_information(conn, identity_body, body) do 
+  defp update_user_information(conn, identity_body, body) do
 
     # retrieve latest patreon information to update on the profile.
     patreon_user_id =
-      case identity_body["data"]["relationships"]["memberships"]["data"] do 
+      case identity_body["data"]["relationships"]["memberships"]["data"] do
         nil -> ""
         [] -> ""
         _ -> identity_body["data"]["relationships"]["memberships"]["data"] |> hd() |> Map.get("id")
@@ -66,11 +66,11 @@ defmodule Nfd.Patreon do
     first_name = identity_body["data"]["attributes"]["first_name"]
     last_name = identity_body["data"]["attributes"]["last_name"]
     avatar_url = identity_body["data"]["attributes"]["image_url"]
-    # expires in 
+    # expires in
 
     # update user information
     user = Pow.Plug.current_user(conn)
-  
+
     case Account.update_user(user, %{
       first_name: first_name,
       last_name: last_name,
@@ -82,9 +82,9 @@ defmodule Nfd.Patreon do
       patreon_access_token: body["access_token"],
       patreon_refresh_token: body["refresh_token"],
       patreon_expires_in: Timex.shift(Timex.now, days: 30)
-    }) do 
-      {:ok, success} -> IO.inspect success
-      {:error, error} -> IO.inspect error
+    }) do
+      # {:ok, success} -> IO.inspect success
+      # {:error, error} -> IO.inspect error
     end
   end
 
@@ -136,11 +136,11 @@ defmodule Nfd.Patreon do
     { :ok, response } = post("https://www.patreon.com/api/oauth2/token", mp, headers: [{"content-type", "x-www-form-urlencoded"}])
     body = Jason.decode!(response.body)
 
-    IO.inspect user.patreon_refresh_token
-    IO.inspect "refresh_user_patreon_information"
-    IO.inspect body
+    # IO.inspect user.patreon_refresh_token
+    # IO.inspect "refresh_user_patreon_information"
+    # IO.inspect body
 
-    auth_client = auth_api_client(body["access_token"])    
+    auth_client = auth_api_client(body["access_token"])
     identity_url = "identity?include=memberships&fields%5Buser%5D=about,created,email,first_name,full_name,image_url,last_name,social_connections,thumb_url,url,vanity"
 
     { :ok, identityResponse } = auth_client |> get(identity_url)
@@ -160,25 +160,25 @@ defmodule Nfd.Patreon do
     members_body = Jason.decode!(members_response.body)
 
     if not Map.has_key?(members_body, "errors") do
-      IO.inspect "members_body"
-      IO.inspect members_body
+      # IO.inspect "members_body"
+      # IO.inspect members_body
 
       tier_id =
-        case members_body["data"]["relationships"]["currently_entitled_tiers"]["data"] do 
+        case members_body["data"]["relationships"]["currently_entitled_tiers"]["data"] do
           nil -> nil
           [] -> nil
           _ -> members_body["data"]["relationships"]["currently_entitled_tiers"]["data"] |> hd() |> Map.get("id")
         end
 
-        IO.inspect tier_id
-        IO.inspect members_body["included"]
-      tier = 
-        case members_body["included"] do 
+        # IO.inspect tier_id
+        # IO.inspect members_body["included"]
+      tier =
+        case members_body["included"] do
           nil -> []
           _ -> members_body["included"] |> Enum.find(fn(member) -> member["id"] == tier_id end)
         end
 
-        IO.inspect tier
+        # IO.inspect tier
       # last_charge_status = members_body["data"]["attributes"]["last_charge_status"]
       patron_status = members_body["data"]["attributes"]["patron_status"]
 
@@ -186,50 +186,41 @@ defmodule Nfd.Patreon do
         token_expired: false,
         is_valid_patron: patron_status == "active_patron",
         tier: tier
-      } 
-    else 
+      }
+    else
       %{
         token_expired: false,
         is_valid_patron: false,
         tier: nil
-      }  
+      }
     end
   end
 
-  # defp generate_tier(tier_id) do 
-  #   the_fluffer_1 =
-  #     %{
-  #       id: "3425259",
-  #       title: "The Fluffer"
-  #     }
+  def tier_access_rights(patreon) do
+    if (not patreon.token_expired and patreon.is_valid_patron) do
+      case tier.amount_cents do
+        100 -> create_tier_access_rights([])
+        500 -> create_tier_access_rights([])
+        1000 -> create_tier_access_rights([:nfd_bible])
+        1500 -> create_tier_access_rights([:ebooks])
+        2500 -> create_tier_access_rights([:ebooks, :courses, :coaching])
+        5000 -> create_tier_access_rights([:ebooks, :courses, :coaching])
+        10000 -> create_tier_access_rights([:ebooks, :courses, :coaching])
+        15000 -> create_tier_access_rights([:ebooks, :courses, :coaching])
+        _ -> []
+      end
+    else
+      %{}
+    end
+  end
 
-  #   serial_offender_5 =
-  #     %{
-  #       id: "3335826",
-  #       title: "Serial Offender"
-  #     }
+  def create_tier_access_rights(access_list) do
+    Enum.reduce(access_list, %{}, fn access_item, acc ->
+      Map.put(acc, access_item, true)
+    end)
+  end
 
-  #   compulsive_turkey_abuser_10 =
-  #     %{
-  #       id: "3335828",
-  #       title: "Compulsive Turkey Abuser"
-  #     }
-
-  #   sugar_daddy_25 =
-  #     %{
-  #       id: "3335832",
-  #       title: "Sugar Daddy"
-  #     }
-
-  #   case tier_id do
-  #     "3425259" -> the_fluffer_1
-  #     "3335826" -> serial_offender_5
-  #     "3335828" -> compulsive_turkey_abuser_10
-  #     "3335832" -> sugar_daddy_25
-  #   end
-  # end
-
-  def generate_relevant_patreon_auth_url(host) do    
+  def generate_relevant_patreon_auth_url(host) do
     base_url = generate_base_url(host)
     authorize_patreon_url = "https://www.patreon.com/oauth2/authorize"
     scope = "campaigns%20identity%20campaigns.members%20identity.memberships"

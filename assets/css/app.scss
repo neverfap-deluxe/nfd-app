@@ -1,9 +1,10 @@
 @import "_main.scss";
 
-// hub
-@import "hub/_hub_header.scss";
-@import "hub/_hub.scss";
-@import "hub/_hub_sidebar.scss";
+// dashboard
+@import "dashboard/_dashboard.scss";
+@import "dashboard/_dashboard_collection.scss";
+@import "dashboard/_dashboard_header.scss";
+@import "dashboard/_dashboard_sidebar.scss";
 
 // partial
 @import "links/_account_info.scss";

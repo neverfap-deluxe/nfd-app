@@ -5,11 +5,11 @@
   <body>
       <div id="mobile__menu__overlay__background__id" class="mobile__menu__overlay__background">
         </div>
-        
+
     <div class="hub">
       <%= partial "layout/header.html", assigns %>
-      
-      <main role="main" class="hub__bottom">
+
+      <main role="main" class="dashboard__bottom">
         <%= partial "hub/sidebar.html", assigns %>
 
         <%= render @view_module, @view_template, assigns %>

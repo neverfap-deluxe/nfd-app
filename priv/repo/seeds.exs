@@ -1,6 +1,5 @@
 # This is no longer being used in favor for another file.
 
-
 # Script for populating the database. You can run it as:
 #
 #     mix run priv/repo/seeds.exs
@@ -23,15 +22,14 @@ alias Nfd.Account.User
 alias Nfd.Content.Collection
 alias Nfd.Content.File
 
-# Repo.delete_all(User)    
-# Repo.delete_all(Subscriber)    
-# Repo.delete_all(CollectionAccess)    
-
+# Repo.delete_all(User)
+# Repo.delete_all(Subscriber)
+# Repo.delete_all(CollectionAccess)
 
 # ACTUAL CODE START HERE
 
-# Repo.delete_all(Collection)    
-# Repo.delete_all(File)    
+# Repo.delete_all(Collection)
+# Repo.delete_all(File)
 
 # # Confirmed user
 # user_one = Account.get_user_email("k@k.com")
@@ -41,7 +39,7 @@ alias Nfd.Content.File
 # user_two = Account.get_user_email("u@u.com")
 # if user_two, do: Account.delete_user(user_two)
 
-# date_string = "2018-12-30T16:00:00.000Z"             
+# date_string = "2018-12-30T16:00:00.000Z"
 # {:ok, dt_struct, utc_offset} = DateTime.from_iso8601(date_string)
 
 # user_k = Repo.insert!(User.changeset(%User{}, %{
@@ -58,11 +56,10 @@ alias Nfd.Content.File
 #   confirm_password: "hellothere"
 # }))
 
-
 # # Collections
 
 # Repo.insert!(%Collection{
-#   type: "email_campaign",
+#   type: "course",
 #   status: "in_progress",
 #   description: "Kickstart your NeverFap Deluxe journey with our seven day course which will take you through everything you need to know about overcoming your porn addiction.",
 #   display_name: "7 Day NeverFap Deluxe Kickstarter",
@@ -72,7 +69,7 @@ alias Nfd.Content.File
 # })
 
 # Repo.insert!(%Collection{
-#   type: "email_campaign",
+#   type: "course",
 #   status: "in_progress",
 #   description: "Want to learn more about meditation and best practices? The 10 day meditation primer is an excellent place to start.",
 #   display_name: "10 Day Meditation Primer",
@@ -82,11 +79,11 @@ alias Nfd.Content.File
 # })
 
 # Repo.insert!(%Collection{
-#   type: "email_campaign",
+#   type: "course",
 #   status: "in_progress",
 #   description: "Learn more about your awareness with our 28 day awareness challenge.",
 #   display_name: "28 Day Awareness Challenge",
 #   premium: false,
 #   price: 14.99,
 #   slug: "twenty-eight-day-awareness-challenge",
-# })    
+# })
