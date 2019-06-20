@@ -7,7 +7,7 @@
       <p><%= collection.description %></p>
       <div class="email__collection__bottom">
         <%= if collection.status == "complete" do %>
-          <a class="subscribe__button" href="<%= Routes.dashboard_path(@conn, ) /dashboard/courses/<%= collection.slug %>">
+          <a class="subscribe__button" href="<%= Routes.dashboard_path(@conn, :ebook_collection, collection.slug) %>">
             Learn more.
           </a>
         <% else %>

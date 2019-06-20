@@ -1,5 +1,5 @@
 <div class="dashboard__audio__courses">
-  <h2 class="dashboard__main__title">Audio Courses</h2>
+  <h2 class="dashboard__main__title"><%= @dashboard_collections.ebook.display_name %></h2>
 
   <div class="dashboard__main__back__container">
     <a class="dashboard__main__back" href="/dashboard">
@@ -11,9 +11,12 @@
   </div>
 
   <div class="dashboard__main__area">
-    <p><%= @dashboard_collections.ebook.display_name %></p>
+    <p><b>Landing page:</b> <a class="link" href="/<%= @dashboard_collections.ebook.slug %>">link</a></p>
+
     <div class="dashboard__main__ebook">
 
     </div>
   </div>
+
+  
 </div>

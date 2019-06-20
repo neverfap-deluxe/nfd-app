@@ -99,7 +99,7 @@ defmodule NfdWeb.FetchAccess do
       :course_file -> [:courses, :course, :course_file]
 
       :ebooks -> [:ebooks]
-      :ebook_collection -> [:ebooks, :ebook, :subscriber_property, :stripe_session, :stripe_api_key, :paypal_api_key]
+      :ebook_collection -> [:ebooks, :ebook, :stripe_session, :stripe_api_key, :paypal_api_key]
       :ebook_file -> [:ebooks, :ebook, :ebook_file]
 
       :profile -> []
