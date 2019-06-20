@@ -3,33 +3,8 @@
 
   <div class="dashboard__main__area">
     <div class="dashboard__main__area__content">
-      <%= if @user.patreon_linked and @token_expired == false do %>
-        <%= if @tier do %>
-          <h2>Patreon Account Linked!</h2>
-          <p><%= @tier["attributes"]["title"] %></p>
-          <%= raw @tier["attributes"]["description"] %>
-          <a class="button subscribe__button" href="<%= Routes.page_path(@conn, :general_premium)%>">Learn more about your benefits</a>
-        <% else %>
-          <h2>Patreon Account Linked!</h2>
-          <p>Your account is linked, however you have not signed up for any tiers!</p>
-          <p>That's okay, you're still awesome :D</p>
-          <a class="button subscribe__button" href="<%= Routes.page_path(@conn, :general_premium)%>">Learn more about Patreon tiers</a>
-        <% end %>
-      <% else %>
-        <%= if @token_expired != false do %>
-          <p class="alert alert-info" role="alert">
-            <%= get_flash(@conn, :info) %>
-          </p>
-        <% end %>
-        <h2>Link Your Patreon Account</h2>
-        <p>Recieve all the benefits of your Patron tier!</p>
-        <p>Otherwise, learn about the benefits you receive by become a Patron!</p>
 
-        <div style="display: flex;">
-          <a class="button subscribe__button" style="margin-right: 1.2rem;" href="<%= @collections.patreon_auth_url %>">Link Patreon</a>
-          <a class="button subscribe__button" href="<%= Routes.page_path(@conn, :general_premium) %>">Learn More</a>
-        </div>
-      <% end %>
+      <%= partial "dashboard/link_patreon.html", %{ conn: @conn, user: @user, tier: @tier, collections: @collections, token_expired: @token_expired } %>
 
       <h2>Updates</h2>
       <p>If you'd like to keep up to date on future products as they're released, please subscribe to our newsletter!</p>
