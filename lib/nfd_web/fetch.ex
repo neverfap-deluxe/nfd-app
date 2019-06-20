@@ -58,7 +58,7 @@ defmodule NfdWeb.Fetch do
       fn symbol, acc ->
         case symbol do
           # COLLECTIONS
-          symbol when in [:articles, :practices, :quotes, :updates, :blogs, :podcasts, :meditations, :courses] ->
+          symbol when symbol in [:articles, :practices, :quotes, :updates, :blogs, :podcasts, :meditations, :courses] ->
             merge_collection(client, symbol, acc, item)
 
           :comments ->
@@ -81,11 +81,11 @@ defmodule NfdWeb.Fetch do
             Map.put(acc, :comment_form_changeset, comment_form_changeset)
 
           # CONTENT EMAIL
-          symbol when in [:seven_day_kickstarter, :ten_day_meditation, :twenty_eight_day_awareness, :seven_week_awareness_vol_1, :seven_week_awareness_vol_2, :seven_week_awareness_vol_3, :seven_week_awareness_vol_4] ->
+          symbol when symbol in [:seven_day_kickstarter, :ten_day_meditation, :twenty_eight_day_awareness, :seven_week_awareness_vol_1, :seven_week_awareness_vol_2, :seven_week_awareness_vol_3, :seven_week_awareness_vol_4] ->
             acc |> fetch_content_email(client, symbol)
 
           # CONTENT EMAIL CHANGESET
-          symbol when in [:seven_day_kickstarter_changeset, :ten_day_meditation_changeset, :twenty_eight_day_awareness_changeset, :seven_week_awareness_vol_1_changeset, :seven_week_awareness_vol_2_changeset, :seven_week_awareness_vol_3_changeset, :seven_week_awareness_vol_4_changeset] ->
+          symbol when symbol in [:seven_day_kickstarter_changeset, :ten_day_meditation_changeset, :twenty_eight_day_awareness_changeset, :seven_week_awareness_vol_1_changeset, :seven_week_awareness_vol_2_changeset, :seven_week_awareness_vol_3_changeset, :seven_week_awareness_vol_4_changeset] ->
             acc |> fetch_subscriber_changeset(symbol)
 
           _ ->

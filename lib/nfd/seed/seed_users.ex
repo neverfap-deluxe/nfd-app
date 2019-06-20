@@ -29,7 +29,6 @@ defmodule Nfd.SeedUsers do
     Account.update_user_email_confirm(user_k, %{ email_confirmed_at: DateTime.truncate(dt_struct, :second) })
 
     Repo.insert!(User.changeset(%User{}, %{email: "u@u.com", password: "hellothere", confirm_password: "hellothere"}))
-    end
 
   end
 end
