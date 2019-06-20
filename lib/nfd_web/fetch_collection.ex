@@ -21,19 +21,11 @@ defmodule NfdWeb.FetchCollection do
         user = Pow.Plug.current_user(conn)
         CollectionAccess.create_collection_access_for_free_courses(user)
         case symbol do
-          :user -> Map.put(acc, :user, user |> Account.get_user_pow!())
-          :subscriber -> Map.put(acc, :subscriber, user |> Subscriber.check_subscriber_exists())
-
-          :patreon_access ->
-            patreon_access = Patreon.fetch_patreon(conn, user)
-            Map.put(acc, :patreon_access, patreon_access)
-
-          :collections_access_list ->
-            collections_access_list = Account.list_collection_access_by_user_id(user.id)
-            Map.put(acc, :collections_access_list, collections_access_list)
-
-          _ ->
-            acc
+          :user -> acc |> Map.merge(%{ user: user |> Account.get_user_pow!() })
+          :subscriber -> acc |> Map.merge(%{ subscriber: user |> Subscriber.check_subscriber_exists() })
+          :patreon_access -> acc |> Map.merge(%{ patreon_access: Patreon.fetch_patreon(conn, user) })
+          :collections_access_list -> acc |> Map.merge(%{ collections_access_list: Account.list_collection_access_by_user_id(user.id) })
+          _ -> acc
         end
       end)
   end
