@@ -14,7 +14,7 @@ defmodule NfdWeb.MessageController do
   alias NfdWeb.Fetch
   alias NfdWeb.FetchAccess
 
-  # NOTE: This should be suitable for any content based comments
+  # NOTE: This is only suitable for content based comments
   def comment_form_post(conn, %{"comment" => comment}) do
     user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
 
@@ -32,7 +32,7 @@ defmodule NfdWeb.MessageController do
         Emails.cast_comment_made_email(comment.email, comment.message, referer_value) |> Emails.process("cast_comment_made_email #{comment.email} #{comment.message} #{referer_value}" )
         EmailLogs.new_comment_form_email(comment.name, comment.email, comment.message, referer_value, comment.id, conn.host)
 
-        # TODO: This will only get immediate parent comments, not successive parent comments.
+        # NOTE: This will only get immediate parent comments, not successive parent comments.
         if comment.parent_message_id do
           parent_comment = Meta.get_comment!(comment.parent_message_id)
           Emails.cast_comment_reply_email(parent_comment.email, comment.name, comment.message, referer_value) |> Emails.process("cast_comment_reply_email #{parent_comment.email} #{comment.name} #{comment.message} #{referer_value}" )
@@ -59,7 +59,7 @@ defmodule NfdWeb.MessageController do
     end
   end
 
-  # TODO: Need to test
+  # NOTE: This is not being used anywhere, and needs to be tested.
   def contact_form_post(conn, %{"contact_form" => contact_form}) do
     user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
 

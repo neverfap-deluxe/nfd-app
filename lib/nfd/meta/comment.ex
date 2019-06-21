@@ -29,8 +29,6 @@ defmodule Nfd.Meta.Comment do
     timestamps()
   end
 
-  # TODO: I still need to figure this out, in terms of getting the parent_id into the changeset in a meaningful way.
-
   @doc false
   def changeset(comment, attrs) do
     comment

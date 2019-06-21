@@ -12,7 +12,7 @@
     </div>
     <div class="dashboard__main__area">
       <div class="dashboard__main__area__content">
-        <%= partial "dashboard/available_subscriptions.html", %{ conn: @conn, user_collections: @user_collections } %>
+        <%= partial "dashboard/available_subscriptions.html", %{ conn: @conn, user_collections: @user_collections, dashboard_collections: @dashboard_collections } %>
       </div>
     </div>
 

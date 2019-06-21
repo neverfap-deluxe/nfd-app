@@ -31,31 +31,31 @@
 
 .banner__white {
   background: white;
-  
+
 }
 
 .the__99 {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   background: white;
   padding: 4rem;
   h2 {
     max-width: 600px;
-    color: rgba(255,46,182,1); 
+    color: rgba(255,46,182,1);
   }
 }
 
 .post__relapse__academy__hero {
-  
+
 }
-// TODO: Maybe put white shadows.
+// NOTE: Maybe put white shadows.
 .post__relapse__section--choices {
   margin-top: 2rem;
   margin-bottom: 2rem;
   width: 100%;
-  border-top: 10px solid rgba(255,46,182,1); // rgba(255,46,182,1)  
+  border-top: 10px solid rgba(255,46,182,1); // rgba(255,46,182,1)
   border-bottom: 10px solid rgba(255,46,182,1);
   padding: 1rem;
   box-sizing: border-box;

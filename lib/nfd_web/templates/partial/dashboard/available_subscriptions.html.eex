@@ -4,7 +4,9 @@
   <!-- @user_collections.collections_access_list -->
 
   <%#= if @user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == :courses_access))) do %>
+  <!-- dashboard_collections.courses -->
     <!-- Iterate through all subscriptions.  -->
+
   <%# else %>
     Enum.map(@user_collections.collections_access_list, fn(collection_access) ->
 

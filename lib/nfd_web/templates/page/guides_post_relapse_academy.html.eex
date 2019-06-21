@@ -1,6 +1,6 @@
 <div class="post__relapse__page">
   <h1 class="post__relapse__title">Post Relapse Academy <img src="/images/logo.png" class="logo__square" alt=""/></h1>
-  <div class="single__wrapper">   
+  <div class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <h3>Here you are.</h3>
       <p>You distrusted the process and you lost.</p> <!-- emoji -->
@@ -37,7 +37,7 @@
     <h1>At this point, you really have two choices you can make.</h1>
     <div class="choice__box">
       <div class="choice__item choice__one__container">
-        <h3>You can continue to relapse and stop caring about yourself.</h3>    
+        <h3>You can continue to relapse and stop caring about yourself.</h3>
       </div>
       <div class="choice__box__spacer"></div>
       <div class="choice__item choice__one__container">
@@ -68,7 +68,7 @@
   <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 5%;"></div>
   <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 0%;"></div>
 
-  <div class="single__wrapper">   
+  <div class="single__wrapper">
     <div class="single__content">
       <h1>If you decided to continue reading.</h1>
       <p>Then you will have done a truly extrodinary thing.</p>
@@ -85,7 +85,7 @@
     <h2>You see, what usually happens in 99% of cases is that we continue to stop caring.</h2>
   </div>
 
-  <div class="single__wrapper">   
+  <div class="single__wrapper">
     <div class="single__content">
       <h3>We stop caring, and that's that.</h3>
       <p>And we remain this way for months, even years in some cases. Not really caring what happens next, even though we know we're not truly happy on the inside, nor in any way reaching our full potential.</p>
@@ -98,7 +98,7 @@
 
   <%= partial "links/patreon.html", assigns %>
 
-  <div class="single__wrapper">   
+  <div class="single__wrapper">
     <div class="single__content">
       <p>Before I go into the exact details as to why you relapsed (as well as what you need to do in order to rectify this event).</p>
       <p>I want to first talk about what you're currently experiencing, as it will help you better relate to what I'm about to say.</p>
@@ -127,10 +127,10 @@
   <h2 style="color: black; margin-top: 4rem;">And so much more...</h2>
 </div>
 
-  <div class="single__wrapper">   
+  <div class="single__wrapper">
     <div class="single__content">
       <h3>So why do you feel this way?</h3>
-      <p>In order to understand why, you'll need to take a few steps back and understand how you got here in the first place.</p>      
+      <p>In order to understand why, you'll need to take a few steps back and understand how you got here in the first place.</p>
       <p>Because all you currently see are your emotions. Those things moving at a million miles per hour, weighing you down and confusing the absolute hell out of you.</p>
       <p>Which is to say that you don't see the full picture of why they're there.</p>
       <p>If you're looking for the <b>tldr</b>.</p>
@@ -197,13 +197,13 @@
     <h1 style="color: black; margin-top: 3rem;">It hurts, I know.</h1>
     <h1 style="color: black; margin-top: 3rem;">But I promise you're going to be fine.</h1>
   </div>
-  
-  
-  <div class="single__wrapper">   
+
+
+  <div class="single__wrapper">
     <div class="single__content">
       <p>You see, before you felt all those things and got stuck in that trap of emotion, you actually did something a lot more fundamental.</p>
       <h2>You committed to a belief.</h2>
-  
+
       <p>The fact that we call it a self-limiting belief is merely a label.</p>
       <p>Rather, you have a belief which is telling you that you should take certain actions or produce certain thoughts or emotions.</p>
       <p>What's hard is that very rarely do we ever see the belief. Instead, all we see is the emotion and that's why we get trapped in these cycles of awfulness, because we fail to truly see the root cause of our problems.</p>
@@ -236,24 +236,24 @@
   </div>
 </div>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <div class="single__content">
     <h1>Welcome back to the Great White.</h1>
     <h2>It's just beautiful, ain't it?</h2>
     <h3>Now that you have a general overview of what's wrong, the first thing we'll need to do is identify these self-limiting beliefs.</h3>
-      <!-- TODO: Ability to grab those selected feelings, and throw them away.. -->
+      <!-- NOTE: Ability to grab those selected feelings, and throw them away.. -->
   </div>
 </div>
-    
 
-  <div class="single__wrapper">   
+
+  <div class="single__wrapper">
     <div class="single__content">
 
-    
+
       <p>However that is not the reason why you didn't follow the process.</p>
       <p></p>
       <!-- . The fact is that there are a lot of awful things that   -->
-    
+
       <h2>Final Tips</h2>
       <h3>Read the website</h3>
       <p>A lot of work has been put into the website. </p>
@@ -265,7 +265,7 @@
       <p>The emotions aren't the issue. The issue is your ability to respond to them.</p>
     </div>
   </div>
-    
+
 
   <div class="post__relapse__section--dark">
     <h1></h1>
@@ -284,7 +284,7 @@
 
 
 <div class="unhealthy__banner">
-    <!-- TODO: Ability to select those feelings. -->
+    <!-- NOTE: Ability to select those feelings. -->
 
     <h2 class="margin__top__mobile">So you may be wondering.</h2>
     <h1 class="unhealthy__banner__title">What are some of these <span style="color: white;">unhealthy coping mechanisms</span>?</h1>
@@ -295,7 +295,7 @@
     <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
 </div>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <div class="single__content">
 
       <p>In order to get you back on track, there's a few things we must do.</p>
@@ -312,7 +312,7 @@
 
     <p>So for now, we're going to say goodbye to them and move on.</p>
     <p>Acknowledge. Let go.</p>
-    
-    <!-- TODO: Ability to grab those selected feelings, and throw them away.. -->
+
+    <!-- NOTE: Ability to grab those selected feelings, and throw them away.. -->
   </div>
 </div>

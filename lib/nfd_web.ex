@@ -58,23 +58,29 @@ defmodule NfdWeb do
       def page_title(section, title) do
         pre_title =
           case section do
-            "courses" ->
+            "content_courses" ->
               "NeverFap Deluxe Courses | "
 
-            "articles" ->
+            "content_articles" ->
               "NeverFap Deluxe Articles | "
 
-            "practices" ->
+            "content_practices" ->
               "NeverFap Deluxe Practices | "
 
-            "podcast" ->
+            "content_podcast" ->
               "NeverFap Deluxe Podcast | "
 
-            "quotes" ->
+            "content_quotes" ->
               "NeverFap Deluxe Quotes | "
 
-            "meditations" ->
+            "content_meditations" ->
               "NeverFap Deluxe Meditations | "
+
+            "content_blogs" ->
+              "NeverFap Deluxe Blogs | "
+
+            "content_updates" ->
+              "NeverFap Deluxe Updates | "
 
             _ ->
               "NeverFap Deluxe | "
