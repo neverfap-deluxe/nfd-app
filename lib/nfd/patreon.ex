@@ -28,7 +28,6 @@ defmodule Nfd.Patreon do
     Tesla.client(middleware)
   end
 
-
   def validate_patreon_code(host, user, code) do
     base_url = generate_base_url(host)
     mp =
