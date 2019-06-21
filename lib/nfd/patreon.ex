@@ -95,6 +95,8 @@ defmodule Nfd.Patreon do
 
       # check if date is already expired
       if Timex.after?(Timex.now, expires_in_date) do
+      create_patreon_access(false, false, nil)
+
         %{
           token_expired: true,
           is_valid_patron: false,
@@ -116,12 +118,7 @@ defmodule Nfd.Patreon do
         end
       end
     else
-      %{
-        token_expired: false,
-        is_valid_patron: false,
-        tier_access_list: [],
-        tier: nil
-      }
+      create_patreon_access(false, false, nil)
     end
   end
 
@@ -158,10 +155,10 @@ defmodule Nfd.Patreon do
     # IO.inspect user
     auth_client = auth_api_client(user.patreon_access_token)
 
-    case auth_client |> get(members_url) do 
+    case auth_client |> get(members_url) do
       { :ok, members_response } ->
         members_body = Jason.decode!(members_response.body)
-        
+
         if not Map.has_key?(members_body, "errors") do
           # IO.inspect "members_body"
           # IO.inspect members_body
@@ -199,8 +196,8 @@ defmodule Nfd.Patreon do
             tier: nil
           }
         end
-        
-      {:error, _error} -> 
+
+      {:error, _error} ->
         IO.inspect "Patreon offline"
         %{
           token_expired: false,
@@ -211,7 +208,16 @@ defmodule Nfd.Patreon do
     end
   end
 
-  def tier_access_list(token_expired, is_valid_patron, tier) do
+  defp create_patreon_access(token_expired, is_valid_patron, tier) do
+    %{
+      token_expired: token_expired,
+      is_valid_patron: is_valid_patron,
+      tier_access_list: tier_access_list(token_expired, is_valid_patron, tier),
+      tier: tier,
+    }
+  end
+
+  defp tier_access_list(token_expired, is_valid_patron, tier) do
     if (not token_expired and is_valid_patron) do
       case tier.amount_cents do
         100 -> create_tier_access([], tier)
@@ -229,7 +235,7 @@ defmodule Nfd.Patreon do
     end
   end
 
-  def create_tier_access(access_list, tier) do
+  defp create_tier_access(access_list, tier) do
     Enum.reduce(access_list, %{}, fn access_item, acc ->
       Map.put(acc, access_item, true)
     end)

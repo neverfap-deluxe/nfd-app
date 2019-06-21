@@ -50,21 +50,55 @@ defmodule NfdWeb.Fetch do
     dashboard_collections = FetchCollection.dashboard_collections(conn, collection_array, user_collections, collection_slug, file_slug)
     api_key_collections = FetchCollection.api_key_collections(conn, collection_slug, user_collections, collection_array)
 
-    # check to see if the file is paid for , if not then 
-
     conn
+      |> is_collection_complete(page_symbol, user_collections, dashboard_collections)
+      |> is_file_paid_for(page_symbol, user_collections, dashboard_collections)
       |> put_flash(:info, (if user_collections.patreon_access.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."))
       |> put_view(NfdWeb.DashboardView)
-      # |> is_file_paid_for()
       |> render("#{Atom.to_string(page_symbol)}.html", layout: {NfdWeb.LayoutView, "hub.html"}, user_collections: user_collections, dashboard_collections: dashboard_collections, api_key_collections: api_key_collections)
   end
 
   def fetch_response_ok(conn, page_view, response, user_collections, content_collections, changeset_collections, page_symbol, page_layout, page_type) do
-    check_api_response_for_404(conn, response.status)
     Meta.increment_visit_count(response.body["data"])
     conn
+      |> check_api_response_for_404(response.status)
       |> put_view(page_view)
       |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: response.body["data"], user_collections: user_collections, content_collections: content_collections, changeset_collections: changeset_collections, page_type: page_type)
+  end
+
+  def is_collection_complete(conn, page_symbol, user_collections, dashboard_collections) do
+    case page_symbol do
+        page_symbol when page_symbol in [:dashboard_course_collection, :dashboard_course_file] ->
+          if dashboard_collections.course.status == "complete", do: , else: render_no_access_page(conn, "dashboard_no_complete.html")
+
+        page_symbol when page_symbol in [:dashboard_ebook_collection, :dashboard_ebook_file] ->
+          if dashboard_collections.ebook.status == "complete", do: , else: render_no_access_page(conn, "dashboard_no_complete.html")
+
+        _ ->
+          conn
+    end
+  end
+
+  def is_file_paid_for(conn, page_symbol, user_collections, dashboard_collections) do
+    case page_symbol do
+      :dashboard_course_file ->
+        has_patreon_access = user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == :courses_access))
+        has_paid_for_collection = dashboard_collections.course.has_paid_for_collection
+        if has_patreon_access or has_paid_for_collection, do: conn, else: render_no_access_page(conn, "dashboard_no_access.html")
+
+      :dashboard_ebook_file ->
+        has_patreon_access = user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == :ebooks_access))
+        has_paid_for_collection = dashboard_collections.ebook.has_paid_for_collection
+        if has_patreon_access or has_paid_for_collection, do: conn, else: render_no_access_page(conn, "dashboard_no_access.html")
+
+      _ ->
+        conn
+  end
+
+  def render_no_access_page(conn) do
+    conn
+      |> put_view(NfdWeb.DashboardView)
+      |> render(template, layout: {NfdWeb.LayoutView, "hub.html"})
   end
 
   def render_404_page(conn, error) do
@@ -75,6 +109,6 @@ defmodule NfdWeb.Fetch do
   end
 
   defp check_api_response_for_404(conn, status) do
-    if status != 200, do: render_404_page(conn, status)
+    if status != 200, do: render_404_page(conn, status), else: conn
   end
 end

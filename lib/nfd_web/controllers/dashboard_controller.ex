@@ -7,14 +7,14 @@ defmodule NfdWeb.DashboardController do
   def dashboard(conn, _params), do: Fetch.fetch_dashboard(conn, :dashboard, "", "", FetchAccess.fetch_access_array(:dashboard))
   def dashboard_coaching(conn, _params), do: Fetch.fetch_dashboard(conn, :dashboard_coaching, "", "", FetchAccess.fetch_access_array(:dashboard_coaching))
 
-  def courses(conn, _params), do: Fetch.fetch_dashboard(conn, :courses, "", "", FetchAccess.fetch_access_array(:courses))
-  def course_collection(conn, %{"collection" => collection_slug}), do: Fetch.fetch_dashboard(conn, :course_collection, collection_slug, "", FetchAccess.fetch_access_array(:course_collection))
-  def course_file(conn, %{"collection" => collection_slug, "file" => file_slug}), do: Fetch.fetch_dashboard(conn, :course_file, collection_slug, file_slug, FetchAccess.fetch_access_array(:course_file))
+  def dashboard_courses(conn, _params), do: Fetch.fetch_dashboard(conn, :dashboard_courses, "", "", FetchAccess.fetch_access_array(:dashboard_courses))
+  def dashboard_course_collection(conn, %{"collection" => collection_slug}), do: Fetch.fetch_dashboard(conn, :dashboard_course_collection, collection_slug, "", FetchAccess.fetch_access_array(:dashboard_course_collection))
+  def dashboard_course_file(conn, %{"collection" => collection_slug, "file" => file_slug}), do: Fetch.fetch_dashboard(conn, :dashboard_course_file, collection_slug, file_slug, FetchAccess.fetch_access_array(:dashboard_course_file))
 
-  def ebooks(conn, _params), do: Fetch.fetch_dashboard(conn, :ebooks, "", "", FetchAccess.fetch_access_array(:ebooks))
-  def ebook_collection(conn, %{"collection" => collection_slug}), do: Fetch.fetch_dashboard(conn, :ebook_collection, collection_slug, "", FetchAccess.fetch_access_array(:ebook_collection))
-  def ebook_file(conn, %{"collection" => collection_slug, "file" => file_slug}), do: Fetch.fetch_dashboard(conn, :ebook_file, collection_slug, file_slug, FetchAccess.fetch_access_array(:ebook_file))
+  def dashboard_ebooks(conn, _params), do: Fetch.fetch_dashboard(conn, :dashboard_ebooks, "", "", FetchAccess.fetch_access_array(:dashboard_ebooks))
+  def dashboard_ebook_collection(conn, %{"collection" => collection_slug}), do: Fetch.fetch_dashboard(conn, :dashboard_ebook_collection, collection_slug, "", FetchAccess.fetch_access_array(:dashboard_ebook_collection))
+  def dashboard_ebook_file(conn, %{"collection" => collection_slug, "file" => file_slug}), do: Fetch.fetch_dashboard(conn, :dashboard_ebook_file, collection_slug, file_slug, FetchAccess.fetch_access_array(:dashboard_ebook_file))
 
-  def profile(conn, _params), do: Fetch.fetch_dashboard(conn, :profile, "", "", FetchAccess.fetch_access_array(:profile))
-  def profile_delete_confirmation(conn, _params), do: Fetch.fetch_dashboard(conn, :profile_delete_confirmation, "", "", FetchAccess.fetch_access_array(:profile_delete_confirmation))
+  def dashboard_profile(conn, _params), do: Fetch.fetch_dashboard(conn, :dashboard_profile, "", "", FetchAccess.fetch_access_array(:dashboard_profile))
+  def dashboard_profile_delete_confirmation(conn, _params), do: Fetch.fetch_dashboard(conn, :dashboard_profile_delete_confirmation, "", "", FetchAccess.fetch_access_array(:dashboard_profile_delete_confirmation))
 end

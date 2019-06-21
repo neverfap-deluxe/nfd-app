@@ -29,16 +29,13 @@ defmodule NfdWeb.MessageController do
 
     case Meta.create_comment(comment_with_parent_messge_id) do
       {:ok, comment} ->
-        # send email to commenter
-        Emails.cast_comment_made_email(comment.email, comment.message, referer_value)
-          |> Emails.process("cast_comment_made_email #{comment.email} #{comment.message} #{referer_value}" )
+        Emails.cast_comment_made_email(comment.email, comment.message, referer_value) |> Emails.process("cast_comment_made_email #{comment.email} #{comment.message} #{referer_value}" )
         EmailLogs.new_comment_form_email(comment.name, comment.email, comment.message, referer_value, comment.id, conn.host)
 
         # TODO: This will only get immediate parent comments, not successive parent comments.
         if comment.parent_message_id do
           parent_comment = Meta.get_comment!(comment.parent_message_id)
-          Emails.cast_comment_reply_email(parent_comment.email, comment.name, comment.message, referer_value)
-            |> Emails.process("cast_comment_reply_email #{parent_comment.email} #{comment.name} #{comment.message} #{referer_value}" )
+          Emails.cast_comment_reply_email(parent_comment.email, comment.name, comment.message, referer_value) |> Emails.process("cast_comment_reply_email #{parent_comment.email} #{comment.name} #{comment.message} #{referer_value}" )
         end
 
         conn |> redirect(to: Routes.content_path(conn, first_slug_symbol, second_slug))
@@ -116,7 +113,6 @@ defmodule NfdWeb.MessageController do
     # NOTE: It MUST be it's own collection, otherwise it won't work essentially :D
     # Perhaps this should be it's own collection in the database, because it needs to have a user/email associated with it.
     # case Meta.upvote_comment(comment_id, %{ upvote_tally: comment.upvote_tally + 1 }) do
-
     # end
   end
 
@@ -137,10 +133,7 @@ defmodule NfdWeb.MessageController do
     render(conn, "send_contact_form_success.html")
   end
 
-  def send_message_send_contact_form_failed(conn, %{
-        "message" => message,
-        "error_message" => error_message
-      }) do
+  def send_message_send_contact_form_failed(conn, %{"message" => message, "error_message" => error_message}) do
     render(conn, "send_contact_form_failed.html", message: message, error_message: error_message)
   end
 

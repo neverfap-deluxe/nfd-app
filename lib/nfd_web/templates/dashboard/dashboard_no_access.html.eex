@@ -1,0 +1,13 @@
+<div class="dashboard__no__access">
+  <h2 class="dashboard__main__title">No Access</h2>
+
+  <div class="dashboard__main__area">
+    <p>I'm sorry buddy!</p>
+    <p>You don't have access to the <%= @dashboard_collections.course_file.display_name %></p>
+    <p>You are available to purchase this course either directly, or as part of a monthly Patreon subscription!</p>
+    
+    <div class="dashboard__main__ebook">
+
+    </div>
+  </div>
+</div>

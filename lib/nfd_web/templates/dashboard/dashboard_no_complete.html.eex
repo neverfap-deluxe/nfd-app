@@ -1,0 +1,13 @@
+<div class="dashboard__no__access">
+  <h2 class="dashboard__main__title">No Complete</h2>
+
+  <div class="dashboard__main__area">
+    <p>I'm sorry buddy!</p>
+    <p>But the <%= @dashboard_collections.course_file.display_name %> is not yet complete!</p>
+    <p>It will be done... at some point, I think!</p>
+
+    <div class="dashboard__main__ebook">
+
+    </div>
+  </div>
+</div>

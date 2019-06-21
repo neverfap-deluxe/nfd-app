@@ -11,7 +11,7 @@ defmodule Nfd.SeedTEDA do
       nil ->
         Repo.insert!(%Collection{
           seed_id: "12ec4d76-3d93-42c5-8c2f-65bb146e4bd6",
-          type: "course",
+          type: "course_collection",
           status: "in_progress",
           stripe_sku: "NA",
           stripe_description: "Learn more about your awareness with our 28 day awareness challenge.",

@@ -24,11 +24,11 @@ defmodule Nfd.Content do
   end
 
   def list_ebooks_with_files do
-    Repo.all(from c in Collection, where: [type: "ebook"], order_by: [asc: :status], preload: [:files])
+    Repo.all(from c in Collection, where: [type: "ebook_collection"], order_by: [asc: :status], preload: [:files])
   end
 
   def list_courses_with_files do
-    Repo.all(from c in Collection, where: [type: "course"], order_by: [asc: :status], preload: [:files])
+    Repo.all(from c in Collection, where: [type: "course_collection"], order_by: [asc: :status], preload: [:files])
   end
 
   @doc """

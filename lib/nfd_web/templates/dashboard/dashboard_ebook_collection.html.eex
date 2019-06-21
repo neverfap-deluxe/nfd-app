@@ -1,0 +1,35 @@
+<div class="dashboard__audio__courses">
+  <h2 class="dashboard__main__title"><%= @dashboard_collections.ebook.display_name %></h2>
+
+  <div class="dashboard__main__back__container">
+    <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, :dashboard) %>">
+      Back to Dashboard
+    </a>
+    <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, :courses) %>">
+      Back to Email Campaigns
+    </a>
+  </div>
+
+  <div class="dashboard__main__area">
+    <p><b>Landing page:</b> <a class="link" href="<%= @dashboard_collections.ebook.slug %>">link</a></p>
+
+    <div class="dashboard__main__ebook">
+
+    </div>
+  </div>
+
+  <div class="dashboard__main__area">
+    <!-- List Ebook Files -->
+    <%= if @dashboard_collections.ebook.files do %>
+      <div class="dashboard__collection__files">
+        <%= Enum.map(@dashboard_collections.ebook.files, fn (file) -> %>
+          <a class="dashboard__collection__file" href="<%= Routes.dashboard_path(@conn, :ebook_file, @dashboard_collections.ebook.slug, file.slug) %>">
+            <p><%= file.display_name %></p>
+          </a>
+        <% end) %>
+      </div>
+    <% end %>
+  </div>
+
+
+</div>

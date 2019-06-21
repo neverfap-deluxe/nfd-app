@@ -94,16 +94,16 @@ defmodule NfdWeb.FetchAccess do
       :dashboard -> [:courses, :ebooks, :patreon_auth_url]
       :dashboard_coaching -> [:stripe_session, :stripe_api_key, :paypal_api_key]
 
-      :courses -> [:courses]
-      :course_collection -> [:courses, :course, :subscriber_property, :stripe_session, :stripe_api_key, :paypal_api_key]
-      :course_file -> [:courses, :course, :course_file]
+      :dashboard_courses -> [:courses]
+      :dashboard_course_collection -> [:courses, :course, :subscriber_property, :stripe_session, :stripe_api_key, :paypal_api_key]
+      :dashboard_course_file -> [:courses, :course, :course_file]
 
-      :ebooks -> [:ebooks]
-      :ebook_collection -> [:ebooks, :ebook, :stripe_session, :stripe_api_key, :paypal_api_key]
-      :ebook_file -> [:ebooks, :ebook, :ebook_file]
+      :dashboard_ebooks -> [:ebooks]
+      :dashboard_ebook_collection -> [:ebooks, :ebook, :stripe_session, :stripe_api_key, :paypal_api_key]
+      :dashboard_ebook_file -> [:ebooks, :ebook, :ebook_file]
 
-      :profile -> []
-      :profile_delete_confirmation -> []
+      :dashboard_profile -> []
+      :dashboard_profile_delete_confirmation -> []
     end
   end
 

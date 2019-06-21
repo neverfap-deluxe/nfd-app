@@ -59,7 +59,7 @@ alias Nfd.Content.File
 # # Collections
 
 # Repo.insert!(%Collection{
-#   type: "course",
+#   type: "course_collection",
 #   status: "in_progress",
 #   description: "Kickstart your NeverFap Deluxe journey with our seven day course which will take you through everything you need to know about overcoming your porn addiction.",
 #   display_name: "7 Day NeverFap Deluxe Kickstarter",
@@ -69,7 +69,7 @@ alias Nfd.Content.File
 # })
 
 # Repo.insert!(%Collection{
-#   type: "course",
+#   type: "course_collection",
 #   status: "in_progress",
 #   description: "Want to learn more about meditation and best practices? The 10 day meditation primer is an excellent place to start.",
 #   display_name: "10 Day Meditation Primer",
@@ -79,7 +79,7 @@ alias Nfd.Content.File
 # })
 
 # Repo.insert!(%Collection{
-#   type: "course",
+#   type: "course_collection",
 #   status: "in_progress",
 #   description: "Learn more about your awareness with our 28 day awareness challenge.",
 #   display_name: "28 Day Awareness Challenge",

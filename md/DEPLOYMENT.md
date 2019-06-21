@@ -1,3 +1,10 @@
+course_collection
+ebook_collection
+
+audio_file
+ebook_file
+
+
 # Generating graphics
 
 http://cssbox.sourceforge.net/webvector/
