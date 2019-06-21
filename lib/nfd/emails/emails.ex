@@ -103,12 +103,12 @@ defmodule Nfd.Emails do
     { count_property, subscribed_property } = Nfd.Util.Email.type_to_subscriber_properties(type)
 
     case Meta.create_subscription_email(%{ day: day_count, course: type, subscription_email: subscriber.subscriber_email}) do
-      {:ok, subscription_email} ->
+      {:ok, _subscription_email} ->
         case day_count == subscription_day_limit do
           true -> Account.update_subscriber(subscriber, %{ count_property => 0, subscribed_property => false })
           false -> Account.update_subscriber(subscriber, %{ count_property => Map.fetch!(subscriber, count_property) + 1 })
         end
-      {:error, error_changeset} ->
+      {:error, _error_changeset} ->
         EmailLogs.error_email_log("#{subscriber.subscriber_email} - Failed to create Meta.SubscriptionEmail - :update_subscription")
     end
   end

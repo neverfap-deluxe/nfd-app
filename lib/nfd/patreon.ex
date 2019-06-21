@@ -222,3 +222,16 @@ defmodule Nfd.Patreon do
     "#{authorize_patreon_url}?response_type=code&scope=#{scope}&client_id=#{System.get_env("PATREON_CLIENT_KEY")}&redirect_uri=#{base_url}/validate_patreon"
   end
 end
+
+
+# defmodule PatreonAccess do
+#   defstruct first_name: "", last_name: "", age: nil
+
+#   def has_discount?(person) do
+#     person.age != nil && person.age < 18
+#   end
+
+#   def full_name(person) do
+#     "#{person.first_name} #{person.last_name}"
+#   end
+# end

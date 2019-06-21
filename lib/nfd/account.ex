@@ -12,7 +12,7 @@ defmodule Nfd.Account do
 
   # from(u in User, where: u.username == ^username or u.email == ^username)
   # |> Repo.one
-  
+
 
 
   @doc """
@@ -46,7 +46,7 @@ defmodule Nfd.Account do
 
   def get_user_pow!(nil), do: %{}
   def get_user_pow!(user), do: Repo.get!(User, user.id)
-  
+
   def get_user_email(email), do: Repo.get_by(User, email: email)
   def get_user_id_non_error(id), do: Repo.get_by(User, id)
 
@@ -87,7 +87,7 @@ defmodule Nfd.Account do
   end
 
   def update_user_email_confirm(%User{} = user, attrs) do
-    user 
+    user
     |> User.changeset_confirm_email(attrs)
     |> Repo.update()
   end
@@ -136,10 +136,11 @@ defmodule Nfd.Account do
   end
 
   def list_collection_access_by_user_id(nil), do: []
-  def list_collection_access_by_user_id(user_id) do 
+  def list_collection_access_by_user_id(user_id) do
     Repo.all(
       from c in CollectionAccess,
-      where: [ user_id: ^user_id ]
+      where: [ user_id: ^user_id ],
+      preload: [:collection]
     )
   end
 
@@ -165,7 +166,7 @@ defmodule Nfd.Account do
   def get_collection_access_by_user_id_and_collection_id(user_id, collection_id) do
     from(u in CollectionAccess, where: u.user_id == ^user_id or u.collection_id == ^collection_id) |> Repo.one
   end
-  
+
 
 
 
@@ -251,14 +252,14 @@ defmodule Nfd.Account do
 
   def list_subscribers_general do
     Repo.all(
-      from s in Subscriber, 
+      from s in Subscriber,
       where: [ subscribed: true ]
     )
   end
 
   def list_subscribers_campaign do
     Repo.all(
-      from s in Subscriber, 
+      from s in Subscriber,
       where: [ seven_day_kickstarter_subscribed: true ],
       or_where: [ ten_day_meditation_subscribed: true ],
       or_where: [ twenty_eight_day_awareness_subscribed: true ]

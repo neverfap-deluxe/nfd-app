@@ -34,7 +34,7 @@ defmodule NfdWeb.FetchCollection do
       end)
   end
 
-  def item_collections(conn, item, page_symbol, verified_slug, user_collections, client) do
+  def item_collections(item, page_symbol, verified_slug, user_collections, client) do
     case page_symbol do
       :article -> %{}
       :practice -> FetchCollectionUtil.item_collection_practice(item, page_symbol, verified_slug, user_collections, client)

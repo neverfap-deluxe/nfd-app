@@ -22,7 +22,7 @@ defmodule NfdWeb.Fetch do
     case apply(ContentAPI, page_symbol, [client, verified_slug]) do
       {:ok, response} ->
         user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
-        item_collections = FetchCollection.item_collections(conn, response.body["data"], page_symbol, verified_slug, user_collections, client)
+        item_collections = FetchCollection.item_collections(response.body["data"], page_symbol, verified_slug, user_collections, client)
         content_collections = FetchCollection.content_collections(response.body["data"], collection_array, client)
         changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array)
 
@@ -93,6 +93,7 @@ defmodule NfdWeb.Fetch do
 
       _ ->
         conn
+    end
   end
 
   def render_no_access_page(conn) do

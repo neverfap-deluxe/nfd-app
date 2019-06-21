@@ -3,12 +3,7 @@ defmodule Nfd.Meta.Comment do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Nfd.Account.User
   alias Nfd.Meta.Page
-
-  alias Nfd.Meta.Page
-  alias Nfd.Account.User
-  alias Nfd.Account.Subscriber
 
   alias Nfd.Meta.Comment
 
