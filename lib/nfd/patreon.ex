@@ -181,30 +181,14 @@ defmodule Nfd.Patreon do
             # IO.inspect tier
           # last_charge_status = members_body["data"]["attributes"]["last_charge_status"]
           patron_status = members_body["data"]["attributes"]["patron_status"]
-
-          %{
-            token_expired: false,
-            is_valid_patron: patron_status == "active_patron",
-            tier_access_list: Patreon.tier_access_list(false, patron_status == "active_patron", tier),
-            tier: tier
-          }
+          create_patreon_access(false, patron_status == "active_patron", tier)
         else
-          %{
-            token_expired: false,
-            is_valid_patron: false,
-            tier_access_list: [],
-            tier: nil
-          }
+          create_patreon_access(false, false, nil)
         end
 
       {:error, _error} ->
         IO.inspect "Patreon offline"
-        %{
-          token_expired: false,
-          is_valid_patron: false,
-          tier_access_list: [],
-          tier: nil
-        }
+        create_patreon_access(false, false, nil)
     end
   end
 

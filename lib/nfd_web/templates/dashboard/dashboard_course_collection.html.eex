@@ -31,7 +31,7 @@
   </div>
 
   <!-- Payment Module -->
-  <%= if (@dashboard_collections.course.has_paid_for_collection == nil or @user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 != :ebook))) and @dashboard_collections.course.premium do %>
+  <%= if (@dashboard_collections.course.has_paid_for_collection == nil or @user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 != :courses_access))) and @dashboard_collections.course.premium do %>
     <%= partial "dashboard/campaign_payment.html", %{ dashboard_collections: @dashboard_collections, api_key_collections: @api_key_collections } %>
   <% end %>
 
@@ -42,7 +42,7 @@
     </div>
   <% end %>
 
-  <%= if @user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == :ebook)) do  %>
+  <%= if @user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == :courses_access)) do  %>
     <div class="dashboard__main__area">
       <p>You already have access to this course </p>
       <div>You have already purchased!</div>

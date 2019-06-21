@@ -5,6 +5,8 @@ defmodule Nfd.Account.Subscriber do
   alias Nfd.Account
   alias Nfd.EmailLogs
 
+  alias NfdWeb.Patreon
+
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "subscribers" do
@@ -74,14 +76,14 @@ defmodule Nfd.Account.Subscriber do
   end
 
   # Check if subscriber exists
-  def check_subscriber_exists(user) do 
+  def check_subscriber_exists(user) do
     # Check is subscriber email already exists.
-    if Map.has_key?(user, :email) do 
+    if Map.has_key?(user, :email) do
       case Account.get_subscriber_email(Map.get(user, :email)) do
         nil -> check_subscriber_exists_create_subscriber(user.email, user.id)
         subscriber -> check_subscriber_exists_update_subscriber(subscriber, user)
       end
-    else 
+    else
       %{}
     end
   end
@@ -107,5 +109,19 @@ defmodule Nfd.Account.Subscriber do
   end
 
 
+  def check_if_subscriber_has_paid(subscriber) do
+    user = Account.get_user_email(subscriber.subscriber_email)
+    patreon_access = NfdWeb.Patreon.fetch_patreon(conn, user)
+    # get collections_access_list
+    Collection.has_paid_for_collection(file_with_collection.collection, user_collections)
 
+    def has_paid_for_collection(collection, user_collections) do
+      user_collections.collections_access_list
+        |> Enum.find(fn(list_collection) ->
+          list_collection.collection_id == collection.id and list_collection.user_id == user_collections.user.id
+        end)
+    end
+
+
+  end
 end

@@ -1,0 +1,7 @@
+<div class="available__subscriptions__container">
+  <!-- But only show buttons based on their own access_list OR their patreon list. -->
+  <h3></h3>
+
+  <%= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: @user_collections.subscriber.subscribed, subscribed_property: :subscribed, user_id: @user_collections.user.id } %>
+
+</div>

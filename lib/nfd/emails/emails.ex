@@ -1,7 +1,7 @@
 defmodule Nfd.Emails do
   use Swoosh.Mailer, otp_app: :nfd
-  use Phoenix.Swoosh, 
-    view: NfdWeb.SubscriptionTemplateView, 
+  use Phoenix.Swoosh,
+    view: NfdWeb.SubscriptionTemplateView,
     layout: {NfdWeb.LayoutView, :email}
 
   import Swoosh.Email
@@ -10,6 +10,8 @@ defmodule Nfd.Emails do
   alias Nfd.EmailTemplates
   alias Nfd.EmailLogs
   alias Nfd.Meta
+
+  alias Nfd.Account.Subscriber
 
   require Logger
 
@@ -35,7 +37,7 @@ defmodule Nfd.Emails do
   # NOTE: We don't need to worry about co-ordinating Day 0, because it will just be a general information email :)
   def email_scheduler do
     Account.list_subscribers_campaign()
-      |> Enum.each(fn(subscriber) -> 
+      |> Enum.each(fn(subscriber) ->
         email_scheduler_logic(Application.get_env(:nfd, :kickstarter_type), subscriber, subscriber.seven_day_kickstarter_subscribed, subscriber.seven_day_kickstarter_count)
         email_scheduler_logic(Application.get_env(:nfd, :meditation_primer_type), subscriber, subscriber.ten_day_meditation_subscribed, subscriber.ten_day_meditation_count)
         email_scheduler_logic(Application.get_env(:nfd, :awareness_challenge_type), subscriber, subscriber.twenty_eight_day_awareness_subscribed, subscriber.twenty_eight_day_awareness_count)
@@ -47,49 +49,62 @@ defmodule Nfd.Emails do
   end
 
   def email_scheduler_logic(type, subscriber, is_subscribed, day_count) do
-    if (is_subscribed) do
-      { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type, awareness_seven_week_vol_1_type, awareness_seven_week_vol_2_type, awareness_seven_week_vol_3_type, awareness_seven_week_vol_4_type } = Nfd.Util.Email.generate_course_types()
+    if is_subscribed do
+      { _general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type, awareness_seven_week_vol_1_type, awareness_seven_week_vol_2_type, awareness_seven_week_vol_3_type, awareness_seven_week_vol_4_type } = Nfd.Util.Email.generate_course_types()
       unsubscribe_url = Nfd.Util.Email.course_type_to_matrix(type) |> Nfd.Util.Email.generate_unsubscribe_url(subscriber.subscriber_email)
-      
-      { template, subject } =
+
+      has_access_to_subscription =
         case type do
-          ^kickstarter_type -> EmailTemplates.run_seven_day_kickstarter(day_count)
-          ^meditation_primer_type -> EmailTemplates.run_ten_day_primer(day_count)
-          ^awareness_challenge_type -> EmailTemplates.run_twenty_eight_day_challenge(day_count)
-          ^awareness_seven_week_vol_1_type -> EmailTemplates.run_seven_week_awareness_challenge_vol_1(day_count)
-          ^awareness_seven_week_vol_2_type -> EmailTemplates.run_seven_week_awareness_challenge_vol_2(day_count)
-          ^awareness_seven_week_vol_3_type -> EmailTemplates.run_seven_week_awareness_challenge_vol_3(day_count)
-          ^awareness_seven_week_vol_4_type -> EmailTemplates.run_seven_week_awareness_challenge_vol_4(day_count)
+          ^kickstarter_type -> true
+          ^meditation_primer_type -> Subscriber.check_if_subscriber_has_paid(subscriber)
+          ^awareness_challenge_type -> Subscriber.check_if_subscriber_has_paid(subscriber)
+          ^awareness_seven_week_vol_1_type -> Subscriber.check_if_subscriber_has_paid(subscriber)
+          ^awareness_seven_week_vol_2_type -> Subscriber.check_if_subscriber_has_paid(subscriber)
+          ^awareness_seven_week_vol_3_type -> Subscriber.check_if_subscriber_has_paid(subscriber)
+          ^awareness_seven_week_vol_4_type -> Subscriber.check_if_subscriber_has_paid(subscriber)
         end
 
-      case type do 
-        ^kickstarter_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Day NeverFap Deluxe Kickstarter - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
-        ^meditation_primer_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Ten Day Meditation Primer - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
-        ^awareness_challenge_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Twenty Eight Day Challenge - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
-        ^awareness_seven_week_vol_1_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Week Awareness Challenge Vol 1. - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
-        ^awareness_seven_week_vol_2_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Week Awareness Challenge Vol 2. - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
-        ^awareness_seven_week_vol_3_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Week Awareness Challenge Vol 3. - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
-        ^awareness_seven_week_vol_4_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Week Awareness Challenge Vol 4. - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
-      end
-      
-      case type do
-        ^kickstarter_type -> update_subscription(type, subscriber, 7, day_count)
-        ^meditation_primer_type -> update_subscription(type, subscriber, 10, day_count)
-        ^awareness_challenge_type -> update_subscription(type, subscriber, 28, day_count)
-        ^awareness_seven_week_vol_1_type -> update_subscription(type, subscriber, 7, day_count)
-        ^awareness_seven_week_vol_2_type -> update_subscription(type, subscriber, 7, day_count)
-        ^awareness_seven_week_vol_3_type -> update_subscription(type, subscriber, 7, day_count)
-        ^awareness_seven_week_vol_4_type -> update_subscription(type, subscriber, 7, day_count)
+      if has_access_to_subscription do
+        { template, subject } =
+          case type do
+            ^kickstarter_type -> EmailTemplates.run_seven_day_kickstarter(day_count)
+            ^meditation_primer_type -> EmailTemplates.run_ten_day_primer(day_count)
+            ^awareness_challenge_type -> EmailTemplates.run_twenty_eight_day_challenge(day_count)
+            ^awareness_seven_week_vol_1_type -> EmailTemplates.run_seven_week_awareness_challenge_vol_1(day_count)
+            ^awareness_seven_week_vol_2_type -> EmailTemplates.run_seven_week_awareness_challenge_vol_2(day_count)
+            ^awareness_seven_week_vol_3_type -> EmailTemplates.run_seven_week_awareness_challenge_vol_3(day_count)
+            ^awareness_seven_week_vol_4_type -> EmailTemplates.run_seven_week_awareness_challenge_vol_4(day_count)
+          end
+
+        case type do
+          ^kickstarter_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Day NeverFap Deluxe Kickstarter - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
+          ^meditation_primer_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Ten Day Meditation Primer - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
+          ^awareness_challenge_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Twenty Eight Day Challenge - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
+          ^awareness_seven_week_vol_1_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Week Awareness Challenge Vol 1. - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
+          ^awareness_seven_week_vol_2_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Week Awareness Challenge Vol 2. - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
+          ^awareness_seven_week_vol_3_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Week Awareness Challenge Vol 3. - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
+          ^awareness_seven_week_vol_4_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Week Awareness Challenge Vol 4. - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
+        end
+
+        case type do
+          ^kickstarter_type -> update_subscription(type, subscriber, 7, day_count)
+          ^meditation_primer_type -> update_subscription(type, subscriber, 10, day_count)
+          ^awareness_challenge_type -> update_subscription(type, subscriber, 28, day_count)
+          ^awareness_seven_week_vol_1_type -> update_subscription(type, subscriber, 7, day_count)
+          ^awareness_seven_week_vol_2_type -> update_subscription(type, subscriber, 7, day_count)
+          ^awareness_seven_week_vol_3_type -> update_subscription(type, subscriber, 7, day_count)
+          ^awareness_seven_week_vol_4_type -> update_subscription(type, subscriber, 7, day_count)
+        end
       end
     end
   end
 
   def update_subscription(type, subscriber, subscription_day_limit, day_count) do
     { count_property, subscribed_property } = Nfd.Util.Email.type_to_subscriber_properties(type)
-    
+
     case Meta.create_subscription_email(%{ day: day_count, course: type, subscription_email: subscriber.subscriber_email}) do
       {:ok, subscription_email} ->
-        case day_count == subscription_day_limit do 
+        case day_count == subscription_day_limit do
           true -> Account.update_subscriber(subscriber, %{ count_property => 0, subscribed_property => false })
           false -> Account.update_subscriber(subscriber, %{ count_property => Map.fetch!(subscriber, count_property) + 1 })
         end

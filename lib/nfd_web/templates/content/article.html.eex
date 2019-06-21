@@ -28,6 +28,8 @@
   <%= partial "content/next_prev_buttons.html", %{conn: @conn, page_symbol: :article, next_item: @content_collections.next_item, previous_item: @content_collections.previous_item } %>
 </div>
 
+<!-- Need additional help? Receive person 1-on-1 coaching from as little as $25 per month. -->
+
 <%= partial "banners/reddit_question_banner.html", assigns %>
 
 <div class="single__wrapper">

@@ -16,13 +16,14 @@ defmodule NfdWeb.FetchCollectionUtil do
     file_with_collection = Content.get_file_slug_with_collection!(verified_slug)
     has_paid_for_collection = Collection.has_paid_for_collection(file_with_collection.collection, user_collections)
     seven_week_awareness_challenge_symbol = generate_seven_week_awareness_challenge_symbol(item["vol"])
+    subscriber_property = Email.collection_slug_to_type(file_with_collection.collection.slug)
 
     case apply(ContentAPI, seven_week_awareness_challenge_symbol, [client, verified_slug]) do
       {:ok, response} ->
-        %{file_with_collection: file_with_collection, has_paid_for_collection: has_paid_for_collection, seven_week_awareness_challenge: response.body["data"]}
+        %{file_with_collection: file_with_collection, has_paid_for_collection: has_paid_for_collection, subscriber_property: subscriber_property, additional_item: response.body["data"]}
       {:error, error} ->
         IO.inspect error
-        %{file_with_collection: file_with_collection, has_paid_for_collection: has_paid_for_collection}
+        %{file_with_collection: file_with_collection, has_paid_for_collection: has_paid_for_collection, subscriber_property: subscriber_property}
     end
   end
 
