@@ -3,7 +3,7 @@
 
   <div class="dashboard__main__back__container">
     <a class="dashboard__main__back" href="/dashboard/courses">
-      Back to Email Campaigns
+      Back to Premium Courses
     </a>
     <%= partial "dashboard/email_countdown_timer.html", assigns %>
   </div>

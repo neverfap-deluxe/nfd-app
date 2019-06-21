@@ -48,7 +48,7 @@ defmodule NfdWeb.FetchAccess do
       :article -> [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset]
 
       :practices -> [:practices]
-      :practice -> [:articles, :practices, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset]
+      :practice -> [:articles, :practices, :course, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset]
 
       :courses -> [:courses]
       :course -> [:articles, :practices, :comments, :comment_form_changeset]

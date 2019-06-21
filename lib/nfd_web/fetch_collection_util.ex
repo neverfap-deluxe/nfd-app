@@ -13,15 +13,16 @@ defmodule NfdWeb.FetchCollectionUtil do
   alias Nfd.Account.Subscriber
 
   def item_collection_practice(item, page_symbol, verified_slug, user_collections, client) do
-    file = Content.get_file_slug!(verified_slug)
+    file_with_collection = Content.get_file_slug_with_collection!(verified_slug)
+    has_paid_for_collection = Collection.has_paid_for_collection(file_with_collection.collection, user_collections)
     seven_week_awareness_challenge_symbol = generate_seven_week_awareness_challenge_symbol(item["vol"])
-    seven_week_awareness_challenge_title = generate_seven_week_awareness_challenge_title(item["vol"])
+
     case apply(ContentAPI, seven_week_awareness_challenge_symbol, [client, verified_slug]) do
       {:ok, response} ->
-        %{file: file, seven_week_awareness_challenge: response.body["data"], seven_week_awareness_challenge_title: seven_week_awareness_challenge_title}
+        %{file_with_collection: file_with_collection, has_paid_for_collection: has_paid_for_collection, seven_week_awareness_challenge: response.body["data"]}
       {:error, error} ->
         IO.inspect error
-        %{file: file}
+        %{file_with_collection: file_with_collection, has_paid_for_collection: has_paid_for_collection}
     end
   end
 
@@ -67,17 +68,17 @@ defmodule NfdWeb.FetchCollectionUtil do
     end
   end
 
-  defp generate_seven_week_awareness_challenge_title(vol) do
-    case vol do
-      "1" -> "7 Week Awareness Challenge Vol 1."
-      "2" -> "7 Week Awareness Challenge Vol 2."
-      "3" -> "7 Week Awareness Challenge Vol 3."
-      "4" -> "7 Week Awareness Challenge Vol 4."
-      "5" -> "7 Week Awareness Challenge Vol 5."
-      "6" -> "7 Week Awareness Challenge Vol 6."
-      _ -> nil
-    end
-  end
+  # defp generate_seven_week_awareness_challenge_title(vol) do
+  #   case vol do
+  #     "1" -> "7 Week Awareness Challenge Vol 1."
+  #     "2" -> "7 Week Awareness Challenge Vol 2."
+  #     "3" -> "7 Week Awareness Challenge Vol 3."
+  #     "4" -> "7 Week Awareness Challenge Vol 4."
+  #     "5" -> "7 Week Awareness Challenge Vol 5."
+  #     "6" -> "7 Week Awareness Challenge Vol 6."
+  #     _ -> nil
+  #   end
+  # end
 end
 
 

@@ -1,17 +1,14 @@
 <div class="dashboard__email__challenges">
-  <h2 class="dashboard__main__title">Email Campaigns</h2>
+  <h2 class="dashboard__main__title">Premium Courses</h2>
   <div class="dashboard__main__back__container">
     <a class="dashboard__main__back" href="/dashboard">
       Back to Dashboard
     </a>
-    <!-- <a class="dashboard__main__back" href="/dashboard/courses">
-      Back to Email Campaigns
-    </a> -->
   </div>
 
   <div class="dashboard__main__area">
     <div class="dashboard__main__area__content">
-      <%= partial "dashboard/course_list.html", %{ courses: @dashboard_collections.courses} %>
+      <%= partial "dashboard/course_list.html", %{ conn: @conn, courses: @dashboard_collections.courses } %>
     </div>
   </div>
 </div>
