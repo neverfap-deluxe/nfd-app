@@ -14,6 +14,7 @@ defmodule Nfd.Account.CollectionAccess do
 
     # field :user_id, :binary_id
     belongs_to :user, Nfd.Account.User
+    # belongs_to :collection, Nfd.Content.Collection
 
     timestamps()
   end
@@ -32,6 +33,7 @@ defmodule Nfd.Account.CollectionAccess do
 
   def create_collection_access_for_free_courses(nil), do: nil
   def create_collection_access_for_free_courses(user) do
+    # TODO: I don't think this is working, at all. Will need to test!
     ["seven-day-neverfap-deluxe-kickstarter"]
     |> Enum.each(fn slug ->
       collection = Content.get_collection_slug_with_files!(slug)

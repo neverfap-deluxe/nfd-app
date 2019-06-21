@@ -11,5 +11,10 @@ defmodule Nfd.Repo.Migrations.AlterCollectionAccess do
     alter table(:files) do
       add :bucket_name, :string
     end
+
+    # alter table(:collection_access) do
+    #   remove :collection_id, references(:collections, on_delete: :nothing, type: :binary_id)
+    #   add :collection_id, references(:collections, on_delete: :nothing, type: :binary_id)
+    # end
   end
 end

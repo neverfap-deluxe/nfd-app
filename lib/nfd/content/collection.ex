@@ -17,7 +17,7 @@ defmodule Nfd.Content.Collection do
     field :stripe_description, :string
 
     has_many :files, Nfd.Content.File
-    # TODO: has_many, collection_access
+    # has_many, :collection_accesses, Nfd.Account.CollectionAccess
 
     timestamps()
   end

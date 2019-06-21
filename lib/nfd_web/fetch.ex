@@ -69,10 +69,10 @@ defmodule NfdWeb.Fetch do
   def is_collection_complete(conn, page_symbol, user_collections, dashboard_collections) do
     case page_symbol do
         page_symbol when page_symbol in [:dashboard_course_collection, :dashboard_course_file] ->
-          if dashboard_collections.course.status == "complete", do: , else: render_no_access_page(conn, "dashboard_no_complete.html")
+          if dashboard_collections.course.status == "complete", do: conn, else: render_no_access_page(conn, "dashboard_no_complete.html")
 
         page_symbol when page_symbol in [:dashboard_ebook_collection, :dashboard_ebook_file] ->
-          if dashboard_collections.ebook.status == "complete", do: , else: render_no_access_page(conn, "dashboard_no_complete.html")
+          if dashboard_collections.ebook.status == "complete", do: conn, else: render_no_access_page(conn, "dashboard_no_complete.html")
 
         _ ->
           conn
@@ -96,7 +96,7 @@ defmodule NfdWeb.Fetch do
     end
   end
 
-  def render_no_access_page(conn) do
+  def render_no_access_page(conn, template) do
     conn
       |> put_view(NfdWeb.DashboardView)
       |> render(template, layout: {NfdWeb.LayoutView, "hub.html"})
