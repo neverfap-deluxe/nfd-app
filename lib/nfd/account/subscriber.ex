@@ -113,7 +113,7 @@ defmodule Nfd.Account.Subscriber do
     # TODO: It needs to send a different host depending on whether this is prod or develop. 
     user = Account.get_user_email(subscriber.subscriber_email)
     patreon_access = NfdWeb.Patreon.fetch_patreon("https://neverfapdeluxe.com/", user)
-    has_paid_for_collection = Collection.has_paid_for_collection(collection, %{ collection_access_list: list_collection_access_by_user_id(user.id) })
+    has_paid_for_collection = Collection.has_paid_for_collection(collection, %{ collection_access_list: Account.list_collection_access_by_user_id(user.id) })
     if has_paid_for_collection != nil or patreon_access.tier_access_list |> Enum.find(&(&1 == :courses_access)), do: true, else: false
 
     # Still need to complete logic and check for both patreon access and the other one.
