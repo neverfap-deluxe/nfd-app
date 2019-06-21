@@ -3,16 +3,19 @@
 
   <!-- @user_collections.collections_access_list -->
 
-  <%#= if @user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == :courses_access))) do %>
-  <!-- dashboard_collections.courses -->
-    <!-- Iterate through all subscriptions.  -->
+  <%= if @user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == :courses_access))) do %>
+    <%= Enum.map(@dashboard_collections.courses, fn(course) -> %>
+      <div class="available__subscriptions__item">
 
-  <%# else %>
-    Enum.map(@user_collections.collections_access_list, fn(collection_access) ->
+        <%= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: @user_collections.subscriber.subscribed, subscribed_property: :subscribed, user_id: @user_collections.user.id } %>
+      </div>
+    <% end) %>
+      <!-- Iterate through all subscriptions.  -->
 
-    end)
-  <%# end %>
+  <% else %>
+      Enum.map(@user_collections.collections_access_list, fn(collection_access) ->
 
-  <%#= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: @user_collections.subscriber.subscribed, subscribed_property: :subscribed, user_id: @user_collections.user.id } %>
+      end)
+  <% end %>
 
 </div>
