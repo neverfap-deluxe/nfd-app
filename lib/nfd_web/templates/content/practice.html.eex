@@ -17,6 +17,7 @@
   <span><span class="homepage__process__link"><%= @item["date"] %></span></span>
 
   <div class="homepage__page">
+      <%= @item_collections %>
     Sign up to the
   </div>
 

@@ -52,9 +52,10 @@ defmodule NfdWeb.FetchCollection do
       :seven_week_awareness_vol_2_single -> %{}
       :seven_week_awareness_vol_3_single -> %{}
       :seven_week_awareness_vol_4_single -> %{}
+
+      _ -> %{}
     end
   end
-
 
   def content_collections(item, collection_array, client) do
     Enum.reduce(
@@ -69,7 +70,7 @@ defmodule NfdWeb.FetchCollection do
             acc |> FetchCollectionUtil.fetch_content_email(client, symbol)
 
           :comments -> acc |> FetchCollectionUtil.fetch_page_comments(item["page_id"])
-  
+
           _ ->
             acc
         end
@@ -88,7 +89,7 @@ defmodule NfdWeb.FetchCollection do
 
           symbol when symbol in [:seven_day_kickstarter_changeset, :ten_day_meditation_changeset, :twenty_eight_day_awareness_changeset, :seven_week_awareness_vol_1_changeset, :seven_week_awareness_vol_2_changeset, :seven_week_awareness_vol_3_changeset, :seven_week_awareness_vol_4_changeset] ->
             acc |> FetchCollectionUtil.fetch_subscriber_changeset(symbol)
-  
+
           _ ->
             acc
         end
@@ -106,7 +107,7 @@ defmodule NfdWeb.FetchCollection do
           :ebooks -> acc |> Map.merge(%{ ebooks: Nfd.Content.list_ebooks_with_files() })
           :courses -> acc |> Map.merge(%{ courses: Nfd.Content.list_courses_with_files() })
 
-          symbol when symbol in [:ebook, :course] -> 
+          symbol when symbol in [:ebook, :course] ->
             acc |> FetchCollectionUtil.fetch_single_dashboard_collection(symbol, collection_slug, user_collections)
 
           symbol when symbol in [:ebook_file, :course_file] ->
