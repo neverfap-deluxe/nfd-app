@@ -12,13 +12,13 @@ defmodule NfdWeb.FetchCollectionUtil do
 
   alias Nfd.Account.Subscriber
 
-  def item_collection_practice(item, page_symbol, verified_slug, user_collections, client) do 
+  def item_collection_practice(item, page_symbol, verified_slug, user_collections, client) do
     file = Content.get_file_slug!(verified_slug)
     seven_week_awareness_challenge_symbol = generate_seven_week_awareness_challenge_symbol(item["vol"])
-    IO.inspect seven_week_awareness_challenge_symbol
+    seven_week_awareness_challenge_title = generate_seven_week_awareness_challenge_title(item["vol"])
     case apply(ContentAPI, seven_week_awareness_challenge_symbol, [client, verified_slug]) do
       {:ok, response} ->
-        %{file: file, seven_week_awareness_challenge: response.body["data"]}
+        %{file: file, seven_week_awareness_challenge: response.body["data"], seven_week_awareness_challenge_title: seven_week_awareness_challenge_title}
       {:error, error} ->
         IO.inspect error
         %{file: file}
@@ -55,7 +55,7 @@ defmodule NfdWeb.FetchCollectionUtil do
     Map.merge(acc, %{ symbol => collection |> Map.merge(%{ has_paid_for_collection: has_paid_for_collection }) })
   end
 
-  defp generate_seven_week_awareness_challenge_symbol(vol) do 
+  defp generate_seven_week_awareness_challenge_symbol(vol) do
     case vol do
       "1" -> :seven_week_awareness_vol_1_single
       "2" -> :seven_week_awareness_vol_2_single
@@ -67,6 +67,17 @@ defmodule NfdWeb.FetchCollectionUtil do
     end
   end
 
+  defp generate_seven_week_awareness_challenge_title(vol) do
+    case vol do
+      "1" -> "7 Week Awareness Challenge Vol 1."
+      "2" -> "7 Week Awareness Challenge Vol 2."
+      "3" -> "7 Week Awareness Challenge Vol 3."
+      "4" -> "7 Week Awareness Challenge Vol 4."
+      "5" -> "7 Week Awareness Challenge Vol 5."
+      "6" -> "7 Week Awareness Challenge Vol 6."
+      _ -> nil
+    end
+  end
 end
 
 

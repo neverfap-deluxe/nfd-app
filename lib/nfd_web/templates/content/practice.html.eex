@@ -16,9 +16,14 @@
   </div>
   <span><span class="homepage__process__link"><%= @item["date"] %></span></span>
 
-  <div class="homepage__page">
-      <%= @item_collections %>
+  <div class="homepage__practices__premium__header">
+    <h2>This practice is part of the:</h2>
+    <h2 class="volume__name__special"></h2>
+
+      <%= @item_collections.file %>
+      <%= @item_collections.seven_week_awareness_challenge["content"] %>
     Sign up to the
+
   </div>
 
 </div>
@@ -31,7 +36,6 @@
 
     <%= partial "content/similar_practices.html", %{ practices: @content_collections.practices, category: @item["categories"] } %>
   </div>
-
 
   <%= partial "content/share_buttons.html", %{permalink: @item["permalink"] } %>
   <%= partial "comments/comments_list.html", %{conn: @conn, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections} %>
