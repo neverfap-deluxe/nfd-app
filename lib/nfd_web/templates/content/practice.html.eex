@@ -18,11 +18,11 @@
 
   <div class="homepage__practices__premium__header">
     <h2>This practice is part of the:</h2>
-    <h2 class="volume__name__special"></h2>
-
-      <%= @item_collections.file %>
-      <%= @item_collections.seven_week_awareness_challenge["content"] %>
-    Sign up to the
+    <h2 class="volume__name__special"><%= @item_collections.seven_week_awareness_challenge_title %></h2>
+    <p>Signing up for this course provides you with additional features:</p>
+    <p>Instructional and explanational audio recordings for each practice.</p>
+    <p>Additional written context based on how I personally practice this exercise.</p>
+    <p>The ability to receive these exercises via email, as part of a structured course.</p>
 
   </div>
 
