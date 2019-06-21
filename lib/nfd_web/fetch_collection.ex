@@ -22,7 +22,7 @@ defmodule NfdWeb.FetchCollection do
       %{},
       fn symbol, acc ->
         user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
-        patreon_access = Patreon.fetch_patreon(conn, user)
+        patreon_access = Patreon.fetch_patreon(conn.host, user)
         CollectionAccess.create_collection_access_for_free_courses(user)
         case symbol do
           :user -> acc |> Map.merge(%{ user: user })

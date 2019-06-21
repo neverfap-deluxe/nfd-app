@@ -129,10 +129,10 @@ config :nfd,
   meditation_primer_type: "meditationprimer",
   awareness_challenge_type: "awarenesschallenge",
 
-  awareness_week_vol_1_type: "awareness_week_vol_1",
-  awareness_week_vol_2_type: "awareness_week_vol_2",
-  awareness_week_vol_3_type: "awareness_week_vol_3",
-  awareness_week_vol_4_type: "awareness_week_vol_4"
+  awareness_seven_week_vol_1_type: "awareness_week_vol_1",
+  awareness_seven_week_vol_2_type: "awareness_week_vol_2",
+  awareness_seven_week_vol_3_type: "awareness_week_vol_3",
+  awareness_seven_week_vol_4_type: "awareness_week_vol_4"
 
 # Configures the endpoint
 config :nfd, NfdWeb.Endpoint,
@@ -175,7 +175,7 @@ config :nfd, :pow,
   web_mailer_module: NfdWeb,
   web_module: NfdWeb
 
-  
+
 # Cron setup
 config :nfd, Nfd.Scheduler,
   jobs: [

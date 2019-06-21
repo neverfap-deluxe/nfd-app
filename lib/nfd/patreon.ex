@@ -29,8 +29,8 @@ defmodule Nfd.Patreon do
   end
 
 
-  def validate_patreon_code(conn, code) do
-    base_url = generate_base_url(conn.host)
+  def validate_patreon_code(host, user, code) do
+    base_url = generate_base_url(host)
     mp =
       Multipart.new
       |> Multipart.add_field("code", code)
@@ -48,11 +48,10 @@ defmodule Nfd.Patreon do
     { :ok, identityResponse } = auth_client |> get(identity_url)
     identity_body = Jason.decode!(identityResponse.body)
 
-    update_user_information(conn, identity_body, body)
+    update_user_information(user, identity_body, body)
   end
 
-  defp update_user_information(conn, identity_body, body) do
-
+  defp update_user_information(user, identity_body, body) do
     # retrieve latest patreon information to update on the profile.
     patreon_user_id =
       case identity_body["data"]["relationships"]["memberships"]["data"] do
@@ -67,9 +66,6 @@ defmodule Nfd.Patreon do
     last_name = identity_body["data"]["attributes"]["last_name"]
     avatar_url = identity_body["data"]["attributes"]["image_url"]
     # expires in
-
-    # update user information
-    user = Pow.Plug.current_user(conn)
 
     case Account.update_user(user, %{
       first_name: first_name,
@@ -88,7 +84,7 @@ defmodule Nfd.Patreon do
     end
   end
 
-  def fetch_patreon(conn, user) do
+  def fetch_patreon(host, user) do
     if Map.get(user, :patreon_linked) do
       expires_in_date = user.patreon_expires_in
       seven_days_before_today = Timex.shift(Timex.today, days: -7)
@@ -97,24 +93,17 @@ defmodule Nfd.Patreon do
       if Timex.after?(Timex.now, expires_in_date) do
       create_patreon_access(false, false, nil)
 
-        %{
-          token_expired: true,
-          is_valid_patron: false,
-          tier_access_list: [],
-          tier: nil
-        }
-
       # if not expired check if it should be validated
       else
         # TODO: No idea if this works or not.
         if Timex.after?(seven_days_before_today, expires_in_date) do
-          refresh_user_patreon_information(conn, user)
+          refresh_user_patreon_information(host, user)
 
           # I need to fetch it again, in case the token has changed
-          refreshed_user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
-          check_patreon_tier(conn, refreshed_user)
+          refreshed_user = user |> Account.get_user_pow!()
+          check_patreon_tier(refreshed_user)
         else
-          check_patreon_tier(conn, user)
+          check_patreon_tier(user)
         end
       end
     else
@@ -122,8 +111,8 @@ defmodule Nfd.Patreon do
     end
   end
 
-  defp refresh_user_patreon_information(conn, user) do
-    base_url = generate_base_url(conn.host)
+  defp refresh_user_patreon_information(host, user) do
+    base_url = generate_base_url(host)
     mp =
       Multipart.new
       |> Multipart.add_field("grant_type", "refresh_token")
@@ -145,10 +134,10 @@ defmodule Nfd.Patreon do
     { :ok, identityResponse } = auth_client |> get(identity_url)
     identity_body = Jason.decode!(identityResponse.body)
 
-    update_user_information(conn, identity_body, body)
+    update_user_information(user, identity_body, body)
   end
 
-  defp check_patreon_tier(conn, user) do
+  defp check_patreon_tier(user) do
     members_url = "members/#{user.patreon_user_id}?include=address,currently_entitled_tiers,user&fields%5Bmember%5D=full_name,is_follower,email,last_charge_date,last_charge_status,lifetime_support_cents,patron_status,currently_entitled_amount_cents,pledge_relationship_start,will_pay_amount_cents&fields%5Btier%5D=title,amount_cents,description,created_at,url,image_url&fields%5Buser%5D=full_name,hide_pledges"
     # campaign_members_url = "campaigns/2462972/members?include=currently_entitled_tiers&fields%5Bmember%5D=email,patron_status,last_charge_status"
     # IO.inspect "check_patreon_tier"

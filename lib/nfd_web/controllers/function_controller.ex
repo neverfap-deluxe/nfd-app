@@ -12,7 +12,8 @@ defmodule NfdWeb.FunctionController do
   # PATREON
 
   def validate_patreon(conn, %{"code" => code}) do
-    Patreon.validate_patreon_code(conn, code)
+    user = Pow.Plug.current_user(conn)
+    Patreon.validate_patreon_code(conn, user, code)
 
     redirect(conn, to: Routes.dashboard_path(conn, :dashboard))
   end

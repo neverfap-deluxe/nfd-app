@@ -108,20 +108,14 @@ defmodule Nfd.Account.Subscriber do
     end
   end
 
-
-  def check_if_subscriber_has_paid(subscriber) do
+  # NOTE need to figure out how to pass in collection based on the collection type.
+  def check_if_subscriber_has_paid(subscriber, collection) do
+    # TODO: It needs to send a different host depending on whether this is prod or develop. 
     user = Account.get_user_email(subscriber.subscriber_email)
-    patreon_access = NfdWeb.Patreon.fetch_patreon(conn, user)
-    # get collections_access_list
-    Collection.has_paid_for_collection(file_with_collection.collection, user_collections)
+    patreon_access = NfdWeb.Patreon.fetch_patreon("https://neverfapdeluxe.com/", user)
+    has_paid_for_collection = Collection.has_paid_for_collection(collection, %{ collection_access_list: list_collection_access_by_user_id(user.id) })
+    if has_paid_for_collection != nil or patreon_access.tier_access_list |> Enum.find(&(&1 == :courses_access)), do: true, else: false
 
-    def has_paid_for_collection(collection, user_collections) do
-      user_collections.collections_access_list
-        |> Enum.find(fn(list_collection) ->
-          list_collection.collection_id == collection.id and list_collection.user_id == user_collections.user.id
-        end)
-    end
-
-
+    # Still need to complete logic and check for both patreon access and the other one.
   end
 end

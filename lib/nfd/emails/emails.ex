@@ -56,12 +56,12 @@ defmodule Nfd.Emails do
       has_access_to_subscription =
         case type do
           ^kickstarter_type -> true
-          ^meditation_primer_type -> Subscriber.check_if_subscriber_has_paid(subscriber)
-          ^awareness_challenge_type -> Subscriber.check_if_subscriber_has_paid(subscriber)
-          ^awareness_seven_week_vol_1_type -> Subscriber.check_if_subscriber_has_paid(subscriber)
-          ^awareness_seven_week_vol_2_type -> Subscriber.check_if_subscriber_has_paid(subscriber)
-          ^awareness_seven_week_vol_3_type -> Subscriber.check_if_subscriber_has_paid(subscriber)
-          ^awareness_seven_week_vol_4_type -> Subscriber.check_if_subscriber_has_paid(subscriber)
+          ^meditation_primer_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection(meditation_primer_type))
+          ^awareness_challenge_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection(awareness_challenge_type))
+          ^awareness_seven_week_vol_1_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection(awareness_seven_week_vol_1_type))
+          ^awareness_seven_week_vol_2_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection(awareness_seven_week_vol_2_type))
+          ^awareness_seven_week_vol_3_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection(awareness_seven_week_vol_3_type))
+          ^awareness_seven_week_vol_4_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection(awareness_seven_week_vol_4_type))
         end
 
       if has_access_to_subscription do
