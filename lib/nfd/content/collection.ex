@@ -15,6 +15,7 @@ defmodule Nfd.Content.Collection do
     field :price, :float
     field :stripe_sku, :string
     field :stripe_description, :string
+    field :subscribed_property_string, :string
 
     has_many :files, Nfd.Content.File
     # has_many, :collection_accesses, Nfd.Account.CollectionAccess

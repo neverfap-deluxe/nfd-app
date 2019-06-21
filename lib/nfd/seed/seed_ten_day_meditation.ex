@@ -15,6 +15,7 @@ defmodule Nfd.SeedTDMP do
           status: "complete",
           stripe_sku: "NA",
           stripe_description: "10 Day Meditation Primer Audio Series.",
+          subscribed_property_string: "ten_day_meditation_subscribed",
           description: "Want to learn more about meditation and best practices? The 10 day meditation primer is an excellent place to start.",
           display_name: "10 Day Meditation Primer",
           premium: true,

@@ -15,6 +15,7 @@ defmodule Nfd.SeedSWAVOL3 do
           status: "in_progress",
           stripe_sku: "NA",
           stripe_description: "Learn more about your awareness with Vol 3. of our 7 week awareness challenge.",
+          subscribed_property_string: "awareness_seven_week_vol_3_subscribed",
           description: "Learn more about your awareness with Vol 3. of our 7 week awareness challenge.",
           display_name: "7 Week Awareness Challenge Vol 3.",
           premium: true,

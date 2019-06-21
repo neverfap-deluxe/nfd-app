@@ -15,6 +15,7 @@ defmodule Nfd.SeedSDK do
           status: "complete",
           stripe_sku: "NA",
           stripe_description: "Kickstart your NeverFap Deluxe journey with our seven day course which will take you through everything you need to know about overcoming your porn addiction.",
+          subscribed_property_string: "seven_day_kickstarter_subscribed",
           description: "Kickstart your NeverFap Deluxe journey with our seven day course which will take you through everything you need to know about overcoming your porn addiction.",
           display_name: "7 Day NeverFap Deluxe Kickstarter",
           premium: false,

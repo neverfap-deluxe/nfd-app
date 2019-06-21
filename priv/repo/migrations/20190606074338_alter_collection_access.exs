@@ -5,6 +5,7 @@ defmodule Nfd.Repo.Migrations.AlterCollectionAccess do
     alter table(:collections) do
       add :stripe_sku, :string
       add :stripe_description, :string
+      add :subscribed_property_string, :string
       add :cover_image, :string
     end
 

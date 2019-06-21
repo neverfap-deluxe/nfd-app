@@ -6,7 +6,7 @@
   <%= if @user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == :courses_access))) do %>
     <%= Enum.map(@dashboard_collections.courses, fn(course) -> %>
       <div class="available__subscriptions__item">
-
+          <!-- subscribed_property_string -->
         <%= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: @user_collections.subscriber.subscribed, subscribed_property: :subscribed, user_id: @user_collections.user.id } %>
       </div>
     <% end) %>
