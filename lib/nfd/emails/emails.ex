@@ -100,10 +100,12 @@ defmodule Nfd.Emails do
   end
 
   def update_subscription(type, subscriber, subscription_day_limit, day_count) do
-    { count_property, subscribed_property } = Nfd.Util.Email.type_to_subscriber_properties(type)
+    { count_property, up_to_count_property, subscribed_property } = Nfd.Util.Email.type_to_subscriber_properties(type)
 
     case Meta.create_subscription_email(%{ day: day_count, course: type, subscription_email: subscriber.subscriber_email}) do
       {:ok, _subscription_email} ->
+        # TODO: Figure out a way to update this value.
+        # up_to_count_property
         case day_count == subscription_day_limit do
           true -> Account.update_subscriber(subscriber, %{ count_property => 0, subscribed_property => false })
           false -> Account.update_subscriber(subscriber, %{ count_property => Map.fetch!(subscriber, count_property) + 1 })

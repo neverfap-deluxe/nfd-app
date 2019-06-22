@@ -1,5 +1,8 @@
 use Mix.Config
 
+alias Nfd.Sitemaps
+alias Nfd.Emails
+
 config :nfd, Nfd.SwooshMailer,
   adapter: Swoosh.Adapters.Local
 
@@ -113,6 +116,26 @@ config :nfd, Nfd.Repo,
   database: "nfd_dev",
   hostname: "localhost",
   pool_size: 10
+
+
+
+# Cron setup
+config :nfd, Nfd.Scheduler,
+  jobs: [
+    # 28 day challenge
+    # Every minute
+    # {"* * * * *", {Sitemaps, :generate, []}},
+    # Every 15 minutes
+    # {"*/15 * * * *",   fn -> System.cmd("rm", ["/tmp/tmp_"]) end},
+    # Runs on 18, 20, 22, 0, 2, 4, 6:
+    # {"0 18-6/2 * * *", fn -> :mnesia.backup('/var/backup/mnesia') end},
+
+    # Email Scheduler - Runs every midnight:
+    {"* * * * *", {Emails, :email_scheduler, []}}, # "0 12 * * *
+
+    # Sitemap Scheduler - Runs every midnight:
+    {"@daily", {Sitemaps, :generate, []}}, # "0 12 * * *
+  ]
 
 
 # import_config "dev.secret.exs"

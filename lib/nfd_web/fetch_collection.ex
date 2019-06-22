@@ -39,6 +39,7 @@ defmodule NfdWeb.FetchCollection do
   end
 
   def item_collections(item, page_symbol, verified_slug, user_collections, client) do
+    # NOTE: verified_slug can be thought of as a the file_slug, not the collection i.e. not "practices", but "is-the-colour-yellow-etc"
     case page_symbol do
       :article -> %{}
       :practice -> FetchCollectionUtil.item_collection_practice(item, page_symbol, verified_slug, user_collections, client)
@@ -49,14 +50,14 @@ defmodule NfdWeb.FetchCollection do
       :blog -> %{}
       :update -> %{}
 
-      :seven_day_kickstarter_single -> %{course: FetchCollectionUtil.fetch_single_dashboard_collection(:course, verified_slug, user_collections)}
-      :ten_day_meditation_single -> %{course: FetchCollectionUtil.fetch_single_dashboard_collection(:course, verified_slug, user_collections)}
-      :twenty_eight_day_awareness_single -> %{course: FetchCollectionUtil.fetch_single_dashboard_collection(:course, verified_slug, user_collections)}
+      :seven_day_kickstarter_single -> %{} |> FetchCollectionUtil.fetch_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+      :ten_day_meditation_single -> %{} |> FetchCollectionUtil.fetch_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+      :twenty_eight_day_awareness_single -> %{} |> FetchCollectionUtil.fetch_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
 
-      :seven_week_awareness_vol_1_single -> %{course: FetchCollectionUtil.fetch_single_dashboard_collection(:course, verified_slug, user_collections)}
-      :seven_week_awareness_vol_2_single -> %{course: FetchCollectionUtil.fetch_single_dashboard_collection(:course, verified_slug, user_collections)}
-      :seven_week_awareness_vol_3_single -> %{course: FetchCollectionUtil.fetch_single_dashboard_collection(:course, verified_slug, user_collections)}
-      :seven_week_awareness_vol_4_single -> %{course: FetchCollectionUtil.fetch_single_dashboard_collection(:course, verified_slug, user_collections)}
+      :seven_week_awareness_vol_1_single -> %{} |> FetchCollectionUtil.fetch_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+      :seven_week_awareness_vol_2_single -> %{} |> FetchCollectionUtil.fetch_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+      :seven_week_awareness_vol_3_single -> %{} |> FetchCollectionUtil.fetch_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+      :seven_week_awareness_vol_4_single -> %{} |> FetchCollectionUtil.fetch_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
 
       _ -> %{}
     end
@@ -101,7 +102,7 @@ defmodule NfdWeb.FetchCollection do
       end)
   end
 
-  def dashboard_collections(conn, collection_array, user_collections, collection_slug, file_slug) do
+  def dashboard_collections(conn, client, collection_array, user_collections, collection_slug, file_slug) do
     Enum.reduce(
       collection_array,
       %{},
@@ -126,7 +127,7 @@ defmodule NfdWeb.FetchCollection do
             acc |> Map.merge(%{ symbol => Nfd.Content.get_file_slug!(file_slug) })
 
           :file_page_information -> 
-            # collection_slug to 
+            page_symbol = FetchCollectionUtil.collection_slug_to_page_symbol(collection_slug)
             case apply(PageAPI, page_symbol, [client, file_slug]) do 
               {:ok, response} ->
                 response.body["data"]

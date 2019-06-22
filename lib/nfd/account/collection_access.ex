@@ -39,14 +39,12 @@ defmodule Nfd.Account.CollectionAccess do
 
       case Account.get_collection_access_by_user_id_and_collection_id(Map.get(user, :id), collection.id) do
         nil ->
-          IO.inspect 'nil'
           case Account.create_collection_access(%{user_id: user.id, collection_id: collection.id}) do
             {:ok, collection_access} -> collection_access
             {:error, _error} -> nil
           end
 
         _collection_access ->
-          IO.inspect 'yes'
           nil
       end
     end)

@@ -91,13 +91,13 @@ defmodule Nfd.Util.Email do
 
     case type do
       ^general_type -> {:NA, :subscribed}
-      ^kickstarter_type -> {:seven_day_kickstarter_count, :seven_day_kickstarter_subscribed}
-      ^meditation_primer_type -> {:ten_day_meditation_count, :ten_day_meditation_subscribed}
-      ^awareness_challenge_type -> {:twenty_eight_day_awareness_count, :twenty_eight_day_awareness_subscribed}
-      ^awareness_seven_week_vol_1_type -> {:awareness_seven_week_vol_1_count, :awareness_seven_week_vol_1_subscribed}
-      ^awareness_seven_week_vol_2_type -> {:awareness_seven_week_vol_2_count, :awareness_seven_week_vol_2_subscribed}
-      ^awareness_seven_week_vol_3_type -> {:awareness_seven_week_vol_3_count, :awareness_seven_week_vol_3_subscribed}
-      ^awareness_seven_week_vol_4_type -> {:awareness_seven_week_vol_4_count, :awareness_seven_week_vol_4_subscribed}
+      ^kickstarter_type -> {:seven_day_kickstarter_count, :seven_day_kickstarter_up_to_count, :seven_day_kickstarter_subscribed}
+      ^meditation_primer_type -> {:ten_day_meditation_count, :ten_day_meditation_up_to_count, :ten_day_meditation_subscribed}
+      ^awareness_challenge_type -> {:twenty_eight_day_awareness_count, :twenty_eight_day_awareness_up_to_count, :twenty_eight_day_awareness_subscribed}
+      ^awareness_seven_week_vol_1_type -> {:awareness_seven_week_vol_1_count, :awareness_seven_week_vol_1_up_to_count, :awareness_seven_week_vol_1_subscribed}
+      ^awareness_seven_week_vol_2_type -> {:awareness_seven_week_vol_2_count, :awareness_seven_week_vol_2_up_to_count, :awareness_seven_week_vol_2_subscribed}
+      ^awareness_seven_week_vol_3_type -> {:awareness_seven_week_vol_3_count, :awareness_seven_week_vol_3_up_to_count, :awareness_seven_week_vol_3_subscribed}
+      ^awareness_seven_week_vol_4_type -> {:awareness_seven_week_vol_4_count, :awareness_seven_week_vol_4_up_to_count, :awareness_seven_week_vol_4_subscribed}
     end
   end
   def type_to_collection(type) do

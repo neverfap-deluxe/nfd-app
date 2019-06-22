@@ -1,6 +1,7 @@
 <div class="single__wrapper practices__wrapper">
 
   <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>
+  <%= partial "content/practice_premium_header.html", %{ item_collections: @item_collections, user_collections: @user_collections } %>
 
   <div class="homepage__process single__homepage__process">
     <div class="homepage__process__title__container">
@@ -22,56 +23,19 @@
 
 <div class="single__wrapper">
   <div class="single__content">
-    <div class="homepage__practices__premium__header">
-      <%= if has_premium_access(@item_collections, @user_collections, :courses_access) do %>
-        <h2>Premium Access</h2>
-        <h3>Context Audio</h3>
-        <audio controls src="<%= @item_collections.file_with_collection.file_url  %>">
-          Your browser does not support the <code>audio</code> element.
-        </audio>
-  
-        <!-- <h3>Instructional Audio</h3>
-        <audio controls src="<%= @item_collections.file_with_collection.file_url  %>">
-          Your browser does not support the <code>audio</code> element.
-        </audio> -->
-  
-        <h3>Subscribed Status</h3>
-        <p><%= Map.get(@user_collections.subscriber, @item_collections.subscriber_property) %></p>
-  
-        <p>Subscribe to the <%= @item_collections.file_with_collection.collection.display_name %></p>
-      <% else %>
-        <h2>Woah!</h2>
-        <p>This practice also includes audio and additional written context as part of the <b><%= @item_collections.file_with_collection.collection.display_name %></b> </p>
-        <a href=""></a>
-        <!-- <p>This practice is part of the:</p>
-        <h2 class="volume__name__special"><%= @item_collections.file_with_collection.collection.display_name %></h2>
-        <p>Signing up for this course provides you with additional features:</p>
-        <p>Instructional and explanational audio recordings for each practice.</p>
-        <p>Additional written context based on how I personally practice this exercise.</p>
-        <p>The ability to receive these exercises via email, as part of a structured course.</p>
-        <p>Alright signed up and have access to this course? Now's a great opportunity to login.</p> -->
-  
-      <% end %>
-    </div>
-
     <%= raw @item["content"] %>
 
-    <h2>Additional Context</h2>
-    <%= if has_premium_access(@item_collections, @user_collections, :courses_access) do %>
-      <%= raw @item_collections.additional_item.content %>
-    <% else %>
-      <div class="additional__context__">
 
-      </div>
-    <% end %>
-
-    <%= partial "content/similar_practices.html", %{ practices: @content_collections.practices, category: @item["categories"] } %>
+    <%#= partial "content/similar_practices.html", %{ practices: @content_collections.practices, category: @item["categories"] } %>
   </div>
 
   <%= partial "content/share_buttons.html", %{permalink: @item["permalink"] } %>
   <%= partial "comments/comments_list.html", %{conn: @conn, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections} %>
   <%= partial "content/next_prev_buttons.html", %{conn: @conn, page_symbol: :practice, next_item: @content_collections.next_item, previous_item: @content_collections.previous_item } %>
+
+
 </div>
+
 
 <%= partial "banners/reddit_question_banner.html", assigns %>
 

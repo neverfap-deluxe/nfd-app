@@ -20,12 +20,15 @@ defmodule NfdWeb.FetchCollectionUtil do
     seven_week_awareness_challenge_symbol = generate_seven_week_awareness_challenge_symbol(item["vol"])
     subscriber_property = Email.collection_slug_to_type(file_with_collection.collection.slug)
 
+    IO.inspect "hellosss"
+    course = Map.merge(file_with_collection.collection, %{ has_paid_for_collection: has_paid_for_collection })
+
     case apply(ContentAPI, seven_week_awareness_challenge_symbol, [client, verified_slug]) do
       {:ok, response} ->
-        %{file_with_collection: file_with_collection, has_paid_for_collection: has_paid_for_collection, subscriber_property: subscriber_property, additional_item: response.body["data"]}
+        %{file_with_collection: file_with_collection, course: course, has_paid_for_collection: has_paid_for_collection, subscriber_property: subscriber_property, additional_item: response.body["data"]}
       {:error, error} ->
         IO.inspect error
-        %{file_with_collection: file_with_collection, has_paid_for_collection: has_paid_for_collection, subscriber_property: subscriber_property}
+        %{file_with_collection: file_with_collection, course: course, has_paid_for_collection: has_paid_for_collection, subscriber_property: subscriber_property}
     end
   end
 
@@ -66,6 +69,7 @@ defmodule NfdWeb.FetchCollectionUtil do
 
   def fetch_single_dashboard_collection(acc, symbol, collection_slug, user_collections) do
     collection = Content.get_collection_slug_with_files!(collection_slug)
+
     sorted_files =
       collection.files 
         |> Enum.sort(fn(a, b) ->
@@ -76,8 +80,10 @@ defmodule NfdWeb.FetchCollectionUtil do
         |> Enum.reverse()
 
     sorted_collection = %{ collection | files: sorted_files }
+      # TODO Here is where has_paid_for_collection should work. 
 
     has_paid_for_collection = Collection.has_paid_for_collection(sorted_collection, user_collections)
+
     Map.merge(acc, %{ symbol => sorted_collection |> Map.merge(%{ has_paid_for_collection: has_paid_for_collection }) })
   end
 
@@ -93,7 +99,7 @@ defmodule NfdWeb.FetchCollectionUtil do
     end
   end
 
-  def collection_slug_to_content_api_symbol(collection_slug) do 
+  def collection_slug_to_page_symbol(collection_slug) do 
     case collection_slug do 
       "seven-day-neverfap-deluxe-kickstarter" -> :seven_day_kickstarter_single
       "ten-day-meditation-primer" -> :ten_day_meditation_single
@@ -102,6 +108,30 @@ defmodule NfdWeb.FetchCollectionUtil do
       "seven-week-awareness-challenge-vol-2" -> :seven_week_awareness_vol_2_single
       "seven-week-awareness-challenge-vol-3" -> :seven_week_awareness_vol_3_single
       "seven-week-awareness-challenge-vol-4" -> :seven_week_awareness_vol_4_single
+    end
+  end
+
+  def page_symbol_to_collection_slug(page_symbol) do 
+    case page_symbol do 
+      :seven_day_kickstarter_single -> "seven-day-neverfap-deluxe-kickstarter"
+      :ten_day_meditation_single -> "ten-day-meditation-primer"
+      :twenty_eight_day_awareness_single -> "twenty-eight-day-awareness-challenge"
+      :seven_week_awareness_vol_1_single -> "seven-week-awareness-challenge-vol-1"
+      :seven_week_awareness_vol_2_single -> "seven-week-awareness-challenge-vol-2"
+      :seven_week_awareness_vol_3_single -> "seven-week-awareness-challenge-vol-3"
+      :seven_week_awareness_vol_4_single -> "seven-week-awareness-challenge-vol-4"
+    end
+  end
+
+  def course_slug_to_up_to_count(course_slug) do 
+    case course_slug do
+      "seven-day-neverfap-deluxe-kickstarter" -> :seven_day_kickstarter_up_to_count
+      "ten-day-meditation-primer" -> :ten_day_meditation_up_to_count
+      "twenty-eight-day-awareness-challenge" -> :twenty_eight_day_awareness_up_to_count
+      "seven-week-awareness-challenge-vol-1" -> :seven_week_awareness_vol_1_up_to_count
+      "seven-week-awareness-challenge-vol-2" -> :seven_week_awareness_vol_2_up_to_count
+      "seven-week-awareness-challenge-vol-3" -> :seven_week_awareness_vol_3_up_to_count
+      "seven-week-awareness-challenge-vol-4" -> :seven_week_awareness_vol_4_up_to_count
     end
   end
 

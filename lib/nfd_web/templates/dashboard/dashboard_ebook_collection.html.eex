@@ -56,7 +56,7 @@
       <%= if patreon_access_list(@user_collections, :ebooks_access) do %>
         <div class="dashboard__main__area">
           <p>You have access to this guide via your Patreon tier.</p>
-          <p>For more information about our Patreon tiers, please read <a class="link" href="<%= Routes.page_path(@conn, :general_premium)%>">this guide</a> or head to the <a class="link" href="https://www.patreon.com/neverfapdeluxe">NeverFap Deluxe Patreon</a>.</p>
+          <p>For more information about our Patreon tiers, please read <a class="link" href="<%= Routes.page_path(@conn, :general_premium)%>">this guide</a> or head on down to the <a class="link" href="https://www.patreon.com/neverfapdeluxe">NeverFap Deluxe Patreon</a>.</p>
         </div>
       <% end %>
     <% end %>
