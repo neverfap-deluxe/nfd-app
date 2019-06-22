@@ -24,19 +24,25 @@ defmodule Nfd.SeedSDK do
           price: 0.0,
           slug: "seven-day-neverfap-deluxe-kickstarter"
         })
-        Repo.insert(%File{
-          seed_id: "a78835ce-5d49-4107-b57c-ef094b0efb7b",
-          type: "ebook_file",
-          description: "The ebook version of the 7 Day NeverFap Deluxe Kickstarter.",
-          display_name: "7 Day NeverFap Deluxe Kickstarter ebook",
-          bucket_name: "swavol1",
-          file_url: "", # TODO
-          premium: true,
-          slug: "seven-day-neverfap-deluxe-kickstarter-ebook",
-          collection_id: collection.id
-        })
+      seven_day_kickstarter_files(collection.id)
 
       _collection -> nil
     end
+  end
+
+  def seven_day_kickstarter_files(collection_id) do
+    # TODO: Add in the email/day files. 
+
+    Repo.insert(%File{
+      seed_id: "a78835ce-5d49-4107-b57c-ef094b0efb7b",
+      type: "ebook_file",
+      description: "The ebook version of the 7 Day NeverFap Deluxe Kickstarter.",
+      display_name: "7 Day NeverFap Deluxe Kickstarter ebook",
+      bucket_name: "swavol1",
+      file_url: "", # TODO
+      premium: true,
+      slug: "seven-day-neverfap-deluxe-kickstarter-ebook",
+      collection_id: collection_id
+    })
   end
 end

@@ -4,7 +4,7 @@
   <h2 class="dashboard__main__title dashboard__main__title--email"><%= @dashboard_collections.course.display_name %></h2>
 
   <div class="dashboard__main__back__container">
-    <a class="dashboard__main__back" href="/dashboard/courses">
+    <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, :dashboard_courses) %>">
       Back to Courses
     </a>
     <%= partial "dashboard/email_countdown_timer.html", assigns %>
@@ -29,12 +29,10 @@
       <h2 class="dashboard__main__area__content__title">Information</h2>
 
       <p><b>Landing page:</b> <a class="link" href="/<%= @dashboard_collections.course.slug %>">link</a></p>
+      <!-- NOTE: Show stats for the course, like number of emails sent. When they unsubscribed. Subscribed etc. Maybe, I dunno. -->
 
       <%= if has_premium_rights do %>
         <%= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: Map.get(@user_collections.subscriber, @dashboard_collections.subscriber_property), subscribed_property: @dashboard_collections.subscriber_property, user_id: @user_collections.user.id } %>
-      <% else %>
-
-      
       <% end %>
     </div>
   </div>

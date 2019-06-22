@@ -259,18 +259,18 @@
       border: 4px solid black;
       color: black;
 
-      margin-top: 0.5rem;
+      // margin-top: 0.5rem;
       // margin-bottom: 2rem;
 
-      box-shadow: -5px 5px 0px 0px #00ffee;  
-      padding: 0.3rem; 
+      // box-shadow: -5px 5px 0px 0px #00ffee;  
+      padding: 0.6rem; 
       cursor: pointer;
     
       transition: box-shadow .3s, bottom .3s, left .3s;
     }
 
     .available__subscriptions__item--button:hover {
-      box-shadow: -10px 10px 0px 0px #00ffee;
+      box-shadow: -5px 5px 0px 0px #00ffee;
       bottom: -5px;
       left: -5px;
     }

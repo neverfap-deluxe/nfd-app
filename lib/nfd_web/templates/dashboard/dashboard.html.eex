@@ -6,7 +6,7 @@
       <h2 class="dashboard__main__area__content__title">Index</h2>
 
       <ul class="dashboard__index">
-        <li class="link"><a href="#link_your_patreon">Link Your Patreon</a></li>
+        <li class="link"><a href="#link_your_patreon">Link Your Patreon Account</a></li>
         <li class="link"><a href="#purchased__courses">Purchased Courses</a></li>
         <li class="link"><a href="#newsletter">Newsletter</a></li>
         <li class="link"><a href="#courses">Courses</a></li>
@@ -25,9 +25,14 @@
   <div id="purchased__courses" class="dashboard__main__area">
     <div class="dashboard__main__area__content">
       <h2 class="dashboard__main__area__content__title">Purchased Courses</h2>
+      
+      <!-- TODO: Build a module which shows which courses the user is subscribed to. -->
+      <div>
+        <!-- Currently subscribed:  -->
+      </div>
+
       <%= partial "dashboard/available_subscriptions.html", %{ conn: @conn, user_collections: @user_collections, dashboard_collections: @dashboard_collections } %>
     </div>
-    <p>Purchase courses or sign up for one of our Patreon Tiers to access more.</p>
   </div>
 
   <div id="newsletter" class="dashboard__main__area">
@@ -50,14 +55,11 @@
       <h2 class="dashboard__main__area__content__title">Guides</h2>
       <div class="dashboard__main__ebook">
         <%= partial "dashboard/collection_list.html", %{ conn: @conn, collections: @dashboard_collections.not_purchased_ebooks, user_collections: @user_collections, type: :dashboard_ebook_collection } %>
-
-        <!-- <p>There are no audio courses, as of yet. Please feel free to check out the NeverFap Deluxe podcast while I figure out how to deliver the best possible experience for you.</p>
-        <a style="margin-bottom: 1rem; margin-top: 1rem;"href="/podcast" class="button subscribe__button">NeverFap Deluxe Podcast</a> -->
       </div>
     </div>
   </div>
 
-  <div class="dashboard__main__area">
+  <div id="links" class="dashboard__main__area">
     <div class="dashboard__main__area__content">
       <h2 class="dashboard__main__area__content__title">Links</h2>
       <p>Website: <a href="https://neverfapdeluxe.com">https://neverfapdeluxe.com/</a></p>
