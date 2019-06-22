@@ -22,7 +22,7 @@
     <%= if @dashboard_collections.course.files do %>
       <div class="dashboard__collection__files">
         <%= Enum.map(@dashboard_collections.course.files, fn (file) -> %>
-          <a class="dashboard__collection__file" href="<%= Routes.dashboard_path(@conn, :course_file, @dashboard_collections.course.slug, file.slug) %>">
+          <a class="dashboard__collection__file" href="<%= Routes.dashboard_path(@conn, :dashboard_course_file, @dashboard_collections.course.slug, file.slug) %>">
             <p><%= file.display_name %></p>
           </a>
         <% end) %>
@@ -31,7 +31,7 @@
   </div>
 
   <!-- Payment Module -->
-  <%= if (@dashboard_collections.course.has_paid_for_collection == nil or @user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 != :courses_access))) and @dashboard_collections.course.premium do %>
+  <%= if has_premium_access(@dashboard_collections.course, @user_collections, :courses_access) and @dashboard_collections.course.premium do %>
     <%= partial "dashboard/campaign_payment.html", %{ dashboard_collections: @dashboard_collections, api_key_collections: @api_key_collections } %>
   <% end %>
 
@@ -42,7 +42,7 @@
     </div>
   <% end %>
 
-  <%= if @user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == :courses_access)) do  %>
+  <%= if patreon_access_list(@user_collections, :courses_access) do %>
     <div class="dashboard__main__area">
       <p>You already have access to this course </p>
       <div>You have already purchased!</div>

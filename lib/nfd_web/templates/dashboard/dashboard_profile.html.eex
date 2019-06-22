@@ -11,7 +11,7 @@
       <div class="profile__options__container">
         <%#= link "Logout", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "subscribe__button" %>
 
-        <%= link "Delete Account", to: Routes.dashboard_path(@conn, :profile_delete_confirmation), class: "subscribe__button delete__button" %>
+        <%= link "Delete Account", to: Routes.dashboard_path(@conn, :dashboard_profile_delete_confirmation), class: "subscribe__button delete__button" %>
       </div>
     </div>
   </div>

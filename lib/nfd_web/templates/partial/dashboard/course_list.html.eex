@@ -1,19 +1,36 @@
-<!-- @collections_access_list -->
+<!-- Remove purchased courses -->
 
 <div class="dashboard__main__email">
-  <%= Enum.map(@dashboard_collections.courses, fn(collection) -> %>
+  <%= Enum.map(@collections, fn(collection) -> %>
     <div class="email__collection">
-      <h3><%= collection.display_name %></h3>
-      <p><%= collection.description %></p>
-      <div class="email__collection__bottom">
+      <div class="email__collection__top">
+        <h3 class="email__collection__top__name"><%= collection.display_name %></h3>
+        <h4 class="email__collection__top__price">$<%= collection.price %></h4>
+
+        <p class="email__collection__top__description"><%= collection.description %></p>
+
         <%= if collection.status == "complete" do %>
-          <a class="subscribe__button" href="<%= Routes.dashboard_path(@conn, :course_collection, collection.slug) %>">
+          <a class="subscribe__button" href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, collection.slug) %>">
             Learn more.
           </a>
         <% else %>
-          <span style="color: red; margin-top: 1rem;">Not yet complete</span>
+          <div class="email__collection__bottom--image--container">
+            <span style="color: red; margin-top: 1rem; height: 210px; margin-top: 1rem;">Not yet complete</span>
+          </div>
         <% end %>
       </div>
+
+      <div class="email__collection__bottom">
+        <div class="email__collection__bottom--image--container">
+          <img class="email__collection__bottom-image" src="<%= collection.cover_image %>"/>        
+        </div>
+        <div class="email__collection__bottom--benefits">
+          <%= collection.benefit_list |> String.split(";") |> Enum.map(fn (benefit) ->) %>
+            <div class="email__collection__bottom--benefit"><%= benefit %></div>
+          <% end) %>
+        </div>
+      </div>
+
     </div>
   <% end ) %>
 </div>

@@ -115,8 +115,12 @@ defmodule NfdWeb do
         end
       end
 
-      def is_premium_available(item_collections, user_collections, access_type) do
-        if item_collections.has_paid_for_collection != nil or user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == access_type)), do: true, else: false
+      def has_premium_access(item_collections, user_collections, access_type) do
+        if item_collections.has_paid_for_collection != nil or patreon_access_list(user_collections, access_type), do: true, else: false
+      end
+
+      def patreon_access_list(user_collections, type) do 
+        user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == type))
       end
 
       def iterate_json_collection(collection) do

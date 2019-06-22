@@ -51,7 +51,7 @@ defmodule NfdWeb.MessageController do
             content_collections = FetchCollection.content_collections(response.body["data"], collection_array, client)
             changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array) |> Map.merge(%{comment_form_changeset: comment_form_changeset})
 
-            Fetch.fetch_response_ok(conn, user, NfdWeb.ContentView, response, user_collections, content_collections, changeset_collections, first_slug_symbol, "general.html", "content")
+            Fetch.fetch_response_ok(conn, user, NfdWeb.ContentView, response, user_collections, content_collections, changeset_collections, %{}, first_slug_symbol, "general.html", "content")
           {:error, error} ->
             IO.inspect error
             Fetch.render_404_page(conn, error)
@@ -90,7 +90,7 @@ defmodule NfdWeb.MessageController do
                 content_collections = FetchCollection.content_collections(response.body["data"], collection_array, client)
                 changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array) |> Map.merge(%{contact_form_changeset: contact_form_changeset})
 
-                Fetch.fetch_response_ok(conn, user, NfdWeb.ContentView, response, user_collections, content_collections, changeset_collections, first_slug_symbol, "general.html", "page")
+                Fetch.fetch_response_ok(conn, user, NfdWeb.ContentView, response, user_collections, content_collections, changeset_collections, %{}, first_slug_symbol, "general.html", "page")
               {:error, error} ->
                 Fetch.render_404_page(conn, error)
             end

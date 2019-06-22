@@ -77,17 +77,11 @@
       margin-top: 1rem;
       margin-bottom: 1rem;
     }
-
-    p {
-      margin-bottom: 1.2rem;
-    }
   }
 
   p {
     font-size: 1rem;
     line-height: 1.6rem;
-    margin-top: 0.4rem;
-    margin-bottom: 0.4rem;
   }
 
   h2 {
@@ -104,20 +98,56 @@
   margin-bottom: 2rem;
 
   .email__collection {
+    display: flex;
+    justify-content: space-between;
     border: 4px solid black;
-    padding: 1rem;
+    padding: 1.6rem;
     margin-bottom: 1rem;
+    
+    h2, h3, h4, p {
+      margin: 0rem;
+    }
 
-    h3 {
-      margin-top: 0.5rem;
+    .email__collection__top {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      // justify-content: space-between;
+      // align-items: center;
+      width: 650px;
+
+      .email__collection__top__name {
+        font-size: 2.3rem;
+        line-height: 3.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .email__collection__top__price {
+
+      }
+
+      .email__collection__top__description {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
     }
 
     .email__collection__bottom {
       display: flex;
+      flex-direction: column;
       align-items: center;
 
-      justify-content: space-between;
+      // Change this
+      justify-content: space-around;
       width: 100%;
+
+      .email__collection__bottom--image--container {
+        display: flex;
+        
+        .email__collection__bottom-image {
+          width: 150px;
+        }  
+      }
     }
   }
 
@@ -177,9 +207,73 @@
 
 
 .available__subscriptions__container {
+  padding-left: 1rem;
+  padding-right: 1rem;
   border: 4px solid black;
 
   .available__subscriptions__item {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    // align-items: center;
+    width: 100%;
+
+    .available__subscriptions__item--title {
+      
+    }
+
+
+    .available__subscriptions__item--button {
+      display: inline-block;
+      font-size: 0.85rem;
+      line-height: 1.1rem;
+      background: white;
+      border: 4px solid black;
+      color: black;
+
+      margin-top: 0.5rem;
+      // margin-bottom: 2rem;
+
+      box-shadow: -5px 5px 0px 0px #00ffee;  
+      padding: 0.3rem; 
+      cursor: pointer;
     
+      transition: box-shadow .3s, bottom .3s, left .3s;
+    }
+
+    .available__subscriptions__item--button:hover {
+      box-shadow: -10px 10px 0px 0px #00ffee;
+      bottom: -5px;
+      left: -5px;
+    }
+    
+    .available__subscriptions__item--button:focus {
+      outline: 0;
+    }
+
+    .available__subscriptions__item--status {
+
+    }
+  }
+}
+
+.manage__body {
+  display: none;
+}
+
+.top__container__available {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.email__collection__bottom--benefits {
+  margin-top: 1rem;
+
+  .email__collection__bottom--benefit { 
+    border: 2px solid black;
+    padding: 0.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
   }
 }

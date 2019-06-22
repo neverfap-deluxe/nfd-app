@@ -8,7 +8,7 @@
 
   <div class="dashboard__main__area">
     <div class="dashboard__main__area__content">
-      <%= partial "dashboard/course_list.html", %{ conn: @conn, courses: @dashboard_collections.courses } %>
+      <%= partial "dashboard/course_list.html", %{ conn: @conn, collections: @dashboard_collections.courses } %>
     </div>
   </div>
 </div>

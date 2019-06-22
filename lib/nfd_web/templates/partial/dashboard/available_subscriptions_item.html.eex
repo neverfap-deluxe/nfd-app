@@ -1,0 +1,29 @@
+<div class="available__subscriptions__item">
+  <div class="top__container__available">
+    <h3 class="available__subscriptions__item--title"><%= @display_name %></h3>
+    <p class="available__subscriptions__item--status" id="idmanage<%= @subscribed_property %>">manage</p>
+    <a id="id<%= @subscribed_property %>" class="available__subscriptions__item--button button subscribe__button" href="<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_id, subscribed_property: @subscribed_property) %>" class="button subscribe__button"><%= available_item_subscribed_status_text @subscribed %></a>    
+  </div>
+
+  <div id="idmanagebody-<%= @subscribed_property %>" class="manage__body">
+    <p class="available__subscriptions__item--status"><span class="<%= if @subscribed == true do %> status__green <% else %> status__red <% end %>"><%= subscribed_status @subscribed %></span></p>
+  </div>
+</div>
+
+<script>  
+  var idmanage<%= @subscribed_property %> = document.querySelector("#idmanage<%= @subscribed_property %>");
+  var idmanagebody-<%= @subscribed_property %> = document.querySelector("#idmanagebody-<%= @subscribed_property %>");
+  // var id<%= @subscribed_property %> = document.querySelector("#id<%= @subscribed_property %>");
+  var clicked-<%= @subscribed_property %> = false;
+
+  idmanage<%= @subscribed_property %>.onclick = function(event) {
+console.log('yes')
+    if (clicked-<%= @subscribed_property %>) {
+      idmanagebody-<%= @subscribed_property %>.style.display = "none";
+      clicked-<%= @subscribed_property %> = false;
+    } else {
+      idmanagebody-<%= @subscribed_property %>.style.display = "block";
+      clicked-<%= @subscribed_property %> = true;
+    }
+  };
+</script>

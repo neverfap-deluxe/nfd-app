@@ -10,7 +10,7 @@
 
           <div class="profile__options__container">
             <%= link "Yes", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "subscribe__button delete__button" %>
-            <%= link "No", to: Routes.dashboard_path(@conn, :profile), class: "subscribe__button delete__button" %>
+            <%= link "No", to: Routes.dashboard_path(@conn, :dashboard_profile), class: "subscribe__button delete__button" %>
           </div>
 
         </div>

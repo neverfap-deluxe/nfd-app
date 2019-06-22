@@ -10,11 +10,11 @@ defmodule Nfd.Account.CollectionAccess do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "collection_access" do
-    field :collection_id, :string
-
+    # field :collection_id, :string
     # field :user_id, :binary_id
+
     belongs_to :user, Nfd.Account.User
-    # belongs_to :collection, Nfd.Content.Collection
+    belongs_to :collection, Nfd.Content.Collection
 
     timestamps()
   end
@@ -33,19 +33,20 @@ defmodule Nfd.Account.CollectionAccess do
 
   def create_collection_access_for_free_courses(nil), do: nil
   def create_collection_access_for_free_courses(user) do
-    # TODO: I don't think this is working, at all. Will need to test!
     ["seven-day-neverfap-deluxe-kickstarter"]
     |> Enum.each(fn slug ->
       collection = Content.get_collection_slug_with_files!(slug)
 
       case Account.get_collection_access_by_user_id_and_collection_id(Map.get(user, :id), collection.id) do
         nil ->
+          IO.inspect 'nil'
           case Account.create_collection_access(%{user_id: user.id, collection_id: collection.id}) do
             {:ok, collection_access} -> collection_access
             {:error, _error} -> nil
           end
 
         _collection_access ->
+          IO.inspect 'yes'
           nil
       end
     end)

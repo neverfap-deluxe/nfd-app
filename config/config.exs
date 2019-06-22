@@ -173,22 +173,3 @@ config :nfd, :pow,
   routes_backend: NfdWeb.Pow.Routes,
   web_mailer_module: NfdWeb,
   web_module: NfdWeb
-
-
-# Cron setup
-config :nfd, Nfd.Scheduler,
-  jobs: [
-    # 28 day challenge
-    # Every minute
-    # {"* * * * *", {Sitemaps, :generate, []}},
-    # Every 15 minutes
-    # {"*/15 * * * *",   fn -> System.cmd("rm", ["/tmp/tmp_"]) end},
-    # Runs on 18, 20, 22, 0, 2, 4, 6:
-    # {"0 18-6/2 * * *", fn -> :mnesia.backup('/var/backup/mnesia') end},
-
-    # Email Scheduler - Runs every midnight:
-    {"@daily", {Emails, :email_scheduler, []}}, # "0 12 * * *
-
-    # Sitemap Scheduler - Runs every midnight:
-    {"@daily", {Sitemaps, :generate, []}}, # "0 12 * * *
-  ]

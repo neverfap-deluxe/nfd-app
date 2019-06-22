@@ -91,9 +91,10 @@ defmodule NfdWeb.FetchAccess do
       :seven_week_awareness_vol_4_single -> [:twenty_eight_day_awareness]
 
       # DASHBOARD
-      :dashboard -> [:courses, :ebooks, :patreon_auth_url]
+      :dashboard -> [:courses, :ebooks, :purchased_ebooks, :purchased_courses, :not_purchased_ebooks, :not_purchased_courses, :patreon_auth_url]
       :dashboard_coaching -> [:stripe_session, :stripe_api_key, :paypal_api_key]
-
+      
+      
       :dashboard_courses -> [:courses]
       :dashboard_course_collection -> [:courses, :course, :subscriber_property, :stripe_session, :stripe_api_key, :paypal_api_key]
       :dashboard_course_file -> [:courses, :course, :course_file]

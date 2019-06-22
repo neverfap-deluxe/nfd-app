@@ -3,6 +3,8 @@ defmodule NfdWeb.FetchCollectionUtil do
   alias Nfd.API.PageAPI
   alias Nfd.API.ContentAPI
 
+  alias Nfd.Util.Email
+  
   alias Nfd.Meta
   alias Nfd.Meta.Comment
   alias Nfd.Meta.Page
@@ -25,6 +27,17 @@ defmodule NfdWeb.FetchCollectionUtil do
         IO.inspect error
         %{file_with_collection: file_with_collection, has_paid_for_collection: has_paid_for_collection, subscriber_property: subscriber_property}
     end
+  end
+
+  def fetch_purchased_collections(user_collections, type, is_purchased) do
+    Nfd.Content.list_collections_with_type(type)
+      |> Enum.filter(fn (collection) ->
+        if is_purchased do 
+          Enum.find(user_collections.collections_access_list, &(&1.collection.id == collection.id))
+        else
+          !Enum.find(user_collections.collections_access_list, &(&1.collection.id == collection.id))
+        end
+      end)
   end
 
   def merge_collection(acc, client, content_symbol, item) do

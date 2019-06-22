@@ -10,6 +10,8 @@ defmodule Nfd.Content.Collection do
     field :status, :string
     field :description, :string
     field :display_name, :string
+    field :cover_image, :string
+    field :benefit_list, :string
     field :premium, :boolean, default: false
     field :slug, :string
     field :price, :float

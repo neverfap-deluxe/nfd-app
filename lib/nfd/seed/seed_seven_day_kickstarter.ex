@@ -11,13 +11,15 @@ defmodule Nfd.SeedSDK do
       nil ->
         collection = Repo.insert!(%Collection{
           seed_id: "068b52c1-cce1-4239-a345-1182ae528a41",
-          type: "course_collection",
+          type: "ebook_collection",
           status: "complete",
           stripe_sku: "NA",
           stripe_description: "Kickstart your NeverFap Deluxe journey with our seven day course which will take you through everything you need to know about overcoming your porn addiction.",
+          benefit_list: "Written Guide Explaining NeverFap Deluxe;Delivered Over 7 Days via Email;Ebook Available",
           subscribed_property_string: "seven_day_kickstarter_subscribed",
           description: "Kickstart your NeverFap Deluxe journey with our seven day course which will take you through everything you need to know about overcoming your porn addiction.",
           display_name: "7 Day NeverFap Deluxe Kickstarter",
+          cover_image: "/images/ebook_covers/7-day-kickstarter-ebook-cover-600-900.png",
           premium: false,
           price: 0.0,
           slug: "seven-day-neverfap-deluxe-kickstarter"

@@ -15,9 +15,11 @@ defmodule Nfd.SeedTEDA do
           status: "in_progress",
           stripe_sku: "NA",
           stripe_description: "Learn more about your awareness with our 28 day awareness challenge.",
+          benefit_list: "",
           subscribed_property_string: "twenty_eight_day_awareness_subscribed",
           description: "Learn more about your awareness with our 28 day awareness challenge.",
           display_name: "28 Day Awareness Challenge",
+          cover_image: "/images/ebook_covers/na",
           premium: true,
           price: 14.99,
           slug: "twenty-eight-day-awareness-challenge"

@@ -107,6 +107,12 @@ defmodule NfdWeb.FetchCollection do
           :ebooks -> acc |> Map.merge(%{ ebooks: Nfd.Content.list_ebooks_with_files() })
           :courses -> acc |> Map.merge(%{ courses: Nfd.Content.list_courses_with_files() })
 
+          :purchased_ebooks -> acc |> Map.merge(%{ purchased_ebooks: FetchCollectionUtil.fetch_purchased_collections(user_collections, "ebook_collection", true) })
+          :purchased_courses -> acc |> Map.merge(%{ purchased_courses: FetchCollectionUtil.fetch_purchased_collections(user_collections, "course_collection", true) })
+
+          :not_purchased_ebooks -> acc |> Map.merge(%{ not_purchased_ebooks: FetchCollectionUtil.fetch_purchased_collections(user_collections, "ebook_collection", false) })
+          :not_purchased_courses -> acc |> Map.merge(%{ not_purchased_courses: FetchCollectionUtil.fetch_purchased_collections(user_collections, "course_collection", false) })
+
           symbol when symbol in [:ebook, :course] ->
             acc |> FetchCollectionUtil.fetch_single_dashboard_collection(symbol, collection_slug, user_collections)
 

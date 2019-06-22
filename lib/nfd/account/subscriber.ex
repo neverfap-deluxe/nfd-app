@@ -114,7 +114,7 @@ defmodule Nfd.Account.Subscriber do
     host = if Mix.env() == :dev, do: "localhost", else: "neverfapdeluxe.com"
     user = Account.get_user_email(subscriber.subscriber_email)
     patreon_access = NfdWeb.Patreon.fetch_patreon(host, user)
-    has_paid_for_collection = Collection.has_paid_for_collection(collection, %{ collection_access_list: Account.list_collection_access_by_user_id(user.id) })
+    has_paid_for_collection = Collection.has_paid_for_collection(collection, %{ collections_access_list: Account.list_collection_access_by_user_id(user.id) })
     if has_paid_for_collection != nil or patreon_access.tier_access_list |> Enum.find(&(&1 == :courses_access)), do: true, else: false
 
     # Still need to complete logic and check for both patreon access and the other one.

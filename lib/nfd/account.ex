@@ -164,7 +164,7 @@ defmodule Nfd.Account do
 
   def get_collection_access_by_user_id_and_collection_id(nil, collection_id), do: %{}
   def get_collection_access_by_user_id_and_collection_id(user_id, collection_id) do
-    from(u in CollectionAccess, where: u.user_id == ^user_id or u.collection_id == ^collection_id) |> Repo.one
+    from(u in CollectionAccess, where: u.user_id == ^user_id and u.collection_id == ^collection_id) |> Repo.one
   end
 
 

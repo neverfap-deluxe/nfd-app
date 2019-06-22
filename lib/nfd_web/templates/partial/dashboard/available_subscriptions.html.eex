@@ -1,19 +1,14 @@
 <div class="available__subscriptions__container">
-  <!-- But only show buttons based on their own access_list OR their patreon list. -->
-
-  <!-- @user_collections.collections_access_list -->
-
-  <%= if @user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == :courses_access)) do %>
+<!-- Patreon List -->
+  <%= if patreon_access_list(@user_collections, :courses_access) do %>
     <%= Enum.map(@dashboard_collections.courses, fn(course) -> %>
-      <div class="available__subscriptions__item">
-        <h2><%= course.display_name %></h2>
-        <%= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: Map.get(@user_collections.subscriber, String.to_atom(course.subscribed_property_string)), subscribed_property: String.to_atom(course.subscribed_property_string), user_id: @user_collections.user.id } %>
-      </div>
+      <%= partial "dashboard/available_subscriptions_item.html", %{ conn: @conn, display_name: course.display_name, subscribed: Map.get(@user_collections.subscriber, String.to_atom(course.subscribed_property_string)), subscribed_property: String.to_atom(course.subscribed_property_string), user_id: @user_collections.user.id } %>
     <% end) %>
+<!-- Paid List -->
   <% else %>
-    Enum.map(@user_collections.collections_access_list, fn(collection_access) ->
-
-    end)
+    <%= Enum.map(@user_collections.collections_access_list, fn(collection_access) -> %>
+      <%= partial "dashboard/available_subscriptions_item.html", %{ conn: @conn, display_name: collection_access.collection.display_name, subscribed: Map.get(@user_collections.subscriber, String.to_atom(collection_access.collection.subscribed_property_string)), subscribed_property: String.to_atom(collection_access.collection.subscribed_property_string), user_id: @user_collections.user.id } %>
+    <% end) %>
   <% end %>
 
 </div>

@@ -15,9 +15,11 @@ defmodule Nfd.SeedTDMP do
           status: "complete",
           stripe_sku: "NA",
           stripe_description: "10 Day Meditation Primer Audio Series.",
+          benefit_list: "Ten Guided Meditations;Curated For Beginners",
           subscribed_property_string: "ten_day_meditation_subscribed",
           description: "Want to learn more about meditation and best practices? The 10 day meditation primer is an excellent place to start.",
           display_name: "10 Day Meditation Primer",
+          cover_image: "/images/ebook_covers/ten-day-meditation-ebook-cover-600-900.png",
           premium: true,
           price: 9.99,
           slug: "ten-day-meditation-primer"

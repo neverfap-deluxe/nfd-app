@@ -23,6 +23,10 @@ defmodule Nfd.Content do
     Repo.all(Collection)
   end
 
+  def list_collections_with_type(type) do
+    Repo.all(from c in Collection, where: [type: ^type], order_by: [asc: :status], preload: [:files])
+  end
+
   def list_ebooks_with_files do
     Repo.all(from c in Collection, where: [type: "ebook_collection"], order_by: [asc: :status], preload: [:files])
   end
