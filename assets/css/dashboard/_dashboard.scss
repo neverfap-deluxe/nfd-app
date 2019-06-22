@@ -8,11 +8,33 @@
   }
 }
 
+.dashboard__index {
+  display: flex;
+  flex-direction: column;
+  li {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    border-bottom: 2px solid white;
+    transition: .4s color;
+    a {
+      color: black;
+      text-decoration: none;
+      transition: .4s color;
+    }
+    a:hover {
+      color: rgba(255, 46, 182, 1);
+    }
+  }
+  li:hover {
+    color: cyan;
+    border-bottom: 2px solid white;
+  }
+}
+
 .dashboard,
 .dashboard__profile,
-.dashboard__no__access,
-.dashboard__audio__courses,
-.dashboard__email__challenges {
+.dashboard__ebook__collection,
+.dashboard__course__collection {
   box-sizing: border-box;
   padding: 0.5rem;
   padding-top: 2rem;
@@ -69,9 +91,15 @@
   padding-top: 2rem;
   background: white;
 
+
   .dashboard__main__area__content {
     width: 100%;
     margin-bottom: 2rem;
+
+    .dashboard__main__area__content__title {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
 
     .status {
       margin-top: 1rem;
@@ -182,8 +210,8 @@
 
   .dashboard,
   .dashboard__profile,
-  .dashboard__audio__courses,
-  .dashboard__email__challenges {
+  .dashboard__ebook__collection,
+  .dashboard__course__collection {
     padding: 3rem;
   }
 
@@ -270,8 +298,9 @@
 .email__collection__bottom--benefits {
   margin-top: 1rem;
 
-  .email__collection__bottom--benefit { 
+  .email__collection__bottom--benefit {
     border: 2px solid black;
+    width: 175px;
     padding: 0.4rem;
     font-weight: 700;
     margin-bottom: 1rem;

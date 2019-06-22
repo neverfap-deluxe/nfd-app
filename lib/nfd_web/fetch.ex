@@ -70,10 +70,10 @@ defmodule NfdWeb.Fetch do
   def is_collection_complete(conn, page_symbol, user_collections, dashboard_collections) do
     case page_symbol do
         page_symbol when page_symbol in [:dashboard_course_collection, :dashboard_course_file] ->
-          if dashboard_collections.course.status == "complete", do: conn, else: render_no_access_page(conn, "dashboard_no_complete.html")
+          if dashboard_collections.course.status == "complete", do: conn, else: render_no_access_page(conn, dashboard_collections, "dashboard_no_complete.html")
 
         page_symbol when page_symbol in [:dashboard_ebook_collection, :dashboard_ebook_file] ->
-          if dashboard_collections.ebook.status == "complete", do: conn, else: render_no_access_page(conn, "dashboard_no_complete.html")
+          if dashboard_collections.ebook.status == "complete", do: conn, else: render_no_access_page(conn, dashboard_collections, "dashboard_no_complete.html")
 
         _ ->
           conn
@@ -81,26 +81,27 @@ defmodule NfdWeb.Fetch do
   end
 
   def is_file_paid_for(conn, page_symbol, user_collections, dashboard_collections) do
+    IO.inspect page_symbol
     case page_symbol do
       :dashboard_course_file ->
         has_patreon_access = user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == :courses_access))
         has_paid_for_collection = dashboard_collections.course.has_paid_for_collection
-        if has_patreon_access or has_paid_for_collection, do: conn, else: render_no_access_page(conn, "dashboard_no_access.html")
+        if !!has_patreon_access or !!has_paid_for_collection, do: conn, else: render_no_access_page(conn, dashboard_collections, "dashboard_no_access.html")
 
       :dashboard_ebook_file ->
         has_patreon_access = user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == :ebooks_access))
         has_paid_for_collection = dashboard_collections.ebook.has_paid_for_collection
-        if has_patreon_access or has_paid_for_collection, do: conn, else: render_no_access_page(conn, "dashboard_no_access.html")
+        if !!has_patreon_access or !!has_paid_for_collection, do: conn, else: render_no_access_page(conn, dashboard_collections, "dashboard_no_access.html")
 
       _ ->
         conn
     end
   end
 
-  def render_no_access_page(conn, template) do
+  def render_no_access_page(conn, dashboard_collections, template) do
     conn
       |> put_view(NfdWeb.DashboardView)
-      |> render(template, layout: {NfdWeb.LayoutView, "hub.html"})
+      |> render(template, layout: {NfdWeb.LayoutView, "hub.html"}, dashboard_collections: dashboard_collections)
   end
 
   def render_404_page(conn, error) do

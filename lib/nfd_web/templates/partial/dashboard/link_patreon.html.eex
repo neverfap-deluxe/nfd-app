@@ -2,12 +2,12 @@
 
 <%= if @user_collections.user.patreon_linked and @user_collections.patreon_access.token_expired == false do %>
   <%= if @user_collections.patreon_access.tier do %>
-    <h2>Patreon Account Linked!</h2>
+    <h2 class="dashboard__main__area__content__title">Patreon Account Linked!</h2>
     <p><%= @user_collections.patreon_access.tier["attributes"]["title"] %></p>
     <%= raw @user_collections.patreon_access.tier["attributes"]["description"] %>
     <a class="button subscribe__button" href="<%= Routes.page_path(@conn, :general_premium)%>">Learn more about your benefits</a>
   <% else %>
-    <h2>Patreon Account Linked!</h2>
+    <h2 class="dashboard__main__area__content__title">Patreon Account Linked!</h2>
     <p>Your account is linked, however you haven't signed up for any tiers!</p>
     <p>That's okay, you're still awesome :D</p>
     <a class="button subscribe__button" href="<%= Routes.page_path(@conn, :general_premium)%>">Learn more about Patreon tiers</a>
@@ -18,7 +18,7 @@
       <%= get_flash(@conn, :info) %>
     </p>
   <% end %>
-  <h2>Link Your Patreon Account</h2>
+  <h2 class="dashboard__main__area__content__title">Link Your Patreon Account</h2>
   <p>Recieve all the benefits of your Patron tier!</p>
   <p>Otherwise, learn about the benefits you receive by become a Patron!</p>
 

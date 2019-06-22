@@ -15,7 +15,7 @@ defmodule Nfd.SeedSWAVOL1 do
           status: "in_progress",
           stripe_sku: "NA",
           stripe_description: "Learn more about your awareness with Vol 1. of our 7 week awareness challenge.",
-          benefit_list: "7 Awareness Exercise Recordings;Additional Written Explanations;Delivered Over 7 Weeks",
+          benefit_list: "7 Awareness Audio Recordings;Additional Written Explanations",
           subscribed_property_string: "awareness_seven_week_vol_1_subscribed",
           description: "Learn more about your awareness with Vol 1. of our 7 week awareness challenge.",
           display_name: "7 Week Awareness Challenge Vol 1.",
@@ -34,7 +34,7 @@ defmodule Nfd.SeedSWAVOL1 do
     Repo.insert(%File{
       seed_id: "dd5b4c6f-b8b1-4a2e-b30d-4bd7f081f9d2",
       type: "audio_file",
-      description: "7 Week Awareness Challenge Vol 1 - Week 1",
+      description: "Week 1",
       display_name: "Expressing Gratitude",
       bucket_name: "swavol1",
       file_url: "", # TODO
@@ -45,7 +45,7 @@ defmodule Nfd.SeedSWAVOL1 do
     Repo.insert(%File{
       seed_id: "2ce626da-3930-4d2d-b394-3a8e52dd1f73",
       type: "audio_file",
-      description: "7 Week Awareness Challenge Vol 1 - Week 2",
+      description: "Week 2",
       display_name: "Focus On Your Finger And Your Background",
       bucket_name: "swavol1",
       file_url: "", # TODO
@@ -56,7 +56,7 @@ defmodule Nfd.SeedSWAVOL1 do
     Repo.insert(%File{
       seed_id: "aa792de7-e471-4d82-9215-dc73aeb94689",
       type: "audio_file",
-      description: "7 Week Awareness Challenge Vol 1 - Week 3",
+      description: "Week 3",
       display_name: "Relax Everything",
       bucket_name: "swavol1",
       file_url: "", # TODO
@@ -67,7 +67,7 @@ defmodule Nfd.SeedSWAVOL1 do
     Repo.insert(%File{
       seed_id: "af235f37-b0c4-4bc9-a171-9f71788b106c",
       type: "audio_file",
-      description: "7 Week Awareness Challenge Vol 1 - Week 4",
+      description: "Week 4",
       display_name: "Slow Down Time",
       bucket_name: "swavol1",
       file_url: "", # TODO
@@ -78,7 +78,7 @@ defmodule Nfd.SeedSWAVOL1 do
     Repo.insert(%File{
       seed_id: "969f1b8d-1cfb-4112-a926-7a52eb4907db",
       type: "audio_file",
-      description: "7 Week Awareness Challenge Vol 1 - Week 5",
+      description: "Week 5",
       display_name: "Identify Points Of Awareness Throughout The Day",
       bucket_name: "swavol1",
       file_url: "", # TODO
@@ -89,7 +89,7 @@ defmodule Nfd.SeedSWAVOL1 do
     Repo.insert(%File{
       seed_id: "88975891-0011-4d5e-a537-eb83dc9f4a9e",
       type: "audio_file",
-      description: "7 Week Awareness Challenge Vol 1 - Week 6",
+      description: "Week 6",
       display_name: "Can You Look Through Walls?",
       bucket_name: "swavol1",
       file_url: "", # TODO
@@ -100,7 +100,7 @@ defmodule Nfd.SeedSWAVOL1 do
     Repo.insert(%File{
       seed_id: "053b4085-6673-464c-8665-283317077d7b",
       type: "audio_file",
-      description: "7 Week Awareness Challenge Vol 1 - Week 7",
+      description: "Week 7",
       display_name: "Looking Straight Ahead",
       bucket_name: "swavol1",
       file_url: "", # TODO

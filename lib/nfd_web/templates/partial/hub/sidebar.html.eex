@@ -6,14 +6,14 @@
       <span>Dash</span>
     <% end %>
 
-    <%= link to: Routes.dashboard_path(@conn, :dashboard_ebooks), class: "dashboard__sidebar__button" do %>
+    <%= link to: Routes.dashboard_path(@conn, :dashboard_courses), class: "dashboard__sidebar__button" do %>
       <i class="fas fa-file-audio"></i>
-      <span>Audio</span>
+      <span>Courses</span>
     <% end %>
 
-    <%= link to: Routes.dashboard_path(@conn, :dashboard_courses), class: "dashboard__sidebar__button" do %>
-      <i class="fas fa-envelope-square"></i>
-      <span>Email</span>
+    <%= link to: Routes.dashboard_path(@conn, :dashboard_ebooks), class: "dashboard__sidebar__button" do %>
+      <i class="fas fa-book"></i>
+      <span>Guides</span>
     <% end %>
 
     <%= link to: Routes.dashboard_path(@conn, :dashboard_profile), class: "dashboard__sidebar__button" do %>

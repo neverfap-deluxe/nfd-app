@@ -25,7 +25,7 @@
           <img class="email__collection__bottom-image" src="<%= collection.cover_image %>"/>        
         </div>
         <div class="email__collection__bottom--benefits">
-          <%= collection.benefit_list |> String.split(";") |> Enum.map(fn (benefit) ->) %>
+          <%= collection.benefit_list |> String.split(";") |> Enum.map(fn (benefit) -> %>
             <div class="email__collection__bottom--benefit"><%= benefit %></div>
           <% end) %>
         </div>

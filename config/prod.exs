@@ -1,5 +1,8 @@
 use Mix.Config
 
+alias Nfd.Sitemaps
+alias Nfd.Emails
+
 config :recaptcha,
   public_key: System.get_env("GOOGLE_RECAPTCHA_CLIENT"),
   secret: System.get_env("GOOGLE_RECAPTCHA_SECRET")
@@ -96,10 +99,10 @@ config :nfd, Nfd.Scheduler,
     # {"0 18-6/2 * * *", fn -> :mnesia.backup('/var/backup/mnesia') end},
 
     # Email Scheduler - Runs every midnight:
-    {"@daily", {Nfd.Emails, :email_scheduler, []}}, # "0 12 * * *
+    {"@daily", {Emails, :email_scheduler, []}}, # "0 12 * * *
 
     # Sitemap Scheduler - Runs every midnight:
-    {"@daily", {Nfd.Sitemaps, :generate, []}}, # "0 12 * * *
+    {"@daily", {Sitemaps, :generate, []}}, # "0 12 * * *
   ]
 
 

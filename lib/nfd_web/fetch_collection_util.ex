@@ -66,8 +66,19 @@ defmodule NfdWeb.FetchCollectionUtil do
 
   def fetch_single_dashboard_collection(acc, symbol, collection_slug, user_collections) do
     collection = Content.get_collection_slug_with_files!(collection_slug)
-    has_paid_for_collection = Collection.has_paid_for_collection(collection, user_collections)
-    Map.merge(acc, %{ symbol => collection |> Map.merge(%{ has_paid_for_collection: has_paid_for_collection }) })
+    sorted_files =
+      collection.files 
+        |> Enum.sort(fn(a, b) ->
+          a_new = a.description |> String.split(" ") |> List.last() |> String.to_integer()
+          b_new = b.description |> String.split(" ") |> List.last() |> String.to_integer()
+          a_new > b_new
+        end)
+        |> Enum.reverse()
+
+    sorted_collection = %{ collection | files: sorted_files }
+
+    has_paid_for_collection = Collection.has_paid_for_collection(sorted_collection, user_collections)
+    Map.merge(acc, %{ symbol => sorted_collection |> Map.merge(%{ has_paid_for_collection: has_paid_for_collection }) })
   end
 
   defp generate_seven_week_awareness_challenge_symbol(vol) do

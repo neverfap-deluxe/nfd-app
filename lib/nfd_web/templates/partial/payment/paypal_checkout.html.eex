@@ -27,7 +27,7 @@
           },
           body: JSON.stringify({
             orderID: data.orderID,
-            collection_id: <%= @dashboard_collections.course.id %>
+            collection_id: "<%= @dashboard_collections.course.id %>"
           })
         });
       });

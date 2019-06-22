@@ -1,13 +1,20 @@
-<div class="dashboard__no__access">
-  <h2 class="dashboard__main__title">No Complete</h2>
+<div class="dashboard">
+  <h2 class="dashboard__main__title">Not Yet Complete!</h2>
 
   <div class="dashboard__main__area">
-    <p>I'm sorry buddy!</p>
-    <p>But the <%= @dashboard_collections.course_file.display_name %> is not yet complete!</p>
-    <p>It will be done... at some point, I think!</p>
-
-    <div class="dashboard__main__ebook">
+    <div class="dashboard__main__area__content">
+      <h2>I'm sorry buddy!</h2>
+      <p>But the <b><%= @dashboard_collections.course.display_name %></b> is not yet complete!</p>
+      <p>It will be done... at some point in the future!</p>
 
     </div>
-  </div>
+
+    <div class="dashboard__main__area__content">
+      <div class="dashboard__main__back__container">
+        <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, :dashboard) %>">
+          Back to Dashboard
+        </a>
+      </div>
+    </div>  
+  </div>  
 </div>
