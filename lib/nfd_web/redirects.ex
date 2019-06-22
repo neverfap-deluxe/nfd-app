@@ -11,9 +11,15 @@ defmodule NfdWeb.Redirects do
       "meditation" -> redirect_meditation(conn, slug)
       "blog" -> redirect_blog(conn, slug)
       "update" -> redirect_update(conn, slug)
+
       "seven_day_kickstarter_single" -> redirect_seven_day_kickstarter_single(conn, slug)
       "ten_day_meditation_single" -> redirect_ten_day_meditation_single(conn, slug)
       "twenty_eight_day_awareness_single" -> redirect_twenty_eight_day_awareness_single(conn, slug)
+      
+      "seven_week_awareness_vol_1_single" -> redirect_seven_week_awareness_vol_1_single(conn, slug)
+      "seven_week_awareness_vol_2_single" -> redirect_seven_week_awareness_vol_2_single(conn, slug)
+      "seven_week_awareness_vol_3_single" -> redirect_seven_week_awareness_vol_3_single(conn, slug)
+      "seven_week_awareness_vol_4_single" -> redirect_seven_week_awareness_vol_4_single(conn, slug)
       _ -> slug
     end
   end
@@ -96,4 +102,28 @@ defmodule NfdWeb.Redirects do
     end
   end
 
+  def redirect_seven_week_awareness_vol_1_single(conn, slug) do
+    case slug do
+      _ -> slug
+    end
+  end
+
+  def redirect_seven_week_awareness_vol_2_single(conn, slug) do
+    case slug do
+      _ -> slug
+    end
+  end
+
+  def redirect_seven_week_awareness_vol_3_single(conn, slug) do
+    case slug do
+      _ -> slug
+    end
+  end
+
+  def redirect_seven_week_awareness_vol_4_single(conn, slug) do
+    case slug do
+      _ -> slug
+    end
+  end
+  
 end

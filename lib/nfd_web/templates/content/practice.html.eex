@@ -16,45 +16,44 @@
   </div>
   <span><span class="homepage__process__link"><%= @item["date"] %></span></span>
 
-  <div class="homepage__practices__premium__header">
-    <%= if has_premium_access(@item_collections, @user_collections, :courses_access) do %>
-      <h2>Premium Access</h2>
-      <h3>Context Audio</h3>
-      <audio controls src="<%= @item_collections.file_with_collection.file_url  %>">
-        Your browser does not support the <code>audio</code> element.
-      </audio>
-
-      <!-- <h3>Instructional Audio</h3>
-      <audio controls src="<%= @item_collections.file_with_collection.file_url  %>">
-        Your browser does not support the <code>audio</code> element.
-      </audio> -->
-
-      <h3>Subscribed Status</h3>
-      <p><%= Map.get(@user_collections.subscriber, @item_collections.subscriber_property) %></p>
-
-      <p>Subscribe to the <%= @item_collections.file_with_collection.collection.display_name %></p>
-    <% else %>
-      <h2>Additional Access</h2>
-
-      <p>This practice is part of the:</p>
-      <h2 class="volume__name__special"><%= @item_collections.file_with_collection.collection.display_name %></h2>
-      <p>Signing up for this course provides you with additional features:</p>
-      <p>Instructional and explanational audio recordings for each practice.</p>
-      <p>Additional written context based on how I personally practice this exercise.</p>
-      <p>The ability to receive these exercises via email, as part of a structured course.</p>
-      <p>Alright signed up and have access to this course? Now's a great opportunity to login.</p>
-
-    <% end %>
-  </div>
-
-
-
 </div>
 
 <%= partial "links/patreon.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content">
+    <div class="homepage__practices__premium__header">
+      <%= if has_premium_access(@item_collections, @user_collections, :courses_access) do %>
+        <h2>Premium Access</h2>
+        <h3>Context Audio</h3>
+        <audio controls src="<%= @item_collections.file_with_collection.file_url  %>">
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+  
+        <!-- <h3>Instructional Audio</h3>
+        <audio controls src="<%= @item_collections.file_with_collection.file_url  %>">
+          Your browser does not support the <code>audio</code> element.
+        </audio> -->
+  
+        <h3>Subscribed Status</h3>
+        <p><%= Map.get(@user_collections.subscriber, @item_collections.subscriber_property) %></p>
+  
+        <p>Subscribe to the <%= @item_collections.file_with_collection.collection.display_name %></p>
+      <% else %>
+        <h2>Woah!</h2>
+        <p>This practice also includes audio and additional written context as part of the <b><%= @item_collections.file_with_collection.collection.display_name %></b> </p>
+        <a href=""></a>
+        <!-- <p>This practice is part of the:</p>
+        <h2 class="volume__name__special"><%= @item_collections.file_with_collection.collection.display_name %></h2>
+        <p>Signing up for this course provides you with additional features:</p>
+        <p>Instructional and explanational audio recordings for each practice.</p>
+        <p>Additional written context based on how I personally practice this exercise.</p>
+        <p>The ability to receive these exercises via email, as part of a structured course.</p>
+        <p>Alright signed up and have access to this course? Now's a great opportunity to login.</p> -->
+  
+      <% end %>
+    </div>
+
     <%= raw @item["content"] %>
 
     <h2>Additional Context</h2>

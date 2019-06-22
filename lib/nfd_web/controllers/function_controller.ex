@@ -20,11 +20,7 @@ defmodule NfdWeb.FunctionController do
 
   # SUBSCRIPTION
 
-  def change_subscription_dashboard_func(conn, %{
-        "subscribed" => subscribed,
-        "user_id" => user_id,
-        "subscribed_property" => subscribed_property
-      }) do
+  def change_subscription_dashboard_func(conn, %{"subscribed" => subscribed, "user_id" => user_id, "subscribed_property" => subscribed_property}) do
     subscribed_property_atom = String.to_atom(subscribed_property)
 
     case Account.get_subscriber_user_id(user_id) do
@@ -32,6 +28,8 @@ defmodule NfdWeb.FunctionController do
         redirect_back(conn, 1)
 
       subscriber ->
+        # TODO: Here is where it needs to check to see if they're already subscribed to other emails.
+        # If so, then don't do anything, or... I have to figure this out. 
         if subscribed == "true",
           do: Account.update_subscriber(subscriber, %{subscribed_property_atom => false})
 
@@ -42,11 +40,7 @@ defmodule NfdWeb.FunctionController do
     end
   end
 
-  def reset_subscription_dashboard_func(conn, %{
-        "subscribed" => subscribed,
-        "user_id" => user_id,
-        "count_property" => count_property
-      }) do
+  def reset_subscription_dashboard_func(conn, %{"subscribed" => subscribed,"user_id" => user_id,"count_property" => count_property}) do
     count_property_atom = String.to_atom(count_property)
 
     case Account.get_subscriber_user_id(user_id) do

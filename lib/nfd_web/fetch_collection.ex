@@ -3,6 +3,10 @@ defmodule NfdWeb.FetchCollection do
   alias Nfd.Meta
   alias Nfd.Meta.Comment
 
+  alias Nfd.API
+  alias Nfd.API.PageAPI
+  alias Nfd.API.ContentAPI
+
   alias Nfd.Account
   alias Nfd.Account.Subscriber
   alias Nfd.Account.ContactForm
@@ -45,13 +49,14 @@ defmodule NfdWeb.FetchCollection do
       :blog -> %{}
       :update -> %{}
 
-      :seven_day_kickstarter_single -> %{}
-      :ten_day_meditation_single -> %{}
-      :twenty_eight_day_awareness_single -> %{}
-      :seven_week_awareness_vol_1_single -> %{}
-      :seven_week_awareness_vol_2_single -> %{}
-      :seven_week_awareness_vol_3_single -> %{}
-      :seven_week_awareness_vol_4_single -> %{}
+      :seven_day_kickstarter_single -> %{course: FetchCollectionUtil.fetch_single_dashboard_collection(:course, verified_slug, user_collections)}
+      :ten_day_meditation_single -> %{course: FetchCollectionUtil.fetch_single_dashboard_collection(:course, verified_slug, user_collections)}
+      :twenty_eight_day_awareness_single -> %{course: FetchCollectionUtil.fetch_single_dashboard_collection(:course, verified_slug, user_collections)}
+
+      :seven_week_awareness_vol_1_single -> %{course: FetchCollectionUtil.fetch_single_dashboard_collection(:course, verified_slug, user_collections)}
+      :seven_week_awareness_vol_2_single -> %{course: FetchCollectionUtil.fetch_single_dashboard_collection(:course, verified_slug, user_collections)}
+      :seven_week_awareness_vol_3_single -> %{course: FetchCollectionUtil.fetch_single_dashboard_collection(:course, verified_slug, user_collections)}
+      :seven_week_awareness_vol_4_single -> %{course: FetchCollectionUtil.fetch_single_dashboard_collection(:course, verified_slug, user_collections)}
 
       _ -> %{}
     end
@@ -119,6 +124,16 @@ defmodule NfdWeb.FetchCollection do
           symbol when symbol in [:ebook_file, :course_file] ->
             # TODO BackBlaze
             acc |> Map.merge(%{ symbol => Nfd.Content.get_file_slug!(file_slug) })
+
+          :file_page_information -> 
+            # collection_slug to 
+            case apply(PageAPI, page_symbol, [client, file_slug]) do 
+              {:ok, response} ->
+                response.body["data"]
+              {:error, error} -> 
+                IO.inspect error 
+                %{}
+            end
 
           _ ->
             acc

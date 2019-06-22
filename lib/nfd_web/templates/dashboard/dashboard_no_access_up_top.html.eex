@@ -1,0 +1,18 @@
+<div class="dashboard">
+  <h2 class="dashboard__main__title">You Are Not There Yet.</h2>
+
+  <div class="dashboard__main__area">
+    <div class="dashboard__main__area__content">
+      <h2>I'm sorry buddy!</h2>
+      <%= partial "not_up_to.html", assigns %>
+    </div>
+
+    <div class="dashboard__main__area__content">
+      <div class="dashboard__main__back__container">
+        <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, @dashboard_collections.course.slug) %>">
+          Back to <b><%= @dashboard_collections.course.display_name %></b>
+        </a>
+      </div>
+    </div>  
+  </div>  
+</div>

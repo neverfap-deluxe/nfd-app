@@ -70,38 +70,37 @@ defmodule NfdWeb.FetchAccess do
 
       # CONTENT EMAIL
       :seven_day_kickstarter ->  [:seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :seven_day_kickstarter_single -> [:seven_day_kickstarter]
+      :seven_day_kickstarter_single -> [:seven_day_kickstarter, :course]
 
       :ten_day_meditation ->  [:ten_day_meditation]
-      :ten_day_meditation_single -> [:ten_day_meditation]
+      :ten_day_meditation_single -> [:ten_day_meditation, :course]
 
       :twenty_eight_day_awareness ->  [:twenty_eight_day_awareness, :twenty_eight_day_awareness_changeset]
-      :twenty_eight_day_awareness_single -> [:twenty_eight_day_awareness]
+      :twenty_eight_day_awareness_single -> [:twenty_eight_day_awareness, :course]
 
       :seven_week_awareness_vol_1 ->  [:seven_week_awareness_vol_1, :seven_week_awareness_vol_1_changeset]
-      :seven_week_awareness_vol_1_single -> [:twenty_eight_day_awareness]
+      :seven_week_awareness_vol_1_single -> [:seven_week_awareness_vol_1, :course]
 
       :seven_week_awareness_vol_2 ->  [:seven_week_awareness_vol_2, :seven_week_awareness_vol_2_changeset]
-      :seven_week_awareness_vol_2_single -> [:twenty_eight_day_awareness]
+      :seven_week_awareness_vol_2_single -> [:seven_week_awareness_vol_2, :course]
 
       :seven_week_awareness_vol_3 ->  [:seven_week_awareness_vol_3, :seven_week_awareness_vol_3_changeset]
-      :seven_week_awareness_vol_3_single -> [:twenty_eight_day_awareness]
+      :seven_week_awareness_vol_3_single -> [:seven_week_awareness_vol_3, :course]
 
       :seven_week_awareness_vol_4 ->  [:seven_week_awareness_vol_4, :seven_week_awareness_vol_4_changeset]
-      :seven_week_awareness_vol_4_single -> [:twenty_eight_day_awareness]
+      :seven_week_awareness_vol_4_single -> [:seven_week_awareness_vol_4, :course]
 
       # DASHBOARD
       :dashboard -> [:courses, :ebooks, :purchased_ebooks, :purchased_courses, :not_purchased_ebooks, :not_purchased_courses, :patreon_auth_url]
       :dashboard_coaching -> [:stripe_session, :stripe_api_key, :paypal_api_key]
       
-      
       :dashboard_courses -> [:courses]
       :dashboard_course_collection -> [:courses, :course, :subscriber_property, :stripe_session, :stripe_api_key, :paypal_api_key]
-      :dashboard_course_file -> [:courses, :course, :course_file]
+      :dashboard_course_file -> [:courses, :course, :file_page_information, :course_file]
 
       :dashboard_ebooks -> [:ebooks]
       :dashboard_ebook_collection -> [:ebooks, :ebook, :stripe_session, :stripe_api_key, :paypal_api_key]
-      :dashboard_ebook_file -> [:ebooks, :ebook, :ebook_file]
+      :dashboard_ebook_file -> [:ebooks, :ebook, :file_page_information, :ebook_file]
 
       :dashboard_profile -> []
       :dashboard_profile_delete_confirmation -> []
