@@ -36,9 +36,9 @@ defmodule Nfd.SeedSDK do
     Repo.insert(%File{
       seed_id: "a78835ce-5d49-4107-b57c-ef094b0efb7b",
       type: "ebook_file",
-      description: "The ebook version of the 7 Day NeverFap Deluxe Kickstarter.",
-      display_name: "7 Day NeverFap Deluxe Kickstarter ebook",
-      bucket_name: "swavol1",
+      description: "epub",
+      display_name: "7 Day NeverFap Deluxe Kickstarter epub",
+      bucket_name: "sdk",
       file_url: "", # TODO
       premium: true,
       slug: "seven-day-neverfap-deluxe-kickstarter-ebook",

@@ -24,6 +24,7 @@ defmodule Nfd.SeedEBOOKS do
           price: 12.99,
           slug: "the-neverfap-deluxe-bible"
         })
+        # TODO Spec this out with the proper files
         Repo.insert(%File{
           seed_id: "d0a9a1d2-fead-466b-94f3-5bea5d84a75a",
           type: "ebook_file",

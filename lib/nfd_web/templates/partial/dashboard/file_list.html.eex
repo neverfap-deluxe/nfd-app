@@ -11,7 +11,7 @@
         </a>
         <%= if @premium do %>
           <div class="dashboard__collection__file__download" href="<%= file.file_url %>">
-            <i class="fa fa-cloud-download" aria-hidden="true"></i>
+            <i class="fa fa-cloud-download-alt" aria-hidden="true"></i>
           </div>
         <% else %>
           <div class="dashboard__collection__file__download" style="cursor: default;" href="#">

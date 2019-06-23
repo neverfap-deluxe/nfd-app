@@ -1,7 +1,7 @@
 <div class="single__wrapper practices__wrapper">
 
   <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>
-  <%= partial "content/practice_premium_header.html", %{ item_collections: @item_collections, user_collections: @user_collections } %>
+  <%#= partial "content/practice_premium_header.html", %{ item_collections: @item_collections, user_collections: @user_collections } %>
 
   <div class="homepage__process single__homepage__process">
     <div class="homepage__process__title__container">
@@ -24,18 +24,13 @@
 <div class="single__wrapper">
   <div class="single__content">
     <%= raw @item["content"] %>
-
-
-    <%#= partial "content/similar_practices.html", %{ practices: @content_collections.practices, category: @item["categories"] } %>
+    <%= partial "content/similar_practices.html", %{ practices: @content_collections.practices, category: @item["categories"] } %>
   </div>
 
   <%= partial "content/share_buttons.html", %{permalink: @item["permalink"] } %>
   <%= partial "comments/comments_list.html", %{conn: @conn, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections} %>
   <%= partial "content/next_prev_buttons.html", %{conn: @conn, page_symbol: :practice, next_item: @content_collections.next_item, previous_item: @content_collections.previous_item } %>
-
-
 </div>
-
 
 <%= partial "banners/reddit_question_banner.html", assigns %>
 
