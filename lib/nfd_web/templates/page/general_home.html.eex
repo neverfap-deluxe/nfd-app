@@ -422,7 +422,7 @@
           <%= partial "home/introduction_posts.html", %{ items: @content_collections.articles } %>
         </div>
         <div class="post__off" id="latest__posts">
-          <%= partial "content/latest_posts.html", %{ items: @content_collections.articles, type: :article } %>
+          <%= partial "content/latest_posts.html", %{ conn: @conn, items: @collections.articles, type: :article } %>
         </div>
       </div>
 

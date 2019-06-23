@@ -1,7 +1,7 @@
 <div class="posts">
   <!-- NOTE: this is incorrect, it should sort by latest date first :) -->
   <%= @items |> Enum.take(10) |> Enum.map(fn(item) -> %>
-    <a class="post" href='<%= item["permalink"] %>'>
+    <a class="post" href='<%= Routes.content_path(@conn, @type, item["slug"]) %>'>
       <div class="post__left">
         <div class="post__five__principles">
           <%= if item["categories"] == "introduction" do %>
