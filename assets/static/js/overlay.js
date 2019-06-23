@@ -8,11 +8,6 @@ var overlay__button__close = document.querySelector('#mobile__overlay__close__id
 
 var overlayState = false;
 
-// TODO: Add escape key for this thing.
-// addEventListener('', function(event) {
-
-// });
-
 window.addEventListener("keydown", function (event) {
   if (event.defaultPrevented) {
     return; // Do nothing if the event was already processed

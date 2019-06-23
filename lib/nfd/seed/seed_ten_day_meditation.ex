@@ -12,6 +12,7 @@ defmodule Nfd.SeedTDMP do
         collection = Repo.insert!(%Collection{
           seed_id: "943bd030-60e4-42da-a8c1-0c926c508374",
           type: "course_collection",
+          active_type: "meditation_active_type",
           status: "complete",
           stripe_sku: "NA",
           stripe_description: "10 Day Meditation Primer Audio Series.",

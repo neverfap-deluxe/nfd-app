@@ -12,6 +12,7 @@ defmodule Nfd.SeedEBOOKS do
         collection = Repo.insert!(%Collection{
           seed_id: "7a65219a-a965-460c-9a94-fcd5b74627be",
           type: "ebook_collection",
+          active_type: "ebook_active_type",
           status: "complete",
           stripe_sku: "NA",
           stripe_description: "The NeverFap Deluxe Bible is a complete collection of the NeverFap Deluxe Method of overcoming porn addiction.",

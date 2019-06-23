@@ -20,7 +20,6 @@ defmodule NfdWeb.FetchCollectionUtil do
     seven_week_awareness_challenge_symbol = generate_seven_week_awareness_challenge_symbol(item["vol"])
     subscriber_property = Email.collection_slug_to_type(file_with_collection.collection.slug)
 
-    IO.inspect "hellosss"
     course = Map.merge(file_with_collection.collection, %{ has_paid_for_collection: has_paid_for_collection })
 
     case apply(ContentAPI, seven_week_awareness_challenge_symbol, [client, verified_slug]) do
@@ -32,17 +31,6 @@ defmodule NfdWeb.FetchCollectionUtil do
     end
   end
 
-  def fetch_purchased_collections(user_collections, type, is_purchased) do
-    Nfd.Content.list_collections_with_type(type)
-      |> Enum.filter(fn (collection) ->
-        if is_purchased do 
-          Enum.find(user_collections.collections_access_list, &(&1.collection.id == collection.id))
-        else
-          !Enum.find(user_collections.collections_access_list, &(&1.collection.id == collection.id))
-        end
-      end)
-  end
-
   def merge_collection(acc, client, content_symbol, item) do
     {:ok, response} = apply(PageAPI, content_symbol, [client])
     collections = response.body["data"][Atom.to_string(content_symbol)] |> Enum.reverse()
@@ -50,41 +38,9 @@ defmodule NfdWeb.FetchCollectionUtil do
     Map.merge(acc, %{ content_symbol => collections, previous_item: previous_item, next_item: next_item })
   end
 
-  def fetch_page_comments(acc, page_id) do
-    Map.merge(acc, %{
-      comments: Meta.list_collection_access_by_page_id(page_id)
-        |> Comment.organise_date()
-        |> Comment.organise_comments()
-    })
-  end
-
   def fetch_content_email(acc, client, symbol) do
     {:ok, response} = apply(PageAPI, symbol, [client])
     Map.put(acc, symbol, response.body["data"])
-  end
-
-  def fetch_subscriber_changeset(acc, symbol) do
-    Map.put(acc, symbol, Subscriber.changeset(%Subscriber{}, %{}))
-  end
-
-  def fetch_single_dashboard_collection(acc, symbol, collection_slug, user_collections) do
-    collection = Content.get_collection_slug_with_files!(collection_slug)
-    
-    sorted_files =
-      collection.files 
-        |> Enum.sort(fn(a, b) ->
-          a_new = a.description |> String.split(" ") |> List.last() |> String.to_integer()
-          b_new = b.description |> String.split(" ") |> List.last() |> String.to_integer()
-          a_new > b_new
-        end)
-        |> Enum.reverse()
-
-    sorted_collection = %{ collection | files: sorted_files }
-      # TODO Here is where has_paid_for_collection should work. 
-
-    has_paid_for_collection = Collection.has_paid_for_collection(sorted_collection, user_collections)
-
-    Map.merge(acc, %{ collection: sorted_collection |> Map.merge(%{ has_paid_for_collection: has_paid_for_collection }) })
   end
 
   defp generate_seven_week_awareness_challenge_symbol(vol) do
@@ -145,6 +101,18 @@ defmodule NfdWeb.FetchCollectionUtil do
       :seven_week_awareness_vol_2_single -> :seven_week_awareness_vol_2_up_to_count
       :seven_week_awareness_vol_3_single -> :seven_week_awareness_vol_3_up_to_count
       :seven_week_awareness_vol_4_single -> :seven_week_awareness_vol_4_up_to_count
+    end
+  end
+
+  def page_symbol_subscribed_to_slug(page_symbol) do
+    case page_symbol do
+      :seven_day_kickstarter_subscribed -> "seven-day-neverfap-deluxe-kickstarter"
+      :ten_day_meditation_subscribed -> "ten-day-meditation-primer"
+      :twenty_eight_day_awareness_subscribed -> "twenty-eight-day-awareness-challenge"
+      :seven_week_awareness_vol_1_subscribed -> "seven-week-awareness-challenge-vol-1"
+      :seven_week_awareness_vol_2_subscribed -> "seven-week-awareness-challenge-vol-2"
+      :seven_week_awareness_vol_3_subscribed -> "seven-week-awareness-challenge-vol-3"
+      :seven_week_awareness_vol_4_subscribed -> "seven-week-awareness-challenge-vol-4"
     end
   end
 

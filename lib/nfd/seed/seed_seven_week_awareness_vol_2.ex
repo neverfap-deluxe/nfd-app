@@ -12,6 +12,7 @@ defmodule Nfd.SeedSWAVOL2 do
         collection = Repo.insert!(%Collection{
           seed_id: "d5d2c8c4-b90e-4556-8089-feb0dfc212fd",
           type: "course_collection",
+          active_type: "awareness_active_type",
           status: "in_progress",
           stripe_sku: "NA",
           stripe_description: "Learn more about your awareness with Vol 2. of our 7 week awareness challenge.",

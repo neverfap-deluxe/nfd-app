@@ -12,6 +12,7 @@ defmodule Nfd.SeedSDK do
         collection = Repo.insert!(%Collection{
           seed_id: "068b52c1-cce1-4239-a345-1182ae528a41",
           type: "course_collection",
+          active_type: "free_active_type",
           status: "complete",
           stripe_sku: "NA",
           stripe_description: "Kickstart your NeverFap Deluxe journey with our seven day course which will take you through everything you need to know about overcoming your porn addiction.",

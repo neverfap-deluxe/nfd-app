@@ -99,5 +99,13 @@ defmodule Nfd.Meta.Comment do
         })
       end)
   end
+
+  def get_page_comments(acc, page_id) do
+    Map.merge(acc, %{
+      comments: Meta.list_collection_access_by_page_id(page_id)
+        |> Comment.organise_date()
+        |> Comment.organise_comments()
+    })
+  end
 end
 

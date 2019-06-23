@@ -8,6 +8,7 @@ defmodule Nfd.Repo.Migrations.AlterCollectionAccess do
       add :subscribed_property_string, :string
       add :cover_image, :string
       add :benefit_list, :string
+      add :active_type, :string
     end
 
     alter table(:files) do
@@ -27,6 +28,11 @@ defmodule Nfd.Repo.Migrations.AlterCollectionAccess do
       add :awareness_seven_week_vol_2_up_to_count, :integer
       add :awareness_seven_week_vol_3_up_to_count, :integer
       add :awareness_seven_week_vol_4_up_to_count, :integer
+
+      add :free_active, :string
+      add :meditation_active, :string
+      add :awareness_active, :string
     end
+    
   end
 end

@@ -23,7 +23,6 @@ defmodule NfdWeb.Fetch do
 
     case apply(ContentAPI, page_symbol, [client, verified_slug]) do
       {:ok, response} ->
-
         user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
         item_collections = FetchCollection.item_collections(response.body["data"], page_symbol, verified_slug, user_collections, client)
         content_collections = FetchCollection.content_collections(response.body["data"], collection_array, client)
@@ -105,13 +104,12 @@ defmodule NfdWeb.Fetch do
 
   def are_they_up_to_day(conn, page_symbol, responseBodyData, user_collections, dashboard_collections, view, layout, template) do
     day = responseBodyData["day"]
-    IO.inspect page_symbol
+
     case page_symbol do
       page_symbol when page_symbol in [:seven_day_kickstarter_single, :ten_day_meditation_single, :twenty_eight_day_awareness_single, :seven_week_awareness_vol_1_single, :seven_week_awareness_vol_2_single, :seven_week_awareness_vol_3_single, :seven_week_awareness_vol_4_single] ->
         if user_collections.subscriber |> Map.get(FetchCollectionUtil.page_symbol_to_up_to_count(page_symbol)) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
 
       :dashboard_course_file -> if user_collections.subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(dashboard_collections.collection.slug)) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
-      # :dashboard_ebook_file -> if user_collections.subscriber |> Map.get(FetchCollectionUtil.vol_to_up_to_count(responseBodyData)) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
 
       _ -> conn
     end

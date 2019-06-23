@@ -16,6 +16,8 @@
     </div>
   </div>
   
+  <!-- TODO: Which exercise are you up to. -->
+
   <div id="link_your_patreon" class="dashboard__main__area">
     <div class="dashboard__main__area__content">
       <%= partial "dashboard/link_patreon.html", %{ conn: @conn, user_collections: @user_collections, api_key_collections: @api_key_collections } %>
@@ -39,7 +41,7 @@
     <div class="dashboard__main__area__content">
       <h2 class="dashboard__main__area__content__title">Newsletter</h2>
       <p>If you'd like to keep up to date on future products as they're released, please subscribe to our newsletter!</p>
-      <%= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: @user_collections.subscriber.subscribed, subscribed_property: :subscribed, user_id: @user_collections.user.id } %>
+      <%= partial "dashboard/subscribe_course.html", %{ conn: @conn, collection: %{}, subscribed: @user_collections.subscriber.subscribed, subscribed_property: :subscribed, user_collections: @user_collections } %>
     </div>
   </div>
 

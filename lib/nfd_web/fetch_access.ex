@@ -91,15 +91,15 @@ defmodule NfdWeb.FetchAccess do
       :seven_week_awareness_vol_4_single -> [:seven_week_awareness_vol_4, :course]
 
       # DASHBOARD
-      :dashboard -> [:courses, :ebooks, :purchased_ebooks, :purchased_courses, :not_purchased_ebooks, :not_purchased_courses, :patreon_auth_url]
+      :dashboard -> [:courses, :ebooks, :purchased_ebooks, :purchased_courses, :not_purchased_ebooks, :not_purchased_courses, :active_collections, :patreon_auth_url]
       :dashboard_coaching -> [:stripe_session, :stripe_api_key, :paypal_api_key]
       
       :dashboard_courses -> [:courses]
-      :dashboard_course_collection -> [:courses, :course, :subscriber_property, :stripe_session, :paypal_session, :stripe_api_key, :paypal_api_key]
+      :dashboard_course_collection -> [:courses, :course, :subscriber_property, :active_collections, :stripe_session, :paypal_session, :stripe_api_key, :paypal_api_key]
       :dashboard_course_file -> [:courses, :course, :course_file, :file_page_information]
 
       :dashboard_ebooks -> [:ebooks]
-      :dashboard_ebook_collection -> [:ebooks, :ebook, :stripe_session, :paypal_session, :stripe_api_key, :paypal_api_key]
+      :dashboard_ebook_collection -> [:ebooks, :ebook, active_collections, :stripe_session, :paypal_session, :stripe_api_key, :paypal_api_key]
       :dashboard_ebook_file -> [:ebooks, :ebook, :ebook_file, :file_page_information]
 
       :dashboard_profile -> []

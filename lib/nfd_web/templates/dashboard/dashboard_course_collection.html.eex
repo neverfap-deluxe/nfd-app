@@ -34,7 +34,7 @@
       <!-- <p>Purchased Date: </p> -->
 
       <%= if has_premium_rights do %>
-        <%= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: Map.get(@user_collections.subscriber, @dashboard_collections.subscriber_property), subscribed_property: @dashboard_collections.subscriber_property, user_id: @user_collections.user.id } %>
+        <%= partial "dashboard/subscribe_course.html", %{ conn: @conn, collection: @collection, subscribed: Map.get(@user_collections.subscriber, @dashboard_collections.subscriber_property), subscribed_property: @dashboard_collections.subscriber_property, user_collections: @user_collections } %>
       <% end %>
     </div>
   </div>

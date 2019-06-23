@@ -8,6 +8,7 @@ defmodule NfdWeb.FetchCollection do
   alias Nfd.API.ContentAPI
 
   alias Nfd.Content
+  alias Nfd.Content.Collection
 
   alias Nfd.Account
   alias Nfd.Account.Subscriber
@@ -23,18 +24,21 @@ defmodule NfdWeb.FetchCollection do
   alias Nfd.Util.Email
 
   def user_collections(conn, collection_array) do
+    user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
+    subscriber = user |> Subscriber.check_subscriber_exists()
+    patreon_access = Patreon.fetch_patreon(conn.host, user)
+
     Enum.reduce(
       collection_array,
       %{},
       fn symbol, acc ->
-        user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
-        patreon_access = Patreon.fetch_patreon(conn.host, user)
         CollectionAccess.create_collection_access_for_free_courses(user)
         case symbol do
           :user -> acc |> Map.merge(%{ user: user })
-          :subscriber -> acc |> Map.merge(%{ subscriber: user |> Subscriber.check_subscriber_exists() })
+          :subscriber -> acc |> Map.merge(%{ subscriber: subscriber })
           :patreon_access -> acc |> Map.merge(%{ patreon_access: patreon_access })
           :collections_access_list -> acc |> Map.merge(%{ collections_access_list: Account.list_collection_access_by_user_id(Map.get(user, :id)) })
+          :active_collections -> acc |> Collection.get_active_collections(subscriber)
           _ -> acc
         end
       end)
@@ -52,14 +56,14 @@ defmodule NfdWeb.FetchCollection do
       :blog -> %{}
       :update -> %{}
 
-      :seven_day_kickstarter_single -> %{} |> FetchCollectionUtil.fetch_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
-      :ten_day_meditation_single -> %{} |> FetchCollectionUtil.fetch_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
-      :twenty_eight_day_awareness_single -> %{} |> FetchCollectionUtil.fetch_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+      :seven_day_kickstarter_single -> %{} |> FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+      :ten_day_meditation_single -> %{} |> FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+      :twenty_eight_day_awareness_single -> %{} |> FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
 
-      :seven_week_awareness_vol_1_single -> %{} |> FetchCollectionUtil.fetch_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
-      :seven_week_awareness_vol_2_single -> %{} |> FetchCollectionUtil.fetch_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
-      :seven_week_awareness_vol_3_single -> %{} |> FetchCollectionUtil.fetch_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
-      :seven_week_awareness_vol_4_single -> %{} |> FetchCollectionUtil.fetch_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+      :seven_week_awareness_vol_1_single -> %{} |> FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+      :seven_week_awareness_vol_2_single -> %{} |> FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+      :seven_week_awareness_vol_3_single -> %{} |> FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+      :seven_week_awareness_vol_4_single -> %{} |> FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
 
       _ -> %{}
     end
@@ -77,7 +81,7 @@ defmodule NfdWeb.FetchCollection do
           symbol when symbol in [:seven_day_kickstarter, :ten_day_meditation, :twenty_eight_day_awareness, :seven_week_awareness_vol_1, :seven_week_awareness_vol_2, :seven_week_awareness_vol_3, :seven_week_awareness_vol_4] ->
             acc |> FetchCollectionUtil.fetch_content_email(client, symbol)
 
-          :comments -> acc |> FetchCollectionUtil.fetch_page_comments(item["page_id"])
+          :comments -> acc |> FetchCollectionUtil.get_page_comments(item["page_id"])
 
           _ ->
             acc
@@ -96,7 +100,7 @@ defmodule NfdWeb.FetchCollection do
           :comment_form_changeset -> acc |> Comment.get_comment_form_changeset(user, item)
 
           symbol when symbol in [:seven_day_kickstarter_changeset, :ten_day_meditation_changeset, :twenty_eight_day_awareness_changeset, :seven_week_awareness_vol_1_changeset, :seven_week_awareness_vol_2_changeset, :seven_week_awareness_vol_3_changeset, :seven_week_awareness_vol_4_changeset] ->
-            acc |> FetchCollectionUtil.fetch_subscriber_changeset(symbol)
+            acc |> Subscriber.get_subscriber_changeset(symbol)
 
           _ ->
             acc
@@ -115,14 +119,14 @@ defmodule NfdWeb.FetchCollection do
           :ebooks -> acc |> Map.merge(%{ ebooks: Content.list_ebooks_with_files() })
           :courses -> acc |> Map.merge(%{ courses: Content.list_courses_with_files() })
 
-          :purchased_ebooks -> acc |> Map.merge(%{ purchased_ebooks: FetchCollectionUtil.fetch_purchased_collections(user_collections, "ebook_collection", true) })
-          :purchased_courses -> acc |> Map.merge(%{ purchased_courses: FetchCollectionUtil.fetch_purchased_collections(user_collections, "course_collection", true) })
+          :purchased_ebooks -> acc |> Map.merge(%{ purchased_ebooks: Collection.get_purchased_collections(user_collections, "ebook_collection", true) })
+          :purchased_courses -> acc |> Map.merge(%{ purchased_courses: Collection.get_purchased_collections(user_collections, "course_collection", true) })
 
-          :not_purchased_ebooks -> acc |> Map.merge(%{ not_purchased_ebooks: FetchCollectionUtil.fetch_purchased_collections(user_collections, "ebook_collection", false) })
-          :not_purchased_courses -> acc |> Map.merge(%{ not_purchased_courses: FetchCollectionUtil.fetch_purchased_collections(user_collections, "course_collection", false) })
+          :not_purchased_ebooks -> acc |> Map.merge(%{ not_purchased_ebooks: Collection.get_purchased_collections(user_collections, "ebook_collection", false) })
+          :not_purchased_courses -> acc |> Map.merge(%{ not_purchased_courses: Collection.get_purchased_collections(user_collections, "course_collection", false) })
 
           symbol when symbol in [:ebook, :course] ->
-            acc |> FetchCollectionUtil.fetch_single_dashboard_collection(symbol, collection_slug, user_collections)
+            acc |> Collection.get_single_dashboard_collection(symbol, collection_slug, user_collections)
 
           symbol when symbol in [:ebook_file, :course_file] ->
             collection = Content.get_collection_slug_with_files!(collection_slug)
