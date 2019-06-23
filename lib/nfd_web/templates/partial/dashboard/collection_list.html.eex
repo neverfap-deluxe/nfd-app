@@ -10,7 +10,7 @@
         <p class="email__collection__top__description"><%= collection.description %></p>
 
         <%= if collection.status == "complete" do %>
-          <a class="subscribe__button" href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, collection.slug) %>">
+          <a class="subscribe__button" href="<%= Routes.dashboard_path(@conn, @type, collection.slug) %>">
             Learn more.
           </a>
         <% else %>

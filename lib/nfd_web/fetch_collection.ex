@@ -7,6 +7,8 @@ defmodule NfdWeb.FetchCollection do
   alias Nfd.API.PageAPI
   alias Nfd.API.ContentAPI
 
+  alias Nfd.Content
+
   alias Nfd.Account
   alias Nfd.Account.Subscriber
   alias Nfd.Account.ContactForm
@@ -107,11 +109,13 @@ defmodule NfdWeb.FetchCollection do
       collection_array,
       %{},
       fn symbol, acc ->
+        IO.inspect symbol
+
         case symbol do
           :subscriber_property -> acc |> Map.merge(%{ subscriber_property: Email.collection_slug_to_type(collection_slug) })
 
-          :ebooks -> acc |> Map.merge(%{ ebooks: Nfd.Content.list_ebooks_with_files() })
-          :courses -> acc |> Map.merge(%{ courses: Nfd.Content.list_courses_with_files() })
+          :ebooks -> acc |> Map.merge(%{ ebooks: Content.list_ebooks_with_files() })
+          :courses -> acc |> Map.merge(%{ courses: Content.list_courses_with_files() })
 
           :purchased_ebooks -> acc |> Map.merge(%{ purchased_ebooks: FetchCollectionUtil.fetch_purchased_collections(user_collections, "ebook_collection", true) })
           :purchased_courses -> acc |> Map.merge(%{ purchased_courses: FetchCollectionUtil.fetch_purchased_collections(user_collections, "course_collection", true) })
@@ -123,19 +127,29 @@ defmodule NfdWeb.FetchCollection do
             acc |> FetchCollectionUtil.fetch_single_dashboard_collection(symbol, collection_slug, user_collections)
 
           symbol when symbol in [:ebook_file, :course_file] ->
-            # TODO BackBlaze
-            acc |> Map.merge(%{ symbol => Nfd.Content.get_file_slug!(file_slug) })
+            collection = Content.get_collection_slug_with_files!(collection_slug)
+            file_with_collection = Content.get_file_slug_and_collection_id(file_slug, collection.id)
 
-          :file_page_information -> 
-            page_symbol = FetchCollectionUtil.collection_slug_to_page_symbol(collection_slug)
-            case apply(PageAPI, page_symbol, [client, file_slug]) do 
-              {:ok, response} ->
-                response.body["data"]
-              {:error, error} -> 
-                IO.inspect error 
-                %{}
+            # TODO BackBlaze to get file_url from BackBlaze.
+            acc |> Map.merge(%{ file: file_with_collection })
+
+          :file_page_information ->
+            collection = Content.get_collection_slug_with_files!(collection_slug)
+            file_with_collection = Content.get_file_slug_and_collection_id(file_slug, collection.id)
+
+            if file_with_collection.type == "ebook_file" do 
+              acc |> Map.merge(%{ file_page_information: %{} })
+            else
+              page_symbol = FetchCollectionUtil.collection_slug_to_page_symbol(collection_slug)
+    
+              case apply(ContentAPI, page_symbol, [client, file_slug]) do 
+                {:ok, response} ->
+                  acc |> Map.merge(%{ file_page_information: response.body["data"] }) 
+                {:error, error} -> 
+                  IO.inspect error 
+                  acc |> Map.merge(%{ file_page_information: %{} })
+              end
             end
-
           _ ->
             acc
         end

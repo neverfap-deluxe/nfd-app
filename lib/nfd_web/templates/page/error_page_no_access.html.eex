@@ -3,8 +3,8 @@
   <div class="single__content" style="margin-bottom: 0;">
     <h2>I'm sorry buddy!</h2>
 
-    <p>You don't have access to the <b><%= @dashboard_collections.course.display_name %></b></p>
-    <p>This module will be available to you once you purchase the <b><%= @dashboard_collections.course.display_name %></b> for the lovely price of <b>$<%= @dashboard_collections.course.price %></b> or if you decide to become a backer on my Patron!</p>    
+    <p>You don't have access to the <b><%= @dashboard_collections.collection.display_name %></b></p>
+    <p>This module will be available to you once you purchase the <b><%= @dashboard_collections.collection.display_name %></b> for the lovely price of <b>$<%= @dashboard_collections.collection.price %></b> or if you decide to become a backer on my Patron!</p>    
     <p>For more information about our Patreon tiers, please read <a class="link" href="<%= Routes.page_path(@conn, :general_premium)%>">this guide</a> or head on down to the <a class="link" href="https://www.patreon.com/neverfapdeluxe">NeverFap Deluxe Patreon</a>.</p>
     <p>Otherwise, please login to your account.</p>
 

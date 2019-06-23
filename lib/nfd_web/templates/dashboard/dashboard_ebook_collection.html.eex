@@ -1,7 +1,7 @@
-<% has_premium_rights = has_premium_access(@dashboard_collections.ebook, @user_collections, :ebooks_access) and @dashboard_collections.ebook.premium %>
+<% has_premium_rights = has_premium_access(@dashboard_collections.collection, @user_collections, :ebooks_access) and @dashboard_collections.collection.premium %>
 
 <div class="dashboard__course__collection">
-  <h2 class="dashboard__main__title dashboard__main__title--email"><%= @dashboard_collections.ebook.display_name %></h2>
+  <h2 class="dashboard__main__title dashboard__main__title--email"><%= @dashboard_collections.collection.display_name %></h2>
 
   <div class="dashboard__main__back__container">
     <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, :dashboard_ebooks) %>">
@@ -28,7 +28,7 @@
     <div class="dashboard__main__area__content">
       <h2 class="dashboard__main__area__content__title">Information</h2>
 
-      <p><b>Landing page:</b> <a class="link" href="/<%= @dashboard_collections.ebook.slug %>">link</a></p>
+      <p><b>Landing page:</b> <a class="link" href="/<%= @dashboard_collections.collection.slug %>">link</a></p>
       <!-- NOTE: Show stats for the ebook, like number of emails sent. When they unsubscribed. Subscribed etc. Maybe, I dunno. -->
 
       <%= if has_premium_rights do %>
@@ -39,7 +39,7 @@
 
   <div id="modules" class="dashboard__main__area">
     <h2 class="dashboard__main__area__content__title">Modules</h2>
-    <%= partial "dashboard/file_list.html", %{ conn: @conn, files: @dashboard_collections.ebook.files, course_slug: @dashboard_collections.ebook.slug, premium: has_premium_rights } %>
+    <%= partial "dashboard/file_list.html", %{ conn: @conn, files: @dashboard_collections.collection.files, course_slug: @dashboard_collections.collection.slug, premium: has_premium_rights } %>
   </div>
 
   <!-- Payment Module -->
@@ -47,9 +47,9 @@
     <%= if !has_premium_rights do %>
       <%= partial "dashboard/campaign_payment.html", %{ dashboard_collections: @dashboard_collections, api_key_collections: @api_key_collections } %>
 
-      <%= if @dashboard_collections.ebook.has_paid_for_collection do %>
+      <%= if @dashboard_collections.collection.has_paid_for_collection do %>
         <div class="dashboard__main__area">
-          <p>You purchased this guide on the <%= Enum.find(@user_collections.collections_access_list, &(&1.collection.id == @dashboard_collections.course.id)) |> Map.get(:created_at) %></p>
+          <p>You purchased this guide on the <%= Enum.find(@user_collections.collections_access_list, &(&1.collection.id == @dashboard_collections.collection.id)) |> Map.get(:created_at) %></p>
         </div>
       <% end %>
     

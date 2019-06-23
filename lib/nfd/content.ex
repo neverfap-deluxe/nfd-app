@@ -152,6 +152,11 @@ defmodule Nfd.Content do
   def get_file_slug_with_collection!(slug), do: Repo.get_by!(File, slug: slug) |> Repo.preload(:collection)
   def get_file_seed_id(seed_id), do: Repo.get_by(File, seed_id: seed_id)
 
+  def get_file_slug_and_collection_id(slug, collection_id) do
+    Repo.one(from f in File, where: [slug: ^slug, collection_id: ^collection_id], preload: [:collection] )
+  end
+
+
   @doc """
   Creates a file.
 

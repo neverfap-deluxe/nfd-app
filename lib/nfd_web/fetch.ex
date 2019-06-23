@@ -88,7 +88,7 @@ defmodule NfdWeb.Fetch do
     
     conn
       |> is_collection_complete(page_symbol, user_collections, dashboard_collections)
-      |> is_file_paid_for(page_symbol, user_collections, dashboard_collections, NfdWeb.DashboardView, "hub.html", "dashboard_no_complete.html")
+      |> is_file_paid_for(page_symbol, user_collections, dashboard_collections, NfdWeb.DashboardView, "hub.html", "dashboard_no_access.html")
       |> are_they_up_to_day(page_symbol, Map.get(dashboard_collections, :file_page_information), user_collections, dashboard_collections, NfdWeb.DashboardView, "hub.html", "dashboard_no_access_up_top.html")
       |> put_flash(:info, (if user_collections.patreon_access.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."))
       |> put_view(NfdWeb.DashboardView)
@@ -116,7 +116,7 @@ defmodule NfdWeb.Fetch do
       :seven_week_awareness_vol_4_single -> if user_collections.subscriber |> Map.get(:awareness_seven_week_vol_4_up_to_count) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
       
       # The problem is that with page_symbol, I don't know enough about this to do anything. 
-      :dashboard_course_file -> if user_collections.subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(dashboard_collections.course.slug)) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
+      :dashboard_course_file -> if user_collections.subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(dashboard_collections.collection.slug)) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
       # :dashboard_ebook_file -> if user_collections.subscriber |> Map.get(FetchCollectionUtil.vol_to_up_to_count(responseBodyData)) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
 
       _ -> conn
@@ -125,32 +125,27 @@ defmodule NfdWeb.Fetch do
 
   def is_collection_complete(conn, page_symbol, user_collections, dashboard_collections) do
     case page_symbol do
-        page_symbol when page_symbol in [:dashboard_course_collection, :dashboard_course_file] ->
-          if dashboard_collections.course.status == "complete", do: conn, else: render_no_access_page(conn, dashboard_collections, NfdWeb.DashboardView, "hub.html", "dashboard_no_complete.html")
+      page_symbol when page_symbol in [:dashboard_course_collection, :dashboard_course_file] ->
+        if dashboard_collections.collection.status == "complete", do: conn, else: render_no_access_page(conn, dashboard_collections, NfdWeb.DashboardView, "hub.html", "dashboard_no_complete.html")
 
-        page_symbol when page_symbol in [:dashboard_ebook_collection, :dashboard_ebook_file] ->
-          if dashboard_collections.ebook.status == "complete", do: conn, else: render_no_access_page(conn, dashboard_collections, NfdWeb.DashboardView, "hub.html", "dashboard_no_complete.html")
+      page_symbol when page_symbol in [:dashboard_ebook_collection, :dashboard_ebook_file] ->
+        if dashboard_collections.collection.status == "complete", do: conn, else: render_no_access_page(conn, dashboard_collections, NfdWeb.DashboardView, "hub.html", "dashboard_no_complete.html")
 
-        _ ->
-          conn
+      _ ->
+        conn
     end
   end
 
   def is_file_paid_for(conn, page_symbol, user_collections, dashboard_collections, view, layout, template) do
+    has_paid_for_collection = Map.get(dashboard_collections.collection, :has_paid_for_collection)
+
     case page_symbol do
       page_symbol when page_symbol in [:dashboard_course_file, :seven_day_kickstarter_single, :ten_day_meditation_single, :twenty_eight_day_awareness_single, :seven_week_awareness_vol_1_single, :seven_week_awareness_vol_2_single, :seven_week_awareness_vol_3_single, :seven_week_awareness_vol_4_single] ->
         has_patreon_access = user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == :courses_access))
-
-        # TODO: Here has_paid_for_collection is failing.
-        IO.inspect "waiter"
-        has_paid_for_collection = Map.get(dashboard_collections.course, :has_paid_for_collection)
-        IO.inspect dashboard_collections
-
         if !!has_patreon_access or !!has_paid_for_collection, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
 
-      :dashboard_ebook_file ->
+      page_symbol when page_symbol in [:dashboard_ebook_file, ] ->
         has_patreon_access = user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == :ebooks_access))
-        has_paid_for_collection = dashboard_collections.ebook.has_paid_for_collection
         if !!has_patreon_access or !!has_paid_for_collection, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
 
       _ ->
@@ -159,8 +154,6 @@ defmodule NfdWeb.Fetch do
   end
 
   def render_no_access_page(conn, dashboard_collections, view, layout, template) do
-    IO.inspect 'render'
-
     conn
       |> put_view(view)
       |> render(template, layout: {NfdWeb.LayoutView, layout}, dashboard_collections: dashboard_collections)

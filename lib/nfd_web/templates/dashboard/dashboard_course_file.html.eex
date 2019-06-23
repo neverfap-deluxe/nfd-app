@@ -1,5 +1,5 @@
 <div class="dashboard__course__collection">
-  <h2 class="dashboard__main__title"><%= @dashboard_collections.course_file.display_name %></h2>
+  <h2 class="dashboard__main__title"><%= @dashboard_collections.file.display_name %></h2>
 
   <div class="dashboard__main__area">
 

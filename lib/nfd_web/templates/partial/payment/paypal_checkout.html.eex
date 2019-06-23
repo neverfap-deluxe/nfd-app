@@ -9,7 +9,7 @@
       return actions.order.create({
         purchase_units: [{
           amount: {
-            value: <%= @dashboard_collections.course.price %> // TODO: Send this in dynamically, also send in string.
+            value: <%= @dashboard_collections.collection.price %> // TODO: Send this in dynamically, also send in string.
           }
         }]
       });
@@ -27,7 +27,7 @@
           },
           body: JSON.stringify({
             orderID: data.orderID,
-            collection_id: "<%= @dashboard_collections.course.id %>"
+            collection_id: "<%= @dashboard_collections.collection.id %>"
           })
         });
       });

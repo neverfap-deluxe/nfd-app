@@ -9,7 +9,7 @@ defmodule Nfd.SeedEBOOKS do
   def seed do
     case Content.get_collection_seed_id("7a65219a-a965-460c-9a94-fcd5b74627be") do
       nil ->
-        bible_collection = Repo.insert!(%Collection{
+        collection = Repo.insert!(%Collection{
           seed_id: "7a65219a-a965-460c-9a94-fcd5b74627be",
           type: "ebook_collection",
           status: "complete",
@@ -24,20 +24,24 @@ defmodule Nfd.SeedEBOOKS do
           price: 12.99,
           slug: "the-neverfap-deluxe-bible"
         })
-        # TODO Spec this out with the proper files
-        Repo.insert(%File{
-          seed_id: "d0a9a1d2-fead-466b-94f3-5bea5d84a75a",
-          type: "ebook_file",
-          description: "7 Week Awareness Challenge Vol 1 - Week 1",
-          display_name: "The NeverFap Deluxe Bible ebook",
-          bucket_name: "swavol1",
-          file_url: "", # TODO
-          premium: true,
-          slug: "seven-day-neverfap-deluxe-kickstarter-ebook",
-          collection_id: bible_collection.id
-        })
 
+        bible_files(collection.id)
       _collection -> nil
     end
   end
+
+  def bible_files(collection_id) do
+    # TODO Spec this out with the proper files
+    Repo.insert(%File{
+      seed_id: "d0a9a1d2-fead-466b-94f3-5bea5d84a75a",
+      type: "ebook_file",
+      description: "epub",
+      display_name: "The NeverFap Deluxe Bible epub",
+      bucket_name: "bible",
+      file_url: "", # TODO
+      premium: true,
+      slug: "seven-day-neverfap-deluxe-kickstarter-epub",
+      collection_id: collection_id
+    })
+  
 end
