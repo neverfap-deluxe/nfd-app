@@ -1,6 +1,6 @@
 <div class="available__subscriptions__item">
   <div class="top__container__available">
     <h3 class="available__subscriptions__item--title"><%= @collection.display_name %></h3>
-    <a class="available__subscriptions__item--button button" href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, @collection.slug) %>">Manage</a>
+    <a class="available__subscriptions__item--button button" href="<%= Routes.dashboard_path(@conn, @type, @collection.slug) %>">Manage</a>
   </div>
 </div>

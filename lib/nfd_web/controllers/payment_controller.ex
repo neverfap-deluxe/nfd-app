@@ -11,10 +11,18 @@ defmodule NfdWeb.PaymentController do
 
   # https://developer.paypal.com/docs/checkout/reference/server-integration/set-up-transaction
 
-  def paypal_collection_payment(conn, _params) do 
-    # user = Account.get_user!()
-    Paypal.payment_process("user", "relevant")
+  def paypal_collection_payment(conn, %{"order_id" => order_id, "collection_id" => collection_id}) do
+    user = Pow.Plug.current_user(conn) 
+    collection = Content.get_collection!(collection_id)
+
+    case PayPal.Payments.Orders.show(order_id) do
+      {:ok, order} -> Paypal.payment_process(conn, user, collection)
+      {:error, reason} -> 
+        EmailLogs.failure_payment_email_log("#{user.email} - $#{collection.price} - #{collection.display_name}")
+        purchase_cancel_paypal(conn, collection.display_name)
+    end
   end
+
 
   def stripe_collection_payment(conn, %{"data" => data}) do 
     relevant = data["object"]
@@ -38,4 +46,9 @@ defmodule NfdWeb.PaymentController do
     display_name = conn.params["display_name"]
     conn |> render("purchase_cancel.html", layout: {NfdWeb.LayoutView, "hub.html"}, display_name: display_name)
   end
+
+  def purchase_cancel_paypal(conn, display_name) do
+    conn |> render("purchase_cancel.html", layout: {NfdWeb.LayoutView, "hub.html"}, display_name: display_name)
+  end
+
 end

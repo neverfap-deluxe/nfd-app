@@ -1,4 +1,5 @@
 defmodule Nfd.Stripe do
+  
   alias Nfd.Account
   alias Nfd.Content
 

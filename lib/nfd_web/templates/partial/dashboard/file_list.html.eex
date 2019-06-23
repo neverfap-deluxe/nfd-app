@@ -9,6 +9,8 @@
           <p class="dashboard__collection__file__divider">|</p>
           <p class="dashboard__collection__file__title"><%= file.display_name %></p>    
         </a>
+
+        <!-- TODO: Change depending on what day they're up to - -->        
         <%= if @premium do %>
           <div class="dashboard__collection__file__download" href="<%= file.file_url %>">
             <i class="fa fa-cloud-download-alt" aria-hidden="true"></i>

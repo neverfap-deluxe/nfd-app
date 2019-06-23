@@ -35,9 +35,9 @@
     <% end ) %>
   <% else %>
     <%= if @type == :dashboard_course_collection do %>
-      <h3>There are no more courses left that you don't already have!</h3>
+      <h3>There are no more courses available that you don't already have!</h3>
     <% else %>
-      <h3>There are no more guides left that you don't already have!</h3>
+      <h3>There are no more guides available that you don't already have!</h3>
     <% end %>
   <% end %>
 </div>

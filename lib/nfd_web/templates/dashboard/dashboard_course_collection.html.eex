@@ -30,6 +30,8 @@
 
       <p><b>Landing page:</b> <a class="link" href="/<%= @dashboard_collections.collection.slug %>">link</a></p>
       <!-- NOTE: Show stats for the course, like number of emails sent. When they unsubscribed. Subscribed etc. Maybe, I dunno. -->
+      <!-- TODO: Show day up to -->
+      <!-- <p>Purchased Date: </p> -->
 
       <%= if has_premium_rights do %>
         <%= partial "dashboard/subscriber_status.html", %{ conn: @conn, subscribed: Map.get(@user_collections.subscriber, @dashboard_collections.subscriber_property), subscribed_property: @dashboard_collections.subscriber_property, user_id: @user_collections.user.id } %>
