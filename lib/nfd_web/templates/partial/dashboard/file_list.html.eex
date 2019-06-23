@@ -4,7 +4,7 @@
     <!-- TODO: Put type of file in here. -->
     <%= Enum.map(@files, fn (file) -> %>
       <div class="dashboard__collection__file">
-        <a class="dashboard__collection__file__info" href="<%= Routes.dashboard_path(@conn, :dashboard_course_file, @course_slug, file.slug) %>">
+        <a class="dashboard__collection__file__info" href="<%= Routes.dashboard_path(@conn, @type, @course_slug, file.slug) %>">
           <p class="dashboard__collection__file__day"><%= file.description %></p>
           <p class="dashboard__collection__file__divider">|</p>
           <p class="dashboard__collection__file__title"><%= file.display_name %></p>    

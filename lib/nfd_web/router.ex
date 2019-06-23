@@ -18,6 +18,10 @@ defmodule NfdWeb.Router do
       error_handler: Pow.Phoenix.PlugErrorHandler
   end
 
+  pipeline :payment do
+    plug :put_secure_browser_headers
+  end
+
   scope "/" do
     pipe_through :browser
 
@@ -140,9 +144,7 @@ defmodule NfdWeb.Router do
     # FUNCTION
     get "/validate_patreon", FunctionController, :validate_patreon
 
-    get "/change_subscription_dashboard_func",
-        FunctionController,
-        :change_subscription_dashboard_func
+    get "/change_subscription_dashboard_func", FunctionController, :change_subscription_dashboard_func
   end
 
   scope "/", NfdWeb do
@@ -161,11 +163,15 @@ defmodule NfdWeb.Router do
     get "/dashboard/courses/:collection/:file", DashboardController, :dashboard_course_file
 
     # PAYMENT
-    post "/paypal_payment", PaymentController, :paypal_collection_payment
-    post "/stripe_payment", PaymentController, :stripe_collection_payment
-
     get "/purchase_success", PaymentController, :purchase_success
     get "/purchase_cancel", PaymentController, :purchase_cancel
+  end
+
+  scope "/", NfdWeb do
+    pipe_through [:payment]
+    
+    post "/paypal_payment", PaymentController, :paypal_collection_payment
+    post "/stripe_payment", PaymentController, :stripe_collection_payment
   end
 
   scope "/dev" do

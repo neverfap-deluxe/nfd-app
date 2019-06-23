@@ -1,6 +1,9 @@
 defmodule NfdWeb.PaymentController do
   use NfdWeb, :controller
 
+  alias Nfd.Account
+  alias Nfd.Content
+
   alias Nfd.Stripe
   alias Nfd.Paypal
 
@@ -8,27 +11,31 @@ defmodule NfdWeb.PaymentController do
 
   # https://developer.paypal.com/docs/checkout/reference/server-integration/set-up-transaction
 
-  def paypal_collection_payment(conn, %{"data" => data}) do 
-    IO.inspect data
-    user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
-    Paypal.payment_process(user, "_collection_id")
+  def paypal_collection_payment(conn, _params) do 
+    # user = Account.get_user!()
+    Paypal.payment_process("user", "relevant")
   end
 
-  # TODO: Look into stripity_stripe for webhook endpoint creation
   def stripe_collection_payment(conn, %{"data" => data}) do 
-    IO.inspect data
-    collection_id = data["object"]["client_reference_id"]
-    
-    # collection_id
-    user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
-    Stripe.payment_process(user, collection_id)
+    relevant = data["object"]
+    relevant = data["object"]
+
+    user_id = relevant["client_reference_id"] |> String.split("|") |> List.first()
+    collection_id = relevant["client_reference_id"] |> String.split("|") |> List.last()
+
+    user = Account.get_user!(user_id)
+    collection = Content.get_collection!(collection_id)
+
+    Stripe.payment_process(conn, user, collection)
   end
 
   def purchase_success(conn, _params) do
-    render(conn, "purchase_success.html")
+    display_name = conn.params["display_name"]
+    conn |> render("purchase_success.html", layout: {NfdWeb.LayoutView, "hub.html"}, display_name: display_name)
   end
 
   def purchase_cancel(conn, _params) do
-    render(conn, "purchase_cancel.html")
+    display_name = conn.params["display_name"]
+    conn |> render("purchase_cancel.html", layout: {NfdWeb.LayoutView, "hub.html"}, display_name: display_name)
   end
 end

@@ -1,1 +1,22 @@
-<div>cancel</div>
+<div class="dashboard">
+  <h2 class="dashboard__main__title">Unfortunately, something didn't work out!</h2>
+
+  <div class="dashboard__main__area">
+    <div class="dashboard__main__area__content">
+      <h2><%= @display_name %></h2>
+
+      <p>Something went wrong with your purchase.</p>
+      <p>I keep a record of all successful/failed purchases in my Stripe account, so if you believe something has genuinely gone wrong then please contact me!</p>
+      <p><a class="link" href="mailto:admin@neverfapdeluxe.com">admin@neverfapdeluxe.com</a></p>
+      <p>The Reade &copy;</p>
+    </div>
+
+    <div class="dashboard__main__area__content">
+      <div class="dashboard__main__back__container">
+        <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, :dashboard) %>">
+          Back to Dashboard
+        </a>
+      </div>
+    </div>  
+  </div>  
+</div>

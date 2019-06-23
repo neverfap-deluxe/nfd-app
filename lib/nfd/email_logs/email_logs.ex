@@ -42,6 +42,14 @@ defmodule Nfd.EmailLogs do
     cast_log("Error", message) |> process_log()
   end
 
+  def success_payment_email_log(message) do
+    cast_log("Paid Success! - #{message}", message) |> process_log()
+  end
+
+  def failure_payment_email_log(message) do
+    cast_log("Paid Unsuccessful :( #{message}", message) |> process_log()
+  end
+
   def cast_log(subject, message) do
     %Swoosh.Email{}
       |> to({"Julius Reade", "julius.reade@gmail.com"})

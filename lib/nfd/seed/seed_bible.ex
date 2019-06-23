@@ -43,5 +43,5 @@ defmodule Nfd.SeedEBOOKS do
       slug: "seven-day-neverfap-deluxe-kickstarter-epub",
       collection_id: collection_id
     })
-  
+  end
 end

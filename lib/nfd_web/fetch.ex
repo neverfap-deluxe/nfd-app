@@ -105,17 +105,11 @@ defmodule NfdWeb.Fetch do
 
   def are_they_up_to_day(conn, page_symbol, responseBodyData, user_collections, dashboard_collections, view, layout, template) do
     day = responseBodyData["day"]
-
+    IO.inspect page_symbol
     case page_symbol do
-      :seven_day_kickstarter_single -> if user_collections.subscriber |> Map.get(:seven_day_kickstarter_up_to_count) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
-      :ten_day_meditation_single -> if user_collections.subscriber |> Map.get(:ten_day_meditation_up_to_count) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
-      :twenty_eight_day_awareness_single -> if user_collections.subscriber |> Map.get(:twenty_eight_day_awareness_up_to_count) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
-      :seven_week_awareness_vol_1_single -> if user_collections.subscriber |> Map.get(:awareness_seven_week_vol_1_up_to_count) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
-      :seven_week_awareness_vol_2_single -> if user_collections.subscriber |> Map.get(:awareness_seven_week_vol_2_up_to_count) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
-      :seven_week_awareness_vol_3_single -> if user_collections.subscriber |> Map.get(:awareness_seven_week_vol_3_up_to_count) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
-      :seven_week_awareness_vol_4_single -> if user_collections.subscriber |> Map.get(:awareness_seven_week_vol_4_up_to_count) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
-      
-      # The problem is that with page_symbol, I don't know enough about this to do anything. 
+      page_symbol when page_symbol in [:seven_day_kickstarter_single, :ten_day_meditation_single, :twenty_eight_day_awareness_single, :seven_week_awareness_vol_1_single, :seven_week_awareness_vol_2_single, :seven_week_awareness_vol_3_single, :seven_week_awareness_vol_4_single] ->
+        if user_collections.subscriber |> Map.get(FetchCollectionUtil.page_symbol_to_up_to_count(page_symbol)) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
+
       :dashboard_course_file -> if user_collections.subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(dashboard_collections.collection.slug)) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
       # :dashboard_ebook_file -> if user_collections.subscriber |> Map.get(FetchCollectionUtil.vol_to_up_to_count(responseBodyData)) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections, view, layout, template)
 

@@ -235,16 +235,21 @@
 
 
 .available__subscriptions__container {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border: 4px solid black;
+  display: flex;
+  flex-direction: column;
 
   .available__subscriptions__item {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 4px solid black;
+  
     display: flex;
     flex-direction: column;
     // justify-content: space-between;
     // align-items: center;
     width: 100%;
+
+    margin-bottom: 1rem;
 
     .available__subscriptions__item--title {
       

@@ -136,6 +136,18 @@ defmodule NfdWeb.FetchCollectionUtil do
     end
   end
 
+  def page_symbol_to_up_to_count(page_symbol) do
+    case page_symbol do
+      :seven_day_kickstarter_single -> :seven_day_kickstarter_up_to_count
+      :ten_day_meditation_single -> :ten_day_meditation_up_to_count
+      :twenty_eight_day_awareness_single -> :twenty_eight_day_awareness_up_to_count
+      :seven_week_awareness_vol_1_single -> :seven_week_awareness_vol_1_up_to_count
+      :seven_week_awareness_vol_2_single -> :seven_week_awareness_vol_2_up_to_count
+      :seven_week_awareness_vol_3_single -> :seven_week_awareness_vol_3_up_to_count
+      :seven_week_awareness_vol_4_single -> :seven_week_awareness_vol_4_up_to_count
+    end
+  end
+
   # defp generate_seven_week_awareness_challenge_title(vol) do
   #   case vol do
   #     "1" -> "7 Week Awareness Challenge Vol 1."

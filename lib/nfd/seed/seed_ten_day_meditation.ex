@@ -101,11 +101,11 @@ defmodule Nfd.SeedTDMP do
       seed_id: "7b455f3c-95be-4059-b854-29bb12387c0a",
       type: "audio_file",
       description: "Day 7",
-      display_name: "Observe What You Feel",
+      display_name: "Observe What You Touch",
       bucket_name: "tdmp",
       file_url: "", # TODO
       premium: true,
-      slug: "observe-what-you-feel",
+      slug: "observe-what-you-touch",
       collection_id: collection_id
     })
     Repo.insert(%File{

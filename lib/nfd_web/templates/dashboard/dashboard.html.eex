@@ -48,14 +48,23 @@
       <h2 class="dashboard__main__area__content__title">Courses</h2>
       <%= partial "dashboard/collection_list.html", %{ conn: @conn, collections: @dashboard_collections.not_purchased_courses, user_collections: @user_collections, type: :dashboard_course_collection } %>
     </div>
+    <div class="dashboard__main__back__container">
+      <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, :dashboard_courses) %>">
+        All Courses
+      </a>
+    </div>
   </div>
 
+  
   <div id="guides" class="dashboard__main__area">
     <div class="dashboard__main__area__content">
       <h2 class="dashboard__main__area__content__title">Guides</h2>
-      <div class="dashboard__main__ebook">
-        <%= partial "dashboard/collection_list.html", %{ conn: @conn, collections: @dashboard_collections.not_purchased_ebooks, user_collections: @user_collections, type: :dashboard_ebook_collection } %>
-      </div>
+      <%= partial "dashboard/collection_list.html", %{ conn: @conn, collections: @dashboard_collections.not_purchased_ebooks, user_collections: @user_collections, type: :dashboard_ebook_collection } %>
+    </div>
+    <div class="dashboard__main__back__container">
+      <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, :dashboard_ebooks) %>">
+        All Guides
+      </a>
     </div>
   </div>
 

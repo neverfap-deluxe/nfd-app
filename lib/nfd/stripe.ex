@@ -2,30 +2,39 @@ defmodule Nfd.Stripe do
   alias Nfd.Account
   alias Nfd.Content
 
+  alias Nfd.EmailLogs
+
   # TODO
   # https://stripe.com/docs/payments/checkout/client#enable
   # https://stripe.com/docs/webhooks/setup
 
-  def payment_process(user, collection_id) do
-    case Account.create_collection_access(%{user_id: user.id, collection_id: collection_id}) do
-      {:ok, collection_access} -> collection_access
-      {:error, _error} -> nil
-    end
+  def payment_process(conn, user, collection) do
+    case Account.create_collection_access(%{user_id: user.id, collection_id: collection.id}) do
+      {:ok, collection_access} -> 
+        EmailLogs.success_payment_email_log("#{user.email} - $#{collection.price} - #{collection.display_name}")
+        conn |> Plug.Conn.send_resp(200, "Payment Successful")
+        
+      {:error, error} -> 
+        EmailLogs.failure_payment_email_log("#{user.email} - $#{collection.price} - #{collection.display_name}")
+        conn |> Plug.Conn.send_resp(200, "Payment Unsuccessful")
+      end
   end
 
   def create_stripe_session(user, host, collection_slug) do
     collection = Content.get_collection_slug_with_files!(collection_slug)
+    query = URI.encode_query(%{ "display_name" => collection.display_name })
+    IO.inspect query
 
     if collection.premium == false do
-      %{id: "holy"}
+      %{} # id: ""
     else
       params = %{
-        cancel_url: "#{get_base_url(host)}purchase_cancel",
+        cancel_url: "#{get_base_url(host)}purchase_cancel?#{query}",
         payment_method_types: ["card"],
-        success_url: "#{get_base_url(host)}purchase_success",
+        success_url: "#{get_base_url(host)}purchase_success?#{query}",
         customer_email: user.email,
         # Maybe this should be the seed_id instead, since payment_intent_data doesn't work, I don't think.
-        client_reference_id: user.id,
+        client_reference_id: "#{user.id}|#{collection.id}",
         payment_intent_data: %{
           description: collection.seed_id
         },

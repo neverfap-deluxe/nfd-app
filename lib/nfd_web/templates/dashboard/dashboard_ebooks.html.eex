@@ -1,6 +1,11 @@
 <div class="dashboard__ebook__collection">
   <h2 class="dashboard__main__title">Guides</h2>
-
+  <div class="dashboard__main__back__container">
+    <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, :dashboard) %>">
+      Back to Dashboard
+    </a>
+  </div>
+  
   <div class="dashboard__main__area">
     <div class="dashboard__main__area__content">
       <%= partial "dashboard/collection_list.html", %{ conn: @conn, collections: @dashboard_collections.ebooks, user_collections: @user_collections, type: :dashboard_ebook_collection } %>

@@ -109,8 +109,6 @@ defmodule NfdWeb.FetchCollection do
       collection_array,
       %{},
       fn symbol, acc ->
-        IO.inspect symbol
-
         case symbol do
           :subscriber_property -> acc |> Map.merge(%{ subscriber_property: Email.collection_slug_to_type(collection_slug) })
 
@@ -144,6 +142,7 @@ defmodule NfdWeb.FetchCollection do
     
               case apply(ContentAPI, page_symbol, [client, file_slug]) do 
                 {:ok, response} ->
+                  IO.inspect response
                   acc |> Map.merge(%{ file_page_information: response.body["data"] }) 
                 {:error, error} -> 
                   IO.inspect error 
@@ -165,7 +164,12 @@ defmodule NfdWeb.FetchCollection do
         case symbol do
           :stripe_api_key -> acc |> Map.merge(%{ stripe_api_key: Stripe.get_api_key(conn.host) })
           :stripe_session -> acc |> Map.merge(%{ stripe_session: Stripe.create_stripe_session(user_collections.user, conn.host, collection_slug) })
+          
           :paypal_api_key -> acc |> Map.merge(%{ paypal_api_key: Paypal.get_api_key(conn.host) })
+          :paypal_session -> acc |> Map.merge(%{ paypal_session: Paypal.create_paypal_session(user_collections.user, conn.host, collection_slug) })
+
+          
+
           :patreon_auth_url -> acc |> Map.merge(%{ patreon_auth_url: Patreon.generate_relevant_patreon_auth_url(conn.host) })
           _ -> acc
         end
