@@ -34,11 +34,10 @@ defmodule Nfd.SeedSDK do
   end
 
   def seven_day_kickstarter_files(collection_id) do
-    : Add in the email/day files.
-
     Repo.insert(%File{
       seed_id: "a78835ce-5d49-4107-b57c-ef094b0efb7b",
-      type: "ebook_file",
+      type: "ebook_file", 
+      specific_type: "epub",
       description: "epub",
       display_name: "7 Day NeverFap Deluxe Kickstarter epub",
       bucket_name: "sdk",

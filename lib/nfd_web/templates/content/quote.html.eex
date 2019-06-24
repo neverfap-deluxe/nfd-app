@@ -11,8 +11,8 @@
     </div>
   </div>
   <%= partial "content/share_buttons.html", %{permalink: @item["permalink"] } %>
-  <%= partial "comments/comments_list.html", %{conn: @conn, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections} %>
-  <%= partial "content/next_prev_buttons.html", %{conn: @conn, page_symbol: :quote, next_item: @page_collections.next_item, previous_item: @page_collections.previous_item } %>
+  <%= partial "comments/comments_list.html", %{conn: @conn, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections} %>
+  <%= partial "content/next_prev_buttons.html", %{conn: @conn, page_symbol: :quote, next_item: @content_collections.next_item, previous_item: @content_collections.previous_item } %>
 </div>
 
 <%= partial "links/patreon.html", assigns %>

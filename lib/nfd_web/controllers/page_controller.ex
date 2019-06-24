@@ -2,6 +2,7 @@ defmodule NfdWeb.PageController do
   use NfdWeb, :controller
 
   alias NfdWeb.Fetch
+  alias NfdWeb.FetchConn
   alias NfdWeb.FetchAccess
 
   # GENERAL
@@ -70,7 +71,7 @@ defmodule NfdWeb.PageController do
         |> send_resp(200, new_xml)
 
       {:error, error} ->
-        Fetch.render_404_page(conn, error)
+        FetchConn.render_404_page(conn, error)
     end
   end
 end

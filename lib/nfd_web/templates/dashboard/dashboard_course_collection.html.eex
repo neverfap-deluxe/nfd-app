@@ -1,3 +1,5 @@
+<!-- TODO: Moble Responsiveness -->
+
 <% has_premium_rights = has_premium_access(@dashboard_collections_collection.collection, @user_collections, :courses_access) %>
 
 <div class="dashboard__collection">

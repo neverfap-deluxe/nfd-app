@@ -52,7 +52,7 @@
     </div>
 
     <div class="comment__reply__container__open" id='comment<%= commentID %>Container'>
-      <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections, depth: @comment.depth + 1, parent_message_id: @comment.id } %>
+      <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections, depth: @comment.depth + 1, parent_message_id: @comment.id } %>
     </div>
   </div>
 </div>

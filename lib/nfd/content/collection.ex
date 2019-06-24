@@ -56,7 +56,7 @@ defmodule Nfd.Content.Collection do
     [:free_active, :meditation_active, :awareness_active]
       |> Enum.reduce(%{}, fn active_property, acc ->
         subscribed_property = Map.get(subscriber, active_property)
-        if subscribed_property != nil or subscribed_property != "" do
+        if subscribed_property != nil do
           collection = subscribed_property |> FetchCollectionUtil.page_symbol_subscribed_to_slug() |> Content.get_collection_slug_with_files()
 
           # NOTE: Collection Decorators

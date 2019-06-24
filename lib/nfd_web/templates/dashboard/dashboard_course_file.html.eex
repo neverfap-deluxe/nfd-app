@@ -1,3 +1,5 @@
+<!-- TODO: Actually build this page -->
+
 <div class="dashboard__collection">
   <h2 class="dashboard__main__title"><%= @dashboard_collections.file.display_name %></h2>
 

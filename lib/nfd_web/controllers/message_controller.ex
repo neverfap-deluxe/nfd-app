@@ -11,7 +11,9 @@ defmodule NfdWeb.MessageController do
   alias Nfd.Emails
   alias Nfd.EmailLogs
 
-  alias NfdWeb.Fetch
+  alias NfdWeb.Redirects
+
+  alias NfdWeb.FetchConn
   alias NfdWeb.FetchAccess
 
   # NOTE: This is only suitable for content based comments
@@ -20,12 +22,10 @@ defmodule NfdWeb.MessageController do
 
     {referer_key, referer_value} = Enum.find(conn.req_headers, fn({ key, value}) -> key == "referer" end)
 
-    first_slug = String.split(referer_value, "/") |> Enum.fetch!(3)
-    first_slug_symbol = slug_to_symbol(first_slug)
-    second_slug = String.split(referer_value, "/") |> Enum.fetch!(4)
+    page_symbol = String.split(referer_value, "/") |> Enum.fetch!(3) |> slug_to_symbol()
+    content_slug = Redirects.redirect_content(conn, String.split(referer_value, "/") |> Enum.fetch!(4), Atom.to_string(page_symbol))
 
-    comment_with_parent_messge_id =
-      if comment["parent_message_id"] == "", do: Map.delete(comment, "parent_message_id"), else: comment
+    comment_with_parent_messge_id = if comment["parent_message_id"] == "", do: Map.delete(comment, "parent_message_id"), else: comment
 
     case Meta.create_comment(comment_with_parent_messge_id) do
       {:ok, comment} ->
@@ -38,23 +38,29 @@ defmodule NfdWeb.MessageController do
           Emails.cast_comment_reply_email(parent_comment.email, comment.name, comment.message, referer_value) |> Emails.process("cast_comment_reply_email #{parent_comment.email} #{comment.name} #{comment.message} #{referer_value}" )
         end
 
-        conn |> redirect(to: Routes.content_path(conn, first_slug_symbol, second_slug))
+        conn |> redirect(to: Routes.content_path(conn, page_symbol, content_slug))
 
       {:error, comment_form_changeset} ->
         IO.inspect comment_form_changeset
         client = API.is_localhost(conn.host) |> API.api_client()
 
-        case apply(ContentAPI, first_slug_symbol, [client, second_slug]) do
+        case apply(ContentAPI, page_symbol, [client, content_slug]) do
           {:ok, response} ->
-            collection_array = FetchAccess.fetch_access_array(first_slug_symbol)
-            user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
-            page_collections = FetchCollection.page_collections(response.body["data"], collection_array, client)
-            changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array) |> Map.merge(%{comment_form_changeset: comment_form_changeset})
+            collection_array = FetchAccess.fetch_access_array(page_symbol)
 
-            Fetch.fetch_response_ok(conn, user, NfdWeb.ContentView, response, user_collections, page_collections, changeset_collections, %{}, first_slug_symbol, "general.html", "content")
+            user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
+            page_collections = FetchCollection.page_collections(client, response.body["data"], collection_array)
+            content_collections = FetchCollection.content_collections(client, response.body["data"], page_symbol, content_slug, user_collections, page_collections, collection_array)
+            changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array) |> Map.merge(%{comment_form_changeset: comment_form_changeset})
+    
+            conn
+              |> FetchConn.check_api_response_for_404(response.status)
+              |> put_view(NfdWeb.ContentView)
+              |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, "general.html" }, item: response.body["data"], user_collections: user_collections, content_collections: content_collections, changeset_collections: changeset_collections, content_collections: content_collections, page_collections: page_collections, page_type: "content")
+      
           {:error, error} ->
             IO.inspect error
-            Fetch.render_404_page(conn, error)
+            FetchConn.render_404_page(conn, error)
         end
     end
   end
@@ -66,7 +72,7 @@ defmodule NfdWeb.MessageController do
     {referer_key, value} = Enum.find(conn.req_headers, fn({ key, value}) -> key == "referer" end)
 
     first_slug = String.split(value, "/") |> Enum.fetch!(3)
-    first_slug_symbol = slug_to_symbol(first_slug)
+    page_symbol = slug_to_symbol(first_slug)
 
     case Recaptcha.verify(contact_form["g-recaptcha-response"]) do
       {:ok, _response} ->
@@ -83,16 +89,20 @@ defmodule NfdWeb.MessageController do
           {:error, contact_form_changeset} ->
             client = API.is_localhost(conn.host) |> API.api_client()
 
-            case apply(PageAPI, first_slug_symbol, [client]) do
+            case apply(PageAPI, page_symbol, [client]) do
               {:ok, response} ->
-                collection_array = FetchAccess.fetch_access_array(first_slug_symbol)
+                collection_array = FetchAccess.fetch_access_array(page_symbol)
                 user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
                 page_collections = FetchCollection.page_collections(response.body["data"], collection_array, client)
                 changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array) |> Map.merge(%{contact_form_changeset: contact_form_changeset})
 
-                Fetch.fetch_response_ok(conn, user, NfdWeb.ContentView, response, user_collections, page_collections, changeset_collections, %{}, first_slug_symbol, "general.html", "page")
-              {:error, error} ->
-                Fetch.render_404_page(conn, error)
+                conn
+                  |> FetchConn.check_api_response_for_404(response.status)
+                  |> put_view(NfdWeb.PageView)
+                  |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, "general.html" }, item: response.body["data"], user_collections: user_collections, page_collections: page_collections, changeset_collections: changeset_collections, page_type: "page")
+          
+                {:error, error} ->
+                FetchConn.render_404_page(conn, error)
             end
         end
 

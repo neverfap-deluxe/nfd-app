@@ -1,8 +1,8 @@
 
-<!-- TODO: Show the course type on item itself. -->
+<!-- TODO: Show the course type on the item itself. -->
 
 <div class="dashboard__main__collection">
-  <%= if Enum.count(@collections) != 0 do %>
+  <%= if Enum.empty?(@collections) do %>
     <%= Enum.map(@collections, fn(collection) -> %>
       <div class="collection">
         <div class="collection__top">

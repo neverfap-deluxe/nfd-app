@@ -88,6 +88,18 @@ defmodule NfdWeb.FetchCollectionUtil do
     end
   end
 
+  def content_symbol_to_page_symbol(content_symbol) do
+    case content_symbol do 
+      :article -> :articles
+      :course -> :courses
+      :podcast -> :podcasts
+      :quote -> :quotes
+      :meditation -> :meditations
+      :blog -> :blogs
+      :update -> :updates
+    end
+  end
+
   # defp generate_seven_week_awareness_challenge_title(vol) do
   #   case vol do
   #     "1" -> "7 Week Awareness Challenge Vol 1."

@@ -1,5 +1,3 @@
-<!-- TODO: Will need to work on this logic, I don't believe it is sound. -->
-
 <%= if @user_collections.user.patreon_linked and @user_collections.patreon_access.token_expired == false do %>
   <%= if @user_collections.patreon_access.tier do %>
     <h2 class="dashboard__main__area__content__title">Patreon Account Linked!</h2>

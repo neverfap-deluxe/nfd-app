@@ -36,7 +36,7 @@ defmodule Nfd.SeedSWAVOL4 do
   def seven_week_awareness_vol_4_files(collection_id) do
     Repo.insert(%File{
       seed_id: "5592b769-cb4f-4e45-8c13-c463df3ccec3",
-      type: "audio_file",
+      type: "audio_file", specific_type: "mp3",
       description: "Week 1",
       display_name: "Annoy Yourself",
       bucket_name: "swavol3",
@@ -47,7 +47,7 @@ defmodule Nfd.SeedSWAVOL4 do
     })
     Repo.insert(%File{
       seed_id: "2a9559cf-2198-4caf-b88c-5cf2df697bb8",
-      type: "audio_file",
+      type: "audio_file", specific_type: "mp3",
       description: "Week 2",
       display_name: "Just Do, Don't Think",
       bucket_name: "swavol3",
@@ -58,7 +58,7 @@ defmodule Nfd.SeedSWAVOL4 do
     })
     Repo.insert(%File{
       seed_id: "30f9071f-afd2-47a8-9338-b263335539dd",
-      type: "audio_file",
+      type: "audio_file", specific_type: "mp3",
       description: "Week 3",
       display_name: "Fighting Spirit",
       bucket_name: "swavol3",
@@ -69,7 +69,7 @@ defmodule Nfd.SeedSWAVOL4 do
     })
     Repo.insert(%File{
       seed_id: "8b0c47dd-be8d-424f-b946-4aba5203fa16",
-      type: "audio_file",
+      type: "audio_file", specific_type: "mp3",
       description: "Week 4",
       display_name: "Every 30 Minutes",
       bucket_name: "swavol3",
@@ -80,7 +80,7 @@ defmodule Nfd.SeedSWAVOL4 do
     })
     Repo.insert(%File{
       seed_id: "5fad0f7c-bb1b-4787-b5bd-3343c11e99cb",
-      type: "audio_file",
+      type: "audio_file", specific_type: "mp3",
       description: "Week 5",
       display_name: "Control The Intonation Of Your Breath",
       bucket_name: "swavol3",
@@ -91,7 +91,7 @@ defmodule Nfd.SeedSWAVOL4 do
     })
     Repo.insert(%File{
       seed_id: "efca617b-18f8-44db-989d-fb94a3d6180a",
-      type: "audio_file",
+      type: "audio_file", specific_type: "mp3",
       description: "Week 6",
       display_name: "Catching The Odd Judge Out",
       bucket_name: "swavol3",
@@ -102,7 +102,7 @@ defmodule Nfd.SeedSWAVOL4 do
     })
     Repo.insert(%File{
       seed_id: "9ba1372a-0f75-4374-ac95-81a5527093dc",
-      type: "audio_file",
+      type: "audio_file", specific_type: "mp3",
       description: "Week 7",
       display_name: "Focus Your Attention",
       bucket_name: "swavol3",

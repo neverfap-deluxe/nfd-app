@@ -8,6 +8,7 @@ defmodule Nfd.Content.File do
   schema "files" do
     field :seed_id, :string
     field :type, :string
+    field :specific_type, :string
     field :description, :string
     field :bucket_name, :string
     field :display_name, :string

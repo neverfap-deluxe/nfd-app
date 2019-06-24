@@ -2,6 +2,7 @@ defmodule NfdWeb.FetchCollection do
 
   alias Nfd.Meta
   alias Nfd.Meta.Comment
+  alias Nfd.Meta.Page
 
   alias Nfd.API
   alias Nfd.API.PageAPI
@@ -44,7 +45,7 @@ defmodule NfdWeb.FetchCollection do
       end)
   end
 
-  def content_collections(client, item, page_symbol, verified_slug, user_collections, collection_array) do
+  def content_collections(client, item, page_symbol, content_slug, user_collections, page_collections, collection_array) do
     Enum.reduce(
       collection_array,
       %{},
@@ -53,15 +54,18 @@ defmodule NfdWeb.FetchCollection do
           symbol when symbol in [:article, :course, :podcast, :quote, :meditation, :blog, :update] ->
             acc
 
+          symbol when symbol in [:seven_day_kickstarter_single, :ten_day_meditation_single, :twenty_eight_day_awareness_single, :seven_week_awareness_vol_1_single, :seven_week_awareness_vol_2_single, :seven_week_awareness_vol_3_single, :seven_week_awareness_vol_4_single] ->
+            acc |> Map.merge(%{ symbol => FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol) |> Content.get_collection_slug_with_files() |> Collection.get_single_dashboard_collection(user_collections) })
+  
           :practice ->
-            file_with_collection = Content.get_file_slug_with_collection!(verified_slug)
+            file_with_collection = Content.get_file_slug_with_collection!(content_slug)
 
             content_collections = %{
               file_with_collection: file_with_collection |> Map.merge(%{ has_paid_for_collection: file_with_collection.collection |> Collection.has_paid_for_collection(user_collections) }),
               subscriber_property: Email.collection_slug_to_type(file_with_collection.collection.slug)
             }
 
-            case apply(ContentAPI, FetchCollectionUtil.generate_seven_week_awareness_challenge_symbol(item["vol"]), [client, verified_slug]) do
+            case apply(ContentAPI, FetchCollectionUtil.generate_seven_week_awareness_challenge_symbol(item["vol"]), [client, content_slug]) do
               {:ok, response} ->
                 acc |> Map.merge(%{ practice: Map.merge(content_collections) |> Map.merge(%{ additional_item: response.body["data"]}) })
 
@@ -69,10 +73,15 @@ defmodule NfdWeb.FetchCollection do
                 acc |> Map.merge(%{ practice: Map.merge(content_collections) |> Map.merge(%{ additional_item: %{}}) })
             end
 
-          symbol when symbol in [:seven_day_kickstarter_single, :ten_day_meditation_single, :twenty_eight_day_awareness_single, :seven_week_awareness_vol_1_single, :seven_week_awareness_vol_2_single, :seven_week_awareness_vol_3_single, :seven_week_awareness_vol_4_single] ->
-            acc |> Map.merge(%{ symbol => FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol) |> Content.get_collection_slug_with_files() |> Collection.get_single_dashboard_collection(user_collections) })
 
-          _ -> acc
+          :previous_next ->
+            page_symbol = FetchCollectionUtil.content_symbol_to_page_symbol(page_symbol)
+            { previous_item, next_item } = Map.get(page_collections, page_symbol) |> Page.previous_next_item(item)
+            acc |> Map.merge(%{ previous_item: previous_item, next_item: next_item })
+
+          :comments -> acc |> Map.merge(%{ comments: Comment.get_page_comments(item["page_id"]) })
+
+          _ -> acc 
         end
     end)
   end
@@ -86,9 +95,7 @@ defmodule NfdWeb.FetchCollection do
           symbol when symbol in [:articles, :practices, :quotes, :updates, :blogs, :podcasts, :meditations, :courses] ->
             case apply(PageAPI, symbol, [client]) do
               {:ok, response} ->
-                collections = response["data"][Atom.to_string(symbol)] |> Enum.reverse()
-                {previous_item, next_item} = Page.previous_next_item(collections, item);
-                acc |> Map.merge(%{ symbol => collections, previous_item: previous_item, next_item: next_item })
+                acc |> Map.merge(%{ symbol => response.body["data"][Atom.to_string(symbol)] |> Enum.reverse() })
 
               {:error, error} ->
                 IO.inspect error
@@ -104,8 +111,6 @@ defmodule NfdWeb.FetchCollection do
                 IO.inspect error
                 acc
             end
-
-          :comments -> acc |> Map.merge(%{ comments: Comment.get_page_comments(item["page_id"]) })
 
           _ ->
             acc

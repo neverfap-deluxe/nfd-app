@@ -6,14 +6,15 @@
   <!-- Condition 3: -->
   <%
     course_active_type =
-      case @collection.active_type do
+      case Map.get(@collection, :active_type) do
         "free_active_type" -> :free_active
         "awareness_active_type" -> :awareness_active
         "meditation_active_type" -> :meditation_active
+        _ -> nil
       end
   %>
   <!-- TODO: Not sure about this, but too tired to figure it out atm. -->
-  <%= if @collection == %{} or @subscribed == true or Map.get(@user_collections.subscriber, course_active_type) === @collection.active_type do %>
+  <%= if @collection == %{} or @subscribed == true or Map.get(@user_collections.subscriber, course_active_type) === Map.get(@collection, :active_type) do %>
     <a class="button subscribe__button" href="<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, collection_id: Map.get(@collection, :id), user_id: @user_collections.user.id, subscribed_property: @subscribed_property) %>"><%= subscribed_status_text @subscribed %></a>
   <% else %>
     <a id="subscribe_course_id" class="button subscribe__button"><%= subscribed_status_text @subscribed %></a>
@@ -23,7 +24,7 @@
 <div class="subscribe_course__modal">
 
   <!-- TODO: If there is another active_type, that means there's another collection I need to fetch in the database first. -->
-  <p>You are currently subscribed to the module <%= @user_collections.active_collections |> Map.get(course_active_type) |> Map.get(:display_name) %>.</p>
+  <p>You are currently subscribed to the module <%= @collection |> Map.get(:display_name) %>.</p>
   <p>The system only allows you to subscribe to one meditation, one awareness and one free module at a time, to ensure that you're sticking to the process and are only focusing your attention on mastering one targeted exercise at a time, which is vital to the ensuring this program works.</p>
   <p>When you switch subscriptions, you don't lose the day you got up to, you simply switch which exercise you're up to for that module type.</p>
   <p>Please read here to learn more.</p>
@@ -36,7 +37,7 @@
   var subscribe_course_id = document.querySelector("#subscribe_course_id");
   subscribe_course_id.onclick = function(event) {
     Swal.fire({
-      title: 'Are you sure?',
+      title: 'Are you sure you want to subscribe?',
       text: "You won't be able to revert this!",
       type: 'warning',
       showCancelButton: true,

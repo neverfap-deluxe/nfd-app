@@ -3,8 +3,8 @@ defmodule Nfd.Meta.Comment do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Nfd.Meta
   alias Nfd.Meta.Page
-
   alias Nfd.Meta.Comment
 
   @primary_key {:id, :binary_id, autogenerate: true}

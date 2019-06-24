@@ -45,28 +45,28 @@ defmodule NfdWeb.FetchAccess do
 
       # CONTENT
       :articles -> [:articles]
-      :article -> [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset]
+      :article -> [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset, :previous_next]
 
       :practices -> [:practices]
-      :practice -> [:articles, :practices, :course, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset]
+      :practice -> [:articles, :practices, :course, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset, :previous_next]
 
       :courses -> [:courses]
-      :course -> [:articles, :practices, :comments, :comment_form_changeset]
+      :course -> [:articles, :practices, :comments, :comment_form_changeset, :previous_next]
 
       :podcasts -> [:podcasts]
-      :podcast -> [:podcasts, :comments, :comment_form_changeset]
+      :podcast -> [:podcasts, :comments, :comment_form_changeset, :previous_next]
 
       :quotes -> [:quotes]
-      :quote -> [:quotes, :comments, :comment_form_changeset]
+      :quote -> [:quotes, :comments, :comment_form_changeset, :previous_next]
 
       :meditations -> [:meditations]
-      :meditation -> [:meditations, :comments, :comment_form_changeset]
+      :meditation -> [:meditations, :comments, :comment_form_changeset, :previous_next]
 
       :blogs -> [:blogs]
-      :blog -> [:blogs, :comments, :comment_form_changeset]
+      :blog -> [:blogs, :comments, :comment_form_changeset, :previous_next]
 
       :updates -> [:updates]
-      :update -> [:updates, :comments, :comment_form_changeset]
+      :update -> [:updates, :comments, :comment_form_changeset, :previous_next]
 
       # CONTENT EMAIL
       :seven_day_kickstarter ->  [:seven_day_kickstarter, :seven_day_kickstarter_changeset]
@@ -91,15 +91,15 @@ defmodule NfdWeb.FetchAccess do
       :seven_week_awareness_vol_4_single -> [:seven_week_awareness_vol_4, :course]
 
       # DASHBOARD
-      :dashboard -> [:courses, :ebooks, :purchased_ebooks, :purchased_courses, :not_purchased_ebooks, :not_purchased_courses, :active_collections, :patreon_auth_url]
+      :dashboard -> [:courses, :ebooks, :purchased_ebooks, :purchased_courses, :not_purchased_ebooks, :not_purchased_courses, :patreon_auth_url]
       :dashboard_coaching -> [:stripe_session, :stripe_api_key, :paypal_api_key]
 
       :dashboard_courses -> [:courses]
-      :dashboard_course_collection -> [:courses, :course, :subscription_emails, :subscriber_property, :active_collections, :stripe_session, :paypal_session, :stripe_api_key, :paypal_api_key]
+      :dashboard_course_collection -> [:courses, :course, :subscription_emails, :subscriber_property, :stripe_session, :paypal_session, :stripe_api_key, :paypal_api_key]
       :dashboard_course_file -> [:courses, :course, :course_file]
 
       :dashboard_ebooks -> [:ebooks]
-      :dashboard_ebook_collection -> [:ebooks, :ebook, :active_collections, :stripe_session, :paypal_session, :stripe_api_key, :paypal_api_key]
+      :dashboard_ebook_collection -> [:ebooks, :ebook, :stripe_session, :paypal_session, :stripe_api_key, :paypal_api_key]
       :dashboard_ebook_file -> [:ebooks, :ebook, :ebook_file]
 
       :dashboard_profile -> []

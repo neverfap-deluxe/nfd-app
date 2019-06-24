@@ -1,79 +1,79 @@
 <div class="comment__list">
   <h2 style="margin-bottom: 2rem;">Comments</h2>
-  <%= if Enum.empty?(@page_collections.comments.parents) do %>
+  <%= if Enum.empty?(@content_collections.comments.parents) do %>
     <div class="no__comments__container">
       <h3 style="margin-bottom: 0rem;">There are no comments yet for this article!</h3>
       <h4 class="link articles__link" style="margin-bottom: 4rem; display: inline-block;">You should totally be my first <3</h4>
     </div>
   <% else %>
-    <%= Enum.map(@page_collections.comments.parents, fn(comment) -> %>
+    <%= Enum.map(@content_collections.comments.parents, fn(comment) -> %>
       <%= if Enum.empty?(comment.children) do %>
-        <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+        <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
       <% else %>
-        <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+        <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
 
         <!-- CHILDREN 1 -->
         <%= Enum.map(comment.children, fn(comment_one) -> %>
           <%= if Enum.empty?(comment_one.children) do %>
-            <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_one, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+            <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_one, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
           <% else %>
-            <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_one, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+            <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_one, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
 
             <!-- CHILDREN 2 -->
             <%= Enum.map(comment_one.children, fn(comment_two) -> %>
               <%= if Enum.empty?(comment_two.children) do %>
-                <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_two, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+                <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_two, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
               <% else %>
-                <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_two, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+                <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_two, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
 
                 <!-- CHILDREN 3 -->
                 <%= Enum.map(comment_two.children, fn(comment_three) -> %>
                   <%= if Enum.empty?(comment_three.children) do %>
-                    <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_three, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+                    <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_three, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
                   <% else %>
-                    <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_three, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+                    <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_three, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
 
                     <!-- CHILDREN 4 -->
                     <%= Enum.map(comment_three.children, fn(comment_four) -> %>
                       <%= if Enum.empty?(comment_four.children) do %>
-                        <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_four, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+                        <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_four, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
                       <% else %>
-                        <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_four, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+                        <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_four, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
 
                         <!-- CHILDREN 5 -->
                         <%= Enum.map(comment_four.children, fn(comment_five) -> %>
                           <%= if Enum.empty?(comment_five.children) do %>
-                            <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_five, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+                            <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_five, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
                           <% else %>
-                            <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_five, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+                            <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_five, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
 
                             <!-- CHILDREN 6 -->
                             <%= Enum.map(comment_five.children, fn(comment_six) -> %>
                               <%= if Enum.empty?(comment_six.children) do %>
-                                <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_six, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+                                <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_six, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
                               <% else %>
-                                <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_six, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+                                <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_six, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
 
                                 <!-- CHILDREN 7 -->
                                 <%= Enum.map(comment_six.children, fn(comment_seven) -> %>
                                   <%= if Enum.empty?(comment_seven.children) do %>
-                                    <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_seven, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+                                    <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_seven, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
                                   <% else %>
-                                    <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_seven, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+                                    <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_seven, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
 
                                     <!-- CHILDREN 8 -->
                                     <%= Enum.map(comment_seven.children, fn(comment_eight) -> %>
                                       <%= if Enum.empty?(comment_eight.children) do %>
-                                        <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_eight, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+                                        <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_eight, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
                                       <% else %>
-                                        <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_eight, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+                                        <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_eight, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
 
                                         <!-- CHILDREN 9 -->
                                         <%= Enum.map(comment_eight.children, fn(comment_nine) -> %>
                                           <%= if Enum.empty?(comment_nine.children) do %>
-                                            <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_nine, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+                                            <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_nine, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
                                           <% else %>
-                                            <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_nine, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections } %>
+                                            <%= partial "comments/comment_item.html", %{ conn: @conn, comment: comment_nine, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections } %>
                                           <% end %>
                                         <% end) %>
 
@@ -111,6 +111,6 @@
     Leave A Reply
   </div>
 
-  <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections, depth: 0, parent_message_id: "" } %>
+  <%= partial "comments/comment_form.html", %{conn: @conn, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections, depth: 0, parent_message_id: "" } %>
 </div>
 

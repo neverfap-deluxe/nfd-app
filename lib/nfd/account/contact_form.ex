@@ -21,7 +21,7 @@ defmodule Nfd.Account.ContactForm do
     |> validate_required([:name, :email, :message])
   end
 
-  def get_contact_form_changeset(acc) do
+  def get_contact_form_changeset() do
     ContactForm.changeset(%ContactForm{}, %{name: "", email: "", message: ""})
   end
 end

@@ -28,19 +28,14 @@ defmodule NfdWeb.FunctionController do
         redirect_back(conn, 1)
 
       subscriber ->
-        # TODO: check if user has paid fro the thing.
-        collections_access_list = Map.get(user, :id) |> Account.list_collection_access_by_user_id()
+        # NOTE: This ensures that they've paid for the course before subscribing.
+        collections_access = Account.get_collection_access_by_user_id_and_collection_id(user_id, collection_id)
 
-        collections
-        # TODO: Server-Side Validation to ensure they haven't done a cheeky and tried to game it. Here is where it needs to check to see if they're already subscribed to other emails. Oh wait, this is that function.
-        # NOTE: Perhaps the UI simply shouldn't allow them to update their subscriptions, because at this point it's a bit pointless.
-        if subscribed == "true",
-          do: Account.update_subscriber(subscriber, %{subscribed_property_atom => false})
-
-        if subscribed == "false",
-          do: Account.update_subscriber(subscriber, %{subscribed_property_atom => true})
-
-        redirect_back(conn, 1)
+        if collections_access do 
+          if subscribed == "true", do: Account.update_subscriber(subscriber, %{subscribed_property_atom => false})
+          if subscribed == "false", do: Account.update_subscriber(subscriber, %{subscribed_property_atom => true})
+          redirect_back(conn, 1)
+        end
     end
   end
 

@@ -36,7 +36,7 @@ defmodule Nfd.SeedSWAVOL1 do
   def seven_week_awareness_vol_1_files(collection_id) do
     Repo.insert(%File{
       seed_id: "dd5b4c6f-b8b1-4a2e-b30d-4bd7f081f9d2",
-      type: "audio_file",
+      type: "audio_file", specific_type: "mp3",
       description: "Week 1",
       display_name: "Expressing Gratitude",
       bucket_name: "swavol1",
@@ -47,7 +47,7 @@ defmodule Nfd.SeedSWAVOL1 do
     })
     Repo.insert(%File{
       seed_id: "2ce626da-3930-4d2d-b394-3a8e52dd1f73",
-      type: "audio_file",
+      type: "audio_file", specific_type: "mp3",
       description: "Week 2",
       display_name: "Focus On Your Finger And Your Background",
       bucket_name: "swavol1",
@@ -58,7 +58,7 @@ defmodule Nfd.SeedSWAVOL1 do
     })
     Repo.insert(%File{
       seed_id: "aa792de7-e471-4d82-9215-dc73aeb94689",
-      type: "audio_file",
+      type: "audio_file", specific_type: "mp3",
       description: "Week 3",
       display_name: "Relax Everything",
       bucket_name: "swavol1",
@@ -69,7 +69,7 @@ defmodule Nfd.SeedSWAVOL1 do
     })
     Repo.insert(%File{
       seed_id: "af235f37-b0c4-4bc9-a171-9f71788b106c",
-      type: "audio_file",
+      type: "audio_file", specific_type: "mp3",
       description: "Week 4",
       display_name: "Slow Down Time",
       bucket_name: "swavol1",
@@ -80,7 +80,7 @@ defmodule Nfd.SeedSWAVOL1 do
     })
     Repo.insert(%File{
       seed_id: "969f1b8d-1cfb-4112-a926-7a52eb4907db",
-      type: "audio_file",
+      type: "audio_file", specific_type: "mp3",
       description: "Week 5",
       display_name: "Identify Points Of Awareness Throughout The Day",
       bucket_name: "swavol1",
@@ -91,7 +91,7 @@ defmodule Nfd.SeedSWAVOL1 do
     })
     Repo.insert(%File{
       seed_id: "88975891-0011-4d5e-a537-eb83dc9f4a9e",
-      type: "audio_file",
+      type: "audio_file", specific_type: "mp3",
       description: "Week 6",
       display_name: "Can You Look Through Walls?",
       bucket_name: "swavol1",
@@ -102,7 +102,7 @@ defmodule Nfd.SeedSWAVOL1 do
     })
     Repo.insert(%File{
       seed_id: "053b4085-6673-464c-8665-283317077d7b",
-      type: "audio_file",
+      type: "audio_file", specific_type: "mp3",
       description: "Week 7",
       display_name: "Looking Straight Ahead",
       bucket_name: "swavol1",
