@@ -57,8 +57,8 @@ defmodule Nfd.Content.Collection do
       end)
   end
 
-  def get_purchased_collections(user_collections, type, is_purchased) do
-    Content.list_collections_with_type(type)
+  def get_purchased_collections(user_collections, collections, is_purchased) do
+    collections
       |> Enum.filter(fn (collection) ->
         if is_purchased do
           Enum.find(user_collections.collections_access_list, &(&1.collection.id == collection.id))
@@ -68,21 +68,18 @@ defmodule Nfd.Content.Collection do
       end)
   end
 
-  def get_single_dashboard_collection(acc, symbol, collection_slug, user_collections) do
-    collection = Content.get_collection_slug_with_files!(collection_slug)
-
-    sorted_files =
-      collection.files
-        |> Enum.sort(fn(a, b) ->
-          a_new = a.description |> String.split(" ") |> List.last() |> String.to_integer()
-          b_new = b.description |> String.split(" ") |> List.last() |> String.to_integer()
-          a_new > b_new
-        end)
-        |> Enum.reverse()
-
-    sorted_collection = %{ collection | files: sorted_files }
-    has_paid_for_collection = Collection.has_paid_for_collection(sorted_collection, user_collections)
-
-    Map.merge(acc, %{ collection: sorted_collection |> Map.merge(%{ has_paid_for_collection: has_paid_for_collection }) })
+  def get_single_dashboard_collection(acc, collection, user_collections) do
+    collection
+      |> Map.merge(%{
+        files:
+          collection.files
+            |> Enum.sort(fn(a, b) ->
+              a_new = a.description |> String.split(" ") |> List.last() |> String.to_integer()
+              b_new = b.description |> String.split(" ") |> List.last() |> String.to_integer()
+              a_new > b_new
+            end)
+            |> Enum.reverse()
+      })
+      |> Map.merge(%{ has_paid_for_collection: Collection.has_paid_for_collection(user_collections) }) })
   end
 end

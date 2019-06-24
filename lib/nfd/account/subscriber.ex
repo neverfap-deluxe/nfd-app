@@ -153,7 +153,7 @@ defmodule Nfd.Account.Subscriber do
     # Still need to complete logic and check for both patreon access and the other one.
   end
 
-  def get_subscriber_changeset(acc, symbol) do
-    Map.put(acc, symbol, Subscriber.changeset(%Subscriber{}, %{}))
+  def get_subscriber_changeset(symbol) do
+    Subscriber.changeset(%Subscriber{}, %{})
   end
 end

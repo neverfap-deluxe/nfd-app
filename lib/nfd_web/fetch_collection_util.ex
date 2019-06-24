@@ -4,7 +4,7 @@ defmodule NfdWeb.FetchCollectionUtil do
   alias Nfd.API.ContentAPI
 
   alias Nfd.Util.Email
-  
+
   alias Nfd.Meta
   alias Nfd.Meta.Comment
   alias Nfd.Meta.Page
@@ -14,33 +14,18 @@ defmodule NfdWeb.FetchCollectionUtil do
 
   alias Nfd.Account.Subscriber
 
-  def item_collection_practice(item, page_symbol, verified_slug, user_collections, client) do
-    file_with_collection = Content.get_file_slug_with_collection!(verified_slug)
-    has_paid_for_collection = Collection.has_paid_for_collection(file_with_collection.collection, user_collections)
-    seven_week_awareness_challenge_symbol = generate_seven_week_awareness_challenge_symbol(item["vol"])
-    subscriber_property = Email.collection_slug_to_type(file_with_collection.collection.slug)
+  def merge_collection(client, content_symbol, item) do
+    collections =
+      apply(PageAPI, content_symbol, [client])
+        |> elem(1).body["data"][Atom.to_string(content_symbol)]
+        |> Enum.reverse()
 
-    course = Map.merge(file_with_collection.collection, %{ has_paid_for_collection: has_paid_for_collection })
-
-    case apply(ContentAPI, seven_week_awareness_challenge_symbol, [client, verified_slug]) do
-      {:ok, response} ->
-        %{file_with_collection: file_with_collection, course: course, has_paid_for_collection: has_paid_for_collection, subscriber_property: subscriber_property, additional_item: response.body["data"]}
-      {:error, error} ->
-        IO.inspect error
-        %{file_with_collection: file_with_collection, course: course, has_paid_for_collection: has_paid_for_collection, subscriber_property: subscriber_property}
-    end
-  end
-
-  def merge_collection(acc, client, content_symbol, item) do
-    {:ok, response} = apply(PageAPI, content_symbol, [client])
-    collections = response.body["data"][Atom.to_string(content_symbol)] |> Enum.reverse()
     { previous_item, next_item } = Page.previous_next_item(collections, item);
-    Map.merge(acc, %{ content_symbol => collections, previous_item: previous_item, next_item: next_item })
+    %{ content_symbol => collections, previous_item: previous_item, next_item: next_item }
   end
 
   def fetch_content_email(acc, client, symbol) do
-    {:ok, response} = apply(PageAPI, symbol, [client])
-    Map.put(acc, symbol, response.body["data"])
+    apply(PageAPI, symbol, [client]) |> elem(1).body["data"]
   end
 
   defp generate_seven_week_awareness_challenge_symbol(vol) do
@@ -55,8 +40,8 @@ defmodule NfdWeb.FetchCollectionUtil do
     end
   end
 
-  def collection_slug_to_page_symbol(collection_slug) do 
-    case collection_slug do 
+  def collection_slug_to_page_symbol(collection_slug) do
+    case collection_slug do
       "seven-day-neverfap-deluxe-kickstarter" -> :seven_day_kickstarter_single
       "ten-day-meditation-primer" -> :ten_day_meditation_single
       "twenty-eight-day-awareness-challenge" -> :twenty_eight_day_awareness_single
@@ -68,8 +53,8 @@ defmodule NfdWeb.FetchCollectionUtil do
     end
   end
 
-  def page_symbol_to_collection_slug(page_symbol) do 
-    case page_symbol do 
+  def page_symbol_to_collection_slug(page_symbol) do
+    case page_symbol do
       :seven_day_kickstarter_single -> "seven-day-neverfap-deluxe-kickstarter"
       :ten_day_meditation_single -> "ten-day-meditation-primer"
       :twenty_eight_day_awareness_single -> "twenty-eight-day-awareness-challenge"
@@ -80,7 +65,7 @@ defmodule NfdWeb.FetchCollectionUtil do
     end
   end
 
-  def course_slug_to_up_to_count(course_slug) do 
+  def course_slug_to_up_to_count(course_slug) do
     case course_slug do
       "seven-day-neverfap-deluxe-kickstarter" -> :seven_day_kickstarter_up_to_count
       "ten-day-meditation-primer" -> :ten_day_meditation_up_to_count

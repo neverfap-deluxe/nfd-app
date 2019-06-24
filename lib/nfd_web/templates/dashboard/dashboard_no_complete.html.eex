@@ -4,7 +4,7 @@
   <div class="dashboard__main__area">
     <div class="dashboard__main__area__content">
       <h2>I'm sorry buddy!</h2>
-      <p>But the <b><%= @dashboard_collections.collection.display_name %></b> is not yet complete!</p>
+      <p>But the <b><%= @dashboard_collections_collection.collection.display_name %></b> is not yet complete!</p>
       <p>It will be done... at some point in the future!</p>
 
     </div>
@@ -15,6 +15,6 @@
           Back to Dashboard
         </a>
       </div>
-    </div>  
-  </div>  
+    </div>
+  </div>
 </div>

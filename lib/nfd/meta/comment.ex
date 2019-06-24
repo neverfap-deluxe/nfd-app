@@ -48,21 +48,9 @@ defmodule Nfd.Meta.Comment do
     |> cast(attrs, [:upvote_tally])
   end
 
-  def get_comment_form_changeset(acc, user, item) do
+  def get_comment_form_changeset(user, item) do
     name = if Map.get(user, :first_name), do: "#{Map.get(user, :first_name)} #{Map.get(user, :last_name)}", else: ""
-    comment_form_changeset = Comment.changeset(%Comment{}, %{name: name, email: Map.get(user, :email), message: "", parent_message_id: "", user_id: Map.get(user, :id), depth: 0, page_id: item["page_id"]})
-    Map.put(acc, :comment_form_changeset, comment_form_changeset)
-  end
-
-  def organise_comments(comments) do
-    comments
-      |> Enum.filter(fn (comment) -> !comment.parent_message_id end)
-      |> Enum.reduce(
-        %{parents: []},
-        fn parent_comment, acc ->
-          parent_with_children = recursive_find_comments(comments, parent_comment, acc)
-          %{parents: acc.parents ++ [parent_with_children]}
-        end)
+    Comment.changeset(%Comment{}, %{name: name, email: Map.get(user, :email), message: "", parent_message_id: "", user_id: Map.get(user, :id), depth: 0, page_id: item["page_id"]})
   end
 
   defp recursive_find_comments(comments, parent_comment, acc) do
@@ -89,8 +77,25 @@ defmodule Nfd.Meta.Comment do
     end
   end
 
+  def get_page_comments(page_id) do
+    Meta.list_collection_access_by_page_id(page_id)
+      |> organise_date()
+      |> organise_comments()
+  end
+
+  defp organise_comments(comments) do
+    comments
+      |> Enum.filter(fn (comment) -> !comment.parent_message_id end)
+      |> Enum.reduce(
+        %{parents: []},
+        fn parent_comment, acc ->
+          parent_with_children = recursive_find_comments(comments, parent_comment, acc)
+          %{parents: acc.parents ++ [parent_with_children]}
+        end)
+  end
+
   # https://hexdocs.pm/timex/Timex.Format.DateTime.Formatters.Default.html
-  def organise_date(comments) do
+  defp organise_date(comments) do
     comments
       |> Enum.map(fn (comment) ->
         commentDate = Timex.format!(comment.inserted_at, "{Mfull} {D}, {YYYY}") <> " at " <> Timex.format!(comment.inserted_at, "{h24}:{m} {am}")
@@ -100,12 +105,5 @@ defmodule Nfd.Meta.Comment do
       end)
   end
 
-  def get_page_comments(acc, page_id) do
-    Map.merge(acc, %{
-      comments: Meta.list_collection_access_by_page_id(page_id)
-        |> Comment.organise_date()
-        |> Comment.organise_comments()
-    })
-  end
 end
 

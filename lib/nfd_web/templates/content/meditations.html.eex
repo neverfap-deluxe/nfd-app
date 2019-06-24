@@ -11,7 +11,7 @@
 <div class="single__wrapper">
   <h1 style="margin-bottom: 3rem;">Guided Meditation List</h1>
   <div class="podcast__item__container">
-    <%= Enum.map(@content_collections.meditations, fn(meditation) -> %>
+    <%= Enum.map(@page_collections.meditations, fn(meditation) -> %>
       <div class="podcast__item">
         <a href='<%= Routes.content_path(@conn, :meditation, meditation["slug"]) %>'><h1 style="margin-bottom: 0;"><%= meditation["title"] %></h1></a>
         <h3 style="margin-bottom: 1rem;"><%= raw meditation["content"] %></h3>

@@ -24,8 +24,8 @@
 
   <%= partial "content/share_buttons.html", %{permalink: @item["permalink"] } %>
 
-  <%= partial "comments/comments_list.html", %{conn: @conn, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections} %>
-  <%= partial "content/next_prev_buttons.html", %{conn: @conn, page_symbol: :article, next_item: @content_collections.next_item, previous_item: @content_collections.previous_item } %>
+  <%= partial "comments/comments_list.html", %{conn: @conn, item: @item, changeset_collections: @changeset_collections, page_collections: @page_collections, user_collections: @user_collections} %>
+  <%= partial "content/next_prev_buttons.html", %{conn: @conn, page_symbol: :article, next_item: @page_collections.next_item, previous_item: @page_collections.previous_item } %>
 </div>
 
 <!-- TODO: New to NeverFap Deluxe? Check out our homepage, /summary or /guide to get started! -->
@@ -51,6 +51,6 @@
   </div>
 </div>
 
-<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @content_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>
+<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @page_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>
 <div style="margin-top: 5rem;"></div>
 <%= partial "links/loginregister.html", assigns %>

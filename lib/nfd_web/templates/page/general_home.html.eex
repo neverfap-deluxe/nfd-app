@@ -350,7 +350,7 @@
         </div>
       </div> -->
 
-      <%#= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @content_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>
+      <%#= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @page_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>
 
       <div class="homepage__section">
         <h2>So without further ado...</h2>
@@ -419,7 +419,7 @@
           <h3 class="button__click button__off" id="latest">Latest</h3>
         </div>
         <div class="post__on" id="popular__posts">
-          <%= partial "home/introduction_posts.html", %{ items: @content_collections.articles } %>
+          <%= partial "home/introduction_posts.html", %{ items: @page_collections.articles } %>
         </div>
         <div class="post__off" id="latest__posts">
           <%= partial "content/latest_posts.html", %{ conn: @conn, items: @collections.articles, type: :article } %>

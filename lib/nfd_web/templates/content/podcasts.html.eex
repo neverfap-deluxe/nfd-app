@@ -15,7 +15,7 @@
 <div class="single__wrapper">
   <h1 style="margin-bottom: 3rem;">Episode List</h1>
   <div class="podcast__item__container">
-    <%= Enum.map(@content_collections.podcasts, fn(podcast) -> %>
+    <%= Enum.map(@page_collections.podcasts, fn(podcast) -> %>
       <div class="podcast__item">
         <a href='/podcast/<%= podcast["slug"] %>'><h1 style="margin-bottom: 0;"><%= podcast["title"] %></h1></a>
         <h3 style="margin-bottom: 1rem;"><%= raw podcast["content"] %></h3>

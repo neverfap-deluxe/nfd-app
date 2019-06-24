@@ -24,14 +24,17 @@ defmodule NfdWeb.Fetch do
     case apply(ContentAPI, page_symbol, [client, verified_slug]) do
       {:ok, response} ->
         user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
-        item_collections = FetchCollection.item_collections(response.body["data"], page_symbol, verified_slug, user_collections, client)
-        content_collections = FetchCollection.content_collections(response.body["data"], collection_array, client)
+        content_collections = FetchCollection.content_collections(response.body["data"], page_symbol, verified_slug, user_collections, client)
         changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array)
 
         conn
-          |> is_file_paid_for(page_symbol, user_collections, item_collections, NfdWeb.PageView, "general.html", "error_page_no_access.html")
-          |> are_they_up_to_day(page_symbol, response.body["data"], user_collections, item_collections, NfdWeb.PageView, "general.html", "page_not_up_to.html")
-          |> fetch_response_ok(page_view, response, user_collections, content_collections, changeset_collections, item_collections, page_symbol, page_layout, "content")
+          |> is_file_paid_for(page_symbol, user_collections, content_collections, NfdWeb.PageView, "general.html", "error_page_no_access.html")
+          |> are_they_up_to_day(page_symbol, response.body["data"], user_collections, content_collections, NfdWeb.PageView, "general.html", "page_not_up_to.html")
+          |> check_api_response_for_404(response.status)
+          |> Page.increment_visit_count(response.body["data"])
+          |> put_view(page_view)
+          |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: response.body["data"], user_collections: user_collections, page_collections: page_collections, changeset_collections: changeset_collections, content_collections: content_collections, page_type: page_type)
+
       {:error, error} ->
         render_404_page(conn, error)
     end
@@ -42,11 +45,15 @@ defmodule NfdWeb.Fetch do
     case apply(PageAPI, page_symbol, [client]) do
       {:ok, response} ->
         user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
-        content_collections = FetchCollection.content_collections(response.body["data"], collection_array, client)
+        page_collections = FetchCollection.page_collections(response.body["data"], collection_array, client)
         changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array)
 
         conn
-          |> fetch_response_ok(page_view, response, user_collections, content_collections, changeset_collections, %{}, page_symbol, page_layout, "page")
+          |> check_api_response_for_404(response.status)
+          |> Page.increment_visit_count(response.body["data"])
+          |> put_view(page_view)
+          |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: response.body["data"], user_collections: user_collections, page_collections: page_collections, changeset_collections: changeset_collections, content_collections: content_collections, page_type: page_type)
+
       {:error, error} -> render_404_page(conn, error)
     end
   end
@@ -57,11 +64,7 @@ defmodule NfdWeb.Fetch do
     user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
     api_key_collections = FetchCollection.api_key_collections(conn, collection_slug, user_collections, collection_array)
 
-    dashboard_collections
-    dashboard_collections_collection
-    dashboard_collections_file
-
-    dashboard_collections = FetchCollection.dashboard_collections(conn, client, collection_array, user_collections, collection_slug, file_slug)
+    dashboard_collections = FetchCollection.dashboard_collections(client, collection_array, user_collections)
 
     conn
       |> put_flash(:info, (if user_collections.patreon_access.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."))
@@ -74,16 +77,15 @@ defmodule NfdWeb.Fetch do
 
     user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
     api_key_collections = FetchCollection.api_key_collections(conn, collection_slug, user_collections, collection_array)
-    dashboard_collections = FetchCollection.dashboard_collections(conn, client, collection_array, user_collections, collection_slug, file_slug)
-    dashboard_collections
-    dashboard_collections_collection
-    dashboard_collections_file
+
+    dashboard_collections = FetchCollection.dashboard_collections(client, collection_array, user_collections)
+    dashboard_collections_collection = FetchCollection.dashboard_collections_collection(client, collection_array, user_collections, collection_slug)
 
     conn
       |> is_collection_complete(page_symbol, user_collections, dashboard_collections)
       |> put_flash(:info, (if user_collections.patreon_access.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."))
       |> put_view(NfdWeb.DashboardView)
-      |> render("#{Atom.to_string(page_symbol)}.html", layout: {NfdWeb.LayoutView, "hub.html"}, user_collections: user_collections, dashboard_collections: dashboard_collections, api_key_collections: api_key_collections)
+      |> render("#{Atom.to_string(page_symbol)}.html", layout: {NfdWeb.LayoutView, "hub.html"}, user_collections: user_collections, dashboard_collections: dashboard_collections, dashboard_collections_collection: dashboard_collections_collection, api_key_collections: api_key_collections)
   end
 
   def fetch_dashboard_file(conn, page_symbol, collection_slug, file_slug, collection_array) do
@@ -91,26 +93,26 @@ defmodule NfdWeb.Fetch do
 
     user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
     api_key_collections = FetchCollection.api_key_collections(conn, collection_slug, user_collections, collection_array)
-    dashboard_collections = FetchCollection.dashboard_collections(conn, client, collection_array, user_collections, collection_slug, file_slug)
-    dashboard_collections
-    dashboard_collections_collection
-    dashboard_collections_file
-    
+
+    dashboard_collections = FetchCollection.dashboard_collections(client, collection_array, user_collections)
+    dashboard_collections_collection = FetchCollection.dashboard_collections_collection(client, collection_array, user_collections, collection_slug)
+    dashboard_collections_file = FetchCollection.dashboard_collections_file(client, collection_array, user_collections, collection_slug, file_slug)
+
     conn
       |> is_collection_complete(page_symbol, user_collections, dashboard_collections)
       |> is_file_paid_for(page_symbol, user_collections, dashboard_collections, NfdWeb.DashboardView, "hub.html", "dashboard_no_access.html")
       |> are_they_up_to_day(page_symbol, Map.get(dashboard_collections, :file_page_information), user_collections, dashboard_collections, NfdWeb.DashboardView, "hub.html", "dashboard_no_access_up_top.html")
       |> put_flash(:info, (if user_collections.patreon_access.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."))
       |> put_view(NfdWeb.DashboardView)
-      |> render("#{Atom.to_string(page_symbol)}.html", layout: {NfdWeb.LayoutView, "hub.html"}, user_collections: user_collections, dashboard_collections: dashboard_collections, api_key_collections: api_key_collections)
+      |> render("#{Atom.to_string(page_symbol)}.html", layout: {NfdWeb.LayoutView, "hub.html"}, user_collections: user_collections, dashboard_collections: dashboard_collections, dashboard_collections_collection: dashboard_collections_collection, dashboard_collections_file: dashboard_collections_file, api_key_collections: api_key_collections)
   end
 
-  def fetch_response_ok(conn, page_view, response, user_collections, content_collections, changeset_collections, item_collections, page_symbol, page_layout, page_type) do
+  def fetch_response_ok(conn, page_view, response, user_collections, page_collections, changeset_collections, content_collections, page_symbol, page_layout, page_type) do
     Meta.increment_visit_count(response.body["data"])
     conn
       |> check_api_response_for_404(response.status)
       |> put_view(page_view)
-      |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: response.body["data"], user_collections: user_collections, content_collections: content_collections, changeset_collections: changeset_collections, item_collections: item_collections, page_type: page_type)
+      |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: response.body["data"], user_collections: user_collections, page_collections: page_collections, changeset_collections: changeset_collections, content_collections: content_collections, page_type: page_type)
   end
 
   def are_they_up_to_day(conn, page_symbol, responseBodyData, user_collections, dashboard_collections, view, layout, template) do

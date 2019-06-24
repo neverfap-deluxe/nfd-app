@@ -9,8 +9,8 @@
 
   <!-- TODO: This fails because we are using both .course and this should just be .collection - It would simplify things dramatically. p -->
   <div class="dashboard__main__payment__course_information">
-    <h3>Course: <%= @dashboard_collections.collection.display_name %></h3>
-    <h3>Price: $<%= @dashboard_collections.collection.price %></h3>
+    <h3>Course: <%= @dashboard_collections_collection.collection.display_name %></h3>
+    <h3>Price: $<%= @dashboard_collections_collection.collection.price %></h3>
   </div>
 
   <div class="dashboard__main__payment__box">

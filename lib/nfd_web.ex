@@ -65,7 +65,7 @@ defmodule NfdWeb do
 
             "content_courses" ->
               "NeverFap Deluxe Courses | "
-  
+
             "content_podcast" ->
               "NeverFap Deluxe Podcast | "
 
@@ -114,11 +114,11 @@ defmodule NfdWeb do
         end
       end
 
-      def has_premium_access(item_collections, user_collections, access_type) do
-        if item_collections.has_paid_for_collection != nil or patreon_access_list(user_collections, access_type), do: true, else: false
+      def has_premium_access(content_collections, user_collections, access_type) do
+        if content_collections.has_paid_for_collection != nil or patreon_access_list(user_collections, access_type), do: true, else: false
       end
 
-      def patreon_access_list(user_collections, type) do 
+      def patreon_access_list(user_collections, type) do
         user_collections.patreon_access.tier_access_list |> Enum.find(&(&1 == type))
       end
 

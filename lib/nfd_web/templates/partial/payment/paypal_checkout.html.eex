@@ -11,7 +11,7 @@
         purchase_units: [{
           amount: {
             currency_code: "USD",
-            value: "<%= @dashboard_collections.collection.price %>",
+            value: "<%= @dashboard_collections_collection.collection.price %>",
           },
         }]
       });
@@ -29,10 +29,10 @@
           },
           body: JSON.stringify({
             order_id: data.orderID,
-            collection_id: "<%= @dashboard_collections.collection.id %>"
+            collection_id: "<%= @dashboard_collections_collection.collection.id %>"
           })
         }).then(function(response) {
-          display_name = encodeURI("<%= @dashboard_collections.collection.display_name %>");
+          display_name = encodeURI("<%= @dashboard_collections_collection.collection.display_name %>");
           window.location.replace(`/purchase_success?display_name=${display_name}`);
         })
         .catch(function(error) {
@@ -48,6 +48,6 @@
       label: 'checkout',
       layout: 'horizontal',
       tagline: 'true'
-    } 
+    }
   }).render('#paypal_button');
 </script>

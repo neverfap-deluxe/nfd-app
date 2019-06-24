@@ -44,49 +44,71 @@ defmodule NfdWeb.FetchCollection do
       end)
   end
 
-  def item_collections(item, page_symbol, verified_slug, user_collections, client) do
+  def content_collections(item, page_symbol, verified_slug, user_collections, client) do
     # NOTE: verified_slug can be thought of as a the file_slug, not the collection i.e. not "practices", but "is-the-colour-yellow-etc"
-    case page_symbol do
-      :article -> %{}
-      :practice -> FetchCollectionUtil.item_collection_practice(item, page_symbol, verified_slug, user_collections, client)
-      :course -> %{}
-      :podcast -> %{}
-      :quote -> %{}
-      :meditation -> %{}
-      :blog -> %{}
-      :update -> %{}
+    Enum.reduce(
+      collection_array,
+      %{},
+      fn symbol, acc ->
+        case symbol do
+          :article -> acc
+          :practice ->
+            # file_with_collection = Content.get_file_slug_with_collection!(verified_slug)
+            # has_paid_for_collection = Collection.has_paid_for_collection(file_with_collection.collection, user_collections)
+            # seven_week_awareness_challenge_symbol = generate_seven_week_awareness_challenge_symbol(item["vol"])
+            # subscriber_property = Email.collection_slug_to_type(file_with_collection.collection.slug)
 
-      :seven_day_kickstarter_single -> %{} |> FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
-      :ten_day_meditation_single -> %{} |> FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
-      :twenty_eight_day_awareness_single -> %{} |> FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+            # course = Map.merge(file_with_collection.collection, %{ has_paid_for_collection: has_paid_for_collection })
 
-      :seven_week_awareness_vol_1_single -> %{} |> FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
-      :seven_week_awareness_vol_2_single -> %{} |> FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
-      :seven_week_awareness_vol_3_single -> %{} |> FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
-      :seven_week_awareness_vol_4_single -> %{} |> FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+            # case apply(ContentAPI, seven_week_awareness_challenge_symbol, [client, verified_slug]) do
+            #   {:ok, response} ->
+            #     %{file_with_collection: file_with_collection, course: course, has_paid_for_collection: has_paid_for_collection, subscriber_property: subscriber_property, additional_item: response.body["data"]}
+            #   {:error, error} ->
+            #     IO.inspect error
+            #     %{file_with_collection: file_with_collection, course: course, has_paid_for_collection: has_paid_for_collection, subscriber_property: subscriber_property}
+            # end
 
-      _ -> %{}
-    end
+            acc |> Map.merge(%{ file_with_collection: file_with_collection,
+
+          :course -> acc
+          :podcast -> acc
+          :quote -> acc
+          :meditation -> acc
+          :blog -> acc
+          :update -> acc
+
+          :seven_day_kickstarter_single -> acc |> Map.merge(%{ FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+          :ten_day_meditation_single -> acc |> Map.merge(%{ FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+          :twenty_eight_day_awareness_single -> acc |> Map.merge(%{ FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+
+          :seven_week_awareness_vol_1_single -> acc |> Map.merge(%{ FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+          :seven_week_awareness_vol_2_single -> acc |> Map.merge(%{ FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+          :seven_week_awareness_vol_3_single -> acc |> Map.merge(%{ FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+          :seven_week_awareness_vol_4_single -> acc |> Map.merge(%{ FetchCollectionUtil.get_single_dashboard_collection(:course, FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol), user_collections)
+
+          _ -> acc
+        end
+    end)
   end
 
-  def content_collections(item, collection_array, client) do
+  def page_collections(item, collection_array, client) do
     Enum.reduce(
       collection_array,
       %{},
       fn symbol, acc ->
         case symbol do
           symbol when symbol in [:articles, :practices, :quotes, :updates, :blogs, :podcasts, :meditations, :courses] ->
-            acc |> FetchCollectionUtil.merge_collection(client, symbol, item)
+            acc |> Map.merge(%{ symbol => FetchCollectionUtil.merge_collection(client, symbol, item) })
 
           symbol when symbol in [:seven_day_kickstarter, :ten_day_meditation, :twenty_eight_day_awareness, :seven_week_awareness_vol_1, :seven_week_awareness_vol_2, :seven_week_awareness_vol_3, :seven_week_awareness_vol_4] ->
-            acc |> FetchCollectionUtil.fetch_content_email(client, symbol)
+            acc |> Map.merge(%{ symbol => FetchCollectionUtil.fetch_content_email(client, symbol) })
 
-          :comments -> acc |> FetchCollectionUtil.get_page_comments(item["page_id"])
+          :comments -> acc |> Map.merge(%{ comments: Comment.get_page_comments(item["page_id"])
 
           _ ->
             acc
         end
-      end)
+    end)
   end
 
   def changeset_collections(item, user, collection_array) do
@@ -95,65 +117,64 @@ defmodule NfdWeb.FetchCollection do
       %{},
       fn symbol, acc ->
         case symbol do
-
-          :contact_form_changeset -> acc |> ContactForm.get_contact_form_changeset()
-          :comment_form_changeset -> acc |> Comment.get_comment_form_changeset(user, item)
-
           symbol when symbol in [:seven_day_kickstarter_changeset, :ten_day_meditation_changeset, :twenty_eight_day_awareness_changeset, :seven_week_awareness_vol_1_changeset, :seven_week_awareness_vol_2_changeset, :seven_week_awareness_vol_3_changeset, :seven_week_awareness_vol_4_changeset] ->
-            acc |> Subscriber.get_subscriber_changeset(symbol)
+            acc |> Map.merge(%{ symbol => Subscriber.get_subscriber_changeset(symbol) })
+
+          :contact_form_changeset -> acc |> Map.merge(%{ contact_form_changeset: ContactForm.get_contact_form_changeset() })
+          :comment_form_changeset -> acc |> Map.merge(%{ comment_form_changeset: Comment.get_comment_form_changeset(user, item) })
 
           _ ->
             acc
         end
-      end)
+    end)
   end
 
-  def dashboard_collections(conn, client, collection_array, user_collections, collection_slug, file_slug) do
+  def dashboard_collections(collection_array, user_collections) do
+    ebooks = Content.list_ebooks_with_files()
+    courses = Content.list_courses_with_files()
     Enum.reduce(
       collection_array,
       %{},
       fn symbol, acc ->
         case symbol do
-          :ebooks -> acc |> Map.merge(%{ ebooks: Content.list_ebooks_with_files() })
-          :courses -> acc |> Map.merge(%{ courses: Content.list_courses_with_files() })
+          :ebooks -> acc |> Map.merge(%{ ebooks: ebooks })
+          :courses -> acc |> Map.merge(%{ courses: courses })
 
-          :purchased_ebooks -> acc |> Map.merge(%{ purchased_ebooks: Collection.get_purchased_collections(user_collections, "ebook_collection", true) })
-          :purchased_courses -> acc |> Map.merge(%{ purchased_courses: Collection.get_purchased_collections(user_collections, "course_collection", true) })
+          :purchased_ebooks -> acc |> Map.merge(%{ purchased_ebooks: Collection.get_purchased_collections(user_collections, ebooks, true) })
+          :purchased_courses -> acc |> Map.merge(%{ purchased_courses: Collection.get_purchased_collections(user_collections, courses, true) })
 
-          :not_purchased_ebooks -> acc |> Map.merge(%{ not_purchased_ebooks: Collection.get_purchased_collections(user_collections, "ebook_collection", false) })
-          :not_purchased_courses -> acc |> Map.merge(%{ not_purchased_courses: Collection.get_purchased_collections(user_collections, "course_collection", false) })
+          :not_purchased_ebooks -> acc |> Map.merge(%{ not_purchased_ebooks: Collection.get_purchased_collections(user_collections, ebooks, false) })
+          :not_purchased_courses -> acc |> Map.merge(%{ not_purchased_courses: Collection.get_purchased_collections(user_collections, courses, false) })
 
-          _ ->
-            acc
+          _ -> acc
         end
-      end
-    )
+    end)
   end
 
 
-  def dashboard_collections_collection(conn, client, collection_array, user_collections, collection_slug, file_slug) do
+  def dashboard_collections_collection(client, collection_array, user_collections, collection_slug) do
+    # NOTE: Can maybe do some validation here, to see if it even gets the valid collection based on the collection_slug that has been passed.
+    collection = Content.get_collection_slug_with_files!(collection_slug)
     Enum.reduce(
       collection_array,
       %{},
       fn symbol, acc ->
         case symbol do
           symbol when symbol in [:ebook, :course] ->
-            acc |> Collection.get_single_dashboard_collection(symbol, collection_slug, user_collections)
+            acc |> Map.merge(%{ collection: Collection.get_single_dashboard_collection(symbol, collection, user_collections) })
 
-          :subscriber_property -> acc |> Map.merge(%{ subscriber_property: Email.collection_slug_to_type(collection_slug) })
+          :subscriber_property ->
+            acc |> Map.merge(%{ subscriber_property: Email.collection_slug_to_type(collection.slug) })
 
           :subscription_emails ->
-            subscription_emails = Meta.list_subscription_emails_by_collection_id(collection)
-            acc |> Map.merge(%{ subscription_emails: subscription_emails })
+            acc |> Map.merge(%{ subscription_emails: Meta.list_subscription_emails_by_collection_id(collection.id) })
 
-          _ ->
-            acc
+          _ -> acc
         end
-      end
-    )
+    end)
   end
 
-  def dashboard_collections_file(conn, client, collection_array, user_collections, collection_slug, file_slug) do
+  def dashboard_collections_file(client, collection_array, user_collections, collection_slug, file_slug) do
     Enum.reduce(
       collection_array,
       %{},
@@ -187,8 +208,7 @@ defmodule NfdWeb.FetchCollection do
           _ ->
             acc
         end
-      end
-    )
+    end)
   end
 
   def api_key_collections(conn, collection_slug, user_collections, collection_array) do
@@ -206,8 +226,7 @@ defmodule NfdWeb.FetchCollection do
           :patreon_auth_url -> acc |> Map.merge(%{ patreon_auth_url: Patreon.generate_relevant_patreon_auth_url(conn.host) })
           _ -> acc
         end
-      end
-    )
+    end)
   end
 
 end

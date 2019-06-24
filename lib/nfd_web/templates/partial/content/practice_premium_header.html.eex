@@ -1,22 +1,22 @@
 <div class="homepage__practices__premium__header">
-  <%= if has_premium_access(@item_collections, @user_collections, :courses_access) do %>
+  <%= if has_premium_access(@content_collections, @user_collections, :courses_access) do %>
     <div class="homepage__practices__premium__header__colour">
       <div class="homepage__practices__premium__header__white">
         <h2>Premium Access</h2>
         <h3>Context Audio</h3>
-        <audio controls src="<%= @item_collections.file_with_collection.file_url  %>">
+        <audio controls src="<%= @content_collections.file_with_collection.file_url  %>">
           Your browser does not support the <code>audio</code> element.
         </audio>
-  
+
         <!-- <h3>Instructional Audio</h3>
-        <audio controls src="<%= @item_collections.file_with_collection.file_url  %>">
+        <audio controls src="<%= @content_collections.file_with_collection.file_url  %>">
           Your browser does not support the <code>audio</code> element.
         </audio> -->
-  
+
         <h3>Subscribed Status</h3>
-        <p><%= Map.get(@user_collections.subscriber, @item_collections.subscriber_property) %></p>
-  
-        <p>Subscribe to the <%= @item_collections.file_with_collection.collection.display_name %></p>    
+        <p><%= Map.get(@user_collections.subscriber, @content_collections.subscriber_property) %></p>
+
+        <p>Subscribe to the <%= @content_collections.file_with_collection.collection.display_name %></p>
       </div>
     </div>
   <% else %>
@@ -25,11 +25,11 @@
         <div class="homepage__practices__premium__header__cyan"> -->
           <div class="homepage__practices__premium__header__white">
             <!-- <h2>Woah!</h2> -->
-            <p>This practice also includes audio and additional written context as part of the <b><%= @item_collections.file_with_collection.collection.display_name %></b></p>
-            <a class="link" href="/<%= @item_collections.file_with_collection.collection.slug %>">Learn More</a>
-            
+            <p>This practice also includes audio and additional written context as part of the <b><%= @content_collections.file_with_collection.collection.display_name %></b></p>
+            <a class="link" href="/<%= @content_collections.file_with_collection.collection.slug %>">Learn More</a>
+
             <!-- <p>This practice is part of the:</p>
-            <h2 class="volume__name__special"><%= @item_collections.file_with_collection.collection.display_name %></h2>
+            <h2 class="volume__name__special"><%= @content_collections.file_with_collection.collection.display_name %></h2>
             <p>Signing up for this course provides you with additional features:</p>
             <p>Instructional and explanational audio recordings for each practice.</p>
             <p>Additional written context based on how I personally practice this exercise.</p>

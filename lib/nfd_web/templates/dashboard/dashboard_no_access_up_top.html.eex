@@ -9,10 +9,10 @@
 
     <div class="dashboard__main__area__content">
       <div class="dashboard__main__back__container">
-        <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, @dashboard_collections.collection.slug) %>">
-          Back to <b><%= @dashboard_collections.collection.display_name %></b>
+        <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, @dashboard_collections_collection.collection.slug) %>">
+          Back to <b><%= @dashboard_collections_collection.collection.display_name %></b>
         </a>
       </div>
-    </div>  
-  </div>  
+    </div>
+  </div>
 </div>
