@@ -40,7 +40,7 @@ defmodule Nfd.SeedSWAVOL1 do
       description: "Week 1",
       display_name: "Expressing Gratitude",
       bucket_name: "swavol1",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "expressing-gratitude",
       collection_id: collection_id
@@ -51,7 +51,7 @@ defmodule Nfd.SeedSWAVOL1 do
       description: "Week 2",
       display_name: "Focus On Your Finger And Your Background",
       bucket_name: "swavol1",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "focus-on-your-finger-and-your-background",
       collection_id: collection_id
@@ -62,7 +62,7 @@ defmodule Nfd.SeedSWAVOL1 do
       description: "Week 3",
       display_name: "Relax Everything",
       bucket_name: "swavol1",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "relax-everything",
       collection_id: collection_id
@@ -73,7 +73,7 @@ defmodule Nfd.SeedSWAVOL1 do
       description: "Week 4",
       display_name: "Slow Down Time",
       bucket_name: "swavol1",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "slow-down-time",
       collection_id: collection_id
@@ -84,7 +84,7 @@ defmodule Nfd.SeedSWAVOL1 do
       description: "Week 5",
       display_name: "Identify Points Of Awareness Throughout The Day",
       bucket_name: "swavol1",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "identify-points-of-awareness-throughout-your-day",
       collection_id: collection_id
@@ -95,7 +95,7 @@ defmodule Nfd.SeedSWAVOL1 do
       description: "Week 6",
       display_name: "Can You Look Through Walls?",
       bucket_name: "swavol1",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "can-you-look-through-walls",
       collection_id: collection_id
@@ -106,7 +106,7 @@ defmodule Nfd.SeedSWAVOL1 do
       description: "Week 7",
       display_name: "Looking Straight Ahead",
       bucket_name: "swavol1",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "looking-straight-ahead",
       collection_id: collection_id

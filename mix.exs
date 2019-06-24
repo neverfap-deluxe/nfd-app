@@ -60,15 +60,10 @@ defmodule Nfd.MixProject do
       # stripe
       {:stripity_stripe, "~> 2.4.0"},
       {:pay_pal, "~> 0.0.5"},
-      # {:b2_client, "~> 0.0.2"},
-
-      # The reason for this is because b2_client uses outdated versions
-      # {:httpoison, "~> 1.4", override: true},
-      # {:poison, "3.1.0", override: true},
+      # {:upstream, "~> 2.1"} // maaaaaaaybe
 
       {:quantum, "~> 2.3"},
       {:timex, "~> 3.0"},
-      # {:qdate, "~> 0.4.3"},
       {:sitemap, "~> 1.1"},
 
       {:navigation_history, "~> 0.2.2"},

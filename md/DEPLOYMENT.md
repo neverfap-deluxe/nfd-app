@@ -4,6 +4,8 @@ ebook_collection
 audio_file
 ebook_file
 
+<!-- This library seems le awesome for dates, but also suuuuuper complicated. -->
+# {:qdate, "~> 0.4.3"},
 
 # Generating graphics
 

@@ -22,7 +22,6 @@ defmodule Nfd.Emails do
     type = Nfd.Util.Email.main_matrix_to_type(main_matrix)
 
     case type do
-      # TODO: Welcome email for general newsletter.
       ^general_type -> nil
       ^kickstarter_type -> email_scheduler_logic(kickstarter_type, subscriber, subscriber.seven_day_kickstarter_subscribed, 0)
       ^meditation_primer_type -> email_scheduler_logic(meditation_primer_type, subscriber, subscriber.ten_day_meditation_subscribed, 0)

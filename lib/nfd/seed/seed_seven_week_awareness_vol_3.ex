@@ -40,7 +40,7 @@ defmodule Nfd.SeedSWAVOL3 do
       description: "Week 1",
       display_name: "Where Do You Touch?",
       bucket_name: "swavol3",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "where-do-you-touch",
       collection_id: collection_id
@@ -51,7 +51,7 @@ defmodule Nfd.SeedSWAVOL3 do
       description: "Week 2",
       display_name: "Use Your Opposite Hand",
       bucket_name: "swavol3",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "use-your-opposite-hand",
       collection_id: collection_id
@@ -62,7 +62,7 @@ defmodule Nfd.SeedSWAVOL3 do
       description: "Week 3",
       display_name: "Who Is Looking?",
       bucket_name: "swavol3",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "who-is-looking",
       collection_id: collection_id
@@ -73,7 +73,7 @@ defmodule Nfd.SeedSWAVOL3 do
       description: "Week 4",
       display_name: "Identifying The Feeling Of Obligation",
       bucket_name: "swavol3",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "identifying-the-feeling-of-obligation",
       collection_id: collection_id
@@ -84,7 +84,7 @@ defmodule Nfd.SeedSWAVOL3 do
       description: "Week 5",
       display_name: "Engaging Expression",
       bucket_name: "swavol3",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "engaging-expression",
       collection_id: collection_id
@@ -95,7 +95,7 @@ defmodule Nfd.SeedSWAVOL3 do
       description: "Week 6",
       display_name: "Object Attachment",
       bucket_name: "swavol3",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "object-attachment",
       collection_id: collection_id
@@ -106,7 +106,7 @@ defmodule Nfd.SeedSWAVOL3 do
       description: "Week 7",
       display_name: "Slow Spinning Circle",
       bucket_name: "swavol3",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "slow-spinning-circle",
       collection_id: collection_id

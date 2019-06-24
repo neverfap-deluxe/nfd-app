@@ -57,13 +57,8 @@ defmodule Nfd.Meta.Comment do
     # Find the children of this parent
     comment_children = Enum.filter(comments, fn (child_comment) -> child_comment.parent_message_id == parent_comment.id end)
     parent_with_children = Map.put(parent_comment, :children, comment_children)
-    # IO.inspect 'parent_comment'
-    # IO.inspect parent_comment
 
-    # IO.inspect 'parent_with_children'
-    # IO.inspect parent_with_children
-
-    # if not children, then just pass back to the
+    # if not children, then just pass back to the top
     if Enum.empty?(parent_with_children.children) do
       parent_with_children
     else

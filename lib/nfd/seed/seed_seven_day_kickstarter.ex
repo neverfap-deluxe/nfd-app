@@ -34,7 +34,7 @@ defmodule Nfd.SeedSDK do
   end
 
   def seven_day_kickstarter_files(collection_id) do
-    # TODO: Add in the email/day files.
+    : Add in the email/day files.
 
     Repo.insert(%File{
       seed_id: "a78835ce-5d49-4107-b57c-ef094b0efb7b",
@@ -42,7 +42,7 @@ defmodule Nfd.SeedSDK do
       description: "epub",
       display_name: "7 Day NeverFap Deluxe Kickstarter epub",
       bucket_name: "sdk",
-      file_url: "", # TODO
+      file_url: "", 
       premium: true,
       slug: "seven-day-neverfap-deluxe-kickstarter-ebook",
       collection_id: collection_id
@@ -53,7 +53,7 @@ defmodule Nfd.SeedSDK do
     #   description: "Day 0",
     #   display_name: "The Introduction",
     #   bucket_name: "swavol3",
-    #   file_url: "", # TODO
+    #   file_url: "", 
     #   premium: true,
     #   slug: "introduction",
     #   collection_id: collection_id
@@ -64,7 +64,7 @@ defmodule Nfd.SeedSDK do
     #   description: "Day 1",
     #   display_name: "The Trust",
     #   bucket_name: "swavol3",
-    #   file_url: "", # TODO
+    #   file_url: "", 
     #   premium: true,
     #   slug: "introduction",
     #   collection_id: collection_id
@@ -75,7 +75,7 @@ defmodule Nfd.SeedSDK do
     #   description: "Day 2",
     #   display_name: "Just Do, Don't Think",
     #   bucket_name: "swavol3",
-    #   file_url: "", # TODO
+    #   file_url: "", 
     #   premium: true,
     #   slug: "just-do-dont-think",
     #   collection_id: collection_id
@@ -86,7 +86,7 @@ defmodule Nfd.SeedSDK do
     #   description: "Day 3",
     #   display_name: "Fighting Spirit",
     #   bucket_name: "swavol3",
-    #   file_url: "", # TODO
+    #   file_url: "", 
     #   premium: true,
     #   slug: "fighting-spirit",
     #   collection_id: collection_id
@@ -97,7 +97,7 @@ defmodule Nfd.SeedSDK do
     #   description: "Day 4",
     #   display_name: "Every 30 Minutes",
     #   bucket_name: "swavol3",
-    #   file_url: "", # TODO
+    #   file_url: "", 
     #   premium: true,
     #   slug: "every-30-minutes",
     #   collection_id: collection_id
@@ -108,7 +108,7 @@ defmodule Nfd.SeedSDK do
     #   description: "Day 5",
     #   display_name: "Control The Intonation Of Your Breath",
     #   bucket_name: "swavol3",
-    #   file_url: "", # TODO
+    #   file_url: "", 
     #   premium: true,
     #   slug: "control-the-intonation-of-your-breath",
     #   collection_id: collection_id
@@ -119,7 +119,7 @@ defmodule Nfd.SeedSDK do
     #   description: "Day 6",
     #   display_name: "Catching The Odd Judge Out",
     #   bucket_name: "swavol3",
-    #   file_url: "", # TODO
+    #   file_url: "", 
     #   premium: true,
     #   slug: "catching-the-odd-judge-out",
     #   collection_id: collection_id
@@ -130,7 +130,7 @@ defmodule Nfd.SeedSDK do
     #   description: "Day 7",
     #   display_name: "Focus Your Attention",
     #   bucket_name: "swavol3",
-    #   file_url: "", # TODO
+    #   file_url: "", 
     #   premium: true,
     #   slug: "focus-your-attention",
     #   collection_id: collection_id

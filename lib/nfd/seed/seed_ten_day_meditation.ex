@@ -40,7 +40,7 @@ defmodule Nfd.SeedTDMP do
       description: "Day 1",
       display_name: "Meditation Basics",
       bucket_name: "tdmp",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "meditation-basics",
       collection_id: collection_id
@@ -51,7 +51,7 @@ defmodule Nfd.SeedTDMP do
       description: "Day 2",
       display_name: "Understanding The Purpose Of Meditation",
       bucket_name: "tdmp",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "understanding-the-purpose-of-meditation",
       collection_id: collection_id
@@ -62,7 +62,7 @@ defmodule Nfd.SeedTDMP do
       description: "Day 3",
       display_name: "Developing Our Capacity For Awareness",
       bucket_name: "tdmp",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "developing-our-capacity-for-awareness",
       collection_id: collection_id
@@ -73,7 +73,7 @@ defmodule Nfd.SeedTDMP do
       description: "Day 4",
       display_name: "Embracing Calmness",
       bucket_name: "tdmp",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "embracing-calmness",
       collection_id: collection_id
@@ -84,7 +84,7 @@ defmodule Nfd.SeedTDMP do
       description: "Day 5",
       display_name: "Observe What You See",
       bucket_name: "tdmp",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "observe-what-you-see",
       collection_id: collection_id
@@ -95,7 +95,7 @@ defmodule Nfd.SeedTDMP do
       description: "Day 6",
       display_name: "Observe What You Hear",
       bucket_name: "tdmp",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "observe-what-you-hear",
       collection_id: collection_id
@@ -106,7 +106,7 @@ defmodule Nfd.SeedTDMP do
       description: "Day 7",
       display_name: "Observe What You Touch",
       bucket_name: "tdmp",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "observe-what-you-touch",
       collection_id: collection_id
@@ -117,7 +117,7 @@ defmodule Nfd.SeedTDMP do
       description: "Day 8",
       display_name: "Feeling Empowered",
       bucket_name: "tdmp",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "feeling-empowered",
       collection_id: collection_id
@@ -128,7 +128,7 @@ defmodule Nfd.SeedTDMP do
       description: "Day 9",
       display_name: "Acknowledgement",
       bucket_name: "tdmp",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "acknowledgement",
       collection_id: collection_id
@@ -139,7 +139,7 @@ defmodule Nfd.SeedTDMP do
       description: "Day 10",
       display_name: "Acceptance",
       bucket_name: "tdmp",
-      file_url: "", # TODO
+      file_url: "",
       premium: true,
       slug: "acceptance",
       collection_id: collection_id

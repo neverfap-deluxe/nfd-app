@@ -1,4 +1,22 @@
 
+  <%#  Once I think of a list for each course.  %>
+  <%#  <div class="five__principles__guide">
+    <div class="five__principles__guide__item">Learn to value your mental health above all.</div>
+    <div class="five__principles__guide__item">Develop the ability to quiet and focus your mind.</div>
+    <div class="five__principles__guide__item">Accept yourself and others unconditionally.</div>
+    <div class="five__principles__guide__item">Change the way you think about sex and women.</div>
+    <div class="five__principles__guide__item">Commit to long-term thinking.</div>
+  </div>
+
+  <div class="five__principles__guide--mobile">
+    <h3>Learn to value your mental health above all.</h3>
+    <h3>Develop the ability to quiet and focus your mind.</h3>
+    <h3>Accept yourself and others unconditionally.</h3>
+    <h3>Change the way you think about sex and women.</h3>
+    <h3>Commit to long-term thinking.</h3>
+  </div>  %>
+
+
 <!--
   <ul>
     <li>Learning to value my mental health above all. </li>

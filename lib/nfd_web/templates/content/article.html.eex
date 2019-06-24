@@ -29,7 +29,6 @@
 </div>
 
 <!-- TODO: New to NeverFap Deluxe? Check out our homepage, /summary or /guide to get started! -->
-
 <!-- TODO: Need additional help? Receive person 1-on-1 coaching from as little as $25 per month. -->
 
 <%= partial "banners/reddit_question_banner.html", assigns %>

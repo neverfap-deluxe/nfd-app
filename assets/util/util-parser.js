@@ -10,7 +10,6 @@ const {
 const generateContentParser = (parser) => {
   // generate text title centre
   parser.addRule(/{{< nfd_center_title [\S ]+ >}}/ig, function (text) {
-    // TODO regex to capture everything within
     return generateTextTitleCentre(text.split('"')[1]); // withinQuotesRegex.test(text)
   });
 

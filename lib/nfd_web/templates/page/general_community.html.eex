@@ -89,7 +89,7 @@
   <div id="patreon_com" class="single__content">
     <h2>Patreon</h2>
     <p>I recommend checking out my Patreon if you're looking to track the progress I make on the website.</p>
-    <!-- TODO: Here's an example of an update I post -->
+    <!-- MAYBE: Here's an example of an update I post -->
     <p>I post weekly updates of all the work I put towards NeverFap Deluxe, so it's an amazing place to keep up-to-date with all the essential happenings of this wonderful resource.</p>
     <p>In addition, you're more than welcome to commit a monthly financial contribution towards the website if you so please.</p>
   </div>
@@ -175,4 +175,3 @@
 </div>
 
 <%= partial "links/paypal.html", assigns %>
-  

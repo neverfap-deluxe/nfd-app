@@ -28,8 +28,8 @@ defmodule NfdWeb.FunctionController do
         redirect_back(conn, 1)
 
       subscriber ->
-        # TODO: Here is where it needs to check to see if they're already subscribed to other emails.
-        # If so, then don't do anything, or... I have to figure this out. 
+        # TODO: Here is where it needs to check to see if they're already subscribed to other emails. Oh wait, this is that function.
+        # NOTE: Perhaps the UI simply shouldn't allow them to update their subscriptions, because at this point it's a bit pointless.
         if subscribed == "true",
           do: Account.update_subscriber(subscriber, %{subscribed_property_atom => false})
 

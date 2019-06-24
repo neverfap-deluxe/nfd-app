@@ -82,6 +82,7 @@ defmodule Nfd.Content.Collection do
   end
 
   def get_single_dashboard_collection(collection, user_collections) do
+    # NOTE: Consider adding in a purchase date
     has_paid_for_collection = Collection.has_paid_for_collection(user_collections)
     up_to_count = user_collections.subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(collection.slug))
     current_collection_module = collection.files |> Enum.find(&(&1.description |> String.split(" ") |> List.last() |> String.to_integer() == up_to_count))
@@ -97,7 +98,7 @@ defmodule Nfd.Content.Collection do
             end)
             |> Enum.reverse()
       })
-      |> Map.merge(%{ has_paid_for_collection: })
+      |> Map.merge(%{ has_paid_for_collection: has_paid_for_collection })
       |> Map.merge(%{ up_to_count: up_to_count })
       |> Map.merge(%{ current_collection_module: current_collection_module })
 
