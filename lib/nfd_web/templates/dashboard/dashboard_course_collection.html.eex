@@ -36,7 +36,7 @@
           case Map.get(@user_collections.active_collections, :collection_active) do
             "seven_day_kickstarter_subscribed" -> 7
           end
-        collection_module = @dashboard_modules.collection.files |> Enum.find(&(&.description |> String.split(" ") |> List.last() |> String.to_integer() == collection_count))
+        collection_module = @dashboard_modules.collection.files |> Enum.find(&(&1.description |> String.split(" ") |> List.last() |> String.to_integer() == collection_count))
       %>
 
       <p><b>Landing page:</b> <a class="link" href="/<%= @dashboard_collections_collection.collection.slug %>">link</a></p>

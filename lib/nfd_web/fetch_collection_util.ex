@@ -15,17 +15,15 @@ defmodule NfdWeb.FetchCollectionUtil do
   alias Nfd.Account.Subscriber
 
   def merge_collection(client, content_symbol, item) do
-    collections =
-      apply(PageAPI, content_symbol, [client])
-        |> elem(1).body["data"][Atom.to_string(content_symbol)]
-        |> Enum.reverse()
-
-    { previous_item, next_item } = Page.previous_next_item(collections, item);
+    {:ok, response} = apply(PageAPI, content_symbol, [client])
+    collections = response["data"][Atom.to_string(content_symbol)] |> Enum.reverse()
+    {previous_item, next_item} = Page.previous_next_item(collections, item);
     %{ content_symbol => collections, previous_item: previous_item, next_item: next_item }
   end
 
   def fetch_content_email(acc, client, symbol) do
-    apply(PageAPI, symbol, [client]) |> elem(1).body["data"]
+    {:ok, response} = apply(PageAPI, symbol, [client])
+    response.body["data"]
   end
 
   defp generate_seven_week_awareness_challenge_symbol(vol) do
@@ -49,7 +47,7 @@ defmodule NfdWeb.FetchCollectionUtil do
       "seven-week-awareness-challenge-vol-2" -> :seven_week_awareness_vol_2_single
       "seven-week-awareness-challenge-vol-3" -> :seven_week_awareness_vol_3_single
       "seven-week-awareness-challenge-vol-4" -> :seven_week_awareness_vol_4_single
-      ""
+      _ -> ""
     end
   end
 
@@ -62,6 +60,7 @@ defmodule NfdWeb.FetchCollectionUtil do
       :seven_week_awareness_vol_2_single -> "seven-week-awareness-challenge-vol-2"
       :seven_week_awareness_vol_3_single -> "seven-week-awareness-challenge-vol-3"
       :seven_week_awareness_vol_4_single -> "seven-week-awareness-challenge-vol-4"
+      _ -> ""
     end
   end
 

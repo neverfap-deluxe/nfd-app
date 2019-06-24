@@ -37,7 +37,7 @@ defmodule Nfd.Meta.Page do
   end
 
   def increment_visit_count(conn, responseBodyData) do
-    Nfd.Meta.increment_visit_count(response.body["data"])
+    Nfd.Meta.increment_visit_count(responseBodyData)
     conn
   end
 end
