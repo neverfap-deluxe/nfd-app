@@ -101,7 +101,7 @@ defmodule NfdWeb.Fetch do
     conn
       |> is_collection_complete(page_symbol, user_collections, dashboard_collections)
       |> is_file_paid_for(page_symbol, user_collections, dashboard_collections, NfdWeb.DashboardView, "hub.html", "dashboard_no_access.html")
-      |> are_they_up_to_day(page_symbol, Map.get(dashboard_collections, :file_page_information), user_collections, dashboard_collections, NfdWeb.DashboardView, "hub.html", "dashboard_no_access_up_top.html")
+      |> are_they_up_to_day(page_symbol, Map.get(dashboard_collections, :file_content), user_collections, dashboard_collections, NfdWeb.DashboardView, "hub.html", "dashboard_no_access_up_top.html")
       |> put_flash(:info, (if user_collections.patreon_access.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."))
       |> put_view(NfdWeb.DashboardView)
       |> render("#{Atom.to_string(page_symbol)}.html", layout: {NfdWeb.LayoutView, "hub.html"}, user_collections: user_collections, dashboard_collections: dashboard_collections, dashboard_collections_collection: dashboard_collections_collection, dashboard_collections_file: dashboard_collections_file, api_key_collections: api_key_collections)

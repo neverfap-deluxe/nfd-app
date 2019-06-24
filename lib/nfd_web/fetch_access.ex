@@ -96,11 +96,11 @@ defmodule NfdWeb.FetchAccess do
 
       :dashboard_courses -> [:courses]
       :dashboard_course_collection -> [:courses, :course, :subscription_emails, :subscriber_property, :active_collections, :stripe_session, :paypal_session, :stripe_api_key, :paypal_api_key]
-      :dashboard_course_file -> [:courses, :course, :course_file, :file_page_information]
+      :dashboard_course_file -> [:courses, :course, :course_file]
 
       :dashboard_ebooks -> [:ebooks]
       :dashboard_ebook_collection -> [:ebooks, :ebook, :active_collections, :stripe_session, :paypal_session, :stripe_api_key, :paypal_api_key]
-      :dashboard_ebook_file -> [:ebooks, :ebook, :ebook_file, :file_page_information]
+      :dashboard_ebook_file -> [:ebooks, :ebook, :ebook_file]
 
       :dashboard_profile -> []
       :dashboard_profile_delete_confirmation -> []

@@ -68,7 +68,7 @@ defmodule Nfd.Content.Collection do
       end)
   end
 
-  def get_single_dashboard_collection(acc, collection, user_collections) do
+  def get_single_dashboard_collection(collection, user_collections) do
     collection
       |> Map.merge(%{
         files:

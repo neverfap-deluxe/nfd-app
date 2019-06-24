@@ -37,8 +37,8 @@ defmodule NfdWeb.FetchCollection do
           :user -> acc |> Map.merge(%{ user: user })
           :subscriber -> acc |> Map.merge(%{ subscriber: subscriber })
           :patreon_access -> acc |> Map.merge(%{ patreon_access: patreon_access })
-          :collections_access_list -> acc |> Map.merge(%{ collections_access_list: Account.list_collection_access_by_user_id(Map.get(user, :id)) })
-          :active_collections -> acc |> Collection.get_active_collections(subscriber)
+          :collections_access_list -> acc |> Map.merge(%{ collections_access_list: Map.get(user, :id) |> Account.list_collection_access_by_user_id() })
+          :active_collections -> acc |> Map.merge(%{ active_collections: Collection.get_active_collections(subscriber) })
           _ -> acc
         end
       end)
@@ -53,22 +53,19 @@ defmodule NfdWeb.FetchCollection do
         case symbol do
           :article -> acc
           :practice ->
-            # file_with_collection = Content.get_file_slug_with_collection!(verified_slug)
-            # has_paid_for_collection = Collection.has_paid_for_collection(file_with_collection.collection, user_collections)
-            # seven_week_awareness_challenge_symbol = generate_seven_week_awareness_challenge_symbol(item["vol"])
-            # subscriber_property = Email.collection_slug_to_type(file_with_collection.collection.slug)
+            content_collections = %{
+              file_with_collection: Content.get_file_slug_with_collection!(verified_slug),
+              has_paid_for_collection: Collection.has_paid_for_collection(file_with_collection.collection, user_collections),
+              subscriber_property: Email.collection_slug_to_type(file_with_collection.collection.slug)
+            }
 
-            # course = Map.merge(file_with_collection.collection, %{ has_paid_for_collection: has_paid_for_collection })
+            case apply(ContentAPI, FetchCollectionUtil.generate_seven_week_awareness_challenge_symbol(item["vol"]), [client, verified_slug]) do
+              {:ok, response} ->
+                acc |> Map.merge(%{ practice: Map.merge(content_collections) |> Map.merge(%{ additional_item: response.body["data"]}) })
 
-            # case apply(ContentAPI, seven_week_awareness_challenge_symbol, [client, verified_slug]) do
-            #   {:ok, response} ->
-            #     %{file_with_collection: file_with_collection, course: course, has_paid_for_collection: has_paid_for_collection, subscriber_property: subscriber_property, additional_item: response.body["data"]}
-            #   {:error, error} ->
-            #     IO.inspect error
-            #     %{file_with_collection: file_with_collection, course: course, has_paid_for_collection: has_paid_for_collection, subscriber_property: subscriber_property}
-            # end
-
-            acc |> Map.merge(%{ file_with_collection: file_with_collection,
+              {:error, error} ->
+                acc |> Map.merge(%{ practice: Map.merge(content_collections) |> Map.merge(%{ additional_item: %{}}) })
+            end
 
           :course -> acc
           :podcast -> acc
@@ -123,8 +120,7 @@ defmodule NfdWeb.FetchCollection do
           :contact_form_changeset -> acc |> Map.merge(%{ contact_form_changeset: ContactForm.get_contact_form_changeset() })
           :comment_form_changeset -> acc |> Map.merge(%{ comment_form_changeset: Comment.get_comment_form_changeset(user, item) })
 
-          _ ->
-            acc
+          _ -> acc
         end
     end)
   end
@@ -175,38 +171,31 @@ defmodule NfdWeb.FetchCollection do
   end
 
   def dashboard_collections_file(client, collection_array, user_collections, collection_slug, file_slug) do
+    file_with_collection =
+      Content.get_collection_slug_with_files!(collection_slug)
+        |> Map.get(:id)
+        |> Content.get_file_slug_and_collection_id(file_slug)
+
     Enum.reduce(
       collection_array,
       %{},
       fn symbol, acc ->
         case symbol do
           symbol when symbol in [:ebook_file, :course_file] ->
-            collection = Content.get_collection_slug_with_files!(collection_slug)
-            file_with_collection = Content.get_file_slug_and_collection_id(file_slug, collection.id)
-
             # TODO BackBlaze to get file_url from BackBlaze.
-            acc |> Map.merge(%{ file: file_with_collection })
-
-          :file_page_information ->
-            collection = Content.get_collection_slug_with_files!(collection_slug)
-            file_with_collection = Content.get_file_slug_and_collection_id(file_slug, collection.id)
-
             if file_with_collection.type == "ebook_file" do
-              acc |> Map.merge(%{ file_page_information: %{} })
+              acc |> Map.merge(%{ file: file_with_collection, file_content: %{} })
             else
-              page_symbol = FetchCollectionUtil.collection_slug_to_page_symbol(collection_slug)
-
-              case apply(ContentAPI, page_symbol, [client, file_slug]) do
+              case apply(ContentAPI, FetchCollectionUtil.collection_slug_to_page_symbol(collection_slug), [client, file_slug]) do
                 {:ok, response} ->
-                  IO.inspect response
-                  acc |> Map.merge(%{ file_page_information: response.body["data"] })
+                  acc |> Map.merge(%{ file: file_with_collection, file_content: response.body["data"] })
                 {:error, error} ->
                   IO.inspect error
-                  acc |> Map.merge(%{ file_page_information: %{} })
+                  acc |> Map.merge(%{ file: file_with_collection, file_content: %{} })
               end
             end
-          _ ->
-            acc
+
+          _ -> acc
         end
     end)
   end
@@ -230,18 +219,3 @@ defmodule NfdWeb.FetchCollection do
   end
 
 end
-
-# No idea bout this, I'm sure it's relevant/useful.
-# courses_raw
-#   |> Enum.filter(fn(collection) ->
-#     collection_added_to_access_list = Enum.find(collections_access_list, fn(access_list) -> access_list.collection_id == collection.id end)
-#     if collection_added_to_access_list, do: false, else: true
-#   end)
-
-# courses_purchased = courses_raw |> Enum.filter()
-#   courses_available =
-#     courses_raw
-#       |> Enum.filter(fn(collection) ->
-#         collection_added_to_access_list = Enum.find(collections_access_list, fn(access_list) -> access_list.collection_id == collection.id end)
-#         if collection_added_to_access_list, do: true, else: false
-#       end)
