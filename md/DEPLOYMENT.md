@@ -4,6 +4,14 @@ ebook_collection
 audio_file
 ebook_file
 
+
+# TAGS
+
+TODO: Relatively urgent
+NOTES: Interesting pieces of information
+FUTURE: To complete at some point in the future
+MAYBE: If I can be bothered/get around to it.
+
 <!-- This library seems le awesome for dates, but also suuuuuper complicated. -->
 # {:qdate, "~> 0.4.3"},
 

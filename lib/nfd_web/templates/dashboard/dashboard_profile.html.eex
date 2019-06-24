@@ -4,9 +4,8 @@
   <div class="dashboard__main__area">
     <div class="dashboard__main__area__content">
       <h3>Options</h3>
-      <!-- TODO: Ability to set firstName and lastName etc. -->
-
-      <!-- TODO: Purchased programs list. -->
+      <!-- FUTURE: Ability to set firstName and lastName etc. -->
+      <!-- FUTURE: Purchased programs list. -->
 
       <div class="profile__options__container">
         <%#= link "Logout", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "subscribe__button" %>

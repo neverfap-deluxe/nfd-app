@@ -19,11 +19,10 @@
     onApprove: function(data, actions) {
       // Capture the funds from the transaction
       return actions.order.capture().then(function(details) {
-        // Show a success message to your buyer
-        // alert('Thank you for your purchase! You will be redirected shortly.'); //  + details.payer.name.given_name
+        /* details.payer.name.given_name */
         Swal.fire(
           'Module Purchased!',
-          'You will be redirected shortly.',
+          'The payment has been successful. You will be redirected shortly.',
           'success'
         );
 

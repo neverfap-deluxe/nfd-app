@@ -1,5 +1,5 @@
 defmodule Nfd.Stripe do
-  
+
   alias Nfd.Account
   alias Nfd.Content
 
@@ -10,12 +10,12 @@ defmodule Nfd.Stripe do
   # https://stripe.com/docs/webhooks/setup
 
   def payment_process(conn, user, collection) do
-    case Account.create_collection_access(%{user_id: user.id, collection_id: collection.id}) do
-      {:ok, collection_access} -> 
+    case Account.create_collection_access(%{user_id: user.id, collection_id: collection.id, amount_paid: collection.price }) do
+      {:ok, _collection_access} ->
         EmailLogs.success_payment_email_log("#{user.email} - $#{collection.price} - #{collection.display_name}")
         conn |> Plug.Conn.send_resp(200, "Payment Successful")
-        
-      {:error, error} -> 
+
+      {:error, _error} ->
         EmailLogs.failure_payment_email_log("#{user.email} - $#{collection.price} - #{collection.display_name}")
         conn |> Plug.Conn.send_resp(200, "Payment Unsuccessful")
       end
@@ -44,7 +44,7 @@ defmodule Nfd.Stripe do
             name: collection.display_name,
             description: collection.description,
             images: ["https://neverfapdeluxe.com/images/logo__out__400.png"],
-            amount: (collection.price * 100) |> Kernel.trunc(),
+            amount: float_to_stripe_integer(collection.price),
             currency: "aud",
             quantity: 1
           }
@@ -86,5 +86,9 @@ defmodule Nfd.Stripe do
     else
       System.get_env("STRIPE_API_KEY")
     end
+  end
+
+  defp float_to_stripe_integer(float) do
+    trunc(float * 100)
   end
 end

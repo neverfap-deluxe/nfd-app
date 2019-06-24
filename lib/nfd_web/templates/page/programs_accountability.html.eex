@@ -66,7 +66,7 @@
 
     <p>Here are some examples of some thoughtful and helpful posts that you could post in the Discord <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel:</p>
 
-    <!-- TODO: Need to flesh out, or copy and paste. -->
+    <!-- MAYBE: Need to flesh out, or copy and paste examples from discord. -->
     <div class="accountability__example__container">
       <h2>Date: 21-03-19</h2>
       <h3>Day 1</h3>

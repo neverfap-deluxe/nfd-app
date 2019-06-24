@@ -12,6 +12,7 @@ defmodule Nfd.Account.CollectionAccess do
   schema "collection_access" do
     # field :collection_id, :string
     # field :user_id, :binary_id
+    field :amount_paid, :float
 
     belongs_to :user, Nfd.Account.User
     belongs_to :collection, Nfd.Content.Collection
@@ -22,13 +23,8 @@ defmodule Nfd.Account.CollectionAccess do
   @doc false
   def changeset(collection_access, attrs) do
     collection_access
-    |> cast(attrs, [:collection_id, :user_id])
+    |> cast(attrs, [:collection_id, :user_id, :amount_paid])
     |> validate_required([:collection_id, :user_id])
-  end
-
-  # TODO : For when a new email is sent out.
-  def create_collection_access() do
-    IO.inspect("hello")
   end
 
   def create_collection_access_for_free_courses(nil), do: nil
@@ -39,7 +35,7 @@ defmodule Nfd.Account.CollectionAccess do
 
       case Account.get_collection_access_by_user_id_and_collection_id(Map.get(user, :id), collection.id) do
         nil ->
-          case Account.create_collection_access(%{user_id: user.id, collection_id: collection.id}) do
+          case Account.create_collection_access(%{user_id: user.id, collection_id: collection.id, amount_paid: 0.0}) do
             {:ok, collection_access} -> collection_access
             {:error, _error} -> nil
           end
