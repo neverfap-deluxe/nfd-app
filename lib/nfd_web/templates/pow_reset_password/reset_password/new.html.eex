@@ -1,6 +1,6 @@
 <div class="accounts__wrapper">
   <h1 class="accounts__wrapper__title">Reset password</h1>
-  
+
   <div class="accounts__body">
     <div class="form__wrapper">
       <%= form_for @changeset, @action, [as: :user], fn f -> %>

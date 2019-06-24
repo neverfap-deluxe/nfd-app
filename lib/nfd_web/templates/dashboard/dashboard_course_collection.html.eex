@@ -40,12 +40,11 @@
       %>
 
       <p><b>Landing page:</b> <a class="link" href="/<%= @dashboard_collections_collection.collection.slug %>">link</a></p>
-        @user_collections.active_collections
-
-      <p>Total Days: <%= free_total %></p>
-      <p>Day: <%= Map.get(@user_collections.subscriber, free_count) %></p>
-      <p>Module: <%= free_module.display_name %></p>
-      <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, free_course.slug, free_module.slug) %>"></a></p>
+        
+      <p>Total Days: <%= collection_total %></p>
+      <p>Day: <%= Map.get(@user_collections.subscriber, collection_count) %></p>
+      <p>Module: <%= collection_module.display_name %></p>
+      <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, @dashboard_modules.collection.slug, collection_module.slug) %>"></a></p>
 
       <%# Subscription emails log here %>
       <%# Purchase date %>

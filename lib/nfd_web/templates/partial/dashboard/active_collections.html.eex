@@ -2,8 +2,8 @@
 <div class="dashboard__active__collections">
   <div class="dashboard__active__collection__item">
     <%= if @user_collections.active_collections.free_active != false do %>
-      <% free_course = @user_collections.active_collections.free_active %>
       <%
+        free_course = @user_collections.active_collections.free_active
         free_count =
           case Map.get(@user_collections.active_collections, :free_active) do
             "seven_day_kickstarter_subscribed" -> :seven_day_kickstarter_count
@@ -12,7 +12,7 @@
           case Map.get(@user_collections.active_collections, :free_active) do
             "seven_day_kickstarter_subscribed" -> 7
           end
-        free_module = free_course.files |> Enum.find(&(&.description |> String.split(" ") |> List.last() |> String.to_integer() == free_count))
+        free_module = free_course.files |> Enum.find(&(&1.description |> String.split(" ") |> List.last() |> String.to_integer() == free_count))
       %>
       <h3><%= free_course.display_name %></h3>
       <p>Total Days: <%= free_total %></p>
@@ -28,8 +28,8 @@
 
   <div class="dashboard__active__collection__item">
     <%= if @user_collections.active_collections.meditation_active != false do %>
-      <% meditation_course = @user_collections.active_collections.meditation_active %>
       <%
+        meditation_course = @user_collections.active_collections.meditation_active
         meditation_count =
           case Map.get(@user_collections.active_collections, :meditation_active) do
             "ten_day_meditation_subscribed" -> :seven_day_kickstarter_count
@@ -38,7 +38,7 @@
           case Map.get(@user_collections.active_collections, :meditation_active) do
             "ten_day_meditation_subscribed" -> 10
           end
-        meditation_module = meditation_course.files |> Enum.find(&(&.description |> String.split(" ") |> List.last() |> String.to_integer() == meditation_count))
+        meditation_module = meditation_course.files |> Enum.find(&(&1.description |> String.split(" ") |> List.last() |> String.to_integer() == meditation_count))
       %>
       <h3><%= meditation_course.display_name %></h3>
       <p>Total Days: <%= meditation_total %></p>
@@ -52,8 +52,8 @@
 
   <div class="dashboard__active__collection__item">
     <%= if @user_collections.active_collections.awareness_active != false do %>
-      <% awareness_course = @user_collections.active_collections.awareness_active %>
       <%
+        awareness_course = @user_collections.active_collections.awareness_active
         awareness_count =
           case Map.get(@user_collections.active_collections, :awareness_active) do
             "awareness_seven_week_vol_1_subscribed" -> :awareness_seven_week_vol_1_count
@@ -68,7 +68,7 @@
             "awareness_seven_week_vol_3_subscribed" -> 7
             "awareness_seven_week_vol_4_subscribed" -> 7
           end
-        awareness-module = awareness-course.files |> Enum.find(&(&.description |> String.split(" ") |> List.last() |> String.to_integer() == awareness-count))
+        awareness_module = awareness_course.files |> Enum.find(&(&1.description |> String.split(" ") |> List.last() |> String.to_integer() == awareness_count))
       %>
       <h3><%= awareness_course.display_name %></h3>
       <p>Week: <%= Map.get(@user_collections.subscriber, awareness_count) %></p>

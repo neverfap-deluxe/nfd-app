@@ -86,10 +86,26 @@ defmodule NfdWeb.FetchCollection do
       fn symbol, acc ->
         case symbol do
           symbol when symbol in [:articles, :practices, :quotes, :updates, :blogs, :podcasts, :meditations, :courses] ->
-            acc |> Map.merge(%{ symbol => FetchCollectionUtil.merge_collection(client, symbol, item) })
+            case apply(PageAPI, content_symbol, [client]) do 
+              {:ok, response} ->
+                collections = response["data"][Atom.to_string(content_symbol)] |> Enum.reverse()        
+                {previous_item, next_item} = Page.previous_next_item(collections, item);
+                acc |> Map.merge(%{ symbol => collections, previous_item: previous_item, next_item: next_item })
 
+              {:error, error} -> 
+                IO.inspect error
+                acc
+            end
+            
           symbol when symbol in [:seven_day_kickstarter, :ten_day_meditation, :twenty_eight_day_awareness, :seven_week_awareness_vol_1, :seven_week_awareness_vol_2, :seven_week_awareness_vol_3, :seven_week_awareness_vol_4] ->
-            acc |> Map.merge(%{ symbol => FetchCollectionUtil.fetch_content_email(client, symbol) })
+            case apply(PageAPI, symbol, [client]) do 
+              {:ok, response} ->
+                acc |> Map.merge(%{ symbol => response.body["data"] })
+
+              {:error, error} -> 
+                IO.inspect error
+                acc
+            end
 
           :comments -> acc |> Map.merge(%{ comments: Comment.get_page_comments(item["page_id"]) })
 

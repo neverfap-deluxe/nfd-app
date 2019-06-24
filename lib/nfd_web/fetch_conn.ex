@@ -11,7 +11,8 @@ defmodule NfdWeb.FetchConn do
       page_symbol when page_symbol in [:seven_day_kickstarter_single, :ten_day_meditation_single, :twenty_eight_day_awareness_single, :seven_week_awareness_vol_1_single, :seven_week_awareness_vol_2_single, :seven_week_awareness_vol_3_single, :seven_week_awareness_vol_4_single] ->
         if user_collections.subscriber |> Map.get(FetchCollectionUtil.page_symbol_to_up_to_count(page_symbol)) <= day, do: conn, else: Fetch.render_no_access_page(conn, dashboard_collections, view, layout, template)
 
-      :dashboard_course_file -> if user_collections.subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(dashboard_collections.collection.slug)) <= day, do: conn, else: Fetch.render_no_access_page(conn, dashboard_collections, view, layout, template)
+      :dashboard_course_file -> 
+        if user_collections.subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(dashboard_collections.collection.slug)) <= day, do: conn, else: Fetch.render_no_access_page(conn, dashboard_collections, view, layout, template)
 
       _ -> conn
     end
@@ -45,22 +46,5 @@ defmodule NfdWeb.FetchConn do
       _ ->
         conn
     end
-  end
-
-  def Fetch.render_no_access_page(conn, dashboard_collections, view, layout, template) do
-    conn
-      |> put_view(view)
-      |> render(template, layout: {NfdWeb.LayoutView, layout}, dashboard_collections: dashboard_collections)
-  end
-
-  def render_404_page(conn, error) do
-    IO.inspect error
-    conn
-      |> put_view(NfdWeb.ErrorView)
-      |> render("404.html")
-  end
-
-  defp check_api_response_for_404(conn, status) do
-    if status != 200, do: render_404_page(conn, status), else: conn
   end
 end

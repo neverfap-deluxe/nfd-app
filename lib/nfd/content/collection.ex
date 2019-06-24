@@ -24,6 +24,7 @@ defmodule Nfd.Content.Collection do
     field :stripe_description, :string
     field :subscribed_property_string, :string
 
+    has_many :subscription_emails, Nfd.Meta.SubscriptionEmail
     has_many :files, Nfd.Content.File
     # has_many, :collection_accesses, Nfd.Account.CollectionAccess
 
@@ -80,6 +81,6 @@ defmodule Nfd.Content.Collection do
             end)
             |> Enum.reverse()
       })
-      |> Map.merge(%{ has_paid_for_collection: Collection.has_paid_for_collection(user_collections) }) })
+      |> Map.merge(%{ has_paid_for_collection: Collection.has_paid_for_collection(user_collections) })
   end
 end

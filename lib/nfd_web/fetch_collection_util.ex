@@ -14,18 +14,6 @@ defmodule NfdWeb.FetchCollectionUtil do
 
   alias Nfd.Account.Subscriber
 
-  def merge_collection(client, content_symbol, item) do
-    {:ok, response} = apply(PageAPI, content_symbol, [client])
-    collections = response["data"][Atom.to_string(content_symbol)] |> Enum.reverse()
-    {previous_item, next_item} = Page.previous_next_item(collections, item);
-    %{ content_symbol => collections, previous_item: previous_item, next_item: next_item }
-  end
-
-  def fetch_content_email(acc, client, symbol) do
-    {:ok, response} = apply(PageAPI, symbol, [client])
-    response.body["data"]
-  end
-
   defp generate_seven_week_awareness_challenge_symbol(vol) do
     case vol do
       "1" -> :seven_week_awareness_vol_1_single

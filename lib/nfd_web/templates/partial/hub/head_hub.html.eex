@@ -60,6 +60,9 @@
     gtag('config', 'AW-875661467');
   </script>
 
+  <!-- Sweet Alert 2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  
   <!-- Google sign in -->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="google-signin-client_id" content="57568197060-jfvie0bpd270u9r3nvp5bbdhctrl57r1.apps.googleusercontent.com">
