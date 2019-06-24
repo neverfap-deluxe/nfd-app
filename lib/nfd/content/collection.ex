@@ -62,7 +62,7 @@ defmodule Nfd.Content.Collection do
 
           # NOTE: Collection Decorators - breaks wth email collections - possibly not in this context.
           up_to_count = subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(collection.slug))
-          current_collection_module = collection.files |> Enum.find(&(&1.description |> String.split(" ") |> List.last() |> String.to_integer() == up_to_count))
+          current_collection_module = collection.files |> Enum.find(&(&1.number == up_to_count))
 
           acc |> Map.merge(%{ active_property => collection |> Map.merge(%{ up_to_count: up_to_count, current_collection_module: current_collection_module }) })
         else
@@ -84,10 +84,10 @@ defmodule Nfd.Content.Collection do
 
   def get_collection_with_decoration(collection, user_collections) do
     # NOTE: Collection Decorators - breaks wth email collections
-
     has_paid_for_collection = if collection.type == "course_collection", do: Collection.has_paid_for_collection(collection, user_collections), else: nil
     up_to_count = if collection.type == "course_collection", do: user_collections.subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(collection.slug)), else: nil
-    current_collection_module = if collection.type == "course_collection", do: collection.files |> Enum.find(&(&1.description |> String.split(" ") |> List.last() |> String.to_integer() == up_to_count)), else: nil
+    # TODO: This breaks if an epub file is also within a collection of type course, so I need to figure this out.
+    current_collection_module = if collection.type == "course_collection", do: collection.files |> Enum.filter(&(&1.type != "ebook_file")) |> Enum.find(&(&1.number == up_to_count)), else: nil
 
     collection
       |> Map.merge(%{

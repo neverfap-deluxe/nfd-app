@@ -35,7 +35,7 @@
 
   <div id="modules" class="dashboard__main__area">
     <h2 class="dashboard__main__area__content__title">Modules</h2>
-    <%= partial "dashboard/file_list.html", %{ conn: @conn, files: @dashboard_collections_collection.collection.files, course_slug: @dashboard_collections_collection.collection.slug, premium: has_premium_rights, type: :dashboard_ebook_file } %>
+    <%= partial "dashboard/file_list.html", %{ conn: @conn, collection: @dashboard_collections_collection.collection, course_slug: @dashboard_collections_collection.collection.slug, premium: has_premium_rights, type: :dashboard_ebook_file } %>
   </div>
 
   <!-- Payment Module -->

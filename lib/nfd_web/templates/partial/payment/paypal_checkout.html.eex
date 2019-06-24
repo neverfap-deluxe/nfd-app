@@ -1,57 +1,63 @@
-<script src="https://www.paypal.com/sdk/js?client-id=<%= @api_key_collections.paypal_api_key %>"></script>
+<%= if @api_key_collections.paypal_api_key != nil do %>
+  <script src="https://www.paypal.com/sdk/js?client-id=<%= @api_key_collections.paypal_api_key %>"></script>
 
-<div id='paypal_button' style="width: 300px;"></div>
+  <div id='paypal_button' style="width: 300px;"></div>
 
-<!-- https://developer.paypal.com/docs/checkout/reference/server-integration/capture-transaction/# -->
-<script>
-  paypal.Buttons({
-    createOrder: function(data, actions) {
-      // Set up the transaction
-      return actions.order.create({
-        purchase_units: [{
-          amount: {
-            currency_code: "USD",
-            value: "<%= @dashboard_collections_collection.collection.price %>",
-          },
-        }]
-      });
-    },
-    onApprove: function(data, actions) {
-      // Capture the funds from the transaction
-      return actions.order.capture().then(function(details) {
-        /* details.payer.name.given_name */
-        Swal.fire(
-          'Module Purchased!',
-          'The payment has been successful. You will be redirected shortly.',
-          'success'
-        );
-
-        return fetch('/paypal_payment', {
-          method: 'post',
-          headers: {
-            'content-type': 'application/json'
-          },
-          body: JSON.stringify({
-            order_id: data.orderID,
-            collection_id: "<%= @dashboard_collections_collection.collection.id %>"
-          })
-        }).then(function(response) {
-          display_name = encodeURI("<%= @dashboard_collections_collection.collection.display_name %>");
-          window.location.replace(`/purchase_success?display_name=${display_name}`);
-        })
-        .catch(function(error) {
-          alert('The payment has not been successful. Please contact me if you believe there is a problem: admin@neverfapdeluxe.com');
-          console.log(JSON.stringify(error));
+  <!-- https://developer.paypal.com/docs/checkout/reference/server-integration/capture-transaction/# -->
+  <script>
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        // Set up the transactions
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              currency_code: "USD",
+              value: "<%= @dashboard_collections_collection.collection.price %>",
+            },
+          }]
         });
-      });
-    },
-    style: {
-      size: 'medium',
-      color: 'gold',
-      shape: 'rect', // pill
-      label: 'checkout',
-      layout: 'horizontal',
-      tagline: 'true'
-    }
-  }).render('#paypal_button');
-</script>
+      },
+      onApprove: function(data, actions) {
+        // Capture the funds from the transaction
+        return actions.order.capture().then(function(details) {
+          /* details.payer.name.given_name */
+          Swal.fire(
+            'Module Purchased!',
+            'The payment has been successful. You will be redirected shortly.',
+            'success'
+          );
+
+          return fetch('/paypal_payment', {
+            method: 'post',
+            headers: {
+              'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+              order_id: data.orderID,
+              collection_id: "<%= @dashboard_collections_collection.collection.id %>"
+            })
+          }).then(function(response) {
+            display_name = encodeURI("<%= @dashboard_collections_collection.collection.display_name %>");
+            window.location.replace(`/purchase_success?display_name=${display_name}`);
+          })
+          .catch(function(error) {
+            alert('The payment has not been successful. Please contact me if you believe there is a problem: admin@neverfapdeluxe.com');
+            console.log(JSON.stringify(error));
+          });
+        });
+      },
+      style: {
+        size: 'medium',
+        color: 'gold',
+        shape: 'rect', // pill
+        label: 'checkout',
+        layout: 'horizontal',
+        tagline: 'true'
+      }
+    }).render('#paypal_button');
+  </script>
+<% else %>
+  <div>
+    <h3>The Paypal Session has not loaded. Please contact admin@neverfapdeluxe.com </h3>
+  </div>
+<% end %>

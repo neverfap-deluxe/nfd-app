@@ -14,7 +14,7 @@
         </audio> -->
 
         <h3>Subscribed Status</h3>
-        <p><%= Map.get(@user_collections.subscriber, @content_collections.subscriber_property) %></p>
+        <p><%= Map.get(@user_collections.subscriber, @content_collections.subscribed_property) %></p>
 
         <p>Subscribe to the <%= @content_collections.file_with_collection.collection.display_name %></p>
       </div>

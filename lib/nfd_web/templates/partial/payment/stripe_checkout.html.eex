@@ -1,34 +1,39 @@
-<script src="https://js.stripe.com/v3/"></script>
-<script src="https://checkout.stripe.com/checkout.js"></script>
+<%= if Map.has_key?(@api_key_collections.stripe_session, :id) do %>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="https://checkout.stripe.com/checkout.js"></script>
 
-<button
-  class="dashboard__custom__stripe__checkout__button"
-  id="checkout-button-<%= @dashboard_collections_collection.collection.stripe_sku %>"
-  role="link"
-  >
-  <!-- <img src="/images/stripe__rectangle.png"/> -->
-  <img src="/images/stripe__square.png"/>
-  <p>Checkout with card</p>
-</button>
+  <button
+    class="dashboard__custom__stripe__checkout__button"
+    id="checkout-button-<%= @dashboard_collections_collection.collection.stripe_sku %>"
+    role="link"
+    >
+    <!-- <img src="/images/stripe__rectangle.png"/> -->
+    <img src="/images/stripe__square.png"/>
+    <p>Checkout with card</p>
+  </button>
 
-<div id="error-message"></div>
+  <div id="error-message"></div>
 
-<script>
-  const stripe = Stripe("<%= @api_key_collections.stripe_api_key %>");
+  <script>
+    const stripe = Stripe("<%= @api_key_collections.stripe_api_key %>");
 
-  var checkoutButton = document.getElementById('checkout-button-<%= @dashboard_collections_collection.collection.stripe_sku %>');
-      checkoutButton.addEventListener('click', function () {
-        stripe.redirectToCheckout({
-          sessionId: '<%= @api_key_collections.stripe_session.id %>',
-        })
-        .then(function (result) {
-          if (result.error) {
-            // If `redirectToCheckout` fails due to a browser or network
-            // error, display the localized error message to your customer.
-            var displayError = document.getElementById('error-message');
-            displayError.textContent = result.error.message;
-          }
+    var checkoutButton = document.getElementById('checkout-button-<%= @dashboard_collections_collection.collection.stripe_sku %>');
+        checkoutButton.addEventListener('click', function () {
+          stripe.redirectToCheckout({
+            sessionId: '<%= Map.get(@api_key_collections.stripe_session, :id) %>',
+          })
+          .then(function (result) {
+            if (result.error) {
+              // If `redirectToCheckout` fails due to a browser or network
+              // error, display the localized error message to your customer.
+              var displayError = document.getElementById('error-message');
+              displayError.textContent = result.error.message;
+            }
+          });
         });
-      });
-</script>
-
+  </script>
+<% else %>
+  <div>
+    <h3>The Stripe Session has not loaded. Please contact admin@neverfapdeluxe.com </h3>
+  </div>
+<% end %>

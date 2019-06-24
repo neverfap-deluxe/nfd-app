@@ -1,5 +1,3 @@
-<!-- TODO: Moble Responsiveness -->
-
 <% has_premium_rights = has_premium_access(@dashboard_collections_collection.collection, @user_collections, :courses_access) %>
 
 <div class="dashboard__collection">
@@ -44,14 +42,15 @@
       <%# Purchase date %>
 
       <%= if has_premium_rights do %>
-        <%= partial "dashboard/subscribe_course.html", %{ conn: @conn, collection: @dashboard_collections_collection.collection, subscribed: Map.get(@user_collections.subscriber, @dashboard_collections.subscriber_property), subscribed_property: @dashboard_collections.subscriber_property, user_collections: @user_collections } %>
+        <%= partial "dashboard/subscribe_course.html", %{ conn: @conn, collection: @dashboard_collections_collection.collection, subscribed: Map.get(@user_collections.subscriber, @dashboard_collections_collection.subscribed_property), subscribed_property: @dashboard_collections_collection.subscribed_property, user_collections: @user_collections } %>
       <% end %>
     </div>
   </div>
 
   <div id="modules" class="dashboard__main__area">
     <h2 class="dashboard__main__area__content__title">Modules</h2>
-    <%= partial "dashboard/file_list.html", %{ conn: @conn, files: @dashboard_collections_collection.collection.files, course_slug: @dashboard_collections_collection.collection.slug, premium: has_premium_rights, type: :dashboard_course_file } %>
+    <p>NOTE: Modules will become available once you complete them, or as they are delivered to you via email.</p>
+    <%= partial "dashboard/file_list.html", %{ conn: @conn, collection: @dashboard_collections_collection.collection, course_slug: @dashboard_collections_collection.collection.slug, premium: has_premium_rights, type: :dashboard_course_file } %>
   </div>
 
   <!-- Payment Module -->

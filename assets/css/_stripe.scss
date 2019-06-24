@@ -22,7 +22,7 @@
     font-weight: normal;
   }
   .google__button__icon {
-    height: 23px;
+    height: 18px;
   }
   .google__button__text {
     font-size: 14px;
@@ -41,6 +41,7 @@
   width: 100%;
   .dashboard__main__payment__box {
     display: flex;
+    flex-direction: column;
 
     .dashboard__main__payment__stripe {
       flex: 1;
@@ -94,4 +95,15 @@
 }
 
 .google__button:hover {
+}
+
+
+@media screen and (min-width: 768px) {
+  .dashboard__main__payment {
+    .dashboard__main__payment__box {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  
 }

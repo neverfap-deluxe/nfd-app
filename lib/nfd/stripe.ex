@@ -67,7 +67,9 @@ defmodule Nfd.Stripe do
 
       case Stripe.Session.create(params) do
         {:ok, stripe_session} -> stripe_session
-        {:error, error} -> IO.inspect(error)
+        {:error, error} -> 
+          IO.inspect(error)
+          %{}
       end
     end
   end

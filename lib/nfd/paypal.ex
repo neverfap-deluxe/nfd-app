@@ -21,7 +21,9 @@ defmodule Nfd.Paypal do
   def create_paypal_session(user, host, collection_slug) do
     case PayPal.API.get_oauth_token() do
       {:ok, { token, expires }} -> token
-      {:error, error} -> error
+      {:error, error} -> 
+        IO.inspect error
+        nil
     end
   end
 

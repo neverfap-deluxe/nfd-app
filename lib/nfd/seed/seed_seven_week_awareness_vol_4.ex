@@ -40,7 +40,7 @@ defmodule Nfd.SeedSWAVOL4 do
       description: "Week 1",
       display_name: "Annoy Yourself",
       bucket_name: "swavol3",
-      file_url: "",
+      file_url: "", number: 1,
       premium: true,
       slug: "annoy-yourself",
       collection_id: collection_id
@@ -51,7 +51,7 @@ defmodule Nfd.SeedSWAVOL4 do
       description: "Week 2",
       display_name: "Just Do, Don't Think",
       bucket_name: "swavol3",
-      file_url: "",
+      file_url: "", number: 2,
       premium: true,
       slug: "just-do-dont-think",
       collection_id: collection_id
@@ -62,7 +62,7 @@ defmodule Nfd.SeedSWAVOL4 do
       description: "Week 3",
       display_name: "Fighting Spirit",
       bucket_name: "swavol3",
-      file_url: "",
+      file_url: "", number: 3,
       premium: true,
       slug: "fighting-spirit",
       collection_id: collection_id
@@ -73,7 +73,7 @@ defmodule Nfd.SeedSWAVOL4 do
       description: "Week 4",
       display_name: "Every 30 Minutes",
       bucket_name: "swavol3",
-      file_url: "",
+      file_url: "", number: 4,
       premium: true,
       slug: "every-30-minutes",
       collection_id: collection_id
@@ -84,7 +84,7 @@ defmodule Nfd.SeedSWAVOL4 do
       description: "Week 5",
       display_name: "Control The Intonation Of Your Breath",
       bucket_name: "swavol3",
-      file_url: "",
+      file_url: "", number: 5,
       premium: true,
       slug: "control-the-intonation-of-your-breath",
       collection_id: collection_id
@@ -95,7 +95,7 @@ defmodule Nfd.SeedSWAVOL4 do
       description: "Week 6",
       display_name: "Catching The Odd Judge Out",
       bucket_name: "swavol3",
-      file_url: "",
+      file_url: "", number: 6,
       premium: true,
       slug: "catching-the-odd-judge-out",
       collection_id: collection_id
@@ -106,7 +106,7 @@ defmodule Nfd.SeedSWAVOL4 do
       description: "Week 7",
       display_name: "Focus Your Attention",
       bucket_name: "swavol3",
-      file_url: "",
+      file_url: "", number: 7,
       premium: true,
       slug: "focus-your-attention",
       collection_id: collection_id

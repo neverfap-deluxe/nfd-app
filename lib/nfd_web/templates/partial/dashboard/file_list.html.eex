@@ -1,18 +1,33 @@
 <div class="dashboard__collection__files">
   <div class="dashboard__collection__file__container">
 
-    <!-- TODO: Put type of file in here. -->
-    <%= Enum.map(@files, fn (file) -> %>
+    <%= Enum.map(@collection.files, fn (file) -> %>
       <div class="dashboard__collection__file">
-        
+
+        <!-- TODO: Test. -->
+        <%= if file.specific_type == "mp3" do %>
+          <div class="dashboard__collection__file__specific" href="<%= file.file_url %>">
+            <i class="fa fa-cloud-download-alt" aria-hidden="true"></i>
+          </div>
+        <% end %>
+        <%= if file.specific_type == "epub" do %>
+          <div class="dashboard__collection__file__specific" href="<%= file.file_url %>">
+            <i class="fa fa-cloud-download-alt" aria-hidden="true"></i>
+          </div>
+        <% end %>
+        <%= if file.specific_type == "email" do %>
+          <div class="dashboard__collection__file__specific" href="<%= file.file_url %>">
+            <i class="fa fa-cloud-download-alt" aria-hidden="true"></i>
+          </div>
+        <% end %>
+
         <a class="dashboard__collection__file__info" href="<%= Routes.dashboard_path(@conn, @type, @course_slug, file.slug) %>">
-          <p class="dashboard__collection__file__day"><%= file.description %></p>
+          <p class="dashboard__collection__file__day"><%= file.number %></p>
           <p class="dashboard__collection__file__divider">|</p>
           <p class="dashboard__collection__file__title"><%= file.display_name %></p>    
         </a>
 
-        <!-- TODO: Change depending on what day they're up to - -->        
-        <%= if @premium do %>
+        <%= if @premium and @collection.up_to_count >= file.number do %>  
           <div class="dashboard__collection__file__download" href="<%= file.file_url %>">
             <i class="fa fa-cloud-download-alt" aria-hidden="true"></i>
           </div>

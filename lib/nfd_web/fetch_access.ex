@@ -95,7 +95,7 @@ defmodule NfdWeb.FetchAccess do
       :dashboard_coaching -> [:stripe_session, :stripe_api_key, :paypal_api_key]
 
       :dashboard_courses -> [:courses]
-      :dashboard_course_collection -> [:courses, :course, :subscription_emails, :subscriber_property, :stripe_session, :paypal_session, :stripe_api_key, :paypal_api_key]
+      :dashboard_course_collection -> [:courses, :course, :subscription_emails, :subscribed_property, :stripe_session, :paypal_session, :stripe_api_key, :paypal_api_key]
       :dashboard_course_file -> [:courses, :course, :course_file]
 
       :dashboard_ebooks -> [:ebooks]

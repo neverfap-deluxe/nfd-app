@@ -16,6 +16,7 @@ defmodule Nfd.Repo.Migrations.AlterCollectionAccess do
     alter table(:files) do
       add :bucket_name, :string
       add :specific_type, :string
+      add :number, :integer
     end
 
     alter table(:collection_access) do

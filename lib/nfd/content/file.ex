@@ -10,6 +10,7 @@ defmodule Nfd.Content.File do
     field :type, :string
     field :specific_type, :string
     field :description, :string
+    field :number, :integer 
     field :bucket_name, :string
     field :display_name, :string
     field :file_url, :string

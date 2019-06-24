@@ -62,7 +62,7 @@ defmodule NfdWeb.FetchCollection do
 
             content_collections = %{
               file_with_collection: file_with_collection |> Map.merge(%{ has_paid_for_collection: file_with_collection.collection |> Collection.has_paid_for_collection(user_collections) }),
-              subscriber_property: Email.collection_slug_to_type(file_with_collection.collection.slug)
+              subscribed_property: FetchCollectionUtil.collection_slug_to_subscribed_property(file_with_collection.collection.slug)
             }
 
             case apply(ContentAPI, FetchCollectionUtil.generate_seven_week_awareness_challenge_symbol(item["vol"]), [client, content_slug]) do
@@ -169,8 +169,8 @@ defmodule NfdWeb.FetchCollection do
           symbol when symbol in [:ebook, :course] ->
             acc |> Map.merge(%{ collection: Collection.get_collection_with_decoration(collection, user_collections) })
 
-          :subscriber_property ->
-            acc |> Map.merge(%{ subscriber_property: Email.collection_slug_to_type(collection.slug) })
+          :subscribed_property ->
+            acc |> Map.merge(%{ subscribed_property: FetchCollectionUtil.collection_slug_to_subscribed_property(collection_slug) })
 
           :subscription_emails ->
             acc |> Map.merge(%{ subscription_emails: Meta.list_subscription_emails_by_collection_id_and_subscriber_id(collection.id, user_collections.subscriber.id) })
