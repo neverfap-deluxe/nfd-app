@@ -42,7 +42,7 @@
   <%= if @dashboard_collections_collection.collection.premium do %>
     <%= if !has_premium_rights do %>
       <div id="payment" class="dashboard__main__area">
-        <%= partial "dashboard/campaign_payment.html", %{ dashboard_collections: @dashboard_collections, api_key_collections: @api_key_collections } %>
+        <%= partial "dashboard/campaign_payment.html", %{ dashboard_collections_collection: @dashboard_collections_collection, api_key_collections: @api_key_collections } %>
 
         <%= if @dashboard_collections_collection.collection.has_paid_for_collection do %>
           <div class="dashboard__main__area">

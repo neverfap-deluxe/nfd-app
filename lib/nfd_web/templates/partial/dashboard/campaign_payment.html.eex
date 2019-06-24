@@ -14,11 +14,11 @@
   <div class="dashboard__main__payment__box">
     <div class="dashboard__main__payment__stripe">
       <h3>Credit Card</h3>
-      <%= partial "payment/stripe_checkout.html", %{api_key_collections: @api_key_collections, dashboard_collections: @dashboard_collections} %>
+      <%= partial "payment/stripe_checkout.html", %{api_key_collections: @api_key_collections, dashboard_collections_collection: @dashboard_collections_collection} %>
     </div>
     <div class="dashboard__main__payment__paypal">
       <h3>PayPal</h3>
-      <%= partial "payment/paypal_checkout.html", %{api_key_collections: @api_key_collections, dashboard_collections: @dashboard_collections} %>
+      <%= partial "payment/paypal_checkout.html", %{api_key_collections: @api_key_collections, dashboard_collections_collection: @dashboard_collections_collection} %>
     </div>
   </div>
 </div>

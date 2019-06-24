@@ -7,9 +7,10 @@
       <%= partial "not_up_to.html", assigns %>
     </div>
 
+    <% page_type = if @dashboard_collections_collection.collection.type == "course_collection", do: :dashboard_course_collection, else: :dashboard_ebook_collection %>
     <div class="dashboard__main__area__content">
       <div class="dashboard__main__back__container">
-        <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, @dashboard_collections_collection.collection.slug) %>">
+        <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, page_type, @dashboard_collections_collection.collection.slug) %>">
           Back to <b><%= @dashboard_collections_collection.collection.display_name %></b>
         </a>
       </div>

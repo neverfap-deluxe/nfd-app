@@ -3,6 +3,7 @@ defmodule Nfd.Content.Collection do
   import Ecto.Changeset
 
   alias Nfd.Content
+  alias Nfd.Content.Collection
 
   alias NfdWeb.FetchCollectionUtil
 
@@ -59,7 +60,7 @@ defmodule Nfd.Content.Collection do
         if subscribed_property != nil do
           collection = subscribed_property |> FetchCollectionUtil.page_symbol_subscribed_to_slug() |> Content.get_collection_slug_with_files()
 
-          # NOTE: Collection Decorators
+          # NOTE: Collection Decorators - breaks wth email collections - possibly not in this context.
           up_to_count = subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(collection.slug))
           current_collection_module = collection.files |> Enum.find(&(&1.description |> String.split(" ") |> List.last() |> String.to_integer() == up_to_count))
 
@@ -81,11 +82,12 @@ defmodule Nfd.Content.Collection do
       end)
   end
 
-  def get_single_dashboard_collection(collection, user_collections) do
-    # NOTE: Consider adding in a purchase date
-    has_paid_for_collection = Collection.has_paid_for_collection(user_collections)
-    up_to_count = user_collections.subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(collection.slug))
-    current_collection_module = collection.files |> Enum.find(&(&1.description |> String.split(" ") |> List.last() |> String.to_integer() == up_to_count))
+  def get_collection_with_decoration(collection, user_collections) do
+    # NOTE: Collection Decorators - breaks wth email collections
+
+    has_paid_for_collection = if collection.type == "course_collection", do: Collection.has_paid_for_collection(collection, user_collections), else: nil
+    up_to_count = if collection.type == "course_collection", do: user_collections.subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(collection.slug)), else: nil
+    current_collection_module = if collection.type == "course_collection", do: collection.files |> Enum.find(&(&1.description |> String.split(" ") |> List.last() |> String.to_integer() == up_to_count)), else: nil
 
     collection
       |> Map.merge(%{

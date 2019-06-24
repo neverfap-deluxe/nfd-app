@@ -1,14 +1,14 @@
 <div class="available__subscriptions__container">
 <!-- Patreon List -->
   <%= if patreon_access_list(@user_collections, :courses_access) do %>
-    <%= Enum.map(@dashboard_collections.courses, fn(course) -> %>
-      <% type = if course.type == @type, do: :dashboard_course_collection, else: :dashboard_ebook_collection %>
-      <%= partial "dashboard/available_subscriptions_item.html", %{ conn: @conn, collection: course, subscribed: Map.get(@user_collections.subscriber, String.to_atom(course.subscribed_property_string)), subscribed_property: String.to_atom(course.subscribed_property_string), user_id: @user_collections.user.id, type: type } %>
+    <%= Enum.map(@collections, fn(collection) -> %>
+      <% type = if @type == "course_collection", do: :dashboard_course_collection, else: :dashboard_ebook_collection %>
+      <%= partial "dashboard/available_subscriptions_item.html", %{ conn: @conn, collection: collection, subscribed: Map.get(@user_collections.subscriber, String.to_atom(collection.subscribed_property_string)), subscribed_property: String.to_atom(collection.subscribed_property_string), user_id: @user_collections.user.id, type: type } %>
     <% end) %>
 <!-- Paid List -->
   <% else %>
     <%= Enum.map(@user_collections.collections_access_list, fn(collection_access) -> %>
-      <% type = if collection_access.collection.type == @type, do: :dashboard_course_collection, else: :dashboard_ebook_collection %>
+      <% type = if @type == collection_access.collection.type, do: :dashboard_course_collection, else: :dashboard_ebook_collection %>
       <%= partial "dashboard/available_subscriptions_item.html", %{ conn: @conn, collection: collection_access.collection, subscribed: Map.get(@user_collections.subscriber, String.to_atom(collection_access.collection.subscribed_property_string)), subscribed_property: String.to_atom(collection_access.collection.subscribed_property_string), user_id: @user_collections.user.id, type: type } %>
     <% end) %>
   <% end %>

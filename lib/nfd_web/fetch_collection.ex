@@ -55,7 +55,7 @@ defmodule NfdWeb.FetchCollection do
             acc
 
           symbol when symbol in [:seven_day_kickstarter_single, :ten_day_meditation_single, :twenty_eight_day_awareness_single, :seven_week_awareness_vol_1_single, :seven_week_awareness_vol_2_single, :seven_week_awareness_vol_3_single, :seven_week_awareness_vol_4_single] ->
-            acc |> Map.merge(%{ symbol => FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol) |> Content.get_collection_slug_with_files() |> Collection.get_single_dashboard_collection(user_collections) })
+            acc |> Map.merge(%{ symbol => FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol) |> Content.get_collection_slug_with_files() |> Collection.get_collection_with_decoration(user_collections) })
   
           :practice ->
             file_with_collection = Content.get_file_slug_with_collection!(content_slug)
@@ -138,6 +138,7 @@ defmodule NfdWeb.FetchCollection do
   def dashboard_collections(collection_array, user_collections) do
     ebooks = Content.list_ebooks_with_files()
     courses = Content.list_courses_with_files()
+
     Enum.reduce(
       collection_array,
       %{},
@@ -166,13 +167,13 @@ defmodule NfdWeb.FetchCollection do
       fn symbol, acc ->
         case symbol do
           symbol when symbol in [:ebook, :course] ->
-            acc |> Map.merge(%{ collection: Collection.get_single_dashboard_collection(symbol, collection, user_collections) })
+            acc |> Map.merge(%{ collection: Collection.get_collection_with_decoration(collection, user_collections) })
 
           :subscriber_property ->
             acc |> Map.merge(%{ subscriber_property: Email.collection_slug_to_type(collection.slug) })
 
           :subscription_emails ->
-            acc |> Map.merge(%{ subscription_emails: Meta.list_subscription_emails_by_collection_id(collection.id) })
+            acc |> Map.merge(%{ subscription_emails: Meta.list_subscription_emails_by_collection_id_and_subscriber_id(collection.id, user_collections.subscriber.id) })
 
           _ -> acc
         end
