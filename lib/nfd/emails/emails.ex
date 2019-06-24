@@ -102,6 +102,8 @@ defmodule Nfd.Emails do
   def update_subscription(type, subscriber, subscription_day_limit, day_count) do
     { count_property, up_to_count_property, subscribed_property } = Nfd.Util.Email.type_to_subscriber_properties(type)
 
+    # TODO: Need to provide more properties i.e. collection_id and subscriber_id to ensure this is complete.
+
     case Meta.create_subscription_email(%{ day: day_count, course: type, subscription_email: subscriber.subscriber_email}) do
       {:ok, _subscription_email} ->
         # TODO: Figure out a way to update this value.

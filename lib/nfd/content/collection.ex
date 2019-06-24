@@ -58,6 +58,7 @@ defmodule Nfd.Content.Collection do
         subscribed_property = Map.get(subscriber, active_property)
         if subscribed_property != nil or subscribed_property != "" do
           collection = subscribed_property |> FetchCollectionUtil.page_symbol_subscribed_to_slug() |> Content.get_collection_slug_with_files()
+
           # NOTE: Collection Decorators
           up_to_count = subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(collection.slug))
           current_collection_module = collection.files |> Enum.find(&(&1.description |> String.split(" ") |> List.last() |> String.to_integer() == up_to_count))
@@ -109,11 +110,6 @@ defmodule Nfd.Content.Collection do
     #     :collection_module
     #     :has_paid_for_collection
     #   end)
-
-  end
-
-  case Map.get(@user_collections.active_collections, :collection_active) do
-    "seven_day_kickstarter_subscribed" -> :seven_day_kickstarter_count
   end
 
 end

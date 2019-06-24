@@ -38,6 +38,7 @@ defmodule Nfd.Repo.Migrations.AlterCollectionAccess do
 
     alter table(:subscription_emails) do
       add :collection_id, references(:collections, on_delete: :nothing, type: :binary_id)
+      add :subscriber_id, references(:subscribers, on_delete: :nothing, type: :binary_id)
     end
 
   end

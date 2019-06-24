@@ -34,5 +34,4 @@ defmodule Nfd.Content.File do
     |> validate_required([:slug, :display_name, :description, :type, :premium, :collection_id])
     # |> cast_assoc()
   end
-
 end

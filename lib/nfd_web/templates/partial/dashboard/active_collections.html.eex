@@ -2,25 +2,13 @@
 <div class="dashboard__active__collections">
   <div class="dashboard__active__collection__item">
     <%= if @user_collections.active_collections.free_active != false do %>
-      <%
-        free_course = @user_collections.active_collections.free_active
-        free_count =
-          case Map.get(@user_collections.active_collections, :free_active) do
-            "seven_day_kickstarter_subscribed" -> :seven_day_kickstarter_count
-          end
-        free_total =
-          case Map.get(@user_collections.active_collections, :free_active) do
-            "seven_day_kickstarter_subscribed" -> 7
-          end
-        free_module = free_course.files |> Enum.find(&(&1.description |> String.split(" ") |> List.last() |> String.to_integer() == free_count))
-      %>
-      <h3><%= free_course.display_name %></h3>
-      <p>Total Days: <%= free_total %></p>
-      <p>Day: <%= Map.get(@user_collections.subscriber, free_count) %></p>
-      <p>Module: <%= free_module.display_name %></p>
-      <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, free_course.slug, free_module.slug) %>"></a></p>
+      <% free_collection = @user_collections.active_collections.free_active %>
+      <h3><%= free_collection.display_name %></h3>
+      <p>Total Days: <%= free_collection.total_period %></p>
+      <p>Day: <%= free_collection.up_to_count %></p>
+      <p>Module: <%= free_collection.current_collection_module.display_name %></p>
+      <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, free_collection.slug, free_collection.current_collection_module.slug) %>"></a></p>
 
-      <%# TODO: Link to current day/week module  %>
     <% else %>
       <h3>No free courses subscribed to.</h3>
     <% end %>
@@ -28,23 +16,12 @@
 
   <div class="dashboard__active__collection__item">
     <%= if @user_collections.active_collections.meditation_active != false do %>
-      <%
-        meditation_course = @user_collections.active_collections.meditation_active
-        meditation_count =
-          case Map.get(@user_collections.active_collections, :meditation_active) do
-            "ten_day_meditation_subscribed" -> :seven_day_kickstarter_count
-          end
-        meditation_total =
-          case Map.get(@user_collections.active_collections, :meditation_active) do
-            "ten_day_meditation_subscribed" -> 10
-          end
-        meditation_module = meditation_course.files |> Enum.find(&(&1.description |> String.split(" ") |> List.last() |> String.to_integer() == meditation_count))
-      %>
-      <h3><%= meditation_course.display_name %></h3>
-      <p>Total Days: <%= meditation_total %></p>
-      <p>Day: <%= Map.get(@user_collections.subscriber, meditation_count) %></p>
-      <p>Module: <%= meditation_module.display_name %></p>
-      <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, meditation_course.slug, meditation_module.slug) %>"></a></p>
+      <% meditation_collection = @user_collections.active_collections.meditation_active %>
+      <h3><%= meditation_collection.display_name %></h3>
+      <p>Total Days: <%= meditation_collection.total_period %></p>
+      <p>Day: <%= meditation_collection.up_to_count %></p>
+      <p>Module: <%= meditation_collection.current_collection_module.display_name %></p>
+      <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, meditation_collection.slug, meditation_collection.current_collection_module.slug) %>"></a></p>
     <% else %>
       <h3>No meditation courses subscribed to.</h3>
     <% end %>
@@ -52,29 +29,12 @@
 
   <div class="dashboard__active__collection__item">
     <%= if @user_collections.active_collections.awareness_active != false do %>
-      <%
-        awareness_course = @user_collections.active_collections.awareness_active
-        awareness_count =
-          case Map.get(@user_collections.active_collections, :awareness_active) do
-            "awareness_seven_week_vol_1_subscribed" -> :awareness_seven_week_vol_1_count
-            "awareness_seven_week_vol_2_subscribed" -> :awareness_seven_week_vol_2_count
-            "awareness_seven_week_vol_3_subscribed" -> :awareness_seven_week_vol_3_count
-            "awareness_seven_week_vol_4_subscribed" -> :awareness_seven_week_vol_4_count
-          end
-        awareness_total =
-          case Map.get(@user_collections.active_collections, :awareness_active) do
-            "awareness_seven_week_vol_1_subscribed" -> 7
-            "awareness_seven_week_vol_2_subscribed" -> 7
-            "awareness_seven_week_vol_3_subscribed" -> 7
-            "awareness_seven_week_vol_4_subscribed" -> 7
-          end
-        awareness_module = awareness_course.files |> Enum.find(&(&1.description |> String.split(" ") |> List.last() |> String.to_integer() == awareness_count))
-      %>
-      <h3><%= awareness_course.display_name %></h3>
-      <p>Week: <%= Map.get(@user_collections.subscriber, awareness_count) %></p>
-      <p>Total Weeks: <%= awareness_total %></p>
-      <p>Module: <%= awareness_module.display_name %></p>
-      <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, awareness_course.slug, awareness_module.slug) %>"></a></p>
+      <% awareness_collection = @user_collections.active_collections.awareness_active %>
+      <h3><%= awareness_collection.display_name %></h3>
+      <p>Total Weeks: <%= awareness_collection.total_period %></p>
+      <p>Week: <%= awareness_collection.up_to_count %></p>
+      <p>Module: <%= awareness_collection.current_collection_module.display_name %></p>
+      <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, awareness_collection.slug, awareness_collection.current_collection_module.slug) %>"></a></p>
     <% else %>
       <h3>No awareness courses subscribed to.</h3>
     <% end %>

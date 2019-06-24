@@ -84,9 +84,9 @@ defmodule NfdWeb.FetchCollection do
       fn symbol, acc ->
         case symbol do
           symbol when symbol in [:articles, :practices, :quotes, :updates, :blogs, :podcasts, :meditations, :courses] ->
-            case apply(PageAPI, content_symbol, [client]) do
+            case apply(PageAPI, symbol, [client]) do
               {:ok, response} ->
-                collections = response["data"][Atom.to_string(content_symbol)] |> Enum.reverse()
+                collections = response["data"][Atom.to_string(symbol)] |> Enum.reverse()
                 {previous_item, next_item} = Page.previous_next_item(collections, item);
                 acc |> Map.merge(%{ symbol => collections, previous_item: previous_item, next_item: next_item })
 
@@ -151,7 +151,6 @@ defmodule NfdWeb.FetchCollection do
         end
     end)
   end
-
 
   def dashboard_collections_collection(client, collection_array, user_collections, collection_slug) do
     # NOTE: Can maybe do some validation here, to see if it even gets the valid collection based on the collection_slug that has been passed.

@@ -10,6 +10,7 @@ defmodule Nfd.Meta.SubscriptionEmail do
     field :subscription_email, :string
 
     field :collection_id, :binary_id
+    field :subscriber_id, :binary_id
     # belongs_to :collection, Nfd.Content.Collection
     # TODO Create a link between subscription emails and collections (and maybe even files)
     timestamps()
