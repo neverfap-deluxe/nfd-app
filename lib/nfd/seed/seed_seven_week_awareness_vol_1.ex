@@ -13,6 +13,8 @@ defmodule Nfd.SeedSWAVOL1 do
           seed_id: "fd5bf9cf-a0db-41c9-af52-c482f4701384",
           type: "course_collection",
           active_type: "awareness_active_type",
+          frequency: "week",
+          total_period: 7,
           status: "in_progress",
           stripe_sku: "NA",
           stripe_description: "Learn more about your awareness with Vol 1. of our 7 week awareness challenge.",

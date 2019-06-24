@@ -13,6 +13,8 @@ defmodule Nfd.SeedSDK do
           seed_id: "068b52c1-cce1-4239-a345-1182ae528a41",
           type: "course_collection",
           active_type: "free_active_type",
+          frequency: "day",
+          total_period: 7,
           status: "complete",
           stripe_sku: "NA",
           stripe_description: "Kickstart your NeverFap Deluxe journey with our seven day course which will take you through everything you need to know about overcoming your porn addiction.",
@@ -32,7 +34,7 @@ defmodule Nfd.SeedSDK do
   end
 
   def seven_day_kickstarter_files(collection_id) do
-    # TODO: Add in the email/day files. 
+    # TODO: Add in the email/day files.
 
     Repo.insert(%File{
       seed_id: "a78835ce-5d49-4107-b57c-ef094b0efb7b",

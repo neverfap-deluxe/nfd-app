@@ -27,23 +27,12 @@
   <div id="information" class="dashboard__main__area">
     <div class="dashboard__main__area__content">
       <h2 class="dashboard__main__area__content__title">Information</h2>
-      <%
-        collection_count =
-          case Map.get(@user_collections.active_collections, :collection_active) do
-            "seven_day_kickstarter_subscribed" -> :seven_day_kickstarter_count
-          end
-        collection_total =
-          case Map.get(@user_collections.active_collections, :collection_active) do
-            "seven_day_kickstarter_subscribed" -> 7
-          end
-        collection_module = @dashboard_modules.collection.files |> Enum.find(&(&1.description |> String.split(" ") |> List.last() |> String.to_integer() == collection_count))
-      %>
 
       <p><b>Landing page:</b> <a class="link" href="/<%= @dashboard_collections_collection.collection.slug %>">link</a></p>
-        
-      <p>Total Days: <%= collection_total %></p>
-      <p>Day: <%= Map.get(@user_collections.subscriber, collection_count) %></p>
-      <p>Module: <%= collection_module.display_name %></p>
+
+      <p>Total Days: <%= @collection.total_period %></p>
+      <p>Day: <%= @collection.up_to_count %></p>
+      <p>Module: <%= @collection.current_collection_module.display_name %></p>
       <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, @dashboard_modules.collection.slug, collection_module.slug) %>"></a></p>
 
       <%# Subscription emails log here %>

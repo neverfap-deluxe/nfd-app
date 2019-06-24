@@ -12,6 +12,8 @@ defmodule Nfd.Content.Collection do
     field :seed_id, :string
     field :type, :string
     field :active_type, :string
+    field :frequency, :string
+    field :total_period, :integer
     field :status, :string
     field :description, :string
     field :display_name, :string
@@ -27,6 +29,11 @@ defmodule Nfd.Content.Collection do
     has_many :subscription_emails, Nfd.Meta.SubscriptionEmail
     has_many :files, Nfd.Content.File
     # has_many, :collection_accesses, Nfd.Account.CollectionAccess
+
+    # DECORATORS
+    # up_to_count
+    # has_paid_for_collection
+    # current_collection_module
 
     timestamps()
   end
@@ -50,8 +57,12 @@ defmodule Nfd.Content.Collection do
       |> Enum.reduce(%{}, fn active_property, acc ->
         subscribed_property = Map.get(subscriber, active_property)
         if subscribed_property != nil or subscribed_property != "" do
-          collection = FetchCollectionUtil.page_symbol_subscribed_to_slug(subscribed_property) |> Content.get_collection_slug_with_files()
-          acc |> Map.merge(%{ active_property => collection })
+          collection = subscribed_property |> FetchCollectionUtil.page_symbol_subscribed_to_slug() |> Content.get_collection_slug_with_files()
+          # NOTE: Collection Decorators
+          up_to_count = subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(collection.slug))
+          current_collection_module = collection.files |> Enum.find(&(&1.description |> String.split(" ") |> List.last() |> String.to_integer() == up_to_count))
+
+          acc |> Map.merge(%{ active_property => collection |> Map.merge(%{ up_to_count: up_to_count, current_collection_module: current_collection_module }) })
         else
           acc |> Map.merge(%{ active_property => false })
         end
@@ -70,6 +81,10 @@ defmodule Nfd.Content.Collection do
   end
 
   def get_single_dashboard_collection(collection, user_collections) do
+    has_paid_for_collection = Collection.has_paid_for_collection(user_collections)
+    up_to_count = user_collections.subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(collection.slug))
+    current_collection_module = collection.files |> Enum.find(&(&1.description |> String.split(" ") |> List.last() |> String.to_integer() == up_to_count))
+
     collection
       |> Map.merge(%{
         files:
@@ -81,6 +96,24 @@ defmodule Nfd.Content.Collection do
             end)
             |> Enum.reverse()
       })
-      |> Map.merge(%{ has_paid_for_collection: Collection.has_paid_for_collection(user_collections) })
+      |> Map.merge(%{ has_paid_for_collection: })
+      |> Map.merge(%{ up_to_count: up_to_count })
+      |> Map.merge(%{ current_collection_module: current_collection_module })
+
   end
+
+  def collection_decorator(decorator_array) do
+    # decorator_array
+    #   |> Enum.reduce(%{}, fn active_property, acc ->
+    #     :up_to_count
+    #     :collection_module
+    #     :has_paid_for_collection
+    #   end)
+
+  end
+
+  case Map.get(@user_collections.active_collections, :collection_active) do
+    "seven_day_kickstarter_subscribed" -> :seven_day_kickstarter_count
+  end
+
 end

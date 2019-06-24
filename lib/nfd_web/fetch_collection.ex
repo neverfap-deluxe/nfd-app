@@ -54,12 +54,10 @@ defmodule NfdWeb.FetchCollection do
             acc
 
           :practice ->
-            # NOTE: Maybe has_paid_for_collection should be inside file_with_collection.collection, because that's how it's done below.
             file_with_collection = Content.get_file_slug_with_collection!(verified_slug)
 
             content_collections = %{
-              file_with_collection: file_with_collection,
-              has_paid_for_collection: Collection.has_paid_for_collection(file_with_collection.collection, user_collections),
+              file_with_collection: file_with_collection |> Map.merge(%{ has_paid_for_collection: file_with_collection.collection |> Collection.has_paid_for_collection(user_collections) }),
               subscriber_property: Email.collection_slug_to_type(file_with_collection.collection.slug)
             }
 
@@ -86,23 +84,23 @@ defmodule NfdWeb.FetchCollection do
       fn symbol, acc ->
         case symbol do
           symbol when symbol in [:articles, :practices, :quotes, :updates, :blogs, :podcasts, :meditations, :courses] ->
-            case apply(PageAPI, content_symbol, [client]) do 
+            case apply(PageAPI, content_symbol, [client]) do
               {:ok, response} ->
-                collections = response["data"][Atom.to_string(content_symbol)] |> Enum.reverse()        
+                collections = response["data"][Atom.to_string(content_symbol)] |> Enum.reverse()
                 {previous_item, next_item} = Page.previous_next_item(collections, item);
                 acc |> Map.merge(%{ symbol => collections, previous_item: previous_item, next_item: next_item })
 
-              {:error, error} -> 
+              {:error, error} ->
                 IO.inspect error
                 acc
             end
-            
+
           symbol when symbol in [:seven_day_kickstarter, :ten_day_meditation, :twenty_eight_day_awareness, :seven_week_awareness_vol_1, :seven_week_awareness_vol_2, :seven_week_awareness_vol_3, :seven_week_awareness_vol_4] ->
-            case apply(PageAPI, symbol, [client]) do 
+            case apply(PageAPI, symbol, [client]) do
               {:ok, response} ->
                 acc |> Map.merge(%{ symbol => response.body["data"] })
 
-              {:error, error} -> 
+              {:error, error} ->
                 IO.inspect error
                 acc
             end

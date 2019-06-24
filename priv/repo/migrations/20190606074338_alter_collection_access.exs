@@ -3,6 +3,8 @@ defmodule Nfd.Repo.Migrations.AlterCollectionAccess do
 
   def change do
     alter table(:collections) do
+      add :frequency, :string
+      add :period, :integer
       add :stripe_sku, :string
       add :stripe_description, :string
       add :subscribed_property_string, :string

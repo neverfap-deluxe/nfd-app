@@ -13,6 +13,8 @@ defmodule Nfd.SeedTDMP do
           seed_id: "943bd030-60e4-42da-a8c1-0c926c508374",
           type: "course_collection",
           active_type: "meditation_active_type",
+          frequency: "day",
+          total_period: 10,
           status: "complete",
           stripe_sku: "NA",
           stripe_description: "10 Day Meditation Primer Audio Series.",

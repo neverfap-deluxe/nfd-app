@@ -1,4 +1,4 @@
-defmodule Nfd.Account.CollectionAccess do
+course_slug_to_up_to_countdefmodule Nfd.Account.CollectionAccess do
   use Ecto.Schema
   import Ecto.Changeset
 
