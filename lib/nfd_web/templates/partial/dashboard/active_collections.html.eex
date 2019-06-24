@@ -4,9 +4,9 @@
     <%= if @user_collections.active_collections.free_active != false do %>
       <% free_collection = @user_collections.active_collections.free_active %>
       <h3><%= free_collection.display_name %></h3>
-      <p>Total Days: <%= free_collection.total_period %></p>
-      <p>Day: <%= free_collection.up_to_count %></p>
-      <p>Module: <%= free_collection.current_collection_module.display_name %></p>
+      <p><b>Total Days:</b> <%= free_collection.total_period %></p>
+      <p><b>Day:</b> <%= free_collection.up_to_count %></p>
+      <p><b>Module:</b> <%= free_collection.current_collection_module.display_name %></p>
       <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, free_collection.slug, free_collection.current_collection_module.slug) %>"></a></p>
 
     <% else %>
@@ -18,9 +18,9 @@
     <%= if @user_collections.active_collections.meditation_active != false do %>
       <% meditation_collection = @user_collections.active_collections.meditation_active %>
       <h3><%= meditation_collection.display_name %></h3>
-      <p>Total Days: <%= meditation_collection.total_period %></p>
-      <p>Day: <%= meditation_collection.up_to_count %></p>
-      <p>Module: <%= meditation_collection.current_collection_module.display_name %></p>
+      <p><b>Total Days:</b> <%= meditation_collection.total_period %></p>
+      <p><b>Day:</b> <%= meditation_collection.up_to_count %></p>
+      <p><b>Module</b>: <%= meditation_collection.current_collection_module.display_name %></p>
       <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, meditation_collection.slug, meditation_collection.current_collection_module.slug) %>"></a></p>
     <% else %>
       <h3>No meditation courses subscribed to.</h3>
@@ -31,9 +31,9 @@
     <%= if @user_collections.active_collections.awareness_active != false do %>
       <% awareness_collection = @user_collections.active_collections.awareness_active %>
       <h3><%= awareness_collection.display_name %></h3>
-      <p>Total Weeks: <%= awareness_collection.total_period %></p>
-      <p>Week: <%= awareness_collection.up_to_count %></p>
-      <p>Module: <%= awareness_collection.current_collection_module.display_name %></p>
+      <p><b>Total Weeks:</b> <%= awareness_collection.total_period %></p>
+      <p><b>Week:</b> <%= awareness_collection.up_to_count %></p>
+      <p><b>Module</b>: <%= awareness_collection.current_collection_module.display_name %></p>
       <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, awareness_collection.slug, awareness_collection.current_collection_module.slug) %>"></a></p>
     <% else %>
       <h3>No awareness courses subscribed to.</h3>
