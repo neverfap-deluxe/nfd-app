@@ -122,6 +122,11 @@ defmodule Nfd.Meta do
     Repo.all(SubscriptionEmail)
   end
 
+  def list_subscription_emails_by_collection_id(collection_id) do
+    Repo.all(from s in SubscriptionEmail, where: [collection_id: ^collection_id])
+  end
+
+
   @doc """
   Gets a single subscription_email.
 

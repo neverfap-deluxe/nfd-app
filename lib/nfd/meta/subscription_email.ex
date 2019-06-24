@@ -2,7 +2,6 @@ defmodule Nfd.Meta.SubscriptionEmail do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "subscription_emails" do
@@ -10,13 +9,16 @@ defmodule Nfd.Meta.SubscriptionEmail do
     field :day, :integer
     field :subscription_email, :string
 
+    field :collection_id, :binary_id
+    # belongs_to :collection, Nfd.Content.Collection
+    # TODO Create a link between subscription emails and collections (and maybe even files)
     timestamps()
   end
 
   @doc false
   def changeset(subscription_email, attrs) do
     subscription_email
-    |> cast(attrs, [:day, :course, :subscription_email])
-    |> validate_required([:day, :course, :subscription_email])
+    |> cast(attrs, [:day, :course, :subscription_email, :collection_id])
+    |> validate_required([:day, :course, :subscription_email, :collection_id])
   end
 end

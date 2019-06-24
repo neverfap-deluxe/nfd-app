@@ -7,6 +7,7 @@
 
       <ul class="dashboard__index">
         <li class="link"><a href="#link_your_patreon">Link Your Patreon Account</a></li>
+        <li class="link"><a href="#subscribed__courses">Subscribed Courses</a></li>
         <li class="link"><a href="#purchased__courses">Purchased Courses</a></li>
         <li class="link"><a href="#newsletter">Newsletter</a></li>
         <li class="link"><a href="#courses">Courses</a></li>
@@ -15,8 +16,6 @@
       </ul>
     </div>
   </div>
-  
-  <!-- TODO: Which exercise are you up to. -->
 
   <div id="link_your_patreon" class="dashboard__main__area">
     <div class="dashboard__main__area__content">
@@ -24,15 +23,16 @@
     </div>
   </div>
 
+  <div id="subscribed__courses" class="dashboard__main__area">
+    <div class="dashboard__main__area__content">
+      <h2 class="dashboard__main__area__content__title">Subscribed Courses</h2>
+      <%= partial "dashboard/active_collections.html", %{ conn: @conn, user_collections: @user_collections } %>
+    </div>
+  </div>
+
   <div id="purchased__courses" class="dashboard__main__area">
     <div class="dashboard__main__area__content">
       <h2 class="dashboard__main__area__content__title">Purchased Courses</h2>
-      
-      <!-- TODO: Build a module which shows which courses the user is subscribed to. -->
-      <div>
-        <!-- Currently subscribed:  -->
-      </div>
-
       <%= partial "dashboard/available_subscriptions.html", %{ conn: @conn, user_collections: @user_collections, dashboard_collections: @dashboard_collections } %>
     </div>
   </div>
@@ -56,7 +56,7 @@
       </a>
     </div>
   </div>
-  
+
   <div id="guides" class="dashboard__main__area">
     <div class="dashboard__main__area__content">
       <h2 class="dashboard__main__area__content__title">Guides</h2>
@@ -79,4 +79,4 @@
       <p>Reddit: <a href="<%= Application.get_env(:nfd, :social_reddit_url) %>"><%= Application.get_env(:nfd, :social_reddit_url) %></a></p>
     </div>
   </div>
-</div>
+<div>

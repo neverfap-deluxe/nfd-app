@@ -1,0 +1,82 @@
+
+<div class="dashboard__active__collections">
+  <div class="dashboard__active__collection__item">
+    <%= if @user_collections.active_collections.free_active != false do %>
+      <% free_course = @user_collections.active_collections.free_active %>
+      <%
+        free_count =
+          case Map.get(@user_collections.active_collections, :free_active) do
+            "seven_day_kickstarter_subscribed" -> :seven_day_kickstarter_count
+          end
+        free_total =
+          case Map.get(@user_collections.active_collections, :free_active) do
+            "seven_day_kickstarter_subscribed" -> 7
+          end
+        free_module = free_course.files |> Enum.find(&(&.description |> String.split(" ") |> List.last() |> String.to_integer() == free_count))
+      %>
+      <h3><%= free_course.display_name %></h3>
+      <p>Total Days: <%= free_total %></p>
+      <p>Day: <%= Map.get(@user_collections.subscriber, free_count) %></p>
+      <p>Module: <%= free_module.display_name %></p>
+      <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, free_course.slug, free_module.slug) %>"></a></p>
+
+      <%# TODO: Link to current day/week module  %>
+    <% else %>
+      <h3>No free courses subscribed to.</h3>
+    <% end %>
+  </div>
+
+  <div class="dashboard__active__collection__item">
+    <%= if @user_collections.active_collections.meditation_active != false do %>
+      <% meditation_course = @user_collections.active_collections.meditation_active %>
+      <%
+        meditation_count =
+          case Map.get(@user_collections.active_collections, :meditation_active) do
+            "ten_day_meditation_subscribed" -> :seven_day_kickstarter_count
+          end
+        meditation_total =
+          case Map.get(@user_collections.active_collections, :meditation_active) do
+            "ten_day_meditation_subscribed" -> 10
+          end
+        meditation_module = meditation_course.files |> Enum.find(&(&.description |> String.split(" ") |> List.last() |> String.to_integer() == meditation_count))
+      %>
+      <h3><%= meditation_course.display_name %></h3>
+      <p>Total Days: <%= meditation_total %></p>
+      <p>Day: <%= Map.get(@user_collections.subscriber, meditation_count) %></p>
+      <p>Module: <%= meditation_module.display_name %></p>
+      <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, meditation_course.slug, meditation_module.slug) %>"></a></p>
+    <% else %>
+      <h3>No meditation courses subscribed to.</h3>
+    <% end %>
+  </div>
+
+  <div class="dashboard__active__collection__item">
+    <%= if @user_collections.active_collections.awareness_active != false do %>
+      <% awareness_course = @user_collections.active_collections.awareness_active %>
+      <%
+        awareness_count =
+          case Map.get(@user_collections.active_collections, :awareness_active) do
+            "awareness_seven_week_vol_1_subscribed" -> :awareness_seven_week_vol_1_count
+            "awareness_seven_week_vol_2_subscribed" -> :awareness_seven_week_vol_2_count
+            "awareness_seven_week_vol_3_subscribed" -> :awareness_seven_week_vol_3_count
+            "awareness_seven_week_vol_4_subscribed" -> :awareness_seven_week_vol_4_count
+          end
+        awareness_total =
+          case Map.get(@user_collections.active_collections, :awareness_active) do
+            "awareness_seven_week_vol_1_subscribed" -> 7
+            "awareness_seven_week_vol_2_subscribed" -> 7
+            "awareness_seven_week_vol_3_subscribed" -> 7
+            "awareness_seven_week_vol_4_subscribed" -> 7
+          end
+        awareness-module = awareness-course.files |> Enum.find(&(&.description |> String.split(" ") |> List.last() |> String.to_integer() == awareness-count))
+      %>
+      <h3><%= awareness_course.display_name %></h3>
+      <p>Week: <%= Map.get(@user_collections.subscriber, awareness_count) %></p>
+      <p>Total Weeks: <%= awareness_total %></p>
+      <p>Module: <%= awareness_module.display_name %></p>
+      <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, awareness_course.slug, awareness_module.slug) %>"></a></p>
+    <% else %>
+      <h3>No awareness courses subscribed to.</h3>
+    <% end %>
+  </div>
+</div>

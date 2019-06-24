@@ -1,6 +1,6 @@
 <% has_premium_rights = has_premium_access(@dashboard_collections.collection, @user_collections, :ebooks_access) and @dashboard_collections.collection.premium %>
 
-<div class="dashboard__course__collection">
+<div class="dashboard__collection">
   <h2 class="dashboard__main__title dashboard__main__title--email"><%= @dashboard_collections.collection.display_name %></h2>
 
   <div class="dashboard__main__back__container">
@@ -49,7 +49,7 @@
             <p>You purchased this guide on the <%= Enum.find(@user_collections.collections_access_list, &(&1.collection.id == @dashboard_collections.collection.id)) |> Map.get(:created_at) %></p>
           </div>
         <% end %>
-      
+
         <%= if patreon_access_list(@user_collections, :ebooks_access) do %>
           <div class="dashboard__main__area">
             <p>You have access to this guide via your Patreon tier.</p>

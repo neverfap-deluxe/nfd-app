@@ -27,7 +27,7 @@ defmodule NfdWeb.Fetch do
         item_collections = FetchCollection.item_collections(response.body["data"], page_symbol, verified_slug, user_collections, client)
         content_collections = FetchCollection.content_collections(response.body["data"], collection_array, client)
         changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array)
-        
+
         conn
           |> is_file_paid_for(page_symbol, user_collections, item_collections, NfdWeb.PageView, "general.html", "error_page_no_access.html")
           |> are_they_up_to_day(page_symbol, response.body["data"], user_collections, item_collections, NfdWeb.PageView, "general.html", "page_not_up_to.html")
@@ -45,7 +45,7 @@ defmodule NfdWeb.Fetch do
         content_collections = FetchCollection.content_collections(response.body["data"], collection_array, client)
         changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array)
 
-        conn 
+        conn
           |> fetch_response_ok(page_view, response, user_collections, content_collections, changeset_collections, %{}, page_symbol, page_layout, "page")
       {:error, error} -> render_404_page(conn, error)
     end
@@ -55,9 +55,14 @@ defmodule NfdWeb.Fetch do
     client = API.is_localhost(conn.host) |> API.api_client()
 
     user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
-    dashboard_collections = FetchCollection.dashboard_collections(conn, client, collection_array, user_collections, collection_slug, file_slug)
     api_key_collections = FetchCollection.api_key_collections(conn, collection_slug, user_collections, collection_array)
-    
+
+    dashboard_collections
+    dashboard_collections_collection
+    dashboard_collections_file
+
+    dashboard_collections = FetchCollection.dashboard_collections(conn, client, collection_array, user_collections, collection_slug, file_slug)
+
     conn
       |> put_flash(:info, (if user_collections.patreon_access.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."))
       |> put_view(NfdWeb.DashboardView)
@@ -68,9 +73,12 @@ defmodule NfdWeb.Fetch do
     client = API.is_localhost(conn.host) |> API.api_client()
 
     user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
-    dashboard_collections = FetchCollection.dashboard_collections(conn, client, collection_array, user_collections, collection_slug, file_slug)
     api_key_collections = FetchCollection.api_key_collections(conn, collection_slug, user_collections, collection_array)
-    
+    dashboard_collections = FetchCollection.dashboard_collections(conn, client, collection_array, user_collections, collection_slug, file_slug)
+    dashboard_collections
+    dashboard_collections_collection
+    dashboard_collections_file
+
     conn
       |> is_collection_complete(page_symbol, user_collections, dashboard_collections)
       |> put_flash(:info, (if user_collections.patreon_access.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."))
@@ -82,8 +90,11 @@ defmodule NfdWeb.Fetch do
     client = API.is_localhost(conn.host) |> API.api_client()
 
     user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
-    dashboard_collections = FetchCollection.dashboard_collections(conn, client, collection_array, user_collections, collection_slug, file_slug)
     api_key_collections = FetchCollection.api_key_collections(conn, collection_slug, user_collections, collection_array)
+    dashboard_collections = FetchCollection.dashboard_collections(conn, client, collection_array, user_collections, collection_slug, file_slug)
+    dashboard_collections
+    dashboard_collections_collection
+    dashboard_collections_file
     
     conn
       |> is_collection_complete(page_symbol, user_collections, dashboard_collections)

@@ -1,10 +1,10 @@
-<div class="dashboard__course__collection">
+<div class="dashboard__collection">
     <h2 class="dashboard__main__title"><%= @dashboard_collections.file.display_name %></h2>
-  
+
     <div class="dashboard__main__area">
-  
-      <div class="dashboard__main__ebook">
-  
+
+      <div class="dashboard__main__collection">
+
       </div>
     </div>
   </div>

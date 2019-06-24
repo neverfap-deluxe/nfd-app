@@ -20,7 +20,7 @@ defmodule Nfd.Repo.Migrations.AlterCollectionAccess do
       add :collection_id, references(:collections, on_delete: :nothing, type: :binary_id)
     end
 
-    alter table(:subscribers) do 
+    alter table(:subscribers) do
       add :seven_day_kickstarter_up_to_count, :integer
       add :ten_day_meditation_up_to_count, :integer
       add :twenty_eight_day_awareness_up_to_count, :integer
@@ -33,6 +33,10 @@ defmodule Nfd.Repo.Migrations.AlterCollectionAccess do
       add :meditation_active, :string
       add :awareness_active, :string
     end
-    
+
+    alter table(:subscription_emails) do
+      add :collection_id, references(:collections, on_delete: :nothing, type: :binary_id)
+    end
+
   end
 end

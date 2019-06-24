@@ -33,8 +33,8 @@
 
 .dashboard,
 .dashboard__profile,
-.dashboard__ebook__collection,
-.dashboard__course__collection {
+.dashboard__collection,
+.dashboard__collection {
   box-sizing: border-box;
   padding: 0.5rem;
   padding-top: 2rem;
@@ -121,22 +121,21 @@
   }
 }
 
-.dashboard__main__ebook,
-.dashboard__main__email {
+.dashboard__main__collection {
   margin-bottom: 2rem;
 
-  .email__collection {
+  .collection {
     display: flex;
     justify-content: space-between;
     border: 4px solid black;
     padding: 1.6rem;
     margin-bottom: 1rem;
-    
+
     h2, h3, h4, p {
       margin: 0rem;
     }
 
-    .email__collection__top {
+    .collection__top {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -144,23 +143,23 @@
       // align-items: center;
       width: 650px;
 
-      .email__collection__top__name {
+      .collection__top__name {
         font-size: 2.3rem;
         line-height: 3.5rem;
         margin-bottom: 1rem;
       }
 
-      .email__collection__top__price {
+      .collection__top__price {
 
       }
 
-      .email__collection__top__description {
+      .collection__top__description {
         margin-top: 1rem;
         margin-bottom: 1rem;
       }
     }
 
-    .email__collection__bottom {
+    .collection__bottom {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -169,12 +168,12 @@
       justify-content: space-around;
       width: 100%;
 
-      .email__collection__bottom--image--container {
+      .collection__bottom--image--container {
         display: flex;
-        
-        .email__collection__bottom-image {
+
+        .collection__bottom-image {
           width: 150px;
-        }  
+        }
       }
     }
   }
@@ -210,8 +209,7 @@
 
   .dashboard,
   .dashboard__profile,
-  .dashboard__ebook__collection,
-  .dashboard__course__collection {
+  .dashboard__collection {
     padding: 3rem;
   }
 
@@ -242,7 +240,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
     border: 4px solid black;
-  
+
     display: flex;
     flex-direction: column;
     // justify-content: space-between;
@@ -252,7 +250,7 @@
     margin-bottom: 1rem;
 
     .available__subscriptions__item--title {
-      
+
     }
 
 
@@ -267,10 +265,10 @@
       // margin-top: 0.5rem;
       // margin-bottom: 2rem;
 
-      // box-shadow: -5px 5px 0px 0px #00ffee;  
-      padding: 0.6rem; 
+      // box-shadow: -5px 5px 0px 0px #00ffee;
+      padding: 0.6rem;
       cursor: pointer;
-    
+
       transition: box-shadow .3s, bottom .3s, left .3s;
     }
 
@@ -279,7 +277,7 @@
       bottom: -5px;
       left: -5px;
     }
-    
+
     .available__subscriptions__item--button:focus {
       outline: 0;
     }
@@ -300,14 +298,20 @@
   align-items: center;
 }
 
-.email__collection__bottom--benefits {
+.collection__bottom--benefits {
   margin-top: 1rem;
 
-  .email__collection__bottom--benefit {
+  .collection__bottom--benefit {
     border: 2px solid black;
     width: 175px;
     padding: 0.4rem;
     font-weight: 700;
     margin-bottom: 1rem;
+  }
+}
+
+.dashboard__active__collections {
+  .dashboard__active__collection__item {
+    display: flex;
   }
 }

@@ -3,6 +3,8 @@ defmodule Nfd.Account.Subscriber do
   import Ecto.Changeset
 
   alias Nfd.Account
+  alias Nfd.Account.Subscriber
+
   alias Nfd.EmailLogs
 
   alias NfdWeb.Patreon
@@ -13,31 +15,32 @@ defmodule Nfd.Account.Subscriber do
     field :subscriber_email, :string
     field :subscribed, :boolean, default: false
 
-    field :free_active, :string
+    # Free
+    field :free_active, :string # seven_day_kickstarter_subscribed
     field :seven_day_kickstarter_subscribed, :boolean, default: false
     field :seven_day_kickstarter_count, :integer, default: 0
     field :seven_day_kickstarter_up_to_count, :integer, default: 0
 
     # Meditations
-    field :meditation_active, :string
+    field :meditation_active, :string # ten_day_meditation_subscribed
     field :ten_day_meditation_subscribed, :boolean, default: false
     field :ten_day_meditation_count, :integer, default: 0
     field :ten_day_meditation_up_to_count, :integer, default: 0
-        
+
     # Awareness
-    field :awareness_active, :string
+    field :awareness_active, :string # awareness_seven_week_vol_1_subscribed, awareness_seven_week_vol_2_subscribed, awareness_seven_week_vol_3_subscribed, awareness_seven_week_vol_4_subscribed, twenty_eight_day_awareness_subscribed
     field :awareness_seven_week_vol_1_subscribed, :boolean, default: false
     field :awareness_seven_week_vol_1_count, :integer, default: 0
     field :awareness_seven_week_vol_1_up_to_count, :integer, default: 0
-    
+
     field :awareness_seven_week_vol_2_subscribed, :boolean, default: false
     field :awareness_seven_week_vol_2_count, :integer, default: 0
     field :awareness_seven_week_vol_2_up_to_count, :integer, default: 0
-    
+
     field :awareness_seven_week_vol_3_subscribed, :boolean, default: false
     field :awareness_seven_week_vol_3_count, :integer, default: 0
     field :awareness_seven_week_vol_3_up_to_count, :integer, default: 0
-    
+
     field :awareness_seven_week_vol_4_subscribed, :boolean, default: false
     field :awareness_seven_week_vol_4_count, :integer, default: 0
     field :awareness_seven_week_vol_4_up_to_count, :integer, default: 0
@@ -66,7 +69,7 @@ defmodule Nfd.Account.Subscriber do
     [
       :subscriber_email,
       :subscribed,
-      
+
       :free_active,
       :seven_day_kickstarter_subscribed,
       :seven_day_kickstarter_count,
@@ -143,7 +146,7 @@ defmodule Nfd.Account.Subscriber do
     # TODO: Test this and see if it works
     host = if Mix.env() == :dev, do: "localhost", else: "neverfapdeluxe.com"
     user = Account.get_user_email(subscriber.subscriber_email)
-    patreon_access = NfdWeb.Patreon.fetch_patreon(host, user)
+    patreon_access = Patreon.fetch_patreon(host, user)
     has_paid_for_collection = Collection.has_paid_for_collection(collection, %{ collections_access_list: Account.list_collection_access_by_user_id(user.id) })
     if has_paid_for_collection != nil or patreon_access.tier_access_list |> Enum.find(&(&1 == :courses_access)), do: true, else: false
 

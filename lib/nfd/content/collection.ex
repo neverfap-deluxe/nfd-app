@@ -48,11 +48,11 @@ defmodule Nfd.Content.Collection do
     [:free_active, :meditation_active, :awareness_active]
       |> Enum.reduce(%{}, fn active_property, acc ->
         subscribed_property = Map.get(subscriber, active_property)
-        if subscribed_property != nil or subscribed_property != "" do 
+        if subscribed_property != nil or subscribed_property != "" do
           collection = FetchCollectionUtil.page_symbol_subscribed_to_slug(subscribed_property) |> Content.get_collection_slug_with_files()
           acc |> Map.merge(%{ active_property => collection })
-        else 
-          acc
+        else
+          acc |> Map.merge(%{ active_property => false })
         end
       end)
   end
@@ -60,7 +60,7 @@ defmodule Nfd.Content.Collection do
   def get_purchased_collections(user_collections, type, is_purchased) do
     Content.list_collections_with_type(type)
       |> Enum.filter(fn (collection) ->
-        if is_purchased do 
+        if is_purchased do
           Enum.find(user_collections.collections_access_list, &(&1.collection.id == collection.id))
         else
           !Enum.find(user_collections.collections_access_list, &(&1.collection.id == collection.id))
@@ -70,9 +70,9 @@ defmodule Nfd.Content.Collection do
 
   def get_single_dashboard_collection(acc, symbol, collection_slug, user_collections) do
     collection = Content.get_collection_slug_with_files!(collection_slug)
-    
+
     sorted_files =
-      collection.files 
+      collection.files
         |> Enum.sort(fn(a, b) ->
           a_new = a.description |> String.split(" ") |> List.last() |> String.to_integer()
           b_new = b.description |> String.split(" ") |> List.last() |> String.to_integer()

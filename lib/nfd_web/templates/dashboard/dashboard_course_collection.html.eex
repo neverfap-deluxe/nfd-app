@@ -1,6 +1,6 @@
 <% has_premium_rights = has_premium_access(@dashboard_collections.collection, @user_collections, :courses_access) %>
 
-<div class="dashboard__course__collection">
+<div class="dashboard__collection">
   <h2 class="dashboard__main__title dashboard__main__title--email"><%= @dashboard_collections.collection.display_name %></h2>
 
   <div class="dashboard__main__back__container">
@@ -27,11 +27,28 @@
   <div id="information" class="dashboard__main__area">
     <div class="dashboard__main__area__content">
       <h2 class="dashboard__main__area__content__title">Information</h2>
+      <%
+        collection_count =
+          case Map.get(@user_collections.active_collections, :collection_active) do
+            "seven_day_kickstarter_subscribed" -> :seven_day_kickstarter_count
+          end
+        collection_total =
+          case Map.get(@user_collections.active_collections, :collection_active) do
+            "seven_day_kickstarter_subscribed" -> 7
+          end
+        collection_module = @dashboard_modules.collection.files |> Enum.find(&(&.description |> String.split(" ") |> List.last() |> String.to_integer() == collection_count))
+      %>
 
       <p><b>Landing page:</b> <a class="link" href="/<%= @dashboard_collections.collection.slug %>">link</a></p>
-      <!-- NOTE: Show stats for the course, like number of emails sent. When they unsubscribed. Subscribed etc. Maybe, I dunno. -->
-      <!-- TODO: Show day up to -->
-      <!-- <p>Purchased Date: </p> -->
+        @user_collections.active_collections
+
+      <p>Total Days: <%= free_total %></p>
+      <p>Day: <%= Map.get(@user_collections.subscriber, free_count) %></p>
+      <p>Module: <%= free_module.display_name %></p>
+      <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, free_course.slug, free_module.slug) %>"></a></p>
+
+      <%# Subscription emails log here %>
+      <%# Purchase date %>
 
       <%= if has_premium_rights do %>
         <%= partial "dashboard/subscribe_course.html", %{ conn: @conn, collection: @collection, subscribed: Map.get(@user_collections.subscriber, @dashboard_collections.subscriber_property), subscribed_property: @dashboard_collections.subscriber_property, user_collections: @user_collections } %>
@@ -55,7 +72,7 @@
             <p>You purchased this course on the <%= Enum.find(@user_collections.collections_access_list, &(&1.collection.id == @dashboard_collections.collection.id)) |> Map.get(:created_at) %></p>
           </div>
         <% end %>
-      
+
         <%= if patreon_access_list(@user_collections, :courses_access) do %>
           <div class="dashboard__main__area">
             <p>You have access to this course via your Patreon tier.</p>
