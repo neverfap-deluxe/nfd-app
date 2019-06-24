@@ -1,5 +1,4 @@
 <div class="available__subscriptions__container">
-<!-- TODO: This needs to be expanded to include paid ebooks -->
 <!-- Patreon List -->
   <%= if patreon_access_list(@user_collections, :courses_access) do %>
     <%= Enum.map(@dashboard_collections.courses, fn(course) -> %>

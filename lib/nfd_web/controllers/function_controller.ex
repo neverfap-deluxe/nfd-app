@@ -20,7 +20,7 @@ defmodule NfdWeb.FunctionController do
 
   # SUBSCRIPTION
 
-  def change_subscription_dashboard_func(conn, %{"subscribed" => subscribed, "user_id" => user_id, "subscribed_property" => subscribed_property}) do
+  def change_subscription_dashboard_func(conn, %{"subscribed" => subscribed, "user_id" => user_id, "collection_id" => collection_id, "subscribed_property" => subscribed_property}) do
     subscribed_property_atom = String.to_atom(subscribed_property)
 
     case Account.get_subscriber_user_id(user_id) do
@@ -28,7 +28,11 @@ defmodule NfdWeb.FunctionController do
         redirect_back(conn, 1)
 
       subscriber ->
-        # TODO: Here is where it needs to check to see if they're already subscribed to other emails. Oh wait, this is that function.
+        # TODO: check if user has paid fro the thing.
+        collections_access_list = Map.get(user, :id) |> Account.list_collection_access_by_user_id()
+
+        collections
+        # TODO: Server-Side Validation to ensure they haven't done a cheeky and tried to game it. Here is where it needs to check to see if they're already subscribed to other emails. Oh wait, this is that function.
         # NOTE: Perhaps the UI simply shouldn't allow them to update their subscriptions, because at this point it's a bit pointless.
         if subscribed == "true",
           do: Account.update_subscriber(subscriber, %{subscribed_property_atom => false})

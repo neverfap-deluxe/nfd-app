@@ -4,10 +4,8 @@
     <p>We offer payment via Paypal or Credit Card.</p>
     <p>The Purchase button will open a pop-up modal to Stripe Checkout, which will securely handle your Credit Card details via the Stripe API so your Credit Card information remains 100% secure.</p>
     <p>The Paypal button will also open a pop-up modal for you to login to your Paypal account, where you can simply confirm the payment.</p>
-    <!-- <p>Upon payment you will be returned to the dashboard, and you'll be able to access this course.</p> -->
   </div>
 
-  <!-- TODO: This fails because we are using both .course and this should just be .collection - It would simplify things dramatically. p -->
   <div class="dashboard__main__payment__course_information">
     <h3>Course: <%= @dashboard_collections_collection.collection.display_name %></h3>
     <h3>Price: $<%= @dashboard_collections_collection.collection.price %></h3>

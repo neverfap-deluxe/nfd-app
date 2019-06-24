@@ -14,7 +14,7 @@
   %>
   <!-- TODO: Not sure about this, but too tired to figure it out atm. -->
   <%= if @collection == %{} or @subscribed == true or Map.get(@user_collections.subscriber, course_active_type) === @collection.active_type do %>
-    <a class="button subscribe__button" href="<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_collections.user.id, subscribed_property: @subscribed_property) %>"><%= subscribed_status_text @subscribed %></a>
+    <a class="button subscribe__button" href="<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, collection_id: Map.get(@collection, :id), user_id: @user_collections.user.id, subscribed_property: @subscribed_property) %>"><%= subscribed_status_text @subscribed %></a>
   <% else %>
     <a id="subscribe_course_id" class="button subscribe__button"><%= subscribed_status_text @subscribed %></a>
   <% end %>
@@ -29,7 +29,7 @@
   <p>Please read here to learn more.</p>
   <p>I would recommend </p>
 
-  <a href="<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_collections.user.id, subscribed_property: @subscribed_property) %>" class="button subscribe__button">Subscribe me anyway!</a>
+  <a href="<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_collections.user.id, collection_id: Map.get(@collection, :id), subscribed_property: @subscribed_property) %>" class="button subscribe__button">Subscribe me anyway!</a>
 </div>
 
 <script>
