@@ -1,9 +1,9 @@
 <div class="dashboard__collection">
-  <h2 class="dashboard__main__title">Courses</h2>
+  <h2 class="dashboard__title">Courses</h2>
   <%= partial "dashboard/main_back_container.html", %{ conn: @conn, route: :dashboard, text: "Back to Dashboard", show_email_timer: false } %>
 
-  <div class="dashboard__main__area">
-    <div class="dashboard__main__area__content">
+  <div class="dashboard__section">
+    <div class="dashboard__section__content">
       <%= partial "dashboard/collection_list.html", %{ conn: @conn, collections: @dashboard_collections.courses, user_collections: @user_collections, type: :dashboard_course_collection } %>
     </div>
   </div>

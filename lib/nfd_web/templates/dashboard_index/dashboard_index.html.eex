@@ -1,0 +1,9 @@
+<ul class="dashboard__index">
+  <li class="link"><a href="#link_your_patreon">Link Your Patreon Account</a></li>
+  <li class="link"><a href="#subscribed__courses">Subscribed</a></li>
+  <li class="link"><a href="#purchased__modules">Purchased</a></li>
+  <li class="link"><a href="#newsletter">Newsletter</a></li>
+  <li class="link"><a href="#courses">Courses</a></li>
+  <li class="link"><a href="#guides">Guides</a></li>
+  <li class="link"><a href="#links">Links</a></li>
+</ul>

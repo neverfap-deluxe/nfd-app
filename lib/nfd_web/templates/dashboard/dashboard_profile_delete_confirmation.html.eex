@@ -1,8 +1,8 @@
 <div class="dashboard__profile">
-    <h2 class="dashboard__main__title">Profile</h2>
+    <h2 class="dashboard__title">Profile</h2>
 
-    <div class="dashboard__main__area">
-      <div class="dashboard__main__area__content">
+    <div class="dashboard__section">
+      <div class="dashboard__section__content">
         <h3>Options</h3>
 
         <div class="profile__options__container">

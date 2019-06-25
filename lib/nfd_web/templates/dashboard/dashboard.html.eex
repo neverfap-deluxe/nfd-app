@@ -1,77 +1,60 @@
 <div class="dashboard">
-  <h2 class="dashboard__main__title">Dashboard</h2>
+  <h2 class="dashboard__title">Dashboard</h2>
 
-  <div class="dashboard__main__area">
-    <div class="dashboard__main__area__content">
-      <h2 class="dashboard__main__area__content__title">Index</h2>
-
-      <ul class="dashboard__index">
-        <li class="link"><a href="#link_your_patreon">Link Your Patreon Account</a></li>
-        <li class="link"><a href="#subscribed__courses">Subscribed</a></li>
-        <li class="link"><a href="#purchased__modules">Purchased</a></li>
-        <li class="link"><a href="#newsletter">Newsletter</a></li>
-        <li class="link"><a href="#courses">Courses</a></li>
-        <li class="link"><a href="#guides">Guides</a></li>
-        <li class="link"><a href="#links">Links</a></li>
-      </ul>
+  <div class="dashboard__section">
+    <div class="dashboard__section__content">
+      <h2 class="dashboard__section__content__title">Index</h2>
+      <%= partial "dashboard_index/dashboard_index.html", assigns %>
     </div>
   </div>
 
-  <div id="link_your_patreon" class="dashboard__main__area">
-    <div class="dashboard__main__area__content">
+  <div id="link_your_patreon" class="dashboard__section">
+    <div class="dashboard__section__content">
       <%= partial "dashboard/link_patreon.html", %{ conn: @conn, user_collections: @user_collections, api_key_collections: @api_key_collections } %>
     </div>
   </div>
 
-  <div id="subscribed__courses" class="dashboard__main__area">
-    <div class="dashboard__main__area__content">
-      <h2 class="dashboard__main__area__content__title">Subscribed</h2>
+  <div id="subscribed__courses" class="dashboard__section">
+    <div class="dashboard__section__content">
+      <h2 class="dashboard__section__content__title">Subscribed</h2>
       <%= partial "dashboard/active_collections.html", %{ conn: @conn, user_collections: @user_collections } %>
     </div>
   </div>
 
-  <div id="purchased__modules" class="dashboard__main__area">
-    <div class="dashboard__main__area__content">
-      <h2 class="dashboard__main__area__content__title">Purchased</h2>
+  <div id="purchased__modules" class="dashboard__section">
+    <div class="dashboard__section__content">
+      <h2 class="dashboard__section__content__title">Purchased</h2>
       <%= partial "dashboard/available_subscriptions.html", %{ conn: @conn, user_collections: @user_collections, collections: @dashboard_collections.courses, type: "course_collection" } %>
     </div>
   </div>
 
-  <div id="newsletter" class="dashboard__main__area">
-    <div class="dashboard__main__area__content">
-      <h2 class="dashboard__main__area__content__title">Newsletter</h2>
+  <div id="newsletter" class="dashboard__section">
+    <div class="dashboard__section__content">
+      <h2 class="dashboard__section__content__title">Newsletter</h2>
       <p>If you'd like to keep up to date on future products as they're released, please subscribe to our newsletter!</p>
       <%= partial "dashboard/subscribe_course.html", %{ conn: @conn, collection: %{}, subscribed: @user_collections.subscriber.subscribed, subscribed_property: :subscribed, user_collections: @user_collections } %>
     </div>
   </div>
 
-  <div id="courses" class="dashboard__main__area">
-    <div class="dashboard__main__area__content">
-      <h2 class="dashboard__main__area__content__title">Courses</h2>
+  <div id="courses" class="dashboard__section">
+    <div class="dashboard__section__content">
+      <h2 class="dashboard__section__content__title">Courses</h2>
       <%= partial "dashboard/collection_list.html", %{ conn: @conn, collections: @dashboard_collections.not_purchased_courses, user_collections: @user_collections, type: :dashboard_course_collection } %>
     </div>
-    <div class="dashboard__main__back__container">
-      <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, :dashboard_courses) %>">
-        All Courses
-      </a>
-    </div>
+    <%= partial "dashboard/main_back_container.html", %{ conn: @conn, route: :dashboard_courses, text: "All Courses", show_email_timer: false } %>
   </div>
 
-  <div id="guides" class="dashboard__main__area">
-    <div class="dashboard__main__area__content">
-      <h2 class="dashboard__main__area__content__title">Guides</h2>
+  <div id="guides" class="dashboard__section">
+    <div class="dashboard__section__content">
+      <h2 class="dashboard__section__content__title">Guides</h2>
       <%= partial "dashboard/collection_list.html", %{ conn: @conn, collections: @dashboard_collections.not_purchased_ebooks, user_collections: @user_collections, type: :dashboard_ebook_collection } %>
     </div>
-    <div class="dashboard__main__back__container">
-      <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, :dashboard_ebooks) %>">
-        All Guides
-      </a>
-    </div>
+    <%= partial "dashboard/main_back_container.html", %{ conn: @conn, route: :dashboard_ebooks, text: "All Guides", show_email_timer: false } %>
   </div>
 
-  <div id="links" class="dashboard__main__area">
-    <div class="dashboard__main__area__content">
-      <h2 class="dashboard__main__area__content__title">Links</h2>
+  <div id="links" class="dashboard__section">
+    <div class="dashboard__section__content">
+      <h2 class="dashboard__section__content__title">Links</h2>
       <p>Website: <a href="https://neverfapdeluxe.com">https://neverfapdeluxe.com/</a></p>
       <p>Facebook: <a href="<%= Application.get_env(:nfd, :social_facebook_url) %>"><%= Application.get_env(:nfd, :social_facebook_url) %></a></p>
       <p>Twitter: <a href="<%= Application.get_env(:nfd, :social_twitter_url) %>"><%= Application.get_env(:nfd, :social_twitter_url) %></a></p>

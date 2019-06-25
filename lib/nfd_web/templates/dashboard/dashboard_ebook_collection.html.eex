@@ -1,37 +1,29 @@
 <% has_premium_rights = has_premium_access(@dashboard_collections_collection.collection, @user_collections, :ebooks_access) and @dashboard_collections_collection.collection.premium %>
 
 <div class="dashboard__collection">
-  <h2 class="dashboard__main__title dashboard__main__title--email"><%= @dashboard_collections_collection.collection.display_name %></h2>
+  <h2 class="dashboard__title dashboard__title--email"><%= @dashboard_collections_collection.collection.display_name %></h2>
   <%= partial "dashboard/main_back_container.html", %{ conn: @conn, route: :dashboard, text: "Back to Dashboard", show_email_timer: false } %>
 
-  <div class="dashboard__main__area">
-    <div class="dashboard__main__area__content">
-      <h2 class="dashboard__main__area__content__title">Index</h2>
-
-      <ul class="dashboard__index">
-        <li class="link"><a href="#information">Information</a></li>
-        <li class="link"><a href="#modules">Modules</a></li>
-        <%= if !has_premium_rights do %>
-          <li class="link"><a href="#payment">Payment</a></li>
-        <% end %>
-      </ul>
+  <div class="dashboard__section">
+    <div class="dashboard__section__content">
+      <h2 class="dashboard__section__content__title">Index</h2>
+      <%= partial "dashboard_index/collection_index.html", %{ has_premium_rights: @has_premium_rights } %>
     </div>
   </div>
 
-  <div id="information" class="dashboard__main__area">
-    <div class="dashboard__main__area__content">
-      <h2 class="dashboard__main__area__content__title">Information</h2>
-
-      <p><b>Landing page:</b> <a class="link" href="/<%= @dashboard_collections_collection.collection.slug %>">link</a></p>
+  <div id="information" class="dashboard__section">
+    <div class="dashboard__section__content">
+      <h2 class="dashboard__section__content__title">Information</h2>
+      <%= partial "dashboard/ebook_information.html", %{ conn: @conn, dashboard_collections_collection: @dashboard_collections_collection, user_collections: @user_collections, has_premium_rights: has_premium_rights } %>
     </div>
   </div>
 
-  <div id="modules" class="dashboard__main__area">
-    <h2 class="dashboard__main__area__content__title">Modules</h2>
-    <%= partial "dashboard/file_list.html", %{ conn: @conn, collection: @dashboard_collections_collection.collection, course_slug: @dashboard_collections_collection.collection.slug, premium: has_premium_rights, type: :dashboard_ebook_file } %>
+  <div id="modules" class="dashboard__section">
+    <div class="dashboard__section__content">
+      <h2 class="dashboard__section__content__title">Modules</h2>
+      <%= partial "dashboard/file_list.html", %{ conn: @conn, collection: @dashboard_collections_collection.collection, course_slug: @dashboard_collections_collection.collection.slug, premium: has_premium_rights, type: :dashboard_ebook_file } %>
+    </div>
   </div>
 
-  <!-- Payment Module -->
   <%= partial "dashboard/payment_module.html", %{ conn: @conn, dashboard_collections_collection: @dashboard_collections_collection, has_premium_rights: has_premium_rights, api_key_collections: @api_key_collections } %>
-
 </div>

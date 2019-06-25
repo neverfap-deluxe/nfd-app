@@ -1,17 +1,17 @@
 <div class="dashboard__collection">
-  <h2 class="dashboard__main__title dashboard__main__title--email">Personal Coaching</h2>
+  <h2 class="dashboard__title dashboard__title--email">Personal Coaching</h2>
   <div class="dashboard__main__back__container">
     <a class="dashboard__main__back" href="/dashboard">
       Back to Dashboard
     </a>
   </div>
-  <div class="dashboard__main__area">
-    <div class="dashboard__main__area__content">
+  <div class="dashboard__section">
+    <div class="dashboard__section__content">
       <p></p>
     </div>
   </div>
 
-  <div class="dashboard__main__area">
+  <div class="dashboard__section">
 
   </div>
 </div>

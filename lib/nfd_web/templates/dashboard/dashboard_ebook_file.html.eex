@@ -1,9 +1,9 @@
 <div class="dashboard__collection">
-  <h2 class="dashboard__main__title"><%= @dashboard_collections.file.display_name %></h2>
+  <h2 class="dashboard__title"><%= @dashboard_collections.file.display_name %></h2>
   <%= partial "dashboard/main_back_container.html", %{ conn: @conn, route: :dashboard_ebooks, text: "Back to Guides", show_email_timer: false } %>
 
-  <div class="dashboard__main__area">
-
+  <div class="dashboard__section">
+  
     <div class="dashboard__main__collection">
 
     </div>

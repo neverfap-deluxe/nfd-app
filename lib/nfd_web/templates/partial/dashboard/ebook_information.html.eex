@@ -1,0 +1,3 @@
+<div class="dashboard__course__information">
+  <p><b>Landing page:</b> <a class="link" href="/<%= @dashboard_collections_collection.collection.slug %>">link</a></p>
+</div>

@@ -42,7 +42,7 @@
 
   background: rgb(230, 229, 229);
 
-  .dashboard__main__title {
+  .dashboard__title {
     background: white;
     border: 4px solid #00ffee;
     padding: 3rem;
@@ -52,7 +52,7 @@
     margin-bottom: 3rem;
   }
 
-  .dashboard__main__title--email {
+  .dashboard__title--email {
   }
 }
 
@@ -80,7 +80,7 @@
   }
 }
 
-.dashboard__main__area {
+.dashboard__section {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -94,11 +94,11 @@
   background: white;
 
 
-  .dashboard__main__area__content {
+  .dashboard__section__content {
     width: 100%;
     margin-bottom: 2rem;
 
-    .dashboard__main__area__content__title {
+    .dashboard__section__content__title {
       margin-top: 1.5rem;
       margin-bottom: 1.5rem;
     }
@@ -197,7 +197,7 @@
   /* margin-top: 1.6rem; */
   display: flex;
   align-items: center;
-  
+
   font-family: 'Lato', sans-serif;
   text-align: center;
   color: black;
@@ -216,7 +216,7 @@
 
 @media screen and (min-width: 420px) {
   .dashboard__collection {
-    padding: 0.5rem; 
+    padding: 0.5rem;
   }
   .hub {
   }
@@ -258,9 +258,9 @@
       flex-direction: row;
     }
   }
-  .dashboard__main__area {
+  .dashboard__section {
     padding: 2rem;
-    .dashboard__main__area__content {
+    .dashboard__section__content {
       width: 600px;
     }
   }
