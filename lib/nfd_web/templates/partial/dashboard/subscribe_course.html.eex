@@ -24,11 +24,6 @@
 <div class="subscribe_course__modal">
 
   <!-- TODO: If there is another active_type, that means there's another collection I need to fetch in the database first. -->
-  <p>You are currently subscribed to the module <%= @collection |> Map.get(:display_name) %>.</p>
-  <p>The system only allows you to subscribe to one meditation, one awareness and one free module at a time, to ensure that you're sticking to the process and are only focusing your attention on mastering one targeted exercise at a time, which is vital to the ensuring this program works.</p>
-  <p>When you switch subscriptions, you don't lose the day you got up to, you simply switch which exercise you're up to for that module type.</p>
-  <p>Please read here to learn more.</p>
-  <p>I would recommend </p>
 
   <a href="<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_collections.user.id, collection_id: Map.get(@collection, :id), subscribed_property: @subscribed_property) %>" class="button subscribe__button">Subscribe me anyway!</a>
 </div>
@@ -38,7 +33,14 @@
   subscribe_course_id.onclick = function(event) {
     Swal.fire({
       title: 'Are you sure you want to subscribe?',
-      text: "You won't be able to revert this!",
+      html: `
+        <p>You are currently subscribed to the module <%= @collection |> Map.get(:display_name) %>.</p>
+        <p>The system only allows you to subscribe to one meditation, one awareness and one free module at a time, to ensure that you're sticking to the process and are only focusing your attention on mastering one targeted exercise at a time, which is vital to the ensuring this program works.</p>
+        <p>When you switch subscriptions, you don't lose the day you got up to, you simply switch which exercise you're up to for that module type.</p>
+        <p>Please read here to learn more.</p>
+        <p>I would recommend </p>
+      `,
+      <%# text: "You won't be able to revert this!", %>
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -46,10 +48,19 @@
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.value) {
-        Swal.fire(
+        swalWithBootstrapButtons.fire(
           'Deleted!',
           'Your file has been deleted.',
           'success'
+        )
+      } else if (
+        // Read more about handling dismissals
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelled',
+          'Your imaginary file is safe :)',
+          'error'
         )
       }
     })
