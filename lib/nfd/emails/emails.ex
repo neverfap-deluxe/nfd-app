@@ -107,6 +107,7 @@ defmodule Nfd.Emails do
       {:ok, _subscription_email} ->
         # TODO: Figure out a way to update this value.
         # up_to_count_property
+        # also, active type property needs to change as well 
         case day_count == subscription_day_limit do
           true -> Account.update_subscriber(subscriber, %{ count_property => 0, subscribed_property => false })
           false -> Account.update_subscriber(subscriber, %{ count_property => Map.fetch!(subscriber, count_property) + 1 })

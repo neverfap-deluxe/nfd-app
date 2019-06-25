@@ -4,6 +4,7 @@
   <!-- Condition 1: Dashboard, no collection -->
   <!-- Condition 2: Collection already subscribed to -->
   <!-- Condition 3: -->
+  
   <%
     course_active_type =
       case Map.get(@collection, :active_type) do
@@ -12,10 +13,21 @@
         "meditation_active_type" -> :meditation_active
         _ -> nil
       end
+    IO.inspect course_active_type
+    IO.inspect Map.get(@user_collections.subscriber, course_active_type)
+    IO.inspect @subscribed_property
   %>
+  <!-- NOTE: It also needs to check if the person has reached the valid up_to amount, because their active_course value will still be the same. Actual, we need to get rid of that, sorry, I mean build that into the system. -->
+
   <!-- TODO: Not sure about this, but too tired to figure it out atm. -->
-  <%= if @collection == %{} or @subscribed == true or Map.get(@user_collections.subscriber, course_active_type) === Map.get(@collection, :active_type) do %>
-    <a class="button subscribe__button" href="<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, collection_id: Map.get(@collection, :id), user_id: @user_collections.user.id, subscribed_property: @subscribed_property) %>"><%= subscribed_status_text @subscribed %></a>
+  <% no_collection = @collection == %{} %>
+  <% user_is_subscribed = @subscribed == true %>
+  <% this_course_is_active_type = Map.get(@user_collections.subscriber, course_active_type) === @subscribed_property %>
+
+  <%= if no_collection do %>
+    <%= if user_is_subscribed and this_course_is_active_type do %>
+      <a class="button subscribe__button" href="<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, collection_id: Map.get(@collection, :id), user_id: @user_collections.user.id, subscribed_property: @subscribed_property) %>"><%= subscribed_status_text @subscribed %></a>
+    <% end %>
   <% else %>
     <a id="subscribe_course_id" class="button subscribe__button"><%= subscribed_status_text @subscribed %></a>
   <% end %>
@@ -36,8 +48,8 @@
         title: 'Are you sure you want to subscribe?',
         html: `
           <p>You are currently subscribed to the module <%= @collection |> Map.get(:display_name) %>.</p>
-          <p>The system only allows you to subscribe to one meditation, one awareness and one free module at a time, to ensure that you're sticking to the process and are only focusing your attention on mastering one targeted exercise at a time, which is vital to the ensuring this program works.</p>
-          <p>When you switch subscriptions, you don't lose the day you got up to, you simply switch which exercise you're up to for that module type.</p>
+          <p>The system only allows you to subscribe to one course type at a time, to ensure that you're sticking to the process and are only focusing your attention on mastering one targeted exercise at a time.</p>
+          <p>When you switch subscriptions, you don't lose your progress, however you will be unsubscribed from the subscribed course.</p>
           <p>Please read here to learn more.</p>
           <p>I would recommend </p>
         `,

@@ -5,6 +5,7 @@ defmodule NfdWeb.DashboardController do
   alias NfdWeb.FetchAccess
 
   def dashboard(conn, _params), do: Fetch.fetch_dashboard(conn, :dashboard, "", "", FetchAccess.fetch_access_array(:dashboard))
+  def dashboard_faq(conn, _params), do: Fetch.fetch_dashboard(conn, :dashboard_faq, "", "", FetchAccess.fetch_access_array(:dashboard_faq))
   def dashboard_coaching(conn, _params), do: Fetch.fetch_dashboard(conn, :dashboard_coaching, "", "", FetchAccess.fetch_access_array(:dashboard_coaching))
 
   def dashboard_courses(conn, _params), do: Fetch.fetch_dashboard(conn, :dashboard_courses, "", "", FetchAccess.fetch_access_array(:dashboard_courses))

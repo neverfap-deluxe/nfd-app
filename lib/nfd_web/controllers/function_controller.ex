@@ -33,7 +33,7 @@ defmodule NfdWeb.FunctionController do
           if subscribed == "false", do: Account.update_subscriber(subscriber, %{subscribed_property_atom => true})
           redirect_back(conn, 1)
         end
-
+        
         # NOTE: This ensures that they've paid for the course before subscribing.
         collections_access = Account.get_collection_access_by_user_id_and_collection_id(user_id, collection_id)
 

@@ -64,4 +64,13 @@
       <p>Reddit: <a href="<%= Application.get_env(:nfd, :social_reddit_url) %>"><%= Application.get_env(:nfd, :social_reddit_url) %></a></p>
     </div>
   </div>
+
+
+  <div id="faq" class="dashboard__section">
+    <div class="dashboard__section__content">
+      <h2 class="dashboard__section__content__title">FAQ</h2>
+      <%= partial "dashboard/main_back_container.html", %{ conn: @conn, route: :dashboard_faq, text: "FAQ", show_email_timer: false } %>
+    </div>
+  </div>
+  
 <div>

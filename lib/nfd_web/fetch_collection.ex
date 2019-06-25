@@ -200,14 +200,14 @@ defmodule NfdWeb.FetchCollection do
             b2_file_url = BackBlaze.get_file_contents(file_with_collection.b2_file_name)
 
             if file_with_collection.type == "ebook_file" do
-              acc |> Map.merge(%{ file: file_with_collection, b2_file_url: b2_file_url, file_content: %{} })
+              acc |> Map.merge(%{ file: file_with_collection |> Map.merge(%{ b2_file_url: b2_file_url }), file_content: %{} })
             else
               case apply(ContentAPI, FetchCollectionUtil.collection_slug_to_page_symbol(collection_slug), [client, file_slug]) do
                 {:ok, response} ->
-                  acc |> Map.merge(%{ file: file_with_collection, b2_file_url: b2_file_url, file_content: response.body["data"] })
+                  acc |> Map.merge(%{ file: file_with_collection |> Map.merge(%{ b2_file_url: b2_file_url }), file_content: response.body["data"] })
                 {:error, error} ->
                   IO.inspect error
-                  acc |> Map.merge(%{ file: file_with_collection, b2_file_url: b2_file_url, file_content: %{} })
+                  acc |> Map.merge(%{ file: file_with_collection |> Map.merge(%{ b2_file_url: b2_file_url }), file_content: %{} })
               end
             end
 

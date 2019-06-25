@@ -17,7 +17,7 @@
     </p>
   <% end %>
   <h2 class="dashboard__section__content__title">Link Your Patreon Account</h2>
-  <p>Recieve all the benefits of your Patron tier!</p>
+  <p>Recieve all the benefits of your Patron tier, including free access to guides and courses!</p>
   <p>Otherwise, learn about the benefits you receive by become a Patron!</p>
 
   <div class="dashboard__button__collection">

@@ -1,0 +1,54 @@
+<div class="dashboard__collection">
+  <h2 class="dashboard__title">FAQ</h2>
+  <%= partial "dashboard/main_back_container.html", %{ conn: @conn, route: :dashboard, text: "Back to Dashboard", show_email_timer: false } %>
+
+  <div class="dashboard__section">
+    <div class="dashboard__section__content">
+      <h2 class="dashboard__section__content__title">Index</h2>
+      <%= partial "dashboard_index/dashboard_faq_index.html", %{} %>
+    </div>
+  </div>
+
+  <div id="access__modules" class="dashboard__section">
+    <div class="dashboard__section__content">
+      <h2>Why can't I access some modules?</h2>
+      <p>Modules are made available to you via email, or at the very least, when the email is scheduled if you only intend to use this website to access these modules.</p>
+      <h3><b>Which is to say that the modules are made available as per the frequency of the course.</b></h3>
+      <p>So in the beginning, you usually will only have one module available to you, however let's say you've subscribed to the <b>10 Day Meditation Primer</b>.</p>
+      <p>Because it is daily, you will receive access to one module each day, as per the timer that is on each course page.</p>
+      <p>This is to ensure that you follow the program as intended, and you actually take the time to explore these exercises in full.</p>
+    </div>
+  </div>
+
+  <div id="why__cant__subscribe" class="dashboard__section">
+    <div class="dashboard__section__content">
+      <h2>Why can't I subscribe to all my courses?</h2>
+      
+      <p>The courses are divided in three different types.</p>
+      <p>There are <b>Free Courses</b> which essentially includes The Seven Day NeverFap Deluxe Kickstarter, which is provided to you automatically. (cause I'm awesome like that)</p>
+      <p>There are <b>Meditation Courses</b> which are recorded guided meditations, which help you meditate and develop that skill.</p>
+      <p>Then there are <b>Awareness Courses</b> which are record awareness exercises, which help you develop your conscious capacity for awareness, amongst other things.</p>
+      <h3><b>You may only subscribe to one of each course type at the same time.</b></h3>
+      <p>Which is to say that at most, you are allowed to subscribe to three total courses - one Free Course, one Awareness Course and one Meditation Course, at the same time.</p>
+      <p>So for example, you can't subscribe to two meditation courses at the same time.</p>
+      <p>This is to ensure that you don't overload yourself with information.</p>
+    </div>
+  </div>
+
+  <div id="end__of__course" class="dashboard__section">
+    <div class="dashboard__section__content">
+      <h2>What happens once I reach the end of a course?</h2>
+      <p>Once you complete a course, you will then have full-access to all your modules and you may use them how you please.</p>
+    </div>
+  </div>
+
+  <div id="switch__course" class="dashboard__section">
+    <div class="dashboard__section__content">
+      <h2>What happens if I decide to switch courses?</h2>
+      <p>If you try to switch courses of the same type i.e. from one Meditation Course to another Meditation Course, then the system will prompt you if you would like to change.</p>
+      <h3><b>You don't lose any progress by switching courses, you remain at the day which you left the course at.</b></h3>
+      <p>The system essentially has a tracker which keeps track of which courses you're subscribed to, as well as what day you get up to.</p>
+    </div>
+  </div>
+  
+</div>

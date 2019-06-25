@@ -151,8 +151,7 @@ defmodule NfdWeb.Router do
     pipe_through [:browser, :protected]
 
     get "/dashboard", DashboardController, :dashboard
-    get "/dashboard/profile", DashboardController, :dashboard_profile
-    get "/dashboard/delete_profile", DashboardController, :dashboard_profile_delete_confirmation
+    get "/dashboard/faq", DashboardController, :dashboard_faq
 
     get "/dashboard/ebooks", DashboardController, :dashboard_ebooks
     get "/dashboard/ebooks/:collection", DashboardController, :dashboard_ebook_collection
@@ -161,6 +160,9 @@ defmodule NfdWeb.Router do
     get "/dashboard/courses", DashboardController, :dashboard_courses
     get "/dashboard/courses/:collection", DashboardController, :dashboard_course_collection
     get "/dashboard/courses/:collection/:file", DashboardController, :dashboard_course_file
+
+    get "/dashboard/profile", DashboardController, :dashboard_profile
+    get "/dashboard/delete_profile", DashboardController, :dashboard_profile_delete_confirmation
 
     # PAYMENT
     get "/purchase_success", PaymentController, :purchase_success

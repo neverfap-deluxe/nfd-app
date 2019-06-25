@@ -7,7 +7,7 @@
   <div class="dashboard__section">
     <div class="dashboard__section__content">
       <h2 class="dashboard__section__content__title">Index</h2>
-      <%= partial "dashboard_index/collection_index.html", %{ has_premium_rights: has_premium_rights } %>
+      <%= partial "dashboard_index/dashboard_collection_index.html", %{ has_premium_rights: has_premium_rights } %>
     </div>
   </div>
 
@@ -23,7 +23,7 @@
     <div class="dashboard__section__content">
       <h2 class="dashboard__section__content__title">Modules</h2>
       <!-- TODO: Write comprehensive of how this works. -->
-      <p>NOTE: Modules will become available once you complete them, or as they are delivered to you via email.</p>
+      <p>NOTE: Modules will become available once you complete them, or as they are delivered to you via email. Please <a class="link" href="<%= Routes.dashboard_path(@conn, :dashboard_faq) %>">click here</a> to learn more.</p>
       <%= partial "dashboard/file_list.html", %{ conn: @conn, collection: @dashboard_collections_collection.collection, has_premium_rights: has_premium_rights, type: :dashboard_course_file } %>
     </div>
   </div>
