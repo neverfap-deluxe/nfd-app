@@ -5,6 +5,8 @@ defmodule Nfd.Content.Collection do
   alias Nfd.Content
   alias Nfd.Content.Collection
 
+  alias Nfd.BackBlaze
+
   alias NfdWeb.FetchCollectionUtil
 
   @primary_key {:id, :binary_id, autogenerate: true}
@@ -94,6 +96,9 @@ defmodule Nfd.Content.Collection do
       |> Map.merge(%{
         files:
           collection.files
+            |> Enum.map(fn(file) ->
+              file |> Map.merge(%{ b2_file_url: BackBlaze.get_file_contents(file.b2_file_name) })
+            end)
             |> Enum.sort(fn(a, b) -> a.number > b.number end)
             |> Enum.reverse()
       })

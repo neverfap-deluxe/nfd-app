@@ -14,7 +14,7 @@ defmodule NfdWeb.FetchCollectionUtil do
 
   alias Nfd.Account.Subscriber
 
-  defp generate_seven_week_awareness_challenge_symbol(vol) do
+  def generate_seven_week_awareness_challenge_symbol(vol) do
     case vol do
       "1" -> :seven_week_awareness_vol_1_single
       "2" -> :seven_week_awareness_vol_2_single
@@ -99,17 +99,23 @@ defmodule NfdWeb.FetchCollectionUtil do
       "seven-week-awareness-challenge-vol-4" -> :seven_week_awareness_vol_4_subscribed
     end
   end
-
-
+  
   def content_symbol_to_page_symbol(content_symbol) do
     case content_symbol do 
       :article -> :articles
-      :course -> :courses
+      :practice -> :practices
       :podcast -> :podcasts
       :quote -> :quotes
       :meditation -> :meditations
       :blog -> :blogs
       :update -> :updates
+      :seven_day_kickstarter -> :seven_day_kickstarter_single
+      :ten_day_meditation -> :ten_day_meditation_single
+      :twenty_eight_day_awareness -> :twenty_eight_day_awareness_single
+      :seven_week_awareness_vol_1 -> :seven_week_awareness_vol_1_single
+      :seven_week_awareness_vol_2 -> :seven_week_awareness_vol_2_single
+      :seven_week_awareness_vol_3 -> :seven_week_awareness_vol_3_single
+      :seven_week_awareness_vol_4 -> :seven_week_awareness_vol_4_single
     end
   end
 

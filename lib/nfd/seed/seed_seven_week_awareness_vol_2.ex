@@ -40,7 +40,7 @@ defmodule Nfd.SeedSWAVOL2 do
       description: "Week 1",
       display_name: "Take Note Of The Colour Yellow",
       bucket_name: "swavol2",
-      file_url: "", number: 1,
+      b2_file_name: "", number: 1,
       premium: true,
       slug: "take-note-of-the-colour-yellow",
       collection_id: collection_id
@@ -51,7 +51,7 @@ defmodule Nfd.SeedSWAVOL2 do
       description: "Week 2",
       display_name: "Dissolve Your Visual Field",
       bucket_name: "swavol2",
-      file_url: "", number: 2,
+      b2_file_name: "", number: 2,
       premium: true,
       slug: "dissolve-your-visual-field",
       collection_id: collection_id
@@ -62,7 +62,7 @@ defmodule Nfd.SeedSWAVOL2 do
       description: "Week 3",
       display_name: "Catch Out Your Judgements",
       bucket_name: "swavol2",
-      file_url: "", number: 3,
+      b2_file_name: "", number: 3,
       premium: true,
       slug: "catch-out-your-judgements",
       collection_id: collection_id
@@ -73,7 +73,7 @@ defmodule Nfd.SeedSWAVOL2 do
       description: "Week 4",
       display_name: "What Can Your Hand Do?",
       bucket_name: "swavol2",
-      file_url: "", number: 4,
+      b2_file_name: "", number: 4,
       premium: true,
       slug: "what-can-your-hand-do",
       collection_id: collection_id
@@ -84,7 +84,7 @@ defmodule Nfd.SeedSWAVOL2 do
       description: "Week 5",
       display_name: "Stop Absolutely Everything You're Doing",
       bucket_name: "swavol2",
-      file_url: "", number: 5,
+      b2_file_name: "", number: 5,
       premium: true,
       slug: "stop-absolutely-everything-you-are-doing",
       collection_id: collection_id
@@ -95,7 +95,7 @@ defmodule Nfd.SeedSWAVOL2 do
       description: "Week 6",
       display_name: "Developing Routine",
       bucket_name: "swavol2",
-      file_url: "", number: 6,
+      b2_file_name: "", number: 6,
       premium: true,
       slug: "developing-routine",
       collection_id: collection_id
@@ -106,7 +106,7 @@ defmodule Nfd.SeedSWAVOL2 do
       description: "Week 7",
       display_name: "Blind Attention",
       bucket_name: "swavol2",
-      file_url: "", number: 7,
+      b2_file_name: "", number: 7,
       premium: true,
       slug: "blind-attention",
       collection_id: collection_id

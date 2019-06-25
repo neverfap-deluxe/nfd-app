@@ -28,14 +28,22 @@ defmodule NfdWeb.FunctionController do
         redirect_back(conn, 1)
 
       subscriber ->
+        if (subscribed_property_atom != :subscribed or subscribed_property_atom != :seven_day_kickstarter_subscribed) do
+          if subscribed == "true", do: Account.update_subscriber(subscriber, %{subscribed_property_atom => false})
+          if subscribed == "false", do: Account.update_subscriber(subscriber, %{subscribed_property_atom => true})
+          redirect_back(conn, 1)
+        end
+
         # NOTE: This ensures that they've paid for the course before subscribing.
         collections_access = Account.get_collection_access_by_user_id_and_collection_id(user_id, collection_id)
 
         if collections_access do 
           if subscribed == "true", do: Account.update_subscriber(subscriber, %{subscribed_property_atom => false})
           if subscribed == "false", do: Account.update_subscriber(subscriber, %{subscribed_property_atom => true})
-          redirect_back(conn, 1)
         end
+
+        # MAYBE: An error telling them that it wasn't successful. 
+        redirect_back(conn, 1)
     end
   end
 

@@ -42,7 +42,7 @@ defmodule Nfd.SeedEBOOKS do
       description: "epub",
       display_name: "The NeverFap Deluxe Bible epub",
       bucket_name: "bible",
-      file_url: "", 
+      b2_file_name: "", 
       number: 666, # TODO
       premium: true,
       slug: "seven-day-neverfap-deluxe-kickstarter-epub",

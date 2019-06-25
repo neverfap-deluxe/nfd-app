@@ -45,32 +45,32 @@ defmodule NfdWeb.FetchAccess do
 
       # CONTENT
       :articles -> [:articles]
-      :article -> [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset, :previous_next]
+      :article -> [:articles, :article, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset, :previous_next]
 
       :practices -> [:practices]
-      :practice -> [:articles, :practices, :course, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset, :previous_next]
+      :practice -> [:articles, :practices, :practice, :course, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset, :previous_next]
 
       :courses -> [:courses]
-      :course -> [:articles, :practices, :comments, :comment_form_changeset, :previous_next]
+      :course -> [:articles, :practices, :course, :comments, :comment_form_changeset, :previous_next]
 
       :podcasts -> [:podcasts]
-      :podcast -> [:podcasts, :comments, :comment_form_changeset, :previous_next]
+      :podcast -> [:podcasts, :podcast, :comments, :comment_form_changeset, :previous_next]
 
       :quotes -> [:quotes]
-      :quote -> [:quotes, :comments, :comment_form_changeset, :previous_next]
+      :quote -> [:quotes, :quote, :comments, :comment_form_changeset, :previous_next]
 
       :meditations -> [:meditations]
-      :meditation -> [:meditations, :comments, :comment_form_changeset, :previous_next]
+      :meditation -> [:meditations, :meditation, :comments, :comment_form_changeset, :previous_next]
 
       :blogs -> [:blogs]
-      :blog -> [:blogs, :comments, :comment_form_changeset, :previous_next]
+      :blog -> [:blogs, :blog, :comments, :comment_form_changeset, :previous_next]
 
       :updates -> [:updates]
-      :update -> [:updates, :comments, :comment_form_changeset, :previous_next]
+      :update -> [:updates, :update, :comments, :comment_form_changeset, :previous_next]
 
       # CONTENT EMAIL
       :seven_day_kickstarter ->  [:seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :seven_day_kickstarter_single -> [:seven_day_kickstarter, :course]
+      :seven_day_kickstarter_single -> [:seven_day_kickstarter_single, :course]
 
       :ten_day_meditation -> [:ten_day_meditation]
       :ten_day_meditation_single -> [:ten_day_meditation_single, :course]

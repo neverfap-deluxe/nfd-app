@@ -53,11 +53,12 @@ defmodule NfdWeb.FetchCollection do
       %{},
       fn symbol, acc ->
         case symbol do
-          symbol when symbol in [:article, :course, :podcast, :quote, :meditation, :blog, :update] ->
-            acc
-
           symbol when symbol in [:seven_day_kickstarter_single, :ten_day_meditation_single, :twenty_eight_day_awareness_single, :seven_week_awareness_vol_1_single, :seven_week_awareness_vol_2_single, :seven_week_awareness_vol_3_single, :seven_week_awareness_vol_4_single] ->
-            acc |> Map.merge(%{ symbol => FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol) |> Content.get_collection_slug_with_files!() |> Collection.get_collection_with_decoration(user_collections) })
+            acc |> Map.merge(%{ collection: FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol) |> Content.get_collection_slug_with_files!() |> Collection.get_collection_with_decoration(user_collections) })
+
+          symbol when symbol in [:article, :podcast, :quote, :meditation, :blog, :update] ->
+            IO.inspect 'inspect me'
+            acc |> Map.merge(%{ collection: %{} })
 
           :practice ->
             # FUTURE: Also put in the actual practice here, so we don't need to collect it in the fetch thing via apply()
@@ -70,15 +71,14 @@ defmodule NfdWeb.FetchCollection do
 
             case apply(ContentAPI, FetchCollectionUtil.generate_seven_week_awareness_challenge_symbol(item["vol"]), [client, content_slug]) do
               {:ok, response} ->
-                acc |> Map.merge(%{ practice: Map.merge(content_collections) |> Map.merge(%{ additional_item: response.body["data"]}) })
+                acc |> Map.merge(%{ collection: content_collections |> Map.merge(%{ additional_item: response.body["data"]}) })
 
               {:error, _error} ->
-                acc |> Map.merge(%{ practice: Map.merge(content_collections) |> Map.merge(%{ additional_item: %{}}) })
+                acc |> Map.merge(%{ collection: content_collections |> Map.merge(%{ additional_item: %{}}) })
             end
 
-
           :previous_next ->
-            page_symbol = FetchCollectionUtil.content_symbol_to_page_symbol(page_symbol)
+            page_symbol = FetchCollectionUtil.content_symbol_to_page_symbol(page_symbol)            
             { previous_item, next_item } = Map.get(page_collections, page_symbol) |> Page.previous_next_item(item)
             acc |> Map.merge(%{ previous_item: previous_item, next_item: next_item })
 
@@ -163,7 +163,9 @@ defmodule NfdWeb.FetchCollection do
 
   def dashboard_collections_collection(client, collection_array, user_collections, collection_slug) do
     # NOTE: Can maybe do some validation here, to see if it even gets the valid collection based on the collection_slug that has been passed.
-    collection = Content.get_collection_slug_with_files!(collection_slug)
+    collection = 
+      Content.get_collection_slug_with_files!(collection_slug)
+        
     Enum.reduce(
       collection_array,
       %{},
@@ -195,18 +197,17 @@ defmodule NfdWeb.FetchCollection do
       fn symbol, acc ->
         case symbol do
           symbol when symbol in [:ebook_file, :course_file] ->
-            # TODO BackBlaze to get file_url from BackBlaze. Test it.
-            # backblaze_file_url = BackBlaze.get_file_contents("hello.png")
-            backblaze_file_url = ""
+            b2_file_url = BackBlaze.get_file_contents(file_with_collection.b2_file_name)
+
             if file_with_collection.type == "ebook_file" do
-              acc |> Map.merge(%{ file: file_with_collection, backblaze_file_url: backblaze_file_url, file_content: %{} })
+              acc |> Map.merge(%{ file: file_with_collection, b2_file_url: b2_file_url, file_content: %{} })
             else
               case apply(ContentAPI, FetchCollectionUtil.collection_slug_to_page_symbol(collection_slug), [client, file_slug]) do
                 {:ok, response} ->
-                  acc |> Map.merge(%{ file: file_with_collection, backblaze_file_url: backblaze_file_url, file_content: response.body["data"] })
+                  acc |> Map.merge(%{ file: file_with_collection, b2_file_url: b2_file_url, file_content: response.body["data"] })
                 {:error, error} ->
                   IO.inspect error
-                  acc |> Map.merge(%{ file: file_with_collection, backblaze_file_url: backblaze_file_url, file_content: %{} })
+                  acc |> Map.merge(%{ file: file_with_collection, b2_file_url: b2_file_url, file_content: %{} })
               end
             end
 

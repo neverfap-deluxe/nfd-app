@@ -41,7 +41,7 @@ defmodule Nfd.SeedSDK do
       description: "",
       display_name: "7 Day NeverFap Deluxe Kickstarter ebook",
       bucket_name: "sdk",
-      file_url: "", number: 666, 
+      b2_file_name: "", number: 666, 
       premium: false,
       slug: "seven-day-neverfap-deluxe-kickstarter-ebook",
       collection_id: collection_id
@@ -53,7 +53,7 @@ defmodule Nfd.SeedSDK do
       description: "Day 0",
       display_name: "The Introduction",
       bucket_name: "sdk",
-      file_url: "", number: 0, 
+      b2_file_name: "", number: 0, 
       premium: false,
       slug: "introduction",
       collection_id: collection_id
@@ -65,7 +65,7 @@ defmodule Nfd.SeedSDK do
       description: "Day 1",
       display_name: "The Trust",
       bucket_name: "sdk",
-      file_url: "", number: 1, 
+      b2_file_name: "", number: 1, 
       premium: false,
       slug: "the-trust",
       collection_id: collection_id
@@ -77,7 +77,7 @@ defmodule Nfd.SeedSDK do
       description: "Day 2",
       display_name: "The Awareness",
       bucket_name: "sdk",
-      file_url: "", number: 2, 
+      b2_file_name: "", number: 2, 
       premium: false,
       slug: "the-awareness",
       collection_id: collection_id
@@ -89,7 +89,7 @@ defmodule Nfd.SeedSDK do
       description: "Day 3",
       display_name: "The Calmness",
       bucket_name: "sdk",
-      file_url: "", number: 3, 
+      b2_file_name: "", number: 3, 
       premium: false,
       slug: "the-calmness",
       collection_id: collection_id
@@ -101,7 +101,7 @@ defmodule Nfd.SeedSDK do
       description: "Day 4",
       display_name: "The Meditation",
       bucket_name: "sdk",
-      file_url: "", number: 4, 
+      b2_file_name: "", number: 4, 
       premium: false,
       slug: "the-meditation",
       collection_id: collection_id
@@ -113,7 +113,7 @@ defmodule Nfd.SeedSDK do
       description: "Day 5",
       display_name: "The Relapse",
       bucket_name: "sdk",
-      file_url: "", number: 5, 
+      b2_file_name: "", number: 5, 
       premium: false,
       slug: "the-relapse",
       collection_id: collection_id
@@ -125,7 +125,7 @@ defmodule Nfd.SeedSDK do
       description: "Day 6",
       display_name: "The Consistency",
       bucket_name: "sdk",
-      file_url: "", number: 6, 
+      b2_file_name: "", number: 6, 
       premium: false,
       slug: "the-consistency",
       collection_id: collection_id
@@ -137,7 +137,7 @@ defmodule Nfd.SeedSDK do
       description: "Day 7",
       display_name: "The Community",
       bucket_name: "sdk",
-      file_url: "", number: 7, 
+      b2_file_name: "", number: 7, 
       premium: false,
       slug: "the-community",
       collection_id: collection_id

@@ -4,7 +4,7 @@
   <div class="dashboard__section">
     <div class="dashboard__section__content">
       <h2>I'm sorry buddy!</h2>
-      <p>But the <b><%= @dashboard_collections_collection.collection.display_name %></b> is not yet complete!</p>
+      <p>But the <b><%= @collection.display_name %></b> is not yet complete!</p>
       <p>It will be done... at some point in the future!</p>
 
     </div>

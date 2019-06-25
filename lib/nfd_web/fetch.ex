@@ -53,8 +53,8 @@ defmodule NfdWeb.Fetch do
         changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array)
 
         conn
-          |> FetchConn.is_file_paid_for(page_symbol, user_collections, %{ collection: content_collections }, NfdWeb.PageView, "general.html", "error_page_no_access.html")
-          |> FetchConn.are_they_up_to_day(page_symbol, response.body["data"], user_collections, content_collections, NfdWeb.PageView, "general.html", "page_not_up_to.html")
+          |> FetchConn.is_file_paid_for(page_symbol, user_collections, content_collections.collection, NfdWeb.PageView, "general.html", "error_page_no_access.html")
+          |> FetchConn.are_they_up_to_day(page_symbol, response.body["data"], user_collections, content_collections.collection, NfdWeb.PageView, "general.html", "page_not_up_to.html")
           |> FetchConn.check_api_response_for_404(response.status)
           |> Page.increment_visit_count(response.body["data"])
           |> put_view(page_view)
@@ -89,7 +89,7 @@ defmodule NfdWeb.Fetch do
     dashboard_collections_collection = FetchCollection.dashboard_collections_collection(client, collection_array, user_collections, collection_slug)
 
     conn
-      |> FetchConn.is_collection_complete(page_symbol, user_collections, dashboard_collections_collection, NfdWeb.DashboardView, "hub.html", "dashboard_no_complete.html")
+      |> FetchConn.is_collection_complete(page_symbol, user_collections, dashboard_collections_collection.collection, NfdWeb.DashboardView, "hub.html", "dashboard_no_complete.html")
       |> put_flash(:info, (if user_collections.patreon_access.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."))
       |> put_view(NfdWeb.DashboardView)
       |> render("#{Atom.to_string(page_symbol)}.html", layout: {NfdWeb.LayoutView, "hub.html"}, user_collections: user_collections, dashboard_collections: dashboard_collections, dashboard_collections_collection: dashboard_collections_collection, api_key_collections: api_key_collections)
@@ -106,9 +106,9 @@ defmodule NfdWeb.Fetch do
     dashboard_collections_file = FetchCollection.dashboard_collections_file(client, collection_array, user_collections, collection_slug, file_slug)
 
     conn
-      |> FetchConn.is_collection_complete(page_symbol, user_collections, dashboard_collections_collection, NfdWeb.DashboardView, "hub.html", "dashboard_no_complete.html")
-      |> FetchConn.is_file_paid_for(page_symbol, user_collections, dashboard_collections_collection, NfdWeb.DashboardView, "hub.html", "dashboard_no_access.html")
-      |> FetchConn.are_they_up_to_day(page_symbol, Map.get(dashboard_collections_file, :file_content), user_collections, dashboard_collections_collection, NfdWeb.DashboardView, "hub.html", "dashboard_no_access_up_top.html")
+      |> FetchConn.is_collection_complete(page_symbol, user_collections, dashboard_collections_collection.collection, NfdWeb.DashboardView, "hub.html", "dashboard_no_complete.html")
+      |> FetchConn.is_file_paid_for(page_symbol, user_collections, dashboard_collections_collection.collection, NfdWeb.DashboardView, "hub.html", "dashboard_no_access.html")
+      |> FetchConn.are_they_up_to_day(page_symbol, Map.get(dashboard_collections_file, :file_content), user_collections, dashboard_collections_collection.collection, NfdWeb.DashboardView, "hub.html", "dashboard_no_access_up_top.html")
       |> put_flash(:info, (if user_collections.patreon_access.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."))
       |> put_view(NfdWeb.DashboardView)
       |> render("#{Atom.to_string(page_symbol)}.html", layout: {NfdWeb.LayoutView, "hub.html"}, user_collections: user_collections, dashboard_collections: dashboard_collections, dashboard_collections_collection: dashboard_collections_collection, dashboard_collections_file: dashboard_collections_file, api_key_collections: api_key_collections)

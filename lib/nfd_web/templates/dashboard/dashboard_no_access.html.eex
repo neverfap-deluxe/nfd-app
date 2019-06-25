@@ -5,16 +5,16 @@
     <div class="dashboard__section__content">
       <h2>I'm sorry buddy!</h2>
 
-      <p>You don't have access to the <b><%= @dashboard_collections_collection.collection.display_name %></b></p>
-      <p>This module will be available to you once you purchase the <b><%= @dashboard_collections_collection.collection.display_name %></b> for the lovely price of <b>$<%= @dashboard_collections_collection.collection.price %></b> or if you decide to become a backer on my Patron!</p>
+      <p>You don't have access to the <b><%= @collection.display_name %></b></p>
+      <p>This module will be available to you once you purchase the <b><%= @collection.display_name %></b> for the lovely price of <b>$<%= @collection.price %></b> or if you decide to become a backer on my Patron!</p>
       <p>For more information about our Patreon tiers, please read <a class="link" href="<%= Routes.page_path(@conn, :general_premium)%>">this guide</a> or head on down to the <a class="link" href="https://www.patreon.com/neverfapdeluxe">NeverFap Deluxe Patreon</a>.</p>
     </div>
 
-    <% page_type = if @dashboard_collections_collection.collection.type == "course_collection", do: :dashboard_course_collection, else: :dashboard_ebook_collection %>
+    <% page_type = if @collection.type == "course_collection", do: :dashboard_course_collection, else: :dashboard_ebook_collection %>
     <div class="dashboard__section__content">
       <div class="dashboard__main__back__container">
-        <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, page_type, @dashboard_collections_collection.collection.slug) %>">
-          Back to <b><%= @dashboard_collections_collection.collection.display_name %></b>
+        <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, page_type, @collection.slug) %>">
+          Back to <b><%= @collection.display_name %></b>
         </a>
       </div>
     </div>

@@ -71,8 +71,8 @@ defmodule Nfd.ContentTest do
   describe "files" do
     alias Nfd.Content.File
 
-    @valid_attrs %{description: "some description", display_name: "some display_name", download_count: "some download_count", file_url: "some file_url", premium: true, slug: "some slug"}
-    @update_attrs %{description: "some updated description", display_name: "some updated display_name", download_count: "some updated download_count", file_url: "some updated file_url", premium: false, slug: "some updated slug"}
+    @valid_attrs %{description: "some description", display_name: "some display_name", download_count: "some download_count", b2_file_name: "some file_url", premium: true, slug: "some slug"}
+    @update_attrs %{description: "some updated description", display_name: "some updated display_name", download_count: "some updated download_count", b2_file_name: "some updated file_url", premium: false, slug: "some updated slug"}
     @invalid_attrs %{description: nil, display_name: nil, download_count: nil, file_url: nil, premium: nil, slug: nil}
 
     def file_fixture(attrs \\ %{}) do

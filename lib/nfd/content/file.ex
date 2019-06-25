@@ -13,7 +13,7 @@ defmodule Nfd.Content.File do
     field :number, :integer 
     field :bucket_name, :string
     field :display_name, :string
-    field :file_url, :string
+    field :b2_file_name, :string
     field :premium, :boolean, default: true
     field :slug, :string
 

@@ -30,39 +30,42 @@
 
 <script>
   var subscribe_course_id = document.querySelector("#subscribe_course_id");
-  subscribe_course_id.onclick = function(event) {
-    Swal.fire({
-      title: 'Are you sure you want to subscribe?',
-      html: `
-        <p>You are currently subscribed to the module <%= @collection |> Map.get(:display_name) %>.</p>
-        <p>The system only allows you to subscribe to one meditation, one awareness and one free module at a time, to ensure that you're sticking to the process and are only focusing your attention on mastering one targeted exercise at a time, which is vital to the ensuring this program works.</p>
-        <p>When you switch subscriptions, you don't lose the day you got up to, you simply switch which exercise you're up to for that module type.</p>
-        <p>Please read here to learn more.</p>
-        <p>I would recommend </p>
-      `,
-      <%# text: "You won't be able to revert this!", %>
-      type: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-      if (result.value) {
-        swalWithBootstrapButtons.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
-        )
-      } else if (
-        // Read more about handling dismissals
-        result.dismiss === Swal.DismissReason.cancel
-      ) {
-        swalWithBootstrapButtons.fire(
-          'Cancelled',
-          'Your imaginary file is safe :)',
-          'error'
-        )
-      }
-    })
+  if (subscribe_course_id) {
+    subscribe_course_id.onclick = function(event) {
+      Swal.fire({
+        title: 'Are you sure you want to subscribe?',
+        html: `
+          <p>You are currently subscribed to the module <%= @collection |> Map.get(:display_name) %>.</p>
+          <p>The system only allows you to subscribe to one meditation, one awareness and one free module at a time, to ensure that you're sticking to the process and are only focusing your attention on mastering one targeted exercise at a time, which is vital to the ensuring this program works.</p>
+          <p>When you switch subscriptions, you don't lose the day you got up to, you simply switch which exercise you're up to for that module type.</p>
+          <p>Please read here to learn more.</p>
+          <p>I would recommend </p>
+        `,
+        <%# text: "You won't be able to revert this!", %>
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.value) {
+          swalWithBootstrapButtons.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        } else if (
+          // Read more about handling dismissals
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            'Cancelled',
+            'Your imaginary file is safe :)',
+            'error'
+          )
+        }
+      })
+    }
   }
+  
 </script>

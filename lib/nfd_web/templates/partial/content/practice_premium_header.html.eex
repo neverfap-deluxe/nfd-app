@@ -4,12 +4,12 @@
       <div class="homepage__practices__premium__header__white">
         <h2>Premium Access</h2>
         <h3>Context Audio</h3>
-        <audio controls src="<%= @content_collections.file_with_collection.file_url  %>">
+        <audio controls src="<%= @content_collections.file_with_collection.b2_file_url  %>">
           Your browser does not support the <code>audio</code> element.
         </audio>
 
         <!-- <h3>Instructional Audio</h3>
-        <audio controls src="<%= @content_collections.file_with_collection.file_url  %>">
+        <audio controls src="<%= @content_collections.file_with_collection.b2_file_url  %>">
           Your browser does not support the <code>audio</code> element.
         </audio> -->
 
