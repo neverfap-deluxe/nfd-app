@@ -2,11 +2,11 @@
 
   .dashboard__collection__file__container {
   }
-  
+
   .dashboard__collection__file {
     display: flex;
 
-    .dashboard__collection__file__info, 
+    .dashboard__collection__file__info,
     .dashboard__collection__file__download,
     .dashboard__collection__file__specific {
       display: flex;
@@ -14,7 +14,7 @@
       padding: 0.6rem;
       margin-bottom: 1rem;
       box-shadow: -5px 5px 0px 0px cyan;
-      transition: .2s box-shadow;  
+      transition: .2s box-shadow;
       margin-right: 1rem;
     }
     .dashboard__collection__file__info {
@@ -62,11 +62,18 @@
 
 @media screen and (min-width: 420px) {
   .dashboard__collection__files {
-    
+
     .dashboard__collection__file {
       .dashboard__collection__file__specific {
         display: flex;
       }
     }
+  }
+}
+
+
+.subscription__email__container {
+  .subscription__email__item {
+
   }
 }

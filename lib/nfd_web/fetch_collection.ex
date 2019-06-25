@@ -41,6 +41,7 @@ defmodule NfdWeb.FetchCollection do
           :patreon_access -> acc |> Map.merge(%{ patreon_access: patreon_access })
           :collections_access_list -> acc |> Map.merge(%{ collections_access_list: Map.get(user, :id) |> Account.list_collection_access_by_user_id() })
           :active_collections -> acc |> Map.merge(%{ active_collections: Collection.get_active_collections(subscriber) })
+          :subscription_emails -> acc |> Map.merge(%{ subscription_emails: Meta.list_subscription_emails_by_subscriber_id(subscriber.id) })
           _ -> acc
         end
       end)

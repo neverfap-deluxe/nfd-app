@@ -1,5 +1,5 @@
 <%= if @dashboard_collections_collection.collection.premium do %>
-  <%= if !has_premium_rights do %>
+  <%= if !@has_premium_rights do %>
     <div id="payment" class="dashboard__section">
       <%= partial "dashboard/campaign_payment.html", %{ dashboard_collections_collection: @dashboard_collections_collection, api_key_collections: @api_key_collections } %>
 

@@ -4,11 +4,19 @@
   <p><b>Current Day:</b> <%= @dashboard_collections_collection.collection.up_to_count %></p>
 
   <%= if @dashboard_collections_collection.collection.current_collection_module do %>
-  <p><b>Module:</b> <%= @dashboard_collections_collection.collection.current_collection_module.display_name %></p>
-  <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, @dashboard_collections_collection.collection.slug, @dashboard_collections_collection.collection. current_collection_module.slug) %>"></a></p>
+    <p><b>Module:</b> <%= @dashboard_collections_collection.collection.current_collection_module.display_name %></p>
+    <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, @dashboard_collections_collection.collection.slug, @dashboard_collections_collection.collection. current_collection_module.slug) %>"></a></p>
   <% end %>
 
-  <%# Subscription emails log here %>
+  <div class="subscription__email__container">
+    <%= Enum.map(@dashboard_collections_collection.subscription_emails, fn (subscription_email) -> %>
+      <div class="subscription__email__item">
+       <p><%= subscription_email.day %></p>
+       <p><%= subscription_email.inserted_at %></p>
+      </div>
+    <% end) %>
+  </div>
+  
   <%# Purchase date %>
 
   <%= if @has_premium_rights do %>

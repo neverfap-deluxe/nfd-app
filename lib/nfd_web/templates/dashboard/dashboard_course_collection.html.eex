@@ -14,6 +14,7 @@
   <div id="information" class="dashboard__section">
     <div class="dashboard__section__content">
       <h2 class="dashboard__section__content__title">Information</h2>
+      <%# subscription_emails %>
       <%= partial "dashboard/course_information.html", %{ conn: @conn, dashboard_collections_collection: @dashboard_collections_collection, user_collections: @user_collections, has_premium_rights: has_premium_rights } %>
     </div>
   </div>
