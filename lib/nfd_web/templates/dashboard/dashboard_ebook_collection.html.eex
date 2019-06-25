@@ -21,7 +21,7 @@
   <div id="modules" class="dashboard__section">
     <div class="dashboard__section__content">
       <h2 class="dashboard__section__content__title">Modules</h2>
-      <%= partial "dashboard/file_list.html", %{ conn: @conn, collection: @dashboard_collections_collection.collection, course_slug: @dashboard_collections_collection.collection.slug, premium: has_premium_rights, type: :dashboard_ebook_file } %>
+      <%= partial "dashboard/file_list.html", %{ conn: @conn, collection: @dashboard_collections_collection.collection, has_premium_rights: has_premium_rights, type: :dashboard_ebook_file } %>
     </div>
   </div>
 

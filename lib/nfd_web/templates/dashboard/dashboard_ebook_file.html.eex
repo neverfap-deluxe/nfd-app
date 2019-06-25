@@ -3,9 +3,8 @@
   <%= partial "dashboard/main_back_container.html", %{ conn: @conn, route: :dashboard_ebooks, text: "Back to Guides", show_email_timer: false } %>
 
   <div class="dashboard__section">
-  
     <div class="dashboard__main__collection">
-
+      <%= partial "dashboard/file_item.html", %{ conn: @conn, file: @dashboard_collections_collection.file, collection: @dashboard_collections_collection.collection, type: @type, has_premium_rights: has_premium_rights, type: :dashboard_ebook_file } %>
     </div>
   </div>
 </div>

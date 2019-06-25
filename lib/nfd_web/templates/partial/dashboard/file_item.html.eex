@@ -1,0 +1,34 @@
+<!-- TODO: Test. -->
+<div class="dashboard__collection__file">
+  <%= if @file.specific_type == "mp3" do %>
+    <div class="dashboard__collection__file__specific" href="<%= @file.file_url %>">
+      <i class="fa fa-file-audio" aria-hidden="true"></i>
+    </div>
+  <% end %>
+  <%= if @file.specific_type == "epub" do %>
+    <div class="dashboard__collection__file__specific" href="<%= @file.file_url %>">
+      <i class="fas fa-book-open" aria-hidden="true"></i> <!-- <i class="fas fa-book"></i> -->
+    </div>
+  <% end %>
+  <%= if @file.specific_type == "email" do %>
+    <div class="dashboard__collection__file__specific" href="<%= @file.file_url %>">
+      <i class="fas fa-envelope" aria-hidden="true"></i> <!--  <i class="fas fa-envelope-square"></i> -->
+    </div>
+  <% end %>
+
+  <a class="dashboard__collection__file__info" href="<%= Routes.dashboard_path(@conn, @type, @collection.slug, @file.slug) %>">
+    <p class="dashboard__collection__file__day"><%= @file.number %></p>
+    <p class="dashboard__collection__file__divider">|</p>
+    <p class="dashboard__collection__file__title"><%= @file.display_name %></p>
+  </a>
+
+  <%= if @has_premium_rights and @collection.up_to_count >= @file.number do %>
+    <div class="dashboard__collection__file__download" href="<%= @file.file_url %>">
+      <i class="fa fa-cloud-download-alt" aria-hidden="true"></i>
+    </div>
+  <% else %>
+    <div class="dashboard__collection__file__download" style="cursor: default;" href="#">
+      <i class="fa fa-lock" aria-hidden="true"></i>
+    </div>
+  <% end %>
+</div>
