@@ -16,9 +16,11 @@
     </div>
   <% end %>
 
-  <a class="dashboard__collection__file__info" href="<%= Routes.dashboard_path(@conn, @type, @collection.slug, @file.slug) %>">
-    <p class="dashboard__collection__file__day"><%= @file.number %></p>
-    <p class="dashboard__collection__file__divider">|</p>
+    <a class="dashboard__collection__file__info" href="<%= Routes.dashboard_path(@conn, @type, @collection.slug, @file.slug) %>">
+    <%= if @file.number != 666 do %>
+      <p class="dashboard__collection__file__day"><%= @file.number %></p>
+      <p class="dashboard__collection__file__divider">|</p>
+    <% end %>
     <p class="dashboard__collection__file__title"><%= @file.display_name %></p>
   </a>
 

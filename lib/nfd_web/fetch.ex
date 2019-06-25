@@ -22,6 +22,7 @@ defmodule NfdWeb.Fetch do
   def fetch_page(conn, page_view, page_symbol, page_layout, collection_array) do
     client = API.is_localhost(conn.host) |> API.api_client()
 
+    # FUTURE: Do we even need this, or is this covered in page_collections/content_collections? I feel like it should be in those things.
     case apply(PageAPI, page_symbol, [client]) do
       {:ok, response} ->
         user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
@@ -43,7 +44,7 @@ defmodule NfdWeb.Fetch do
     content_slug = Redirects.redirect_content(conn, slug, Atom.to_string(page_symbol))
     client = API.is_localhost(conn.host) |> API.api_client()
 
-    # FUTURE Do we even need this, or is this covered in page_collections/content_collections? I feel like it should be in those things.
+    # FUTURE: Do we even need this, or is this covered in page_collections/content_collections? I feel like it should be in those things.
     case apply(ContentAPI, page_symbol, [client, content_slug]) do
       {:ok, response} ->
         user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
@@ -52,7 +53,7 @@ defmodule NfdWeb.Fetch do
         changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array)
 
         conn
-          |> FetchConn.is_file_paid_for(page_symbol, user_collections, content_collections, NfdWeb.PageView, "general.html", "error_page_no_access.html")
+          |> FetchConn.is_file_paid_for(page_symbol, user_collections, %{ collection: content_collections }, NfdWeb.PageView, "general.html", "error_page_no_access.html")
           |> FetchConn.are_they_up_to_day(page_symbol, response.body["data"], user_collections, content_collections, NfdWeb.PageView, "general.html", "page_not_up_to.html")
           |> FetchConn.check_api_response_for_404(response.status)
           |> Page.increment_visit_count(response.body["data"])

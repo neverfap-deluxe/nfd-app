@@ -72,23 +72,23 @@ defmodule NfdWeb.FetchAccess do
       :seven_day_kickstarter ->  [:seven_day_kickstarter, :seven_day_kickstarter_changeset]
       :seven_day_kickstarter_single -> [:seven_day_kickstarter, :course]
 
-      :ten_day_meditation ->  [:ten_day_meditation]
-      :ten_day_meditation_single -> [:ten_day_meditation, :course]
+      :ten_day_meditation -> [:ten_day_meditation]
+      :ten_day_meditation_single -> [:ten_day_meditation_single, :course]
 
-      :twenty_eight_day_awareness ->  [:twenty_eight_day_awareness, :twenty_eight_day_awareness_changeset]
-      :twenty_eight_day_awareness_single -> [:twenty_eight_day_awareness, :course]
+      :twenty_eight_day_awareness -> [:twenty_eight_day_awareness, :twenty_eight_day_awareness_changeset]
+      :twenty_eight_day_awareness_single -> [:twenty_eight_day_awareness_single, :course]
 
-      :seven_week_awareness_vol_1 ->  [:seven_week_awareness_vol_1, :seven_week_awareness_vol_1_changeset]
-      :seven_week_awareness_vol_1_single -> [:seven_week_awareness_vol_1, :course]
+      :seven_week_awareness_vol_1 -> [:seven_week_awareness_vol_1, :seven_week_awareness_vol_1_changeset]
+      :seven_week_awareness_vol_1_single -> [:seven_week_awareness_vol_1_single, :course]
 
-      :seven_week_awareness_vol_2 ->  [:seven_week_awareness_vol_2, :seven_week_awareness_vol_2_changeset]
-      :seven_week_awareness_vol_2_single -> [:seven_week_awareness_vol_2, :course]
+      :seven_week_awareness_vol_2 -> [:seven_week_awareness_vol_2, :seven_week_awareness_vol_2_changeset]
+      :seven_week_awareness_vol_2_single -> [:seven_week_awareness_vol_2_single, :course]
 
-      :seven_week_awareness_vol_3 ->  [:seven_week_awareness_vol_3, :seven_week_awareness_vol_3_changeset]
-      :seven_week_awareness_vol_3_single -> [:seven_week_awareness_vol_3, :course]
+      :seven_week_awareness_vol_3 -> [:seven_week_awareness_vol_3, :seven_week_awareness_vol_3_changeset]
+      :seven_week_awareness_vol_3_single -> [:seven_week_awareness_vol_3_single, :course]
 
-      :seven_week_awareness_vol_4 ->  [:seven_week_awareness_vol_4, :seven_week_awareness_vol_4_changeset]
-      :seven_week_awareness_vol_4_single -> [:seven_week_awareness_vol_4, :course]
+      :seven_week_awareness_vol_4 -> [:seven_week_awareness_vol_4, :seven_week_awareness_vol_4_changeset]
+      :seven_week_awareness_vol_4_single -> [:seven_week_awareness_vol_4_single, :course]
 
       # DASHBOARD
       :dashboard -> [:courses, :ebooks, :purchased_ebooks, :purchased_courses, :not_purchased_ebooks, :not_purchased_courses, :patreon_auth_url]

@@ -25,7 +25,7 @@ defmodule Nfd.SeedEBOOKS do
           cover_image: "/images/ebook_covers/bible-ebook-cover-600-900.png",
           premium: true,
           price: 12.99,
-          slug: "the-neverfap-deluxe-bible"
+          slug: "neverfap-deluxe-bible"
         })
 
         bible_files(collection.id)
@@ -37,7 +37,7 @@ defmodule Nfd.SeedEBOOKS do
     # TODO Spec this out with the proper files
     Repo.insert(%File{
       seed_id: "d0a9a1d2-fead-466b-94f3-5bea5d84a75a",
-      type: "ebook_file", 
+      type: "ebook_file",
       specific_type: "epub",
       description: "epub",
       display_name: "The NeverFap Deluxe Bible epub",

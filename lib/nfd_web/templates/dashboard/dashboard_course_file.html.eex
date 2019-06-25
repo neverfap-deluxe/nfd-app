@@ -1,12 +1,24 @@
 <% has_premium_rights = has_premium_access(@dashboard_collections_collection.collection, @user_collections, :courses_access) %>
 
 <div class="dashboard__collection">
-  <h2 class="dashboard__title"><%= @dashboard_collections.file.display_name %></h2>
+  <h2 class="dashboard__title"><%= @dashboard_collections_file.file.display_name %></h2>
   <%= partial "dashboard/main_back_container.html", %{ conn: @conn, route: :dashboard_courses, text: "Back to Courses", show_email_timer: false } %>
 
   <div class="dashboard__section">
-    <div class="dashboard__main__collection">
-      <%= partial "dashboard/file_item.html", %{ conn: @conn, file: @dashboard_collections_collection.file, collection: @dashboard_collections_collection.collection, type: @type, has_premium_rights: has_premium_rights, type: :dashboard_course_file } %>
+    <div class="dashboard__section__content">
+      <div class="dashboard__collection__files">
+        <div class="dashboard__collection__file__container">
+          <%= partial "dashboard/file_item.html", %{ conn: @conn, file: @dashboard_collections_file.file, collection: @dashboard_collections_collection.collection, has_premium_rights: has_premium_rights, type: :dashboard_course_file } %>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="dashboard__section">
+    <div class="dashboard__section__content">
+      <%= @dashboard_collections_file.file_content["content"] |> String.replace("888", "") |> raw %>
+
+    </div>
+  </div>
+
 </div>

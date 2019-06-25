@@ -34,6 +34,6 @@
   </script>
 <% else %>
   <div>
-    <h3>The Stripe Session has not loaded. Please contact admin@neverfapdeluxe.com </h3>
+    <b><p>The Stripe Session has not loaded. Please contact admin@neverfapdeluxe.com</p></b>
   </div>
 <% end %>

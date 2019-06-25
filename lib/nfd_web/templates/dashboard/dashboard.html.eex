@@ -4,7 +4,7 @@
   <div class="dashboard__section">
     <div class="dashboard__section__content">
       <h2 class="dashboard__section__content__title">Index</h2>
-      <%= partial "dashboard_index/dashboard_index.html", assigns %>
+      <%= partial "dashboard_index/dashboard_index.html", %{} %>
     </div>
   </div>
 
@@ -32,7 +32,9 @@
     <div class="dashboard__section__content">
       <h2 class="dashboard__section__content__title">Newsletter</h2>
       <p>If you'd like to keep up to date on future products as they're released, please subscribe to our newsletter!</p>
-      <%= partial "dashboard/subscribe_course.html", %{ conn: @conn, collection: %{}, subscribed: @user_collections.subscriber.subscribed, subscribed_property: :subscribed, user_collections: @user_collections } %>
+      <div class="dashboard__button__collection">
+        <%= partial "dashboard/subscribe_course.html", %{ conn: @conn, collection: %{}, subscribed: @user_collections.subscriber.subscribed, subscribed_property: :subscribed, user_collections: @user_collections } %>
+      </div>
     </div>
   </div>
 

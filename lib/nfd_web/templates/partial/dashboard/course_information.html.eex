@@ -5,7 +5,7 @@
 
   <%= if @dashboard_collections_collection.collection.current_collection_module do %>
     <p><b>Module:</b> <%= @dashboard_collections_collection.collection.current_collection_module.display_name %></p>
-    <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, @dashboard_collections_collection.collection.slug, @dashboard_collections_collection.collection. current_collection_module.slug) %>"></a></p>
+    <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_file, @dashboard_collections_collection.collection.slug, @dashboard_collections_collection.collection.current_collection_module.slug) %>"></a></p>
   <% end %>
 
   <div class="subscription__email__container">
@@ -20,6 +20,8 @@
   <%# Purchase date %>
 
   <%= if @has_premium_rights do %>
-    <%= partial "dashboard/subscribe_course.html", %{ conn: @conn, collection: @dashboard_collections_collection.collection, subscribed: Map.get(@user_collections.subscriber, @dashboard_collections_collection.subscribed_property), subscribed_property: @dashboard_collections_collection.subscribed_property, user_collections: @user_collections } %>
+    <div class="dashboard__button__collection">
+      <%= partial "dashboard/subscribe_course.html", %{ conn: @conn, collection: @dashboard_collections_collection.collection, subscribed: Map.get(@user_collections.subscriber, @dashboard_collections_collection.subscribed_property), subscribed_property: @dashboard_collections_collection.subscribed_property, user_collections: @user_collections } %>    
+    </div>
   <% end %>
 </div>

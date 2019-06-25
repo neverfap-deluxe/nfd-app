@@ -20,7 +20,7 @@
   <p>Recieve all the benefits of your Patron tier!</p>
   <p>Otherwise, learn about the benefits you receive by become a Patron!</p>
 
-  <div style="display: flex;">
+  <div class="dashboard__button__collection">
     <a class="button subscribe__button" style="margin-right: 1.2rem;" href="<%= @api_key_collections.patreon_auth_url %>">Link Patreon</a>
     <a class="button subscribe__button" href="<%= Routes.page_path(@conn, :general_premium) %>">Learn More</a>
   </div>

@@ -25,5 +25,5 @@
     </div>
   </div>
 
-  <%= partial "dashboard/payment_module.html", %{ conn: @conn, dashboard_collections_collection: @dashboard_collections_collection, has_premium_rights: has_premium_rights, api_key_collections: @api_key_collections } %>
+  <%= partial "dashboard/payment_module.html", %{ conn: @conn, user_collections: @user_collections, dashboard_collections_collection: @dashboard_collections_collection, has_premium_rights: has_premium_rights, api_key_collections: @api_key_collections } %>
 </div>

@@ -62,9 +62,6 @@
   align-items: center;
   margin-bottom: 1rem;
 
-  position: relative;
-  top: -1rem;
-
   .dashboard__main__back {
     background: white;
     border: 4px solid rgba(255, 46, 182, 1);
@@ -96,7 +93,6 @@
 
   .dashboard__section__content {
     width: 100%;
-    margin-bottom: 2rem;
 
     .dashboard__section__content__title {
       margin-top: 1.5rem;
@@ -213,6 +209,10 @@
   font-size: 1.1rem;
 }
 
+.dashboard__button__collection {
+  display: flex; 
+  margin-bottom: 1rem;
+}
 
 @media screen and (min-width: 420px) {
   .dashboard__collection {
@@ -221,7 +221,6 @@
   .hub {
   }
 }
-
 
 @media screen and (min-width: 768px) {
   .dashboard__main__collection {
@@ -259,7 +258,10 @@
     }
   }
   .dashboard__section {
-    padding: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     .dashboard__section__content {
       width: 600px;
     }

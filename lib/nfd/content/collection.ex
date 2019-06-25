@@ -84,6 +84,7 @@ defmodule Nfd.Content.Collection do
 
   def get_collection_with_decoration(collection, user_collections) do
     # NOTE: Collection Decorators - breaks wth email collections
+
     has_paid_for_collection = if collection.type == "course_collection", do: Collection.has_paid_for_collection(collection, user_collections), else: nil
     up_to_count = if collection.type == "course_collection", do: user_collections.subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(collection.slug)), else: nil
     # TODO: This breaks if an epub file is also within a collection of type course, so I need to figure this out.
@@ -93,11 +94,7 @@ defmodule Nfd.Content.Collection do
       |> Map.merge(%{
         files:
           collection.files
-            |> Enum.sort(fn(a, b) ->
-              a_new = a.description |> String.split(" ") |> List.last() |> String.to_integer()
-              b_new = b.description |> String.split(" ") |> List.last() |> String.to_integer()
-              a_new > b_new
-            end)
+            |> Enum.sort(fn(a, b) -> a.number > b.number end)
             |> Enum.reverse()
       })
       |> Map.merge(%{ has_paid_for_collection: has_paid_for_collection })

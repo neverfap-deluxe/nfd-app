@@ -60,7 +60,7 @@ defmodule Nfd.MixProject do
       # stripe
       {:stripity_stripe, "~> 2.4.0"},
       {:pay_pal, "~> 0.0.5"},
-      # {:upstream, "~> 2.1"} // maaaaaaaybe
+      # {:upstream, "~> 2.1"},
 
       {:quantum, "~> 2.3"},
       {:timex, "~> 3.0"},
