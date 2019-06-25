@@ -25,7 +25,7 @@ defmodule NfdWeb.Fetch do
     case apply(PageAPI, page_symbol, [client]) do
       {:ok, response} ->
         user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
-        page_collections = FetchCollection.page_collections(client, response.body["data"], collection_array)
+        page_collections = FetchCollection.page_collections(client, collection_array)
         changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array)
 
         conn
@@ -43,10 +43,11 @@ defmodule NfdWeb.Fetch do
     content_slug = Redirects.redirect_content(conn, slug, Atom.to_string(page_symbol))
     client = API.is_localhost(conn.host) |> API.api_client()
 
+    # FUTURE Do we even need this, or is this covered in page_collections/content_collections? I feel like it should be in those things.
     case apply(ContentAPI, page_symbol, [client, content_slug]) do
       {:ok, response} ->
         user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
-        page_collections = FetchCollection.page_collections(client, response.body["data"], collection_array)
+        page_collections = FetchCollection.page_collections(client, collection_array)
         content_collections = FetchCollection.content_collections(client, response.body["data"], page_symbol, content_slug, user_collections, page_collections, collection_array)
         changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array)
 

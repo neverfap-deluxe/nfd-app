@@ -1,1 +1,20 @@
-<p>todo</p>
+<%= if @dashboard_collections_collection.collection.premium do %>
+  <%= if !has_premium_rights do %>
+    <div id="payment" class="dashboard__main__area">
+      <%= partial "dashboard/campaign_payment.html", %{ dashboard_collections_collection: @dashboard_collections_collection, api_key_collections: @api_key_collections } %>
+
+      <%= if @dashboard_collections_collection.collection.has_paid_for_collection do %>
+        <div class="dashboard__main__area">
+          <p>You purchased this course on the <%= Enum.find(@user_collections.collections_access_list, &(&1.collection.id == @dashboard_collections_collection.collection.id)) |> Map.get(:created_at) %></p>
+        </div>
+      <% end %>
+
+      <%= if patreon_access_list(@user_collections, :courses_access) do %>
+        <div class="dashboard__main__area">
+          <p>You have access to this course via your Patreon tier.</p>
+          <p>For more information about our Patreon tiers, please read <a class="link" href="<%= Routes.page_path(@conn, :general_premium)%>">this guide</a> or head on down to the <a class="link" href="https://www.patreon.com/neverfapdeluxe">NeverFap Deluxe Patreon</a>.</p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

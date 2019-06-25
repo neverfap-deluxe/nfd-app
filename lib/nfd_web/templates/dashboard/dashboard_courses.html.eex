@@ -1,10 +1,6 @@
 <div class="dashboard__collection">
   <h2 class="dashboard__main__title">Courses</h2>
-  <div class="dashboard__main__back__container">
-    <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, :dashboard) %>">
-      Back to Dashboard
-    </a>
-  </div>
+  <%= partial "dashboard/main_back_container.html", %{ conn: @conn, route: :dashboard, text: "Back to Dashboard", show_email_timer: false } %>
 
   <div class="dashboard__main__area">
     <div class="dashboard__main__area__content">

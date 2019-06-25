@@ -1,0 +1,8 @@
+<div class="dashboard__main__back__container">
+  <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, @route) %>">
+    <%= @text %>
+  </a>
+  <%= if @show_email_timer do %>
+    <%= partial "dashboard/email_countdown_timer.html", assigns %>
+  <% end %>
+</div>

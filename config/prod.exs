@@ -7,7 +7,7 @@ config :recaptcha,
   public_key: System.get_env("GOOGLE_RECAPTCHA_CLIENT"),
   secret: System.get_env("GOOGLE_RECAPTCHA_SECRET")
 
-config :stripity_stripe, 
+config :stripity_stripe,
   api_key: System.get_env("STRIPE_API_KEY_SECRET"),
   json_library: Jason
 
@@ -20,7 +20,16 @@ config :nfd, Nfd.SwooshMailer,
   adapter: Swoosh.Adapters.AmazonSES,
   region: "us-east-1",
   access_key: System.get_env("AWS_ACCESS_KEY"),
-  secret: System.get_env("AWS_SECRET_KEY") 
+  secret: System.get_env("AWS_SECRET_KEY")
+
+config :upstream, :upload, timeout: 600_000
+
+config :upstream, :storage,
+  account_id: System.get_env("B2_ACCOUNT_ID"),
+  application_key: System.get_env("B2_APPLICATION_KEY"),
+  bucket_id: System.get_env("B2_BUCKET_ID"),
+  bucket_name: System.get_env("B2_BUCKET_NAME"),
+  service: "b2"
 
 config :nfd, :pow_assent,
   providers:

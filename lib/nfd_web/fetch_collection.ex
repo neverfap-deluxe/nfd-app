@@ -16,6 +16,7 @@ defmodule NfdWeb.FetchCollection do
   alias Nfd.Account.ContactForm
   alias Nfd.Account.CollectionAccess
 
+  alias Nfd.BackBlaze
   alias Nfd.Patreon
   alias Nfd.Stripe
   alias Nfd.Paypal
@@ -56,7 +57,7 @@ defmodule NfdWeb.FetchCollection do
 
           symbol when symbol in [:seven_day_kickstarter_single, :ten_day_meditation_single, :twenty_eight_day_awareness_single, :seven_week_awareness_vol_1_single, :seven_week_awareness_vol_2_single, :seven_week_awareness_vol_3_single, :seven_week_awareness_vol_4_single] ->
             acc |> Map.merge(%{ symbol => FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol) |> Content.get_collection_slug_with_files() |> Collection.get_collection_with_decoration(user_collections) })
-  
+
           :practice ->
             file_with_collection = Content.get_file_slug_with_collection!(content_slug)
 
@@ -81,12 +82,12 @@ defmodule NfdWeb.FetchCollection do
 
           :comments -> acc |> Map.merge(%{ comments: Comment.get_page_comments(item["page_id"]) })
 
-          _ -> acc 
+          _ -> acc
         end
     end)
   end
 
-  def page_collections(client, item, collection_array) do
+  def page_collections(client, collection_array) do
     Enum.reduce(
       collection_array,
       %{},
@@ -192,7 +193,8 @@ defmodule NfdWeb.FetchCollection do
       fn symbol, acc ->
         case symbol do
           symbol when symbol in [:ebook_file, :course_file] ->
-            # TODO BackBlaze to get file_url from BackBlaze.
+            # TODO BackBlaze to get file_url from BackBlaze. Test it.
+            backblaze_file_url = BackBlaze.get_file_contents("hello.png")
             if file_with_collection.type == "ebook_file" do
               acc |> Map.merge(%{ file: file_with_collection, file_content: %{} })
             else

@@ -49,15 +49,15 @@ defmodule NfdWeb.MessageController do
             collection_array = FetchAccess.fetch_access_array(page_symbol)
 
             user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
-            page_collections = FetchCollection.page_collections(client, response.body["data"], collection_array)
+            page_collections = FetchCollection.page_collections(client, collection_array)
             content_collections = FetchCollection.content_collections(client, response.body["data"], page_symbol, content_slug, user_collections, page_collections, collection_array)
             changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array) |> Map.merge(%{comment_form_changeset: comment_form_changeset})
-    
+
             conn
               |> FetchConn.check_api_response_for_404(response.status)
               |> put_view(NfdWeb.ContentView)
               |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, "general.html" }, item: response.body["data"], user_collections: user_collections, content_collections: content_collections, changeset_collections: changeset_collections, content_collections: content_collections, page_collections: page_collections, page_type: "content")
-      
+
           {:error, error} ->
             IO.inspect error
             FetchConn.render_404_page(conn, error)
@@ -93,14 +93,14 @@ defmodule NfdWeb.MessageController do
               {:ok, response} ->
                 collection_array = FetchAccess.fetch_access_array(page_symbol)
                 user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
-                page_collections = FetchCollection.page_collections(response.body["data"], collection_array, client)
+                page_collections = FetchCollection.page_collections(client, collection_array)
                 changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array) |> Map.merge(%{contact_form_changeset: contact_form_changeset})
 
                 conn
                   |> FetchConn.check_api_response_for_404(response.status)
                   |> put_view(NfdWeb.PageView)
                   |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, "general.html" }, item: response.body["data"], user_collections: user_collections, page_collections: page_collections, changeset_collections: changeset_collections, page_type: "page")
-          
+
                 {:error, error} ->
                 FetchConn.render_404_page(conn, error)
             end

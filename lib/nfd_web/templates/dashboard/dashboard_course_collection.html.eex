@@ -2,13 +2,7 @@
 
 <div class="dashboard__collection">
   <h2 class="dashboard__main__title dashboard__main__title--email"><%= @dashboard_collections_collection.collection.display_name %></h2>
-
-  <div class="dashboard__main__back__container">
-    <a class="dashboard__main__back" href="<%= Routes.dashboard_path(@conn, :dashboard_courses) %>">
-      Back to Courses
-    </a>
-    <%= partial "dashboard/email_countdown_timer.html", assigns %>
-  </div>
+  <%= partial "dashboard/main_back_container.html", %{ conn: @conn, route: :dashboard_courses, text: "Back to Courses", show_email_timer: true } %>
 
   <div class="dashboard__main__area">
     <div class="dashboard__main__area__content">
@@ -27,51 +21,17 @@
   <div id="information" class="dashboard__main__area">
     <div class="dashboard__main__area__content">
       <h2 class="dashboard__main__area__content__title">Information</h2>
-
-      <p><b>Landing page:</b> <a class="link" href="/<%= @dashboard_collections_collection.collection.slug %>">link</a></p>
-      <p><b>Total Days:</b> <%= @dashboard_collections_collection.collection.total_period %></p>
-      <p><b>Current Day:</b> <%= @dashboard_collections_collection.collection.up_to_count %></p>
-
-      <%= if @dashboard_collections_collection.collection.current_collection_module do %>
-      <p><b>Module:</b> <%= @dashboard_collections_collection.collection.current_collection_module.display_name %></p>
-      <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, @dashboard_collections_collection.collection.slug, @dashboard_collections_collection.collection. current_collection_module.slug) %>"></a></p>
-      <% end %>
-
-
-      <%# Subscription emails log here %>
-      <%# Purchase date %>
-
-      <%= if has_premium_rights do %>
-        <%= partial "dashboard/subscribe_course.html", %{ conn: @conn, collection: @dashboard_collections_collection.collection, subscribed: Map.get(@user_collections.subscriber, @dashboard_collections_collection.subscribed_property), subscribed_property: @dashboard_collections_collection.subscribed_property, user_collections: @user_collections } %>
-      <% end %>
+      <%= partial "dashboard/course_information.html", %{ conn: @conn, dashboard_collections_collection: @dashboard_collections_collection, user_collections: @user_collections, has_premium_rights: has_premium_rights } %>
     </div>
   </div>
 
   <div id="modules" class="dashboard__main__area">
-    <h2 class="dashboard__main__area__content__title">Modules</h2>
-    <p>NOTE: Modules will become available once you complete them, or as they are delivered to you via email.</p>
-    <%= partial "dashboard/file_list.html", %{ conn: @conn, collection: @dashboard_collections_collection.collection, course_slug: @dashboard_collections_collection.collection.slug, premium: has_premium_rights, type: :dashboard_course_file } %>
+    <div class="dashboard__main__area__content">
+      <h2 class="dashboard__main__area__content__title">Modules</h2>
+      <p>NOTE: Modules will become available once you complete them, or as they are delivered to you via email.</p>
+      <%= partial "dashboard/file_list.html", %{ conn: @conn, collection: @dashboard_collections_collection.collection, course_slug: @dashboard_collections_collection.collection.slug, premium: has_premium_rights, type: :dashboard_course_file } %>
+    </div>
   </div>
 
-  <!-- Payment Module -->
-  <%= if @dashboard_collections_collection.collection.premium do %>
-    <%= if !has_premium_rights do %>
-      <div id="payment" class="dashboard__main__area">
-        <%= partial "dashboard/campaign_payment.html", %{ dashboard_collections_collection: @dashboard_collections_collection, api_key_collections: @api_key_collections } %>
-
-        <%= if @dashboard_collections_collection.collection.has_paid_for_collection do %>
-          <div class="dashboard__main__area">
-            <p>You purchased this course on the <%= Enum.find(@user_collections.collections_access_list, &(&1.collection.id == @dashboard_collections_collection.collection.id)) |> Map.get(:created_at) %></p>
-          </div>
-        <% end %>
-
-        <%= if patreon_access_list(@user_collections, :courses_access) do %>
-          <div class="dashboard__main__area">
-            <p>You have access to this course via your Patreon tier.</p>
-            <p>For more information about our Patreon tiers, please read <a class="link" href="<%= Routes.page_path(@conn, :general_premium)%>">this guide</a> or head on down to the <a class="link" href="https://www.patreon.com/neverfapdeluxe">NeverFap Deluxe Patreon</a>.</p>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  <% end %>
+  <%= partial "dashboard/payment_module.html", %{ conn: @conn, dashboard_collections_collection: @dashboard_collections_collection, has_premium_rights: has_premium_rights, api_key_collections: @api_key_collections } %>
 </div>

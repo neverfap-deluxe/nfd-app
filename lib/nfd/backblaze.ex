@@ -1,26 +1,19 @@
 defmodule Nfd.BackBlaze do
 
-  # BACKBLAZE_ACCOUNT_ID
-  # BACKBLAZE_API_KEY
-
-  # https://github.com/keichan34/b2_client
-
-  def get_file_contents(bucket_name, file_name) do
-
-    # auth_struct = Upstream.B2.Account.authorization()
-
-    # case Upstream.B2.Download.authorize(auth, prefix, duration) do
-    #   {:ok, auth} ->
-    #   {:error, error} ->
-    # end
-
-
-
-    # {:ok, auth} = B2Client.backend.authenticate(System.get_env("BACKBLAZE_ACCOUNT_ID"), System.get_env("BACKBLAZE_API_KEY"))
-    # {:ok, bucket} = B2Client.backend.get_bucket(auth, "my-bucket-name")
-    # {:ok, file_contents} = B2Client.backend.download(auth, bucket, file_name)
-
-    # file_contents
+  def get_file_contents(file_name) do
+    IO.inspect 3
+    auth_struct = Upstream.B2.Account.authorization()
+    IO.inspect 2
+    case Upstream.B2.Download.authorize(auth_struct, "", 3600) do
+      {:ok, auth} ->
+        IO.inspect auth
+        url = Upstream.B2.Download.url(auth, file_name)
+        IO.inspect url
+        url
+      {:error, error} ->
+        IO.inspect error
+        ""
+    end
   end
 
   def get_bucket_name() do

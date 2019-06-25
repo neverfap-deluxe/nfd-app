@@ -11,7 +11,7 @@ defmodule NfdWeb.FetchConn do
         if user_collections.subscriber |> Map.get(FetchCollectionUtil.page_symbol_to_up_to_count(page_symbol)) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections_collection, view, layout, template)
 
       # NOTE: As we see here does not include :dashboard_ebook_file because that breaks
-      :dashboard_course_file -> 
+      :dashboard_course_file ->
         day = responseBodyData["day"]
         if user_collections.subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(dashboard_collections_collection.collection.slug)) <= day, do: conn, else: render_no_access_page(conn, dashboard_collections_collection, view, layout, template)
 
@@ -49,7 +49,6 @@ defmodule NfdWeb.FetchConn do
     end
   end
 
-  # TODO: This needs to accomodate for both ebook and course links
   def render_no_access_page(conn, dashboard_collections_collection, view, layout, template) do
     conn
       |> put_view(view)
