@@ -26,7 +26,7 @@ defmodule Nfd.SeedSWAVOL1 do
           price: 14.99,
           slug: "seven-week-awareness-challenge-vol-1"
         })
-      seven_week_awareness_vol_1_ebook_files(collection_id)
+      seven_week_awareness_vol_1_ebook_files(collection.id)
       seven_week_awareness_vol_1_audio_files(collection.id)
 
       _collection -> nil

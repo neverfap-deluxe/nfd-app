@@ -9,60 +9,60 @@
 
   <%= if no_collection do %>
     <%= if user_is_subscribed and this_course_is_active_type do %>
-      <a class="button subscribe__button" href="<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, collection_id: Map.get(@collection, :id), user_id: @user_collections.user.id, subscribed_property: @subscribed_property) %>"><%= subscribed_status_text @subscribed %></a>
+      <a id="subscribe_course_id" class="button subscribe__button"><%= subscribed_status_text @subscribed %></a>
     <% end %>
   <% else %>
-    <a id="subscribe_course_id" class="button subscribe__button"><%= subscribed_status_text @subscribed %></a>
+    <a class="button subscribe__button" href="<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, collection_id: Map.get(@collection, :id), user_id: @user_collections.user.id, subscribed_property: @subscribed_property) %>"><%= subscribed_status_text @subscribed %></a>
   <% end %>
 </div>
 
 <% active_collection = Map.get(@user_collections.active_collections, course_active_type) %>
 <%= if active_collection do %>
-<script>
-  const swalWithBootstrapButtons = Swal.mixin({
-    customClass: {
-      confirmButton: 'btn btn-success',
-      cancelButton: 'btn btn-success'
-    },
-    buttonsStyling: false,
-  })
+  <script>
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-success'
+      },
+      buttonsStyling: false,
+    })
 
-  var subscribe_course_id = document.querySelector("#subscribe_course_id");
-  if (subscribe_course_id) {
-    subscribe_course_id.onclick = function(event) {
-      Swal.fire({
-        title: 'Are you sure you want to subscribe?',
-        html: `
-          <p>You are currently subscribed to the module <%= active_collection |> Map.get(:display_name) %>.</p>
-          <p>The system only allows you to subscribe to one course type at a time, to ensure that you're sticking to the process and are only focusing your attention on mastering one targeted exercise at a time.</p>
-          <p>When you switch subscriptions, you don't lose your progress, however you will be unsubscribed from the subscribed course.</p>
-          <p>Please <a class="link" href="<%= Routes.dashboard_path(@conn, :dashboard_faq) %>">click here</a> to learn more.</p>
-        `,
-        <%# text: "You won't be able to revert this!", %>
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.value) {
-          // swalWithBootstrapButtons.fire(
-          //   'Subscription changed!',
-          //   'You will be redirected shortly.',
-          //   'success'
-          // )
-          window.location.replace("<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_collections.user.id, collection_id: Map.get(@collection, :id), subscribed_property: @subscribed_property) %>");
-        } else if (
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
-          swalWithBootstrapButtons.fire(
-            'Cancelled',
-            'No worries buddy!',
-            'success'
-          )
-        }
-      })
+    var subscribe_course_id = document.querySelector("#subscribe_course_id");
+    if (subscribe_course_id) {
+      subscribe_course_id.onclick = function(event) {
+        Swal.fire({
+          title: 'Are you sure you want to subscribe?',
+          html: `
+            <p>You are currently subscribed to the module <%= active_collection |> Map.get(:display_name) %>.</p>
+            <p>The system only allows you to subscribe to one course type at a time, to ensure that you're sticking to the process and are only focusing your attention on mastering one targeted exercise at a time.</p>
+            <p>When you switch subscriptions, you don't lose your progress, however you will be unsubscribed from the subscribed course.</p>
+            <p>Please <a class="link" href="<%= Routes.dashboard_path(@conn, :dashboard_faq) %>">click here</a> to learn more.</p>
+          `,
+          <%# text: "You won't be able to revert this!", %>
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.value) {
+            // swalWithBootstrapButtons.fire(
+            //   'Subscription changed!',
+            //   'You will be redirected shortly.',
+            //   'success'
+            // )
+            window.location.href = "<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_collections.user.id, collection_id: Map.get(@collection, :id), subscribed_property: @subscribed_property) %>";
+          } else if (
+            result.dismiss === Swal.DismissReason.cancel
+          ) {
+            swalWithBootstrapButtons.fire(
+              'Cancelled',
+              'No worries buddy!',
+              'success'
+            )
+          }
+        })
+      }
     }
-  }
-</script>
+  </script>
 <% end %>

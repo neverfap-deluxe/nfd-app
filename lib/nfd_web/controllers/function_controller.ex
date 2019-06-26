@@ -33,11 +33,10 @@ defmodule NfdWeb.FunctionController do
       subscriber ->
         collection = Content.get_collection!(collection_id)
         active_type_property = Email.collection_slug_to_active_type_property(collection.slug)
-        active_value = Atom.to_string(subscribed_property)
 
         if (subscribed_property_atom != :subscribed or subscribed_property_atom != :seven_day_kickstarter_subscribed) do
           if subscribed == "true", do: Account.update_subscriber(subscriber, %{active_type_property => "", subscribed_property_atom => false})
-          if subscribed == "false", do: Account.update_subscriber(subscriber, %{active_type_property => active_value, subscribed_property_atom => true})
+          if subscribed == "false", do: Account.update_subscriber(subscriber, %{active_type_property => subscribed_property, subscribed_property_atom => true})
           redirect_back(conn, 1)
         end
 
@@ -46,7 +45,7 @@ defmodule NfdWeb.FunctionController do
 
         if collections_access do
           if subscribed == "true", do: Account.update_subscriber(subscriber, %{active_type_property => "", subscribed_property_atom => false})
-          if subscribed == "false", do: Account.update_subscriber(subscriber, %{active_type_property => active_value, subscribed_property_atom => true})
+          if subscribed == "false", do: Account.update_subscriber(subscriber, %{active_type_property => subscribed_property, subscribed_property_atom => true})
         end
 
         # MAYBE: Maybe send an error to the user (perhaps a flash) letting them know it hasn't been successful.
@@ -55,6 +54,8 @@ defmodule NfdWeb.FunctionController do
   end
 
   def reset_subscription_dashboard_func(conn, %{"subscribed" => subscribed, "user_id" => user_id, "collection_id" => collection_id, "subscribed_property" => subscribed_property}) do
+    IO.inspect "yes"
+    IO.inspect subscribed_property
     subscribed_property_atom = String.to_atom(subscribed_property)
 
     collection = Content.get_collection_slug!(collection_id)

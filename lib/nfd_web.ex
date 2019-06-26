@@ -135,7 +135,7 @@ defmodule NfdWeb do
           "free_active_type" -> "Free"
           "awareness_active_type" -> "Awareness"
           "meditation_active_type" -> "Meditation"
-          _ -> "This does not have a type, yo."
+          _ -> "Guide"
         end
       end
 

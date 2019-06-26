@@ -142,12 +142,16 @@
       width: 650px;
 
       .collection__top__type {
-        
+        // border-left: 4px solid #00ffee; // rgba(255,46,182,1)
+        padding: 0.6rem;
+        // box-shadow: -5px 5px 0px 0px #00ffee;
       }
 
       .collection__top__name {
-        font-size: 2.3rem;
-        line-height: 3.5rem;
+        border-left: 4px solid #00ffee;
+        padding: 0.8rem;
+        font-size: 2.8rem;
+        line-height: 3.9rem;
         margin-bottom: 1rem;
       }
 

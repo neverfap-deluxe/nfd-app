@@ -30,7 +30,7 @@
           //   'The course has been reset back to Day 0. You will be redirected shortly.',
           //   'success'
           // )
-          window.location.replace("<%= Routes.function_path(@conn, :reset_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_collections.user.id, collection_id: Map.get(@collection, :id), subscribed_property: @subscribed_property) %>");
+          window.location.href = "<%= Routes.function_path(@conn, :reset_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_collections.user.id, collection_id: Map.get(@collection, :id), subscribed_property: @subscribed_property) %>";
         } else if (
           // Read more about handling dismissals
           result.dismiss === Swal.DismissReason.cancel
