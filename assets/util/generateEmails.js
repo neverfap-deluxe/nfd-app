@@ -13,7 +13,7 @@ const parseFile = async () => {
   const parser = new Parser();
   const contentParser = generateContentParser(parser)
 
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 9; i++) {
     // SEVEN DAY KICKSTARTER
     generateEmails('email_seven_day_kickstarter', `sdk-day-${i}`, `template_seven_day_kickstarter_${i}.mjml`, contentParser);
 
@@ -26,7 +26,7 @@ const parseFile = async () => {
     generateEmails('email_seven_week_awareness_vol_4', `eswa-vol4-day-${i}`, `template_seven_week_awareness_vol_4_${i}.mjml`, contentParser);
   }
 
-  for (let i = 0; i < 11; i++) {
+  for (let i = 0; i < 12; i++) {
     // TEN DAY MEDITATION PRIMER
     generateEmails('email_ten_day_meditation', `tdm-day-${i}`, `template_ten_day_meditation_${i}.mjml`, contentParser);
   }
