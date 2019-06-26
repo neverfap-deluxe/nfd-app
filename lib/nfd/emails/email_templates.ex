@@ -27,9 +27,73 @@ defmodule Nfd.EmailTemplates do
       8 -> { "template_ten_day_meditation_8.html", "10 Day Meditation Primer - #{Application.get_env(:nfd, :primer_day_8_title)} - Day 8" }
       9 -> { "template_ten_day_meditation_9.html", "10 Day Meditation Primer - #{Application.get_env(:nfd, :primer_day_9_title)} - Day 9" }
       10 -> { "template_ten_day_meditation_10.html", "10 Day Meditation Primer - #{Application.get_env(:nfd, :primer_day_10_title)} - Day 10" }
+      11 -> { "template_ten_day_meditation_11.html", "10 Day Meditation Primer - #{Application.get_env(:nfd, :primer_day_11_title)}" }
       _ -> { false, false }
     end
   end
+
+  # TODO: Build in last day templates, both in files.
+
+  def run_seven_week_awareness_challenge_vol_1(count) do
+    case count do
+      0 -> { "template_seven_week_awareness_vol_1_0.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_0_title)} - Week 0" }
+      1 -> { "template_seven_week_awareness_vol_1_1.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_1_title)} - Week 1" }
+      8 -> { "template_seven_week_awareness_vol_1_2.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_2_title)} - Week 2" }
+      15 -> { "template_seven_week_awareness_vol_1_3.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_3_title)} - Week 3" }
+      22 -> { "template_seven_week_awareness_vol_1_4.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_4_title)} - Week 4" }
+      29 -> { "template_seven_week_awareness_vol_1_5.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_5_title)} - Week 5" }
+      36 -> { "template_seven_week_awareness_vol_1_6.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_6_title)} - Week 6" }
+      43 -> { "template_seven_week_awareness_vol_1_7.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_7_title)} - Week 7" }
+      50 -> { "template_seven_week_awareness_vol_1_8.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_8_title)}" }
+      _ -> { false, false }
+    end
+  end
+
+  def run_seven_week_awareness_challenge_vol_2(count) do
+    case count do
+      0 -> { "template_seven_week_awareness_vol_2_0.html", "7 Week Awareness Challenge Vol 2 - #{Application.get_env(:nfd, :seven_week_vol_2_week_0_title)} - Week 0" }
+      1 -> { "template_seven_week_awareness_vol_2_1.html", "7 Week Awareness Challenge Vol 2 - #{Application.get_env(:nfd, :seven_week_vol_2_week_1_title)} - Week 1" }
+      8 -> { "template_seven_week_awareness_vol_2_2.html", "7 Week Awareness Challenge Vol 2 - #{Application.get_env(:nfd, :seven_week_vol_2_week_2_title)} - Week 2" }
+      15 -> { "template_seven_week_awareness_vol_2_3.html", "7 Week Awareness Challenge Vol 2 - #{Application.get_env(:nfd, :seven_week_vol_2_week_3_title)} - Week 3" }
+      22 -> { "template_seven_week_awareness_vol_2_4.html", "7 Week Awareness Challenge Vol 2 - #{Application.get_env(:nfd, :seven_week_vol_2_week_4_title)} - Week 4" }
+      29 -> { "template_seven_week_awareness_vol_2_5.html", "7 Week Awareness Challenge Vol 2 - #{Application.get_env(:nfd, :seven_week_vol_2_week_5_title)} - Week 5" }
+      36 -> { "template_seven_week_awareness_vol_2_6.html", "7 Week Awareness Challenge Vol 2 - #{Application.get_env(:nfd, :seven_week_vol_2_week_6_title)} - Week 6" }
+      43 -> { "template_seven_week_awareness_vol_2_7.html", "7 Week Awareness Challenge Vol 2 - #{Application.get_env(:nfd, :seven_week_vol_2_week_7_title)} - Week 7" }
+      50 -> { "template_seven_week_awareness_vol_2_8.html", "7 Week Awareness Challenge Vol 2 - #{Application.get_env(:nfd, :seven_week_vol_2_week_8_title)}" }
+      _ -> { false, false }
+    end
+  end
+
+  def run_seven_week_awareness_challenge_vol_3(count) do
+    case count do
+      0 -> { "template_seven_week_awareness_vol_3_0.html", "7 Week Awareness Challenge Vol 3 - #{Application.get_env(:nfd, :seven_week_vol_3_week_0_title)} - Week 0" }
+      1 -> { "template_seven_week_awareness_vol_3_1.html", "7 Week Awareness Challenge Vol 3 - #{Application.get_env(:nfd, :seven_week_vol_3_week_1_title)} - Week 1" }
+      8 -> { "template_seven_week_awareness_vol_3_2.html", "7 Week Awareness Challenge Vol 3 - #{Application.get_env(:nfd, :seven_week_vol_3_week_2_title)} - Week 2" }
+      15 -> { "template_seven_week_awareness_vol_3_3.html", "7 Week Awareness Challenge Vol 3 - #{Application.get_env(:nfd, :seven_week_vol_3_week_3_title)} - Week 3" }
+      22 -> { "template_seven_week_awareness_vol_3_4.html", "7 Week Awareness Challenge Vol 3 - #{Application.get_env(:nfd, :seven_week_vol_3_week_4_title)} - Week 4" }
+      29 -> { "template_seven_week_awareness_vol_3_5.html", "7 Week Awareness Challenge Vol 3 - #{Application.get_env(:nfd, :seven_week_vol_3_week_5_title)} - Week 5" }
+      36 -> { "template_seven_week_awareness_vol_3_6.html", "7 Week Awareness Challenge Vol 3 - #{Application.get_env(:nfd, :seven_week_vol_3_week_6_title)} - Week 6" }
+      43 -> { "template_seven_week_awareness_vol_3_7.html", "7 Week Awareness Challenge Vol 3 - #{Application.get_env(:nfd, :seven_week_vol_3_week_7_title)} - Week 7" }
+      50 -> { "template_seven_week_awareness_vol_3_8.html", "7 Week Awareness Challenge Vol 3 - #{Application.get_env(:nfd, :seven_week_vol_3_week_8_title)}" }
+      _ -> { false, false }
+    end
+  end
+
+  def run_seven_week_awareness_challenge_vol_4(count) do
+    case count do
+      0 -> { "template_seven_week_awareness_vol_4_0.html", "7 Week Awareness Challenge Vol 4 - #{Application.get_env(:nfd, :seven_week_vol_4_week_0_title)} - Week 0" }
+      1 -> { "template_seven_week_awareness_vol_4_1.html", "7 Week Awareness Challenge Vol 4 - #{Application.get_env(:nfd, :seven_week_vol_4_week_1_title)} - Week 1" }
+      8 -> { "template_seven_week_awareness_vol_4_2.html", "7 Week Awareness Challenge Vol 4 - #{Application.get_env(:nfd, :seven_week_vol_4_week_2_title)} - Week 2" }
+      15 -> { "template_seven_week_awareness_vol_4_3.html", "7 Week Awareness Challenge Vol 4 - #{Application.get_env(:nfd, :seven_week_vol_4_week_3_title)} - Week 3" }
+      22 -> { "template_seven_week_awareness_vol_4_4.html", "7 Week Awareness Challenge Vol 4 - #{Application.get_env(:nfd, :seven_week_vol_4_week_4_title)} - Week 4" }
+      29 -> { "template_seven_week_awareness_vol_4_5.html", "7 Week Awareness Challenge Vol 4 - #{Application.get_env(:nfd, :seven_week_vol_4_week_5_title)} - Week 5" }
+      36 -> { "template_seven_week_awareness_vol_4_6.html", "7 Week Awareness Challenge Vol 4 - #{Application.get_env(:nfd, :seven_week_vol_4_week_6_title)} - Week 6" }
+      43 -> { "template_seven_week_awareness_vol_4_7.html", "7 Week Awareness Challenge Vol 4 - #{Application.get_env(:nfd, :seven_week_vol_4_week_7_title)} - Week 7" }
+      50 -> { "template_seven_week_awareness_vol_4_8.html", "7 Week Awareness Challenge Vol 4 - #{Application.get_env(:nfd, :seven_week_vol_4_week_8_title)}" }
+      _ -> { false, false }
+    end
+  end
+
 
   def run_twenty_eight_day_challenge(count) do
     case count do
@@ -62,62 +126,7 @@ defmodule Nfd.EmailTemplates do
       26 -> { "template_twenty_eight_day_awareness_26", "28 Day Awareness Challenge - #{Application.get_env(:nfd, :challenge_day_26_title)} - Day 26" }
       27 -> { "template_twenty_eight_day_awareness_27", "28 Day Awareness Challenge - #{Application.get_env(:nfd, :challenge_day_27_title)} - Day 27" }
       28 -> { "template_twenty_eight_day_awareness_28", "28 Day Awareness Challenge - #{Application.get_env(:nfd, :challenge_day_28_title)} - Day 28" }
-      _ -> { false, false }
-    end
-  end
-
-  def run_seven_week_awareness_challenge_vol_1(count) do
-    case count do
-      0 -> { "template_seven_week_awareness_vol_1_0.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_0_title)} - Week 0" }
-      7 -> { "template_seven_week_awareness_vol_1_0.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_1_title)} - Week 1" }
-      14 -> { "template_seven_week_awareness_vol_1_0.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_2_title)} - Week 2" }
-      21 -> { "template_seven_week_awareness_vol_1_0.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_3_title)} - Week 3" }
-      28 -> { "template_seven_week_awareness_vol_1_0.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_4_title)} - Week 4" }
-      35 -> { "template_seven_week_awareness_vol_1_0.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_5_title)} - Week 5" }
-      42 -> { "template_seven_week_awareness_vol_1_0.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_6_title)} - Week 6" }
-      49 -> { "template_seven_week_awareness_vol_1_0.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_7_title)} - Week 7" }
-      _ -> { false, false }
-    end
-  end
-
-  def run_seven_week_awareness_challenge_vol_2(count) do
-    case count do
-      0 -> { "template_seven_week_awareness_vol_2_0.html", "7 Week Awareness Challenge Vol 2 - #{Application.get_env(:nfd, :seven_week_vol_2_week_0_title)} - Week 0" }
-      7 -> { "template_seven_week_awareness_vol_2_0.html", "7 Week Awareness Challenge Vol 2 - #{Application.get_env(:nfd, :seven_week_vol_2_week_1_title)} - Week 1" }
-      14 -> { "template_seven_week_awareness_vol_2_0.html", "7 Week Awareness Challenge Vol 2 - #{Application.get_env(:nfd, :seven_week_vol_2_week_2_title)} - Week 2" }
-      21 -> { "template_seven_week_awareness_vol_2_0.html", "7 Week Awareness Challenge Vol 2 - #{Application.get_env(:nfd, :seven_week_vol_2_week_3_title)} - Week 3" }
-      28 -> { "template_seven_week_awareness_vol_2_0.html", "7 Week Awareness Challenge Vol 2 - #{Application.get_env(:nfd, :seven_week_vol_2_week_4_title)} - Week 4" }
-      35 -> { "template_seven_week_awareness_vol_2_0.html", "7 Week Awareness Challenge Vol 2 - #{Application.get_env(:nfd, :seven_week_vol_2_week_5_title)} - Week 5" }
-      42 -> { "template_seven_week_awareness_vol_2_0.html", "7 Week Awareness Challenge Vol 2 - #{Application.get_env(:nfd, :seven_week_vol_2_week_6_title)} - Week 6" }
-      49 -> { "template_seven_week_awareness_vol_2_0.html", "7 Week Awareness Challenge Vol 2 - #{Application.get_env(:nfd, :seven_week_vol_2_week_7_title)} - Week 7" }
-      _ -> { false, false }
-    end
-  end
-
-  def run_seven_week_awareness_challenge_vol_3(count) do
-    case count do
-      0 -> { "template_seven_week_awareness_vol_3_0.html", "7 Week Awareness Challenge Vol 3 - #{Application.get_env(:nfd, :seven_week_vol_3_week_0_title)} - Week 0" }
-      7 -> { "template_seven_week_awareness_vol_3_0.html", "7 Week Awareness Challenge Vol 3 - #{Application.get_env(:nfd, :seven_week_vol_3_week_1_title)} - Week 1" }
-      14 -> { "template_seven_week_awareness_vol_3_0.html", "7 Week Awareness Challenge Vol 3 - #{Application.get_env(:nfd, :seven_week_vol_3_week_2_title)} - Week 2" }
-      21 -> { "template_seven_week_awareness_vol_3_0.html", "7 Week Awareness Challenge Vol 3 - #{Application.get_env(:nfd, :seven_week_vol_3_week_3_title)} - Week 3" }
-      28 -> { "template_seven_week_awareness_vol_3_0.html", "7 Week Awareness Challenge Vol 3 - #{Application.get_env(:nfd, :seven_week_vol_3_week_4_title)} - Week 4" }
-      35 -> { "template_seven_week_awareness_vol_3_0.html", "7 Week Awareness Challenge Vol 3 - #{Application.get_env(:nfd, :seven_week_vol_3_week_5_title)} - Week 5" }
-      42 -> { "template_seven_week_awareness_vol_3_0.html", "7 Week Awareness Challenge Vol 3 - #{Application.get_env(:nfd, :seven_week_vol_3_week_6_title)} - Week 6" }
-      49 -> { "template_seven_week_awareness_vol_3_0.html", "7 Week Awareness Challenge Vol 3 - #{Application.get_env(:nfd, :seven_week_vol_3_week_7_title)} - Week 7" }
-      _ -> { false, false }
-    end
-  end
-
-  def run_seven_week_awareness_challenge_vol_4(count) do
-    case count do
-      0 -> { "template_seven_week_awareness_vol_4_0.html", "7 Week Awareness Challenge Vol 4 - #{Application.get_env(:nfd, :seven_week_vol_4_week_0_title)} - Week 0" }
-      7 -> { "template_seven_week_awareness_vol_4_0.html", "7 Week Awareness Challenge Vol 4 - #{Application.get_env(:nfd, :seven_week_vol_4_week_1_title)} - Week 1" }
-      14 -> { "template_seven_week_awareness_vol_4_0.html", "7 Week Awareness Challenge Vol 4 - #{Application.get_env(:nfd, :seven_week_vol_4_week_2_title)} - Week 2" }
-      21 -> { "template_seven_week_awareness_vol_4_0.html", "7 Week Awareness Challenge Vol 4 - #{Application.get_env(:nfd, :seven_week_vol_4_week_3_title)} - Week 3" }
-      28 -> { "template_seven_week_awareness_vol_4_0.html", "7 Week Awareness Challenge Vol 4 - #{Application.get_env(:nfd, :seven_week_vol_4_week_4_title)} - Week 4" }
-      35 -> { "template_seven_week_awareness_vol_4_0.html", "7 Week Awareness Challenge Vol 4 - #{Application.get_env(:nfd, :seven_week_vol_4_week_5_title)} - Week 5" }
-      42 -> { "template_seven_week_awareness_vol_4_0.html", "7 Week Awareness Challenge Vol 4 - #{Application.get_env(:nfd, :seven_week_vol_4_week_6_title)} - Week 6" }
-      49 -> { "template_seven_week_awareness_vol_4_0.html", "7 Week Awareness Challenge Vol 4 - #{Application.get_env(:nfd, :seven_week_vol_4_week_7_title)} - Week 7" }
+      28 -> { "template_twenty_eight_day_awareness_29", "28 Day Awareness Challenge - #{Application.get_env(:nfd, :challenge_day_29_title)}" }
       _ -> { false, false }
     end
   end

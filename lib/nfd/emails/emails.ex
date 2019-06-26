@@ -86,14 +86,15 @@ defmodule Nfd.Emails do
           end
         end
 
+        # NOTE: However still update the count.
         case type do
           ^kickstarter_type -> update_subscription(type, subscriber, 7, day_count)
-          ^meditation_primer_type -> update_subscription(type, subscriber, 10, day_count)
+          ^meditation_primer_type -> update_subscription(type, subscriber, 11, day_count)
           ^awareness_challenge_type -> update_subscription(type, subscriber, 28, day_count)
-          ^awareness_seven_week_vol_1_type -> update_subscription(type, subscriber, 7, day_count)
-          ^awareness_seven_week_vol_2_type -> update_subscription(type, subscriber, 7, day_count)
-          ^awareness_seven_week_vol_3_type -> update_subscription(type, subscriber, 7, day_count)
-          ^awareness_seven_week_vol_4_type -> update_subscription(type, subscriber, 7, day_count)
+          ^awareness_seven_week_vol_1_type -> update_subscription(type, subscriber, 50, day_count)
+          ^awareness_seven_week_vol_2_type -> update_subscription(type, subscriber, 50, day_count)
+          ^awareness_seven_week_vol_3_type -> update_subscription(type, subscriber, 50, day_count)
+          ^awareness_seven_week_vol_4_type -> update_subscription(type, subscriber, 50, day_count)
         end
       end
     end

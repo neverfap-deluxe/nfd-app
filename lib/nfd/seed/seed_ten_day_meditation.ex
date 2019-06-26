@@ -143,6 +143,18 @@ defmodule Nfd.SeedTDMP do
       slug: "acceptance",
       collection_id: collection_id
     })
+    Repo.insert(%File{
+      seed_id: "9d3fe0e5-50bd-4a91-a450-6ca66812d713",
+      type: "email_file",
+      specific_type: "email",
+      description: "Conclusion",
+      display_name: "Conclusion",
+      number: 8,
+      premium: true,
+      b2_file_name: "",
+      slug: "conclusion",
+      collection_id: collection_id
+    })
   end
 
 end

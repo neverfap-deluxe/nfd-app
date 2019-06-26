@@ -110,5 +110,17 @@ defmodule Nfd.SeedSWAVOL3 do
       slug: "slow-spinning-circle",
       collection_id: collection_id
     })
+    Repo.insert(%File{
+      seed_id: "9a6e3162-8aec-4cd4-9d2f-b2629521f23d",
+      type: "email_file",
+      specific_type: "email",
+      description: "Conclusion",
+      display_name: "Conclusion",
+      number: 8,
+      premium: true,
+      b2_file_name: "",
+      slug: "conclusion",
+      collection_id: collection_id
+    })
   end
 end

@@ -110,5 +110,17 @@ defmodule Nfd.SeedSWAVOL2 do
       slug: "blind-attention",
       collection_id: collection_id
     })
+    Repo.insert(%File{
+      seed_id: "c9caccf3-1618-4e71-9ad9-7d5314747621",
+      type: "email_file",
+      specific_type: "email",
+      description: "Conclusion",
+      display_name: "Conclusion",
+      number: 8,
+      premium: true,
+      b2_file_name: "",
+      slug: "conclusion",
+      collection_id: collection_id
+    })
   end
 end

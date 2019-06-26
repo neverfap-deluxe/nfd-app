@@ -110,5 +110,17 @@ defmodule Nfd.SeedSWAVOL4 do
       slug: "focus-your-attention",
       collection_id: collection_id
     })
+    Repo.insert(%File{
+      seed_id: "5e2afb9a-3a53-40b8-b10d-a6e8961cd8a2",
+      type: "email_file",
+      specific_type: "email",
+      description: "Conclusion",
+      display_name: "Conclusion",
+      number: 8,
+      premium: true,
+      b2_file_name: "",
+      slug: "conclusion",
+      collection_id: collection_id
+    })
   end
 end
