@@ -143,16 +143,16 @@ defmodule Nfd.Account.Subscriber do
     end
   end
 
-  # NOTE need to figure out how to pass in collection based on the collection type.
-  def check_if_subscriber_has_paid(subscriber, collection) do
-    # TODO: Test this and see if it works
+  def check_if_subscriber_has_paid(subscriber, collection_slug) do
+    # TODO: Test this
+    collection = Content.get_collection_slug!(collection_slug)
     host = if Mix.env() == :dev, do: "localhost", else: "neverfapdeluxe.com"
-    user = Account.get_user_email(subscriber.subscriber_email)
+    user = Account.get_user_email!(subscriber.subscriber_email)
     patreon_access = Patreon.fetch_patreon(host, user)
-    has_paid_for_collection = Collection.has_paid_for_collection(collection, %{ collections_access_list: Account.list_collection_access_by_user_id(user.id) })
-    if has_paid_for_collection != nil or patreon_access.tier_access_list |> Enum.find(&(&1 == :courses_access)), do: true, else: false
 
-    # Still need to complete logic and check for both patreon access and the other one.
+    has_paid_for_collection = Collection.has_paid_for_collection(collection, %{ collections_access_list: Account.list_collection_access_by_user_id(user.id) }) != nil
+    has_patreon_access = patreon_access.tier_access_list |> Enum.find(&(&1 == :courses_access))
+    if has_paid_for_collection or has_patreon_access, do: true, else: false
   end
 
   def get_subscriber_changeset(symbol) do

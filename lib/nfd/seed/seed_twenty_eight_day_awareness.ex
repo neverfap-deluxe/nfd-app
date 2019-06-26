@@ -7,10 +7,10 @@ defmodule Nfd.SeedTEDA do
   alias Nfd.Content.Collection
 
   def seed do
-    case Content.get_collection_seed_id("068b52c1-cce1-4239-a345-1182ae528a41") do
+    case Content.get_collection_seed_id("de3d7f8a-fda6-4b1a-ba50-31cc3181b4bd") do
       nil ->
         Repo.insert!(%Collection{
-          seed_id: "12ec4d76-3d93-42c5-8c2f-65bb146e4bd6",
+          seed_id: "de3d7f8a-fda6-4b1a-ba50-31cc3181b4bd",
           type: "course_collection",
           active_type: "awareness_active_type",
           frequency: "day",

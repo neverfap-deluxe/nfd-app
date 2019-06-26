@@ -90,33 +90,31 @@ defmodule Nfd.Util.Email do
     { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type, awareness_seven_week_vol_1_type, awareness_seven_week_vol_2_type, awareness_seven_week_vol_3_type, awareness_seven_week_vol_4_type } = Nfd.Util.Email.generate_course_types()
 
     case type do
-      ^general_type -> {:NA, :subscribed}
-      ^kickstarter_type -> {:seven_day_kickstarter_count, :seven_day_kickstarter_up_to_count, :seven_day_kickstarter_subscribed}
-      ^meditation_primer_type -> {:ten_day_meditation_count, :ten_day_meditation_up_to_count, :ten_day_meditation_subscribed}
-      ^awareness_challenge_type -> {:twenty_eight_day_awareness_count, :twenty_eight_day_awareness_up_to_count, :twenty_eight_day_awareness_subscribed}
-      ^awareness_seven_week_vol_1_type -> {:awareness_seven_week_vol_1_count, :awareness_seven_week_vol_1_up_to_count, :awareness_seven_week_vol_1_subscribed}
-      ^awareness_seven_week_vol_2_type -> {:awareness_seven_week_vol_2_count, :awareness_seven_week_vol_2_up_to_count, :awareness_seven_week_vol_2_subscribed}
-      ^awareness_seven_week_vol_3_type -> {:awareness_seven_week_vol_3_count, :awareness_seven_week_vol_3_up_to_count, :awareness_seven_week_vol_3_subscribed}
-      ^awareness_seven_week_vol_4_type -> {:awareness_seven_week_vol_4_count, :awareness_seven_week_vol_4_up_to_count, :awareness_seven_week_vol_4_subscribed}
+      ^general_type -> {:NA, :NA, :NA, :subscribed}
+      ^kickstarter_type -> {:seven_day_kickstarter_count, :seven_day_kickstarter_up_to_count, :free_active, :seven_day_kickstarter_subscribed}
+      ^meditation_primer_type -> {:ten_day_meditation_count, :ten_day_meditation_up_to_count, :meditation_active, :ten_day_meditation_subscribed}
+      ^awareness_challenge_type -> {:twenty_eight_day_awareness_count, :twenty_eight_day_awareness_up_to_count, :awareness_active, :twenty_eight_day_awareness_subscribed}
+      ^awareness_seven_week_vol_1_type -> {:awareness_seven_week_vol_1_count, :awareness_seven_week_vol_1_up_to_count, :awareness_active, :awareness_seven_week_vol_1_subscribed}
+      ^awareness_seven_week_vol_2_type -> {:awareness_seven_week_vol_2_count, :awareness_seven_week_vol_2_up_to_count, :awareness_active, :awareness_seven_week_vol_2_subscribed}
+      ^awareness_seven_week_vol_3_type -> {:awareness_seven_week_vol_3_count, :awareness_seven_week_vol_3_up_to_count, :awareness_active, :awareness_seven_week_vol_3_subscribed}
+      ^awareness_seven_week_vol_4_type -> {:awareness_seven_week_vol_4_count, :awareness_seven_week_vol_4_up_to_count, :awareness_active, :awareness_seven_week_vol_4_subscribed}
     end
   end
-  def type_to_collection(type) do
+  def type_to_collection_slug(type) do
     { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type, awareness_seven_week_vol_1_type, awareness_seven_week_vol_2_type, awareness_seven_week_vol_3_type, awareness_seven_week_vol_4_type } = Nfd.Util.Email.generate_course_types()
-
     case type do
-      ^general_type -> nil
-      ^kickstarter_type -> Collection.get_collection_seed_id("068b52c1-cce1-4239-a345-1182ae528a41")
-      ^meditation_primer_type -> Collection.get_collection_seed_id("943bd030-60e4-42da-a8c1-0c926c508374")
-      ^awareness_challenge_type -> Collection.get_collection_seed_id("068b52c1-cce1-4239-a345-1182ae528a41")
-      ^awareness_seven_week_vol_1_type -> Collection.get_collection_seed_id("fd5bf9cf-a0db-41c9-af52-c482f4701384")
-      ^awareness_seven_week_vol_2_type -> Collection.get_collection_seed_id("d5d2c8c4-b90e-4556-8089-feb0dfc212fd")
-      ^awareness_seven_week_vol_3_type -> Collection.get_collection_seed_id("c014f1c5-be89-455f-8f88-970c6cf70d5d")
-      ^awareness_seven_week_vol_4_type -> Collection.get_collection_seed_id("b9bb282c-5238-4377-90e1-825de279376c")
+      ^general_type -> "general-newsletter"
+      ^kickstarter_type -> "seven-day-neverfap-deluxe-kickstarter"
+      ^meditation_primer_type -> "ten-day-meditation-primer"
+      ^awareness_challenge_type -> "twenty-eight-day-awareness-challenge"
+      ^awareness_seven_week_vol_1_type -> "seven-week-awareness-challenge-vol-1"
+      ^awareness_seven_week_vol_2_type -> "seven-week-awareness-challenge-vol-2"
+      ^awareness_seven_week_vol_3_type -> "seven-week-awareness-challenge-vol-3"
+      ^awareness_seven_week_vol_4_type -> "seven-week-awareness-challenge-vol-4"
     end
   end
   def collection_slug_to_type(collection_slug) do
     { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type, awareness_seven_week_vol_1_type, awareness_seven_week_vol_2_type, awareness_seven_week_vol_3_type, awareness_seven_week_vol_4_type } = Nfd.Util.Email.generate_course_types()
-
     cond do
       collection_slug == "general-newsletter" -> general_type
       collection_slug == "seven-day-neverfap-deluxe-kickstarter" -> kickstarter_type
@@ -126,6 +124,18 @@ defmodule Nfd.Util.Email do
       collection_slug == "seven-week-awareness-challenge-vol-2"-> awareness_seven_week_vol_2_type
       collection_slug == "seven-week-awareness-challenge-vol-3"-> awareness_seven_week_vol_3_type
       collection_slug == "seven-week-awareness-challenge-vol-4"-> awareness_seven_week_vol_4_type
+    end
+  end
+  def collection_slug_to_active_type_property(collection_slug) do
+    cond do
+      "general-newsletter" -> :NA
+      "seven-day-neverfap-deluxe-kickstarter" -> :free_active
+      "ten-day-meditation-primer" -> :meditation_active
+      "twenty-eight-day-awareness-challenge" -> :awareness_active
+      "seven-week-awareness-challenge-vol-1"-> :awareness_active
+      "seven-week-awareness-challenge-vol-2"-> :awareness_active
+      "seven-week-awareness-challenge-vol-3"-> :awareness_active
+      "seven-week-awareness-challenge-vol-4"-> :awareness_active
     end
   end
   def collection_slug_to_subscribed_property(collection_slug) do
@@ -146,6 +156,19 @@ defmodule Nfd.Util.Email do
       ^awareness_seven_week_vol_2_type -> "7 Week Awareness Challenge Vol 2"
       ^awareness_seven_week_vol_3_type -> "7 Week Awareness Challenge Vol 3"
       ^awareness_seven_week_vol_4_type -> "7 Week Awareness Challenge Vol 4"
+    end
+  end
+  def course_type_to_matrix(type) do
+    { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type, awareness_seven_week_vol_1_type, awareness_seven_week_vol_2_type, awareness_seven_week_vol_3_type, awareness_seven_week_vol_4_type } = Nfd.Util.Email.generate_course_types()
+    case type do
+      ^general_type -> "0h1"
+      ^kickstarter_type -> "1h1"
+      ^meditation_primer_type -> "2h1"
+      ^awareness_challenge_type -> "3h1"
+      ^awareness_seven_week_vol_1_type -> "4h1"
+      ^awareness_seven_week_vol_2_type -> "5h1"
+      ^awareness_seven_week_vol_3_type -> "6h1"
+      ^awareness_seven_week_vol_4_type -> "7h1"
     end
   end
   def course_type_to_matrix(type) do

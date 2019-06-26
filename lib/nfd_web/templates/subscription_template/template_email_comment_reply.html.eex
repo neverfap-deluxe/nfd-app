@@ -41,7 +41,7 @@
           .outlook-group-fix { width:100% !important; }
         </style>
         <![endif]-->
-        
+
       <!--[if !mso]><!-->
         <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet" type="text/css">
         <style type="text/css">
@@ -49,30 +49,30 @@
         </style>
       <!--<![endif]-->
 
-    
-        
+
+
     <style type="text/css">
       @media only screen and (min-width:480px) {
         .mj-column-px-400 { width:400px !important; max-width: 400px; }
       }
     </style>
-    
-  
+
+
         <style type="text/css">
-        
-        
+
+
         </style>
-        
-        
+
+
       </head>
       <body>
-        
-        
+
+
       <div
          style=""
       >
         <!-- Intro text -->
-      
+
       <!--[if mso | IE]>
       <table
          align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
@@ -80,10 +80,10 @@
         <tr>
           <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
       <![endif]-->
-    
-      
+
+
       <div  style="background:#fafafa;background-color:#fafafa;Margin:0px auto;max-width:600px;">
-        
+
         <table
            align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#fafafa;background-color:#fafafa;width:100%;"
         >
@@ -94,83 +94,83 @@
               >
                 <!--[if mso | IE]>
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                
+
         <tr>
-      
+
             <td
                class="" style="vertical-align:top;width:400px;"
             >
           <![endif]-->
-            
+
       <div
          class="mj-column-px-400 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
       >
-        
+
       <table
          border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
       >
-        
+
             <tr>
               <td
                  align="left" style="font-size:0px;padding:10px 25px;padding-bottom:20px;word-break:break-word;"
               >
-                
+
       <div
          style="font-family:Helvetica Neue;font-size:25px;line-height:35px;text-align:left;color:#000000;"
       >
         Someone replied to your comment on <%= @referer %>
       </div>
-    
+
               </td>
             </tr>
-          
+
             <tr>
               <td
                  align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
               >
-                
+
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
       >
         Name: <%= @name %>
       </div>
-    
+
               </td>
             </tr>
-          
+
             <tr>
               <td
                  align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
               >
-                
+
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
       >
         Message: <%= @message %>
       </div>
-    
+
               </td>
             </tr>
-          
+
             <tr>
               <td
                  align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
               >
-                
+
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
       >
         Click on the link below if you would like to respond, otherwise thank you for participating in NeverFap Deluxe!
       </div>
-    
+
               </td>
             </tr>
-          <!-- TODO: add the id into the href -->
+          <!-- FUTURE: add the id into the href so user comments can go to where the reply was. -->
             <tr>
               <td
                  align="center" vertical-align="middle" style="font-size:0px;padding:10px 25px;word-break:break-word;"
               >
-                
+
       <table
          border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;line-height:100%;"
       >
@@ -186,38 +186,37 @@
           </td>
         </tr>
       </table>
-    
+
               </td>
             </tr>
-          
+
       </table>
-    
+
       </div>
-    
+
           <!--[if mso | IE]>
             </td>
-          
+
         </tr>
-      
+
                   </table>
                 <![endif]-->
               </td>
             </tr>
           </tbody>
         </table>
-        
+
       </div>
-    
-      
+
+
       <!--[if mso | IE]>
           </td>
         </tr>
       </table>
       <![endif]-->
-    
-    
+
+
       </div>
-    
+
       </body>
     </html>
-  

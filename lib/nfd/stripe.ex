@@ -3,13 +3,14 @@ defmodule Nfd.Stripe do
   alias Nfd.Account
   alias Nfd.Content
 
+  alias Nfd.Emails
   alias Nfd.EmailLogs
 
   # TODO
   # https://stripe.com/docs/payments/checkout/client#enable
   # https://stripe.com/docs/webhooks/setup
 
-  def payment_process(conn, user, collection) do
+  def payment_process(conn, user, subscriber, collection) do
     case Account.create_collection_access(%{user_id: user.id, collection_id: collection.id, amount_paid: collection.price }) do
       {:ok, _collection_access} ->
         EmailLogs.success_payment_email_log("#{user.email} - $#{collection.price} - #{collection.display_name}")
@@ -67,7 +68,7 @@ defmodule Nfd.Stripe do
 
       case Stripe.Session.create(params) do
         {:ok, stripe_session} -> stripe_session
-        {:error, error} -> 
+        {:error, error} ->
           IO.inspect(error)
           %{}
       end

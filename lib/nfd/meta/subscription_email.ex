@@ -11,15 +11,15 @@ defmodule Nfd.Meta.SubscriptionEmail do
 
     field :collection_id, :binary_id
     field :subscriber_id, :binary_id
+
     # belongs_to :collection, Nfd.Content.Collection
-    # TODO Create a link between subscription emails and collections (and maybe even files)
     timestamps()
   end
 
   @doc false
   def changeset(subscription_email, attrs) do
     subscription_email
-    |> cast(attrs, [:day, :course, :subscription_email, :collection_id])
+    |> cast(attrs, [:day, :course, :subscription_email, :collection_id, :subscriber_id])
     |> validate_required([:day, :course, :subscription_email, :collection_id])
   end
 end

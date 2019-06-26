@@ -1,0 +1,39 @@
+<div class="subscribe_course">
+  <a id="reset_course_id" class="button subscribe__button">Reset Course To Day 0</a>
+</div>
+
+<script>
+  var reset_course_id = document.querySelector("#reset_course_id");
+  if (reset_course_id) {
+    reset_course_id.onclick = function(event) {
+      Swal.fire({
+        title: 'Are you sure you want to reset your count?',
+        text: "This will reset your subscription back to Day 0 incase, you want to start back to the beginning, as well as end your current subscription to this course.",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, reset count!'
+      }).then((result) => {
+        if (result.value) {
+          swalWithBootstrapButtons.fire(
+            'Enjoy!',
+            'The course has been reset back to Day 0. You will be redirected shortly.',
+            'success'
+          )
+          window.replace(<%= Routes.function_path(@conn, :reset_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_collections.user.id, collection_id: Map.get(@collection, :id), subscribed_property: @subscribed_property) %>);
+        } else if (
+          // Read more about handling dismissals
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            'Cancelled',
+            'The course progress has been untouched.',
+            'success'
+          )
+        }
+      })
+    }
+  }
+
+</script>

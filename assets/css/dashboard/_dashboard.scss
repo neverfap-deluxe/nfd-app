@@ -141,6 +141,10 @@
       // align-items: center;
       width: 650px;
 
+      .collection__top__type {
+        
+      }
+
       .collection__top__name {
         font-size: 2.3rem;
         line-height: 3.5rem;
@@ -210,7 +214,7 @@
 }
 
 .dashboard__button__collection {
-  display: flex; 
+  display: flex;
   margin-bottom: 1rem;
 }
 

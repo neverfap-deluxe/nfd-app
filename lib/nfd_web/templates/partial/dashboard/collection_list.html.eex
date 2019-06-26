@@ -1,11 +1,9 @@
-
-<!-- TODO: Show the course type on the item itself. -->
-
 <div class="dashboard__main__collection">
   <%= if !Enum.empty?(@collections) do %>
     <%= Enum.map(@collections, fn(collection) -> %>
       <div class="collection">
         <div class="collection__top">
+          <h3 class="collection__top__type"><%= course_active_type_to_readable_text collection.active_type %></h3>
           <h3 class="collection__top__name"><%= collection.display_name %></h3>
           <h4 class="collection__top__price">$<%= collection.price %></h4>
 

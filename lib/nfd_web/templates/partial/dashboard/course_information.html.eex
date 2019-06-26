@@ -1,11 +1,11 @@
 <div class="dashboard__course__information">
-  <p><b>Landing page:</b> <a class="link" href="/<%= @dashboard_collections_collection.collection.slug %>">link</a></p>
+  <p><b>Landing page:</b> <a class="link" href="/<%= @dashboard_collections_collection.collection.slug %>"><%= @dashboard_collections_collection.collection.display_name %></a></p>
   <p><b>Total Days:</b> <%= @dashboard_collections_collection.collection.total_period %></p>
   <p><b>Current Day:</b> <%= @dashboard_collections_collection.collection.up_to_count %></p>
   <p><b>Frequency:</b> <%= @dashboard_collections_collection.collection.frequency %></p>
   <%= if @dashboard_collections_collection.collection.current_collection_module do %>
-    <p><b>Module:</b> <%= @dashboard_collections_collection.collection.current_collection_module.display_name %></p>
-    <p><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_file, @dashboard_collections_collection.collection.slug, @dashboard_collections_collection.collection.current_collection_module.slug) %>"></a></p>
+    <p><b>Current Day Module:</b> <%= @dashboard_collections_collection.collection.current_collection_module.display_name %></p>
+    <p><b>Current Day Module Link:</b><a href="<%= Routes.dashboard_path(@conn, :dashboard_course_file, @dashboard_collections_collection.collection.slug, @dashboard_collections_collection.collection.current_collection_module.slug) %>"></a></p>
   <% end %>
 
   <div class="subscription__email__container">
@@ -16,13 +16,14 @@
       </div>
     <% end) %>
   </div>
-  
+
   <%# Purchase date %>
   <%# FUTURE: Reset course subscription back to the start %>
 
   <%= if @has_premium_rights do %>
     <div class="dashboard__button__collection">
-      <%= partial "dashboard/subscribe_course.html", %{ conn: @conn, collection: @dashboard_collections_collection.collection, subscribed: Map.get(@user_collections.subscriber, @dashboard_collections_collection.subscribed_property), subscribed_property: @dashboard_collections_collection.subscribed_property, user_collections: @user_collections } %>    
+      <%= partial "dashboard/subscribe_course.html", %{ conn: @conn, collection: @dashboard_collections_collection.collection, subscribed: Map.get(@user_collections.subscriber, @dashboard_collections_collection.subscribed_property), subscribed_property: @dashboard_collections_collection.subscribed_property, user_collections: @user_collections } %>
+      <%= partial "dashboard/reset_course.html", %{ conn: @conn, collection: @dashboard_collections_collection.collection, subscribed: Map.get(@user_collections.subscriber, @dashboard_collections_collection.subscribed_property), subscribed_property: @dashboard_collections_collection.subscribed_property, user_collections: @user_collections } %>
     </div>
   <% end %>
 </div>

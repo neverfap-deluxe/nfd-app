@@ -5,17 +5,15 @@ defmodule Nfd.Emails do
     layout: {NfdWeb.LayoutView, :email}
 
   import Swoosh.Email
-
-  alias Nfd.Account
-  alias Nfd.EmailTemplates
-  alias Nfd.EmailLogs
-  alias Nfd.Meta
-
-  alias Nfd.Account.Subscriber
-
   require Logger
 
-  # Email Schedule Logic
+  alias Nfd.Account
+  alias Nfd.Account.Subscriber
+
+  alias Nfd.Meta
+
+  alias Nfd.EmailTemplates
+  alias Nfd.EmailLogs
 
   def send_day_0_email(subscriber, main_matrix) do
     { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type, awareness_seven_week_vol_1_type, awareness_seven_week_vol_2_type, awareness_seven_week_vol_3_type, awareness_seven_week_vol_4_type } = Nfd.Util.Email.generate_course_types()
@@ -55,12 +53,12 @@ defmodule Nfd.Emails do
       has_access_to_subscription =
         case type do
           ^kickstarter_type -> true
-          ^meditation_primer_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection(meditation_primer_type))
-          ^awareness_challenge_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection(awareness_challenge_type))
-          ^awareness_seven_week_vol_1_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection(awareness_seven_week_vol_1_type))
-          ^awareness_seven_week_vol_2_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection(awareness_seven_week_vol_2_type))
-          ^awareness_seven_week_vol_3_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection(awareness_seven_week_vol_3_type))
-          ^awareness_seven_week_vol_4_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection(awareness_seven_week_vol_4_type))
+          ^meditation_primer_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection_slug(meditation_primer_type))
+          ^awareness_challenge_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection_slug(awareness_challenge_type))
+          ^awareness_seven_week_vol_1_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection_slug(awareness_seven_week_vol_1_type))
+          ^awareness_seven_week_vol_2_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection_slug(awareness_seven_week_vol_2_type))
+          ^awareness_seven_week_vol_3_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection_slug(awareness_seven_week_vol_3_type))
+          ^awareness_seven_week_vol_4_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection_slug(awareness_seven_week_vol_4_type))
         end
 
       if has_access_to_subscription do
@@ -99,18 +97,20 @@ defmodule Nfd.Emails do
   end
 
   def update_subscription(type, subscriber, subscription_day_limit, day_count) do
-    { count_property, up_to_count_property, subscribed_property } = Nfd.Util.Email.type_to_subscriber_properties(type)
-
-    # TODO: Need to provide more properties i.e. collection_id and subscriber_id to ensure this is complete.
+    { count_property, up_to_count_property, active_type_property, subscribed_property } = Nfd.Util.Email.type_to_subscriber_properties(type)
 
     case Meta.create_subscription_email(%{ day: day_count, course: type, subscription_email: subscriber.subscriber_email}) do
       {:ok, _subscription_email} ->
-        # TODO: Figure out a way to update this value.
-        # up_to_count_property
-        # also, active type property needs to change as well 
+
+        # TODO: Test extensively.
+        active_value = Atom.to_string(subscribed_property)
+        count = Map.fetch!(subscriber, count_property) + 1
+        up_to_count_original = Map.fetch!(subscriber, up_to_count_property)
+        up_to_count = if up_to_count_original == subscription_day_limit, do: up_to_count_original, else: up_to_count_original + 1
+
         case day_count == subscription_day_limit do
-          true -> Account.update_subscriber(subscriber, %{ count_property => 0, subscribed_property => false })
-          false -> Account.update_subscriber(subscriber, %{ count_property => Map.fetch!(subscriber, count_property) + 1 })
+          true -> Account.update_subscriber(subscriber, %{ up_to_count_property => up_to_count, active_type_property => active_value, count_property => 0, subscribed_property => false })
+          false -> Account.update_subscriber(subscriber, %{ up_to_count_property => up_to_count, active_type_property => active_value, count_property => count })
         end
       {:error, _error_changeset} ->
         EmailLogs.error_email_log("#{subscriber.subscriber_email} - Failed to create Meta.SubscriptionEmail - :update_subscription")

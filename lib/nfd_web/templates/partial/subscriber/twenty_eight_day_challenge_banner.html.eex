@@ -18,7 +18,6 @@
         <%= form_for @twenty_eight_day_challenge_changeset, Routes.subscription_path(@conn, :add_subscription_validate_matrix), [target: "_blank"], fn f -> %>
           <%= text_input f, :subscriber_email, [placeholder: "email", class: "banner__input"] %>
           <%= submit "Submit", [class: "banner__submit"]  %>
-          <!-- First matrix is general, second matrix is seven day. -->
           <%= hidden_input f, :multiple_matrix, [value: "0h1-3h1"] %>
           <%= hidden_input f, :main_matrix, [value: "3h1"] %>
         <% end %>

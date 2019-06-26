@@ -50,6 +50,7 @@ defmodule Nfd.Content do
 
   """
   def get_collection!(id), do: Repo.get!(Collection, id)
+  def get_collection_slug!(slug), do: Repo.get_by!(Collection, slug: slug)
   def get_collection_slug_with_files!(slug), do: Repo.get_by!(Collection, slug: slug) |> Repo.preload(:files)
   def get_collection_seed_id(seed_id), do: Repo.get_by(Collection, seed_id: seed_id)
 

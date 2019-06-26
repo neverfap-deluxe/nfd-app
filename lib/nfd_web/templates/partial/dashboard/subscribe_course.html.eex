@@ -4,15 +4,9 @@
   <!-- Condition 1: Dashboard, no collection -->
   <!-- Condition 2: Collection already subscribed to -->
   <!-- Condition 3: -->
-  
+
   <%
-    course_active_type =
-      case Map.get(@collection, :active_type) do
-        "free_active_type" -> :free_active
-        "awareness_active_type" -> :awareness_active
-        "meditation_active_type" -> :meditation_active
-        _ -> nil
-      end
+    course_active_type = course_active_type_to_active_type_symbol(@collection)
     IO.inspect course_active_type
     IO.inspect Map.get(@user_collections.subscriber, course_active_type)
     IO.inspect @subscribed_property
@@ -34,9 +28,9 @@
 </div>
 
 <div class="subscribe_course__modal">
-
   <!-- TODO: If there is another active_type, that means there's another collection I need to fetch in the database first. -->
-
+  <%# Map.get(@collection, :id) so this needs to be the  %>
+  <%# @user_collections.active_collections, course_active_type = %>
   <a href="<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_collections.user.id, collection_id: Map.get(@collection, :id), subscribed_property: @subscribed_property) %>" class="button subscribe__button">Subscribe me anyway!</a>
 </div>
 
@@ -50,8 +44,7 @@
           <p>You are currently subscribed to the module <%= @collection |> Map.get(:display_name) %>.</p>
           <p>The system only allows you to subscribe to one course type at a time, to ensure that you're sticking to the process and are only focusing your attention on mastering one targeted exercise at a time.</p>
           <p>When you switch subscriptions, you don't lose your progress, however you will be unsubscribed from the subscribed course.</p>
-          <p>Please read here to learn more.</p>
-          <p>I would recommend </p>
+          <p>Please <a class="link" href="<%= Routes.dashboard_path(@conn, :dashboard_faq) %>">click here</a> to learn more.</p>
         `,
         <%# text: "You won't be able to revert this!", %>
         type: 'warning',
@@ -62,22 +55,23 @@
       }).then((result) => {
         if (result.value) {
           swalWithBootstrapButtons.fire(
-            'Deleted!',
-            'Your file has been deleted.',
+            'Subscription changed!',
+            'You will be redirected shortly.',
             'success'
           )
+          window.location.replace(<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_collections.user.id, collection_id: Map.get(@collection, :id), subscribed_property: @subscribed_property) %>);
         } else if (
           // Read more about handling dismissals
           result.dismiss === Swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire(
             'Cancelled',
-            'Your imaginary file is safe :)',
-            'error'
+            'No worries buddy!',
+            'success'
           )
         }
       })
     }
   }
-  
+
 </script>

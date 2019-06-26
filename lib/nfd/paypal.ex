@@ -3,14 +3,16 @@ defmodule Nfd.Paypal do
   alias Nfd.Account
   alias Nfd.Content
 
+  alias Nfd.Emails
   alias Nfd.EmailLogs
 
   # https://developer.paypal.com/docs/checkout/integrate/
 
-  def payment_process(conn, user, collection) do
+  def payment_process(conn, user, subscriber, collection) do
     case Account.create_collection_access(%{user_id: user.id, collection_id: collection.id, amount_paid: collection.price}) do
       {:ok, collection_access} ->
         EmailLogs.success_payment_email_log("#{user.email} - $#{collection.price} - #{collection.display_name}")
+        Emails.send_day_0_email(subscriber, matrix)
         conn |> Plug.Conn.send_resp(200, "Payment Successful")
       {:error, error} ->
         EmailLogs.failure_payment_email_log("#{user.email} - $#{collection.price} - #{collection.display_name}")
@@ -21,7 +23,7 @@ defmodule Nfd.Paypal do
   def create_paypal_session(user, host, collection_slug) do
     case PayPal.API.get_oauth_token() do
       {:ok, { token, expires }} -> token
-      {:error, error} -> 
+      {:error, error} ->
         IO.inspect error
         nil
     end
