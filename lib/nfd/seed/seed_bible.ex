@@ -16,7 +16,6 @@ defmodule Nfd.SeedEBOOKS do
           frequency: "NA",
           total_period: 0,
           status: "complete",
-          stripe_sku: "NA",
           stripe_description: "The NeverFap Deluxe Bible is a complete collection of the NeverFap Deluxe Method of overcoming porn addiction.",
           subscribed_property_string: "",
           benefit_list: "Complete Website Collection",

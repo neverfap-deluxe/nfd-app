@@ -16,7 +16,6 @@ defmodule Nfd.SeedSWAVOL1 do
           frequency: "week",
           total_period: 7,
           status: "in_progress",
-          stripe_sku: "NA",
           stripe_description: "Learn more about your awareness with Vol 1. of our 7 week awareness challenge.",
           benefit_list: "7 Awareness Audio Recordings;Additional Written Explanations",
           subscribed_property_string: "awareness_seven_week_vol_1_subscribed",

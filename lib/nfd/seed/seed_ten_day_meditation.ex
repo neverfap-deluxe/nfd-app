@@ -16,7 +16,6 @@ defmodule Nfd.SeedTDMP do
           frequency: "day",
           total_period: 10,
           status: "complete",
-          stripe_sku: "NA",
           stripe_description: "10 Day Meditation Primer Audio Series.",
           benefit_list: "10 Guided Meditation Recordings;For Beginners",
           subscribed_property_string: "ten_day_meditation_subscribed",
