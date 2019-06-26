@@ -2,6 +2,7 @@ defmodule Nfd.Account.Subscriber do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Nfd.Content
   alias Nfd.Content.Collection
 
   alias Nfd.Account

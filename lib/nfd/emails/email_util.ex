@@ -171,17 +171,28 @@ defmodule Nfd.Util.Email do
       ^awareness_seven_week_vol_4_type -> "7h1"
     end
   end
-  def course_type_to_matrix(type) do
-    { general_type, kickstarter_type, meditation_primer_type, awareness_challenge_type, awareness_seven_week_vol_1_type, awareness_seven_week_vol_2_type, awareness_seven_week_vol_3_type, awareness_seven_week_vol_4_type } = Nfd.Util.Email.generate_course_types()
+  def collection_slug_to_matrix(type) do
     case type do
-      ^general_type -> "0h1"
-      ^kickstarter_type -> "1h1"
-      ^meditation_primer_type -> "2h1"
-      ^awareness_challenge_type -> "3h1"
-      ^awareness_seven_week_vol_1_type -> "4h1"
-      ^awareness_seven_week_vol_2_type -> "5h1"
-      ^awareness_seven_week_vol_3_type -> "6h1"
-      ^awareness_seven_week_vol_4_type -> "7h1"
+       "general-newsletter" -> "0h1"
+       "seven-day-neverfap-deluxe-kickstarter" -> "1h1"
+       "ten-day-meditation-primer" -> "2h1"
+       "twenty-eight-day-awareness-challenge" -> "3h1"
+       "seven-week-awareness-challenge-vol-1" -> "4h1"
+       "seven-week-awareness-challenge-vol-2" -> "5h1"
+       "seven-week-awareness-challenge-vol-3" -> "6h1"
+       "seven-week-awareness-challenge-vol-4" -> "7h1"
+    end
+  end
+  def collection_slug_to_count_property(type) do
+    case type do
+       "general-newsletter" -> :na
+       "seven-day-neverfap-deluxe-kickstarter" -> :seven_day_kickstarter_count
+       "ten-day-meditation-primer" -> :ten_day_meditation_count
+       "twenty-eight-day-awareness-challenge" -> :twenty_eight_day_awareness_count
+       "seven-week-awareness-challenge-vol-1" -> :awareness_seven_week_vol_1_count
+       "seven-week-awareness-challenge-vol-2" -> :awareness_seven_week_vol_2_count
+       "seven-week-awareness-challenge-vol-3" -> :awareness_seven_week_vol_3_count
+       "seven-week-awareness-challenge-vol-4" -> :awareness_seven_week_vol_4_count
     end
   end
   def generate_course_types do

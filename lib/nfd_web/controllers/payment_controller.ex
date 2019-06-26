@@ -7,6 +7,8 @@ defmodule NfdWeb.PaymentController do
   alias Nfd.Stripe
   alias Nfd.Paypal
 
+  alias Nfd.EmailLogs
+
   # https://developer.paypal.com/docs/checkout/integrate/#next
   # https://developer.paypal.com/docs/checkout/reference/server-integration/set-up-transaction
 

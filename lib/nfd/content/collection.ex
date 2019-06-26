@@ -60,7 +60,7 @@ defmodule Nfd.Content.Collection do
       |> Enum.reduce(%{}, fn active_property, acc ->
         subscribed_property = Map.get(subscriber, active_property)
         if subscribed_property != nil do
-          collection = subscribed_property |> FetchCollectionUtil.page_symbol_subscribed_to_slug() |> Content.get_collection_slug_with_files()
+          collection = subscribed_property |> FetchCollectionUtil.page_symbol_subscribed_to_slug() |> Content.get_collection_slug_with_files!()
 
           # NOTE: Collection Decorators - breaks wth email collections - possibly not in this context.
           up_to_count = subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(collection.slug))

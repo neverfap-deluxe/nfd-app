@@ -3,6 +3,8 @@ defmodule Nfd.Stripe do
   alias Nfd.Account
   alias Nfd.Content
 
+  alias Nfd.Util.Email
+
   alias Nfd.Emails
   alias Nfd.EmailLogs
 
@@ -13,6 +15,8 @@ defmodule Nfd.Stripe do
   def payment_process(conn, user, subscriber, collection) do
     case Account.create_collection_access(%{user_id: user.id, collection_id: collection.id, amount_paid: collection.price }) do
       {:ok, _collection_access} ->
+        matrix = Email.collection_slug_to_matrix(collection.slug)
+        Emails.send_day_0_email(subscriber, matrix)
         EmailLogs.success_payment_email_log("#{user.email} - $#{collection.price} - #{collection.display_name}")
         conn |> Plug.Conn.send_resp(200, "Payment Successful")
 

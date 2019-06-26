@@ -1,22 +1,11 @@
 <div class="subscribe_course">
   <p class="status"><b>Status:</b> <span class="<%= if @subscribed == true do %> status__green <% else %> status__red <% end %>"><%= subscribed_status @subscribed %></span></p>
-  <!-- TODO: Also check if collection is the same as the page that you're currently on, so that it doesn't show the modal when unsubscribing. -->
-  <!-- Condition 1: Dashboard, no collection -->
-  <!-- Condition 2: Collection already subscribed to -->
-  <!-- Condition 3: -->
+  <%# TODO: Test this. %>
+  <% course_active_type = course_active_type_to_active_type_symbol(@collection)%>
 
-  <%
-    course_active_type = course_active_type_to_active_type_symbol(@collection)
-    IO.inspect course_active_type
-    IO.inspect Map.get(@user_collections.subscriber, course_active_type)
-    IO.inspect @subscribed_property
-  %>
-  <!-- NOTE: It also needs to check if the person has reached the valid up_to amount, because their active_course value will still be the same. Actual, we need to get rid of that, sorry, I mean build that into the system. -->
-
-  <!-- TODO: Not sure about this, but too tired to figure it out atm. -->
   <% no_collection = @collection == %{} %>
   <% user_is_subscribed = @subscribed == true %>
-  <% this_course_is_active_type = Map.get(@user_collections.subscriber, course_active_type) === @subscribed_property %>
+  <% this_course_is_active_type = Map.get(@user_collections.subscriber, course_active_type) === Atom.to_string(@subscribed_property) %>
 
   <%= if no_collection do %>
     <%= if user_is_subscribed and this_course_is_active_type do %>
@@ -27,13 +16,7 @@
   <% end %>
 </div>
 
-<div class="subscribe_course__modal">
-  <!-- TODO: If there is another active_type, that means there's another collection I need to fetch in the database first. -->
-  <%# Map.get(@collection, :id) so this needs to be the  %>
-  <%# @user_collections.active_collections, course_active_type = %>
-  <a href="<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_collections.user.id, collection_id: Map.get(@collection, :id), subscribed_property: @subscribed_property) %>" class="button subscribe__button">Subscribe me anyway!</a>
-</div>
-
+<% active_collection = Map.get(@user_collections.active_collections, course_active_type) %>
 <script>
   var subscribe_course_id = document.querySelector("#subscribe_course_id");
   if (subscribe_course_id) {
@@ -41,7 +24,7 @@
       Swal.fire({
         title: 'Are you sure you want to subscribe?',
         html: `
-          <p>You are currently subscribed to the module <%= @collection |> Map.get(:display_name) %>.</p>
+          <p>You are currently subscribed to the module <%= active_collection |> Map.get(:display_name) %>.</p>
           <p>The system only allows you to subscribe to one course type at a time, to ensure that you're sticking to the process and are only focusing your attention on mastering one targeted exercise at a time.</p>
           <p>When you switch subscriptions, you don't lose your progress, however you will be unsubscribed from the subscribed course.</p>
           <p>Please <a class="link" href="<%= Routes.dashboard_path(@conn, :dashboard_faq) %>">click here</a> to learn more.</p>
@@ -61,7 +44,6 @@
           )
           window.location.replace(<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_collections.user.id, collection_id: Map.get(@collection, :id), subscribed_property: @subscribed_property) %>);
         } else if (
-          // Read more about handling dismissals
           result.dismiss === Swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire(

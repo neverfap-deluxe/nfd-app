@@ -15,12 +15,13 @@ defmodule NfdWeb.MessageController do
 
   alias NfdWeb.FetchConn
   alias NfdWeb.FetchAccess
+  alias NfdWeb.FetchCollection
 
   # NOTE: This is only suitable for content based comments
   def comment_form_post(conn, %{"comment" => comment}) do
     user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
 
-    {referer_key, referer_value} = Enum.find(conn.req_headers, fn({ key, value}) -> key == "referer" end)
+    {_referer_key, referer_value} = Enum.find(conn.req_headers, fn({ key, value}) -> key == "referer" end)
 
     page_symbol = String.split(referer_value, "/") |> Enum.fetch!(3) |> slug_to_symbol()
     content_slug = Redirects.redirect_content(conn, String.split(referer_value, "/") |> Enum.fetch!(4), Atom.to_string(page_symbol))
@@ -67,9 +68,7 @@ defmodule NfdWeb.MessageController do
 
   # NOTE: This is not being used anywhere, and needs to be tested.
   def contact_form_post(conn, %{"contact_form" => contact_form}) do
-    user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
-
-    {referer_key, value} = Enum.find(conn.req_headers, fn({ key, value}) -> key == "referer" end)
+    {_referer_key, value} = Enum.find(conn.req_headers, fn({ key, value}) -> key == "referer" end)
 
     first_slug = String.split(value, "/") |> Enum.fetch!(3)
     page_symbol = slug_to_symbol(first_slug)
@@ -130,8 +129,8 @@ defmodule NfdWeb.MessageController do
     if System.get_env("DELETE_COMMENT_SECRET") == delete_comment_secret do
       comment = Meta.get_comment!(comment_id)
       case Meta.delete_comment(comment) do
-        {:ok, success} -> EmailLogs.serror_email_log("Comment deleted! - #{comment_id}")
-        {:error, error} -> EmailLog.serror_email_log("Failed to delete comment - #{error}")
+        {:ok, _success} -> EmailLogs.error_email_log("Comment deleted! - #{comment_id}")
+        {:error, error} -> EmailLogs.error_email_log("Failed to delete comment - #{error}")
       end
       EmailLogs.error_email_log("Could not delete comment without valid delete_comment_secret token.")
     end
