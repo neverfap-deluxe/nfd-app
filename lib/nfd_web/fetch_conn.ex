@@ -7,13 +7,18 @@ defmodule NfdWeb.FetchConn do
   def are_they_up_to_day(conn, page_symbol, responseBodyData, user_collections, collection, view, layout, template) do
     case page_symbol do
       page_symbol when page_symbol in [:seven_day_kickstarter_single, :ten_day_meditation_single, :twenty_eight_day_awareness_single, :seven_week_awareness_vol_1_single, :seven_week_awareness_vol_2_single, :seven_week_awareness_vol_3_single, :seven_week_awareness_vol_4_single] ->
+        # NOTE: If responseBodyData it means there wasn't a corresponding Content API page. This means, it's probably an ebook type file. It's okay to pass this through.
         day = responseBodyData["day"]
         if user_collections.subscriber |> Map.get(FetchCollectionUtil.page_symbol_to_up_to_count(page_symbol)) >= day, do: conn, else: render_no_access_page(conn, collection, view, layout, template)
 
       # NOTE: As we see here does not include :dashboard_ebook_file because that breaks
       :dashboard_course_file ->
-        day = responseBodyData["day"]
-        if user_collections.subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(collection.slug)) >= day, do: conn, else: render_no_access_page(conn, collection, view, layout, template)
+        if responseBodyData == %{} do
+          conn
+        else
+          day = responseBodyData["day"]
+          if user_collections.subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(collection.slug)) >= day, do: conn, else: render_no_access_page(conn, collection, view, layout, template)
+        end
 
       _ -> conn
     end

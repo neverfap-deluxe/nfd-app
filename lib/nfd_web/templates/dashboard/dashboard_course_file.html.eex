@@ -15,11 +15,11 @@
     </div>
   </div>
 
-  <div class="dashboard__section">
-    <div class="dashboard__section__content">
-      <%= @dashboard_collections_file.file_content["content"] |> String.replace("888", "") |> raw %>
-
+  <%= if @dashboard_collections_file.file_content != %{} do %>
+    <div class="dashboard__section">
+      <div class="dashboard__section__content">
+        <%= @dashboard_collections_file.file_content["content"] |> String.replace("888", "") |> raw %>
+      </div>
     </div>
-  </div>
-
+  <% end %>
 </div>

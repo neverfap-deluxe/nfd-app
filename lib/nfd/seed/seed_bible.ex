@@ -40,7 +40,7 @@ defmodule Nfd.SeedEBOOKS do
       description: "",
       display_name: "The NeverFap Deluxe Bible epub",
       b2_file_name: "neverfap-deluxe-bible.epub",
-      number: 666,
+      number: -666,
       premium: false,
       slug: "neverfap-deluxe-bible-epub",
       collection_id: collection_id
@@ -52,7 +52,7 @@ defmodule Nfd.SeedEBOOKS do
       description: "",
       display_name: "The NeverFap Deluxe Bible pdf",
       b2_file_name: "neverfap-deluxe-bible.pdf",
-      number: 666,
+      number: -666,
       premium: false,
       slug: "neverfap-deluxe-bible-pdf",
       collection_id: collection_id

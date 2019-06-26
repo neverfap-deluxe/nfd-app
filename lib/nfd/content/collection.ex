@@ -97,7 +97,7 @@ defmodule Nfd.Content.Collection do
         files:
           collection.files
             |> Enum.map(fn(file) ->
-              file |> Map.merge(%{ b2_file_url: BackBlaze.get_file_contents(file.b2_file_name) })
+              file |> Map.merge(%{ b2_file_url: "" }) # BackBlaze.get_file_contents(file.b2_file_name) })
             end)
             |> Enum.sort(fn(a, b) -> a.number > b.number end)
             |> Enum.reverse()

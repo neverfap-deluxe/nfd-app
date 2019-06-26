@@ -34,6 +34,18 @@ defmodule Nfd.SeedSWAVOL2 do
 
   def seven_week_awareness_vol_2_files(collection_id) do
     Repo.insert(%File{
+      seed_id: "888b4c6f-b8b1-4a2e-b30d-4bd7f081f9d2",
+      type: "email_file",
+      specific_type: "email",
+      description: "Week 0",
+      display_name: "Introduction",
+      number: 0,
+      premium: true,
+      b2_file_name: "",
+      slug: "introduction",
+      collection_id: collection_id
+    })
+    Repo.insert(%File{
       seed_id: "c895bf5c-cc00-4576-9729-adea07c63597",
       type: "audio_file", specific_type: "mp3",
       description: "Week 1",

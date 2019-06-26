@@ -1,7 +1,19 @@
 <div class="dashboard__collection__files">
   <div class="dashboard__collection__file__container">
-    <%= Enum.map(@collection.files, fn (file) -> %>
+    <%= Enum.map(@collection.files |> Enum.filter(&( &1.type != "ebook_file")), fn (file) -> %>
       <%= partial "dashboard/file_item.html", %{ conn: @conn, file: file, collection: @collection, has_premium_rights: @has_premium_rights, type: @type } %>
     <% end) %>
   </div>
 </div>
+
+<%= if @collection.files |> Enum.filter(&(&1.type == "ebook_file")) |> length() > 0 do %>
+  <h2 class="dashboard__section__content__title">Ebooks</h2>
+
+  <div class="dashboard__collection__files">
+    <div class="dashboard__collection__file__container">
+      <%= Enum.map(@collection.files |> Enum.filter(&( &1.type == "ebook_file")), fn (file) -> %>
+        <%= partial "dashboard/file_item.html", %{ conn: @conn, file: file, collection: @collection, has_premium_rights: @has_premium_rights, type: @type } %>
+      <% end) %>
+    </div>
+  </div>
+<% end %>

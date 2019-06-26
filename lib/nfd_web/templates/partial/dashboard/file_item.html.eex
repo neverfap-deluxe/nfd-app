@@ -18,7 +18,7 @@
 
   <%= if @has_premium_rights and @collection.up_to_count >= @file.number do %>
     <a class="dashboard__collection__file__info" style="cursor: pointer;" href="<%= Routes.dashboard_path(@conn, @type, @collection.slug, @file.slug) %>">
-      <%= if @file.number != 666 do %>
+      <%= if @file.number != -666 do %>
         <p class="dashboard__collection__file__day"><%= @file.number %></p>
         <p class="dashboard__collection__file__divider">|</p>
       <% end %>
@@ -26,16 +26,13 @@
     </a>
   <% else %>
     <a class="dashboard__collection__file__info dashboard__collection__file__download--faded" style="cursor: default;">
-      <%= if @file.number != 666 do %>
+      <%= if @file.number != -666 do %>
         <p class="dashboard__collection__file__day"><%= @file.number %></p>
         <p class="dashboard__collection__file__divider">|</p>
       <% end %>
       <p class="dashboard__collection__file__title"><%= @file.display_name %></p>
     </a>
   <% end %>
-
-
-
 
     <%= if @file.specific_type == "mp3" do %>
       <%= if @has_premium_rights and @collection.up_to_count >= @file.number do %>

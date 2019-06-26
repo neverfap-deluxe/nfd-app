@@ -41,7 +41,7 @@ defmodule Nfd.SeedSDK do
       description: "",
       display_name: "7 Day NeverFap Deluxe Kickstarter epub",
       b2_file_name: "neverfap-deluxe-seven-day-kickstarter.epub",
-      number: 666,
+      number: -666,
       premium: false,
       slug: "seven-day-neverfap-deluxe-kickstarter-epub",
       collection_id: collection_id
@@ -53,7 +53,7 @@ defmodule Nfd.SeedSDK do
       description: "",
       display_name: "7 Day NeverFap Deluxe Kickstarter pdf",
       b2_file_name: "neverfap-deluxe-seven-day-kickstarter.pdf",
-      number: 666,
+      number: -666,
       premium: false,
       slug: "seven-day-neverfap-deluxe-kickstarter-pdf",
       collection_id: collection_id
