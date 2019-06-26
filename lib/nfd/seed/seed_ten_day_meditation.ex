@@ -39,9 +39,9 @@ defmodule Nfd.SeedTDMP do
       type: "audio_file", specific_type: "mp3",
       description: "Day 1",
       display_name: "Meditation Basics",
-      bucket_name: "tdmp",
-      b2_file_name: "", number: 1,
+      number: 1,
       premium: true,
+      b2_file_name: "tdmp-ep-01-meditation-basics.mp3",
       slug: "meditation-basics",
       collection_id: collection_id
     })
@@ -50,9 +50,9 @@ defmodule Nfd.SeedTDMP do
       type: "audio_file", specific_type: "mp3",
       description: "Day 2",
       display_name: "Understanding The Purpose Of Meditation",
-      bucket_name: "tdmp",
-      b2_file_name: "", number: 2,
+      number: 2,
       premium: true,
+      b2_file_name: "tdmp-ep-01-understanding-the-purpose-of-meditation.mp3",
       slug: "understanding-the-purpose-of-meditation",
       collection_id: collection_id
     })
@@ -61,9 +61,9 @@ defmodule Nfd.SeedTDMP do
       type: "audio_file", specific_type: "mp3",
       description: "Day 3",
       display_name: "Developing Our Capacity For Awareness",
-      bucket_name: "tdmp",
-      b2_file_name: "", number: 3,
+      number: 3,
       premium: true,
+      b2_file_name: "tdmp-ep-01-developing-our-capacity-for-awareness.mp3",
       slug: "developing-our-capacity-for-awareness",
       collection_id: collection_id
     })
@@ -72,9 +72,9 @@ defmodule Nfd.SeedTDMP do
       type: "audio_file", specific_type: "mp3",
       description: "Day 4",
       display_name: "Embracing Calmness",
-      bucket_name: "tdmp",
-      b2_file_name: "", number: 4,
+      number: 4,
       premium: true,
+      b2_file_name: "tdmp-ep-01-embracing-calmness.mp3",
       slug: "embracing-calmness",
       collection_id: collection_id
     })
@@ -83,9 +83,9 @@ defmodule Nfd.SeedTDMP do
       type: "audio_file", specific_type: "mp3",
       description: "Day 5",
       display_name: "Observe What You See",
-      bucket_name: "tdmp",
-      b2_file_name: "", number: 5,
+      number: 5,
       premium: true,
+      b2_file_name: "tdmp-ep-01-observe-what-you-see.mp3",
       slug: "observe-what-you-see",
       collection_id: collection_id
     })
@@ -94,9 +94,9 @@ defmodule Nfd.SeedTDMP do
       type: "audio_file", specific_type: "mp3",
       description: "Day 6",
       display_name: "Observe What You Hear",
-      bucket_name: "tdmp",
-      b2_file_name: "", number: 6,
+      number: 6,
       premium: true,
+      b2_file_name: "tdmp-ep-01-observe-what-you-hear.mp3",
       slug: "observe-what-you-hear",
       collection_id: collection_id
     })
@@ -105,9 +105,9 @@ defmodule Nfd.SeedTDMP do
       type: "audio_file", specific_type: "mp3",
       description: "Day 7",
       display_name: "Observe What You Touch",
-      bucket_name: "tdmp",
-      b2_file_name: "", number: 7,
+      number: 7,
       premium: true,
+      b2_file_name: "tdmp-ep-01-observe-what-you-touch.mp3",
       slug: "observe-what-you-touch",
       collection_id: collection_id
     })
@@ -116,9 +116,9 @@ defmodule Nfd.SeedTDMP do
       type: "audio_file", specific_type: "mp3",
       description: "Day 8",
       display_name: "Feeling Empowered",
-      bucket_name: "tdmp",
-      b2_file_name: "", number: 8,
+      number: 8,
       premium: true,
+      b2_file_name: "tdmp-ep-01-feeling-empowered.mp3",
       slug: "feeling-empowered",
       collection_id: collection_id
     })
@@ -127,9 +127,9 @@ defmodule Nfd.SeedTDMP do
       type: "audio_file", specific_type: "mp3",
       description: "Day 9",
       display_name: "Acknowledgement",
-      bucket_name: "tdmp",
-      b2_file_name: "", number: 9,
+      number: 9,
       premium: true,
+      b2_file_name: "tdmp-ep-01-acknowledgement.mp3",
       slug: "acknowledgement",
       collection_id: collection_id
     })
@@ -138,9 +138,9 @@ defmodule Nfd.SeedTDMP do
       type: "audio_file", specific_type: "mp3",
       description: "Day 10",
       display_name: "Acceptance",
-      bucket_name: "tdmp",
-      b2_file_name: "", number: 10,
+      umber: 10,
       premium: true,
+      b2_file_name: "tdmp-ep-01-acceptance.mp3",
       slug: "acceptance",
       collection_id: collection_id
     })

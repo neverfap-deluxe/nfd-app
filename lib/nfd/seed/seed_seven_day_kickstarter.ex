@@ -27,34 +27,50 @@ defmodule Nfd.SeedSDK do
           price: 0.0,
           slug: "seven-day-neverfap-deluxe-kickstarter"
         })
-      seven_day_kickstarter_files(collection.id)
+        seven_day_kickstarter_audio_files(collection.id)
+        seven_day_kickstarter_ebook_files(collection.id)
 
       _collection -> nil
     end
   end
 
-  def seven_day_kickstarter_files(collection_id) do
+  def seven_day_kickstarter_ebook_files(collection_id) do
     Repo.insert(%File{
-      seed_id: "a78835ce-5d49-4107-b57c-ef094b0efb7b",
-      type: "ebook_file", 
+      seed_id: "17753806-53b8-4cbb-80e2-6dac28992939",
+      type: "ebook_file",
       specific_type: "epub",
       description: "",
-      display_name: "7 Day NeverFap Deluxe Kickstarter ebook",
-      bucket_name: "sdk",
-      b2_file_name: "", number: 666, 
+      display_name: "7 Day NeverFap Deluxe Kickstarter epub",
+      b2_file_name: "neverfap-deluxe-seven-day-kickstarter.epub",
+      number: 666,
       premium: false,
-      slug: "seven-day-neverfap-deluxe-kickstarter-ebook",
+      slug: "seven-day-neverfap-deluxe-kickstarter-epub",
       collection_id: collection_id
     })
+    Repo.insert(%File{
+      seed_id: "40a6509c-b948-40bd-9ecc-d2f2736a8ec4",
+      type: "ebook_file",
+      specific_type: "pdf",
+      description: "",
+      display_name: "7 Day NeverFap Deluxe Kickstarter pdf",
+      b2_file_name: "neverfap-deluxe-seven-day-kickstarter.pdf",
+      number: 666,
+      premium: false,
+      slug: "seven-day-neverfap-deluxe-kickstarter-pdf",
+      collection_id: collection_id
+    })
+  end
+
+  def seven_day_kickstarter_audio_files(collection_id) do
     Repo.insert(%File{
       seed_id: "78d44e56-12e6-4faf-b65e-ddbdd5ac5325",
       type: "email_file",
       specific_type: "email",
       description: "Day 0",
       display_name: "The Introduction",
-      bucket_name: "sdk",
-      b2_file_name: "", number: 0, 
+      number: 0,
       premium: false,
+      b2_file_name: "",
       slug: "introduction",
       collection_id: collection_id
     })
@@ -64,9 +80,9 @@ defmodule Nfd.SeedSDK do
       specific_type: "email",
       description: "Day 1",
       display_name: "The Trust",
-      bucket_name: "sdk",
-      b2_file_name: "", number: 1, 
+      number: 1,
       premium: false,
+      b2_file_name: "",
       slug: "the-trust",
       collection_id: collection_id
     })
@@ -76,9 +92,9 @@ defmodule Nfd.SeedSDK do
       specific_type: "email",
       description: "Day 2",
       display_name: "The Awareness",
-      bucket_name: "sdk",
-      b2_file_name: "", number: 2, 
+      number: 2,
       premium: false,
+      b2_file_name: "",
       slug: "the-awareness",
       collection_id: collection_id
     })
@@ -88,9 +104,9 @@ defmodule Nfd.SeedSDK do
       specific_type: "email",
       description: "Day 3",
       display_name: "The Calmness",
-      bucket_name: "sdk",
-      b2_file_name: "", number: 3, 
+      number: 3,
       premium: false,
+      b2_file_name: "",
       slug: "the-calmness",
       collection_id: collection_id
     })
@@ -100,9 +116,9 @@ defmodule Nfd.SeedSDK do
       specific_type: "email",
       description: "Day 4",
       display_name: "The Meditation",
-      bucket_name: "sdk",
-      b2_file_name: "", number: 4, 
+      number: 4,
       premium: false,
+      b2_file_name: "",
       slug: "the-meditation",
       collection_id: collection_id
     })
@@ -112,9 +128,9 @@ defmodule Nfd.SeedSDK do
       specific_type: "email",
       description: "Day 5",
       display_name: "The Relapse",
-      bucket_name: "sdk",
-      b2_file_name: "", number: 5, 
+      number: 5,
       premium: false,
+      b2_file_name: "",
       slug: "the-relapse",
       collection_id: collection_id
     })
@@ -124,9 +140,9 @@ defmodule Nfd.SeedSDK do
       specific_type: "email",
       description: "Day 6",
       display_name: "The Consistency",
-      bucket_name: "sdk",
-      b2_file_name: "", number: 6, 
+      number: 6,
       premium: false,
+      b2_file_name: "",
       slug: "the-consistency",
       collection_id: collection_id
     })
@@ -136,9 +152,9 @@ defmodule Nfd.SeedSDK do
       specific_type: "email",
       description: "Day 7",
       display_name: "The Community",
-      bucket_name: "sdk",
-      b2_file_name: "", number: 7, 
+      number: 7,
       premium: false,
+      b2_file_name: "",
       slug: "the-community",
       collection_id: collection_id
     })

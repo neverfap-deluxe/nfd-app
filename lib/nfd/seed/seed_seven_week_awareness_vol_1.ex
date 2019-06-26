@@ -39,9 +39,9 @@ defmodule Nfd.SeedSWAVOL1 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 1",
       display_name: "Expressing Gratitude",
-      bucket_name: "swavol1",
-      b2_file_name: "", number: 1,
+      number: 1,
       premium: true,
+      b2_file_name: "swac-vol-1-ep-01-expressing-gratitude.mp3",
       slug: "expressing-gratitude",
       collection_id: collection_id
     })
@@ -50,9 +50,9 @@ defmodule Nfd.SeedSWAVOL1 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 2",
       display_name: "Focus On Your Finger And Your Background",
-      bucket_name: "swavol1",
-      b2_file_name: "", number: 2,
+      number: 2,
       premium: true,
+      b2_file_name: "swac-vol-1-ep-02-focus-on-your-finger-and-your-background.mp3",
       slug: "focus-on-your-finger-and-your-background",
       collection_id: collection_id
     })
@@ -61,9 +61,9 @@ defmodule Nfd.SeedSWAVOL1 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 3",
       display_name: "Relax Everything",
-      bucket_name: "swavol1",
-      b2_file_name: "", number: 3,
+      number: 3,
       premium: true,
+      b2_file_name: "swac-vol-1-ep-03-relax-everything.mp3",
       slug: "relax-everything",
       collection_id: collection_id
     })
@@ -72,9 +72,9 @@ defmodule Nfd.SeedSWAVOL1 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 4",
       display_name: "Slow Down Time",
-      bucket_name: "swavol1",
-      b2_file_name: "", number: 4,
+      number: 4,
       premium: true,
+      b2_file_name: "swac-vol-1-ep-04-slow-down-time.mp3",
       slug: "slow-down-time",
       collection_id: collection_id
     })
@@ -83,9 +83,9 @@ defmodule Nfd.SeedSWAVOL1 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 5",
       display_name: "Identify Points Of Awareness Throughout The Day",
-      bucket_name: "swavol1",
-      b2_file_name: "", number: 5,
+      number: 5,
       premium: true,
+      b2_file_name: "swac-vol-1-ep-05-identify-points-of-awareness-throughout-your-day.mp3",
       slug: "identify-points-of-awareness-throughout-your-day",
       collection_id: collection_id
     })
@@ -94,9 +94,9 @@ defmodule Nfd.SeedSWAVOL1 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 6",
       display_name: "Can You Look Through Walls?",
-      bucket_name: "swavol1",
-      b2_file_name: "", number: 6,
+      number: 6,
       premium: true,
+      b2_file_name: "01-swac-vol-1-ep-06-can-you-look-through-walls.mp3",
       slug: "can-you-look-through-walls",
       collection_id: collection_id
     })
@@ -105,9 +105,9 @@ defmodule Nfd.SeedSWAVOL1 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 7",
       display_name: "Looking Straight Ahead",
-      bucket_name: "swavol1",
-      b2_file_name: "", number: 7,
+      number: 7,
       premium: true,
+      b2_file_name: "01-swac-vol-1-ep-07-looking-straight-ahead.mp3",
       slug: "looking-straight-ahead",
       collection_id: collection_id
     })

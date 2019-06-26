@@ -39,9 +39,9 @@ defmodule Nfd.SeedSWAVOL2 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 1",
       display_name: "Take Note Of The Colour Yellow",
-      bucket_name: "swavol2",
-      b2_file_name: "", number: 1,
+      number: 1,
       premium: true,
+      b2_file_name: "swac-vol-2-ep-01-take-note-of-the-colour-yellow.mp3",
       slug: "take-note-of-the-colour-yellow",
       collection_id: collection_id
     })
@@ -50,9 +50,9 @@ defmodule Nfd.SeedSWAVOL2 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 2",
       display_name: "Dissolve Your Visual Field",
-      bucket_name: "swavol2",
-      b2_file_name: "", number: 2,
+      number: 2,
       premium: true,
+      b2_file_name: "swac-vol-2-ep-02-dissolve-your-visual-field.mp3",
       slug: "dissolve-your-visual-field",
       collection_id: collection_id
     })
@@ -61,9 +61,9 @@ defmodule Nfd.SeedSWAVOL2 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 3",
       display_name: "Catch Out Your Judgements",
-      bucket_name: "swavol2",
-      b2_file_name: "", number: 3,
+      number: 3,
       premium: true,
+      b2_file_name: "swac-vol-2-ep-03-catch-out-your-judgements.mp3",
       slug: "catch-out-your-judgements",
       collection_id: collection_id
     })
@@ -72,9 +72,9 @@ defmodule Nfd.SeedSWAVOL2 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 4",
       display_name: "What Can Your Hand Do?",
-      bucket_name: "swavol2",
-      b2_file_name: "", number: 4,
+      number: 4,
       premium: true,
+      b2_file_name: "swac-vol-2-ep-04-what-can-your-hand-do.mp3",
       slug: "what-can-your-hand-do",
       collection_id: collection_id
     })
@@ -83,9 +83,9 @@ defmodule Nfd.SeedSWAVOL2 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 5",
       display_name: "Stop Absolutely Everything You're Doing",
-      bucket_name: "swavol2",
-      b2_file_name: "", number: 5,
+      number: 5,
       premium: true,
+      b2_file_name: "swac-vol-2-ep-05-stop-absolutely-everything-you-are-doing.mp3",
       slug: "stop-absolutely-everything-you-are-doing",
       collection_id: collection_id
     })
@@ -94,9 +94,9 @@ defmodule Nfd.SeedSWAVOL2 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 6",
       display_name: "Developing Routine",
-      bucket_name: "swavol2",
-      b2_file_name: "", number: 6,
+      number: 6,
       premium: true,
+      b2_file_name: "swac-vol-2-ep-06-developing-routine.mp3",
       slug: "developing-routine",
       collection_id: collection_id
     })
@@ -105,9 +105,9 @@ defmodule Nfd.SeedSWAVOL2 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 7",
       display_name: "Blind Attention",
-      bucket_name: "swavol2",
-      b2_file_name: "", number: 7,
+      number: 7,
       premium: true,
+      b2_file_name: "swac-vol-2-ep-07-blind-attention.mp3",
       slug: "blind-attention",
       collection_id: collection_id
     })

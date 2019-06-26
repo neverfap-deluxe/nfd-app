@@ -39,9 +39,9 @@ defmodule Nfd.SeedSWAVOL3 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 1",
       display_name: "Where Do You Touch?",
-      bucket_name: "swavol3",
-      b2_file_name: "", number: 1,
+      number: 1,
       premium: true,
+      b2_file_name: "swac-vol-3-ep-01-where-do-you-touch.mp3",
       slug: "where-do-you-touch",
       collection_id: collection_id
     })
@@ -50,9 +50,9 @@ defmodule Nfd.SeedSWAVOL3 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 2",
       display_name: "Use Your Opposite Hand",
-      bucket_name: "swavol3",
-      b2_file_name: "", number: 2,
+      number: 2,
       premium: true,
+      b2_file_name: "swac-vol-3-ep-02-use-your-opposite-hand.mp3",
       slug: "use-your-opposite-hand",
       collection_id: collection_id
     })
@@ -61,9 +61,9 @@ defmodule Nfd.SeedSWAVOL3 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 3",
       display_name: "Who Is Looking?",
-      bucket_name: "swavol3",
-      b2_file_name: "", number: 3,
+      number: 3,
       premium: true,
+      b2_file_name: "swac-vol-3-ep-03-who-is-looking.mp3",
       slug: "who-is-looking",
       collection_id: collection_id
     })
@@ -72,9 +72,9 @@ defmodule Nfd.SeedSWAVOL3 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 4",
       display_name: "Identifying The Feeling Of Obligation",
-      bucket_name: "swavol3",
-      b2_file_name: "", number: 4,
+      number: 4,
       premium: true,
+      b2_file_name: "swac-vol-3-ep-04-identifying-the-feeling-of-obligation.mp3",
       slug: "identifying-the-feeling-of-obligation",
       collection_id: collection_id
     })
@@ -83,9 +83,9 @@ defmodule Nfd.SeedSWAVOL3 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 5",
       display_name: "Engaging Expression",
-      bucket_name: "swavol3",
-      b2_file_name: "", number: 5,
+      number: 5,
       premium: true,
+      b2_file_name: "swac-vol-3-ep-05-engaging-expression.mp3",
       slug: "engaging-expression",
       collection_id: collection_id
     })
@@ -94,9 +94,9 @@ defmodule Nfd.SeedSWAVOL3 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 6",
       display_name: "Object Attachment",
-      bucket_name: "swavol3",
-      b2_file_name: "", number: 6,
+      number: 6,
       premium: true,
+      b2_file_name: "swac-vol-3-ep-06-object-attachment.mp3",
       slug: "object-attachment",
       collection_id: collection_id
     })
@@ -105,9 +105,9 @@ defmodule Nfd.SeedSWAVOL3 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 7",
       display_name: "Slow Spinning Circle",
-      bucket_name: "swavol3",
-      b2_file_name: "", number: 7,
+      number: 7,
       premium: true,
+      b2_file_name: "swac-vol-3-ep-07-slow-spinning-circle.mp3",
       slug: "slow-spinning-circle",
       collection_id: collection_id
     })

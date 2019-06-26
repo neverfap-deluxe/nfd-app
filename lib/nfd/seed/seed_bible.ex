@@ -34,18 +34,28 @@ defmodule Nfd.SeedEBOOKS do
   end
 
   def bible_files(collection_id) do
-    # TODO Spec this out with the proper files
     Repo.insert(%File{
-      seed_id: "d0a9a1d2-fead-466b-94f3-5bea5d84a75a",
+      seed_id: "05aa9e4a-e346-4dfb-985b-b3035af59401",
       type: "ebook_file",
       specific_type: "epub",
-      description: "epub",
+      description: "",
       display_name: "The NeverFap Deluxe Bible epub",
-      bucket_name: "bible",
-      b2_file_name: "",
+      b2_file_name: "neverfap-deluxe-bible.epub",
       number: 666,
-      premium: true,
-      slug: "seven-day-neverfap-deluxe-kickstarter-epub",
+      premium: false,
+      slug: "neverfap-deluxe-bible-epub",
+      collection_id: collection_id
+    })
+    Repo.insert(%File{
+      seed_id: "7e93dff4-27e5-4642-9fef-4347ee68d588",
+      type: "ebook_file",
+      specific_type: "pdf",
+      description: "",
+      display_name: "The NeverFap Deluxe Bible pdf",
+      b2_file_name: "neverfap-deluxe-bible.pdf",
+      number: 666,
+      premium: false,
+      slug: "neverfap-deluxe-bible-pdf",
       collection_id: collection_id
     })
   end

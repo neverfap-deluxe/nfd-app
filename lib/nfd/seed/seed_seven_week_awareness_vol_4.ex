@@ -39,9 +39,9 @@ defmodule Nfd.SeedSWAVOL4 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 1",
       display_name: "Annoy Yourself",
-      bucket_name: "swavol3",
-      b2_file_name: "", number: 1,
+      number: 1,
       premium: true,
+      b2_file_name: "swac-vol-4-ep-01-annoy-yourself.mp3",
       slug: "annoy-yourself",
       collection_id: collection_id
     })
@@ -50,9 +50,9 @@ defmodule Nfd.SeedSWAVOL4 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 2",
       display_name: "Just Do, Don't Think",
-      bucket_name: "swavol3",
-      b2_file_name: "", number: 2,
+      number: 2,
       premium: true,
+      b2_file_name: "swac-vol-4-ep-02-just-do-dont-think.mp3",
       slug: "just-do-dont-think",
       collection_id: collection_id
     })
@@ -61,9 +61,9 @@ defmodule Nfd.SeedSWAVOL4 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 3",
       display_name: "Fighting Spirit",
-      bucket_name: "swavol3",
-      b2_file_name: "", number: 3,
+      number: 3,
       premium: true,
+      b2_file_name: "swac-vol-4-ep-03-fighting-spirit.mp3",
       slug: "fighting-spirit",
       collection_id: collection_id
     })
@@ -72,9 +72,9 @@ defmodule Nfd.SeedSWAVOL4 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 4",
       display_name: "Every 30 Minutes",
-      bucket_name: "swavol3",
-      b2_file_name: "", number: 4,
+      number: 4,
       premium: true,
+      b2_file_name: "swac-vol-4-ep-04-every-30-minutes.mp3",
       slug: "every-30-minutes",
       collection_id: collection_id
     })
@@ -83,9 +83,9 @@ defmodule Nfd.SeedSWAVOL4 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 5",
       display_name: "Control The Intonation Of Your Breath",
-      bucket_name: "swavol3",
-      b2_file_name: "", number: 5,
+      number: 5,
       premium: true,
+      b2_file_name: "swac-vol-4-ep-05-control-the-intonation-of-your-breath.mp3",
       slug: "control-the-intonation-of-your-breath",
       collection_id: collection_id
     })
@@ -94,9 +94,9 @@ defmodule Nfd.SeedSWAVOL4 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 6",
       display_name: "Catching The Odd Judge Out",
-      bucket_name: "swavol3",
-      b2_file_name: "", number: 6,
+      number: 6,
       premium: true,
+      b2_file_name: "swac-vol-4-ep-06-catching-the-odd-judge-out.mp3",
       slug: "catching-the-odd-judge-out",
       collection_id: collection_id
     })
@@ -105,9 +105,9 @@ defmodule Nfd.SeedSWAVOL4 do
       type: "audio_file", specific_type: "mp3",
       description: "Week 7",
       display_name: "Focus Your Attention",
-      bucket_name: "swavol3",
-      b2_file_name: "", number: 7,
+      number: 7,
       premium: true,
+      b2_file_name: "swac-vol-4-ep-07-focus-your-attention.mp3",
       slug: "focus-your-attention",
       collection_id: collection_id
     })
