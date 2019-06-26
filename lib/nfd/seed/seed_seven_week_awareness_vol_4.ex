@@ -26,13 +26,41 @@ defmodule Nfd.SeedSWAVOL4 do
           price: 14.99,
           slug: "seven-week-awareness-challenge-vol-4"
         })
-        seven_week_awareness_vol_4_files(collection.id)
+        seven_week_awareness_vol_4_ebook_files(collection_id) 
+        seven_week_awareness_vol_4_audio_files(collection.id)
 
       _collection -> nil
     end
   end
 
-  def seven_week_awareness_vol_4_files(collection_id) do
+  def seven_week_awareness_vol_4_ebook_files(collection_id) do
+    Repo.insert(%File{
+      seed_id: "17753806-0880-4cbb-80e2-6dac28992939",
+      type: "ebook_file",
+      specific_type: "epub",
+      description: "",
+      display_name: "7 Week Awareness Challenge Vol 4. epub",
+      b2_file_name: "seven-week-awareness-challenge-vol-4.epub",
+      number: -666,
+      premium: false,
+      slug: "seven-week-awareness-challenge-vol-4-epub",
+      collection_id: collection_id
+    })
+    Repo.insert(%File{
+      seed_id: "40a6509c-9911-40bd-9ecc-d2f2736a8ec4",
+      type: "ebook_file",
+      specific_type: "pdf",
+      description: "",
+      display_name: "7 Week Awareness Challenge Vol 4. pdf",
+      b2_file_name: "seven-week-awareness-challenge-vol-4.pdf",
+      number: -666,
+      premium: false,
+      slug: "seven-week-awareness-challenge-vol-4-pdf",
+      collection_id: collection_id
+    })
+  end
+
+  def seven_week_awareness_vol_4_audio_files(collection_id) do
     Repo.insert(%File{
       seed_id: "111b4c6f-b8b1-4a2e-b30d-4bd7f081f9d2",
       type: "email_file",
