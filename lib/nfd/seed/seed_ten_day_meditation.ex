@@ -137,7 +137,7 @@ defmodule Nfd.SeedTDMP do
       type: "audio_file", specific_type: "mp3",
       description: "Day 10",
       display_name: "Acceptance",
-      umber: 10,
+      number: 10,
       premium: true,
       b2_file_name: "tdmp-ep-01-acceptance.mp3",
       slug: "acceptance",

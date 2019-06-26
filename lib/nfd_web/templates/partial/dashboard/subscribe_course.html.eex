@@ -17,7 +17,16 @@
 </div>
 
 <% active_collection = Map.get(@user_collections.active_collections, course_active_type) %>
+<%= if active_collection do %>
 <script>
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: 'btn btn-success',
+      cancelButton: 'btn btn-success'
+    },
+    buttonsStyling: false,
+  })
+
   var subscribe_course_id = document.querySelector("#subscribe_course_id");
   if (subscribe_course_id) {
     subscribe_course_id.onclick = function(event) {
@@ -37,12 +46,12 @@
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.value) {
-          swalWithBootstrapButtons.fire(
-            'Subscription changed!',
-            'You will be redirected shortly.',
-            'success'
-          )
-          window.location.replace(<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_collections.user.id, collection_id: Map.get(@collection, :id), subscribed_property: @subscribed_property) %>);
+          // swalWithBootstrapButtons.fire(
+          //   'Subscription changed!',
+          //   'You will be redirected shortly.',
+          //   'success'
+          // )
+          window.location.replace("<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, user_id: @user_collections.user.id, collection_id: Map.get(@collection, :id), subscribed_property: @subscribed_property) %>");
         } else if (
           result.dismiss === Swal.DismissReason.cancel
         ) {
@@ -55,5 +64,5 @@
       })
     }
   }
-
 </script>
+<% end %>

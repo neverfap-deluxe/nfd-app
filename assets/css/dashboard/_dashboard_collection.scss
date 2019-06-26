@@ -1,10 +1,12 @@
 .dashboard__collection__files {
-
+  margin-top: 0.4rem;
+  
   .dashboard__collection__file__container {
   }
 
   .dashboard__collection__file {
     display: flex;
+    justify-content: center;
 
     .dashboard__collection__file__info,
     .dashboard__collection__file__download,
@@ -57,6 +59,10 @@
       margin-bottom: 0rem;
       margin-right: 0.6rem;
     }
+
+    .dashboard__collection__file__title {
+      margin-right: 0rem!important;
+    }
     .dashboard__collection__file__day {
       // width: 3.2rem;
     }
@@ -73,6 +79,15 @@
       .dashboard__collection__file__specific {
         display: flex;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .dashboard__collection__files {
+
+    .dashboard__collection__file {
+      justify-content: flex-start;
     }
   }
 }

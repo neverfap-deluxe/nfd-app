@@ -130,8 +130,8 @@ defmodule NfdWeb do
         end
       end
 
-      def course_active_type_to_readable_text(collection) do
-        case Map.get(collection, :active_type) do
+      def course_active_type_to_readable_text(active_type) do
+        case active_type do
           "free_active_type" -> "Free"
           "awareness_active_type" -> "Awareness"
           "meditation_active_type" -> "Meditation"

@@ -6,6 +6,7 @@
 
   <div class="dashboard__section">
     <div class="dashboard__section__content">
+      <h2 class="dashboard__section__content">Download</h2>
       <div class="dashboard__collection__files">
         <div class="dashboard__collection__file__container">
           <%= partial "dashboard/file_item.html", %{ conn: @conn, file: @dashboard_collections_file.file, collection: @dashboard_collections_collection.collection, has_premium_rights: has_premium_rights, type: :dashboard_course_file } %>

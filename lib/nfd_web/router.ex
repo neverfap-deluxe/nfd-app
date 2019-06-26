@@ -145,6 +145,7 @@ defmodule NfdWeb.Router do
     get "/validate_patreon", FunctionController, :validate_patreon
 
     get "/change_subscription_dashboard_func", FunctionController, :change_subscription_dashboard_func
+    get "/reset_subscription_dashboard_func", FunctionController, :reset_subscription_dashboard_func
   end
 
   scope "/", NfdWeb do

@@ -29,6 +29,6 @@ defmodule Nfd.SeedTEDA do
 
   #     _collection -> nil
   #   end
-  # end
+  end
 
 end

@@ -6,7 +6,7 @@ defmodule NfdWeb.PartialView do
   end
 
   def subscribed_status_text(subscribed) do
-    if subscribed, do: "I would like to unsubscribe.", else: "Subscribe me."
+    if subscribed, do: "I Would Like To Unsubscribe", else: "Subscribe Me"
   end
 
   def available_item_subscribed_status_text(subscribed) do

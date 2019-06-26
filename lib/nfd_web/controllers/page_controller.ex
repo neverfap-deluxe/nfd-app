@@ -1,6 +1,9 @@
 defmodule NfdWeb.PageController do
   use NfdWeb, :controller
 
+  use Tesla
+  alias Nfd.API
+
   alias NfdWeb.Fetch
   alias NfdWeb.FetchConn
   alias NfdWeb.FetchAccess
