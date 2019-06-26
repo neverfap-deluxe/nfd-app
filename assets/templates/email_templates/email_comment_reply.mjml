@@ -23,7 +23,7 @@
           Click on the link below if you would like to respond, otherwise thank you for participating in NeverFap Deluxe!
         </mj-text>
 
-        <!-- TODO: add the # id into the href so it will send the user straight to the comment section -->
+        <!-- FUTURE: Add the # id into the href so it will send the user straight to the comment section -->
         <mj-button
           background-color="#F45E43"
           border-radius="0px"

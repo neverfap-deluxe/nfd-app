@@ -94,7 +94,7 @@ defmodule Nfd.Patreon do
 
       # if not expired check if it should be validated
       else
-        # TODO: No idea if this works or not.
+        # TODO: 90% sure this works.
         if Timex.after?(seven_days_before_today, expires_in_date) do
           refresh_user_patreon_information(host, user)
 

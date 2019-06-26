@@ -8,7 +8,6 @@ defmodule Nfd.Stripe do
   alias Nfd.Emails
   alias Nfd.EmailLogs
 
-  # TODO
   # https://stripe.com/docs/payments/checkout/client#enable
   # https://stripe.com/docs/webhooks/setup
 

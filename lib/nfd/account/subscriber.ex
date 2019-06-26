@@ -145,7 +145,7 @@ defmodule Nfd.Account.Subscriber do
   end
 
   def check_if_subscriber_has_paid(subscriber, collection_slug) do
-    # TODO: Test this
+    # TODO: Test this.
     collection = Content.get_collection_slug!(collection_slug)
     host = if Mix.env() == :dev, do: "localhost", else: "neverfapdeluxe.com"
     user = Account.get_user_email!(subscriber.subscriber_email)
