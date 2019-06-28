@@ -1,4 +1,3 @@
-<!-- TODO: Test this. -->
 <div class="dashboard__collection__file">
   <!-- <%= if @file.specific_type == "mp3" do %>
     <div class="dashboard__collection__file__specific">

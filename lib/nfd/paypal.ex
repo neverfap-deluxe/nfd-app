@@ -13,8 +13,9 @@ defmodule Nfd.Paypal do
   def payment_process(conn, user, subscriber, collection) do
     case Account.create_collection_access(%{user_id: user.id, collection_id: collection.id, amount_paid: collection.price}) do
       {:ok, collection_access} ->
-        matrix = Email.collection_slug_to_matrix(collection.slug)
-        Emails.send_day_0_email(subscriber, matrix)
+        # MAYBE - if sending this, it will also have to subscribe user as well to the course, otherwise it's pointless.
+        # matrix = Email.collection_slug_to_matrix(collection.slug)
+        # Emails.send_day_0_email(subscriber, matrix)
         EmailLogs.success_payment_email_log("#{user.email} - $#{collection.price} - #{collection.display_name}")
         conn |> Plug.Conn.send_resp(200, "Payment Successful")
       {:error, error} ->

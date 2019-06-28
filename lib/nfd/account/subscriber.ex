@@ -10,7 +10,7 @@ defmodule Nfd.Account.Subscriber do
 
   alias Nfd.EmailLogs
 
-  alias NfdWeb.Patreon
+  alias Nfd.Patreon
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
@@ -145,13 +145,13 @@ defmodule Nfd.Account.Subscriber do
   end
 
   def check_if_subscriber_has_paid(subscriber, collection_slug) do
-    # TODO: Test this.
     collection = Content.get_collection_slug!(collection_slug)
     host = if Mix.env() == :dev, do: "localhost", else: "neverfapdeluxe.com"
     user = Account.get_user_email!(subscriber.subscriber_email)
+
     patreon_access = Patreon.fetch_patreon(host, user)
 
-    has_paid_for_collection = Collection.has_paid_for_collection(collection, %{ collections_access_list: Account.list_collection_access_by_user_id(user.id) }) != nil
+    has_paid_for_collection = Collection.has_paid_for_collection(collection, %{ collections_access_list: Account.list_collection_access_by_user_id(user.id), user: user }) != nil
     has_patreon_access = patreon_access.tier_access_list |> Enum.find(&(&1 == :courses_access))
     if has_paid_for_collection or has_patreon_access, do: true, else: false
   end

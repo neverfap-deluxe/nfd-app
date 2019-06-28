@@ -32,8 +32,6 @@ defmodule Nfd.EmailTemplates do
     end
   end
 
-  # TODO: Build in last day templates, both in files.
-
   def run_seven_week_awareness_challenge_vol_1(count) do
     case count do
       0 -> { "template_seven_week_awareness_vol_1_0.html", "7 Week Awareness Challenge Vol 1 - #{Application.get_env(:nfd, :seven_week_vol_1_week_0_title)} - Week 0" }
@@ -126,7 +124,7 @@ defmodule Nfd.EmailTemplates do
       26 -> { "template_twenty_eight_day_awareness_26", "28 Day Awareness Challenge - #{Application.get_env(:nfd, :challenge_day_26_title)} - Day 26" }
       27 -> { "template_twenty_eight_day_awareness_27", "28 Day Awareness Challenge - #{Application.get_env(:nfd, :challenge_day_27_title)} - Day 27" }
       28 -> { "template_twenty_eight_day_awareness_28", "28 Day Awareness Challenge - #{Application.get_env(:nfd, :challenge_day_28_title)} - Day 28" }
-      28 -> { "template_twenty_eight_day_awareness_29", "28 Day Awareness Challenge - #{Application.get_env(:nfd, :challenge_day_29_title)}" }
+      29 -> { "template_twenty_eight_day_awareness_29", "28 Day Awareness Challenge - #{Application.get_env(:nfd, :challenge_day_29_title)}" }
       _ -> { false, false }
     end
   end
