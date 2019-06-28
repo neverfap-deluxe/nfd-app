@@ -1,22 +1,31 @@
 <div class="subscribe_course">
   <p class="status"><b>Status:</b> <span class="<%= if @subscribed == true do %> status__green <% else %> status__red <% end %>"><%= subscribed_status @subscribed %></span></p>
-  <%# TODO: Test this. %>
-  <% course_active_type = course_active_type_to_active_type_symbol(@collection)%>
 
-  <% no_collection = @collection == %{} %>
-  <% user_is_subscribed = @subscribed == true %>
-  <% this_course_is_active_type = Map.get(@user_collections.subscriber, course_active_type) === Atom.to_string(@subscribed_property) %>
+  <% 
+    has_collection = @collection != %{}
+    user_is_subscribed = @subscribed == true
+    current_collection_active_type = subscribed_property_to_active_type(@subscribed_property)
+    IO.inspect Map.get(@user_collections.subscriber, current_collection_active_type)
+    IO.inspect @subscribed_property
+  %>
 
-  <%= if no_collection do %>
-    <%= if user_is_subscribed and this_course_is_active_type do %>
+  <%= if has_collection do %>
+    <%
+      is_current_collection_different_from_current_active_type = Map.get(@user_collections.subscriber, current_collection_active_type) != Atom.to_string(@subscribed_property)
+    %>
+    <%= if user_is_subscribed and is_current_collection_different_from_current_active_type do %>
       <a id="subscribe_course_id" class="button subscribe__button"><%= subscribed_status_text @subscribed %></a>
+    <% else %>
+      <a class="button subscribe__button" href="<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, collection_id: Map.get(@collection, :id), user_id: @user_collections.user.id, subscribed_property: @subscribed_property) %>"><%= subscribed_status_text @subscribed %></a>
     <% end %>
   <% else %>
-    <a class="button subscribe__button" href="<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, collection_id: Map.get(@collection, :id), user_id: @user_collections.user.id, subscribed_property: @subscribed_property) %>"><%= subscribed_status_text @subscribed %></a>
+    <a class="button subscribe__button" href='<%= Routes.function_path(@conn, :change_subscription_dashboard_func, subscribed: @subscribed, collection_id: "general_newsletter_does_not_have_a_collection_id", user_id: @user_collections.user.id, subscribed_property: @subscribed_property) %>'><%= subscribed_status_text @subscribed %></a>
   <% end %>
 </div>
 
-<% active_collection = Map.get(@user_collections.active_collections, course_active_type) %>
+<% 
+  active_collection = Map.get(@user_collections.active_collections, current_collection_active_type) 
+%>
 <%= if active_collection do %>
   <script>
     const swalWithBootstrapButtons = Swal.mixin({
@@ -27,6 +36,7 @@
       buttonsStyling: false,
     })
 
+    // TODO: Test all this stuff out, since I haven't had multiple courses to do this with.
     var subscribe_course_id = document.querySelector("#subscribe_course_id");
     if (subscribe_course_id) {
       subscribe_course_id.onclick = function(event) {

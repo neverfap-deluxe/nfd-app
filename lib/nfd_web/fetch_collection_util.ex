@@ -99,6 +99,19 @@ defmodule NfdWeb.FetchCollectionUtil do
       "seven-week-awareness-challenge-vol-4" -> :seven_week_awareness_vol_4_subscribed
     end
   end
+
+  def collection_slug_to_config_course_type(collection_slug) do
+    case collection_slug do
+      "seven-day-neverfap-deluxe-kickstarter" -> "neverfapdeluxekickstarter"
+      "ten-day-meditation-primer" -> "meditationprimer"
+      "twenty-eight-day-awareness-challenge" -> "awarenesschallenge"
+      "seven-week-awareness-challenge-vol-1" -> "awareness_week_vol_1"
+      "seven-week-awareness-challenge-vol-2" -> "awareness_week_vol_2"
+      "seven-week-awareness-challenge-vol-3" -> "awareness_week_vol_3"
+      "seven-week-awareness-challenge-vol-4" -> "awareness_week_vol_4"
+      _ -> "generalemail"
+    end
+  end
   
   def content_symbol_to_page_symbol(content_symbol) do
     case content_symbol do 

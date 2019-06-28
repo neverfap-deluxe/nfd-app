@@ -178,7 +178,7 @@ defmodule NfdWeb.FetchCollection do
             acc |> Map.merge(%{ subscribed_property: FetchCollectionUtil.collection_slug_to_subscribed_property(collection_slug) })
 
           :subscription_emails ->
-            acc |> Map.merge(%{ subscription_emails: Meta.list_subscription_emails_by_collection_id_and_subscriber_id(collection.id, user_collections.subscriber.id) })
+            acc |> Map.merge(%{ subscription_emails: Meta.list_subscription_emails_by_config_course_type_and_subscriber_id(FetchCollectionUtil.collection_slug_to_config_course_type(collection.slug), user_collections.subscriber.id) })
 
           _ -> acc
         end

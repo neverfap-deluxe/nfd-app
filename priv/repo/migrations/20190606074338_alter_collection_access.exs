@@ -11,6 +11,7 @@ defmodule Nfd.Repo.Migrations.AlterCollectionAccess do
       add :cover_image, :string
       add :benefit_list, :string
       add :active_type, :string
+      add :course_config_type, :string
     end
 
     alter table(:files) do
@@ -42,7 +43,6 @@ defmodule Nfd.Repo.Migrations.AlterCollectionAccess do
     end
 
     alter table(:subscription_emails) do
-      add :collection_id, references(:collections, on_delete: :nothing, type: :binary_id)
       add :subscriber_id, references(:subscribers, on_delete: :nothing, type: :binary_id)
     end
 

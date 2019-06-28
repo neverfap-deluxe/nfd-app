@@ -13,6 +13,7 @@ defmodule Nfd.SeedSWAVOL3 do
           seed_id: "c014f1c5-be89-455f-8f88-970c6cf70d5d",
           type: "course_collection",
           active_type: "awareness_active_type",
+          course_config_type: "awareness_week_vol_3",
           frequency: "week",
           total_period: 7,
           status: "in_progress",

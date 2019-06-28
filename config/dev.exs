@@ -110,7 +110,7 @@ config :nfd, NfdWeb.Endpoint,
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, 
-  level: :warn,
+  level: :info,
   format: "[$level] $message\n"
 
 # Set a higher stacktrace during development. Avoid configuring such

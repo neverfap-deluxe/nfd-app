@@ -3,12 +3,16 @@
     <h2 class="dashboard__section__content__title">Patreon Account Linked!</h2>
     <p><%= @user_collections.patreon_access.tier["attributes"]["title"] %></p>
     <%= raw @user_collections.patreon_access.tier["attributes"]["description"] %>
-    <a class="button subscribe__button" href="<%= Routes.page_path(@conn, :general_premium)%>">Learn more about your benefits</a>
+    <div class="dashboard__button__collection">
+      <a class="button subscribe__button" href="<%= Routes.page_path(@conn, :general_premium)%>">Learn more about your benefits</a>
+    </div>
   <% else %>
     <h2 class="dashboard__section__content__title">Patreon Account Linked!</h2>
     <p>Your account is linked, however you haven't signed up for any tiers!</p>
     <p>That's okay, you're still awesome :D</p>
-    <a class="button subscribe__button" href="<%= Routes.page_path(@conn, :general_premium)%>">Learn more about Patreon tiers</a>
+    <div class="dashboard__button__collection">
+      <a class="button subscribe__button" href="<%= Routes.page_path(@conn, :general_premium)%>">Learn more about Patreon tiers</a>
+    </div>
   <% end %>
 <% else %>
   <%= if @user_collections.patreon_access.token_expired != false do %>

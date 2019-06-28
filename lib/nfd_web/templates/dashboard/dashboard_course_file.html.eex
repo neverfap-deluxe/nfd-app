@@ -2,7 +2,7 @@
 
 <div class="dashboard__collection">
   <h2 class="dashboard__title"><%= @dashboard_collections_file.file.display_name %></h2>
-  <%= partial "dashboard/main_back_container.html", %{ conn: @conn, route: :dashboard_courses, text: "Back to Courses", show_email_timer: false } %>
+  <%= partial "dashboard/main_back_container.html", %{ conn: @conn, route: :dashboard, text: "Back to Dashboard", show_email_timer: false } %>
 
   <div class="dashboard__section">
     <div class="dashboard__section__content">

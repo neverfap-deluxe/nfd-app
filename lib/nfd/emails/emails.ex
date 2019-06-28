@@ -103,10 +103,9 @@ defmodule Nfd.Emails do
   def update_subscription(type, subscriber, subscription_day_limit, day_count) do
     { count_property, up_to_count_property, active_type_property, subscribed_property } = Nfd.Util.Email.type_to_subscriber_properties(type)
 
-    case Meta.create_subscription_email(%{ day: day_count, course: type, subscription_email: subscriber.subscriber_email}) do
+    case Meta.create_subscription_email(%{ day: day_count, course: type, subscription_email: subscriber.subscriber_email, subscriber_id: subscriber.id}) do
       {:ok, _subscription_email} ->
-
-        # TODO: Test this.
+        
         active_value = Atom.to_string(subscribed_property)
         count = Map.fetch!(subscriber, count_property) + 1
         up_to_count_original = Map.fetch!(subscriber, up_to_count_property)
@@ -116,8 +115,8 @@ defmodule Nfd.Emails do
           true -> Account.update_subscriber(subscriber, %{ up_to_count_property => up_to_count, active_type_property => active_value, count_property => 0, subscribed_property => false })
           false -> Account.update_subscriber(subscriber, %{ up_to_count_property => up_to_count, active_type_property => active_value, count_property => count })
         end
-      {:error, _error_changeset} ->
-        EmailLogs.error_email_log("#{subscriber.subscriber_email} - Failed to create Meta.SubscriptionEmail - :update_subscription")
+      {:error, error_changeset} ->
+        EmailLogs.error_email_log("#{subscriber.subscriber_email} - #{error_changeset} - Failed to create Meta.SubscriptionEmail - :update_subscription")
     end
   end
 

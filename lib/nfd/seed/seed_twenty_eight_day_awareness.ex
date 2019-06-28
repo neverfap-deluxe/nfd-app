@@ -13,6 +13,7 @@ defmodule Nfd.SeedTEDA do
   #         seed_id: "de3d7f8a-fda6-4b1a-ba50-31cc3181b4bd",
   #         type: "course_collection",
   #         active_type: "awareness_active_type",
+  #         course_config_type: "awarenesschallenge",
   #         frequency: "day",
   #         total_period: 28,
   #         status: "in_progress",

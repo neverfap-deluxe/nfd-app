@@ -24,7 +24,7 @@ defmodule NfdWeb.Redirects do
     end
   end
 
-  def redirect_article(conn, slug) do
+  def redirect_article(_conn, slug) do
     case slug do
       _ -> slug
     end
@@ -48,79 +48,79 @@ defmodule NfdWeb.Redirects do
     end
   end
 
-  def redirect_course(conn, slug) do 
+  def redirect_course(_conn, slug) do 
     case slug do
       _ -> slug
     end
   end
 
-  def redirect_podcast(conn, slug) do 
+  def redirect_podcast(_conn, slug) do 
     case slug do
       _ -> slug
     end
   end
 
-  def redirect_quote(conn, slug) do 
+  def redirect_quote(_conn, slug) do 
     case slug do
       _ -> slug
     end
   end
 
-  def redirect_meditation(conn, slug) do 
+  def redirect_meditation(_conn, slug) do 
     case slug do
       _ -> slug
     end
   end
 
-  def redirect_blog(conn, slug) do 
+  def redirect_blog(_conn, slug) do 
     case slug do
       _ -> slug
     end
   end
 
-  def redirect_update(conn, slug) do 
+  def redirect_update(_conn, slug) do 
     case slug do
       _ -> slug
     end
   end
 
-  def redirect_seven_day_kickstarter_single(conn, slug) do 
+  def redirect_seven_day_kickstarter_single(_conn, slug) do 
     case slug do
       _ -> slug
     end
   end
 
-  def redirect_ten_day_meditation_single(conn, slug) do 
+  def redirect_ten_day_meditation_single(_conn, slug) do 
     case slug do
       _ -> slug
     end
   end
 
-  def redirect_twenty_eight_day_awareness_single(conn, slug) do 
+  def redirect_twenty_eight_day_awareness_single(_conn, slug) do 
     case slug do
       _ -> slug
     end
   end
 
-  def redirect_seven_week_awareness_vol_1_single(conn, slug) do
+  def redirect_seven_week_awareness_vol_1_single(_conn, slug) do
     case slug do
       _ -> slug
     end
   end
 
-  def redirect_seven_week_awareness_vol_2_single(conn, slug) do
+  def redirect_seven_week_awareness_vol_2_single(_conn, slug) do
     case slug do
       _ -> slug
     end
   end
 
-  def redirect_seven_week_awareness_vol_3_single(conn, slug) do
+  def redirect_seven_week_awareness_vol_3_single(_conn, slug) do
     case slug do
       _ -> slug
     end
   end
 
-  def redirect_seven_week_awareness_vol_4_single(conn, slug) do
+  def redirect_seven_week_awareness_vol_4_single(_conn, slug) do
     case slug do
       _ -> slug
     end

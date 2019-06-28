@@ -13,6 +13,7 @@ defmodule Nfd.SeedSDK do
           seed_id: "068b52c1-cce1-4239-a345-1182ae528a41",
           type: "course_collection",
           active_type: "free_active_type",
+          course_config_type: "neverfapdeluxekickstarter",
           frequency: "day",
           total_period: 7,
           status: "complete",

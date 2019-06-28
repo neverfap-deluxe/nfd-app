@@ -3,7 +3,7 @@
   <div class="dashboard__active__collection__item">
     <%= if @user_collections.active_collections.free_active != false do %>
       <% free_collection = @user_collections.active_collections.free_active %>
-      <h3 style="margin-bottom: 0rem;"><%= free_collection.display_name %></h3>
+      <a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, free_collection.slug)%>"><h3 style="margin-bottom: 0rem;"><%= free_collection.display_name %></h3></a>
       <div class="active__collection__item__bottom">
         <!-- <p><b>Total Days</b></br> <%= free_collection.total_period %></p> -->
         <p><b>Current Day</b></br> <%= free_collection.up_to_count %></p>
@@ -20,7 +20,7 @@
   <div class="dashboard__active__collection__item">
     <%= if @user_collections.active_collections.meditation_active != false do %>
       <% meditation_collection = @user_collections.active_collections.meditation_active %>
-      <h3 style="margin-bottom: 0rem;"><%= meditation_collection.display_name %></h3>
+      <a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, meditation_collection.slug)%>"><h3 style="margin-bottom: 0rem;"><%= meditation_collection.display_name %></h3></a>
       <div class="active__collection__item__bottom">
         <!-- <p><b>Total Days</b></br> <%= meditation_collection.total_period %></p> -->
         <p><b>Current Day</b></br> <%= meditation_collection.up_to_count %></p>
@@ -36,7 +36,7 @@
   <div class="dashboard__active__collection__item">
     <%= if @user_collections.active_collections.awareness_active != false do %>
       <% awareness_collection = @user_collections.active_collections.awareness_active %>
-      <h3 style="margin-bottom: 0rem;"><%= awareness_collection.display_name %></h3>
+      <a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, awareness_collection.slug)%>"><h3 style="margin-bottom: 0rem;"><%= awareness_collection.display_name %></h3></a>
       <div class="active__collection__item__bottom">
         <!-- <p><b>Total Weeks</b></br> <%= awareness_collection.total_period %></p> -->
         <p><b>Current Week</b></br> <%= awareness_collection.up_to_count %></p>

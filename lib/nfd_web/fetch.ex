@@ -52,12 +52,9 @@ defmodule NfdWeb.Fetch do
         content_collections = FetchCollection.content_collections(client, response.body["data"], page_symbol, content_slug, user_collections, page_collections, collection_array)
         changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array)
 
-        
-        # TODO: Look to see if getting kickstarter_single_pages will break if you’re not logged in and you don’t have a user.
-
         conn
           |> FetchConn.is_file_paid_for(page_symbol, user_collections, content_collections.collection, NfdWeb.PageView, "general.html", "error_page_no_access.html")
-          |> FetchConn.are_they_up_to_day(page_symbol, response.body["data"], user_collections, content_collections.collection, NfdWeb.PageView, "general.html", "page_not_up_to.html")
+          |> FetchConn.are_they_up_to_day(page_symbol, response.body["data"], user_collections, content_collections.collection, NfdWeb.PageView, "general.html", "error_page_not_up_to.html")
           |> FetchConn.check_api_response_for_404(response.status)
           |> Page.increment_visit_count(response.body["data"])
           |> put_view(page_view)

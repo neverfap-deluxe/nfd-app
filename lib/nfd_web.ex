@@ -114,8 +114,8 @@ defmodule NfdWeb do
         end
       end
 
-      def has_premium_access(collection, user_collections, access_type) do
-        if collection.has_paid_for_collection != nil or patreon_access_list(user_collections, access_type) or !collection.premium, do: true, else: false
+      def has_premium_access(collection, user_collections, access_type) do        
+        if collection.has_paid_for_collection != nil || patreon_access_list(user_collections, access_type) || !collection.premium, do: true, else: false
       end
 
       def patreon_access_list(user_collections, type) do
@@ -144,9 +144,22 @@ defmodule NfdWeb do
           "free_active_type" -> :free_active
           "awareness_active_type" -> :awareness_active
           "meditation_active_type" -> :meditation_active
-          _ -> nil
         end
       end
+
+      def subscribed_property_to_active_type(subscribed_property) do
+        case subscribed_property do
+          :seven_day_kickstarter_subscribed -> :free_active
+          :ten_day_meditation_subscribed -> :meditation_active
+          :awareness_seven_week_vol_1_subscribed -> :awareness_active
+          :awareness_seven_week_vol_2_subscribed -> :awareness_active
+          :awareness_seven_week_vol_3_subscribed -> :awareness_active
+          :awareness_seven_week_vol_4_subscribed -> :awareness_active
+          :twenty_eight_day_awareness_subscribed -> :awareness_active
+          _ -> :NA
+        end
+      end
+
     end
   end
 

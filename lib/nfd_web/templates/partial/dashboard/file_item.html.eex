@@ -16,7 +16,7 @@
     </div>
   <% end %> -->
 
-  <%= if @has_premium_rights and @collection.up_to_count >= @file.number do %>
+  <%= if @has_premium_rights && @collection.up_to_count >= @file.number do %>
     <a class="dashboard__collection__file__info" style="cursor: pointer;" href="<%= Routes.dashboard_path(@conn, @type, @collection.slug, @file.slug) %>">
       <%= if @file.number != -666 do %>
         <p class="dashboard__collection__file__day"><%= @file.number %></p>
@@ -35,7 +35,7 @@
   <% end %>
 
     <%= if @file.specific_type == "mp3" do %>
-      <%= if @has_premium_rights and @collection.up_to_count >= @file.number do %>
+      <%= if @has_premium_rights && @collection.up_to_count >= @file.number do %>
         <a class="dashboard__collection__file__download" href="<%= @file.b2_file_url %>">
           <span class='new__collection__item new__collection__item--alter' style="cursor: pointer;">MP3</span>
           <i class="fa fa-file-audio" aria-hidden="true"></i>
@@ -49,7 +49,7 @@
     <% end %>
     
     <%= if @file.specific_type == "epub" do %>
-      <%= if @has_premium_rights and @collection.up_to_count >= @file.number do %>
+      <%= if @has_premium_rights && @collection.up_to_count >= @file.number do %>
         <a class="dashboard__collection__file__download" href="<%= @file.b2_file_url %>">
           <span class='new__collection__item new__collection__item--alter' style="cursor: pointer;">EPUB</span>
           <i class="fas fa-book-open" aria-hidden="true"></i> <!-- <i class="fas fa-book"></i> -->
@@ -64,7 +64,7 @@
 
     <!-- NOTE: This has different logic from the rest -->
     <%= if @file.specific_type == "email" do %>
-      <%= if @has_premium_rights and @collection.up_to_count >= @file.number do %>
+      <%= if @has_premium_rights && @collection.up_to_count >= @file.number do %>
         <a class="dashboard__collection__file__download" href="<%= Routes.dashboard_path(@conn, @type, @collection.slug, @file.slug) %>">
           <span class='new__collection__item new__collection__item--alter' style="cursor: pointer;">EMAIL</span>
           <i class="fas fa-envelope" aria-hidden="true"></i> <!--  <i class="fas fa-envelope-square"></i> -->
@@ -78,7 +78,7 @@
     <% end %>
 
     <%= if @file.specific_type == "pdf" do %>
-      <%= if @has_premium_rights and @collection.up_to_count >= @file.number do %>
+      <%= if @has_premium_rights && @collection.up_to_count >= @file.number do %>
         <a class="dashboard__collection__file__download" href="<%= @file.b2_file_url %>">
           <span class='new__collection__item new__collection__item--alter' style="cursor: pointer;">PDF</span>
           <i class="fas fa-envelope" aria-hidden="true"></i> <!--  <i class="fas fa-envelope-square"></i> -->

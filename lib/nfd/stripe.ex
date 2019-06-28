@@ -17,9 +17,12 @@ defmodule Nfd.Stripe do
         matrix = Email.collection_slug_to_matrix(collection.slug)
         Emails.send_day_0_email(subscriber, matrix)
         EmailLogs.success_payment_email_log("#{user.email} - $#{collection.price} - #{collection.display_name}")
+        IO.inspect 'hel3o'
+
         conn |> Plug.Conn.send_resp(200, "Payment Successful")
 
       {:error, _error} ->
+        IO.inspect 'helo'
         EmailLogs.failure_payment_email_log("#{user.email} - $#{collection.price} - #{collection.display_name}")
         conn |> Plug.Conn.send_resp(200, "Payment Unsuccessful")
       end

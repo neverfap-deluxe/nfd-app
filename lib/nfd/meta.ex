@@ -126,8 +126,8 @@ defmodule Nfd.Meta do
     Repo.all(from s in SubscriptionEmail, where: [subscriber_id: ^subscriber_id])
   end
 
-  def list_subscription_emails_by_collection_id_and_subscriber_id(collection_id, subscriber_id) do
-    Repo.all(from s in SubscriptionEmail, where: [collection_id: ^collection_id, subscriber_id: ^subscriber_id])
+  def list_subscription_emails_by_config_course_type_and_subscriber_id(course, subscriber_id) do
+    Repo.all(from s in SubscriptionEmail, where: [course: ^course, subscriber_id: ^subscriber_id])
   end
 
 

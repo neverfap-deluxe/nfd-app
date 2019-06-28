@@ -15,6 +15,7 @@ defmodule Nfd.Content.Collection do
     field :seed_id, :string
     field :type, :string
     field :active_type, :string
+    field :course_config_type, :string
     field :frequency, :string
     field :total_period, :integer
     field :status, :string

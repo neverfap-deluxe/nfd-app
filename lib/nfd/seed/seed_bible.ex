@@ -13,6 +13,7 @@ defmodule Nfd.SeedEBOOKS do
           seed_id: "7a65219a-a965-460c-9a94-fcd5b74627be",
           type: "ebook_collection",
           active_type: "ebook_active_type",
+          course_config_type: "NA",
           frequency: "NA",
           total_period: 0,
           status: "complete",
