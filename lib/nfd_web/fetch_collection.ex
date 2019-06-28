@@ -65,16 +65,17 @@ defmodule NfdWeb.FetchCollection do
             file_with_collection = Content.get_file_slug_with_collection!(content_slug)
 
             content_collections = %{
-              file_with_collection: file_with_collection |> Map.merge(%{ has_paid_for_collection: file_with_collection.collection |> Collection.has_paid_for_collection(user_collections) }),
+              file_with_collection: file_with_collection,
+              has_paid_for_collection: file_with_collection.collection |> Collection.has_paid_for_collection(user_collections),
               subscribed_property: FetchCollectionUtil.collection_slug_to_subscribed_property(file_with_collection.collection.slug)
             }
 
             case apply(ContentAPI, FetchCollectionUtil.generate_seven_week_awareness_challenge_symbol(item["vol"]), [client, content_slug]) do
               {:ok, response} ->
-                acc |> Map.merge(%{ collection: content_collections |> Map.merge(%{ additional_item: response.body["data"]}) })
+                acc |> Map.merge(%{ collection: file_with_collection.collection |> Map.merge(content_collections) |> Map.merge(%{ additional_item: response.body["data"]}) })
 
               {:error, _error} ->
-                acc |> Map.merge(%{ collection: content_collections |> Map.merge(%{ additional_item: %{}}) })
+                acc |> Map.merge(%{ collection: file_with_collection.collection |> Map.merge(content_collections) |> Map.merge(%{ additional_item: %{}}) })
             end
 
           :previous_next ->

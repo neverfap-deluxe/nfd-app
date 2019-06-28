@@ -1,8 +1,24 @@
 <div class="single__wrapper practices__wrapper">
-
   <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>
-  <%#= partial "content/practice_premium_header.html", %{ content_collections: @content_collections, user_collections: @user_collections } %>
+</div>
 
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 24px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 20px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 16px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 12px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 8px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+
+<%= partial "content/practice_premium_header.html", %{ conn: @conn, content_collections: @content_collections, user_collections: @user_collections } %>
+
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 8px; background: #00ffee;"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 12px; background: #00ffee;"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 16px; background: #00ffee;"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 20px; background: #00ffee;"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 24px; background: #00ffee;"></div>
+
+<div class="single__wrapper practices__wrapper">
   <div class="homepage__process single__homepage__process">
     <div class="homepage__process__title__container">
       <span><h3 class="homepage__process__title">tldr;</h3></span>

@@ -36,7 +36,7 @@
       buttonsStyling: false,
     })
 
-    // TODO: Test all this stuff out + Get text ready, since I haven't had multiple courses to do this with.
+    // TODO: Test all this stuff out + Get text ready, since I haven't had multiple courses of the same type to do this with.
     var subscribe_course_id = document.querySelector("#subscribe_course_id");
     if (subscribe_course_id) {
       subscribe_course_id.onclick = function(event) {
