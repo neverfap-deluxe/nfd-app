@@ -127,7 +127,7 @@ defmodule Nfd.Util.Email do
     end
   end
   def collection_slug_to_active_type_property(collection_slug) do
-    cond do
+    case collection_slug do
       "general-newsletter" -> :NA
       "seven-day-neverfap-deluxe-kickstarter" -> :free_active
       "ten-day-meditation-primer" -> :meditation_active

@@ -74,7 +74,7 @@ defmodule Nfd.Emails do
           end
 
         # NOTE: If the day doesn't have a template/subscription, then don't send email.
-        if template and subject do
+        if template && subject do
           case type do
             ^kickstarter_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Seven Day NeverFap Deluxe Kickstarter - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)
             ^meditation_primer_type -> cast_course_email(subscriber, subject, template, unsubscribe_url) |> process("Ten Day Meditation Primer - Day #{day_count} E-mail sent: " <> subscriber.subscriber_email)

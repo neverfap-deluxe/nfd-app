@@ -116,6 +116,7 @@
 
   h3 {
     font-size: 1.3rem;
+    text-shadow: 3px 3px cyan;
   }
 }
 
@@ -363,5 +364,15 @@
 .dashboard__active__collections {
   .dashboard__active__collection__item {
     display: flex;
+    flex-direction: column;
+    // border: 4px solid black;
+    // padding: 0.6rem;
+  }
+
+  .active__collection__item__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
   }
 }

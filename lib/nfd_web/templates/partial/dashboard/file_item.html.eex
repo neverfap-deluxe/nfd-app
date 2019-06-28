@@ -62,9 +62,10 @@
       <% end %>
     <% end %>
 
+    <!-- NOTE: This has different logic from the rest -->
     <%= if @file.specific_type == "email" do %>
       <%= if @has_premium_rights and @collection.up_to_count >= @file.number do %>
-        <a class="dashboard__collection__file__download" href="<%= @file.b2_file_url %>">
+        <a class="dashboard__collection__file__download" href="<%= Routes.dashboard_path(@conn, @type, @collection.slug, @file.slug) %>">
           <span class='new__collection__item new__collection__item--alter' style="cursor: pointer;">EMAIL</span>
           <i class="fas fa-envelope" aria-hidden="true"></i> <!--  <i class="fas fa-envelope-square"></i> -->
         </a>

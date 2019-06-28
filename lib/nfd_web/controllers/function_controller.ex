@@ -32,7 +32,11 @@ defmodule NfdWeb.FunctionController do
 
       subscriber ->
         collection = Content.get_collection!(collection_id)
+        IO.inspect collection.slug
         active_type_property = Email.collection_slug_to_active_type_property(collection.slug)
+
+        IO.inspect active_type_property
+        IO.inspect subscribed_property_atom
 
         if (subscribed_property_atom != :subscribed or subscribed_property_atom != :seven_day_kickstarter_subscribed) do
           if subscribed == "true", do: Account.update_subscriber(subscriber, %{active_type_property => "", subscribed_property_atom => false})
