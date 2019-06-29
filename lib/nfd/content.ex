@@ -134,6 +134,11 @@ defmodule Nfd.Content do
     Repo.all(File)
   end
 
+  def list_files_with_collection_id_and_type(collection_id, type) do
+    Repo.all(from File, where: [collection_id: ^collection_id, type: ^type])
+  end
+
+
   @doc """
   Gets a single file.
 

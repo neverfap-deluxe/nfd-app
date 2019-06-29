@@ -47,18 +47,18 @@ defmodule Nfd.SeedSDK do
       slug: "seven-day-neverfap-deluxe-kickstarter-epub",
       collection_id: collection_id
     })
-    Repo.insert(%File{
-      seed_id: "40a6509c-b948-40bd-9ecc-d2f2736a8ec4",
-      type: "ebook_file",
-      specific_type: "pdf",
-      description: "",
-      display_name: "7 Day NeverFap Deluxe Kickstarter pdf",
-      b2_file_name: "neverfap-deluxe-seven-day-kickstarter.pdf",
-      number: -666,
-      premium: false,
-      slug: "seven-day-neverfap-deluxe-kickstarter-pdf",
-      collection_id: collection_id
-    })
+    # Repo.insert(%File{
+    #   seed_id: "40a6509c-b948-40bd-9ecc-d2f2736a8ec4",
+    #   type: "ebook_file",
+    #   specific_type: "pdf",
+    #   description: "",
+    #   display_name: "7 Day NeverFap Deluxe Kickstarter pdf",
+    #   b2_file_name: "neverfap-deluxe-seven-day-kickstarter.pdf",
+    #   number: -666,
+    #   premium: false,
+    #   slug: "seven-day-neverfap-deluxe-kickstarter-pdf",
+    #   collection_id: collection_id
+    # })
   end
 
   def seven_day_kickstarter_audio_files(collection_id) do

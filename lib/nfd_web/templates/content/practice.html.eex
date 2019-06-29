@@ -2,21 +2,9 @@
   <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>
 </div>
 
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 24px; background: rgba(255,46,182,1);"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 20px; background: rgba(255,46,182,1);"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 16px; background: rgba(255,46,182,1);"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 12px; background: rgba(255,46,182,1);"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 8px; background: rgba(255,46,182,1);"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
-
-<%= partial "content/practice_premium_header.html", %{ conn: @conn, content_collections: @content_collections, user_collections: @user_collections } %>
-
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 8px; background: #00ffee;"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 12px; background: #00ffee;"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 16px; background: #00ffee;"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 20px; background: #00ffee;"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 24px; background: #00ffee;"></div>
+<%= if @content_collections.collection.status == "complete" do %>
+  <%= partial "links/patreon.html", assigns %>
+<% end %>
 
 <div class="single__wrapper practices__wrapper">
   <div class="homepage__process single__homepage__process">
@@ -32,19 +20,40 @@
     <!-- </div> -->
   </div>
   <span><span class="homepage__process__link"><%= @item["date"] %></span></span>
-
 </div>
 
-<%= partial "links/patreon.html", assigns %>
+<%= if @content_collections.collection.status == "complete" do %>
+  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 24px; background: rgba(255,46,182,1);"></div>
+  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 20px; background: rgba(255,46,182,1);"></div>
+  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 16px; background: rgba(255,46,182,1);"></div>
+  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 12px; background: rgba(255,46,182,1);"></div>
+  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 8px; background: rgba(255,46,182,1);"></div>
+  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+  <%= partial "content/practice_premium_header.html", %{ conn: @conn, content_collections: @content_collections, user_collections: @user_collections } %>
+  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 8px; background: #00ffee;"></div>
+  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 12px; background: #00ffee;"></div>
+  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 16px; background: #00ffee;"></div>
+  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 20px; background: #00ffee;"></div>
+  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 24px; background: #00ffee;"></div>
+<% end %>
 
-<div class="single__wrapper">
+<%= if @content_collections.collection.status == "in_progress" do %>
+  <%= partial "links/patreon.html", assigns %>
+<% end %>
+
+
+<div id="main__content" class="single__wrapper">
   <div class="single__content">
+    <h2>Context</h2>
     <%= raw @item["content"] %>
     <%= partial "content/similar_practices.html", %{ practices: @page_collections.practices, category: @item["categories"] } %>
   </div>
 
   <%= partial "content/share_buttons.html", %{permalink: @item["permalink"] } %>
+
   <%= partial "comments/comments_list.html", %{conn: @conn, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections} %>
+
   <%= partial "content/next_prev_buttons.html", %{conn: @conn, page_symbol: :practice, next_item: @content_collections.next_item, previous_item: @content_collections.previous_item } %>
 </div>
 

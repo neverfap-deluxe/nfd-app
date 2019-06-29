@@ -38,12 +38,12 @@ defmodule Mix.Tasks.Nfd.Seed do
   # 7 Day NeverFap Deluxe Kickstarter
   def seed_collections() do
     Nfd.SeedSDK.seed()
-    Nfd.SeedTDMP.seed()
-    Nfd.SeedSWAVOL1.seed()
-    Nfd.SeedSWAVOL2.seed()
-    Nfd.SeedSWAVOL3.seed()
-    Nfd.SeedSWAVOL4.seed()
+    # Nfd.SeedTDMP.seed()
+    # Nfd.SeedSWAVOL1.seed()
+    # Nfd.SeedSWAVOL2.seed()
+    # Nfd.SeedSWAVOL3.seed()
+    # Nfd.SeedSWAVOL4.seed()
 
-    Nfd.SeedEBOOKS.seed()
+    # Nfd.SeedEBOOKS.seed()
   end
 end

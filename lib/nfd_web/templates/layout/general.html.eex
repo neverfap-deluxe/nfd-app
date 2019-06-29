@@ -3,6 +3,7 @@
   <%= partial "head_general.html", assigns %>
 
   <body>
+    <%= partial "sidebar_nav.html", assigns %>    
     <!-- <div class="left__sidebar__container">yo</div>
     <div> -->
       <div id="mobile__menu__overlay__background__id" class="mobile__menu__overlay__background"></div>

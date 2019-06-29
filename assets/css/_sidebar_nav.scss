@@ -1,0 +1,16 @@
+.sidebar__nav {
+  position: fixed;
+  opacity: 0.4;
+  transition: .1s;
+  top: 50%;
+  left: 40px;
+  .sidebar__items {
+    .sidebar__item {
+
+    }
+  }
+}
+
+.sidebar__nav:hover {
+  opacity: 1;
+}

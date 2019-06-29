@@ -16,7 +16,7 @@ defmodule Nfd.SeedTDMP do
           course_config_type: "meditationprimer",
           frequency: "day",
           total_period: 10,
-          status: "complete",
+          status: "in_progress",
           stripe_description: "10 Day Meditation Primer Audio Series.",
           benefit_list: "10 Guided Meditation Recordings;For Beginners",
           subscribed_property_string: "ten_day_meditation_subscribed",

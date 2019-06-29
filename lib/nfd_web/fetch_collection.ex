@@ -57,12 +57,12 @@ defmodule NfdWeb.FetchCollection do
             acc |> Map.merge(%{ collection: FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol) |> Content.get_collection_slug_with_files!() |> Collection.get_collection_with_decoration(user_collections) })
 
           symbol when symbol in [:article, :podcast, :quote, :meditation, :blog, :update] ->
-            IO.inspect 'inspect me'
             acc |> Map.merge(%{ collection: %{} })
 
           :practice ->
             # FUTURE: Also put in the actual practice here, so we don't need to collect it in the fetch thing via apply()
             file_with_collection = Content.get_file_slug_with_collection!(content_slug)
+            files = Content.list_files_with_collection_id_and_type(file_with_collection.collection.id, "audio_file")
 
             content_collections = %{
               file_with_collection: file_with_collection,
@@ -72,10 +72,10 @@ defmodule NfdWeb.FetchCollection do
 
             case apply(ContentAPI, FetchCollectionUtil.generate_seven_week_awareness_challenge_symbol(item["vol"]), [client, content_slug]) do
               {:ok, response} ->
-                acc |> Map.merge(%{ collection: file_with_collection.collection |> Map.merge(content_collections) |> Map.merge(%{ additional_item: response.body["data"]}) })
+                acc |> Map.merge(%{ files: files, collection: file_with_collection.collection |> Map.merge(content_collections) |> Map.merge(%{ additional_item: response.body["data"]}) })
 
               {:error, _error} ->
-                acc |> Map.merge(%{ collection: file_with_collection.collection |> Map.merge(content_collections) |> Map.merge(%{ additional_item: %{}}) })
+                acc |> Map.merge(%{ files: files, collection: file_with_collection.collection |> Map.merge(content_collections) |> Map.merge(%{ additional_item: %{}}) })
             end
 
           :previous_next ->

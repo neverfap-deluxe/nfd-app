@@ -17,7 +17,7 @@
 
 <%= partial "links/patreon.html", assigns %>
 
-<div class="single__wrapper">
+<div id="main__content" class="single__wrapper">
   <div class="single__content">
     <%= raw @item["content"] %>
   </div>
