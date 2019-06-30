@@ -51,6 +51,8 @@ defmodule Nfd.Account do
   def get_user_email!(email), do: Repo.get_by!(User, email: email)
   def get_user_id_non_error(id), do: Repo.get_by(User, id)
 
+  def get_user_return_id_and_email!(id), do: from(User) |> select([:id, :email]) |> Repo.get!(id)
+
   @doc """
   Creates a user.
 
@@ -161,7 +163,6 @@ defmodule Nfd.Account do
 
   """
   def get_collection_access!(id), do: Repo.get!(CollectionAccess, id)
-  def get_collection_access_by_slug!(slug), do: Repo.get_by!(CollectionAccess, slug: slug)
 
   def get_collection_access_by_user_id_and_collection_id(nil, collection_id), do: %{}
   def get_collection_access_by_user_id_and_collection_id(user_id, collection_id) do

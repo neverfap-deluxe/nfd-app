@@ -24,7 +24,7 @@
     <div id="new-neverfapper-body">
       <%= partial "home/veteran_neverfappers.html", assigns %>
 
-      <div style="margin-bottom: 1rem; margin-top: 6rem; height: 8px; background: rgba(255,46,182,1);"></div>
+      <div style="margin-bottom: 1rem; margin-top: 3rem; height: 8px; background: rgba(255,46,182,1);"></div>
       <div style="margin-bottom: 1rem; margin-top: 1rem; height: 6px; background: rgba(255,46,182,1);"></div>
       <div class="account__info" style="border-top: 4px solid rgba(255,46,182,1);">
         <p class="account__info__title">Here's a link to every <i class="em em-tada"></i> single <i class="em em-beers"></i> page <i class="em em-blue_book"></i> on NeverFap Deluxe.</p>
@@ -37,7 +37,7 @@
         </div>
       </div>
       <div style="margin-bottom: 1rem; margin-top: 1rem; height: 6px; background: #00ffee;"></div>
-      <div style="margin-bottom: 6rem; margin-top: 1rem; height: 8px; background: #00ffee;"></div>
+      <div style="margin-bottom: 3rem; margin-top: 1rem; height: 8px; background: #00ffee;"></div>
 
       <%= partial "home/who.html", assigns %>
 
@@ -103,6 +103,11 @@
         <p class="account__info__title">OMFG!? You survived the promotion. <i class="em em-confetti_ball"></i> Well done.<i class="em em-confetti_ball"></i></p>
       </div>
 
+      <div class="homepage__understand__nfd__method">
+        <h2>Understanding The NeverFap Deluxe Method</h2>
+        <h3>You know, so you don't think I'm a complete hack. <i class="em em-drooling_face"></i></h3>
+      </div>
+  
       <div class="homepage__section homepage__tldr">
         <h1>tldr;</h1>
         <h2>Essentially, it boils down to 10 minutes of meditation each day.</h2>
@@ -126,8 +131,6 @@
         <p>Instead, you're turning to porn because that's all you know.</p>
 
       </div> -->
-
-      <%# FUTURE: A Huge Banner with says UNDERSTANDING THE NFD METHOD %>
 
       <div class="homepage__section">
         <h1>How it works.</h1>

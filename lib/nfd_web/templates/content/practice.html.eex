@@ -57,6 +57,7 @@
   <%= partial "content/next_prev_buttons.html", %{conn: @conn, page_symbol: :practice, next_item: @content_collections.next_item, previous_item: @content_collections.previous_item } %>
 </div>
 
+<%= partial "banners/new_to_nfd_banner.html", assigns %>
 <%= partial "banners/reddit_question_banner.html", assigns %>
 
 <div class="single__wrapper">

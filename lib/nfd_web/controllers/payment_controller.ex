@@ -15,7 +15,7 @@ defmodule NfdWeb.PaymentController do
   def paypal_collection_payment(conn, %{"order_id" => order_id, "collection_id" => collection_id}) do
     user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
     subscriber = user.subscriber
-    collection = Content.get_collection!(collection_id)
+    collection = Content.get_collection_for_payment!(collection_id)
 
     case PayPal.Payments.Orders.show(order_id) do
       {:ok, order} -> Paypal.payment_process(conn, user, subscriber, collection)
@@ -33,11 +33,10 @@ defmodule NfdWeb.PaymentController do
     user_id = relevant["client_reference_id"] |> String.split("|") |> List.first()
     collection_id = relevant["client_reference_id"] |> String.split("|") |> List.last()
 
-    user = Account.get_user!(user_id) |> Account.get_user_pow!()
-    subscriber = user.subscriber
-    collection = Content.get_collection!(collection_id)
+    user_with_id_and_email = Account.get_user_return_id_and_email!(user_id)
+    collection = Content.get_collection_for_payment!(collection_id)
 
-    Stripe.payment_process(conn, user, subscriber, collection)
+    Stripe.payment_process(conn, user_with_id_and_email, collection)
   end
 
   def purchase_success(conn, _params) do

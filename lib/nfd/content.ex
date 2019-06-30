@@ -23,16 +23,12 @@ defmodule Nfd.Content do
     Repo.all(Collection)
   end
 
-  def list_collections_with_type(type) do
-    Repo.all(from c in Collection, where: [type: ^type], order_by: [asc: :status], preload: [:files])
-  end
-
   def list_ebooks_with_files do
-    Repo.all(from c in Collection, where: [type: "ebook_collection"], order_by: [asc: :status], preload: [:files])
+    Repo.all(from c in Collection, where: [type: "ebook_collection"], order_by: [asc: :status], select: [:active_type, :display_name, :price, :description, :status, :slug, :cover_image, :benefit_list])
   end
 
   def list_courses_with_files do
-    Repo.all(from c in Collection, where: [type: "course_collection"], order_by: [asc: :status], preload: [:files])
+    Repo.all(from c in Collection, where: [type: "course_collection"], order_by: [asc: :status], select: [:active_type, :display_name, :price, :description, :status, :slug, :cover_image, :benefit_list])
   end
 
   @doc """
@@ -54,6 +50,12 @@ defmodule Nfd.Content do
   def get_collection_slug_with_files!(slug), do: Repo.get_by!(Collection, slug: slug) |> Repo.preload(:files)
   def get_collection_seed_id(seed_id), do: Repo.get_by(Collection, seed_id: seed_id)
 
+  def get_collection_with_id_return_slug!(id), do: from(Collection) |> select([:slug]) |> Repo.get!(id)
+  def get_collection_for_payment!(id), do: from(Collection) |> select([:price, :display_name]) |> Repo.get!(id)
+  def get_collection_slug_return_collection_id!(slug), do: from(Collection) |> select([:id]) |> Repo.get_by!(slug: slug)
+
+
+  
   @doc """
   Creates a collection.
 
@@ -135,7 +137,7 @@ defmodule Nfd.Content do
   end
 
   def list_files_with_collection_id_and_type(collection_id, type) do
-    Repo.all(from File, where: [collection_id: ^collection_id, type: ^type])
+    Repo.all(from File, where: [collection_id: ^collection_id, type: ^type], select: [:slug, :number, :display_name])
   end
 
 
@@ -154,12 +156,10 @@ defmodule Nfd.Content do
 
   """
   def get_file!(id), do: Repo.get!(File, id)
-  def get_file_slug!(slug), do: Repo.get_by!(File, slug: slug)
   def get_file_slug_with_collection!(slug), do: Repo.get_by!(File, slug: slug) |> Repo.preload(:collection)
-  def get_file_seed_id(seed_id), do: Repo.get_by(File, seed_id: seed_id)
 
   def get_file_slug_and_collection_id(collection_id, slug) do
-    Repo.one(from f in File, where: [slug: ^slug, collection_id: ^collection_id], preload: [:collection] )
+    Repo.one(from f in File, where: [slug: ^slug, collection_id: ^collection_id], preload: [:collection])
   end
 
 

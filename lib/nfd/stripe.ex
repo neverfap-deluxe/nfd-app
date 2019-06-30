@@ -11,7 +11,7 @@ defmodule Nfd.Stripe do
   # https://stripe.com/docs/payments/checkout/client#enable
   # https://stripe.com/docs/webhooks/setup
 
-  def payment_process(conn, user, subscriber, collection) do
+  def payment_process(conn, user, collection) do
     case Account.create_collection_access(%{user_id: user.id, collection_id: collection.id, amount_paid: collection.price }) do
       {:ok, _collection_access} ->
         # MAYBE - if sending this, it will also have to subscribe user as well to the course, otherwise it's pointless.

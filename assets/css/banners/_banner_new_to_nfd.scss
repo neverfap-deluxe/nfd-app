@@ -1,0 +1,39 @@
+.banner__new__to__nfd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  // border-top: 5px solid cyan;
+  // border-bottom: 5px solid cyan;
+
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  margin-bottom: 5rem;
+
+  .banner__new__to__nfd__title {
+    border: 5px solid black;
+
+    box-shadow: -5px 5px 0px 0px rgba(255,46,182,1);
+    color: black;
+    
+    padding: 1rem;
+    margin-bottom: 2.6rem;
+    margin-top: 2.6rem;
+    transition: 2s box-shadow;
+  }
+
+  .banner__new__to__nfd__title:hover {
+    box-shadow: -35px 35px 0px 0px white;
+  }
+
+  .banner__new__to__nfd__title--2nd {
+    margin-top: 0rem;
+  }
+
+  .new__to__nfd__link {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}

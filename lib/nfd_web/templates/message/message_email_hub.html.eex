@@ -1,0 +1,13 @@
+<div class="dashboard__email__hub">
+  
+  <div class="dashboard__email__hub__form">
+    <%= form_for @general_email_changeset, Routes.subscription_path(@conn, :add_subscription_validate_matrix), [target: "_blank"], fn f -> %>
+      <%= textarea f, :subscriber_email, [placeholder: "email", class: "banner__input"] %>
+      <%= submit "Submit", [class: "banner__submit"]  %>
+      <!-- First matrix is general, second matrix is seven day. -->
+      <%= hidden_input f, :multiple_matrix, [value: "0h1-1h1"] %>
+      <%= hidden_input f, :main_matrix, [value: "1h1"] %>
+    <% end %>
+  </div>
+
+</div>

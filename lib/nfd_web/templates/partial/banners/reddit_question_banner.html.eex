@@ -6,13 +6,24 @@
 <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
 
 <div style="margin-top: 2.5rem; margin-bottom: 2.5rem;">
+
+  <div class="reddit__question__banner" style="margin-bottom: 0.7rem; margin-top: 2rem;">
+    <h2>Personal Coaching?</h2>
+    <div class="reddit__question__banner__box">
+      <p>Need 1-on-1 advice from <b>The Reade&copy;</b> himself? Receive personal coaching from as little as <b>$25 per month</b>.</p>
+    </div>
+  </div>
+  <div class="account__buttons" style="flex-direction: row!important;">
+    <a class="link articles__link" href="<%= Routes.page_path(@conn, :programs_coaching)%>">Learn more</a>
+  </div>    
+  
+
   <div class="reddit__question__banner" style="margin-bottom: 0.7rem;">
-    <h2>Questions?</h2>
+    <h2>Further Questions?</h2>
     <div class="reddit__question__banner__box">
       <p>Head on down to our NeverFap Deluxe subreddit or Discord channel where myself and others can help you with your questions.</p>
     </div>
   </div>
-
   <div class="account__buttons" style="flex-direction: row!important;">
     <a style="margin-right: 1.5rem!important;" class="account__reddit__button__container" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">
       <img class="account__reddit__button__logo" src="/images/reddit__logo.png" />
@@ -22,7 +33,7 @@
       <img class="account__discord__button__logo" src="/images/discord__logo.png" />
       <p class="account__discord__button__text">DISCORD <span class="account__discord__button__text--display">CHANNEL</span></p>
     </a>
-  </div>  
+  </div>    
 </div>
 
 <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>

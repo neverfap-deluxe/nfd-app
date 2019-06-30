@@ -1,9 +1,14 @@
 <div class="single__wrapper practices__wrapper">
   <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>
+</div>
+
+<%= partial "links/patreon.html", assigns %>
+
+<div class="single__wrapper practices__wrapper">
   <div style="margin-top: 1.4rem;">
     <%= raw @item["podcast_player"] %>
   </div>
-
+    
   <h3 style="margin-bottom: 2rem;"><%= raw @item["content"] %></h3>
   <div class="podcast__item__bottom">
     <a class="link articles__link" href='<%= @item["podcast_url"] %>'>episode link</a>
@@ -16,7 +21,7 @@
   <%= partial "content/next_prev_buttons.html", %{conn: @conn, page_symbol: :meditation, next_item: @content_collections.next_item, previous_item: @content_collections.previous_item } %>
 </div>
 
-<%= partial "links/patreon.html", assigns %>
+<%= partial "banners/new_to_nfd_banner.html", assigns %>
 <%= partial "banners/reddit_question_banner.html", assigns %>
 
 <div style="margin-top: 5rem;"></div>

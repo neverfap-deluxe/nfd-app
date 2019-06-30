@@ -19,6 +19,9 @@
     <% end ) %>
   </div>
 </div>
-<%= partial "links/loginregister_top--without-mobile.html", assigns %>
+
+<div style="margin-top: 5rem;"></div>
+<%= partial "banners/new_to_nfd_banner.html", assigns %>
+<%= partial "banners/reddit_question_banner.html", assigns %>
 
 <script src='<%= Routes.static_path(@conn, "/js/articles.js") %>'></script>

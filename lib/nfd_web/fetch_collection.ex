@@ -54,6 +54,7 @@ defmodule NfdWeb.FetchCollection do
       fn symbol, acc ->
         case symbol do
           symbol when symbol in [:seven_day_kickstarter_single, :ten_day_meditation_single, :twenty_eight_day_awareness_single, :seven_week_awareness_vol_1_single, :seven_week_awareness_vol_2_single, :seven_week_awareness_vol_3_single, :seven_week_awareness_vol_4_single] ->
+            # FUTURE: This doesn't need full decoration, only part of the decoration is truly required.
             acc |> Map.merge(%{ collection: FetchCollectionUtil.page_symbol_to_collection_slug(page_symbol) |> Content.get_collection_slug_with_files!() |> Collection.get_collection_with_decoration(user_collections) })
 
           symbol when symbol in [:article, :podcast, :quote, :meditation, :blog, :update] ->

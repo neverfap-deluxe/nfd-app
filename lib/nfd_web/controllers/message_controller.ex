@@ -137,6 +137,20 @@ defmodule NfdWeb.MessageController do
   end
 
 
+  # MANUAL MESSAGES
+  def message_email_hub(conn, _params) do
+    subscribers = []
+
+    render(conn, "message_email_hub.html", subscribers: subscribers)
+  end
+
+  def send_manual_message(conn, %{ "type" => type }) do
+
+
+    render(conn, "message_email_hub.html", subscribers)
+  end
+
+
   # CONTACT FORM TEMPLATES
   def send_contact_form_success(conn, _params) do
     render(conn, "send_contact_form_success.html")
