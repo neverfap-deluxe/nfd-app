@@ -161,11 +161,13 @@ defmodule NfdWeb.MessageController do
           "Kickstarter" -> Account.list_subscribers_kickstarter()
           "Meditation" -> Account.list_subscribers_meditation()
           "Awareness" -> Account.list_subscribers_awareness()
-          _ -> "broken."
+          _ -> []
         end
     
       subscribers |> Enum.each(fn (subscriber) -> 
-        Emails.cast_general_newsletter_email(subscriber) |> Emails.process("Manual Email Sent")
+        unsubscribe_email = Email.generate_unsubscribe_url("0h2", subscriber.subscriber_email)
+
+        Emails.cast_general_newsletter_email(subscriber, subject, message, unsubscribe_email) |> Emails.process("Manual Email Sent")
       end)
     end
     
@@ -175,14 +177,13 @@ defmodule NfdWeb.MessageController do
   def render_email_hub(conn) do
     user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
     if user.is_admin do 
-      general_email_changeset = ManualEmails.changeset(%ManualEmails{}, %{message: "", type: "All"})
+      general_email_changeset = ManualEmails.changeset(%ManualEmails{}, %{message: "", subject: "", type: "All"})
       manual_emails = Meta.list_manual_emails()
       render(conn, "message_email_hub.html", general_email_changeset: general_email_changeset, manual_emails: manual_emails)
     else 
       FetchConn.render_404_page(conn, "error")
     end
   end
-
 
   # CONTACT FORM TEMPLATES
   def send_contact_form_success(conn, _params) do

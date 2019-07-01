@@ -3,6 +3,7 @@
   <div class="dashboard__email__hub__form">
     <%= form_for @general_email_changeset, Routes.message_path(@conn, :send_manual_message), fn f -> %>
       <%= textarea f, :message, [placeholder: "message", value: "", class: "banner__input"] %>
+      <%= text_input f, :subject, [placeholder: "subject", value: "", class: "banner__input"] %>
       <%= multiple_select f, :type, ["All": "All", "NonSubscribed": "NonSubscribed", "General": "General", "Kickstarter": "Kickstarter", "Meditation": "Meditation", "Awareness": "Awareness"] %>
 
       <%= submit "Submit", [class: "banner__submit"]  %>
