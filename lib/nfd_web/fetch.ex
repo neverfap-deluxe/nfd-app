@@ -73,6 +73,8 @@ defmodule NfdWeb.Fetch do
 
     dashboard_collections = FetchCollection.dashboard_collections(collection_array, user_collections)
 
+    IO.inspect dashboard_collections.not_purchased_courses
+    IO.inspect Map.keys(dashboard_collections)
     conn
       |> put_flash(:info, (if user_collections.patreon_access.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."))
       |> put_view(NfdWeb.DashboardView)

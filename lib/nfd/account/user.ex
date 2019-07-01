@@ -45,8 +45,10 @@ defmodule Nfd.Account.User do
 
   def changeset(user, attrs) do
     user
+      |> cast(attrs, [:is_admin])
       |> pow_changeset(attrs)
       |> pow_extension_changeset(attrs)
+
   end
 
   def id_changeset(user, attrs) do

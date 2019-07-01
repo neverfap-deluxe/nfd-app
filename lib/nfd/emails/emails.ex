@@ -144,6 +144,15 @@ defmodule Nfd.Emails do
       |> render_body(template, %{unsubscribe_url: unsubscribe_url})
   end
 
+  def cast_general_newsletter_email(subscriber, subject, template, unsubscribe_url) do
+    # TODO: Finish this.
+    %Swoosh.Email{}
+      |> to(subscriber.subscriber_email)
+      |> from({"NeverFap Deluxe", "admin@neverfapdeluxe.com"})
+      |> subject(subject)
+      |> render_body(template, %{unsubscribe_url: unsubscribe_url})
+  end
+
   def cast_confirmation_url(subscriber_email, url, unsubscribe_url, course_name, subject, template) do
     EmailLogs.new_subscriber_email_log(subscriber_email, course_name)
 

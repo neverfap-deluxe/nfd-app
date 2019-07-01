@@ -324,4 +324,100 @@ defmodule Nfd.Meta do
   def change_comment(%Comment{} = comment) do
     Comment.changeset(comment, %{})
   end
+
+  alias Nfd.Meta.ManualEmails
+
+  @doc """
+  Returns the list of manual_emails.
+
+  ## Examples
+
+      iex> list_manual_emails()
+      [%ManualEmails{}, ...]
+
+  """
+  def list_manual_emails do
+    Repo.all(ManualEmails)
+  end
+
+  @doc """
+  Gets a single manual_emails.
+
+  Raises `Ecto.NoResultsError` if the Manual emails does not exist.
+
+  ## Examples
+
+      iex> get_manual_emails!(123)
+      %ManualEmails{}
+
+      iex> get_manual_emails!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_manual_emails!(id), do: Repo.get!(ManualEmails, id)
+
+  @doc """
+  Creates a manual_emails.
+
+  ## Examples
+
+      iex> create_manual_emails(%{field: value})
+      {:ok, %ManualEmails{}}
+
+      iex> create_manual_emails(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_manual_emails(attrs \\ %{}) do
+    %ManualEmails{}
+    |> ManualEmails.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a manual_emails.
+
+  ## Examples
+
+      iex> update_manual_emails(manual_emails, %{field: new_value})
+      {:ok, %ManualEmails{}}
+
+      iex> update_manual_emails(manual_emails, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_manual_emails(%ManualEmails{} = manual_emails, attrs) do
+    manual_emails
+    |> ManualEmails.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a ManualEmails.
+
+  ## Examples
+
+      iex> delete_manual_emails(manual_emails)
+      {:ok, %ManualEmails{}}
+
+      iex> delete_manual_emails(manual_emails)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_manual_emails(%ManualEmails{} = manual_emails) do
+    Repo.delete(manual_emails)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking manual_emails changes.
+
+  ## Examples
+
+      iex> change_manual_emails(manual_emails)
+      %Ecto.Changeset{source: %ManualEmails{}}
+
+  """
+  def change_manual_emails(%ManualEmails{} = manual_emails) do
+    ManualEmails.changeset(manual_emails, %{})
+  end
 end

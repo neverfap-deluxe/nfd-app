@@ -67,7 +67,7 @@
 .homepage__tldr {
   position: relative;
   padding: 1.5rem;
-  margin-top: 3rem!important;
+  // margin-top: 3rem!important;
 
   background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
   background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
@@ -971,8 +971,9 @@
   justify-content: center;
   align-items: center;
 
-  height: 100vh;
+  margin-top: 1rem;
   width: 100w;
+  padding: 1rem;
   h2 {
     border: 1rem solid black;
     padding: 2rem;
@@ -989,5 +990,18 @@
     background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
     color: white;  
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .homepage__understand__nfd__method {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .homepage__understand__nfd__method {
+    height: 100vh;
   }
 }

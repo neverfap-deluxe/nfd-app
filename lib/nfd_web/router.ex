@@ -165,6 +165,10 @@ defmodule NfdWeb.Router do
     get "/dashboard/profile", DashboardController, :dashboard_profile
     get "/dashboard/delete_profile", DashboardController, :dashboard_profile_delete_confirmation
 
+    # MESSAGE EMAIL HUB
+    get "/dashboard/email_hub", MessageController, :message_email_hub
+    post "/dashboard/email_hub_send", MessageController, :send_manual_message
+
     # PAYMENT
     get "/purchase_success", PaymentController, :purchase_success
     get "/purchase_cancel", PaymentController, :purchase_cancel

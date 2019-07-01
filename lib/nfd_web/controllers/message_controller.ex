@@ -17,6 +17,8 @@ defmodule NfdWeb.MessageController do
   alias NfdWeb.FetchAccess
   alias NfdWeb.FetchCollection
 
+  alias Nfd.Meta.ManualEmails
+
   # NOTE: This is only suitable for content based comments
   def comment_form_post(conn, %{"comment" => comment}) do
     user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
@@ -139,15 +141,46 @@ defmodule NfdWeb.MessageController do
 
   # MANUAL MESSAGES
   def message_email_hub(conn, _params) do
-    subscribers = []
-
-    render(conn, "message_email_hub.html", subscribers: subscribers)
+    render_email_hub(conn)
   end
 
-  def send_manual_message(conn, %{ "type" => type }) do
+  def send_manual_message(conn, %{"manual_emails" => manual_emails}) do
+    user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
 
+    # FUTURE: Actually build this.
+    if user.is_admin do
+      message = manual_emails["message"]
+      subject = manual_emails["subject"]
+      type = manual_emails["type"] |> List.first()
+      
+      subscribers = 
+        case type do
+          "All" -> Account.list_subscribers()
+          # "NonSubscribed" -> Account.list_subscribers()
+          "General" -> Account.list_subscribers_general()
+          "Kickstarter" -> Account.list_subscribers_kickstarter()
+          "Meditation" -> Account.list_subscribers_meditation()
+          "Awareness" -> Account.list_subscribers_awareness()
+          _ -> "broken."
+        end
+    
+      subscribers |> Enum.each(fn (subscriber) -> 
+        Emails.cast_general_newsletter_email(subscriber) |> Emails.process("Manual Email Sent")
+      end)
+    end
+    
+    render_email_hub(conn)
+  end
 
-    render(conn, "message_email_hub.html", subscribers)
+  def render_email_hub(conn) do
+    user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
+    if user.is_admin do 
+      general_email_changeset = ManualEmails.changeset(%ManualEmails{}, %{message: "", type: "All"})
+      manual_emails = Meta.list_manual_emails()
+      render(conn, "message_email_hub.html", general_email_changeset: general_email_changeset, manual_emails: manual_emails)
+    else 
+      FetchConn.render_404_page(conn, "error")
+    end
   end
 
 

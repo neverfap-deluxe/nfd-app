@@ -24,7 +24,7 @@ defmodule Nfd.SeedUsers do
     date_string = "2018-12-30T16:00:00.000Z"
     {:ok, dt_struct, _utc_offset} = DateTime.from_iso8601(date_string)
 
-    user_k = Repo.insert!(User.changeset(%User{}, %{email: "k@k.com", password: "hellothere", confirm_password: "hellothere"}))
+    user_k = Repo.insert!(User.changeset(%User{}, %{email: "k@k.com", password: "hellothere", confirm_password: "hellothere", is_admin: true}))
     Account.update_user_email_confirm(user_k, %{ email_confirmed_at: DateTime.truncate(dt_struct, :second) })
 
     Repo.insert!(User.changeset(%User{}, %{email: "u@u.com", password: "hellothere", confirm_password: "hellothere"}))

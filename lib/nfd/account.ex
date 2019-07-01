@@ -259,6 +259,30 @@ defmodule Nfd.Account do
     )
   end
 
+  def list_subscribers_kickstarter do
+    Repo.all(
+      from s in Subscriber,
+      where: [ seven_day_kickstarter_subscribed: true ]
+    )
+  end
+
+  def list_subscribers_meditation do
+    Repo.all(
+      from s in Subscriber,
+      where: [ ten_day_meditation_subscribed: true ]
+    )
+  end
+
+  def list_subscribers_awareness do
+    Repo.all(
+      from s in Subscriber,
+      where: [ awareness_seven_week_vol_1_subscribed: true ],
+      or_where: [ awareness_seven_week_vol_2_subscribed: true ],
+      or_where: [ awareness_seven_week_vol_3_subscribed: true ],
+      or_where: [ awareness_seven_week_vol_4_subscribed: true ]
+    )
+  end
+
   def list_subscribers_campaign do
     Repo.all(
       from s in Subscriber,

@@ -24,11 +24,11 @@ defmodule Nfd.Content do
   end
 
   def list_ebooks_with_files do
-    Repo.all(from c in Collection, where: [type: "ebook_collection"], order_by: [asc: :status], select: [:active_type, :display_name, :price, :description, :status, :slug, :cover_image, :benefit_list])
+    Repo.all(from c in Collection, where: [type: "ebook_collection"], order_by: [asc: :status], select: [:id, :active_type, :display_name, :price, :description, :status, :slug, :cover_image, :benefit_list])
   end
 
   def list_courses_with_files do
-    Repo.all(from c in Collection, where: [type: "course_collection"], order_by: [asc: :status], select: [:active_type, :display_name, :price, :description, :status, :slug, :cover_image, :benefit_list])
+    Repo.all(from c in Collection, where: [type: "course_collection"], order_by: [asc: :status], select: [:id, :active_type, :display_name, :price, :description, :status, :slug, :cover_image, :benefit_list])
   end
 
   @doc """
@@ -50,8 +50,8 @@ defmodule Nfd.Content do
   def get_collection_slug_with_files!(slug), do: Repo.get_by!(Collection, slug: slug) |> Repo.preload(:files)
   def get_collection_seed_id(seed_id), do: Repo.get_by(Collection, seed_id: seed_id)
 
-  def get_collection_with_id_return_slug!(id), do: from(Collection) |> select([:slug]) |> Repo.get!(id)
-  def get_collection_for_payment!(id), do: from(Collection) |> select([:price, :display_name]) |> Repo.get!(id)
+  def get_collection_with_id_return_slug!(id), do: from(Collection) |> select([:id, :slug]) |> Repo.get!(id)
+  def get_collection_for_payment!(id), do: from(Collection) |> select([:id, :price, :display_name]) |> Repo.get!(id)
   def get_collection_slug_return_collection_id!(slug), do: from(Collection) |> select([:id]) |> Repo.get_by!(slug: slug)
 
 
@@ -137,7 +137,7 @@ defmodule Nfd.Content do
   end
 
   def list_files_with_collection_id_and_type(collection_id, type) do
-    Repo.all(from File, where: [collection_id: ^collection_id, type: ^type], select: [:slug, :number, :display_name])
+    Repo.all(from File, where: [collection_id: ^collection_id, type: ^type], select: [:id, :slug, :number, :display_name])
   end
 
 

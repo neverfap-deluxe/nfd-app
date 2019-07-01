@@ -1,13 +1,16 @@
 <div class="dashboard__email__hub">
   
   <div class="dashboard__email__hub__form">
-    <%= form_for @general_email_changeset, Routes.subscription_path(@conn, :add_subscription_validate_matrix), [target: "_blank"], fn f -> %>
-      <%= textarea f, :subscriber_email, [placeholder: "email", class: "banner__input"] %>
+    <%= form_for @general_email_changeset, Routes.message_path(@conn, :send_manual_message), fn f -> %>
+      <%= textarea f, :message, [placeholder: "message", value: "", class: "banner__input"] %>
+      <%= multiple_select f, :type, ["All": "All", "NonSubscribed": "NonSubscribed", "General": "General", "Kickstarter": "Kickstarter", "Meditation": "Meditation", "Awareness": "Awareness"] %>
+
       <%= submit "Submit", [class: "banner__submit"]  %>
-      <!-- First matrix is general, second matrix is seven day. -->
-      <%= hidden_input f, :multiple_matrix, [value: "0h1-1h1"] %>
-      <%= hidden_input f, :main_matrix, [value: "1h1"] %>
     <% end %>
+  </div>
+
+  <div class="manual__emails__list">
+    <!-- <%= %> -->
   </div>
 
 </div>
