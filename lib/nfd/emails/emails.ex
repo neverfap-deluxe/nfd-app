@@ -105,7 +105,8 @@ defmodule Nfd.Emails do
 
     case Meta.create_subscription_email(%{ day: day_count, course: type, subscription_email: subscriber.subscriber_email, subscriber_id: subscriber.id}) do
       {:ok, _subscription_email} ->
-        
+        # TODO: This technically needs to be more complex, the up_to_count we cannot assume is the same as the actual count. They may be very different. 
+
         active_value = Atom.to_string(subscribed_property)
         count = Map.fetch!(subscriber, count_property) + 1
         up_to_count_original = Map.fetch!(subscriber, up_to_count_property)

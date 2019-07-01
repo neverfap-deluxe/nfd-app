@@ -226,9 +226,7 @@ defmodule NfdWeb.SubscriptionController do
   end
 
 
-
   # Error Handler
-
   defp render_failure_page(type, conn, subscriber_email, course_name, subscribed_property) do
     { error_message, error_log_message } =
       case type do
