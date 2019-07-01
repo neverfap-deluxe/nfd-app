@@ -25,8 +25,8 @@ defmodule Mix.Tasks.Nfd.Seed do
   end
 
   def seed(:prod) do
-    Repo.delete_all(Collection)
-    Repo.delete_all(File)
+    # Repo.delete_all(Collection)
+    # Repo.delete_all(File)
 
     seed_collections()
   end
