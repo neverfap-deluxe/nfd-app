@@ -1,86 +1,88 @@
-<div class="practices__premium__header">
-  <% has_premium_rights = has_premium_access(@content_collections.collection, @user_collections, :courses_access) %>
-  <%= if has_premium_rights do %>
-    <div class="practices__premium__header__colour">
-      <div class="practices__premium__header__white">
-        <h2>Premium Access</h2>
-        <h3>Context Audio</h3>
-        <audio controls src="<%= @content_collections.collection.file_with_collection.b2_file_url  %>">
-          Your browser does not support the <code>audio</code> element.
-        </audio>
+<%= if @content_collections |> Map.has_key?(:file_with_collection) do %>
+  <div class="practices__premium__header">
+    <% has_premium_rights = has_premium_access(@content_collections.collection, @user_collections, :courses_access) %>
+    <%= if has_premium_rights do %>
+      <div class="practices__premium__header__colour">
+        <div class="practices__premium__header__white">
+          <h2>Premium Access</h2>
+          <h3>Context Audio</h3>
+          <audio controls src="<%= @content_collections.collection.file_with_collection.b2_file_url  %>">
+            Your browser does not support the <code>audio</code> element.
+          </audio>
 
-        <!-- <h3>Instructional Audio</h3>
-        <audio controls src="<%= @content_collections.collection.file_with_collection.b2_file_url  %>">
-          Your browser does not support the <code>audio</code> element.
-        </audio> -->
+          <!-- <h3>Instructional Audio</h3>
+          <audio controls src="<%= @content_collections.collection.file_with_collection.b2_file_url  %>">
+            Your browser does not support the <code>audio</code> element.
+          </audio> -->
 
-        <h3>Subscribed Status</h3>
-        <p><%= Map.get(@user_collections.subscriber, @content_collections.subscribed_property) %></p>
+          <h3>Subscribed Status</h3>
+          <p><%= Map.get(@user_collections.subscriber, @content_collections.subscribed_property) %></p>
 
-        <p>Subscribe to the <%= @content_collections.collection.file_with_collection.collection.display_name %></p>
-      </div>
-    </div> 
-  <% else %>
-    <div class="black__banner__title__container">
-      <h2 class="black__banner__title black__banner__title--alter"><%= @content_collections.collection.file_with_collection.collection.display_name %></h2>
-      <div class="practices__premium__content">
-        <div class="practices__premium__content--box practices__premium__content--box--left">
-          <h3>Information</h3>
-          <!-- <p class="practices__premium__content--black"><%= @content_collections.collection.file_with_collection.display_name %></p> -->
-          <!-- <p class="practices__premium__content--title">is an exercise as part of the</p> -->
-          <h3 class="practices__premium__content--title">Free Material</h3>
-          <p>Full explanation of the exercise, including contextual and instructional information. Suitable for most people to get started and practice effectively.</p>
-
-          <h3 class="practices__premium__content--title">Paid Material</h3>
-          <p>Additional written explanation, guided audio, as well as a scheduled email campaign to help keep you on track. A comprehensive solution for those who want to take it seriously.</p>
-
-          <!-- <h3 style="margin-bottom: 1.8rem;" class="practices__premium__content--title">Files</h3> -->
-
-          <div style="margin-top: 2rem;" class="dashboard__collection__files">
-            <%= partial "dashboard/file_item.html", %{ conn: @conn, file: @content_collections.collection.file_with_collection, collection: @content_collections.collection.file_with_collection.collection, has_premium_rights: has_premium_rights, type: :dashboard_course_file } %>
-          </div>
-
-          <!-- <a class="link" href="/<%= @content_collections.collection.file_with_collection.collection.slug %>">Learn More</a> -->
+          <p>Subscribe to the <%= @content_collections.collection.file_with_collection.collection.display_name %></p>
         </div>
-        <div class="practices__premium__content--box">
-          <h3>Schedule</h3>
-          <div class="practices__premium__files__list">
-            <%= @content_collections.files |> Enum.map(fn (file) -> %>
-              <div class="practices__premium__files__item">
-                <% is_same_as_page = if file.slug == @content_collections.collection.file_with_collection.slug, do: "new__collection__item--tooltip_thing", else: "new__collection__item--tooltip_thing--none" %>
-                <a style="display: flex; align-items: center;"href="<%= file.slug %>">
-                  <p class="practices__premium__files__item--text">Week <%= file.number %></p>
-                  <p class="practices__premium__files__item--text"><%= file.display_name %></p>
-                  <div class="<%= is_same_as_page %>">Current</div>
-                </a>
-              </div>
-            <% end) %>
-          </div>
-        </div>  
-      </div>
+      </div> 
+    <% else %>
+      <div class="black__banner__title__container">
+        <h2 class="black__banner__title black__banner__title--alter"><%= @content_collections.collection.file_with_collection.collection.display_name %></h2>
+        <div class="practices__premium__content">
+          <div class="practices__premium__content--box practices__premium__content--box--left">
+            <h3>Information</h3>
+            <!-- <p class="practices__premium__content--black"><%= @content_collections.collection.file_with_collection.display_name %></p> -->
+            <!-- <p class="practices__premium__content--title">is an exercise as part of the</p> -->
+            <h3 class="practices__premium__content--title">Free Material</h3>
+            <p>Full explanation of the exercise, including contextual and instructional information. Suitable for most people to get started and practice effectively.</p>
 
-      <div class="login__top">
-        <div class="account__buttons__login">
-          <span class="login__top__button__register">
-              <%= link to: Routes.pow_registration_path(@conn, :new) do %>
-              <div class="login__top__button__text">
-                Register
-              </div>
-            <% end %>
-          </span>
-      
-          <span class="login__top__button__register">
-            <%= link to: Routes.pow_session_path(@conn, :new) do %>
-              <div class="login__top__button__text">
-                Sign in
-              </div>
-            <% end %>  
-          </span>
-      
-          <p class="login__top__title">Register or login for additional access to NeverFap Deluxe!</p>
+            <h3 class="practices__premium__content--title">Paid Material</h3>
+            <p>Additional written explanation, guided audio, as well as a scheduled email campaign to help keep you on track. A comprehensive solution for those who want to take it seriously.</p>
+
+            <!-- <h3 style="margin-bottom: 1.8rem;" class="practices__premium__content--title">Files</h3> -->
+
+            <div style="margin-top: 2rem;" class="dashboard__collection__files">
+              <%= partial "dashboard/file_item.html", %{ conn: @conn, file: @content_collections.collection.file_with_collection, collection: @content_collections.collection.file_with_collection.collection, has_premium_rights: has_premium_rights, type: :dashboard_course_file } %>
+            </div>
+
+            <!-- <a class="link" href="/<%= @content_collections.collection.file_with_collection.collection.slug %>">Learn More</a> -->
+          </div>
+          <div class="practices__premium__content--box">
+            <h3>Schedule</h3>
+            <div class="practices__premium__files__list">
+              <%= @content_collections.files |> Enum.map(fn (file) -> %>
+                <div class="practices__premium__files__item">
+                  <% is_same_as_page = if file.slug == @content_collections.collection.file_with_collection.slug, do: "new__collection__item--tooltip_thing", else: "new__collection__item--tooltip_thing--none" %>
+                  <a style="display: flex; align-items: center;"href="<%= file.slug %>">
+                    <p class="practices__premium__files__item--text">Week <%= file.number %></p>
+                    <p class="practices__premium__files__item--text"><%= file.display_name %></p>
+                    <div class="<%= is_same_as_page %>">Current</div>
+                  </a>
+                </div>
+              <% end) %>
+            </div>
+          </div>  
         </div>
+
+        <div class="login__top">
+          <div class="account__buttons__login">
+            <span class="login__top__button__register">
+                <%= link to: Routes.pow_registration_path(@conn, :new) do %>
+                <div class="login__top__button__text">
+                  Register
+                </div>
+              <% end %>
+            </span>
+        
+            <span class="login__top__button__register">
+              <%= link to: Routes.pow_session_path(@conn, :new) do %>
+                <div class="login__top__button__text">
+                  Sign in
+                </div>
+              <% end %>  
+            </span>
+        
+            <p class="login__top__title">Register or login for additional access to NeverFap Deluxe!</p>
+          </div>
+        </div>
+        
       </div>
-      
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+<% end %>

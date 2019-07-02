@@ -2,7 +2,7 @@
   <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>
 </div>
 
-<%= if @content_collections.collection.status == "complete" do %>
+<%= if @content_collections.collection[:status] == "complete" do %>
   <%= partial "links/patreon.html", assigns %>
 <% end %>
 
@@ -22,7 +22,7 @@
   <span><span class="homepage__process__link"><%= @item["date"] %></span></span>
 </div>
 
-<%= if @content_collections.collection.status == "complete" do %>
+<%= if @content_collections.collection[:status] == "complete" do %>
   <div style="margin-bottom: 1rem; margin-top: 1rem; height: 24px; background: rgba(255,46,182,1);"></div>
   <div style="margin-bottom: 1rem; margin-top: 1rem; height: 20px; background: rgba(255,46,182,1);"></div>
   <div style="margin-bottom: 1rem; margin-top: 1rem; height: 16px; background: rgba(255,46,182,1);"></div>
@@ -38,7 +38,7 @@
   <div style="margin-bottom: 1rem; margin-top: 1rem; height: 24px; background: #00ffee;"></div>
 <% end %>
 
-<%= if @content_collections.collection.status == "in_progress" do %>
+<%= if @content_collections.collection[:status] == "in_progress" do %>
   <%= partial "links/patreon.html", assigns %>
 <% end %>
 

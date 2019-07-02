@@ -62,21 +62,26 @@ defmodule NfdWeb.FetchCollection do
 
           :practice ->
             # FUTURE: Also put in the actual practice here, so we don't need to collect it in the fetch thing via apply()
-            file_with_collection = Content.get_file_slug_with_collection!(content_slug)
-            files = Content.list_files_with_collection_id_and_type(file_with_collection.collection.id, "audio_file")
+            file_with_collection = Content.get_file_slug_with_collection(content_slug)
 
-            content_collections = %{
-              file_with_collection: file_with_collection,
-              has_paid_for_collection: file_with_collection.collection |> Collection.has_paid_for_collection(user_collections),
-              subscribed_property: FetchCollectionUtil.collection_slug_to_subscribed_property(file_with_collection.collection.slug)
-            }
+            if file_with_collection do   
+              files = Content.list_files_with_collection_id_and_type(file_with_collection.collection.id, "audio_file")
 
-            case apply(ContentAPI, FetchCollectionUtil.generate_seven_week_awareness_challenge_symbol(item["vol"]), [client, content_slug]) do
-              {:ok, response} ->
-                acc |> Map.merge(%{ files: files, collection: file_with_collection.collection |> Map.merge(content_collections) |> Map.merge(%{ additional_item: response.body["data"]}) })
+              content_collections = %{
+                file_with_collection: file_with_collection,
+                has_paid_for_collection: file_with_collection.collection |> Collection.has_paid_for_collection(user_collections),
+                subscribed_property: FetchCollectionUtil.collection_slug_to_subscribed_property(file_with_collection.collection.slug)
+              }
 
-              {:error, _error} ->
-                acc |> Map.merge(%{ files: files, collection: file_with_collection.collection |> Map.merge(content_collections) |> Map.merge(%{ additional_item: %{}}) })
+              case apply(ContentAPI, FetchCollectionUtil.generate_seven_week_awareness_challenge_symbol(item["vol"]), [client, content_slug]) do
+                {:ok, response} ->
+                  acc |> Map.merge(%{ files: files, collection: file_with_collection.collection |> Map.merge(content_collections) |> Map.merge(%{ additional_item: response.body["data"]}) })
+
+                {:error, _error} ->
+                  acc |> Map.merge(%{ files: files, collection: file_with_collection.collection |> Map.merge(content_collections) |> Map.merge(%{ additional_item: %{}}) })
+              end
+            else 
+              acc |> Map.merge(%{ collection: nil })
             end
 
           :previous_next ->
