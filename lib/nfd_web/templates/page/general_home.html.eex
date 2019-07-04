@@ -84,27 +84,12 @@
       <div class="account__info">
         <p class="account__info__title">OMFG!? You survived the promotion. <i class="em em-confetti_ball"></i> Well done.<i class="em em-confetti_ball"></i></p>
       </div>
-
+<!-- 
       <div class="homepage__understand__nfd__method">
         <h2>Understanding The NeverFap Deluxe Method</h2>
         <h3>You know, so you don't think I'm a complete hack. <i class="em em-drooling_face"></i></h3>
-      </div>
+      </div> -->
   
-      <div class="homepage__section homepage__tldr">
-        <h1>tldr;</h1>
-        <h2>Essentially, it boils down to 10 minutes of meditation each day.</h2>
-        <div class="homepage__tldr--signature">NeverFap Deluxe.</div>
-      </div>
-
-      <div class="homepage__section homepage__tldr--last">
-        <h1>Why!? <i class="em em-thinking_face"></i></h1>
-        <h2>Well, please keep reading random internet stranger!</h2>
-      </div>
-
-      <div class="account__info account__info--margin-top">
-        <p class="account__info__title">Here's a more in-depth review of NeverFap Deluxe.</i></p>
-      </div>
-
       <!-- <div class="homepage__section">
         <h1>Here's your problem.</h1>
         <h2>In life there are two things.</h2>
@@ -115,7 +100,8 @@
       </div> -->
 
       <div class="homepage__section">
-        <h1>How it works.</h1>
+        <h1>How it works.</h1>  
+
         <!-- <div class="homepage__feature__box"> -->
           <h2>It takes approximately 90 days to overcome porn addiction.</h2> <!-- <i class="em em-tent"></i> -->
           <h3>It's called the <u>NeverFap Deluxe 90 Day Rule</u>, because those without healthy coping mechanisms rarely make it past 90 days.</h3>
@@ -238,9 +224,7 @@
           <div style="border-top: 3px solid #00ffee;"></div>
           <h2 class="banner__points">Meditating on a regular basis in order to remain calm and balanced.</h2>
           <div class="show__large" style="border-top: 3px solid #00ffee;"></div>
-
       </div>
-
 
       <%= partial "home/how_do_you_develop_healthy_coping_mechanisms.html", assigns %>
 
@@ -261,8 +245,8 @@
       </div>
 
       <div class="homepage__section">
-        <h1>Well, I told you earlier.</h1>
-        <h2>Silly stranger. <i class="em em-child"></i></h2>
+        <h1>Well, tldr.</h1>
+        <h2>Here's what you do. <i class="em em-child"></i></h2>
       </div>
 
       <div class="homepage__section homepage__tldr" style="margin-top: 2rem!important;">
@@ -271,11 +255,6 @@
         <div class="homepage__tldr--signature">NeverFap Deluxe.</div>
       </div>
 
-      <!-- <style>
-        .nfd_method {
-
-        }
-      </style> -->
       <div class="homepage__section">
         <h2>And honestly.</h2>
         <h1>That's 90% of what the NeverFap Deluxe Method is all about. <i class="em em-birthday"></i></h1>
@@ -285,7 +264,6 @@
         <h3>You weird addict person.</h3>
         <h3>ewwww.</h3>
       </div>
-
 
       <%= partial "home/three_healthy_coping_mechanisms.html", assigns %>
 

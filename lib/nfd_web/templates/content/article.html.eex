@@ -71,8 +71,8 @@
 
 <%= partial "home/goodies.html", assigns %>
 
-
 <%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @page_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>
 
 <div style="margin-top: 5rem;"></div>
 <%= partial "links/loginregister.html", assigns %>
+
