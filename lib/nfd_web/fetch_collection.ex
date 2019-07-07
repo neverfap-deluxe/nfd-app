@@ -47,6 +47,38 @@ defmodule NfdWeb.FetchCollection do
       end)
   end
 
+  def page_collections(client, collection_array) do
+    Enum.reduce(
+      collection_array,
+      %{},
+      fn symbol, acc ->
+        case symbol do
+          symbol when symbol in [:articles, :practices, :quotes, :updates, :blogs, :podcasts, :meditations, :courses] ->
+            case apply(PageAPI, symbol, [client]) do
+              {:ok, response} ->
+                acc |> Map.merge(%{ symbol => response.body["data"][Atom.to_string(symbol)] |> Enum.reverse() })
+
+              {:error, error} ->
+                IO.inspect error
+                acc
+            end
+
+          symbol when symbol in [:seven_day_kickstarter, :ten_day_meditation, :twenty_eight_day_awareness, :seven_week_awareness_vol_1, :seven_week_awareness_vol_2, :seven_week_awareness_vol_3, :seven_week_awareness_vol_4] ->
+            case apply(PageAPI, symbol, [client]) do
+              {:ok, response} ->
+                acc |> Map.merge(%{ symbol => response.body["data"] })
+
+              {:error, error} ->
+                IO.inspect error
+                acc
+            end
+
+          _ ->
+            acc
+        end
+    end)
+  end
+
   def content_collections(client, item, page_symbol, content_slug, user_collections, page_collections, collection_array) do
     Enum.reduce(
       collection_array,
@@ -92,38 +124,6 @@ defmodule NfdWeb.FetchCollection do
           :comments -> acc |> Map.merge(%{ comments: Comment.get_page_comments(item["page_id"]) })
 
           _ -> acc
-        end
-    end)
-  end
-
-  def page_collections(client, collection_array) do
-    Enum.reduce(
-      collection_array,
-      %{},
-      fn symbol, acc ->
-        case symbol do
-          symbol when symbol in [:articles, :practices, :quotes, :updates, :blogs, :podcasts, :meditations, :courses] ->
-            case apply(PageAPI, symbol, [client]) do
-              {:ok, response} ->
-                acc |> Map.merge(%{ symbol => response.body["data"][Atom.to_string(symbol)] |> Enum.reverse() })
-
-              {:error, error} ->
-                IO.inspect error
-                acc
-            end
-
-          symbol when symbol in [:seven_day_kickstarter, :ten_day_meditation, :twenty_eight_day_awareness, :seven_week_awareness_vol_1, :seven_week_awareness_vol_2, :seven_week_awareness_vol_3, :seven_week_awareness_vol_4] ->
-            case apply(PageAPI, symbol, [client]) do
-              {:ok, response} ->
-                acc |> Map.merge(%{ symbol => response.body["data"] })
-
-              {:error, error} ->
-                IO.inspect error
-                acc
-            end
-
-          _ ->
-            acc
         end
     end)
   end

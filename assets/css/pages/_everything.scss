@@ -1,130 +1,135 @@
 .everything__container__outer {
   display: flex;
   justify-content: center;
+  width: initial;
 }
 
 .everything__container {
-  padding: 0.5rem;
-  width: 100%;
+  background: white;
 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-gap: 50px;
+  grid-row-gap: 20px;
+  grid-auto-rows: minmax(230px, auto);
+  justify-content: center;
+
+  padding: 2rem;
+  
   // border: 4px solid black;
-  .everything__title {
+//   .everything__title {
 
-  }
+//   }
 
-  .everything__sub__title--main {
-    background: white;
-    color: black;
-    padding: 1.6rem;
-    margin-top: 0.6rem;
-  }
+//   .everything__sub__title--main {
+//     background: white;
+//     color: black;
+//     padding: 1.6rem;
+//     margin-top: 0.6rem;
+//   }
 
-  .everything__sub__title {
-    background: white;
-    border: 4px solid black;
-    box-shadow: -5px 5px 0px 0px cyan;
-    color: black;
-    padding: 1.6rem;
-    margin-top: 0.6rem;
-    margin-bottom: 2.6rem;
-  }
+//   .everything__sub__title {
+//     background: white;
+//     border: 4px solid black;
+//     box-shadow: -5px 5px 0px 0px cyan;
+//     color: black;
+//     padding: 1.6rem;
+//     margin-top: 0.6rem;
+//     margin-bottom: 2.6rem;
+//   }
 
   .everything__section {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    padding: 1rem;
+//     display: flex;
+//     justify-content: space-around;
+//     flex-wrap: wrap;
   }
 
-  .everything__item--smaller {
-    padding: 0.2rem!important;
-    padding-left: 1rem!important;
-    margin-bottom: 1rem;
-  }
+//   .everything__item--smaller {
+//     padding: 0.2rem!important;
+//     padding-left: 1rem!important;
+//     margin-bottom: 1rem;
+//   }
 
   .everything__item {
-    flex: 1;
-    min-width: 150px;
     display: block;
-    // display: flex;
-    // justify-content: space-between;
-    position: relative;
+    // margin-bottom: 2rem;
 
-    background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
-    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
-    background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
-    background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
-    background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
+    color: black;
+    // border: 4px solid rgba(255,46,182,1);
+    // box-shadow: -5px 5px 0px 0px cyan;
 
-    margin-bottom: 2rem;
-    color: white;
-    border: 4px solid white;
-
-    padding: 1rem;      
+    // padding: 1rem;      
     cursor: pointer;
 
-    // width: 100%;
+    // transition: .2s box-shadow;
 
-    transition: .2s box-shadow;
-    .everything__item__title__menu {
+    // .everything__item__title__menu {
 
-    }
+    // }
 
-    .everything__item__title {
+//     .everything__item__title {
 
-    }
+//     }
     .everything__item__description {
-
+      display: none;
     }
 
   }
 
-
-  .everything__item__greyed {
-    background: grey; 
+  .everything__item:hover {
+    // box-shadow: -10px 10px 0px 0px cyan;
   }
+
+
+//   .everything__item__greyed {
+//     background: grey; 
+//   }
 
   .everything__wip {
-    color: red;
+    display: none;
   }
 }
 
-@media screen and (min-width: 420px) {
-  .everything__container {
-    padding: 1rem;
-    .everything__title {
+// @media screen and (min-width: 420px) {
+//   .everything__container {
 
-    }
+//     .everything__title {
 
-    .everything__sub__title {
+//     }
+
+//     .everything__sub__title {
       
-    }
+//     }
 
 
-    .everything__item {
-      width: 90%;
-      box-shadow: -5px 5px 0px 0px black;
+//     .everything__item {
+//       width: 90%;
+//       box-shadow: -5px 5px 0px 0px black;
 
-      .everything__item__title {
+//       .everything__item__title {
 
-      }
-      .everything__item__description {
+//       }
+//       .everything__item__description {
         
-      }
-    }
+//       }
+//     }
 
-    .everything__item:hover {
-      box-shadow: -10px 10px 0px 0px #00ffee;
-    }
-  }
-}
+//     .everything__item:hover {
+//       box-shadow: -10px 10px 0px 0px #00ffee;
+//     }
+//   }
+// }
 
 @media screen and (min-width: 768px) {
-  .everything__container {
-    padding: 2rem;
+  .everything__container__outer {
+    width: 700px;
+    margin: 0 auto;  
+  }
 
-    max-width: 920px;
+  .everything__container {
+    grid-template-columns: repeat(2, 1fr);
+
     
     .everything__title {
 
@@ -135,13 +140,10 @@
     }
 
     .everything__section {
-      justify-content: space-between;
+
     }
 
     .everything__item {
-      flex: initial;
-      max-width: 400px;
-      width: 43%;
 
       .everything__item__title {
 
@@ -154,48 +156,48 @@
 }
 
 
-@media screen and (min-width: 980px) {
-  .everything__container {
+// @media screen and (min-width: 980px) {
+//   .everything__container {
 
-    .everything__item {
-    }
-  }
-}
+//     .everything__item {
+//     }
+//   }
+// }
 
 
-@media screen and (min-width: 1280px) {
-  .everything__container {
+// @media screen and (min-width: 1280px) {
+//   .everything__container {
 
-    .everything__title {
+//     .everything__title {
 
-    }
+//     }
 
-    .everything__sub__title {
+//     .everything__sub__title {
       
-    }
+//     }
 
-    .everything__item {
+//     .everything__item {
 
-      .everything__item__title {
+//       .everything__item__title {
 
-      }
-      .everything__item__description {
+//       }
+//       .everything__item__description {
         
-      }
-    }
-  }
-}
+//       }
+//     }
+//   }
+// }
 
 
-.accountability__example__container {
-  padding: 1.4rem;
-  border: 4px solid black;
-  margin-bottom: 3rem;
+// .accountability__example__container {
+//   padding: 1.4rem;
+//   border: 4px solid black;
+//   margin-bottom: 3rem;
 
-  .accountability__text__container {
-    p {
-      margin-top: 0.4rem!important;
-      margin-bottom: 0.4rem!important;
-    }
-  }
-}
+//   .accountability__text__container {
+//     p {
+//       margin-top: 0.4rem!important;
+//       margin-bottom: 0.4rem!important;
+//     }
+//   }
+// }

@@ -28,7 +28,7 @@ defmodule NfdWeb.Fetch do
         user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
         page_collections = FetchCollection.page_collections(client, collection_array)
         changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array)
-
+        
         conn
           |> FetchConn.check_api_response_for_404(response.status)
           |> Page.increment_visit_count(response.body["data"])
@@ -73,8 +73,6 @@ defmodule NfdWeb.Fetch do
 
     dashboard_collections = FetchCollection.dashboard_collections(collection_array, user_collections)
 
-    IO.inspect dashboard_collections.not_purchased_courses
-    IO.inspect Map.keys(dashboard_collections)
     conn
       |> put_flash(:info, (if user_collections.patreon_access.token_expired, do: "Welcome back!", else: "Your Patreon token has expired. Please Re-link your account."))
       |> put_view(NfdWeb.DashboardView)
