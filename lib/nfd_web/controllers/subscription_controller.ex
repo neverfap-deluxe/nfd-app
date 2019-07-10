@@ -106,7 +106,7 @@ defmodule NfdWeb.SubscriptionController do
   end
 
   defp confirm_subscription_action_subscribe(subscriber, type) do
-    {_, subscribed_property} = Email.type_to_subscriber_properties(type)
+    {_, _, _, subscribed_property} = Email.type_to_subscriber_properties(type)
     case Account.update_subscriber(subscriber, %{ subscribed_property => true }) do
       {:ok, updated_subscriber} -> updated_subscriber
       {:error, _changeset} -> confirm_subscription_action_failure(subscriber.subscriber_email, "subscribe")
@@ -114,7 +114,7 @@ defmodule NfdWeb.SubscriptionController do
   end
 
   defp confirm_subscription_action_unsubscribe(subscriber, type) do
-    {_, subscribed_property} = Email.type_to_subscriber_properties(type)
+    {_, _, _, subscribed_property} = Email.type_to_subscriber_properties(type)
     case Account.update_subscriber(subscriber, %{ subscribed_property => false }) do
       {:ok, updated_subscriber} -> updated_subscriber
       {:error, _changeset} -> confirm_subscription_action_failure(subscriber.subscriber_email, "unsubscribe")
@@ -208,7 +208,7 @@ defmodule NfdWeb.SubscriptionController do
   end
 
   defp unsubscribe_subscriber_action(conn, subscriber, type, course_name) do
-    {_, subscribed_property} = Email.type_to_subscriber_properties(type)
+    {_, _, _, subscribed_property} = Email.type_to_subscriber_properties(type)
 
     case Account.update_subscriber(subscriber, %{ subscribed_property => false }) do
       {:ok, subscriber} -> unsubscribe_subscriber_action_success(conn, subscriber.subscriber_email, course_name)
