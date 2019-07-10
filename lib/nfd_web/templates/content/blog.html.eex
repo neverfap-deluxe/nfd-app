@@ -2,9 +2,8 @@
   <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>
 </div>
 
-<%= partial "links/patreon.html", assigns %>
-
 <div id="main__content" class="single__wrapper">
+  <h2>Written by <%= raw @item["username"] %></h2>
   <div class="single__content">
     <%= raw @item["content"] %>
   </div>
@@ -34,7 +33,3 @@
   </div>
 </div>
 
-<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn,  item: @page_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>
-
-<div style="margin-top: 5rem;"></div>
-<%= partial "links/loginregister.html", assigns %>

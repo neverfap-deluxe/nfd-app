@@ -10,21 +10,30 @@ const {
   generate,
 } = require('./templates');
 
-const getHead = (fileContents) => {
+const getHead = (fileContents, type) => {
   const headRegex = new RegExp(/---(.|[\r\n])+---/);
   const head = fileContents.match(headRegex)[0];
 
   const rawWithHTMLContent = fileContents.split('---')[2];
+
+  if (type === 'kickstarter') {
+    return {
+      head,
+      content: rawWithHTMLContent,
+    }  
+  }
+
+  if (type === 'awareness' || type === 'meditation') {
+    return {
+      head,
+      content: rawWithHTMLContent.split('## Script')[0],
+    }  
+  }
   // const rawWithMDContent = turndownService.turndown(rawWithHTMLContent);
   // const content = filterContent(rawWithMDContent);
-
-  return {
-    head,
-    content: rawWithHTMLContent,
-  }
 }
 
-const generateEmails = async (collection, item, template_item, contentParser) => {
+const generateEmails = async (type, collection, item, template_item, contentParser) => {
   try {
     const baseUrl = 'https://neverfapdeluxe.netlify.com/md';
     // const baseUrl = 'http://localhost:1313/md';
@@ -33,7 +42,7 @@ const generateEmails = async (collection, item, template_item, contentParser) =>
     const response = await axios.get(fileName);
     const file = response.data;
 
-    const { head, content } = getHead(file.toString());
+    const { head, content } = getHead(file.toString(), type);
 
     const getHeadTitleRegex = /title: [\S ]+/ig
     const getHeadDayRegex = /day: [\S ]+/ig

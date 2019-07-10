@@ -121,6 +121,7 @@ defmodule NfdWeb.FetchCollectionUtil do
       :quote -> :quotes
       :meditation -> :meditations
       :blog -> :blogs
+      :course -> :courses
       :update -> :updates
       :seven_day_kickstarter -> :seven_day_kickstarter_single
       :ten_day_meditation -> :ten_day_meditation_single
