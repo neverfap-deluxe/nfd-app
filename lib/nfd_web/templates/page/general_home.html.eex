@@ -383,7 +383,7 @@
           <h3 class="button__click button__off" id="latest">Latest</h3>
         </div>
         <div class="post__on" id="popular__posts">
-          <%= partial "home/introduction_posts.html", %{ items: @page_collections.articles } %>
+          <%= partial "home/introduction_posts.html", %{ conn: @conn, items: @page_collections.articles } %>
         </div>
         <div class="post__off" id="latest__posts">
           <%= partial "content/latest_posts.html", %{ conn: @conn, items: @page_collections.articles, type: :article } %>

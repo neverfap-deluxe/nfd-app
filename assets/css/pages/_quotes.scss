@@ -1,5 +1,6 @@
 .single__wrapper--quotes {
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .quote__list {
@@ -31,6 +32,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .single__wrapper--quotes {
+    margin-bottom: 6rem;
+  }
+  
   .quote__list {
     margin: 0 auto;
     width: 750px;
