@@ -10,12 +10,14 @@
       
       <%= partial "layout/header.html", assigns %>
   
-      <main role="main" class="main" id="content">
+      <main role="main" class="main" id="general__main__content">
+        <!-- <button id="dark__mode__button">darkmode</button> -->
         <%= render @view_module, @view_template, assigns %>
       </main>
       <%= partial "layout/footer.html", assigns %>
   
       <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>    
+      <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/darkmode.js") %>"></script>    
   </body>
 
 </html>

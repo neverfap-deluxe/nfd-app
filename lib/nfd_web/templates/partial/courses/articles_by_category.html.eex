@@ -4,7 +4,7 @@
     <%= Enum.map(@items, fn(item) -> %>
       <%= if Enum.find(item["categories"], &(&1 == @category_type)) do %>
         <%= if Enum.find(item["tags"], &(&1 == "context")) do %>
-          <span><a class="link articles__link" href='<%= item["permalink"] %>'><%= item["date"] %> | <%= item["title"] %></a></span>
+          <span><a class="link articles__link" href='<%= Routes.content_path(@conn, :article, item["slug"]) %>'><%= item["date"] %> | <%= item["title"] %></a></span>
         <% end %>
       <% end %>
     <% end ) %>

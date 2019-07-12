@@ -1,7 +1,7 @@
 <%= Enum.map(@items, fn(item) -> %>
   <%= if item["category"] == @course_type do %>
     <div class="homepage__process single__homepage__process">    
-      <a href='<%= item["permalink"] %>'><h3 class="homepage__process__title--courses">
+      <a href='<%= Routes.content_path(@conn, :course, item["slug"]) %>'><h3 class="homepage__process__title--courses">
         <div class="five__principles__list__page">
           <span><li class="five__principles__item__page five__principles__item__page--courses"><%= item["title"] %></li></span>
         </div>
@@ -18,6 +18,6 @@
         <%= if item["learn3"] do %><p><%= item["learn3"] %></p><% end %>
       </div>
     </div>
-    <span><a href='<%= item["permalink"] %>' class="homepage__process__link homepage__process__link--courses">Link To Course</a></span>  
+    <span><a href='<%= Routes.content_path(@conn, :course, item["slug"]) %>' class="homepage__process__link homepage__process__link--courses">Link To Course</a></span>  
   <% end %>
 <% end ) %>

@@ -1,0 +1,80 @@
+.main__dark {
+  background: #23272A;
+
+  .veteran__row {
+    a {
+      background: white;
+      color: black!important;
+    }
+    h2, h3, h4, p {
+      color: white;
+    }
+  }
+
+  .reddit__question__banner, .account__buttons {
+    h2, p, a {
+      color: white!important;
+    }
+  }
+
+  .banner__new__to__nfd {
+    h2, h4, h3, h5, p, a {
+      background: white;
+      color: black!important;
+    }
+    .banner__new__to__nfd__title--2nd {
+      background: initial!important;
+      color: white!important;
+    }
+    h1 {
+      color: white!important;
+    }
+  }
+  
+  .comment__list {
+    h1, h2, h3, h4, h5, p {
+      color: white!important;
+    }
+    .comment__user__item__name, .comment__message {
+      color: white!important;
+    }
+  }
+
+  .comment__create__message__title, .comment__create__message__sub__title  {
+    color: white!important;
+  }
+
+  .single__wrapper {
+    .popular__latest__options__title {
+      color: white;
+    }
+    .button__click {
+      background: white;
+    }
+    .articles__link {
+      background: white;
+    }
+  }
+
+  .single__content {
+    color: white;
+
+    hr {
+      border-bottom: 1px solid white;
+    }
+  }
+
+  .account__info, .login__top {
+    background: white; 
+    // color: white;
+  }
+
+  .footer__designed {
+    color: white;
+  }
+
+  .footer__link {
+    color: white;
+  }
+
+}

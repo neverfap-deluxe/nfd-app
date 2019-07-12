@@ -8,7 +8,7 @@
     <%= Enum.map(@items, fn(article) -> %>
       <%= if Enum.find(article["categories"], &(&1 == "introduction")) do %>
         <%= if Enum.find(article["tags"], &(&1 == @tag_type)) do %>
-          <span><a class="link articles__link" href='<%= article["permalink"] %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
+          <span><a class="link articles__link" href='<%= Routes.content_path(@conn, :article, article["slug"]) %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
         <% end %>
       <% end %>
     <% end ) %>
@@ -21,7 +21,7 @@
     <%= Enum.map(@items, fn(article) -> %>
       <%= if Enum.find(article["categories"], &(&1 == "choice-over-mind")) do %>
         <%= if Enum.find(article["tags"], &(&1 == @tag_type)) do %>
-          <span><a class="link articles__link" href='<%= article["permalink"] %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
+          <span><a class="link articles__link" href='<%= Routes.content_path(@conn, :article, article["slug"]) %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
         <% end %>       
       <% end %>
     <% end ) %>
@@ -35,7 +35,7 @@
     <%= Enum.map(@items, fn(article) -> %>
       <%= if Enum.find(article["categories"], &(&1 == "balance-over-reward")) do %>
           <%= if Enum.find(article["tags"], &(&1 == @tag_type)) do %>
-            <span><a class="link articles__link" href='<%= article["permalink"] %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
+            <span><a class="link articles__link" href='<%= Routes.content_path(@conn, :article, article["slug"]) %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
           <% end %>
         <% end %>
     <% end ) %>
@@ -49,7 +49,7 @@
     <%= Enum.map(@items, fn(article) -> %>
       <%= if Enum.find(article["categories"], &(&1 == "struggle-over-none")) do %>
         <%= if Enum.find(article["tags"], &(&1 == @tag_type)) do %>
-          <span><a class="link articles__link" href='<%= article["permalink"] %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
+          <span><a class="link articles__link" href='<%= Routes.content_path(@conn, :article, article["slug"]) %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
         <% end %>
       <% end %>
     <% end ) %>
@@ -63,7 +63,7 @@
     <%= Enum.map(@items, fn(article) -> %>
       <%= if Enum.find(article["categories"], &(&1 == "awareness-over-all")) do %>
         <%= if Enum.find(article["tags"], &(&1 == @tag_type)) do %>
-          <span><a class="link articles__link" href='<%= article["permalink"] %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
+          <span><a class="link articles__link" href='<%= Routes.content_path(@conn, :article, article["slug"]) %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
         <% end %>
       <% end %>
     <% end ) %>
@@ -76,7 +76,7 @@
     <%= Enum.map(@items, fn(article) -> %>
       <%= if Enum.find(article["categories"], &(&1 == "uncondition-over-judgement")) do %>
         <%= if Enum.find(article["tags"], &(&1 == @tag_type)) do %>
-          <span><a class="link articles__link" href='<%= article["permalink"] %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
+          <span><a class="link articles__link" href='<%= Routes.content_path(@conn, :article, article["slug"]) %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
         <% end %>
       <% end %>
     <% end ) %>

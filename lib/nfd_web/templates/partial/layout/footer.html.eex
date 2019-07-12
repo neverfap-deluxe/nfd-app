@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer" id="footer">
   <a href="/" class="header__logo__wrapper">
     <h1 class="header__logo">NeverFap <span class="deluxe__font">Deluxe</span> <i class="em em-rainbow"></i></h1>
   </a>

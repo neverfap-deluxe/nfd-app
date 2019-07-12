@@ -47,7 +47,7 @@
   <div class="single__content">
     <h2>Context</h2>
     <%= raw @item["content"] %>
-    <%= partial "content/similar_practices.html", %{ practices: @page_collections.practices, category: @item["categories"] } %>
+    <%= partial "content/similar_practices.html", %{ conn: @conn, practices: @page_collections.practices, category: @item["categories"] } %>
   </div>
 
   <%= partial "content/share_buttons.html", %{permalink: @item["permalink"] } %>
