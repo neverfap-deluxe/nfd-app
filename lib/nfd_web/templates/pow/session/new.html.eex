@@ -6,6 +6,16 @@
   <h1 class="accounts__wrapper__title">Sign in</h1>
 
   <div class="accounts__body">
+    <div class="accounts__text__container"> 
+      <h3 class="account__main__description__initial">NeverFap Deluxe Account!</h3>
+  
+      <ul> 
+        <li class="articles__link--register">It's FREE to create an account.</li>
+        <li class="articles__link--register">Receive regular updates on the latest NeverFap Deluxe products.</li>
+        <li class="articles__link--register">Gain access to a wide variety of courses, email campaigns and guided meditations.</li>
+      </ul>
+    </div>
+
     <div class="form__wrapper new__session__form__wrapper">
       <%= form_for @changeset, @action, [as: :user], fn f -> %>
         <%= if @changeset.action do %>
