@@ -176,6 +176,10 @@
 
 <%= partial "links/paypal.html", assigns %>
 
-<div style="margin-top: 4.5rem;"></div>
+
+<div style="margin-top: 5rem;"></div>
 <%= partial "banners/new_to_nfd_banner.html", assigns %>
 <%= partial "banners/reddit_question_banner.html", assigns %>
+<%= partial "home/veteran_neverfappers.html", assigns %>
+<%= partial "home/goodies.html", assigns %>
+<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @page_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>

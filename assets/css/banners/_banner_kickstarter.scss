@@ -1,14 +1,14 @@
 .seven__day__kickstarter__banner {
-  background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
-  background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
-  background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
-  background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
-  background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
-  color: white;
+  // background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+  // background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+  // background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+  // background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+  // background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+  // background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
+  // color: white;
 
-  box-shadow: 0 14px 56px 0 rgba(0, 0, 0, 0.2), 0 12px 29px 0 rgba(0, 0, 0, 0.01);
+  // box-shadow: 0 14px 56px 0 rgba(0, 0, 0, 0.2), 0 12px 29px 0 rgba(0, 0, 0, 0.01);
 
   border-top: 4px solid black;
   border-bottom: 4px solid black;
@@ -42,15 +42,27 @@
   line-height: 1.6rem;
   color: #00ffee;
   transition: .1s text-shadow;
+  text-shadow: -1px 1px black;
 }
 
 .seven__day__kickstarter__learn__more:hover {
-  // text-shadow: -2px 2px rgba(255,46,182,1);
-  text-shadow: -2px 2px white;
+  text-shadow: -2px 2px rgba(255,46,182,1);
 }
 
 .seven__day__kickstarter__banner__title {
   text-shadow: 2px -2px #00ffee;
+  background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+  background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
+  color: white;
+  padding: 1rem;
+  display: inline-block;
+  // border: 4px solid black;
+  box-shadow: -6px 6px 0px 0px #00ffee;
 }
 
 .seven__day__kickstarter__banner__box {
@@ -68,35 +80,49 @@
 
   .seven__day__kickstarter__banner__item {
     display: inline-block;
-    border: 3px solid black;
+    // border: 3px solid #00ffee;
     box-shadow: -3px 3px 0px 0px #00ffee;
-    margin: 0.2rem;
-    margin-top: 0.3rem;
-    margin-left: 0.4rem;
-
+    margin: 0.1rem;
     padding: 0.4rem;
-    
     transition: .2s;
     font-size: 0.9rem;
+    margin-top: 0.4rem;
     width: 95%;
-    background: white;
-    color: black;
+    cursor: default;
+    
+    background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+    background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
+    color: white;
   }
 
   .seven__day__kickstarter__banner__item:hover {
-    box-shadow: -5px 5px 0px 0px white;
+    // box-shadow: -5px 5px 0px 0px white;
   } 
 }
 
 .seven__day__kickstarter__banner__form {
   flex: 1;
   padding: 1rem;
-  border: 1px solid black;
+  border: 2px solid black;
   max-width: 400px;
 
   margin-top: 2.5rem;
   margin-bottom: 3rem;
   margin-left: 0rem;
+
+  // background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+  // background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+  // background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+  // background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+  // background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+  // background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
+  // color: white;
 
   p {
     margin-top: 0.4rem;
@@ -138,7 +164,10 @@
     .seven__day__kickstarter__banner__item {
       width: initial;
       font-size: 0.9rem;
-      box-shadow: -5px 5px 0px 0px #00ffee;
+      box-shadow: -5px 5px 0px 0px cyan;
+      margin: 0.1rem;
+      margin-top: 0.2rem;
+      margin-right: 0.4rem;
       padding: 0.6rem;
       transition: .2s;
 

@@ -14,6 +14,7 @@
     </div>
   </div>
   <div class="account__buttons" style="flex-direction: row!important;">
+    <!-- TODO Have a link to calendly -->
     <a class="link articles__link" href="<%= Routes.page_path(@conn, :programs_coaching)%>">Learn more</a>
   </div>    
   

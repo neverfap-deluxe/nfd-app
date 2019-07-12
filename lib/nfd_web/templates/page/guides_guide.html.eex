@@ -223,134 +223,15 @@
 </div>
 
 <%= partial "links/loginregister_top--without-mobile.html", assigns %>
+<div class="single__wrapper"></div>
+<%= partial "banners/new_to_nfd_banner.html", assigns %>
+<%= partial "banners/reddit_question_banner.html", assigns %>
+<%= partial "home/veteran_neverfappers.html", assigns %>
+
+<%= partial "home/goodies.html", assigns %>
+<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @page_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>
 
 <script src='/js/guide.js'></script>
 
 
 
-
-
-<!--
-
-<div class="guide__banner">
-  <div class="single__wrapper">
-    <h2>Courses</h2>
-
-    <p class="guide__link__container"><a class="guide__link" href="/courses/introduction/">Introduction course</a></br>
-      Is great as a beginning resource if you'd like to learn some of the rules and principles of NeverFap Deluxe.</p>
-
-  </div>
-</div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
-
-<%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Courses Index.", link: "/courses" } %>
-
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div> -->
-
-
-
-
-    <!-- <p>NeverFap Deluxe Courses combine the NeverFap Articles and Practices into single, linear progression-based pathways based upon The Five Fundamental Principles of NeverFap.</p> -->
-    <!-- <p>They are designed to help you focus on a particular area of understanding, so that you can master that concept and feel confident with your ability to address your porn addiction.</p> -->
-
-
-
-<!-- <%#
-    <h2>Getting Started</h2>
-
-    <p>Before you begin, I highly recommend becoming familiar with <a class="link" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles of NeverFap</a>.</p>
-    <p>These principles will form the basis of everything you will learn, and each article will focus on a particular principle.</p>
-
-    <div class="button__wrapper">
-      <a
-        class="button button__secondary"
-        href="/articles/the-five-fundamental-principles-of-neverfap"
-        >Learn More About The Five Principles.</a
-      >
-    </div>
-
-    <h2>NeverFap Deluxe Articles</h2>
-
-    <p>NeverFap Deluxe Articles are designed to provide you with the knowlege to gain a better understanding of what exactly it is you need to do.</p>
-    <p>They will help address your current misunderstanding, as well as provide you with the context to overcome your porn addiction.</p>
-    <p>These articles will serve as a strong basis for your porn recovery.</p>
-
-    <div class="button__wrapper">
-      <a
-        class="button button__secondary"
-        href="/articles"
-        >NeverFap Deluxe Articles.</a
-      >
-    </div>
-
-    <h2>NeverFap Deluxe Practices</h2>
-
-    <p>NeverFap Deluxe Practices focus solely on verifiable steps you can take on a daily basis to help you progress towards learning the skills to end your porn addiction.</p>
-    <p>This is where you'll be spending a majority of your time, practicing these skills and exercises so that you can master them.</p>
-    <p>My recommended approach is to start with <a class="link" href="/practices/observe-your-senses">Observe Your Senses</a> (which will be the core exercise you will practice every single day) and then to pick one additional exercise to practice throughout the day.</p>
-
-    <h2>Article Types</h2>
-
-    <div class="button__wrapper">
-      <a
-        class="button button__secondary"
-        href="/practices"
-        >NeverFap Deluxe Practices.</a
-      >
-    </div>  %> -->
-
-
-
-
-
-    <!-- <p>I've also put together The Five Fundamental Principles of NeverFap which can help flesh out some of the ideas on this website into more relatable common cases.</p>
-
-    <div class="button__wrapper">
-      <a
-        class="button button__secondary"
-        href="/articles/the-five-fundamental-principles-of-neverfap"
-        >Learn More About The Five Principles.</a
-      >
-    </div> -->
-
-
-
-
-    <!-- The first being your <u>awareness</u>, and the second being your <u>calmness</u>. -->
-
-    <!-- <p>Before you begin, I highly recommend becoming familiar with <a class="link" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles of NeverFap</a>.</p> -->
-    <!-- <p>These principles will form the basis of everything you learn, whether you decide to get started with the courses, read the articles or practice the mental health exercises.</p>
-    <p>Because in most cases, the reason why you're addicted to porn is because you've <u>neglected at least one of these principles in some form</u>.</p>
-    <p>These five principles are: Choice over mind, Balance over reward, Awareness over all, Struggle over none and Uncondition over judgement.</p>
-    <p>And until you master all five principles, it will be very difficult for you to truly be comfortable with your porn recovery and to succeed with any amount of certainty.</p> -->
-
-
-    <!-- <%= partial "links/custom.html", %{ title: "Principles", text: "Check out The Five Fundamental Principles Of NeverFap!", link: "/articles/the-five-fundamental-principles-of-neverfap" } %> -->
-
-
-
-
-
-
-
-<!-- <div class="single__wrapper">
-  <h2>What You Will Learn</h2>
-
-  <div class="five__principles__guide">
-    <div class="five__principles__guide__item">How to value your mental health above all.</div>
-    <div class="five__principles__guide__item">Develop the ability to quiet and focus your mind.</div>
-    <div class="five__principles__guide__item">Accept yourself and others unconditionally.</div>
-    <div class="five__principles__guide__item">Change the way you think about sex and women.</div>
-    <div class="five__principles__guide__item">Commit to long-term thinking.</div>
-  </div>
-
-  <div class="five__principles__guide--mobile">
-    <h3>How to value your mental health above all.</h3>
-    <h3>Develop the ability to quiet and focus your mind.</h3>
-    <h3>Accept yourself and others unconditionally.</h3>
-    <h3>Change the way you think about sex and women.</h3>
-    <h3>Commit to long-term thinking.</h3>
-  </div>
-</div> -->
-
-<!-- <%= partial "links/loginregister.html", assigns %> -->

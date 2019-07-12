@@ -4,16 +4,16 @@ defmodule NfdWeb.FetchAccess do
       # PAGE CONTROLLERS
       # GENERAL
       :general_home -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :general_about -> [:contact_form_changeset]
-      :general_contact -> [:contact_form_changeset]
-      :general_community -> []
+      :general_about -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :contact_form_changeset]
+      :general_contact -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :contact_form_changeset]
+      :general_community -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
       :general_donations -> []
       :general_everything -> []
       :general_premium -> []
 
       # GUIDES
-      :guides_guide -> [:articles, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :guides_summary -> []
+      :guides_guide -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
+      :guides_summary -> [:articles, :practices, :meditations,  :seven_day_kickstarter, :seven_day_kickstarter_changeset]
       :guides_neverfap_deluxe_bible -> []
       :guides_emergency -> []
       :guides_post_relapse_academy -> []
@@ -44,29 +44,29 @@ defmodule NfdWeb.FetchAccess do
       :misc_never_fap -> []
 
       # CONTENT
-      :articles -> [:articles]
+      :articles -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
       :article -> [:articles, :practices, :meditations, :article, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset, :previous_next]
 
-      :practices -> [:practices]
-      :practice -> [:articles, :practices, :practice, :course, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset, :previous_next]
+      :practices -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
+      :practice -> [:articles, :practices, :meditations, :practice, :course, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset, :previous_next]
 
       :courses -> [:courses]
-      :course -> [:articles, :practices, :course]
+      :course -> [:articles, :practices, :meditations, :course]
 
-      :podcasts -> [:podcasts]
-      :podcast -> [:podcasts, :podcast, :comments, :comment_form_changeset, :previous_next]
+      :podcasts -> [:podcasts, :articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
+      :podcast -> [:articles, :practices, :meditations, :podcasts, :podcast, :comments, :comment_form_changeset, :previous_next]
 
-      :quotes -> [:quotes]
-      :quote -> [:quotes, :quote, :comments, :comment_form_changeset, :previous_next]
+      :quotes -> [:quotes, :articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
+      :quote -> [:articles, :practices, :meditations, :quotes, :quote, :comments, :comment_form_changeset, :previous_next]
 
-      :meditations -> [:meditations]
-      :meditation -> [:meditations, :meditation, :comments, :comment_form_changeset, :previous_next]
+      :meditations -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
+      :meditation -> [:articles, :practices, :meditations, :meditations, :meditation, :comments, :comment_form_changeset, :previous_next]
 
       :blogs -> [:blogs]
-      :blog -> [:blogs, :blog, :comments, :comment_form_changeset, :previous_next]
+      :blog -> [:articles, :practices, :meditations, :blogs, :blog, :comments, :comment_form_changeset, :previous_next]
 
       :updates -> [:updates]
-      :update -> [:updates, :update, :comments, :comment_form_changeset, :previous_next]
+      :update -> [:articles, :practices, :meditations, :updates, :update, :comments, :comment_form_changeset, :previous_next]
 
       # CONTENT EMAIL
       :seven_day_kickstarter ->  [:seven_day_kickstarter, :seven_day_kickstarter_changeset]
