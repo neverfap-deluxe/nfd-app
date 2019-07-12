@@ -103,6 +103,18 @@
   .seven__day__kickstarter__banner__item:hover {
     // box-shadow: -5px 5px 0px 0px white;
   } 
+
+  .seven__day__kickstarter__banner__item--page {
+    display: inline-block;
+    border: 3px solid #00ffee;
+    box-shadow: -3px 3px 0px 0px white;
+    margin: 0.1rem;
+    padding: 0.4rem;
+    transition: .2s;
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
+    width: 95%;
+  }
 }
 
 .seven__day__kickstarter__banner__form {
@@ -174,6 +186,19 @@
       margin-top: 0.4rem;
     }
 
+    .seven__day__kickstarter__banner__item--page {
+      width: initial;
+      font-size: 0.9rem;
+      box-shadow: -5px 5px 0px 0px white;
+      margin: 0.1rem;
+      margin-top: 0.2rem;
+      margin-right: 0.4rem;
+      padding: 0.6rem;
+      transition: .2s;
+
+      margin-top: 0.4rem;
+    }
+
     .seven__day__kickstarter__banner__item:hover {
       box-shadow: -8px 8px 0px 0px white;
     }
@@ -195,3 +220,5 @@
 // @media screen and (min-width: 1280px) {
 
 // }
+
+
