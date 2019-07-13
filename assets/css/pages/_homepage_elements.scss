@@ -161,12 +161,14 @@
     padding: 0.4rem;
     max-width: 18rem;
     width: 100%;
+    box-sizing: border-box;
   }
 }
 
 .new__collection__item {
+  display: none;
   position: absolute;
-  right: -20px;
+  right: -14px;
   top: -10px;
   border: 2px solid black;
   cursor: pointer;
@@ -197,6 +199,12 @@
 }
 .veteran__button:hover {
   box-shadow: -10px 10px 0px 0px cyan;
+}
+
+@media screen and (min-width: 420px) {
+  .new__collection__item {
+    display: block;
+  }
 }
 
 
