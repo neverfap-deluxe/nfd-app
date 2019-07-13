@@ -1,9 +1,5 @@
-
-<div class="single__wrapper">
-  <h1 class="single__title" style="margin-bottom: 1rem;"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h2>
-</div>
-
-  <%= partial "links/patreon.html", assigns %>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
+<%= partial "links/patreon.html", assigns %>
   
 <div class="single__wrapper practices__wrapper">
   <div style="margin-top: 1.4rem;">

@@ -1,7 +1,4 @@
-<div class="single__wrapper">   
-  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt="" style="margin-right: 1rem;"/><a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#you're welcome :p</p></a></h2>
-</div>
-
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 <%= partial "everything_module.html", %{ is_mobile_menu: false } %>
 
 <%= partial "links/patreon.html", assigns %>

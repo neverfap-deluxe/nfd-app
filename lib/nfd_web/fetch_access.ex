@@ -1,19 +1,27 @@
 defmodule NfdWeb.FetchAccess do
+  defp apmss do 
+    [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
+  end
+
+  defp ccp do 
+    [:comments, :comment_form_changeset, :previous_next]
+  end
+
   def fetch_access_array(name) do
     case name do
       # PAGE CONTROLLERS
       # GENERAL
-      :general_home -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :general_about -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :contact_form_changeset]
-      :general_contact -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :contact_form_changeset]
-      :general_community -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
+      :general_home -> apmss ++ []
+      :general_about -> apmss ++ [:contact_form_changeset]
+      :general_contact -> apmss ++ [:contact_form_changeset]
+      :general_community -> apmss ++ []
       :general_donations -> []
       :general_everything -> []
       :general_premium -> []
 
       # GUIDES
-      :guides_guide -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :guides_summary -> [:articles, :practices, :meditations,  :seven_day_kickstarter, :seven_day_kickstarter_changeset]
+      :guides_guide -> apmss ++ []
+      :guides_summary -> apmss ++ []
       :guides_neverfap_deluxe_bible -> []
       :guides_emergency -> []
       :guides_post_relapse_academy -> []
@@ -44,29 +52,29 @@ defmodule NfdWeb.FetchAccess do
       :misc_never_fap -> []
 
       # CONTENT
-      :articles -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :article -> [:articles, :practices, :meditations, :article, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset, :previous_next]
+      :articles -> apmss ++ []
+      :article -> apmss ++ ccp ++ [:article]
 
-      :practices -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :practice -> [:articles, :practices, :meditations, :practice, :course, :seven_day_kickstarter, :seven_day_kickstarter_changeset, :comments, :comment_form_changeset, :previous_next]
+      :practices -> apmss ++ []
+      :practice -> apmss ++ ccp ++ [:practice]
+
+      :meditations -> apmss ++ []
+      :meditation -> apmss ++ ccp ++ [:meditation]
 
       :courses -> [:courses]
-      :course -> [:articles, :practices, :meditations, :course]
+      :course -> apmss ++ [:course]
 
-      :podcasts -> [:podcasts, :articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :podcast -> [:articles, :practices, :meditations, :podcasts, :podcast, :comments, :comment_form_changeset, :previous_next]
+      :podcasts -> apmss ++ [:podcasts]
+      :podcast -> apmss ++ ccp ++ [:podcasts, :podcast]
 
-      :quotes -> [:quotes, :articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :quote -> [:articles, :practices, :meditations, :quotes, :quote, :comments, :comment_form_changeset, :previous_next]
-
-      :meditations -> [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :meditation -> [:articles, :practices, :meditations, :meditations, :meditation, :comments, :comment_form_changeset, :previous_next]
+      :quotes -> apmss ++ [:quotes]
+      :quote -> apmss ++ ccp ++ [:quotes, :quote]
 
       :blogs -> [:blogs]
-      :blog -> [:articles, :practices, :meditations, :blogs, :blog, :comments, :comment_form_changeset, :previous_next]
+      :blog -> apmss ++ ccp ++ [:blogs, :blog]
 
       :updates -> [:updates]
-      :update -> [:articles, :practices, :meditations, :updates, :update, :comments, :comment_form_changeset, :previous_next]
+      :update -> apmss ++ ccp ++ [:updates, :update]
 
       # CONTENT EMAIL
       :seven_day_kickstarter ->  [:seven_day_kickstarter, :seven_day_kickstarter_changeset]
@@ -107,5 +115,4 @@ defmodule NfdWeb.FetchAccess do
       :dashboard_profile_delete_confirmation -> []
     end
   end
-
 end

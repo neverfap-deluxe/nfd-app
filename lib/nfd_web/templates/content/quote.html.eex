@@ -1,6 +1,4 @@
-<div class="single__wrapper practices__wrapper">
-  <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>
-</div>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 
 <div class="single__wrapper">
   <div class="single__content">

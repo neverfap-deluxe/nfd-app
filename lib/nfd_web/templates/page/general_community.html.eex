@@ -1,6 +1,6 @@
-<div class="single__wrapper">
-  <h1 class="single__title">Community <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 
+<div class="single__wrapper">
   <div class="page__index">
     <h1 class="page__index__title">Index</h1>
 

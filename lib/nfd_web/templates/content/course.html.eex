@@ -1,7 +1,7 @@
 
 <div class="single__wrapper courses">
   <h1 class="single__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h1>
-
+  
   <div class="homepage__process single__homepage__process">
     <div class="homepage__process__text homepage__process__text--practice">
       <b>Overview</b>

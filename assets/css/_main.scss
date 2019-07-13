@@ -111,7 +111,7 @@ input, label, button {
   transition: box-shadow .2s;
   background: white;
   color: black!important;
-
+  cursor: default;
 }
 
 .articles__link--register:hover {

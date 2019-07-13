@@ -1,4 +1,4 @@
-<%= partial "single_title_content.html", %{ title: @item["title"], content: child_content(@item["children"], "about-intro") } %>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: child_content(@item["children"], "about-intro") } %>
 
 <%= partial "links/patreon.html", assigns %>
 

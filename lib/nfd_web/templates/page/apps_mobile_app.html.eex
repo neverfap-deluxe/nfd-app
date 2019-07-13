@@ -1,2 +1,2 @@
-<%= partial "single_title_content.html", %{ title: @item["title"], content: @item["content"] } %>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
 <%= partial "links/patreon.html", assigns %>
