@@ -9,9 +9,13 @@
   <p><b>Total <%= frequency_title %>s:</b> <%= @dashboard_collections_collection.collection.total_period %></p>
 
   <%= if @dashboard_collections_collection.collection.current_collection_module && @has_premium_rights && subscribed do %>
-    <p><b>Current <%= frequency_title %>:</b> <%= @dashboard_collections_collection.collection.up_to_count %></p>
-    <p><b>Current Day Module:</b> <%= @dashboard_collections_collection.collection.current_collection_module.display_name %></p>
-    <p><b>Current Day Module Link:</b> <a class="link" href="<%= Routes.dashboard_path(@conn, :dashboard_course_file, @dashboard_collections_collection.collection.slug, @dashboard_collections_collection.collection.current_collection_module.slug) %>">Link To Module</a></p>
+    <p><b>Current <%= frequency_title %>:</b> <%= @dashboard_collections_collection.collection.count %></p>
+    <p><b>Current <%= frequency_title %> Module:</b> <%= @dashboard_collections_collection.collection.current_collection_module.display_name %></p>
+    <p><b>Current <%= frequency_title %> Module Link:</b> <a class="link" href="<%= Routes.dashboard_path(@conn, :dashboard_course_file, @dashboard_collections_collection.collection.slug, @dashboard_collections_collection.collection.current_collection_module.slug) %>">Link To Module</a></p>
+  <% else %>
+    <p><b>Last <%= frequency_title %>:</b> <%= @dashboard_collections_collection.collection.count %></p>
+    <p><b>Last <%= frequency_title %> Module:</b> <%= @dashboard_collections_collection.collection.current_collection_module.display_name %></p>
+    <p><b>Last <%= frequency_title %> Module Link:</b> <a class="link" href="<%= Routes.dashboard_path(@conn, :dashboard_course_file, @dashboard_collections_collection.collection.slug, @dashboard_collections_collection.collection.current_collection_module.slug) %>">Link To Module</a></p>
   <% end %>
 
   <!-- FUTURE: Put in subscription emails -->

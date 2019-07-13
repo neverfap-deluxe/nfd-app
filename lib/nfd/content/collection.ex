@@ -65,10 +65,12 @@ defmodule Nfd.Content.Collection do
           collection = String.to_atom(subscribed_property) |> FetchCollectionUtil.page_symbol_subscribed_to_slug() |> Content.get_collection_slug_with_files!()
 
           # NOTE: Collection Decorators - breaks wth email collections - possibly not in this context.
+          count = subscriber |> Map.get(FetchCollectionUtil.course_slug_to_count(collection.slug))
           up_to_count = subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(collection.slug))
-          current_collection_module = collection.files |> Enum.find(&(&1.number == up_to_count))
+          current_collection_module = collection.files |> Enum.find(&(&1.number == count))
+          up_to_collection_module = collection.files |> Enum.find(&(&1.number == up_to_count))
 
-          acc |> Map.merge(%{ active_property => collection |> Map.merge(%{ up_to_count: up_to_count, current_collection_module: current_collection_module }) })
+          acc |> Map.merge(%{ active_property => collection |> Map.merge(%{ count: count, up_to_count: up_to_count, current_collection_module: current_collection_module, up_to_collection_module: up_to_collection_module }) })
         else
           acc |> Map.merge(%{ active_property => false })
         end
@@ -90,9 +92,11 @@ defmodule Nfd.Content.Collection do
     # NOTE: Collection Decorators - breaks wth email collections
 
     has_paid_for_collection = if collection.type == "course_collection", do: Collection.has_paid_for_collection(collection, user_collections), else: nil
+    count = if collection.type == "course_collection", do: user_collections.subscriber |> Map.get(FetchCollectionUtil.course_slug_to_count(collection.slug)), else: nil
     up_to_count = if collection.type == "course_collection", do: user_collections.subscriber |> Map.get(FetchCollectionUtil.course_slug_to_up_to_count(collection.slug)), else: nil
     # NOTE: This breaks if an epub file is also within a collection of type course, so I need to figure this out.
-    current_collection_module = if collection.type == "course_collection", do: collection.files |> Enum.filter(&(&1.type != "ebook_file")) |> Enum.find(&(&1.number == up_to_count)), else: nil
+    current_collection_module = if collection.type == "course_collection", do: collection.files |> Enum.filter(&(&1.type != "ebook_file")) |> Enum.find(&(&1.number == count)), else: nil
+    up_to_collection_module = if collection.type == "course_collection", do: collection.files |> Enum.filter(&(&1.type != "ebook_file")) |> Enum.find(&(&1.number == up_to_count)), else: nil
 
     collection
       |> Map.merge(%{
@@ -103,10 +107,12 @@ defmodule Nfd.Content.Collection do
             end)
             |> Enum.sort(fn(a, b) -> a.number > b.number end)
             |> Enum.reverse()
-      })
+        })
       |> Map.merge(%{ has_paid_for_collection: has_paid_for_collection })
+      |> Map.merge(%{ count: count })
       |> Map.merge(%{ up_to_count: up_to_count })
       |> Map.merge(%{ current_collection_module: current_collection_module })
+      |> Map.merge(%{ up_to_collection_module: up_to_collection_module })
 
   end
 

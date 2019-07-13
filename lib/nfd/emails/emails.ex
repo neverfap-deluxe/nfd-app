@@ -64,9 +64,6 @@ defmodule Nfd.Emails do
         
       if has_access_to_subscription do
 
-        IO.inspect "day_count"
-        IO.inspect day_count
-
         { template, subject } =
           case type do
             ^kickstarter_type -> EmailTemplates.run_seven_day_kickstarter(day_count)
@@ -112,16 +109,20 @@ defmodule Nfd.Emails do
       {:ok, _subscription_email} ->
         # TODO: This technically needs to be more complex, the up_to_count we cannot assume is the same as the actual count. They may be very different. 
 
+        # TODO: I still need a function which will completely reset the up_to_count of the subscription so it can go back to normal
+
         active_value = Atom.to_string(subscribed_property)
         count = Map.fetch!(subscriber, count_property) + 1
         up_to_count_original = Map.fetch!(subscriber, up_to_count_property)
-        up_to_count = if up_to_count_original == subscription_day_limit, do: up_to_count_original, else: up_to_count_original + 1
+        up_to_count = if up_to_count_original > day_count, do: up_to_count_original, else: day_count
 
-        IO.inspect "relevant"
-        IO.inspect up_to_count
-        IO.inspect subscription_day_limit
+        # IO.inspect "relevant"
+        # IO.inspect day_count
+        # IO.inspect up_to_count_original
+        # IO.inspect up_to_count
+        # IO.inspect subscription_day_limit
 
-        case up_to_count == subscription_day_limit do
+        case day_count == subscription_day_limit do
           true -> Account.update_subscriber(subscriber, %{ up_to_count_property => up_to_count, active_type_property => nil, count_property => 0, subscribed_property => false })
           false -> Account.update_subscriber(subscriber, %{ up_to_count_property => up_to_count, active_type_property => active_value, count_property => count })
         end

@@ -64,6 +64,18 @@ defmodule NfdWeb.FetchCollectionUtil do
     end
   end
 
+  def course_slug_to_count(course_slug) do
+    case course_slug do
+      "seven-day-neverfap-deluxe-kickstarter" -> :seven_day_kickstarter_count
+      "ten-day-meditation-primer" -> :ten_day_meditation_count
+      "twenty-eight-day-awareness-challenge" -> :twenty_eight_day_awareness_count
+      "seven-week-awareness-challenge-vol-1" -> :seven_week_awareness_vol_1_count
+      "seven-week-awareness-challenge-vol-2" -> :seven_week_awareness_vol_2_count
+      "seven-week-awareness-challenge-vol-3" -> :seven_week_awareness_vol_3_count
+      "seven-week-awareness-challenge-vol-4" -> :seven_week_awareness_vol_4_count
+    end
+  end
+
   def page_symbol_to_up_to_count(page_symbol) do
     case page_symbol do
       :seven_day_kickstarter_single -> :seven_day_kickstarter_up_to_count
