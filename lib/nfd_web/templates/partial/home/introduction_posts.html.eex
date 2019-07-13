@@ -1,7 +1,9 @@
 <div class="posts">
-  <%= Enum.map(@items, fn(item) -> %>
-    <%= if Enum.find(item["categories"], &(&1 == "introduction")) do %>
-      <%= if Enum.find(item["tags"], &(&1 == "context")) do %>
+  <%= @items |> Enum.filter(&(
+      Enum.find(&1["categories"], fn(category) -> category == "introduction" end) &&
+      Enum.find(&1["tags"], fn(tag) -> tag == "context" end)
+    )
+  ) |> Enum.take(10) |> Enum.map(fn(item) -> %>
         <a class="post" href='<%= Routes.content_path(@conn, :article, item["slug"]) %>'>
           <div class="post__left">
             <div class="post__five__principles">
@@ -40,8 +42,6 @@
             <h4 class="post__title"><%= item["title"] %></h4>    
           </div>
         </a>
-      <% end %>
-    <% end %>
   <% end ) %>
 </div>
   

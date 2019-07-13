@@ -390,14 +390,11 @@
         </div>
       </div>
 
-
       <%= partial "banners/discord_banner.html", assigns %>
-
 
       <!-- <div class="seven_day_kickstarter_cont">
         7 day kickstarter plan.
       </div> -->
-
 
       <div class="homepage__section"  style="margin-bottom: 4rem;">
         <h2>Warning! <i class="em em-warning"></i></h2>
