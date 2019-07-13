@@ -1,5 +1,5 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
-<%= partial "links/reddit.html", assigns %>
+<!-- <%= partial "links/reddit.html", assigns %> -->
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
@@ -10,7 +10,7 @@
   </div>
 </div>
 
-<div class="guide__banner" style="border-bottom: 4px solid black;">
+<div class="guide__banner" style="border-top: 4px solid black; border-bottom: 4px solid black;">
   <div class="guide__suggestion__container">
     <div class="black__banner__title__container">
       <h2 class="black__banner__title black__banner__title--reddit__guidelines">Information:</h2>
@@ -24,7 +24,11 @@
   </div>
 </div>
 
-<div class="guide__banner" style="border-bottom: 4px solid black;">
+<!-- <div style="margin-top: 2rem; margin-bottom: 2rem;"> -->
+  <%= partial "links/reddit.html", assigns %>
+<!-- </div> -->
+
+<div class="guide__banner" style="border-top: 4px solid black; border-bottom: 4px solid black;">
   <div class="guide__suggestion__container">
     <div class="black__banner__title__container">
       <h2 class="black__banner__title black__banner__title--reddit__guidelines">Example Titles:</h2>

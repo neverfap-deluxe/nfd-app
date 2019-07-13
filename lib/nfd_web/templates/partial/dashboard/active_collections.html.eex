@@ -1,4 +1,4 @@
-
+<!-- TODO It won't remove the course once it hits the limit. -->
 <div class="dashboard__active__collections">
   <div class="dashboard__active__collection__item">
     <%= if @user_collections.active_collections.free_active != false do %>

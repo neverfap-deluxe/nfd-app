@@ -118,11 +118,11 @@ defmodule Nfd.Emails do
         up_to_count = if up_to_count_original == subscription_day_limit, do: up_to_count_original, else: up_to_count_original + 1
 
         IO.inspect "relevant"
-        IO.inspect day_count
+        IO.inspect up_to_count
         IO.inspect subscription_day_limit
 
-        case day_count == subscription_day_limit do
-          true -> Account.update_subscriber(subscriber, %{ up_to_count_property => up_to_count, active_type_property => active_value, count_property => 0, subscribed_property => false })
+        case up_to_count == subscription_day_limit do
+          true -> Account.update_subscriber(subscriber, %{ up_to_count_property => up_to_count, active_type_property => nil, count_property => 0, subscribed_property => false })
           false -> Account.update_subscriber(subscriber, %{ up_to_count_property => up_to_count, active_type_property => active_value, count_property => count })
         end
       {:error, error_changeset} ->
