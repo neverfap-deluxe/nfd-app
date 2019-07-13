@@ -8,11 +8,11 @@
     </div>
   </div>
 
-  <div id="link_your_patreon" class="dashboard__section">
+  <!-- <div id="link_your_patreon" class="dashboard__section">
     <div class="dashboard__section__content">
       <%= partial "dashboard/link_patreon.html", %{ conn: @conn, user_collections: @user_collections, api_key_collections: @api_key_collections } %>
     </div>
-  </div>
+  </div> -->
 
   <div id="subscribed__courses" class="dashboard__section">
     <div class="dashboard__section__content">

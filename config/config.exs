@@ -35,6 +35,7 @@ config :nfd,
   social_android_url: "https://play.google.com/store/apps/details?id=com.ueno.nfdmobilev2",
   social_ios_url: "null",
   social_paypal_url: "https://www.paypal.me/neverfapdeluxe",
+  social_calendly_url: "https://calendly.com/neverfap-deluxe",
 
   kickstarter_day_0_title: "The Introduction",
   kickstarter_day_1_title: "The Trust",

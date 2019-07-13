@@ -10,6 +10,9 @@ import "../css/app.scss";
 //
 // Import dependencies
 //
+
+
+
 import "phoenix_html"
 
 // Import local files

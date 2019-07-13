@@ -42,12 +42,19 @@
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
     <h2>Next Steps</h2>
-    <p>If you're still interested in having me coach you, then there's two things you need to do.</p>
-    <p>Firstly, you'll need to create a NeverFap Deluxe Account. There are links in the banner below.</p>
-    <p>This first step is important, because it's essentially how you'll pay for the coaching in the beautifully designed dashboard that I've put together.</p>
-    <p>Secondly, get in touch via email (or via <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Discord</a>) so I can learn a bit more about you, as well as so we can arrange a time.</p>
+    <p>If you're still interested in having me coach and guide you, then next steps are to organise an initial consultation so we can learn a bit more about each other in fabulous fashion.</p>
+    <!-- <p>Firstly, you'll need to create a NeverFap Deluxe Account. There are links in the banner below.</p> -->
+    <!-- <p>This first step is important, because it's essentially how you'll pay for the coaching in the beautifully designed dashboard that I've put together.</p> -->
+
+    <!-- Calendly inline widget begin -->
+    <div class="calendly-inline-widget" data-url="https://calendly.com/neverfap-deluxe" style="min-width:320px; height:720px; border: 4px solid black;"></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+    <!-- Calendly inline widget end -->
+
+    <p>You can personally get in touch with me via <a class="link" href="mailto:admin@neverfapdeluxe.com">email</a> (or via <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Discord</a>) so I can learn a bit more about you, as well as so we can arrange a time.</p>
     <p>I'm personally located in Melbourne Australia. (GMT+11:00)</p>
   </div>
 </div>
+
 
 <%= partial "links/loginregister.html", assigns %>

@@ -48,7 +48,7 @@ defmodule Nfd.Sitemaps do
         add Helpers.page_path(Endpoint, :general_community), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :general_donations), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :general_everything), priority: 0.5, changefreq: "weekly", expires: nil
-        add Helpers.page_path(Endpoint, :general_premium), priority: 0.5, changefreq: "weekly", expires: nil
+        # add Helpers.page_path(Endpoint, :general_premium), priority: 0.5, changefreq: "weekly", expires: nil
 
         # GUIDE
         add Helpers.page_path(Endpoint, :guides_guide), priority: 0.5, changefreq: "weekly", expires: nil
