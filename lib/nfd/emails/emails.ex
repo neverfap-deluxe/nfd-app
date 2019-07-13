@@ -61,7 +61,12 @@ defmodule Nfd.Emails do
           ^awareness_seven_week_vol_4_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection_slug(awareness_seven_week_vol_4_type))
         end
 
+        
       if has_access_to_subscription do
+
+        IO.inspect "day_count"
+        IO.inspect day_count
+
         { template, subject } =
           case type do
             ^kickstarter_type -> EmailTemplates.run_seven_day_kickstarter(day_count)
@@ -111,6 +116,10 @@ defmodule Nfd.Emails do
         count = Map.fetch!(subscriber, count_property) + 1
         up_to_count_original = Map.fetch!(subscriber, up_to_count_property)
         up_to_count = if up_to_count_original == subscription_day_limit, do: up_to_count_original, else: up_to_count_original + 1
+
+        IO.inspect "relevant"
+        IO.inspect day_count
+        IO.inspect subscription_day_limit
 
         case day_count == subscription_day_limit do
           true -> Account.update_subscriber(subscriber, %{ up_to_count_property => up_to_count, active_type_property => active_value, count_property => 0, subscribed_property => false })

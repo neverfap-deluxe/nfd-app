@@ -38,8 +38,8 @@ defmodule NfdWeb.FunctionController do
         end
 
         # NOTE: This ensures that they've paid for the course before subscribing.
-        collection_slug = Content.get_collection_with_id_return_slug!(collection_id)
-        active_type_property = Email.collection_slug_to_active_type_property(collection_slug)
+        collection_with_slug = Content.get_collection_with_id_return_slug!(collection_id)
+        active_type_property = Email.collection_slug_to_active_type_property(collection_with_slug.slug)
         collections_access = Account.get_collection_access_by_user_id_and_collection_id(user_id, collection_id)
 
         if collections_access do
@@ -55,8 +55,8 @@ defmodule NfdWeb.FunctionController do
   def reset_subscription_dashboard_func(conn, %{"subscribed" => subscribed, "user_id" => user_id, "collection_id" => collection_id, "subscribed_property" => subscribed_property}) do
     subscribed_property_atom = String.to_atom(subscribed_property)
 
-    collection_slug = Content.get_collection_with_id_return_slug!(collection_id)
-    count_property = Email.collection_slug_to_count_property(collection_slug)
+    collection_with_slug = Content.get_collection_with_id_return_slug!(collection_id)
+    count_property = Email.collection_slug_to_count_property(collection_with_slug.slug)
 
     case Account.get_subscriber_user_id(user_id) do
       nil ->

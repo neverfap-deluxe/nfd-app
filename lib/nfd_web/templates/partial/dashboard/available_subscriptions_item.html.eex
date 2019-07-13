@@ -1,4 +1,5 @@
 <div class="available__subscriptions__item">
+  <span class='new__collection__item new__available__subscriptions__item' style="cursor: default;"><%= course_active_type_to_readable_text @collection.active_type %></span>
   <div class="top__container__available">
     <h3 class="available__subscriptions__item--title"><%= @collection.display_name %></h3>
     <a class="available__subscriptions__item--button button" href="<%= Routes.dashboard_path(@conn, @type, @collection.slug) %>">Manage</a>
