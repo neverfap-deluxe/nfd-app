@@ -20,7 +20,7 @@
     <%= partial "layout/header.html", assigns %>
 
     <main role="main" class="main" id="general__main__content">
-      <!-- <button id="dark__mode__button">darkmode</button> -->
+      <div id="dark__mode__button" class="button subscribe__button">darkmode</div>
       <%= render @view_module, @view_template, assigns %>
     </main>
     <%= partial "layout/footer.html", assigns %>

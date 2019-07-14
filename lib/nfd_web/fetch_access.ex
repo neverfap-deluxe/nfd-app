@@ -34,7 +34,7 @@ defmodule NfdWeb.FetchAccess do
       # PROGRAMS
       :programs_accountability -> []
       :programs_reddit_guidelines -> []
-      :programs_coaching -> []
+      :programs_coaching -> [:contact_form_changeset]
 
       # VOLUNTEER
       :volunteer_helpful_neverfap_counsel -> []

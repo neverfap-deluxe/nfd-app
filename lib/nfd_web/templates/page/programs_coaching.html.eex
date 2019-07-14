@@ -3,25 +3,51 @@
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
-    <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some of the reasons</u> to consider personal coaching.</h1>
+    <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some viable reasons</u> to consider personal coaching.</h1>
 
-    <p>Ultimately only you can decide whether you belive it's worth your time and money.</p>
-    <p>I'm simply here to help.</p>
+    <p>There are many reasons why you may want to consider personal coaching.</p>
+    <p>Here are just a few of them.</p>
 
-    <div style="border-top: 3px solid #00ffee;"></div>
-    <h2 class="banner__points banner__points--coaching">You require another human being to help you keep motivated and empathise with you.</h2>
     <div style="border-top: 3px solid #00ffee;"></div>
     <h2 class="banner__points banner__points--coaching">You want to beat this thing quicker, and are happy to pay a premium for it.</h2>
     <div style="border-top: 3px solid #00ffee;"></div>
-    <h2 class="banner__points banner__points--coaching">You struggle to understand how to effectively practice meditation and other awareness exercises, and you're seeking guided help.</h2>
+    <h2 class="banner__points banner__points--coaching">You require another person to help understand and empathise with your situation.</h2>
     <div style="border-top: 3px solid #00ffee;"></div>
-    <h2 class="banner__points banner__points--coaching">You want to ask a question face-to-face to me about your porn addiction recovery.</h2>
+    <h2 class="banner__points banner__points--coaching">You struggle to understand how to effectively practice meditation and other awareness exercises.</h2>
     <div style="border-top: 3px solid #00ffee;"></div>
-    <h2 class="banner__points banner__points--coaching">You're seeking advice on a recommended routine of mental health practice.</h2>
+    <h2 class="banner__points banner__points--coaching">You want to ask questions face-to-face to The Reade&copy; himself.</h2>
+    <div style="border-top: 3px solid #00ffee;"></div>
+    <h2 class="banner__points banner__points--coaching">You require additional perspective, as well as new philosophies regarding recovery.</h2>
     <div style="border-top: 3px solid #00ffee;"></div>
     <h2 class="banner__points banner__points--coaching">You just wanna say hi, because why the hell not!?</h2>
     <!-- <div class="show__large" style="border-top: 3px solid #00ffee;"></div> -->
+    <div style="border-top: 3px solid #00ffee;"></div>
 
+    <p>Ultimately, only you can decide whether you beleive it's worth your time and money.</p>
+    <p>I'm just another resource for you to utilise during your journey.</p>
+  </div>
+</div>
+
+<%= partial "links/reddit.html", assigns %>
+
+<div class="single__wrapper">
+  <div class="single__content" style="margin-bottom: 0;">
+    <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some of the services</u> which can help you become your best self.</h1>
+
+    <p>There are many different ways I can personally help you achieve your goals.</p>
+    <p>Here is a short list which applies to most clients.</p>
+
+    <div style="border-top: 3px solid #00ffee;"></div>
+    <h2 class="banner__points banner__points--coaching">I can provide you with a detailed mental health plan which covers the day-to-day.</h2>
+    <div style="border-top: 3px solid #00ffee;"></div>
+    <h2 class="banner__points banner__points--coaching">I can help identify which areas you need to work on and improve.</h2>
+    <div style="border-top: 3px solid #00ffee;"></div>
+    <h2 class="banner__points banner__points--coaching">I can recommend suggested practices which will best suit your situation.</h2>
+    <div style="border-top: 3px solid #00ffee;"></div>
+    <h2 class="banner__points banner__points--coaching">I can perform on-the-spot guided meditations in person.</h2>
+    <div style="border-top: 3px solid #00ffee;"></div>
+    <h2 class="banner__points banner__points--coaching">I can help you become more aware of yourself and your behaviours.</h2>
+    <div style="border-top: 3px solid #00ffee;"></div>
   </div>
 </div>
 
@@ -56,5 +82,25 @@
   </div>
 </div>
 
+<div class="single__wrapper">   
+  <div class="single__content" style="margin-bottom: 0;">
+    <h2>Contact</h2>
+    <p>Feel free to contact me if you have any questions about how any of this works.</p>
+  </div>
+    
+  <div class="form__wrapper form__wrapper--full-width">
+    <form class="form" action="https://formspree.io/admin@neverfapdeluxe.com" method="POST">
+      <!-- <h4 class="form__title">THE FORM</h4> -->
+      <div class="form__input__container">
+        <input class="form__input" type=text: placeholder="Name" name='name'/>
+        <input class="form__input" type="email" placeholder="Email" name='_replyTo'/>
+        <textarea class="form__input form__textarea" type=text: placeholder="Message" name='message'></textarea>
+      </div>
 
-<%= partial "links/loginregister.html", assigns %>
+      <div class="form__submission__container">
+        <button class="form__button" type="submit" value="Send">Send</button>
+      </div>
+    </form>
+  </div>
+</div>
+  

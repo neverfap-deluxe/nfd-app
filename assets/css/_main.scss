@@ -309,11 +309,6 @@ hr {
   border: 4px solid black;
 }
 
-@media screen and (min-width: 620px) {
-  .calendly-inline-widget {
-    width: 600px;
-  }
-}
 
 .calendly-badge-widget {
   .calendly-badge-content {
@@ -347,5 +342,22 @@ hr {
     box-shadow: -10px 10px 0px 0px #00ffee;
     bottom: -5px;
     left: -5px;
+  }
+}
+
+#dark__mode__button {
+  display: none;
+    visibility: hidden;
+  position: absolute;
+  right: 20px;
+}
+
+@media screen and (min-width: 620px) {
+  #dark__mode__button {
+    display: block;
+    visibility: hidden;
+  }
+  .calendly-inline-widget {
+    width: 600px;
   }
 }
