@@ -40,10 +40,14 @@
   </div>
 
   <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
+  <!-- <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+  <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div> -->
   <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
 
   <div class="reddit__question__banner" style="margin-bottom: 0.7rem;">
-    <h2>Further Questions?</h2>
+    <h2><!-- <i class="em em-thinking_face"></i> --> Further Questions? <!-- <i class="em em-sweat_smile"></i> --></h2>
     <div class="reddit__question__banner__box">
       <p>Head on down to our NeverFap Deluxe subreddit or Discord channel where myself and others can help you with your questions.</p>
     </div>

@@ -142,7 +142,11 @@
   .single__wrapper {
     display: flex;
     flex-direction: column;
-    margin-left: 160px;
+    // margin-left: 160px;
+    margin: 0 auto!important;
+    margin-top: 2rem!important;
+    margin-bottom: 2rem!important;
+
     width: 600px;
 
     // width: 600px;
@@ -158,14 +162,11 @@
 
 @media screen and (min-width: 1024px) {
   .single__wrapper {
-    margin-left: 200px;
+    // margin-left: 200px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .single__wrapper {
-    margin: 0 auto!important;
-    margin-top: 2rem!important;
-    margin-bottom: 2rem!important;
   }
 }

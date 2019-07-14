@@ -142,16 +142,22 @@
       <li class="header__link">About</li>
     </a>
     <div class="header__sub header__banner__about">
-      <a href="/about" class="header__module">
+      <a href="/coaching" class="header__module">
         <h3 class="h3__yus">
-          About NeverFap Deluxe
-          <span class="h3__tiny">/about</span>
+          Personal Coaching
+          <span class="h3__tiny">/coaching</span>
         </h3>
-      </a>
+      </a>  
       <a href="/contact" class="header__module">
         <h3 class="h3__yus">
           Contact Daddy Reade
           <span class="h3__tiny">/contact</span>
+        </h3>
+      </a>
+      <a href="/about" class="header__module">
+        <h3 class="h3__yus">
+          About NeverFap Deluxe
+          <span class="h3__tiny">/about</span>
         </h3>
       </a>
     </div>

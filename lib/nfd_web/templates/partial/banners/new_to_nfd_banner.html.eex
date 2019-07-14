@@ -1,5 +1,5 @@
 <div class="banner__new__to__nfd">
   <h1>Thank you for reading internet person!</h1>
-  <h3 class="banner__new__to__nfd__title">New to NeverFap Deluxe?</h3>
+  <a href="/"><h3 class="banner__new__to__nfd__title">New to NeverFap Deluxe?</h3></a>
   <h3 class="banner__new__to__nfd__title--2nd">Check out the <a class="link articles__link new__to__nfd__link" href="/">/</a>, <a class="link articles__link new__to__nfd__link" href="/summary">/summary</a> or <a class="link articles__link new__to__nfd__link" href="/guide">/guide</a> to get started!</h3>
 </div>
