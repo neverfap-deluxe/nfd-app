@@ -21,6 +21,8 @@ defmodule NfdWeb.MessageController do
 
   # NOTE: This is only suitable for content based comments
   def comment_form_post(conn, %{"comment" => comment}) do
+    # TODO: This actually needs to check if the user is logged in, since people can actually still post a comment if they understand how to.
+
     user = Pow.Plug.current_user(conn) |> Account.get_user_pow!()
 
     {_referer_key, referer_value} = Enum.find(conn.req_headers, fn({ key, value}) -> key == "referer" end)

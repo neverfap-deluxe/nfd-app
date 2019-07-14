@@ -1,51 +1,67 @@
-<div class="comment__create__message__sub__title">
-  Your email address will not be published. Required fields are marked *
-</div>
+<!-- TODO: User must be logged in, in order to post. -->
+<!-- user_collections -->
 
-<div class="form__wrapper form__wrapper--full-width" style="margin-bottom: 0!important;">
-  <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-  <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-
-  <%= form_for @changeset_collections.comment_form_changeset, Routes.message_path(@conn, :comment_form_post), fn f -> %>
-    <div class="form__input__container">
-      <%= if @user_collections.user == %{} do %>
-        <div class="comment__create__message__promotion">
-          <div style="line-height: 1.6rem; margin-bottom: 0.5rem;">Tired of filling in your details each time you want to comment?</div>
-          <div>Sign up for an account today!</div>
-          <div class="comment__create__message__promotion__buttons">
-            <a href="/session/new" class="button subscribe__button comment__create__message__promotion__buttons--button">Email</a>
-            <%= partial "auth/google_button.html", %{ class: "comment__create__message__promotion__buttons--button" } %>
+<%= if @user_collections.user == %{} do %>
+  <div class="comment__create__message__sub__title">
+    You must be logged in to post a comment.
+  </div>
+  <div class="comment__create__message__promotion">
+    <div class="comment__create__message__promotion__buttons" style="margin-top: 0;">
+      <a href="/session/new" class="button subscribe__button comment__create__message__promotion__buttons--button">Sign In</a>
+      <%= partial "auth/google_button.html", %{ class: "comment__create__message__promotion__buttons--button" } %>
+    </div>
+  </div>
+<% else %>
+  <div class="comment__create__message__sub__title">
+    Your email address will not be published. Required fields are marked *
+  </div>
+  
+  <div class="form__wrapper form__wrapper--full-width" style="margin-bottom: 0!important;">
+    <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+    <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+  
+    <%= form_for @changeset_collections.comment_form_changeset, Routes.message_path(@conn, :comment_form_post), fn f -> %>
+      <div class="form__input__container">
+        <!-- NOTE: This has been turned off, since users must be logged in; to change back, make != into == -->
+        <%= if @user_collections.user != %{} do %>
+          <div class="comment__create__message__promotion">
+            <div style="line-height: 1.6rem; margin-bottom: 0.5rem;">Tired of filling in your details each time you want to comment?</div>
+            <div>Sign up for an account today!</div>
+            <div class="comment__create__message__promotion__buttons">
+              <a href="/session/new" class="button subscribe__button comment__create__message__promotion__buttons--button">Email</a>
+              <%= partial "auth/google_button.html", %{ class: "comment__create__message__promotion__buttons--button" } %>
+            </div>
           </div>
-        </div>
-      <% end %>
-          
-      <%= error_tag f, :name %>
-      <%= text_input f, :name, [placeholder: "Name*", required: true, class: "form__input"] %>
-
-      <div><%= error_tag f, :email %></div>
-      <%= email_input f, :email, [placeholder: "Email*", required: true, class: "form__input"] %>
-
-      <div><%= error_tag f, :message %></div>
-      <%= textarea f, :message, [placeholder: "Comment*", required: true, class: "form__input form__textarea"] %>
-
-      <%= hidden_input f, :depth, [value: @depth] %>
-      <%= hidden_input f, :page_id, [value: @item["page_id"]] %>
-      <%= hidden_input f, :parent_message_id, [value: @parent_message_id] %>
-      <%= hidden_input f, :user_id %>
-
-      <!-- <%#= inputs_for f, :parent_message, fn fp -> %>
-        <%#= hidden_input fp, :id, [value: @parent_message_id] %>
-      <%# end %> -->
-
-      <!-- Save my name, email, and website in this browser for the next time I comment. -->
-      <!-- // maybe use the cookies for this.
-      // conn.cookies -->
-
-      <%#= raw Recaptcha.Template.display %>
-    </div>
-
-    <div class="form__submission__container">
-      <%= submit "Send", [class: "form__button"]  %>
-    </div>
-  <% end %>
-</div>
+        <% end %>
+            
+        <%= error_tag f, :name %>
+        <%= text_input f, :name, [placeholder: "Name*", required: true, class: "form__input"] %>
+  
+        <div><%= error_tag f, :email %></div>
+        <%= email_input f, :email, [placeholder: "Email*", required: true, class: "form__input"] %>
+  
+        <div><%= error_tag f, :message %></div>
+        <%= textarea f, :message, [placeholder: "Comment*", required: true, class: "form__input form__textarea"] %>
+  
+        <%= hidden_input f, :depth, [value: @depth] %>
+        <%= hidden_input f, :page_id, [value: @item["page_id"]] %>
+        <%= hidden_input f, :parent_message_id, [value: @parent_message_id] %>
+        <%= hidden_input f, :user_id %>
+  
+        <!-- <%#= inputs_for f, :parent_message, fn fp -> %>
+          <%#= hidden_input fp, :id, [value: @parent_message_id] %>
+        <%# end %> -->
+  
+        <!-- Save my name, email, and website in this browser for the next time I comment. -->
+        <!-- // maybe use the cookies for this.
+        // conn.cookies -->
+  
+        <%#= raw Recaptcha.Template.display %>
+      </div>
+  
+      <div class="form__submission__container">
+        <%= submit "Send", [class: "form__button"]  %>
+      </div>
+    <% end %>
+  </div>  
+<% end %>
