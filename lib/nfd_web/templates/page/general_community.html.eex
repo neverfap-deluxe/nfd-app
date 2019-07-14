@@ -131,7 +131,6 @@
 
 <%= partial "links/twitter.html", assigns %>
 
-
 <div class="single__wrapper single__wrapper--community">
   <div id="youtube_com" class="single__content">
     <h2>YouTube</h2>

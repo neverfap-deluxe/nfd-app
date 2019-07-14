@@ -15,16 +15,14 @@
     <div style="border-top: 3px solid #00ffee;"></div>
     <h2 class="banner__points banner__points--coaching">You struggle to understand how to effectively practice meditation and other awareness exercises.</h2>
     <div style="border-top: 3px solid #00ffee;"></div>
-    <h2 class="banner__points banner__points--coaching">You want to ask questions face-to-face to The Reade&copy; himself.</h2>
+    <h2 class="banner__points banner__points--coaching">You want to ask questions face-to-face.</h2>
     <div style="border-top: 3px solid #00ffee;"></div>
-    <h2 class="banner__points banner__points--coaching">You require additional perspective, as well as new philosophies regarding recovery.</h2>
-    <div style="border-top: 3px solid #00ffee;"></div>
-    <h2 class="banner__points banner__points--coaching">You just wanna say hi, because why the hell not!?</h2>
+    <h2 class="banner__points banner__points--coaching">You require additional perspective, and need help understanding the fundamentals.</h2>
     <!-- <div class="show__large" style="border-top: 3px solid #00ffee;"></div> -->
     <div style="border-top: 3px solid #00ffee;"></div>
 
     <p>Ultimately, only you can decide whether you beleive it's worth your time and money.</p>
-    <p>I'm just another resource for you to utilise during your journey.</p>
+    <p>No different to this website and all these wonderful materials I offer to the public for free, I'm just another resource for you to utilise during your journey.</p>
   </div>
 </div>
 
@@ -35,7 +33,7 @@
     <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some of the services</u> which can help you become your best self.</h1>
 
     <p>There are many different ways I can personally help you achieve your goals.</p>
-    <p>Here is a short list which applies to most clients.</p>
+    <p>Below is a list which largely applies to most of my clients.</p>
 
     <div style="border-top: 3px solid #00ffee;"></div>
     <h2 class="banner__points banner__points--coaching">I can provide you with a detailed mental health plan which covers the day-to-day.</h2>
@@ -82,10 +80,13 @@
   </div>
 </div>
 
+<%= partial "links/twitter.html", assigns %>
+
 <div class="single__wrapper">   
   <div class="single__content" style="margin-bottom: 0;">
     <h2>Contact</h2>
-    <p>Feel free to contact me if you have any questions about how any of this works.</p>
+    <p>I hope you now have a proper understanding of how this all works.</p>
+    <p>Feel free to contact me if you have any questions, or would simply like to chat about arranging a time to catch up.</p>
   </div>
     
   <div class="form__wrapper form__wrapper--full-width">
