@@ -61,7 +61,7 @@ defmodule Nfd.Emails do
           ^awareness_seven_week_vol_4_type -> Subscriber.check_if_subscriber_has_paid(subscriber, Nfd.Util.Email.type_to_collection_slug(awareness_seven_week_vol_4_type))
         end
 
-        
+
       if has_access_to_subscription do
 
         { template, subject } =
@@ -107,8 +107,6 @@ defmodule Nfd.Emails do
 
     case Meta.create_subscription_email(%{ day: day_count, course: type, subscription_email: subscriber.subscriber_email, subscriber_id: subscriber.id}) do
       {:ok, _subscription_email} ->
-        # TODO: This technically needs to be more complex, the up_to_count we cannot assume is the same as the actual count. They may be very different. 
-
         # TODO: I still need a function which will completely reset the up_to_count of the subscription so it can go back to normal
 
         active_value = Atom.to_string(subscribed_property)
@@ -156,7 +154,7 @@ defmodule Nfd.Emails do
   end
 
   def cast_general_newsletter_email(subscriber, subject, template, unsubscribe_url) do
-    # TODO: Finish this.
+    # TODO: This logic needs to be changes.
     %Swoosh.Email{}
       |> to(subscriber.subscriber_email)
       |> from({"NeverFap Deluxe", "admin@neverfapdeluxe.com"})

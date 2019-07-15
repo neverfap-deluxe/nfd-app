@@ -12,11 +12,10 @@
     </script>
 
   <body>
-    <%= partial "sidebar_nav.html", assigns %>    
-    <!-- <div class="left__sidebar__container">yo</div>
-    <div> -->
+    <%= partial "sidebar_nav.html", assigns %>
+    <!-- <div class="left__sidebar__container">yo</div> -->
     <div id="mobile__menu__overlay__background__id" class="mobile__menu__overlay__background"></div>
-    
+
     <%= partial "layout/header.html", assigns %>
 
     <main role="main" class="main" id="general__main__content">
@@ -25,7 +24,7 @@
     </main>
     <%= partial "layout/footer.html", assigns %>
 
-    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>    
-    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/darkmode.js") %>"></script>    
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/darkmode.js") %>"></script>
   </body>
 </html>

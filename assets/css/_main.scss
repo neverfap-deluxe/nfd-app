@@ -48,10 +48,10 @@ h4 {
   line-height: 1.8rem;
 }
 
-p { 
+p {
   // font-size: 1.19rem;
   font-size: 1.15rem;
-  line-height: 1.8rem;    
+  line-height: 1.8rem;
 }
 
 input, label, button {
@@ -187,14 +187,14 @@ hr {
 }
 
 .deluxe__font--only {
-  font-family: 'Parisienne', cursive; 
+  font-family: 'Parisienne', cursive;
   font-size: 1.5rem;
   position: relative;
   top: -0.1rem;
 }
 
 .deluxe__font {
-  font-family: 'Parisienne', cursive; 
+  font-family: 'Parisienne', cursive;
 }
 
 .logo__square {
@@ -202,8 +202,8 @@ hr {
   right: 0.2rem;
   top: -1.3rem;
   width: 14px;
-  height: 14px;  
-}  
+  height: 14px;
+}
 
 .cursor__default {
   cursor: default;
@@ -278,71 +278,6 @@ hr {
 
 .none {
   display: none;
-}
-
-
-#choice_over_mind_posts {
-  display: none;
-}
-#balance_over_reward_posts {
-  display: none;
-}
-#strugle_over_none_posts {
-  display: none;
-}
-#awareness_over_all_posts {
-  display: none;
-}
-#uncondition_over_judgement_posts {
-  display: none;
-}
-
-
-#latest__posts {
-  display: none;
-}
-
-
-.calendly-inline-widget {
-  width: 100%;
-  height: 720px;
-  border: 4px solid black;
-}
-
-
-.calendly-badge-widget {
-  .calendly-badge-content {
-    background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
-    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
-    background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
-    background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
-    background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
-    color: white;
-  
-    box-shadow: -5px 5px 0px 0px #00ffee;
-  
-  
-    padding: 0.6rem; 
-    cursor: pointer;
-  
-    transition: box-shadow .3s, bottom .3s, left .3s;
-
-    line-height: 2.15rem;
-
-    border: 4px solid black;
-    background: white!important;
-    color: black!important;
-    border-radius: 0;
-    font-size: 1rem;
-  }
-
-  .calendly-badge-content:hover {
-    box-shadow: -10px 10px 0px 0px #00ffee;
-    bottom: -5px;
-    left: -5px;
-  }
 }
 
 #dark__mode__button {

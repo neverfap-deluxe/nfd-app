@@ -1,6 +1,3 @@
-
-
-<!-- TODO It displays the up_to_count - it should display the normal count   -->
 <div class="dashboard__active__collections">
   <div class="dashboard__active__collection__item">
     <%= if @user_collections.active_collections.free_active != false do %>
@@ -8,7 +5,6 @@
       <a href="<%= Routes.dashboard_path(@conn, :dashboard_course_collection, free_collection.slug)%>"><h3 style="margin-bottom: 0rem;"><%= free_collection.display_name %></h3></a>
       <div class="active__collection__item__bottom">
         <!-- <p><b>Total Days</b></br> <%= free_collection.total_period %></p> -->
-        <!-- This should actually be the  -->
         <p><b>Current Day</b></br> <%= free_collection.count %></p>
         <p><b>Module</b></br> <%= free_collection.current_collection_module.display_name %></p>
         <p><a class="button subscribe__button" href="<%= Routes.dashboard_path(@conn, :dashboard_course_file, free_collection.slug, free_collection.current_collection_module.slug) %>">Link To Module</a></p>
