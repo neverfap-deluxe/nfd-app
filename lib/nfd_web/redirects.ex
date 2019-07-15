@@ -3,6 +3,7 @@ defmodule NfdWeb.Redirects do
 
   def redirect_content(conn, slug, type) do
     case type do
+      "page" -> redirect_page(conn, slug)
       "article" -> redirect_article(conn, slug)
       "practice" -> redirect_practice(conn, slug)
       "course" -> redirect_course(conn, slug)
@@ -20,6 +21,12 @@ defmodule NfdWeb.Redirects do
       "seven_week_awareness_vol_2_single" -> redirect_seven_week_awareness_vol_2_single(conn, slug)
       "seven_week_awareness_vol_3_single" -> redirect_seven_week_awareness_vol_3_single(conn, slug)
       "seven_week_awareness_vol_4_single" -> redirect_seven_week_awareness_vol_4_single(conn, slug)
+      _ -> slug
+    end
+  end
+
+  def redirect_page(_conn, slug) do
+    case slug do
       _ -> slug
     end
   end

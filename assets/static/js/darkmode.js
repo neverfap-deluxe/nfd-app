@@ -4,6 +4,7 @@ var general__main__content = document.querySelector('#general__main__content');
 var dark__mode__on = false;
 
 dark__mode__button.onclick = function(event) {
+  console.log('cake')
   if (dark__mode__on) {
     dark__mode__on = false;
     general__main__content.classList.remove('main__dark');

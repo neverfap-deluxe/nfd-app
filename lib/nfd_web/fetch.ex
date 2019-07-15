@@ -20,10 +20,11 @@ defmodule NfdWeb.Fetch do
   alias NfdWeb.FetchCollectionUtil
 
   def fetch_page(conn, page_view, page_symbol, page_layout, collection_array) do
+    redirected_page_symbol = Redirects.redirect_content(conn, page_symbol, "page")
     client = API.is_localhost(conn.host) |> API.api_client()
 
     # FUTURE: Do we even need this, or is this covered in page_collections/content_collections? I feel like it should be in those things.
-    case apply(PageAPI, page_symbol, [client]) do
+    case apply(PageAPI, redirected_page_symbol, [client]) do
       {:ok, response} ->
         user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
         page_collections = FetchCollection.page_collections(client, collection_array)

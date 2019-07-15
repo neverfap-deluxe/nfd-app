@@ -13,6 +13,7 @@
 
 <div class="single__wrapper">
   <div class="single__content">
+    <h1>Philosophy</h1>
     <%= raw child_content(@item["children"], "about-main-2") %>
   </div>
 </div>
