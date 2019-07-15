@@ -21,9 +21,9 @@
 
     <h2 class="everything__sub__title">Guides</h2>
     <div class="everything__section">
-      <%= partial "everything_item.html", %{ wip: false, title: "Bible", url: "/neverfap-deluxe-bible", description: "Gain access to the complete collection of NeverFap Deluxe guides and resources in one, convenient format." } %>  
-      <%= partial "everything_item.html", %{ wip: false, title: "Summary", url: "/summary", description: "A concise summary of the entire NeverFap Deluxe Method of overcoming porn addiction, delivered by Le Reade himself." } %>
-      <%= partial "everything_item.html", %{ wip: false, title: "Guide", url: "/guide", description: "Learn more about the NeverFap Deluxe Method of overcoming porn addiction with our keenly comprehensive NeverFap Deluxe Guide." } %>  
+      <%= partial "everything_item.html", %{ wip: false, title: "NeverFap Deluxe Bible", url: "/neverfap-deluxe-bible", description: "Gain access to the complete collection of NeverFap Deluxe guides and resources in one, convenient format." } %>  
+      <%= partial "everything_item.html", %{ wip: false, title: "NeverFap Deluxe Summary", url: "/summary", description: "A concise summary of the entire NeverFap Deluxe Method of overcoming porn addiction, delivered by Le Reade himself." } %>
+      <%= partial "everything_item.html", %{ wip: false, title: "NeverFap Deluxe Guide", url: "/guide", description: "Learn more about the NeverFap Deluxe Method of overcoming porn addiction with our keenly comprehensive NeverFap Deluxe Guide." } %>  
       <%= partial "everything_item.html", %{ wip: false, title: "7 Day NeverFap Deluxe Kickstarter", url: "/seven-day-neverfap-deluxe-kickstarter", description: "Learn more about NeverFap Deluxe and how the whole she-bang works with our 7 Day NeverFap Deluxe Kickstarter." } %>
       <%#= partial "everything_item.html", %{ wip: true, title: "10 Day Meditation Primer", url: "/ten-day-meditation-primer", description: "An primer into the practice of meditation." } %>
       <%#= partial "everything_item.html", %{ wip: true, title: "28 Day Awareness Challenge", url: "/twenty-eight-day-awareness-challenge", description: "Learn more about awareness and the power of your mind." } %>
@@ -45,7 +45,7 @@
     <div class="everything__section">
       <%= partial "everything_item.html", %{ wip: false, title: "Accountability Program", url: "/accountability-program", description: "Join the NeverFap Deluxe Discord channel and learn to keep yourself accountable for your mental health." } %>
       <%= partial "everything_item.html", %{ wip: false, title: "#NewNeverFapper Reddit Guidelines", url: "/new-fap-deluxe-reddit-guidelines", description: "Learn how you can recieve free advice by posting in our NeverFap Deluxe subreddit, with the #NewNeverFapper hashtag." } %>
-      <%= partial "everything_item.html", %{ wip: false, title: "Coaching", url: "/coaching", description: "Recieve professional help from someone who's already figured it all out, and who can provide you with the support you need." } %>
+      <%= partial "everything_item.html", %{ wip: false, title: "Personal Coaching", url: "/coaching", description: "Recieve professional help from someone who's already figured it all out, and who can provide you with the support you need." } %>
     </div>
 
     <h2 class="everything__sub__title">Volunteer</h2>

@@ -1,5 +1,7 @@
 <div class="login__top">  
   <div class="account__buttons__login">
+    <div id="dark__mode__button" class="button dark__mode__button--homepage">Dark Mode</div>
+
     <span class="login__top__button__register">
         <%= link to: Routes.pow_registration_path(@conn, :new) do %>
         <div class="login__top__button__text">

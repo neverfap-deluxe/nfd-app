@@ -1,6 +1,59 @@
 .main__dark {
   background: #23272A;
 
+  .link {
+    color: white;
+    text-decoration-line: underline;
+    text-decoration-color: rgba(255,46,182,1);
+    cursor: pointer;
+  }
+  
+  .link:hover {
+    border-bottom: 2px solid white;
+  }
+  
+  // Cookies popup
+  .cookies__popup__container {
+    border: 4px solid white;
+
+    background: #23272A;
+    color: white;
+  }
+
+  // Footer
+  .footer {
+    .footer__links { 
+      .footer__link__wrapper {
+        .footer__link  {
+          color: white!important; 
+        }
+      }
+      .footer__link__wrapper:hover .footer__link{
+        color: black!important; 
+      }
+    }  
+  }
+
+  .five__principles__list__page {
+    .five__principles__item__page {
+      color: rgba(255,46,182,1);
+    }
+  }
+
+  .podcast__banner__cyan__circle {
+    z-index: 0;
+  }
+
+  .podcast__banner__description {
+    position: absolute;
+    bottom: 0;
+  }
+
+
+  .guide__suggestion__number {
+    color: black!important;
+  }
+
   .veteran__row {
     a {
       background: white;
@@ -13,7 +66,7 @@
 
   .reddit__question__banner, .account__buttons {
     h2, p, a {
-      color: white!important;
+      color: white;
     }
   }
 
@@ -32,7 +85,7 @@
   }
   
   .comment__list {
-    h1, h2, h3, h4, h5, p {
+    h1, h2, h3, h5, p {
       color: white!important;
     }
     .comment__user__item__name, .comment__message {
@@ -45,6 +98,14 @@
   }
 
   .single__wrapper {
+    h1, h2, p {
+      color: white;
+    }
+
+    .podcast__item {
+      border: 4px solid white;
+    }
+
     .popular__latest__options__title {
       color: white;
     }
@@ -60,7 +121,7 @@
     color: white;
 
     hr {
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid #00ffee;
     }
   }
 

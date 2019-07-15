@@ -2,8 +2,7 @@
 <html lang="en">
   <%= partial "head_general.html", assigns %>
   <body>
-      <div id="mobile__menu__overlay__background__id" class="mobile__menu__overlay__background">
-        </div>
+    <div id="mobile__menu__overlay__background__id" class="mobile__menu__overlay__background"></div>
         
     <main role="main" class="main">
       <%= render @view_module, @view_template, assigns %>

@@ -7,10 +7,11 @@
 
 <%= partial "links/loginregister_top--without-mobile.html", assigns %>
 
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <%= raw @content %>
+<%= if @content != nil do %>
+  <div class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <%= raw @content %>
+    </div>
   </div>
-</div>
-
+<% end %>
 <!-- <a href="/everything" class="link contact__form__title-thing"><p style="display: inline-block;">#need a link to all the website content, instead?</p></a> -->

@@ -185,9 +185,11 @@
 <%= partial "links/discord.html", assigns %>
 
 <div class="single__wrapper">
-  <h2>Content List</h2>
-  <p>If you'd like to dive into some of our articles, feel free to explore the range of articles, practices and courses sorted by category.</p>
-
+  <div class="single__content">
+    <h2>Content List</h2>
+    <p>If you'd like to dive into some of our articles, feel free to explore the range of articles, practices and courses sorted by category.</p>
+  </div>
+  
   <div class="popular__latest__options">
     <h3 class="button__click button__on popular__latest__options--guide" id="introduction_click">Introduction</h3>
     <h3 class="button__click button__off popular__latest__options--guide" id="choice_over_mind_click">Choice over mind</h3>

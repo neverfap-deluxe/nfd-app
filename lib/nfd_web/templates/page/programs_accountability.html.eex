@@ -3,15 +3,15 @@
 
 <div class="single__wrapper">
   <div class="single__content">
-    <h2>The Accountability Process</h2>
+    <h1>The Accountability Process</h1>
     <p>Here's how the process works.</p>
-    <p>Once a day you will post in the Discord <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel with an update on the healthy coping mechanisms that you committed to for that day.</p>
+    <p>Once a day you will post in the <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel of our Discord Server with an update of the healthy coping mechanisms you committed to for that day.</p>
     <p><b>Then I will acknowledge the post with an emoji or some comments of recommendation.</b></p>
     <p>It could have been your daily routine of meditation. It could have been something positive you did or achieved. It could have been physical exercise. It could have been one of the NeverFap Deluxe Practices.</p>
     <p>It could even have been an epiphany of awareness which sparked positive change in your life.</p>
     <p>The idea is that we want to be focusing on positive change, because that is ultimately that the process of recovery is about.</p>
     <p>Replacing negative habits with positive habits.</p>
-    <p>Therefore, in order for this to be effective you will need to provide two key details:</p>
+    <p>Therefore, in order for this to be effective you will need to provide a few key details:</p>
 
     <hr class="hrul"/>
       <ul>
@@ -21,7 +21,7 @@
       </ul>
     <hr class="hrul__bottom"/>
 
-    <p>One thing you'll notice is that we don't report a relapse counter.</p>
+    <p>One thing you'll notice is that we don't report our current streak.</p>
     <p>I have come to the conclusion that it does not work as a motivator, not only through extensive trialing, however also observing the progress of others over in r/NoFap.</p>
     <p>In fact, it almost always hinders progress and ends up demotivating people, as they inevitably relapse due to inexperience with the porn recovery process.</p>
     <p>On the other hand, positive action and healthy coping mechanisms are tangible things we can track, which do not set expectations on our porn recovery journey.</p>
@@ -34,8 +34,8 @@
 
 <div class="single__wrapper">
   <div class="single__content">
-    <h2>The NeverFap Deluxe Discord Bot</h2>
-    <p>Aside from the <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> system I've created, I've also spent an absurd amount of time building the NeverFap Deluxe Bot which is designed to assist you with the process.</p>
+    <h1>The NeverFap Deluxe Discord Bot</h1>
+    <p>A large part of what makes the <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel effective is the NeverFap Deluxe Bot which has been designed to help assist you with your porn addiction recovery journey.</p>
     <p>The bot has been designed to do a number of amazing things:</p>
     <hr class="hrul"/>
       <ul>
@@ -47,8 +47,8 @@
         <li>- And so much more!</li>
       </ul>
     <hr class="hrul__bottom"/>
-    <p>Certainly, I've put literal months into developing this thing, and for good reason: The bot has statistically increased engagement on the Discord channel, and it genuinely helps keep you on track.</p>
-    <p>It's second only to the website.</p>
+    <p>I've put literal months into developing this thing, and for good reason. The bot has statistically increased engagement on the Discord channel, and it genuinely helps keep you on track.</p>
+    <p>Thank you NeverFap Deluxe Bot!</p>
   </div>
 </div>
 
@@ -56,7 +56,7 @@
 
 <div class="single__wrapper">
   <div class="single__content">
-    <h2>Accountability Examples</h2>
+    <h1>Accountability Examples</h1>
 
     <p>Here are some examples of some thoughtful and helpful posts that you could post in the Discord <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel:</p>
 
@@ -77,7 +77,7 @@
         <p>- Meditated 10 minutes before bed.</p>
         <p>- Meditated 15 minutes on the way to work.</p>
         <p>- Practiced <a class="link" href="/practices/observe-your-senses">Observe Your Senses</a> for 20 minutes.</p>
-        <p>- Made a conscious effort not to look at women in public.</p>
+        <p>- Made a conscious effort not to stare at women in public.</p>
       </div>
     </div>
 

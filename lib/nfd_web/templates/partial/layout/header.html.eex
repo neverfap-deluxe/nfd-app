@@ -72,7 +72,7 @@
 
 
     <!-- Practices -->
-    <a id="link__practices" class="header__link__wrapper header__link__wrapper--main" href="/practices">
+    <a id="link__practices" class="header__link__wrapper" href="/practices">
       <li class="header__link">Practices</li>
     </a>
     <div class="header__sub header__banner__practices">
@@ -162,6 +162,8 @@
       </a>
     </div>
   </ul>
+
+  <div id="dark__mode__button" class="button">Dark Mode</div>
 
   <%= partial "mobile_menu_overlay.html", assigns %>
 </nav>

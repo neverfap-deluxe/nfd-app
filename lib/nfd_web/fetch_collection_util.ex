@@ -145,6 +145,11 @@ defmodule NfdWeb.FetchCollectionUtil do
     end
   end
 
+  def string_replace(string) do
+    string 
+      |> String.replace("888", "")
+  end
+
   # defp generate_seven_week_awareness_challenge_title(vol) do
   #   case vol do
   #     "1" -> "7 Week Awareness Challenge Vol 1."

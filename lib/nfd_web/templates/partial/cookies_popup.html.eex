@@ -1,0 +1,14 @@
+<div class="cookies__popup__container">
+  <div class="cookies__popup__container__inner">
+
+    <p>This website primarily uses cookies in order to implement dark mode.</p>
+    <p>The Dutch made me put this message on my website.</p>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem;">
+      <a id="cookies__read__more" class="button cookies__button" href="<%= Routes.page_path(@conn, :legal_terms_and_conditions) %>"><p>Read more</p></a>
+      <a id="cookies__close" class="button cookies__button"><p>I totally understand</p></a>
+      <!-- <div id="cookies__close" id="mobile__overlay__close__id" class="mobile__overlay__close"><span class="mobile__overlay__close__text">x</span></div> -->
+    </div>
+  
+  </div>
+</div>

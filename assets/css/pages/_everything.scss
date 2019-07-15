@@ -9,7 +9,7 @@
 
   display: grid;
   grid-template-columns: repeat(auto-fill, 300px);
-  grid-gap: 50px;
+  grid-gap: 20px;
   grid-row-gap: 20px;
   grid-auto-rows: minmax(230px, auto);
   justify-content: center;
@@ -64,15 +64,17 @@
     // padding: 1rem;      
     cursor: pointer;
 
+    border-bottom: 1px solid black;
+
     transition: .2s box-shadow, .2s border;
 
     // .everything__item__title__menu {
 
     // }
 
-//     .everything__item__title {
-
-//     }
+    .everything__item__title {
+      margin-bottom: 0.6rem;
+    }
     .everything__item__description {
       display: none;
     }

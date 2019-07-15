@@ -2,9 +2,12 @@
 <html>
   <%= partial "head_general.html", assigns %>
   <body>
-    <div id="mobile__menu__overlay__background__id" class="mobile__menu__overlay__background">
+    <div id="mobile__menu__overlay__background__id" class="mobile__menu__overlay__background"></div>
+    <div class="main__dark" id="cookies__popup">
+      <%= partial "cookies_popup.html",%{ conn: @conn } %>      
+      <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/cookiepopup.js") %>"></script>
     </div>
-        
+  
     <%= render @view_module, @view_template, assigns %>
     <%= partial "layout/footer.html", assigns %>
   </body>

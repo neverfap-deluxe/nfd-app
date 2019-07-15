@@ -64,7 +64,7 @@
         justify-content: center;
 
         height: 3.4rem;
-        min-width: 6.5rem;
+        min-width: 5.6rem;
 
         color: white;
         font-size: 1rem;
@@ -150,6 +150,8 @@
 
       .header__link__wrapper {
         .header__link {
+          min-width: 6.5rem;
+
           padding-left: 8px;
           padding-right: 8px;
         }
@@ -179,7 +181,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1084px) {
   .header {
     .header__links {
       .header__link__wrapper--disappear {

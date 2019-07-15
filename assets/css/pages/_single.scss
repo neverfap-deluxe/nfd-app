@@ -30,7 +30,10 @@
 }
 
 .single__wrapper {
-  margin: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 
   h2 {
     font-size: 2rem;
@@ -112,7 +115,12 @@
 
 @media screen and (min-width: 420px) {
   .single__wrapper {
-    margin: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  
+    // margin: 2rem;
     // margin: 40px;
     // margin-top: 40px;
 
@@ -144,8 +152,8 @@
     flex-direction: column;
     // margin-left: 160px;
     margin: 0 auto!important;
-    margin-top: 2rem!important;
-    margin-bottom: 2rem!important;
+    padding-top: 2rem!important;
+    padding-bottom: 2rem!important;
 
     width: 600px;
 

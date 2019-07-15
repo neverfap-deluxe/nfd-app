@@ -1,6 +1,6 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
 
-<div class="single__wrapper">   
+<div class="single__wrapper" style="padding-top: 0rem!important;">   
   <div class="form__wrapper form__wrapper--full-width">
     <form class="form" action="https://formspree.io/admin@neverfapdeluxe.com" method="POST">
       <!-- <h4 class="form__title">THE FORM</h4> -->
