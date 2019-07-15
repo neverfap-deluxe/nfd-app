@@ -183,9 +183,11 @@
 
 .calendly-inline-widget {
   width: 100%;
+  max-width: 600px;
   height: 720px;
   border: 4px solid black;
 }
+
 
 .calendly-badge-widget {
   .calendly-badge-content {
