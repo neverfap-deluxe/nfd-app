@@ -465,7 +465,7 @@
         <hr />
       </div>
 
-      <div class="homepage__section">
+      <div class="homepage__section" style="margin-bottom: 0!important; padding-bottom: 2rem;">
         <h3>Listen...</h3>
         <h1>I've spent most my life doing it wrong.</h1>
         <h2>So you don't have to waste your time like I did. <i class="em em-innocent"></i></h2>

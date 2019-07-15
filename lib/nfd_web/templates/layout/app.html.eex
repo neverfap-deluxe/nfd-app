@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <%= partial "head_general.html", assigns %>
+
   <body>
     <div id="mobile__menu__overlay__background__id" class="mobile__menu__overlay__background"></div>
         
-    <main role="main" class="main">
+    <main id="general__main__content" class="main">
       <%= render @view_module, @view_template, assigns %>
     </main>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/darkmode.js") %>"></script>
   </body>
 </html>

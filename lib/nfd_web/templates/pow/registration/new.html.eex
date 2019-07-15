@@ -68,4 +68,6 @@
   </div>
 </div>
 
-<%= partial "layout/footer.html", assigns %>
+<div id="footer">
+  <%= partial "layout/footer.html", assigns %>
+</div>

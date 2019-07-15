@@ -7,10 +7,14 @@
       <%= partial "cookies_popup.html",%{ conn: @conn } %>      
       <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/cookiepopup.js") %>"></script>
     </div>
-  
-    <%= render @view_module, @view_template, assigns %>
-    <%= partial "layout/footer.html", assigns %>
+    <main id="general__main__content">
+      <%= render @view_module, @view_template, assigns %>
+    </main>
+    <div id="footer">
+      <%= partial "layout/footer.html", assigns %>    
+    </div>
   </body>
   <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/homepage.js") %>'></script>
   <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+  <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/darkmode.js") %>"></script>
 </html>
