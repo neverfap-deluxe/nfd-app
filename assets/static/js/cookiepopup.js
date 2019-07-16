@@ -1,22 +1,24 @@
 
-var cookies__popup__container = document.querySelector('.cookies__popup__container');
-var cookies__read__more = document.querySelector('#cookies__read__more');
-var cookies__close = document.querySelector('#cookies__close');
-
+var cookies__popup__container__id = document.querySelector('#cookies__popup__container__id');
 var acceptedCookie = 'acceptedCookie';
 
-if (getCookie(acceptedCookie) === 'true') {
-  cookies__popup__container.style.display = 'none';
+if (getCookie(acceptedCookie) !== 'true') {
+  cookies__popup__container__id.classList.remove('none');
+  cookies__popup__container__id.classList.add('cookies__popup__container');
 }
 
 cookies__read__more.onclick = function(event) {
+  var cookies__read__more = document.querySelector('#cookies__read__more');
+  var cookies__close = document.querySelector('#cookies__close');
   setCookie(acceptedCookie, 'true', 900);
-  cookies__popup__container.style.display = 'none';
+  cookies__popup__container__id.style.display = 'none';
 }
 
 cookies__close.onclick = function(event) {
+  var cookies__read__more = document.querySelector('#cookies__read__more');
+  var cookies__close = document.querySelector('#cookies__close');
   setCookie(acceptedCookie, 'true', 900);
-  cookies__popup__container.style.display = 'none';
+  cookies__popup__container__id.style.display = 'none';
 }
 
 function setCookie(name,value,days) {

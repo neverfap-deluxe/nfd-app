@@ -163,8 +163,7 @@
     </div>
   </ul>
 
-  <div id="dark__mode__button" class="button">Dark Mode</div>
-
+  <%= partial "darkmode_button.html", assigns %>
   <%= partial "mobile_menu_overlay.html", assigns %>
 </nav>
 

@@ -1,4 +1,4 @@
-<div class="cookies__popup__container">
+<div id="cookies__popup__container__id" class="none">
   <div class="cookies__popup__container__inner">
 
     <p>This website primarily uses cookies in order to implement dark mode.</p>
@@ -9,6 +9,5 @@
       <a id="cookies__close" class="button cookies__button"><p>I totally understand</p></a>
       <!-- <div id="cookies__close" id="mobile__overlay__close__id" class="mobile__overlay__close"><span class="mobile__overlay__close__text">x</span></div> -->
     </div>
-  
   </div>
 </div>

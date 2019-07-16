@@ -307,11 +307,12 @@ hr {
   #dark__mode__button:hover {
     // text-shadow: -2px 2px rgba(255,46,182,1);
     box-shadow: -4px 4px 0px 0px rgba(255,46,182,1);
-    background: white;
+    // background: white;
   }
   .dark__mode__button__hovered {
     // text-shadow: -2px 2px rgba(255,46,182,1);
     box-shadow: -4px 4px 0px 0px rgba(255,46,182,1);
-    background: white;
+    background: black;
+    color: white;
   }
 }

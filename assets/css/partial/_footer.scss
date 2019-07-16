@@ -86,5 +86,14 @@
       transform: translateX(-50%);
     }  
   }
+}
 
+.footer__above {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }

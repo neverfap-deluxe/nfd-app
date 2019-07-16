@@ -3,9 +3,15 @@
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
-    <p>As part of my initiative to help as many people as possible, I am willing to offer</p>
+    <p>As part of my initiative to help as many people as possible, I am willing to offer personalised advice if you post in our subreddit with the tag <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewNeverFapper</a> in your title.</p>
+    <p>Obviously there's quite a lot of information here on NeverFap Deluxe and it can be confusing knowing how to start, especially when you're already struggling with existing issues.</p>
+    <p>However, with personalised advice you will be able to better understand exactly what it is you need to do in order to succeed with your recovery.</p>
+    <p>Alternatively, I also offer <a class="link" href="<%= Routes.page_path(@conn, :programs_coaching) %>">Personal Coaching</a> for those interested in receiving additional help from someone who's already been there before.</p>
+    <p>I offer an initial FREE 10 Minute Consultation for those interested in building a relationship and working together in order to help you achieve your goals.</p>
   </div>
 </div>
+
+<%= partial "links/reddit.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">

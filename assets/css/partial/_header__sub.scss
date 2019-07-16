@@ -27,19 +27,22 @@
 .header__banner__practices {
   display: none;
   left: 19.5rem;
+  min-width: 430px;
 }
 .header__banner__podcast {
   display: none;
   left: 26rem;
+  min-width: 321px;
 }
 .header__banner__community {
   display: none;
   left: 32.5rem;
+  min-width: 327px;
 }
 .header__banner__about {
   display: none;
   left: 39rem;
-  min-width: 300px;
+  min-width: 305px;
 }
 
 @media screen and (min-width: 768px) {

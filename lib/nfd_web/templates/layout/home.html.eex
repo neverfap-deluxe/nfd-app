@@ -5,7 +5,7 @@
     <!-- Mobile Menu -->
     <div id="mobile__menu__overlay__background__id" class="mobile__menu__overlay__background"></div>
     <!-- Cookies Popup -->
-    <div class="main__dark" id="cookies__popup">
+    <div id="cookies__popup">
       <%= partial "cookies_popup.html",%{ conn: @conn } %>      
       <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/cookiepopup.js") %>'></script>
     </div>
