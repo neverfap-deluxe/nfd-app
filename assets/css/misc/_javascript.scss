@@ -228,6 +228,7 @@
   display: none;
   background: white;
   box-shadow: -6px 6px 0px 0px #00ffee;
+  border: 4px solid black;
   color: black;
   position: fixed;
   padding: 0.8rem;
@@ -251,13 +252,15 @@
     }
 
     .cookies__button {
+      border: 4px solid black;
+
       display: inline-block;
       font-size: 0.85rem;
       line-height: 1.1rem;
       background: white;
       color: black;
 
-      box-shadow: -2px 2px 0px 0px #00ffee;
+      box-shadow: -4px 4px 0px 0px #00ffee;
       padding: 0.4rem;
       cursor: pointer;
 
@@ -269,7 +272,7 @@
     }
 
     .cookies__button:hover {
-      box-shadow: -4px 4px 0px 0px #00ffee;
+      box-shadow: -6px 6px 0px 0px #00ffee;
       bottom: -5px;
       left: -5px;
     }
@@ -363,7 +366,7 @@
     justify-content: space-between;
     width: 100%;
     // flex-flow: row nowrap;
-    
+
 
     .bottom__bar__show__main__section {
       display: flex;

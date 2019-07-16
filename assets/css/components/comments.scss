@@ -15,7 +15,7 @@
 
   box-sizing: border-box;
   // border: 4px solid black;
-  
+
   padding: 1rem;
 
   margin-bottom: 2rem;
@@ -37,7 +37,7 @@
 
     .comment__user__item--right {
       padding-left: 1.4rem;
-      position: relative;    
+      position: relative;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -106,85 +106,85 @@
 }
 
 .no__comments__container {
-  border-left: 12px solid cyan;
+  border-left: 12px solid #00ffee;
   padding-left: 1.6rem;
   // padding: 1rem;
   margin-bottom: 1.6rem;
 }
 
 .comment__item__0 {
-  border-left: 6px solid cyan;
+  border-left: 6px solid #00ffee;
 }
 .comment__item__1 {
   border-left: 12px solid rgba(255,46,182,1);
 }
 .comment__item__2 {
-  border-left: 18px solid cyan;
+  border-left: 18px solid #00ffee;
 }
 .comment__item__3 {
   border-left: 24px solid rgba(255,46,182,1);
 }
 .comment__item__4 {
-  border-left: 30px solid cyan;
+  border-left: 30px solid #00ffee;
 }
 .comment__item__5 {
   border-left: 36px solid rgba(255,46,182,1);
 }
 .comment__item__6 {
-  border-left: 42px solid cyan;
+  border-left: 42px solid #00ffee;
 }
 .comment__item__7 {
   border-left: 48px solid rgba(255,46,182,1);
 }
 .comment__item__8 {
-  border-left: 54px solid cyan;
+  border-left: 54px solid #00ffee;
 }
 .comment__item__9 {
   border-left: 60px solid rgba(255,46,182,1);
 }
 .comment__item___ {
-  border-left: 66px solid cyan;
+  border-left: 66px solid #00ffee;
 }
 
 @media screen and (min-width: 420px) {
 
   .comment__item__0 {
-    border-left: 12px solid cyan;
+    border-left: 12px solid #00ffee;
   }
   .comment__item__1 {
     border-left: 24px solid rgba(255,46,182,1);
   }
   .comment__item__2 {
-    border-left: 36px solid cyan;
+    border-left: 36px solid #00ffee;
   }
   .comment__item__3 {
     border-left: 48px solid rgba(255,46,182,1);
   }
   .comment__item__4 {
-    border-left: 60px solid cyan;
+    border-left: 60px solid #00ffee;
   }
   .comment__item__5 {
     border-left: 72px solid rgba(255,46,182,1);
   }
   .comment__item__6 {
-    border-left: 84px solid cyan;
+    border-left: 84px solid #00ffee;
   }
   .comment__item__7 {
     border-left: 96px solid rgba(255,46,182,1);
   }
   .comment__item__8 {
-    border-left: 108px solid cyan;
+    border-left: 108px solid #00ffee;
   }
   .comment__item__9 {
     border-left: 120px solid rgba(255,46,182,1);
   }
   .comment__item___ {
-    border-left: 132px solid cyan;
+    border-left: 132px solid #00ffee;
   }
 
   .comment__item {
     .comment__user__item {
-  
+
       .comment__user__item--left {
         .comment__user__item__avatar {
           height: 155px;
@@ -199,7 +199,7 @@
   margin-bottom: 2rem;
   padding: 1rem;
   line-height: 1.8rem;
-  border: 4px solid cyan;
+  border: 4px solid #00ffee;
   // background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
   // background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
   // background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */

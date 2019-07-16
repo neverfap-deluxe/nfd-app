@@ -79,7 +79,7 @@
     margin-top: 0.4rem;
     width: 95%;
     cursor: default;
-    
+
     background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
     background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
     background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
@@ -92,7 +92,7 @@
 
   .seven__day__kickstarter__banner__item:hover {
     // box-shadow: -5px 5px 0px 0px white;
-  } 
+  }
 
   .seven__day__kickstarter__banner__item--page {
     display: inline-block;
@@ -150,14 +150,14 @@
     margin-top: 0rem;
     margin-bottom: 0rem;
     margin-left: 3rem;
-  }  
+  }
 
   .seven__day__kickstarter__banner__list {
 
     .seven__day__kickstarter__banner__item {
       width: initial;
       font-size: 0.9rem;
-      box-shadow: -5px 5px 0px 0px cyan;
+      box-shadow: -5px 5px 0px 0px #00ffee;
       margin: 0.1rem;
       margin-top: 0.2rem;
       margin-right: 0.4rem;

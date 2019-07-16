@@ -26,7 +26,7 @@
     }
   }
   li:hover {
-    color: cyan;
+    color: #00ffee;
     border-bottom: 2px solid white;
   }
 }
@@ -116,7 +116,7 @@
 
   h3 {
     font-size: 1.3rem;
-    text-shadow: 3px 3px cyan;
+    text-shadow: 3px 3px #00ffee;
   }
 }
 
@@ -406,7 +406,7 @@
       padding-bottom: 0rem;
       flex-direction: row;
       align-items: center;
-      justify-content: space-between;  
+      justify-content: space-between;
     }
   }
   .active__collection__top {

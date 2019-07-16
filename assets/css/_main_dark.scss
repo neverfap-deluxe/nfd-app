@@ -4,33 +4,33 @@
 
   // main
   .link {
-    color: white;
+    color: #dcddde;
     text-decoration-line: underline;
     text-decoration-color: rgba(255,46,182,1);
     cursor: pointer;
   }
-  
+
   .link:hover {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #dcddde;
   }
-  
+
   // homepage
   .homepage__section {
     h1, h2, h3, h4, h5, p, li {
-      color: white;
+      color: #dcddde;
     }
     li {
-      text-decoration-color: white;
+      text-decoration-color: #dcddde;
     }
     .five__principles__guide__item {
-      color: white;
+      color: #dcddde;
     }
     .five__principles__guide__item:before {
       background: rgba(255,46,182,1);
     }
 
     .five__principles__item__main, .five__principles__item__main__judgement {
-      color: white;
+      color: #dcddde;
     }
     .five__principles__item__main:before, .five__principles__item__main__judgement:before {
       background: rgba(255,46,182,1);
@@ -40,24 +40,30 @@
 
   // Cookies popup
   .cookies__popup__container {
-    border: 4px solid white;
+    border: 4px solid #dcddde;
 
     background: #23272A;
-    color: white;
+    color: #dcddde;
+
+    .cookies__popup__container__inner {
+      .cookies__button {
+        border: none;
+      }
+    }
   }
 
   // Footer
   .footer {
-    .footer__links { 
+    .footer__links {
       .footer__link__wrapper {
         .footer__link  {
-          color: white!important; 
+          color: #dcddde!important;
         }
       }
       .footer__link__wrapper:hover .footer__link{
-        color: black!important; 
+        color: black!important;
       }
-    }  
+    }
   }
 
   .five__principles__list__page {
@@ -86,13 +92,13 @@
       color: black!important;
     }
     h2, h3, h4, p {
-      color: white;
+      color: #dcddde;
     }
   }
 
   .reddit__question__banner, .account__buttons {
     h2, p, a {
-      color: white;
+      color: #dcddde;
     }
   }
 
@@ -103,37 +109,37 @@
     }
     .banner__new__to__nfd__title--2nd {
       background: initial!important;
-      color: white!important;
+      color: #dcddde!important;
     }
     h1 {
-      color: white!important;
+      color: #dcddde!important;
     }
   }
-  
+
   .comment__list {
     h1, h2, h3, h5, p {
-      color: white!important;
+      color: #dcddde!important;
     }
     .comment__user__item__name, .comment__message {
-      color: white!important;
+      color: #dcddde!important;
     }
   }
 
   .comment__create__message__title, .comment__create__message__sub__title  {
-    color: white!important;
+    color: #dcddde!important;
   }
 
   .single__wrapper {
     h1, h2, p {
-      color: white;
+      color: #dcddde;
     }
 
     .podcast__item {
-      border: 4px solid white;
+      border: 4px solid #dcddde;
     }
 
     .popular__latest__options__title {
-      color: white;
+      color: #dcddde;
     }
     .articles__link {
       background: white;
@@ -146,21 +152,21 @@
   }
 
   .single__content {
-    color: white;
+    color: #dcddde;
   }
-  
+
   hr {
     border-bottom: 1px solid #00ffee;
   }
 
   .account__info, .login__top {
-    background: white; 
-    // color: white;
+    background: white;
+    // color: #dcddde;
   }
 
   // .account__info, .login__top {
-  //   background: #23272A; 
-  //   color: white;
+  //   background: #23272A;
+  //   color: #dcddde;
   // }
   // #dark__mode__button {
   //   color: black;
@@ -168,11 +174,11 @@
 
 
   .footer__designed {
-    color: white;
+    color: #dcddde;
   }
 
   .footer__link {
-    color: white;
+    color: #dcddde;
   }
 
 }
