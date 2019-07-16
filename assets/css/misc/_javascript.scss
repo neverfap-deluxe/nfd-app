@@ -229,7 +229,7 @@
   color: black;
   position: fixed;
   padding: 0.8rem;
-  bottom: 0; 
+  bottom: 0;
   z-index: 9000;
 
   .cookies__popup__container__inner {
@@ -246,8 +246,8 @@
       background: white;
       color: black;
 
-      box-shadow: -2px 2px 0px 0px #00ffee;  
-      padding: 0.4rem; 
+      box-shadow: -2px 2px 0px 0px #00ffee;
+      padding: 0.4rem;
       cursor: pointer;
 
       transition: box-shadow .2s, bottom .2s, left .2s;
@@ -275,14 +275,66 @@
   .cookies__popup__container {
     bottom: 2rem;
     left: 1.6rem;
-  
+
     width: 300px;
-  
+
     .cookies__popup__container__inner {
 
     }
   }
 }
+
+
+.bottom__bar__container {
+  position: fixed;
+  bottom: 0;
+  visibility: visible;
+  left: 0;
+  right: 0;
+  box-shadow: 0 -1px 14px 1px rgba(0,0,0,.1);
+  opacity: 1;
+  display: block;
+
+  z-index: 3;
+  transition: all .25s ease-in-out;
+  flex-flow: column nowrap;
+
+  background: linear-gradient(-30deg, #FFFFFFE5, #FFFFFFE5 45%, #FFFFFF 45%) #fff;
+
+  transform: translateY(calc(100% - 35px));
+
+  .bottom__bar__initial {
+    margin: 10px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-size: 12px;
+    transition: all .3s ease-in-out;
+    transform-origin: left;
+    color: #778EB1;
+  }
+}
+
+.bottom__bar__container:hover {
+  transform: translateY(0);
+}
+
+.bottom__bar__show {
+  display: flex;
+  padding: 10px 20px 25px;
+  text-decoration: none;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  .bottom__bar__show__main {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+}
+
+
 
 
 // .buttonIsClicked {

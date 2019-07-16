@@ -1,0 +1,10 @@
+<div class="bottom__bar__container">
+  <div class="bottom__bar__initial">
+      Initial
+  </div>
+  <div class="bottom__bar__show">
+    <div class="bottom__bar__show__main">
+      Words are words
+    </div>
+  </div>
+</div>

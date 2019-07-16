@@ -8,6 +8,11 @@
   // font-family: 'Noto Sans', sans-serif;
 }
 
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+
 a {
   text-decoration: none;
 }
