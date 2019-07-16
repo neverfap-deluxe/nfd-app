@@ -124,7 +124,7 @@
     <h2 class="feeling__post__relapse__item">Obsessed.</h2>
     <h2 class="feeling__post__relapse__item">Unfocused.</h2>
   </div>
-  <h2 style="color: black; margin-top: 4rem;">And so much more...</h2>
+  <h2 style="color: #404242; margin-top: 4rem;">And so much more...</h2>
 </div>
 
   <div class="single__wrapper">
@@ -166,8 +166,8 @@
   </div>
 
   <div class="feeling__post__relapse">
-    <h2 style="color: black;">Listen, you ate too much candy.</h2>
-    <h1 style="color: black;">And now your head is in candy land.</h1>
+    <h2 style="color: #404242;">Listen, you ate too much candy.</h2>
+    <h1 style="color: #404242;">And now your head is in candy land.</h1>
 
     <div style="height: 2px; width: 100%; background: #00ffee;"></div>
     <div style="height: 2px; width: 100%; background: rgba(255,46,182,1);"></div>
@@ -194,8 +194,8 @@
     <div style="height: 4096px; width: 100%; background: #00ffee;"></div>
     <div style="height: 4096px; width: 100%; background: rgba(255,46,182,1);"></div>
 
-    <h1 style="color: black; margin-top: 3rem;">It hurts, I know.</h1>
-    <h1 style="color: black; margin-top: 3rem;">But I promise you're going to be fine.</h1>
+    <h1 style="color: #404242; margin-top: 3rem;">It hurts, I know.</h1>
+    <h1 style="color: #404242; margin-top: 3rem;">But I promise you're going to be fine.</h1>
   </div>
 
 
@@ -214,7 +214,7 @@
   <div class="guide__banner" style="border-bottom: 4px solid black;">
     <div class="guide__suggestion__container">
       <div class="black__banner__title__container">
-        <h2 class="black__banner__title" style="margin-bottom: 3rem;">Here's your new <span class="black__banner__broad" style="color: black;">#process</span> sugar daddy.</h2>
+        <h2 class="black__banner__title" style="margin-bottom: 3rem;">Here's your new <span class="black__banner__broad" style="color: #404242;">#process</span> sugar daddy.</h2>
         <div class="guide__suggestion">
           <h1 class="guide__suggestion__number">1.</h1>
           <h1 class="guide__suggestion__title">Identify the self-limiting beliefs holding us back</h1>

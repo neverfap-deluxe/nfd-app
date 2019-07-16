@@ -31,7 +31,7 @@
 
   .mobile__menu__overlay__button:hover .mobile__span {
     box-shadow: -2px 2px 0px 0px black;
-  }  
+  }
 
   .header__links {
     display: flex;
@@ -134,7 +134,7 @@
 
   .header__link {
   // border-bottom: 5px solid rgb(0, 255, 0);
-  // color: black;
+  // color: #404242;
   // border-bottom: 5px solid #00ffee;
   }
 }
@@ -166,11 +166,11 @@
     .header__links {
       // border-right: 5px solid black;
       // border-left: 5px solid black;
-  
+
       .header__link__wrapper--main {
         display: block;
       }
-      
+
       .header__link__wrapper {
         // border-bottom: 5px solid black;
 
@@ -186,7 +186,7 @@
     .header__links {
       .header__link__wrapper--disappear {
         display: block;
-      }  
+      }
     }
   }
 }
@@ -202,7 +202,7 @@
 // .header__link__wrapper > .header__link {
 //   display: inherit;
 //   transform: scale(0.7) rotate(2deg) skew(20deg);
-//   color: black;
+//   color: #404242;
 // }
 
 // // these might possibly need to be the element under .header__link__wrapper

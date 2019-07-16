@@ -23,7 +23,7 @@
       background: black;
       height: 3px;
       box-shadow: -2px 2px 0px 0px #00ffee;
-  
+
       transition: .2s box-shadow;
     }
   }
@@ -44,7 +44,7 @@
     padding-right: 1rem;
   }
 
-  
+
   .login__top__button:hover {
     box-shadow: -8px 8px 0px 0px rgb(249, 104, 84);
   }
@@ -57,29 +57,29 @@
 
     a {
       background: white;
-      color: black;
-  
+      color: #404242;
+
       display: flex;
       justify-content: center;
       align-items: center;
       border: 2px solid black;
       height: 2.2rem;
       min-width: 6rem;
-  
+
       margin-bottom: 1rem;
-  
+
       cursor: pointer;
-  
+
       margin-right: 0.6rem;
       box-shadow: -5px 5px 0px 0px #00ffee;
-  
+
       transition: box-shadow .3s;
-      .login__top__button__text {  
-        color: black;
-        font-size: 0.9rem; 
+      .login__top__button__text {
+        color: #404242;
+        font-size: 0.9rem;
       }
-    }    
-    
+    }
+
     a:hover {
       box-shadow: -8px 8px 0px 0px rgb(249, 104, 84);
     }
@@ -111,9 +111,9 @@
     }
     .login__top__title {
       padding: 1rem;
-      margin-right: 1rem;      
+      margin-right: 1rem;
     }
-  }  
+  }
  }
 
 @media screen and (min-width: 768px) {
@@ -121,7 +121,7 @@
     .login__top__title {
       display: block;
     }
-  }  
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -129,7 +129,7 @@
     .login__top__title {
       display: block;
     }
-  }  
+  }
 }
 
 

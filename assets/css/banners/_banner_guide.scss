@@ -29,7 +29,7 @@
   }
 
   .summary__items {
-    color: black;
+    color: #404242;
     background: white;
     border: 4px solid white;
     padding: 1rem;
@@ -59,7 +59,7 @@
   }
 
   p {
-    color: black;
+    color: #404242;
     border: 4px solid white;
     padding: 1.4rem;
 
@@ -116,13 +116,13 @@
 }
 .guide__suggestion__number {
   display: none;
-  color: black;
+  color: #404242;
 }
 .guide__suggestion__title {
   display: flex;
   align-items: center;
 
-  color: black;
+  color: #404242;
   border: 4px solid black;
   background: white;
   box-shadow: -5px 5px 0px 0px #00ffee;
@@ -158,7 +158,7 @@
     box-shadow: -5px 5px 0px 0px black;
     // text-shadow: -0px 0px rgba(255,46,182,1);
     background: white;
-    color: black;
+    color: #404242;
 
     transition: .2s;
   }

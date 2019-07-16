@@ -28,7 +28,7 @@
 
   // width: 100vw;
 
-  .account__info__title {    
+  .account__info__title {
     margin-right: 0.5rem;
     font-size: 0.9rem;
     padding: 1rem;
@@ -59,12 +59,12 @@
     box-shadow: -5px 5px 0px 0px #00ffee;
 
     transition: box-shadow .3s;
-    .account__info__button__text {  
-      color: black;
-      font-size: 0.9rem; 
-    }  
+    .account__info__button__text {
+      color: #404242;
+      font-size: 0.9rem;
+    }
   }
-  
+
   .account__info__button:hover {
     box-shadow: -8px 8px 0px 0px rgb(249, 104, 84);
   }
@@ -110,12 +110,12 @@
     }
     .account__info__title {
       padding: 1rem;
-      margin-right: 1rem;      
+      margin-right: 1rem;
     }
-  }  
+  }
   .banner__points {
     margin-top: 1.2rem;
-    margin-bottom: 1.2rem;  
+    margin-bottom: 1.2rem;
   }
 }
 
@@ -126,7 +126,7 @@
   }
   .show__large {
     display: block;
-  }  
+  }
   .banner__points {
   }
 
