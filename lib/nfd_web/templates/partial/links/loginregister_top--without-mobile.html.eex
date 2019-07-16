@@ -1,4 +1,4 @@
-<div class="login__top">  
+<div class="login__top login__top--without--mobile">  
   <div class="account__buttons__login">
     <span class="login__top__button__register">
         <%= link to: Routes.pow_registration_path(@conn, :new) do %>

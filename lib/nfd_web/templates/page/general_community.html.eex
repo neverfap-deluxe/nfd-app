@@ -177,7 +177,6 @@
 
 <%= partial "links/paypal.html", assigns %>
 
-
 <div style="margin-top: 5rem;"></div>
 <%= partial "banners/new_to_nfd_banner.html", assigns %>
 <%= partial "banners/reddit_question_banner.html", assigns %>

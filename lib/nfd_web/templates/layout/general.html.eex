@@ -11,25 +11,28 @@
     <!-- TODO: Insert image into calendly. -->
 
   <body>
-    <%#= partial "sidebar_nav.html", assigns %>
-    <!-- <div class="left__sidebar__container">yo</div> -->
+    <!-- Mobile Menu -->
     <div id="mobile__menu__overlay__background__id" class="mobile__menu__overlay__background"></div>
+    <!-- Cookies Popup -->
     <div class="main__dark" id="cookies__popup">
       <%= partial "cookies_popup.html",%{ conn: @conn } %>      
-      <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/cookiepopup.js") %>"></script>
+      <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/cookiepopup.js") %>'></script>
     </div>
-
+    <!-- Header -->
     <%= partial "layout/header.html", assigns %>
-
+    <!-- Main -->
     <main class="main main__dark" id="general__main__content">
       <%= render @view_module, @view_template, assigns %>
     </main>
-
+    <!-- Footer -->
     <div class="main__dark" id="footer">
       <%= partial "layout/footer.html", assigns %>      
     </div>
-
-    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
-    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/darkmode.js") %>"></script>
+    <!-- Bottom Bar -->
+    <%= partial "bottom_bar.html", assigns %>
+    <!-- JavaScript -->
+    <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/app.js") %>'></script>
+    <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/darkmode.js") %>'></script>
+    <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/bottombar.js") %>'></script>
   </body>
 </html>

@@ -1,3 +1,4 @@
+
 // header
 
 #articles__dropdown, #practices__dropdown {
@@ -225,7 +226,9 @@
 
 
 .cookies__popup__container {
+  display: none;
   background: white;
+  box-shadow: -6px 6px 0px 0px #00ffee;
   color: black;
   position: fixed;
   padding: 0.8rem;
@@ -233,6 +236,15 @@
   z-index: 9000;
 
   .cookies__popup__container__inner {
+    span {
+      padding-left: 0.4rem;
+    }
+
+    i {
+      padding-left: 0.8rem;
+      padding-right: 0.8rem;
+    }
+
     p {
       font-size: 0.9rem;
       margin-bottom: 0.4rem;
@@ -271,10 +283,12 @@
 }
 
 
+
 @media screen and (min-width: 420px) {
   .cookies__popup__container {
-    bottom: 2rem;
-    left: 1.6rem;
+    display: block;
+    bottom: 1.6rem;
+    left: 2.4rem;
 
     width: 300px;
 
@@ -285,7 +299,20 @@
 }
 
 
+.bottom__bar__container__display__none {
+  // visibility: hidden!important;
+  opacity: 0!important;
+  bottom: -36px!important;
+  z-index: -200;
+  margin: 0 20px;
+  opacity: 0;
+  transform: scaleY(0);
+  transition: .2s;
+}
+
+
 .bottom__bar__container {
+  transition: .1s opacity;
   position: fixed;
   bottom: 0;
   visibility: visible;
@@ -295,7 +322,7 @@
   opacity: 1;
   display: block;
 
-  z-index: 3;
+  z-index: 3000;
   transition: all .25s ease-in-out;
   flex-flow: column nowrap;
 
@@ -311,8 +338,15 @@
     font-size: 12px;
     transition: all .3s ease-in-out;
     transform-origin: left;
-    color: #778EB1;
+    // color: #778EB1;
+    color: #23272A;
   }
+}
+
+.bottom__bar__container:hover .bottom__bar__initial {
+  margin: 0 20px;
+  opacity: 0;
+  transform: scaleY(0);
 }
 
 .bottom__bar__container:hover {
@@ -331,6 +365,16 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+
+    .bottom__bar__show__main__section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h5 {
+        font-size: 1rem;
+      }
+    }
   }
 }
 

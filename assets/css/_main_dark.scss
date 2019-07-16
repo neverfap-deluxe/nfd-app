@@ -1,5 +1,6 @@
 .main__dark {
   background: #23272A;
+  transition: .2s;
 
   // main
   .link {
@@ -156,6 +157,15 @@
     background: white; 
     // color: white;
   }
+
+  // .account__info, .login__top {
+  //   background: #23272A; 
+  //   color: white;
+  // }
+  // #dark__mode__button {
+  //   color: black;
+  // }
+
 
   .footer__designed {
     color: white;

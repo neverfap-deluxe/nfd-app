@@ -56,6 +56,9 @@
     margin-top: 1rem;
 
     a {
+      background: white;
+      color: black;
+  
       display: flex;
       justify-content: center;
       align-items: center;
@@ -111,17 +114,24 @@
       margin-right: 1rem;      
     }
   }  
-  
-}
-
+ }
 
 @media screen and (min-width: 768px) {
+  .login__top--without--mobile {
+    .login__top__title {
+      display: block;
+    }
+  }  
+}
+
+@media screen and (min-width: 1024px) {
   .login__top {
     .login__top__title {
       display: block;
     }
   }  
 }
+
 
 // @media screen and (min-width: 1280px) {
 

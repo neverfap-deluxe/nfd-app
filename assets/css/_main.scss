@@ -296,7 +296,7 @@ hr {
     position: absolute;
     right: 90px;
     cursor: pointer;
-    transition: .2s;
+    transition: .2s box-shadow, .2s background;
     // visibility: hidden;
 
     border: 2px solid black;
