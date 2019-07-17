@@ -8,7 +8,7 @@
   // width: 100%;
   // height: 190px;
   background: lighten(orange, 10%);
-  box-shadow: -5px 5px 0px 0px #00ffee;
+  box-shadow: -5px 5px 0px 0px $cyan;
   z-index: 200;
 }
 .header__banner__home {
@@ -96,9 +96,9 @@
     flex: 1;
     margin: 0.4rem;
     padding: 1rem;
-    background: #fdfdfd;
+    background: $white-text;
     cursor: pointer;
-    color: #404242;
+    color: $black-text;
     transition: .1s box-shadow;
 
     h3, h2, p {
@@ -110,13 +110,13 @@
     .h3__yus {
       display: inline-block;
       padding: 0.6rem;
-      color: #fdfdfd;
+      color: $white-text;
 
-      background: #23272A;
+      background: $black-background;
       transition: .2s text-shadow;
     }
     .h3__reade {
-      border: 4px solid #23272A;
+      border: 4px solid $black-background;
       position: relative;
       top: -4px;
       transition: .2s box-shadow;
@@ -125,22 +125,22 @@
     h3 {
       // display: inline-block;
       padding: 0.6rem;
-      // color: #fdfdfd;
+      // color: $white-text;
 
-      // background: #23272A;
+      // background: $black-background;
       // transition: .1s text-shadow;
     }
   }
 
   .header__module:hover {
-    box-shadow: -5px 5px 0px 0px #00ffee;
+    box-shadow: -5px 5px 0px 0px $cyan;
   }
   .header__module:hover .h3__yus {
-    text-shadow: -2px 2px rgba(255,46,182,1);
+    text-shadow: -2px 2px $magenta;
   }
 
   .header__module:hover .h3__reade {
-    box-shadow: -5px 5px 0px 0px #00ffee;
+    box-shadow: -5px 5px 0px 0px $cyan;
   }
 
   .header__module--flex {
@@ -152,18 +152,18 @@
   .h3__tiny {
     font-size: 0.5rem;
     line-height: 1rem;
-    background: #fdfdfd;
-    color: #404242;
+    background: $white-text;
+    color: $black-text;
     position: absolute;
     bottom: 0;
     left: 26px;
   }
 
   .header__discord__button {
-    border: 4px solid #fdfdfd;
+    border: 4px solid $white-text;
   }
   // .header__discord__button:hover {
-  //   border: 4px solid #23272A;
+  //   border: 4px solid $black-background;
   // }
 
   .header__discord__button__logo {

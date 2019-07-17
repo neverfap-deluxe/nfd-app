@@ -9,11 +9,11 @@
 
 .discord__banner {
   padding: 0.5rem;
-  background: #23272A;
+  background: $black-background;
   margin-bottom: 3rem;
 
   .discord__banner__title {
-    color: #fdfdfd;
+    color: $white-text;
     padding-top: 2rem;
     padding-bottom: 2rem;
     padding-left: 1rem;
@@ -26,31 +26,31 @@
     position: relative;
     padding: 2rem;
 
-    background: #fdfdfd;
-    // border: 4px solid #00ffee;
+    background: $white-text;
+    // border: 4px solid $cyan;
   }
 
   .discord__banner__title--special {
-    // border: 16px solid #00ffee;
+    // border: 16px solid $cyan;
     font-size: 1.5rem;
     line-height: 2rem;
-    border: 32px solid rgba(255,46,182,1);
+    border: 32px solid $magenta;
     padding: 2rem;
 
-    // background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
-    // background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
-    // background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
-    // background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
-    // background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
-    // background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
+    // background: -moz-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+    // background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, $magenta), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+    // background: -webkit-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+    // background: -o-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+    // background: -ms-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+    // background: linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* w3c */
     // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */    font-size: 3rem;
-    // color: #fdfdfd;
+    // color: $white-text;
   }
 
   .discord__banner__title--special--two {
-    border: 36px solid #00ffee;
+    border: 36px solid $cyan;
     overflow: hidden;
-    // color: #fdfdfd;
+    // color: $white-text;
 
     font-size: 2rem;
     line-height: 3rem;
@@ -69,16 +69,16 @@
     }
 
     .discord__banner__title--special {
-      // border: 16px solid #00ffee;
+      // border: 16px solid $cyan;
       font-size: 2.5rem;
       line-height: 3.5rem;
-      border: 32px solid rgba(255,46,182,1);
+      border: 32px solid $magenta;
     }
 
     .discord__banner__title--special--two {
-      border: 48px solid #00ffee;
+      border: 48px solid $cyan;
       overflow: hidden;
-      // color: #fdfdfd;
+      // color: $white-text;
 
       font-size: 4rem;
       line-height: 5.5rem;
@@ -92,7 +92,7 @@
     padding: 5rem;
 
     .discord__banner__title--special--two {
-      border: 64px solid #00ffee;
+      border: 64px solid $cyan;
       overflow: hidden;
       font-size: 5rem;
       line-height: 7rem;
@@ -106,14 +106,14 @@
     padding: 5rem;
 
     .discord__banner__title--special {
-      // border: 16px solid #00ffee;
+      // border: 16px solid $cyan;
       font-size: 4rem;
       line-height: 6.5rem;
-      border: 64px solid rgba(255,46,182,1);
+      border: 64px solid $magenta;
     }
 
     .discord__banner__title--special--two {
-      border: 64px solid #00ffee;
+      border: 64px solid $cyan;
       overflow: hidden;
       font-size: 8rem;
       line-height: 12rem;

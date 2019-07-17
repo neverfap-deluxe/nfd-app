@@ -14,8 +14,8 @@
     justify-content: space-around;
     align-items: center;
 
-    background: #fdfdfd;
-    border: 2px solid #23272A;
+    background: $white-text;
+    border: 2px solid $black-background;
     box-sizing: border-box;
     width: 7.7rem;
     height: 2.25rem;
@@ -26,7 +26,7 @@
     cursor: pointer;
 
     .account__paypal__button__text {
-      color: #404242;
+      color: $black-text;
       margin: 0;
       font-size: 0.69rem;
       position: relative;

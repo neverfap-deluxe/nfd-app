@@ -22,16 +22,16 @@
   </div>
 </div>
 
-<div class="guide__banner" style="border-top: 4px solid #404242; border-bottom: 4px solid #404242;">
+<div class="guide__banner" style="border-top: 4px solid black; border-bottom: 4px solid black;">
   <div class="guide__suggestion__container">
     <div class="black__banner__title__container">
       <h2 class="black__banner__title black__banner__title--reddit__guidelines">Information:</h2>
-      <p class="articles__link cursor__default" style="background: #fdfdfd; font-size: 1.2rem;">A brief description of who you are.</p>
-      <p class="articles__link cursor__default" style="background: #fdfdfd; font-size: 1.2rem;">Your background and history with porn addiction.</p>
-      <p class="articles__link cursor__default" style="background: #fdfdfd; font-size: 1.2rem;">Your progress with porn addiction recovery so far.</p>
-      <p class="articles__link cursor__default" style="background: #fdfdfd; font-size: 1.2rem;">A list of some of the things you personally struggle with.</p>
-      <p class="articles__link cursor__default" style="background: #fdfdfd; font-size: 1.2rem;">A list of the coping mechanisms you rely on.</p>
-      <p class="articles__link cursor__default" style="background: #fdfdfd; font-size: 1.2rem;">Where you would like to see yourself in the future.</p>
+      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">A brief description of who you are.</p>
+      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">Your background and history with porn addiction.</p>
+      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">Your progress with porn addiction recovery so far.</p>
+      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">A list of some of the things you personally struggle with.</p>
+      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">A list of the coping mechanisms you rely on.</p>
+      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">Where you would like to see yourself in the future.</p>
     </div>
   </div>
 </div>
@@ -40,14 +40,14 @@
   <%= partial "links/reddit.html", assigns %>
 <!-- </div> -->
 
-<div class="guide__banner" style="border-top: 4px solid #404242; border-bottom: 4px solid #404242;">
+<div class="guide__banner" style="border-top: 4px solid black; border-bottom: 4px solid black;">
   <div class="guide__suggestion__container">
     <div class="black__banner__title__container">
       <h2 class="black__banner__title black__banner__title--reddit__guidelines">Example Titles:</h2>
-      <p class="articles__link cursor__default" style="background: #fdfdfd; font-size: 1.2rem;">3 Days PMO FREE. #NewNeverFapper</p>
-      <p class="articles__link cursor__default" style="background: #fdfdfd; font-size: 1.2rem;">How do I get started with meditation? #NewNeverFapper</p>
-      <p class="articles__link cursor__default" style="background: #fdfdfd; font-size: 1.2rem;">Male 16 new to NeverFap Deluxe! #NewNeverFapper</p>
-      <p class="articles__link cursor__default" style="background: #fdfdfd; font-size: 1.2rem;">Struggling to get past a two weeks. #NewNeverFapper</p>
+      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">3 Days PMO FREE. #NewNeverFapper</p>
+      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">How do I get started with meditation? #NewNeverFapper</p>
+      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">Male 16 new to NeverFap Deluxe! #NewNeverFapper</p>
+      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">Struggling to get past a two weeks. #NewNeverFapper</p>
     </div>
   </div>
 </div>

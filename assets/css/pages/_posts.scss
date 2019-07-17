@@ -9,7 +9,7 @@
       .post__title {
         font-size: 1.4rem!important;
         line-height: 2.2rem!important;  
-        color: #fdfdfd!important;
+        color: $white-text!important;
       }
     }
   }
@@ -24,19 +24,19 @@
     justify-content: space-between;
     position: relative;
 
-    background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
-    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
-    background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
-    background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
-    background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
+    background: -moz-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, $magenta), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+    background: linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* w3c */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
   
     margin-bottom: 2rem;
-    box-shadow: -5px 5px 0px 0px #23272A;
-    color: #fdfdfd;
-    border: 4px solid #fdfdfd;
-    // background: #23272A;
+    box-shadow: -5px 5px 0px 0px $black-background;
+    color: $white-text;
+    border: 4px solid $white-text;
+    // background: $black-background;
 
     padding: 1rem;      
     cursor: pointer;
@@ -48,7 +48,7 @@
       .post__title {
         font-size: 2rem;
         line-height: 3rem;
-        color: #fdfdfd;
+        color: $white-text;
       }
     }
     .post__right {
@@ -76,7 +76,7 @@
     }
 
     .post:hover {
-      box-shadow: -10px 10px 0px 0px #00ffee;
+      box-shadow: -10px 10px 0px 0px $cyan;
       bottom: -5px;
       left: -5px;
     }

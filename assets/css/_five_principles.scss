@@ -8,7 +8,7 @@
   list-style: none;
   font-size: 1.5rem;
 
-  border-bottom: 5px solid #404242;
+  border-bottom: 5px solid $black-text;
   margin-bottom: 1.8rem;
 
   position: relative;
@@ -82,10 +82,10 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  border-top: 5px solid #404242;
-  border-bottom: 5px solid #404242;
+  border-top: 5px solid $black-text;
+  border-bottom: 5px solid $black-text;
   padding-top: 5px;
-  background: #fdfdfd;
+  background: $white-text;
 }
 
 .homepage__hero__principle__item {
@@ -113,7 +113,7 @@
   padding: 0;
 
   .five__principles__guide__item__cont {
-    // background: #23272A;
+    // background: $black-background;
   }
 
   .five__principles__guide__item {
@@ -121,14 +121,14 @@
     width: 90%;
     font-size: 1rem;
     margin-top: 1rem;
-    border-bottom: 5px solid rgba(255,46,182,1);
-    // color: #fdfdfd;
+    border-bottom: 5px solid $magenta;
+    // color: $white-text;
   }
 
   .five__principles__guide__item::before {
     @include principle__item__before();
     width: 100%;
-    background-color: #00ffee;
+    background-color: $cyan;
     height: 8px;
   }
 }
@@ -142,7 +142,7 @@
   margin-bottom: 2.5rem;
 
   h3 {
-    border: 3px solid #404242;
+    border: 3px solid $black-text;
     padding: 0.6rem;
   }
 }
@@ -164,7 +164,7 @@
 
   .post__five__principles__item::before {
     @include principle__item__before();
-    background-color: rgba(255,46,182,1);
+    background-color: $magenta;
   }
 
   .post__five__principles__item--introduction {
@@ -176,7 +176,7 @@
   }
 
   .post__five__principles__item--balance-over-reward {
-    color: #00ffee;
+    color: $cyan;
   }
 
   .post__five__principles__item--struggle-over-none {
@@ -185,7 +185,7 @@
 
   .post__five__principles__item--awareness-over-all {
     // color: rgb(116, 101, 255);
-    color: #fdfdfd;
+    color: $white-text;
   }
 
   .post__five__principles__item--uncondition-over-judgement {

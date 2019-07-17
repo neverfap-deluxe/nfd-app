@@ -167,25 +167,25 @@
 
       <div class="unhealthy__banner">
         <h2 class="margin__top__mobile">So you may be wondering.</h2>
-        <h1 class="unhealthy__banner__title">What are some of these <span style="color: #fdfdfd;">unhealthy coping mechanisms</span>?</h1>
+        <h1 class="unhealthy__banner__title">What are some of these <span style="color: white;">unhealthy coping mechanisms</span>?</h1>
 
         <div class="homepage__section__closer">
           <span class="articles__link--magenta cursor__default">Well, they include things like.</span>
 
           <h2 class="banner__points">Self-criticism as a means of motivation.</h2>
-          <div style="border-top: 3px solid #404242;"></div>
+          <div style="border-top: 3px solid black;"></div>
           <h2 class="banner__points">Judging others to feel better about ourselves.</h2>
-          <div style="border-top: 3px solid #404242;"></div>
+          <div style="border-top: 3px solid black;"></div>
           <h2 class="banner__points">Obsession with the intent of keeping our minds distracted.</h2>
-          <div style="border-top: 3px solid #404242;"></div>
+          <div style="border-top: 3px solid black;"></div>
           <h2 class="banner__points">Incessant rationalisation of our thoughts.</h2>
-          <div style="border-top: 3px solid #404242;"></div>
+          <div style="border-top: 3px solid black;"></div>
           <h2 class="banner__points">Pushing ourselves excessively as a solution to our feelings of inadequacy.</h2>
-          <div style="border-top: 3px solid #404242;"></div>
+          <div style="border-top: 3px solid black;"></div>
           <h2 class="banner__points">Embracing depression as a coping mechanism.</h2>
-          <div style="border-top: 3px solid #404242;"></div>
+          <div style="border-top: 3px solid black;"></div>
           <h2 class="banner__points">Escapism.</h2>
-          <div class="show__large" style="border-top: 3px solid #404242;"></div>
+          <div class="show__large" style="border-top: 3px solid black;"></div>
 
         </div>
 

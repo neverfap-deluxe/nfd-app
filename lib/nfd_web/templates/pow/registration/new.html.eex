@@ -19,8 +19,8 @@
     <div class="form__wrapper session__form__wrapper">
       <%= form_for @changeset, @action, [as: :user], fn f -> %>
         <%= if @changeset.action do %>
-          <div style="color: #fdfdfd;" class="alert alert-danger">
-            <p style="color: #fdfdfd;">Oops, something went wrong! Please check the errors below.</p>
+          <div style="color: white;" class="alert alert-danger">
+            <p style="color: white;">Oops, something went wrong! Please check the errors below.</p>
           </div>
         <% end %>
     

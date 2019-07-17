@@ -1,7 +1,7 @@
 .mobile__menu__overlay__background {
   display: none;
   position: absolute;
-  background: #23272A;
+  background: $black-background;
   opacity: 0.6;
 
   top: 0;
@@ -35,23 +35,23 @@
   cursor: pointer;
 
   .mobile__span {
-    background: #23272A;
+    background: $black-background;
     height: 3px;
-    box-shadow: -2px 2px 0px 0px #00ffee;
+    box-shadow: -2px 2px 0px 0px $cyan;
 
     transition: .2s box-shadow;
   }
 }
 
 .mobile__menu__overlay__button:hover .mobile__span {
-  box-shadow: -2px 2px 0px 0px #fdfdfd;
+  box-shadow: -2px 2px 0px 0px $white-text;
 }
 
 .mobile__overlay__close {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 4px solid #23272A;
+  border: 4px solid $black-background;
   cursor: pointer;
   width: 37px;
   height: 36px;
@@ -68,7 +68,7 @@
 }
 
 .mobile__overlay__close:hover {
-  box-shadow: -5px 5px 0px 0px #00ffee;
+  box-shadow: -5px 5px 0px 0px $cyan;
 }
 
 .mobile__overlay__close__container {
@@ -76,8 +76,8 @@
   // flex-direction: row-reverse;
   // justify-content: space-between;
   // align-items: center;
-  // background: #fdfdfd;
-  // box-shadow: -5px 5px 0px 0px #23272A;
+  // background: $white-text;
+  // box-shadow: -5px 5px 0px 0px $black-background;
 
   // margin-bottom: 1.6rem;
 }

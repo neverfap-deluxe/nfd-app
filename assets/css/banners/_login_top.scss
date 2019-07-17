@@ -6,10 +6,10 @@
   // display: none;
   justify-content: center;
   align-items: center;
-  border-top: 5px solid #00ffee;
-  border-bottom: 5px solid #00ffee;
+  border-top: 5px solid $cyan;
+  border-bottom: 5px solid $cyan;
   // padding-top: 2rem;
-  // border-bottom: 5px solid #00ffee;
+  // border-bottom: 5px solid $cyan;
 
   min-height: 3rem;
 
@@ -20,16 +20,16 @@
     display: flex;
 
     .mobile__span {
-      background: #23272A;
+      background: $black-background;
       height: 3px;
-      box-shadow: -2px 2px 0px 0px #00ffee;
+      box-shadow: -2px 2px 0px 0px $cyan;
 
       transition: .2s box-shadow;
     }
   }
 
   .mobile__menu__overlay__button:hover .mobile__span {
-    box-shadow: -2px 2px 0px 0px #fdfdfd;
+    box-shadow: -2px 2px 0px 0px $white-text;
   }
 
   .login__top__title {
@@ -56,13 +56,13 @@
     margin-top: 1rem;
 
     a {
-      background: #fdfdfd;
-      color: #404242;
+      background: $white-text;
+      color: $black-text;
 
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 2px solid #23272A;
+      border: 2px solid $black-background;
       height: 2.2rem;
       min-width: 6rem;
 
@@ -71,11 +71,11 @@
       cursor: pointer;
 
       margin-right: 0.6rem;
-      box-shadow: -5px 5px 0px 0px #00ffee;
+      box-shadow: -5px 5px 0px 0px $cyan;
 
       transition: box-shadow .3s;
       .login__top__button__text {
-        color: #404242;
+        color: $black-text;
         font-size: 0.9rem;
       }
     }

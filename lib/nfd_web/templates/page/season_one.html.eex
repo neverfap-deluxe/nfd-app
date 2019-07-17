@@ -157,7 +157,7 @@
     <div class="homepage__section__closer homepage__section--test--black" style="width: 400px;">
       <span class="articles__link--magenta cursor__default">Hello!</span>
       <h2 class="banner__points">Don't forget your daily meditatiおn!</h2>
-      <div style="border-top: 3px solid #404242;"></div>
+      <div style="border-top: 3px solid black;"></div>
       <!-- <div class="homepage__tldr--signature--top" style="top: 1.2rem;">NeverFap Deluxe.</div> -->
     </div>
     <div style="margin-top: 18rem; margin-bottom: 18rem;"></div>
@@ -165,7 +165,7 @@
     <div class="homepage__section__closer homepage__section--test--black" style="width: 400px;">
       <span class="articles__link--magenta cursor__default">It's just your mental health.</span>
       <h2 class="banner__points">Only the most important thing you have as a modern human being.</h2>
-      <div style="border-top: 3px solid #404242;"></div>
+      <div style="border-top: 3px solid black;"></div>
       <!-- <div class="homepage__tldr--signature--top" style="top: 1.2rem;">NeverFap Deluxe.</div> -->
     </div>
     <div style="margin-top: 18rem; margin-bottom: 18rem;"></div>
@@ -173,7 +173,7 @@
     <div class="homepage__section__closer homepage__section--test--black" style="width: 400px;">
       <span class="articles__link--magenta cursor__default">If I may ask.</span>
       <h2 class="banner__points">Do you have a strategy in place to not take your emotions personally?</h2>
-      <div style="border-top: 3px solid #404242;"></div>
+      <div style="border-top: 3px solid black;"></div>
       <!-- <div class="homepage__tldr--signature--top" style="top: 1.2rem;">NeverFap Deluxe.</div> -->
     </div>
     <div style="margin-top: 18rem; margin-bottom: 18rem;"></div>
@@ -188,7 +188,7 @@
     <div class="homepage__section__closer homepage__section--test--black" style="width: 400px;">
       <span class="articles__link--magenta cursor__default" style="border: 5px solid rgba(255,46,182,1);">Who knew.</span>
       <h2 class="banner__points">You'd end up developing a serious addiction.</h2>
-      <div style="border-top: 3px solid #fdfdfd;"></div>
+      <div style="border-top: 3px solid white;"></div>
       <!-- <div class="homepage__tldr--signature--top" style="top: 1.2rem;">NeverFap Deluxe.</div> -->
     </div>
   <div style="margin-top: 18rem; margin-bottom: 18rem;"></div>
@@ -196,7 +196,7 @@
     <div class="homepage__section__closer homepage__section--test--black" style="width: 400px;">
       <span class="articles__link--magenta cursor__default" style="border: 5px solid rgba(255,46,182,1);">You have a mental health problem.</span>
       <h2 class="banner__points">Which is why it's important to work on mental health solutions.</h2>
-      <div style="border-top: 3px solid #fdfdfd;"></div>
+      <div style="border-top: 3px solid white;"></div>
       <!-- <div class="homepage__tldr--signature--top" style="top: 1.2rem;">NeverFap Deluxe.</div> -->
     </div>
   <div style="margin-top: 18rem; margin-bottom: 18rem;"></div>
@@ -204,7 +204,7 @@
     <div class="homepage__section__closer homepage__section--test--black" style="width: 400px;">
       <span class="articles__link--magenta cursor__default" style="border: 5px solid rgba(255,46,182,1);">NeverFap Deluxe is easy when you're calm.</span>
       <h2 class="banner__points">So why have you been making it so hard for yourself!?</h2>
-      <div style="border-top: 3px solid #fdfdfd;"></div>
+      <div style="border-top: 3px solid white;"></div>
       <!-- <div class="homepage__tldr--signature--top" style="top: 1.2rem;">NeverFap Deluxe.</div> -->
     </div>
     <div style="margin-top: 18rem; margin-bottom: 18rem;"></div>

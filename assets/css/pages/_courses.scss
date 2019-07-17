@@ -11,8 +11,8 @@
   margin-bottom: 2rem;
   display: inline-block;
 
-  color: #404242;
-  background: #fdfdfd;
+  color: $black-text;
+  background: $white-text;
   // padding: 1rem;
   padding-left: 1.3rem;
   padding-right: 1.6rem;
@@ -21,12 +21,12 @@
   cursor: pointer;
   transition: box-shadow .3s;
 
-  // border: 3px solid #00ffee;
-  box-shadow: -5px 5px 0px 0px #00ffee;
+  // border: 3px solid $cyan;
+  box-shadow: -5px 5px 0px 0px $cyan;
 
   .five__principles__list__page {
     .five__principles__item__page {
-      border-bottom: 5px solid #00ffee;
+      border-bottom: 5px solid $cyan;
       top: 1rem;
 
       transform: scale(1) rotate(-2deg) skew(-10deg);
@@ -43,7 +43,7 @@
 }
 
 .homepage__process__title--courses:hover {
-  box-shadow: -10px 10px 0px 0px #23272A;
+  box-shadow: -10px 10px 0px 0px $black-background;
 }
 
 .homepage__process__link--courses {

@@ -1,7 +1,7 @@
 .seven__day__kickstarter__banner {
-  background: #fdfdfd;
-  border-top: 4px solid #404242;
-  border-bottom: 4px solid #404242;
+  background: $white-text;
+  border-top: 4px solid $black-text;
+  border-bottom: 4px solid $black-text;
 
   .seven__day__kickstarter__banner__inner {
     padding: 1.4rem;
@@ -9,50 +9,50 @@
 
   .banner__empty {
     height: 5rem;
-    background: #fdfdfd;
+    background: $white-text;
   }
 
   .banner__cyan {
     height: 2rem;
-    background: #00ffee;
+    background: $cyan;
   }
 
   .banner__magenta {
     height: 2rem;
-    background: rgba(255,46,182,1);
+    background: $magenta;
   }
 
   .banner__white {
     height: 2rem;
-    background: #fdfdfd;
+    background: $white-text;
   }
 }
 
 .seven__day__kickstarter__learn__more {
   line-height: 1.6rem;
-  color: #00ffee;
+  color: $cyan;
   transition: .1s text-shadow;
-  text-shadow: -1px 1px #404242;
+  text-shadow: -1px 1px $black-text;
 }
 
 .seven__day__kickstarter__learn__more:hover {
-  text-shadow: -2px 2px rgba(255,46,182,1);
+  text-shadow: -2px 2px $magenta;
 }
 
 .seven__day__kickstarter__banner__title {
-  text-shadow: 2px -2px #00ffee;
-  background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
-  background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
-  background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
-  background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
-  background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
+  text-shadow: 2px -2px $cyan;
+  background: -moz-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, $magenta), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+  background: linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* w3c */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
-  color: #fdfdfd;
+  color: $white-text;
   padding: 1rem;
   display: inline-block;
-  // border: 4px solid #23272A;
-  box-shadow: -6px 6px 0px 0px #00ffee;
+  // border: 4px solid $black-background;
+  box-shadow: -6px 6px 0px 0px $cyan;
 }
 
 .seven__day__kickstarter__banner__box {
@@ -70,8 +70,8 @@
 
   .seven__day__kickstarter__banner__item {
     display: inline-block;
-    // border: 3px solid #00ffee;
-    box-shadow: -3px 3px 0px 0px #00ffee;
+    // border: 3px solid $cyan;
+    box-shadow: -3px 3px 0px 0px $cyan;
     margin: 0.1rem;
     padding: 0.4rem;
     transition: .2s;
@@ -80,24 +80,24 @@
     width: 95%;
     cursor: default;
 
-    background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
-    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
-    background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
-    background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
-    background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
+    background: -moz-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, $magenta), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+    background: linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* w3c */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
-    color: #fdfdfd;
+    color: $white-text;
   }
 
   .seven__day__kickstarter__banner__item:hover {
-    // box-shadow: -5px 5px 0px 0px #fdfdfd;
+    // box-shadow: -5px 5px 0px 0px $white-text;
   }
 
   .seven__day__kickstarter__banner__item--page {
     display: inline-block;
-    border: 3px solid #00ffee;
-    box-shadow: -3px 3px 0px 0px #fdfdfd;
+    border: 3px solid $cyan;
+    box-shadow: -3px 3px 0px 0px $white-text;
     margin: 0.1rem;
     padding: 0.4rem;
     transition: .2s;
@@ -110,7 +110,7 @@
 .seven__day__kickstarter__banner__form {
   flex: 1;
   padding: 1rem;
-  border: 2px solid #23272A;
+  border: 2px solid $black-background;
   max-width: 400px;
 
   margin-top: 2.5rem;
@@ -157,7 +157,7 @@
     .seven__day__kickstarter__banner__item {
       width: initial;
       font-size: 0.9rem;
-      box-shadow: -5px 5px 0px 0px #00ffee;
+      box-shadow: -5px 5px 0px 0px $cyan;
       margin: 0.1rem;
       margin-top: 0.2rem;
       margin-right: 0.4rem;
@@ -170,7 +170,7 @@
     .seven__day__kickstarter__banner__item--page {
       width: initial;
       font-size: 0.9rem;
-      box-shadow: -5px 5px 0px 0px #fdfdfd;
+      box-shadow: -5px 5px 0px 0px $white-text;
       margin: 0.1rem;
       margin-top: 0.2rem;
       margin-right: 0.4rem;
@@ -181,7 +181,7 @@
     }
 
     .seven__day__kickstarter__banner__item:hover {
-      box-shadow: -8px 8px 0px 0px #fdfdfd;
+      box-shadow: -8px 8px 0px 0px $white-text;
     }
   }
 }

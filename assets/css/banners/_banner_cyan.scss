@@ -2,11 +2,11 @@
   box-sizing: border-box;
   // margin-top: 1.5rem;
   // margin-bottom: 1.5rem;
-  border-top: 1px solid #00ffee;
-  border-bottom: 1px solid #00ffee;
+  border-top: 1px solid $cyan;
+  border-bottom: 1px solid $cyan;
 
   width: 100%;
-  background: #00ffee;
+  background: $cyan;
   box-shadow: 0 14px 56px 0 rgba(0, 0, 0, 0.2), 0 12px 29px 0 rgba(0, 0, 0, 0.01);
 
   margin-top: 4rem;
@@ -18,25 +18,25 @@
 
   .cyan__banner__title {
     font-size: 1.2rem;
-    border: 1px solid #00ffee;
+    border: 1px solid $cyan;
     margin-top: 0;
     margin-bottom: 0;
 
     line-height: 3.4rem;
 
-    color: #fdfdfd;
+    color: $white-text;
     padding-left: 1rem;
 
-    background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
-    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
-    background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
-    background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
-    background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
+    background: -moz-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, $magenta), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+    background: linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* w3c */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
 
     .cyan__banner__bad {
-      color: #404242;
+      color: $black-text;
     }
   }
 }
@@ -54,14 +54,14 @@
     margin-top: 2rem;
     margin-bottom: 1rem;
 
-    border-top: 4px solid #00ffee;
-    border-bottom: 2px solid #00ffee;
+    border-top: 4px solid $cyan;
+    border-bottom: 2px solid $cyan;
 
     .cyan__banner__title--lead {
     }
 
     .cyan__banner__title {
-      border: 1px solid #fdfdfd;
+      border: 1px solid $white-text;
       margin-top: 0.9rem;
       margin-bottom: 0.9rem;
 

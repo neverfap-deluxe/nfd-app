@@ -1,49 +1,57 @@
 .main__dark {
-  background: #23272A;
+  background: $black-darkmode-background;
   transition: .2s;
+
+  strong {
+    text-decoration: underline;
+  }
 
   // main
   .link {
-    color: #dcddde;
+    color: $white-darkmode-text;
     text-decoration-line: underline;
-    text-decoration-color: rgba(255,46,182,1);
+    text-decoration-color: $magenta;
     cursor: pointer;
   }
 
   .link:hover {
-    border-bottom: 2px solid #dcddde;
+    border-bottom: 2px solid $white-darkmode-text;
   }
 
   // homepage
   .homepage__section {
-    h1, h2, h3, h4, h5, p, ul, li, span {
-      color: #dcddde;
+    h1, h2, h3, h4, h5 {
+      color: $white-text;
+    }
+    p, ul, li, span {
+      color: $white-darkmode-text;
     }
     li {
-      text-decoration-color: #dcddde;
+      text-decoration-color: $white-darkmode-text;
     }
     .five__principles__guide__item {
-      color: #dcddde;
+      color: $white-darkmode-text;
+      border-bottom: 5px solid $white-darkmode-text;
     }
     .five__principles__guide__item:before {
-      background: rgba(255,46,182,1);
+      background: $magenta;
     }
 
     .five__principles__item__main, .five__principles__item__main__judgement {
-      color: #dcddde;
+      color: $white-darkmode-text;
     }
     .five__principles__item__main:before, .five__principles__item__main__judgement:before {
-      background: rgba(255,46,182,1);
+      background: $magenta;
     }
 
   }
 
   // Cookies popup
   .cookies__popup__container {
-    border: 4px solid #dcddde;
+    border: 4px solid $white-darkmode-text;
 
-    background: #23272A;
-    color: #dcddde;
+    background: $black-darkmode-background;
+    color: $white-darkmode-text;
 
     .cookies__popup__container__inner {
       .cookies__button {
@@ -57,18 +65,18 @@
     .footer__links {
       .footer__link__wrapper {
         .footer__link  {
-          color: #dcddde!important;
+          color: $white-darkmode-text!important;
         }
       }
       .footer__link__wrapper:hover .footer__link{
-        color: #23272A!important;;
+        color: $black-darkmode-background!important;;
       }
     }
   }
 
   .five__principles__list__page {
     .five__principles__item__page {
-      color: rgba(255,46,182,1);
+      color: $magenta;
     }
   }
 
@@ -83,109 +91,117 @@
 
 
   .guide__suggestion__number {
-    color: #23272A!important;;
+    color: $black-darkmode-background!important;;
   }
 
   .veteran__row {
     a {
-      background: #dcddde;
-      color: #23272A!important;;
+      background: $white-text;
+      color: $black-darkmode-background!important;;
     }
     h2, h3, h4, p {
-      color: #dcddde;
+      color: $white-darkmode-text;
     }
   }
 
   .reddit__question__banner, .account__buttons {
-    h2, p, a {
-      color: #dcddde;
+    h2 {
+      color: $white-text;
+    }
+    p, a {
+      color: $white-darkmode-text;
     }
   }
 
   .banner__new__to__nfd {
     h2, h4, h3, h5, p, a {
-      background: #dcddde;
-      color: #23272A!important;;
+      background: $white-text;
+      color: $black-darkmode-background!important;;
     }
     .banner__new__to__nfd__title--2nd {
       background: initial!important;
-      color: #dcddde!important;
+      color: $white-darkmode-text!important;
     }
     h1 {
-      color: #dcddde!important;
+      color: $white-text!important;
     }
   }
 
   .comment__list {
-    h1, h2, h3, h5, p {
-      color: #dcddde!important;
+    h1, h2, h3, h5 {
+      color: $white-text!important;
+    }
+    p {
+      color: $white-darkmode-text!important;
     }
     .comment__user__item__name, .comment__message {
-      color: #dcddde!important;
+      color: $white-darkmode-text!important;
     }
   }
 
   .comment__create__message__title, .comment__create__message__sub__title  {
-    color: #dcddde!important;
+    color: $white-text!important;
   }
 
   .single__wrapper {
     .single__title {
-      color: #dcddde;
+      color: $white-text;
     }
     
-    h1, h2, p {
-      color: #dcddde;
+    h1, h2 {
+      color: $white-text;
+    }
+    
+    p {
+      color: $white-darkmode-text;
     }
 
     .podcast__item {
-      border: 4px solid #dcddde;
+      border: 4px solid $white-darkmode-text;
     }
 
     .popular__latest__options__title {
-      color: #dcddde;
+      color: $white-darkmode-text;
     }
     .articles__link {
-      background: #dcddde;
+      background: $white-text;
     }
   }
 
   .button__click {
-    background: #dcddde;
-    color: #23272A!important;;
+    background: $white-text;
+    color: $black-darkmode-background!important;;
   }
 
   .single__content {
     h3 {
-      color: #dcddde;
-
+      color: $white-darkmode-text;
     }
   }
 
   hr {
-    border-bottom: 1px solid #00ffee;
+    border-bottom: 1px solid $cyan;
   }
 
   .account__info, .login__top {
-    background: #dcddde;
-    // color: #dcddde;
+    background: $white-text;
+    // color: $white-darkmode-text;
   }
 
   // .account__info, .login__top {
-  //   background: #23272A;
-  //   color: #dcddde;
+  //   background: $black-darkmode-background;
+  //   color: $white-darkmode-text;
   // }
   // #dark__mode__button {
-  //   color: #23272A;
+  //   color: $black-darkmode-background;
   // }
 
 
   .footer__designed {
-    color: #dcddde;
+    color: $white-darkmode-text;
   }
 
   .footer__link {
-    color: #dcddde;
+    color: $white-darkmode-text;
   }
-
 }

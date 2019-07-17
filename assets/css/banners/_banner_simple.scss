@@ -2,8 +2,8 @@
 .simple__banner {
   .simple__banner__title {
     display: inline-block;
-    background: #00ffee;
-    color: #fdfdfd;
-    box-shadow: -5px 5px 0px 0px #23272A;
+    background: $cyan;
+    color: $white-text;
+    box-shadow: -5px 5px 0px 0px $black-background;
   }
 }

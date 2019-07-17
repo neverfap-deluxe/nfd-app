@@ -3,7 +3,7 @@
   <%= if Enum.empty?(@content_collections.comments.parents) do %>
     <div class="no__comments__container">
       <h3 style="margin-bottom: 0rem;">There are no comments yet for this article!</h3>
-      <h4 class="link articles__link" style="margin-bottom: 4rem; display: inline-block;">You should totally be my first <3</h4>
+      <h4 class="link articles__link" style="margin-bottom: 4rem; display: inline-block; cursor: default;">You should totally be my first <3</h4>
     </div>
   <% else %>
     <%= Enum.map(@content_collections.comments.parents, fn(comment) -> %>

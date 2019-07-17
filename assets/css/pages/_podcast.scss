@@ -6,18 +6,18 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  border: 4px solid #23272A;
+  border: 4px solid $black-background;
   padding: 1rem;
 
   margin-bottom: 1.6rem;
 
   h1 {
     cursor: pointer;
-    color: #404242;
+    color: $black-text;
   }
 
   h1:hover {
-    text-shadow: -5px 5px #00ffee;
+    text-shadow: -5px 5px $cyan;
   }
 
   .link {

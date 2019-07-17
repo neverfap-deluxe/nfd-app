@@ -14,10 +14,10 @@
   li {
     font-size: 1.2rem;
     margin-bottom: 0.6rem;
-    border-bottom: 2px solid #fdfdfd;
+    border-bottom: 2px solid $white-text;
     transition: .4s color;
     a {
-      color: #404242;
+      color: $black-text;
       text-decoration: none;
       transition: .4s color;
     }
@@ -26,8 +26,8 @@
     }
   }
   li:hover {
-    color: #00ffee;
-    border-bottom: 2px solid #fdfdfd;
+    color: $cyan;
+    border-bottom: 2px solid $white-text;
   }
 }
 
@@ -43,8 +43,8 @@
   background: rgb(230, 229, 229);
 
   .dashboard__title {
-    background: #fdfdfd;
-    border: 4px solid #00ffee;
+    background: $white-text;
+    border: 4px solid $cyan;
     padding: 3rem;
 
     font-size: 3rem;
@@ -63,17 +63,17 @@
   margin-bottom: 1rem;
 
   .dashboard__main__back {
-    background: #fdfdfd;
+    background: $white-text;
     border: 4px solid rgba(255, 46, 182, 1);
     padding: 1rem;
     margin-right: 1rem;
     margin-bottom: 1rem;
-    color: #404242;
+    color: $black-text;
     transition: 0.2s box-shadow;
   }
 
   .dashboard__main__back:hover {
-    box-shadow: -5px 5px 0px 0px #00ffee;
+    box-shadow: -5px 5px 0px 0px $cyan;
   }
 }
 
@@ -83,12 +83,12 @@
   flex-direction: column;
 
   margin-bottom: 4rem;
-  // box-shadow: -5px 5px 0px 0px rgba(255,46,182,1);
-  // border: 4px solid rgba(255,46,182,1);
+  // box-shadow: -5px 5px 0px 0px $magenta;
+  // border: 4px solid $magenta;
 
   padding: 1rem;
   padding-top: 2rem;
-  background: #fdfdfd;
+  background: $white-text;
 
 
   .dashboard__section__content {
@@ -116,7 +116,7 @@
 
   h3 {
     font-size: 1.3rem;
-    text-shadow: 3px 3px #00ffee;
+    text-shadow: 3px 3px $cyan;
   }
 }
 
@@ -126,7 +126,7 @@
   .collection {
     display: flex;
     justify-content: space-between;
-    border: 4px solid #23272A;
+    border: 4px solid $black-background;
     padding: 1.6rem;
     margin-bottom: 1rem;
 
@@ -143,13 +143,13 @@
       width: 650px;
 
       .collection__top__type {
-        // border-left: 4px solid #00ffee; // rgba(255,46,182,1)
+        // border-left: 4px solid $cyan; // $magenta
         padding: 0.6rem;
-        // box-shadow: -5px 5px 0px 0px #00ffee;
+        // box-shadow: -5px 5px 0px 0px $cyan;
       }
 
       .collection__top__name {
-        border-left: 4px solid #00ffee;
+        border-left: 4px solid $cyan;
         padding: 0.8rem;
         font-size: 2.8rem;
         line-height: 3.9rem;
@@ -205,11 +205,11 @@
 
   font-family: 'Lato', sans-serif;
   text-align: center;
-  color: #404242;
+  color: $black-text;
   padding: 1rem;
   font-size: 3rem;
-  border: 4px solid #23272A;
-  background: #fdfdfd;
+  border: 4px solid $black-background;
+  background: $white-text;
 }
 
 #the-final-countdown p {
@@ -292,7 +292,7 @@
     position: relative;
     padding-left: 1rem;
     padding-right: 1rem;
-    border: 4px solid #23272A;
+    border: 4px solid $black-background;
 
     display: flex;
     flex-direction: column;
@@ -314,14 +314,14 @@
       display: inline-block;
       font-size: 0.85rem;
       line-height: 1.1rem;
-      background: #fdfdfd;
-      border: 4px solid #23272A;
-      color: #404242;
+      background: $white-text;
+      border: 4px solid $black-background;
+      color: $black-text;
 
       // margin-top: 0.5rem;
       // margin-bottom: 2rem;
 
-      // box-shadow: -5px 5px 0px 0px #00ffee;
+      // box-shadow: -5px 5px 0px 0px $cyan;
       padding: 0.6rem;
       cursor: pointer;
 
@@ -329,7 +329,7 @@
     }
 
     .available__subscriptions__item--button:hover {
-      box-shadow: -5px 5px 0px 0px #00ffee;
+      box-shadow: -5px 5px 0px 0px $cyan;
       bottom: -5px;
       left: -5px;
     }
@@ -358,7 +358,7 @@
   margin-top: 1rem;
 
   .collection__bottom--benefit {
-    border: 2px solid #23272A;
+    border: 2px solid $black-background;
     width: 175px;
     padding: 0.4rem;
     font-weight: 700;
@@ -370,17 +370,17 @@
   .dashboard__active__collection__item {
     display: flex;
     flex-direction: column;
-    // border: 4px solid #23272A;
+    // border: 4px solid $black-background;
     // padding: 0.6rem;
 
     a {
-      color: #404242;
+      color: $black-text;
     }
     h3 {
       transition: .2s;
     }
     h3:hover {
-      text-shadow: 5px 5px rgba(255,46,182,1);
+      text-shadow: 5px 5px $magenta;
     }
   }
 

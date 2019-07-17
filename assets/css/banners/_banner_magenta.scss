@@ -5,20 +5,20 @@
   margin-bottom: 3rem;
 
   width: 100%;
-  background: rgba(255,46,182,1);
+  background: $magenta;
 
   .magenta__banner__title__container {
-    // background: #23272A;
+    // background: $black-background;
   }
 
   .magenta__banner__title {
-    border: 4px solid rgba(255,46,182,1);
+    border: 4px solid $magenta;
     font-size: 2.5rem;
     line-height: 3.4rem;
     // margin-left: 1rem;
-    color: rgba(255,46,182,1);
+    color: $magenta;
     padding: 1rem;
-    background: #fdfdfd;
+    background: $white-text;
 
     .magenta__banner__porn {
       position: relative;
@@ -27,8 +27,8 @@
       padding-left: 1rem;
       padding-right: 1rem;
       padding-bottom: 0.7rem;
-      border: 3px solid #404242;
-      color: #404242;
+      border: 3px solid $black-text;
+      color: $black-text;
     }
   }
 }

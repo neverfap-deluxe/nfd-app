@@ -2,13 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: #fdfdfd;
-  border: 5px solid #404242;
+  background: $white-text;
+  border: 5px solid $black-text;
 
   color: #444;
   // border-radius: 5px;
-  border: 3px solid #404242;
-  box-shadow: -4px 4px 0px #00ffee;
+  border: 3px solid $black-text;
+  box-shadow: -4px 4px 0px $cyan;
   transition: 0.2s box-shadow;
 
   padding-left: 30px;
@@ -34,7 +34,7 @@
 
 .google__button:hover {
   cursor: pointer;
-  box-shadow: -8px 8px 0px #00ffee;
+  box-shadow: -8px 8px 0px $cyan;
 }
 
 .dashboard__main__payment {
@@ -53,7 +53,7 @@
 }
 
 .dashboard__main__payment__course_information {
-  border: 4px solid #23272A;
+  border: 4px solid $black-background;
   padding: 1.4rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -64,8 +64,8 @@
   align-items: center;
   justify-content: center;
 
-  border: 4px solid #00ffee;
-  background: #fdfdfd;
+  border: 4px solid $cyan;
+  background: $white-text;
   // padding-top: 0.55rem;
   // padding-bottom: 0.55rem;
   // padding-left: 1.6rem;

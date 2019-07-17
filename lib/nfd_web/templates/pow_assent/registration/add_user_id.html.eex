@@ -3,7 +3,7 @@
 <%= form_for @changeset, @action, [as: :user], fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
-      <p style="color: #fdfdfd;">Oops, something went wrong! Please check the errors below.</p>
+      <p style="color: white;">Oops, something went wrong! Please check the errors below.</p>
     </div>
   <% end %>
 

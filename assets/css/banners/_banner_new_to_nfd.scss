@@ -4,8 +4,8 @@
   align-items: center;
   justify-content: center;
 
-  // border-top: 5px solid #00ffee;
-  // border-bottom: 5px solid #00ffee;
+  // border-top: 5px solid $cyan;
+  // border-bottom: 5px solid $cyan;
 
   padding-left: 2rem;
   padding-right: 2rem;
@@ -13,10 +13,10 @@
   margin-bottom: 5rem;
 
   .banner__new__to__nfd__title {
-    border: 5px solid #404242;
+    border: 5px solid $black-text;
 
-    box-shadow: -5px 5px 0px 0px rgba(255,46,182,1);
-    color: #404242;
+    box-shadow: -5px 5px 0px 0px $magenta;
+    color: $black-text;
 
     padding: 1rem;
     margin-bottom: 2.6rem;
@@ -26,7 +26,7 @@
   }
 
   .banner__new__to__nfd__title:hover {
-    box-shadow: -35px 35px 0px 0px #fdfdfd;
+    box-shadow: -35px 35px 0px 0px $white-text;
   }
 
   .banner__new__to__nfd__title--2nd {

@@ -71,7 +71,7 @@
   -webkit-animation: topToBottom 21s linear infinite 0s;
   -ms-animation: topToBottom 21s linear infinite 0s;
 	animation: topToBottom 21s linear infinite 0s;
-	color: #404242;
+	color: $black-background;
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
@@ -400,7 +400,7 @@
   top: 0;
   left: 0;
   border-radius: 1px;
-  color: #fdfdfd;
+  color: $white-text;
   box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.02), 0 17px 17px 0 rgba(0, 0, 0, 0.02);
   backface-visibility: hidden;
 }

@@ -11,26 +11,26 @@
   // top: 2.9rem;
   // margin-bottom: 5rem;
 
-  // background: #23272A;
+  // background: $black-background;
 
-  background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
-  background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
-  background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
-  background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
-  background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
+  background: -moz-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, $magenta), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+  background: linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* w3c */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
 
   .mobile__menu__overlay__button {
     display: flex;
 
     .mobile__span {
-      background: #fdfdfd;
+      background: $white-text;
     }
   }
 
   .mobile__menu__overlay__button:hover .mobile__span {
-    box-shadow: -2px 2px 0px 0px #23272A;
+    box-shadow: -2px 2px 0px 0px $black-background;
   }
 
   .header__links {
@@ -55,7 +55,7 @@
       // height: 100%;
       list-style: none;
       transition: .1s background ease-in, .1s box-shadow ease-in;
-      // border-bottom: 5px solid #fdfdfd;
+      // border-bottom: 5px solid $white-text;
       // position: relative;
 
       .header__link {
@@ -66,7 +66,7 @@
         height: 3.4rem;
         min-width: 5.6rem;
 
-        color: #fdfdfd;
+        color: $white-text;
         font-size: 1rem;
         font-family: 'Noto Sans', 'Lato', sans-serif!important;
       }
@@ -74,11 +74,11 @@
     .header__link__wrapper:hover {
       // background: rgb(243, 243, 243);
       background: lighten(orange, 10%);
-      box-shadow: -5px 5px 0px 0px #00ffee;
+      box-shadow: -5px 5px 0px 0px $cyan;
     }
 
     // .header__link__wrapper:hover .header__link {
-    //   color: #fdfdfd;
+    //   color: $white-text;
     // }
 
     .header__link__wrapper--guide {
@@ -112,17 +112,17 @@
   .header__logo {
     margin-left: 16px;
     margin-right: 16px;
-    background: #23272A;
+    background: $black-background;
     padding: 0.4rem;
     font-size: 1rem;
     line-height: 1rem;
-    text-shadow: -2px 2px 0px #404242;
+    text-shadow: -2px 2px 0px $black-text;
     text-decoration: none;
-    color: #fdfdfd;
+    color: $white-text;
   }
 
   .header__logo:hover {
-    background: #00ffee;
+    background: $cyan;
   }
 
   .deluxe__font {
@@ -134,8 +134,8 @@
 
   .header__link {
   // border-bottom: 5px solid rgb(0, 255, 0);
-  // color: #404242;
-  // border-bottom: 5px solid #00ffee;
+  // color: $black-text;
+  // border-bottom: 5px solid $cyan;
   }
 }
 
@@ -164,15 +164,15 @@
   .header {
     // top: 0;
     .header__links {
-      // border-right: 5px solid #404242;
-      // border-left: 5px solid #404242;
+      // border-right: 5px solid $black-text;
+      // border-left: 5px solid $black-text;
 
       .header__link__wrapper--main {
         display: block;
       }
 
       .header__link__wrapper {
-        // border-bottom: 5px solid #404242;
+        // border-bottom: 5px solid $black-text;
 
         .header__link {
         }
@@ -202,7 +202,7 @@
 // .header__link__wrapper > .header__link {
 //   display: inherit;
 //   transform: scale(0.7) rotate(2deg) skew(20deg);
-//   color: #404242;
+//   color: $black-text;
 // }
 
 // // these might possibly need to be the element under .header__link__wrapper

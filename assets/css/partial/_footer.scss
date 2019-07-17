@@ -3,7 +3,7 @@
   // bottom: 0;
   // left: 0;
   // right: 0;
-  // background: #fdfdfd;
+  // background: $white-text;
   // z-index: 1000;
 
   display: flex;
@@ -32,7 +32,7 @@
       list-style: none;
 
       .footer__link {
-        color: #404242;
+        color: $black-text;
         margin-left: 8px;
         margin-right: 8px;
         font-size: 0.8rem;

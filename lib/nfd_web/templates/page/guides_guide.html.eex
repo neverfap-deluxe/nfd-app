@@ -18,7 +18,7 @@
 </div>
 
 <!-- <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div> -->
-<div class="guide__banner" style="border-top: 4px solid #404242;">
+<div class="guide__banner" style="border-top: 4px solid black;">
   <h2>In Summary</h2>
 
   <h3 class="summary__items">Awareness is what keeps you in check.</h3>
@@ -39,7 +39,7 @@
 
 
 
-<div class="guide__banner" style="border-bottom: 4px solid #404242;">
+<div class="guide__banner" style="border-bottom: 4px solid black;">
 
   <div class="guide__suggestion__container">
     <div class="black__banner__title__container">
@@ -110,7 +110,7 @@
 </div>
 
 <div class="cyan__banner">
-  <div style="background: #fdfdfd;">
+  <div style="background: white;">
     <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Articles Index.", link: "/articles" } %>
   </div>
 </div>
@@ -133,7 +133,7 @@
 </div>
 
 <div class="cyan__banner">
-  <div style="background: #fdfdfd;">
+  <div style="background: white;">
     <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Practices Index.", link: "/practices" } %>
   </div>
 </div>
@@ -151,7 +151,7 @@
   <%= partial "banners/podcast_banner.html", assigns %>
 
   <div class="cyan__banner">
-    <div style="background: #fdfdfd;">
+    <div style="background: white;">
       <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Podcast.", link: "/podcast" } %>
     </div>
   </div>

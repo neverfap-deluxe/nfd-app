@@ -1,17 +1,17 @@
 .page__index {
-  background: #fdfdfd;
+  background: $white-text;
   padding: 2rem;
-  border: 4px solid #23272A;
+  border: 4px solid $black-background;
 
   margin-bottom: 2rem;
 
-  // background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
-  // background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
-  // background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
-  // background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
-  // background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
-  // background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
-  // color: #fdfdfd;
+  // background: -moz-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+  // background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, $magenta), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+  // background: -webkit-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+  // background: -o-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+  // background: -ms-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+  // background: linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* w3c */
+  // color: $white-text;
 
   .page__index__title {
     margin: 0!important;
@@ -28,14 +28,14 @@
 
     .index__item {
       cursor: pointer;
-      color: #404242;
+      color: $black-text;
       // margin-bottom: 1rem;
       padding: 0.5rem;
       // padding-top: 0.7rem;
       // padding-bottom: 0.9rem;
 
-      border-top: 5px solid #fdfdfd;
-      border-bottom: 5px solid #fdfdfd;
+      border-top: 5px solid $white-text;
+      border-bottom: 5px solid $white-text;
 
       // transition: 0.4s border-bottom, 0.4s box-shadow;
 
@@ -117,7 +117,7 @@
 
     .index__item:hover {
       // background: lightgrey;
-      text-shadow: -2px 2px rgba(255,46,182,1);
+      text-shadow: -2px 2px $magenta;
     }
   }
 }

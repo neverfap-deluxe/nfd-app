@@ -7,20 +7,20 @@
   align-items: center;
   justify-content: flex-start;
 
-  background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
-  background: -webkit-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
-  background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
-  background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
-  background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
+  background: -moz-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, $magenta), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+  background: linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* w3c */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
 
   .accounts__wrapper__title {
-    box-shadow: -5px 5px 0px 0px #23272A;
+    box-shadow: -5px 5px 0px 0px $black-background;
 
-    color: #fdfdfd;
-    border: 4px solid #fdfdfd;
-    background: #23272A;
+    color: $white-text;
+    border: 4px solid $white-text;
+    background: $black-background;
 
     padding-left: 1.8rem;
     padding-right: 1.8rem;
@@ -44,17 +44,17 @@
     }
 
     .header__links {
-      border-top: 5px solid #404242;
-      border-bottom: 5px solid #404242;
-      background: #fdfdfd;
+      border-top: 5px solid $black-text;
+      border-bottom: 5px solid $black-text;
+      background: $white-text;
 
       .header__link__wrapper {
         .header__link {
-          color: #404242;
+          color: $black-text;
         }
 
         .header__link:hover {
-          color: #fdfdfd;
+          color: $white-text;
         }
       }
     }
@@ -70,19 +70,19 @@
   padding: 0.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  // border-top: 4px solid #404242;
-  // border-bottom: 4px solid #404242;
+  // border-top: 4px solid $black-text;
+  // border-bottom: 4px solid $black-text;
   box-sizing: border-box;
 
   .account__main__description__initial {
     margin-top: 0;
     margin-bottom: 0.6rem;
-    color: #404242;
+    color: $black-text;
 
-    background: #00ffee;
+    background: $cyan;
     padding: 1.2rem;
-    box-shadow: -8px 8px 0px 0px #fdfdfd;
-    text-shadow: -3px 3px #fdfdfd;
+    box-shadow: -8px 8px 0px 0px $white-text;
+    text-shadow: -3px 3px $white-text;
   }
 
   ul {
@@ -106,9 +106,9 @@
     background: none!important;
 
     label {
-      color: #fdfdfd;
-      // text-shadow: -3px 3px solid #404242;
-      // text-shadow: 0px 1px #00ffee;
+      color: $white-text;
+      // text-shadow: -3px 3px solid $black-text;
+      // text-shadow: 0px 1px $cyan;
       margin-bottom: 0.4rem!important;
     }
   }
@@ -138,10 +138,10 @@
 
   .form, form {
     position: relative;
-    background: #fdfdfd;
+    background: $white-text;
     margin-top: 1rem;
-    border-top: 4px solid #404242;
-    border-bottom: 4px solid #404242;
+    border-top: 4px solid $black-text;
+    border-bottom: 4px solid $black-text;
 
     // min-height: 20rem;
     width: 100%;
@@ -165,7 +165,7 @@
     }
 
     .form__auth__hr {
-      border-bottom: 1px solid #404242!important;;
+      border-bottom: 1px solid $black-text!important;;
       margin-top: 1.6rem;
       margin-bottom: 1.6rem;
     }
@@ -186,7 +186,7 @@
         font-size: 1rem;
         height: 2.8rem;
         width: 100%;
-        border: 2px solid #23272A;
+        border: 2px solid $black-background;
         box-sizing: border-box;
         padding-left: 0.8rem;
         margin-bottom: 0.6rem;
@@ -212,13 +212,13 @@
 
         margin-top: 1rem;
 
-        border: 2px solid #23272A;
+        border: 2px solid $black-background;
         // padding: 0.2rem;
 
-        box-shadow: -3px 3px 0px 0px #23272A;
+        box-shadow: -3px 3px 0px 0px $black-background;
         cursor: pointer;
         transition: .1s;
-        background: #fdfdfd;
+        background: $white-text;
       }
 
       .form__button:focus, button:focus {
@@ -226,32 +226,32 @@
       }
 
       .form__button:hover, button:hover {
-        box-shadow: -6px 6px 0px 0px #23272A;
+        box-shadow: -6px 6px 0px 0px $black-background;
       }
 
       .form__extra {
         margin-top: 1.2rem;
 
         a {
-          background: #fdfdfd;
-          border: 2px solid #23272A;
+          background: $white-text;
+          border: 2px solid $black-background;
           padding: 0.3rem;
-          color: #404242;
+          color: $black-text;
           margin-top: 1rem;
           font-size: 0.7rem;
 
-          box-shadow: -3px 3px 0px 0px #00ffee;
+          box-shadow: -3px 3px 0px 0px $cyan;
           cursor: pointer;
           transition: .1s;
         }
 
         a:hover {
-          box-shadow: -4px 4px 0px 0px #00ffee;
+          box-shadow: -4px 4px 0px 0px $cyan;
         }
       }
 
       .form__button__faded__false {
-        background: #fdfdfd;
+        background: $white-text;
         opacity: 0.5;
         cursor: default;
       }
@@ -264,14 +264,14 @@
       }
 
       .form__button__faded__true:hover {
-        box-shadow: -6px 6px 0px 0px #23272A;
+        box-shadow: -6px 6px 0px 0px $black-background;
       }
     }
   }
 }
 
 .help-block {
-  color: #fdfdfd;
+  color: $white-text;
   text-decoration: underline;
   position: absolute;
   top: 0rem;
@@ -299,12 +299,12 @@
   .form__wrapper {
     width: 360px;
     .form, form {
-      border: 4px solid #23272A;
+      border: 4px solid $black-background;
     }
   }
   .accounts__text__container {
     width: 360px;
-    // border: 4px solid #00ffee;
+    // border: 4px solid $cyan;
     padding: 1.6rem;
     background: none;
   }
