@@ -86,7 +86,7 @@
   <div class="homepage__section__closer homepage__section--test--black" style="width: 400px;">
     <span class="articles__link--magenta cursor__default">word!</span>
     <h2 class="banner__points">word!</h2>
-    <div style="border-top: 3px solid black;"></div>
+    <div style="border-top: 3px solid #404242;"></div>
     <!-- <div class="homepage__tldr--signature--top" style="top: 1.2rem;">NeverFap Deluxe.</div> -->
   </div>
 
@@ -97,7 +97,7 @@
   <div class="homepage__section__closer homepage__section--test--black" style="width: 400px;">
     <span class="articles__link--magenta cursor__default" style="border: 5px solid rgba(255,46,182,1);">word.</span>
     <h2 class="banner__points">word.</h2>
-    <div style="border-top: 3px solid white;"></div>
+    <div style="border-top: 3px solid #fdfdfd;"></div>
     <!-- <div class="homepage__tldr--signature--top" style="top: 1.2rem;">NeverFap Deluxe.</div> -->
   </div>
   

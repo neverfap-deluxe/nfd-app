@@ -2,12 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: white;
-  border: 5px solid black;
+  background: #fdfdfd;
+  border: 5px solid #404242;
 
   color: #444;
   // border-radius: 5px;
-  border: 3px solid black;
+  border: 3px solid #404242;
   box-shadow: -4px 4px 0px #00ffee;
   transition: 0.2s box-shadow;
 
@@ -53,7 +53,7 @@
 }
 
 .dashboard__main__payment__course_information {
-  border: 4px solid black;
+  border: 4px solid #23272A;
   padding: 1.4rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -65,7 +65,7 @@
   justify-content: center;
 
   border: 4px solid #00ffee;
-  background: white;
+  background: #fdfdfd;
   // padding-top: 0.55rem;
   // padding-bottom: 0.55rem;
   // padding-left: 1.6rem;

@@ -8,7 +8,7 @@
   background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
   background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
-  color: white;
+  color: #fdfdfd;
   // line-height: 4rem;
 }
 
@@ -76,11 +76,11 @@
   background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
   background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
-  color: white;
+  color: #fdfdfd;
 
   h1 {
-    background: black;
-    border: 4px solid white;
+    background: #23272A;
+    border: 4px solid #fdfdfd;
     padding-left: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -121,7 +121,7 @@
   background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
   background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
-  color: white;
+  color: #fdfdfd;
 
   .homepage__hero__sub {
     display: flex;
@@ -137,7 +137,7 @@
 
       .homepage__toggle__button {
         padding: 0.6rem;
-        background: white;
+        background: #fdfdfd;
         color: #404242;
         box-shadow: -5px 5px 0px 0px #00ffee;
 
@@ -150,7 +150,7 @@
       }
 
       .homepage__toggle__button:hover {
-        box-shadow: -5px 5px 0px 0px black;
+        box-shadow: -5px 5px 0px 0px #404242;
       }
     }
   }
@@ -187,12 +187,12 @@
 
       .header__link__wrapper {
         position: relative;
-        border-bottom: 5px solid white;
+        border-bottom: 5px solid #fdfdfd;
         // background: grey;
 
         transition: .1s ease-in;
         .header__link {
-          color: white;
+          color: #fdfdfd;
         }
       }
 
@@ -290,11 +290,11 @@
   }
 
   .homepage__hero__title {
-    box-shadow: -5px 5px 0px 0px black;
+    box-shadow: -5px 5px 0px 0px #404242;
 
-    color: white;
-    border: 4px solid white;
-    background: black;
+    color: #fdfdfd;
+    border: 4px solid #fdfdfd;
+    background: #23272A;
 
     padding: 1rem;
 
@@ -309,7 +309,7 @@
   }
 
   .homepage__hero__title:hover {
-    box-shadow: -30px 30px 0px 0px black;
+    box-shadow: -30px 30px 0px 0px #404242;
   }
 
   // .homepage__hero__title:hover + .homepage__hero__title__secondary {
@@ -323,7 +323,7 @@
     position: relative;
     top: 0.5rem;
     margin-bottom: 4.5rem;
-
+    color: #fdfdfd;
   }
 
   .deluxe__font {
@@ -342,11 +342,12 @@
     line-height: 2.2rem;
     font-weight: 900;
     margin-bottom: 1rem;
-    // border-bottom: 1px solid black;
+    // border-bottom: 1px solid #404242;
     display: inline-block;
 
     text-decoration-line: underline;
     text-decoration-color: #404242;
+    color: #404242;
   }
 
   .homepage__recovered__porn__addict__item {
@@ -357,6 +358,7 @@
     display: inline-block;
     margin-left: 0.3rem;
     margin-bottom: 0.8rem;
+    color: #404242;    
     // color: rgba(255,46,182,1);
     // text-decoration-line: underline;
     // text-decoration-color: #00ffee;
@@ -398,8 +400,8 @@
   .homepage__guide {
     box-shadow: -5px 5px 0px 0px #00ffee;
 
-    color: white;
-    border: 4px solid white;
+    color: #fdfdfd;
+    border: 4px solid #fdfdfd;
     background: none;
 
     padding: 1rem;
@@ -410,7 +412,7 @@
   }
 
   .homepage__guide:hover {
-    box-shadow: -10px 10px 0px 0px black;
+    box-shadow: -10px 10px 0px 0px #404242;
     bottom: -5px;
     left: -5px;
   }
@@ -448,14 +450,14 @@
 }
 
 .homepage__splitter__box--discord {
-  // box-shadow: 0 14px 56px 0 white, 0 12px 29px 0 white;
+  // box-shadow: 0 14px 56px 0 white, 0 12px 29px 0 #fdfdfd;
   // padding: 1rem!important;
   justify-content: flex-start!important;
 }
 
 .homepage__splitter__box--podcast {
   // padding: 1rem!important;
-  // box-shadow: 0 14px 56px 0 white, 0 12px 29px 0 white;
+  // box-shadow: 0 14px 56px 0 white, 0 12px 29px 0 #fdfdfd;
   justify-content: flex-start!important;
 }
 
@@ -489,7 +491,11 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
 
-    color: white;
+    color: #fdfdfd;
+
+    p {
+      color: #fdfdfd;
+    }
 
     .homepage__splitter__box__button {
       display: inline-block;
@@ -498,11 +504,11 @@
       padding: 1.2rem;
       padding-left: 3rem;
       padding-right: 3rem;
-      background: white;
+      background: #fdfdfd;
       border: 4px solid #00ffee;
       color: #404242;
       font-size: 2.4rem;
-      box-shadow: -5px 5px 0px 0px #23272A;
+      box-shadow: -5px 5px 0px 0px #404242;
       transition: .2s box-shadow;
     }
 
@@ -511,17 +517,18 @@
     }
 
     .homepage__splitter__box__button--pink:hover {
-      box-shadow: -5px 5px 0px 0px black!important;
+      box-shadow: -5px 5px 0px 0px #404242!important;;
     }
 
     .homepage__splitter__box__button:hover {
-      box-shadow: -5px 5px 0px 0px white;
+      box-shadow: -5px 5px 0px 0px #fdfdfd;
     }
 
     .homepage__splitter__box__title {
       font-size: 2.6rem;
       line-height: 3.3rem;
       margin-bottom: 2rem;
+      color: #fdfdfd;
     }
   }
 }
@@ -530,7 +537,7 @@
 
 .homepage__process__link {
   color: #404242;
-  background: white;
+  background: #fdfdfd;
   padding: 0.45rem;
   border: 5px solid #00ffee;
   box-shadow: -5px 5px 0px 0px rgba(255,46,182,1);
@@ -547,14 +554,14 @@
 }
 
 .homepage__process__link:hover {
-  box-shadow: -8px 8px 0px 0px black;
+  box-shadow: -8px 8px 0px 0px #404242;
   color: rgba(255,46,182,1);
 }
 
 .homepage__process {
   display: flex;
   flex-direction: column;
-  // border: 5px solid black;
+  // border: 5px solid #404242;
   // height: 9rem;
 
   margin-bottom: 4rem;
@@ -589,10 +596,10 @@
     display: inline-block;
 
     color: #404242;
-    background: white;
+    background: #fdfdfd;
     padding: 0.5rem;
     // border: 3px solid #00ffee;
-    box-shadow: -3px 3px 0px 0px black;
+    box-shadow: -3px 3px 0px 0px #404242;
   }
 
 
@@ -603,7 +610,7 @@
     margin-bottom: 1.5rem;
     display: inline-block;
     color: #404242;
-    background: white;
+    background: #fdfdfd;
     padding: 0.5rem;
     box-shadow: -3px 3px 0px 0px #00ffee;
   }
@@ -613,10 +620,10 @@
     margin-bottom: 0.75rem;
     font-size: 1.1rem;
     line-height: 1.6rem!important;
-    color: white;
+    color: #fdfdfd;
 
-    color: black!important;
-    background: white;
+    color: #404242!important;;
+    background: #fdfdfd;
 
     padding: 1.1rem;
     // padding-top: 0.7rem;
@@ -727,9 +734,9 @@
     bottom: 0;
     right: 0;
     padding: 1rem;
-    border: 4px solid white;
-    color: white;
-    background: black;
+    border: 4px solid #fdfdfd;
+    color: #fdfdfd;
+    background: #23272A;
     font-size: 1.4rem;
     margin: 1.6rem;
   }
@@ -748,14 +755,14 @@
     }
 
     .homepage__splitter__box--discord {
-      // box-shadow: 0 14px 56px 0 white, 0 12px 29px 0 white;
+      // box-shadow: 0 14px 56px 0 white, 0 12px 29px 0 #fdfdfd;
       // padding: 1rem!important;
       justify-content: center!important;
     }
 
     .homepage__splitter__box--podcast {
       // padding: 1rem!important;
-      // box-shadow: 0 14px 56px 0 white, 0 12px 29px 0 white;
+      // box-shadow: 0 14px 56px 0 white, 0 12px 29px 0 #fdfdfd;
       justify-content: center!important;
     }
   }
@@ -919,8 +926,8 @@
   border: 4px solid #00ffee;
   box-shadow: -3px 3px 0px 0px rgba(255,46,182,1);
   padding: 0.6rem;
-  /* background: black;
-  color: white; */
+  /* background: #23272A;
+  color: #fdfdfd; */
   /* display: inline-block; */
 }
 
@@ -929,9 +936,9 @@
   flex-direction: column;
 
   position: relative;
-  background: black;
+  background: #23272A;
   /* box-shadow: -7px 7px 0px 0px rgba(255,46,182,1); */
-  color: white;
+  color: #fdfdfd;
   padding: 1rem;
 
 }
@@ -979,7 +986,7 @@
   width: 100w;
   padding: 1rem;
   h2 {
-    border: 1rem solid black;
+    border: 1rem solid #404242;
     padding: 2rem;
   }
   h3 {
@@ -993,7 +1000,7 @@
     background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
     background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
-    color: white;
+    color: #fdfdfd;
   }
 }
 

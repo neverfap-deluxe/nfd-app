@@ -16,7 +16,7 @@
 
   // homepage
   .homepage__section {
-    h1, h2, h3, h4, h5, p, li {
+    h1, h2, h3, h4, h5, p, ul, li, span {
       color: #dcddde;
     }
     li {
@@ -61,7 +61,7 @@
         }
       }
       .footer__link__wrapper:hover .footer__link{
-        color: black!important;
+        color: #23272A!important;;
       }
     }
   }
@@ -83,13 +83,13 @@
 
 
   .guide__suggestion__number {
-    color: black!important;
+    color: #23272A!important;;
   }
 
   .veteran__row {
     a {
-      background: white;
-      color: black!important;
+      background: #dcddde;
+      color: #23272A!important;;
     }
     h2, h3, h4, p {
       color: #dcddde;
@@ -104,8 +104,8 @@
 
   .banner__new__to__nfd {
     h2, h4, h3, h5, p, a {
-      background: white;
-      color: black!important;
+      background: #dcddde;
+      color: #23272A!important;;
     }
     .banner__new__to__nfd__title--2nd {
       background: initial!important;
@@ -130,6 +130,10 @@
   }
 
   .single__wrapper {
+    .single__title {
+      color: #dcddde;
+    }
+    
     h1, h2, p {
       color: #dcddde;
     }
@@ -142,17 +146,20 @@
       color: #dcddde;
     }
     .articles__link {
-      background: white;
+      background: #dcddde;
     }
   }
 
   .button__click {
-    background: white;
-    color: black!important;
+    background: #dcddde;
+    color: #23272A!important;;
   }
 
   .single__content {
-    color: #dcddde;
+    h3 {
+      color: #dcddde;
+
+    }
   }
 
   hr {
@@ -160,7 +167,7 @@
   }
 
   .account__info, .login__top {
-    background: white;
+    background: #dcddde;
     // color: #dcddde;
   }
 
@@ -169,7 +176,7 @@
   //   color: #dcddde;
   // }
   // #dark__mode__button {
-  //   color: #404242;
+  //   color: #23272A;
   // }
 
 

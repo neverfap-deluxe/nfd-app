@@ -1,7 +1,7 @@
 .page__index {
-  background: white;
+  background: #fdfdfd;
   padding: 2rem;
-  border: 4px solid black;
+  border: 4px solid #23272A;
 
   margin-bottom: 2rem;
 
@@ -11,7 +11,7 @@
   // background: -o-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
   // background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
   // background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
-  // color: white;
+  // color: #fdfdfd;
 
   .page__index__title {
     margin: 0!important;
@@ -34,8 +34,8 @@
       // padding-top: 0.7rem;
       // padding-bottom: 0.9rem;
 
-      border-top: 5px solid white;
-      border-bottom: 5px solid white;
+      border-top: 5px solid #fdfdfd;
+      border-bottom: 5px solid #fdfdfd;
 
       // transition: 0.4s border-bottom, 0.4s box-shadow;
 

@@ -14,7 +14,7 @@
   li {
     font-size: 1.2rem;
     margin-bottom: 0.6rem;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #fdfdfd;
     transition: .4s color;
     a {
       color: #404242;
@@ -27,7 +27,7 @@
   }
   li:hover {
     color: #00ffee;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #fdfdfd;
   }
 }
 
@@ -43,7 +43,7 @@
   background: rgb(230, 229, 229);
 
   .dashboard__title {
-    background: white;
+    background: #fdfdfd;
     border: 4px solid #00ffee;
     padding: 3rem;
 
@@ -63,7 +63,7 @@
   margin-bottom: 1rem;
 
   .dashboard__main__back {
-    background: white;
+    background: #fdfdfd;
     border: 4px solid rgba(255, 46, 182, 1);
     padding: 1rem;
     margin-right: 1rem;
@@ -88,7 +88,7 @@
 
   padding: 1rem;
   padding-top: 2rem;
-  background: white;
+  background: #fdfdfd;
 
 
   .dashboard__section__content {
@@ -126,7 +126,7 @@
   .collection {
     display: flex;
     justify-content: space-between;
-    border: 4px solid black;
+    border: 4px solid #23272A;
     padding: 1.6rem;
     margin-bottom: 1rem;
 
@@ -208,8 +208,8 @@
   color: #404242;
   padding: 1rem;
   font-size: 3rem;
-  border: 4px solid black;
-  background: white;
+  border: 4px solid #23272A;
+  background: #fdfdfd;
 }
 
 #the-final-countdown p {
@@ -292,7 +292,7 @@
     position: relative;
     padding-left: 1rem;
     padding-right: 1rem;
-    border: 4px solid black;
+    border: 4px solid #23272A;
 
     display: flex;
     flex-direction: column;
@@ -314,8 +314,8 @@
       display: inline-block;
       font-size: 0.85rem;
       line-height: 1.1rem;
-      background: white;
-      border: 4px solid black;
+      background: #fdfdfd;
+      border: 4px solid #23272A;
       color: #404242;
 
       // margin-top: 0.5rem;
@@ -358,7 +358,7 @@
   margin-top: 1rem;
 
   .collection__bottom--benefit {
-    border: 2px solid black;
+    border: 2px solid #23272A;
     width: 175px;
     padding: 0.4rem;
     font-weight: 700;
@@ -370,7 +370,7 @@
   .dashboard__active__collection__item {
     display: flex;
     flex-direction: column;
-    // border: 4px solid black;
+    // border: 4px solid #23272A;
     // padding: 0.6rem;
 
     a {

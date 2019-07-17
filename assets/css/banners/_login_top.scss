@@ -20,7 +20,7 @@
     display: flex;
 
     .mobile__span {
-      background: black;
+      background: #23272A;
       height: 3px;
       box-shadow: -2px 2px 0px 0px #00ffee;
 
@@ -29,7 +29,7 @@
   }
 
   .mobile__menu__overlay__button:hover .mobile__span {
-    box-shadow: -2px 2px 0px 0px white;
+    box-shadow: -2px 2px 0px 0px #fdfdfd;
   }
 
   .login__top__title {
@@ -56,13 +56,13 @@
     margin-top: 1rem;
 
     a {
-      background: white;
+      background: #fdfdfd;
       color: #404242;
 
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 2px solid black;
+      border: 2px solid #23272A;
       height: 2.2rem;
       min-width: 6rem;
 

@@ -11,7 +11,7 @@
   // top: 2.9rem;
   // margin-bottom: 5rem;
 
-  // background: black;
+  // background: #23272A;
 
   background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
   background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
@@ -25,12 +25,12 @@
     display: flex;
 
     .mobile__span {
-      background: white;
+      background: #fdfdfd;
     }
   }
 
   .mobile__menu__overlay__button:hover .mobile__span {
-    box-shadow: -2px 2px 0px 0px black;
+    box-shadow: -2px 2px 0px 0px #23272A;
   }
 
   .header__links {
@@ -55,7 +55,7 @@
       // height: 100%;
       list-style: none;
       transition: .1s background ease-in, .1s box-shadow ease-in;
-      // border-bottom: 5px solid white;
+      // border-bottom: 5px solid #fdfdfd;
       // position: relative;
 
       .header__link {
@@ -66,7 +66,7 @@
         height: 3.4rem;
         min-width: 5.6rem;
 
-        color: white;
+        color: #fdfdfd;
         font-size: 1rem;
         font-family: 'Noto Sans', 'Lato', sans-serif!important;
       }
@@ -78,7 +78,7 @@
     }
 
     // .header__link__wrapper:hover .header__link {
-    //   color: white;
+    //   color: #fdfdfd;
     // }
 
     .header__link__wrapper--guide {
@@ -112,13 +112,13 @@
   .header__logo {
     margin-left: 16px;
     margin-right: 16px;
-    background: black;
+    background: #23272A;
     padding: 0.4rem;
     font-size: 1rem;
     line-height: 1rem;
-    text-shadow: -2px 2px 0px black;
+    text-shadow: -2px 2px 0px #404242;
     text-decoration: none;
-    color: white;
+    color: #fdfdfd;
   }
 
   .header__logo:hover {
@@ -164,15 +164,15 @@
   .header {
     // top: 0;
     .header__links {
-      // border-right: 5px solid black;
-      // border-left: 5px solid black;
+      // border-right: 5px solid #404242;
+      // border-left: 5px solid #404242;
 
       .header__link__wrapper--main {
         display: block;
       }
 
       .header__link__wrapper {
-        // border-bottom: 5px solid black;
+        // border-bottom: 5px solid #404242;
 
         .header__link {
         }

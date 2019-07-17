@@ -1,6 +1,6 @@
 .post__relapse__page {
   background: rgb(37, 37, 37);
-  color: white;
+  color: #fdfdfd;
   border: 5px solid rgba(255,46,182,1);
 
   .post__relapse__title {
@@ -13,7 +13,7 @@
 }
 
 .feeling__post__relapse {
-  background: white;
+  background: #fdfdfd;
   padding: 4rem;
 
   .feeling__post__relapse__list {
@@ -30,7 +30,7 @@
 }
 
 .banner__white {
-  background: white;
+  background: #fdfdfd;
 
 }
 
@@ -39,7 +39,7 @@
   align-items: center;
   justify-content: center;
 
-  background: white;
+  background: #fdfdfd;
   padding: 4rem;
   h2 {
     max-width: 600px;
@@ -59,7 +59,7 @@
   border-bottom: 10px solid rgba(255,46,182,1);
   padding: 1rem;
   box-sizing: border-box;
-  // background: white;
+  // background: #fdfdfd;
   // color: #404242;
 
   .choice__box {
@@ -81,7 +81,7 @@
     padding-left: 1.9rem;
 
     // padding-right: 3.2rem;
-    border: 8px solid black;
+    border: 8px solid #404242;
     margin-top: 2rem;
     margin-bottom: 2rem;
 
@@ -92,14 +92,14 @@
     background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
     background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
-    color: white;
+    color: #fdfdfd;
 
     box-shadow: -8px 8px 0px 0px #00ffee;
     transition: .2s box-shadow;
   }
 
   .choice__item:hover {
-    box-shadow: -12px 12px 0px 0px white;
+    box-shadow: -12px 12px 0px 0px #fdfdfd;
   }
 
   .choice__one__container {
@@ -115,7 +115,7 @@
 }
 
 .post__relapse__section--dark {
-  background: black;
+  background: #23272A;
 }
 
 

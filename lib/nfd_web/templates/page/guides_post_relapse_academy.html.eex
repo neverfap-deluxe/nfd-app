@@ -11,27 +11,27 @@
     </div>
   </div>
 
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 0%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 5%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 10%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 15%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 20%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 25%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 30%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 35%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 40%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 45%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 50%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 55%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 60%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 65%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 70%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 75%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 80%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 85%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 90%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 95%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 100%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 0%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 5%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 10%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 15%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 20%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 25%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 30%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 35%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 40%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 45%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 50%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 55%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 60%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 65%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 70%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 75%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 80%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 85%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 90%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 95%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 100%;"></div>
 
   <div class="post__relapse__section--choices">
     <h1>At this point, you really have two choices you can make.</h1>
@@ -46,27 +46,27 @@
     </div>
   </div>
 
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 100%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 95%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 90%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 85%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 80%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 75%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 70%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 65%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 60%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 55%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 50%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 45%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 40%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 35%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 30%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 25%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 20%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 15%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 10%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 5%;"></div>
-  <div style="margin-bottom: 1.5rem; height: 2px; background: white; width: 0%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 100%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 95%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 90%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 85%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 80%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 75%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 70%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 65%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 60%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 55%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 50%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 45%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 40%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 35%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 30%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 25%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 20%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 15%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 10%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 5%;"></div>
+  <div style="margin-bottom: 1.5rem; height: 2px; background: #fdfdfd; width: 0%;"></div>
 
   <div class="single__wrapper">
     <div class="single__content">
@@ -211,7 +211,7 @@
     </div>
   </div>
 
-  <div class="guide__banner" style="border-bottom: 4px solid black;">
+  <div class="guide__banner" style="border-bottom: 4px solid #404242;">
     <div class="guide__suggestion__container">
       <div class="black__banner__title__container">
         <h2 class="black__banner__title" style="margin-bottom: 3rem;">Here's your new <span class="black__banner__broad" style="color: #404242;">#process</span> sugar daddy.</h2>
@@ -287,7 +287,7 @@
     <!-- NOTE: Ability to select those feelings. -->
 
     <h2 class="margin__top__mobile">So you may be wondering.</h2>
-    <h1 class="unhealthy__banner__title">What are some of these <span style="color: white;">unhealthy coping mechanisms</span>?</h1>
+    <h1 class="unhealthy__banner__title">What are some of these <span style="color: #fdfdfd;">unhealthy coping mechanisms</span>?</h1>
   <div class="homepage__section__closer">
     <h2 class="banner__points">Helplessness. Guilt. Shame. Pointlessness. Depression. Sadness. Anger. </h2>
   </div>

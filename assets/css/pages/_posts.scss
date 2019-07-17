@@ -9,6 +9,7 @@
       .post__title {
         font-size: 1.4rem!important;
         line-height: 2.2rem!important;  
+        color: #fdfdfd!important;
       }
     }
   }
@@ -32,10 +33,10 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
   
     margin-bottom: 2rem;
-    box-shadow: -5px 5px 0px 0px black;
-    color: white;
-    border: 4px solid white;
-    // background: black;
+    box-shadow: -5px 5px 0px 0px #23272A;
+    color: #fdfdfd;
+    border: 4px solid #fdfdfd;
+    // background: #23272A;
 
     padding: 1rem;      
     cursor: pointer;
@@ -47,6 +48,7 @@
       .post__title {
         font-size: 2rem;
         line-height: 3rem;
+        color: #fdfdfd;
       }
     }
     .post__right {

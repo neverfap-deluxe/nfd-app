@@ -1,14 +1,14 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
 <%= partial "links/patreon.html", assigns %>
 
-<div class="guide__banner" style="border-bottom: 4px solid black;">
+<div class="guide__banner" style="border-bottom: 4px solid #404242;">
   <div class="guide__suggestion__container">
     <div class="black__banner__title__container">
       <h2 class="black__banner__title black__banner__title--reddit__guidelines">NeverFap Deluxe Engineering Corps</h2>
-      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Create awesome logos and artwork for NeverFap Deluxe.</p>
-      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Develop awesome landing pages and apps for NeverFap Deluxe.</p>
-      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Moderate and facilitate discussion our Discord/Reddit platforms.</p>
-      <p class="articles__link cursor__default" style="background: white; font-size: 1.2rem;">Manage one of our many social media accounts!</p>
+      <p class="articles__link cursor__default" style="background: #fdfdfd; font-size: 1.2rem;">Create awesome logos and artwork for NeverFap Deluxe.</p>
+      <p class="articles__link cursor__default" style="background: #fdfdfd; font-size: 1.2rem;">Develop awesome landing pages and apps for NeverFap Deluxe.</p>
+      <p class="articles__link cursor__default" style="background: #fdfdfd; font-size: 1.2rem;">Moderate and facilitate discussion our Discord/Reddit platforms.</p>
+      <p class="articles__link cursor__default" style="background: #fdfdfd; font-size: 1.2rem;">Manage one of our many social media accounts!</p>
     </div>
   </div>
 </div>

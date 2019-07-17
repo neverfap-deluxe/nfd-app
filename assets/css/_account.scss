@@ -16,11 +16,11 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
 
   .accounts__wrapper__title {
-    box-shadow: -5px 5px 0px 0px black;
+    box-shadow: -5px 5px 0px 0px #23272A;
 
-    color: white;
-    border: 4px solid white;
-    background: black;
+    color: #fdfdfd;
+    border: 4px solid #fdfdfd;
+    background: #23272A;
 
     padding-left: 1.8rem;
     padding-right: 1.8rem;
@@ -44,9 +44,9 @@
     }
 
     .header__links {
-      border-top: 5px solid black;
-      border-bottom: 5px solid black;
-      background: white;
+      border-top: 5px solid #404242;
+      border-bottom: 5px solid #404242;
+      background: #fdfdfd;
 
       .header__link__wrapper {
         .header__link {
@@ -54,7 +54,7 @@
         }
 
         .header__link:hover {
-          color: white;
+          color: #fdfdfd;
         }
       }
     }
@@ -70,8 +70,8 @@
   padding: 0.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  // border-top: 4px solid black;
-  // border-bottom: 4px solid black;
+  // border-top: 4px solid #404242;
+  // border-bottom: 4px solid #404242;
   box-sizing: border-box;
 
   .account__main__description__initial {
@@ -81,8 +81,8 @@
 
     background: #00ffee;
     padding: 1.2rem;
-    box-shadow: -8px 8px 0px 0px white;
-    text-shadow: -3px 3px white;
+    box-shadow: -8px 8px 0px 0px #fdfdfd;
+    text-shadow: -3px 3px #fdfdfd;
   }
 
   ul {
@@ -106,8 +106,8 @@
     background: none!important;
 
     label {
-      color: white;
-      // text-shadow: -3px 3px solid black;
+      color: #fdfdfd;
+      // text-shadow: -3px 3px solid #404242;
       // text-shadow: 0px 1px #00ffee;
       margin-bottom: 0.4rem!important;
     }
@@ -138,10 +138,10 @@
 
   .form, form {
     position: relative;
-    background: white;
+    background: #fdfdfd;
     margin-top: 1rem;
-    border-top: 4px solid black;
-    border-bottom: 4px solid black;
+    border-top: 4px solid #404242;
+    border-bottom: 4px solid #404242;
 
     // min-height: 20rem;
     width: 100%;
@@ -165,7 +165,7 @@
     }
 
     .form__auth__hr {
-      border-bottom: 1px solid black!important;
+      border-bottom: 1px solid #404242!important;;
       margin-top: 1.6rem;
       margin-bottom: 1.6rem;
     }
@@ -186,7 +186,7 @@
         font-size: 1rem;
         height: 2.8rem;
         width: 100%;
-        border: 2px solid black;
+        border: 2px solid #23272A;
         box-sizing: border-box;
         padding-left: 0.8rem;
         margin-bottom: 0.6rem;
@@ -212,13 +212,13 @@
 
         margin-top: 1rem;
 
-        border: 2px solid black;
+        border: 2px solid #23272A;
         // padding: 0.2rem;
 
-        box-shadow: -3px 3px 0px 0px black;
+        box-shadow: -3px 3px 0px 0px #23272A;
         cursor: pointer;
         transition: .1s;
-        background: white;
+        background: #fdfdfd;
       }
 
       .form__button:focus, button:focus {
@@ -226,15 +226,15 @@
       }
 
       .form__button:hover, button:hover {
-        box-shadow: -6px 6px 0px 0px black;
+        box-shadow: -6px 6px 0px 0px #23272A;
       }
 
       .form__extra {
         margin-top: 1.2rem;
 
         a {
-          background: white;
-          border: 2px solid black;
+          background: #fdfdfd;
+          border: 2px solid #23272A;
           padding: 0.3rem;
           color: #404242;
           margin-top: 1rem;
@@ -251,7 +251,7 @@
       }
 
       .form__button__faded__false {
-        background: white;
+        background: #fdfdfd;
         opacity: 0.5;
         cursor: default;
       }
@@ -264,14 +264,14 @@
       }
 
       .form__button__faded__true:hover {
-        box-shadow: -6px 6px 0px 0px black;
+        box-shadow: -6px 6px 0px 0px #23272A;
       }
     }
   }
 }
 
 .help-block {
-  color: white;
+  color: #fdfdfd;
   text-decoration: underline;
   position: absolute;
   top: 0rem;
@@ -299,7 +299,7 @@
   .form__wrapper {
     width: 360px;
     .form, form {
-      border: 4px solid black;
+      border: 4px solid #23272A;
     }
   }
   .accounts__text__container {

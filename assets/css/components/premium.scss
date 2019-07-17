@@ -9,8 +9,8 @@
     margin-top: 3rem;
     // border-top: 5px solid rgba(255,46,182,1);
     // border-bottom: 5px solid rgba(255,46,182,1);
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    border-top: 2px solid #404242;
+    border-bottom: 2px solid #404242;
 
   }
 
@@ -33,11 +33,11 @@
   }
 
   .practices__premium__content--box--left {
-    // background: white;
+    // background: #fdfdfd;
     // border: 4px solid #00ffee;
 
     .practices__premium__content--black {
-      // background: black;
+      // background: #23272A;
       box-shadow: -5px 5px 0px 0px #00ffee;
       border: 4px solid rgba(255,46,182,1);
       padding: 1rem;
@@ -51,7 +51,7 @@
       background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
       background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
-      color: white;
+      color: #fdfdfd;
       box-shadow: -5px 5px 0px 0px #00ffee;
       padding: 1rem;
       transition: .2s box-shadow;
@@ -80,7 +80,7 @@
       padding-left: 1.2rem;
       padding-right: 1.2rem;
       // box-shadow: -5px 5px 0px 0px #00ffee;
-      // border: 4px solid black;
+      // border: 4px solid #23272A;
       min-width: 3.7rem;
 
       font-size: 1.1rem;
@@ -90,12 +90,12 @@
       margin-right: 0.6rem;
       transition: .2s;
 
-      // background: white;
+      // background: #fdfdfd;
       color: #404242;
     }
   }
   .practices__premium__files__item:hover {
-    // border-bottom: 4px solid black;
+    // border-bottom: 4px solid #404242;
     text-shadow: -2px 2px rgba(255,46,182,1);
   }
 }
@@ -105,11 +105,11 @@
   // left: -20px;
   // top: 10px;
   height: 15px;
-  border: 3px solid black;
+  border: 3px solid #404242;
   cursor: pointer;
   color: #404242;
 
-  background: white;
+  background: #fdfdfd;
   padding: 0.2rem;
   font-size: 0.8rem;
   transition: .2s;
@@ -133,9 +133,9 @@
 
 .black__banner__title--alter {
   padding: 0.8rem;
-  border: 4px solid black;
-  background: white;
+  border: 4px solid #23272A;
+  background: #fdfdfd;
   box-shadow: -5px 5px 0px 0px #00ffee;
-  color: black!important;
+  color: #404242!important;;
 }
 

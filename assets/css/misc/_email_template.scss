@@ -6,7 +6,7 @@
   background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
   background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
-  color: white;
+  color: #fdfdfd;
   text-shadow: -2px 2px rgba(255,46,182,1);
 
   border: 4px solid #00ffee;
@@ -16,7 +16,7 @@
 .email__course__name {
   display: block;
   text-shadow: -2px 2px rgba(255,46,182,1);
-  color: white;
+  color: #fdfdfd;
   padding: 1.6rem;
   background: -moz-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
   background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,46,182,1)), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
@@ -25,6 +25,6 @@
   background: -ms-linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* ie10+ */
   background: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%); /* w3c */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
-  color: white;
+  color: #fdfdfd;
   border: 4px solid #00ffee;
 }
