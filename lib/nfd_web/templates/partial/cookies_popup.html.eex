@@ -1,7 +1,7 @@
 <div id="cookies__popup__container__id" class="none">
   <div class="cookies__popup__container__inner">
 
-    <p>This website primarily uses cookies in order to implement dark mode.</p>
+    <p>This website primarily uses cookies to implement Dark Mode.</p>
     <p>The Dutch made me put this message on my website. <span/> <i class="em em-flag-nl"></i> <i class="em em-hocho"></i> <i class="em em-woman-shrugging"></i> </p> <!-- <i class="em em-woman-facepalming"></i> -->
 
     <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">

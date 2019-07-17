@@ -2,6 +2,10 @@
   background: $black-darkmode-background;
   transition: .2s;
 
+  .page__index__title {
+    color: $black-darkmode-background;
+  }
+
   strong {
     text-decoration: underline;
   }
@@ -54,7 +58,15 @@
     color: $white-darkmode-text;
 
     .cookies__popup__container__inner {
+      p {
+        color: $white-darkmode-text;
+      }
       .cookies__button {
+        p {
+          color: $black-text;
+        }
+
+        color: $black-text;
         border: none;
       }
     }
