@@ -1,40 +1,118 @@
-<!-- <div class="bottom__bar__container">
+<div class="bottom__bar__container">
   <div class="bottom__bar__initial">
     NeverFap Deluxe
   </div>
   <div class="bottom__bar__show">
-    <div class="bottom__bar__show__main">
-        
-      <div class="bottom__bar__show__main__section">
-        <h5 class="bottom__bar__h5">Latest Courses</h5>
-        <div>
-          <img style="height: 100px;" src="/images/ebook_covers/7-day-kickstarter-ebook-cover-600-900.png" alt="">
+    <% meditation = @page_collections.meditations |> List.last() %>
+    <!-- Meditation -->
+    <div class="bottom__bar__meditation">
+      <div class="bottom__bar__meditation__top">
+        <h5>Latest Guided Meditation</h5>
+        <div class="bottom__bar__social">
+          <div class="bottom__bar__social__first">
+            <!-- Social -->
+            <div class="header__module" style="cursor: initial;">
+              <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_discord_url) %>"><img class="header__discord__button__logo" src="/images/discord__logo.png"/></a>
+              <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_reddit_url) %>"><img class="header__reddit__button__logo" src="/images/reddit__logo.png" /></a>
+              <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_instagram_url) %>"><img class="header__instagram__button__logo" src="/images/instagram__logo.png"/></a>
+              <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_facebook_url) %>"><img class="header__facebook__button__logo" src="/images/facebook__logo.png"/></a>
+              <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_twitter_url) %>"><img class="header__twitter__button__logo" src="/images/twitter__logo__blue.png" /></a>
+              <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_youtube_url) %>"><img class="header__youtube__button__logo" src="/images/youtube__logo__rounded.png"/></a>
+              <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_patreon_url) %>"><img class="header__patreon__button__logo" src="/images/patreon__logo.jpg" /></a>
+            </div>
+            
+            <!-- Paypal -->
+            <div class="account__buttons">
+              <a class="account__paypal__button__container" href="<%= Application.get_env(:nfd, :social_paypal_url) %>">
+                <img class="account__paypal__button__logo" src="/images/paypal__logo.png" />
+                <p class="account__paypal__button__text"><span class="account__paypal__button__text--display">PAYPAL </span>DONATION</p>
+              </a>
+            </div>
+              
+            <!-- Consultation -->
+            <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+            <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+            <div class="account__buttons" style="justify-content: flex-start;">
+              <a class="account__calendly__button__container" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/neverfap-deluxe'});return false;">
+                <img class="account__calendly__button__logo" src="/images/calendly__logo.png" />
+                <p class="account__calendly__button__text">FREE <span class="account__calendly__button__text--display">CONSULTATION</span></p>
+              </a>
+            </div>
+          </div>
+
+          <div class="bottom__bar__social__last">
+            <!-- Register/Login -->
+            <div class="account__buttons__login">
+              <span class="login__top__button__register">
+                  <%= link to: Routes.pow_registration_path(@conn, :new) do %>
+                  <div class="login__top__button__text">
+                    Register
+                  </div>
+                <% end %>
+              </span>
+          
+              <span class="login__top__button__register">
+                <%= link to: Routes.pow_session_path(@conn, :new) do %>
+                  <div class="login__top__button__text">
+                    Sign in
+                  </div>
+                <% end %>  
+              </span>
+          </div>
+        </div>
 
         </div>
       </div>
-
-      <div class="bottom__bar__show__main__section">
-        <h5 class="bottom__bar__h5">Latest Meditations</h5>
-        <div>
-          <iframe allowtransparency="true" scrolling="no" frameborder="no" src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Fneverfapdeluxe&color=orange_white&size=32" style="width: 32px; height: 32px;"></iframe>
-        </div>
+      
+      <div>
+        <audio id="player" controls>
+          <source src='<%= meditation |> Map.get("mp3Url") %>' type="audio/mp3" />
+        </audio>
       </div>
-  
+      <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/plyr.min.js") %>'></script>          
+      <!-- <script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>   -->
+      <!-- <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" /> -->
+      <script>
+        const player = new Plyr('#player', {
+          title: '<%= meditation |> Map.get("title") %>'
+        });
+      </script>
+    </div>
+
+    <!-- Rest -->
+    <div class="bottom__bar__show__main">        
       <div class="bottom__bar__show__main__section">
-        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-        <h5 class="bottom__bar__h5">Book A Meeting</h5>
-        <div class="account__buttons" style="justify-content: flex-start;">
-          <a class="account__calendly__button__container" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/neverfap-deluxe'});return false;">
-            <img class="account__calendly__button__logo" src="/images/calendly__logo.png" />
-            <p class="account__calendly__button__text">FREE <span class="account__calendly__button__text--display">CONSULTATION</span></p>
-          </a>
-        </div>
-        <p class="bottom__bar__text">Receive a FREE 10 Minute Consultation on how I can help you. <a class="link" href="/coaching">Learn More</a> </p>
-      </div>  
+
+      </div>
     </div>
   </div>
-</div> -->
+</div>
+
+
+<!-- <div class="bottom__bar__show__main">
+        
+    <div class="bottom__bar__show__main__section">
+      <h5 class="bottom__bar__h5">Latest Courses</h5>
+      <div>
+        <img style="height: 100px;" src="/images/ebook_covers/7-day-kickstarter-ebook-cover-600-900.png" alt="">
+
+      </div>
+    </div>
+
+    <div class="bottom__bar__show__main__section">
+      <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+      <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+      <h5 class="bottom__bar__h5">Book A Meeting</h5>
+      <div class="account__buttons" style="justify-content: flex-start;">
+        <a class="account__calendly__button__container" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/neverfap-deluxe'});return false;">
+          <img class="account__calendly__button__logo" src="/images/calendly__logo.png" />
+          <p class="account__calendly__button__text">FREE <span class="account__calendly__button__text--display">CONSULTATION</span></p>
+        </a>
+      </div>
+      <p class="bottom__bar__text">Receive a FREE 10 Minute Consultation on how I can help you. <a class="link" href="/coaching">Learn More</a> </p>
+    </div>  
+  </div> -->
+
 
 
       <!-- <div class="bottom__bar__show__main__section">

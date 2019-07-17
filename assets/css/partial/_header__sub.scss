@@ -45,6 +45,60 @@
   min-width: 305px;
 }
 
+.header__module {
+  display: block;
+  position: relative;
+  flex: 1;
+  margin: 0.4rem;
+  padding: 1rem;
+  background: $white-text;
+  cursor: pointer;
+  color: $black-text;
+  transition: .1s box-shadow;
+
+  h3, h2, p {
+    margin: 0;
+  }
+  .h3__header {
+    line-height: 1.7rem;
+  }
+  .h3__yus {
+    display: inline-block;
+    padding: 0.6rem;
+    color: $white-text;
+
+    background: $black-background;
+    transition: .2s text-shadow;
+  }
+  .h3__reade {
+    border: 4px solid $black-background;
+    position: relative;
+    top: -4px;
+    transition: .2s box-shadow;
+  }
+
+  h3 {
+    // display: inline-block;
+    padding: 0.6rem;
+    // color: $white-text;
+
+    // background: $black-background;
+    // transition: .1s text-shadow;
+  }
+}
+
+.header__module:hover {
+  box-shadow: -5px 5px 0px 0px $cyan;
+}
+.header__module:hover .h3__yus {
+  text-shadow: -2px 2px $magenta;
+}
+
+.header__module:hover .h3__reade {
+  box-shadow: -5px 5px 0px 0px $cyan;
+}
+
+
 @media screen and (min-width: 768px) {
   .header__banner__home:hover {
     display: flex;
@@ -88,65 +142,6 @@
   }
   #link__about:hover + .header__banner__about {
     display: flex;
-  }
-
-  .header__module {
-    display: block;
-    position: relative;
-    flex: 1;
-    margin: 0.4rem;
-    padding: 1rem;
-    background: $white-text;
-    cursor: pointer;
-    color: $black-text;
-    transition: .1s box-shadow;
-
-    h3, h2, p {
-      margin: 0;
-    }
-    .h3__header {
-      line-height: 1.7rem;
-    }
-    .h3__yus {
-      display: inline-block;
-      padding: 0.6rem;
-      color: $white-text;
-
-      background: $black-background;
-      transition: .2s text-shadow;
-    }
-    .h3__reade {
-      border: 4px solid $black-background;
-      position: relative;
-      top: -4px;
-      transition: .2s box-shadow;
-    }
-
-    h3 {
-      // display: inline-block;
-      padding: 0.6rem;
-      // color: $white-text;
-
-      // background: $black-background;
-      // transition: .1s text-shadow;
-    }
-  }
-
-  .header__module:hover {
-    box-shadow: -5px 5px 0px 0px $cyan;
-  }
-  .header__module:hover .h3__yus {
-    text-shadow: -2px 2px $magenta;
-  }
-
-  .header__module:hover .h3__reade {
-    box-shadow: -5px 5px 0px 0px $cyan;
-  }
-
-  .header__module--flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
   .h3__tiny {

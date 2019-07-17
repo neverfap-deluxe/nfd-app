@@ -328,7 +328,7 @@
 
   background: linear-gradient(-30deg, #FFFFFFE5, #FFFFFFE5 45%, #FFFFFF 45%) #fff;
 
-  transform: translateY(calc(100% - 35px));
+  // transform: translateY(calc(100% - 35px));
 
   .bottom__bar__initial {
     margin: 10px 20px;
@@ -355,11 +355,62 @@
 
 .bottom__bar__show {
   display: flex;
-  padding: 10px 20px 10px;
+  flex-direction: column-reverse;
+  padding: 0px 20px 15px;
   text-decoration: none;
-  flex-flow: row nowrap;
+  // flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+
+  .bottom__bar__meditation {
+    width: 100%;
+    align-items: flex-end;
+
+    .account__buttons {
+      position: relative;
+      top: 0.2rem;
+    }
+
+    .bottom__bar__social {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      width: 100%;
+    }
+
+    .bottom__bar__social__first {
+      display: flex;
+      align-items: center;
+    }
+
+    .bottom__bar__social__last {
+      display: flex;
+      align-items: center;
+      position: relative;
+      top: 0.2rem;
+    }
+
+    .header__module {
+      padding: 0.4rem;
+    }
+
+    .header__module:hover {
+      box-shadow: none;
+    }
+
+    .bottom__bar__meditation__top {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    h5 {
+      // margin: 0;
+      font-size: 1.1rem;
+      margin-bottom: 1.4rem;
+      min-width: 200px;
+    }
+  }
 
   .bottom__bar__show__main {
     display: flex;
