@@ -13,10 +13,17 @@
   color: $white-text;
 
   .email__campaign__title {
+    color: $white-text;
     margin-top: 0rem!important;
     font-size: 3rem;
     line-height: 6rem;
     text-shadow: 3px -3px $cyan;
+  }
+  p {
+    color: $white-text;
+  }
+  .seven__day__kickstarter__banner__item--page {
+    color: $white-text;
   }
 }
 
@@ -26,6 +33,7 @@
   margin-bottom: 5rem;
 
   .email__campaign__sub__title {
+    color: $white-text;
     flex: 1;
     font-size: 1.5rem;
     line-height: 3rem;
@@ -33,6 +41,9 @@
 
   .email__campaign__text__container {
     flex: 1;
+    p, h3, h4 {
+      color: $white-text;
+    }
   }
 }
 
