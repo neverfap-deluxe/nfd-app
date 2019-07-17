@@ -14,10 +14,9 @@
       </div>
 
       <div class="bottom__bar__show__main__section">
-        <h5 class="bottom__bar__h5">Latest Courses</h5>
+        <h5 class="bottom__bar__h5">Latest Meditations</h5>
         <div>
-          <img style="height: 100px;" src="/images/ebook_covers/7-day-kickstarter-ebook-cover-600-900.png" alt="">
-
+          <iframe allowtransparency="true" scrolling="no" frameborder="no" src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Fneverfapdeluxe&color=orange_white&size=32" style="width: 32px; height: 32px;"></iframe>
         </div>
       </div>
   
