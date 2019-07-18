@@ -4,6 +4,7 @@
   </div>
   <div class="bottom__bar__show">
     <% meditation = @page_collections.meditations |> List.first() %>
+    
     <!-- Meditation -->
     <div class="bottom__bar__meditation">
       <div class="bottom__bar__meditation__top">
@@ -68,11 +69,15 @@
         </div>
       </div>
       
+      <!--  -->
       <div>
         <audio id="player" controls>
           <source src='<%= meditation |> Map.get("mp3Url") %>' type="audio/mp3" />
           <!-- <source src='/css/meditation.mp3' type="audio/mp3" /> -->
         </audio>
+
+        <span class="bottom__bar__h3__tiny h3__tiny">Available on iTunes, Spotify and Castbox.</span>
+        <!-- <span class="bottom__bar__h3__tiny--right h3__tiny">NeverFap Deluxe &copy;.</span> -->
       </div>
       <!-- <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/plyr.min.js") %>'></script>           -->
       <script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>  
@@ -134,12 +139,12 @@
       </script>
     </div>
 
-    <!-- Rest -->
+    <!-- Rest
     <div class="bottom__bar__show__main">        
       <div class="bottom__bar__show__main__section">
 
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 
