@@ -15,7 +15,9 @@
       <%= render @view_module, @view_template, assigns %>
     </main>
     <!-- Bottom Bar -->
-    <%= partial "bottom_bar.html", assigns %>
+    <div id="bottom_bar">
+      <%= partial "bottom_bar.html", assigns %>
+    </div>
     <!-- JavaScript -->
     <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/app.js") %>'></script>
     <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/darkmode.js") %>'></script>

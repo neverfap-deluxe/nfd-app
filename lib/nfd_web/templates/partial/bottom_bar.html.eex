@@ -3,11 +3,11 @@
     NeverFap Deluxe
   </div>
   <div class="bottom__bar__show">
-    <% meditation = @page_collections.meditations |> List.last() %>
+    <% meditation = @page_collections.meditations |> List.first() %>
     <!-- Meditation -->
     <div class="bottom__bar__meditation">
       <div class="bottom__bar__meditation__top">
-        <h5>Latest Guided Meditation</h5>
+        <h5>Latest Guided Meditation <span class="bottom__bar__sub"><%= meditation |> Map.get("title") %></span></h5>
         <div class="bottom__bar__social">
           <div class="bottom__bar__social__first">
             <!-- Social -->
@@ -71,15 +71,66 @@
       <div>
         <audio id="player" controls>
           <source src='<%= meditation |> Map.get("mp3Url") %>' type="audio/mp3" />
+          <!-- <source src='/css/meditation.mp3' type="audio/mp3" /> -->
         </audio>
       </div>
-      <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/plyr.min.js") %>'></script>          
-      <!-- <script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>   -->
-      <!-- <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" /> -->
+      <!-- <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/plyr.min.js") %>'></script>           -->
+      <script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>  
+
       <script>
-        const player = new Plyr('#player', {
-          title: '<%= meditation |> Map.get("title") %>'
+        var player = new Plyr('#player', {
+          type: 'audio',
+          title: '<%= meditation |> Map.get("title") %>',
+          // sources: [
+          //     {
+          //         src: '/path/to/audio.mp3',
+          //         type: 'audio/mp3',
+          //     },
+          //     {
+          //         src: '/path/to/audio.ogg',
+          //         type: 'audio/ogg',
+          //     },
+          // ],
         });
+
+        var playerTitleText = document.querySelector('.bottom__bar__initial');
+
+        player.on('play', function() {
+          playerTitleText.textContent = 'Now Playing: <%= meditation |> Map.get("title") %> (0:00)';
+        });
+
+        player.on('timeupdate', function(event) {
+          var roundedCurrentTime = Math.floor(player.currentTime);
+          var formattedCurrentTime = roundedCurrentTime;
+          playerTitleText.textContent = 'Now Playing: <%= meditation |> Map.get("title") %> ' + '(' + fancyTimeFormat(formattedCurrentTime) + ')';
+        });
+
+        const revert = function() {
+          playerTitleText.textContent = 'NeverFap Deluxe';
+        };
+
+        // player.on('pause', revert);
+        player.on('stop', revert);
+        player.on('restart', revert);
+
+        function fancyTimeFormat(time) {   
+          // Hours, minutes and seconds
+          var hrs = ~~(time / 3600);
+          var mins = ~~((time % 3600) / 60);
+          var secs = ~~time % 60;
+
+          // Output like "1:01" or "4:03:59" or "123:03:59"
+          var ret = "";
+
+          if (hrs > 0) {
+              ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
+          }
+
+          ret += "" + mins + ":" + (secs < 10 ? "0" : "");
+          ret += "" + secs;
+          return ret;
+        }
+
       </script>
     </div>
 

@@ -15,41 +15,41 @@ defmodule NfdWeb.FetchAccess do
       :general_about -> apmss ++ [:contact_form_changeset]
       :general_contact -> apmss ++ [:contact_form_changeset]
       :general_community -> apmss ++ []
-      :general_donations -> []
-      :general_everything -> []
-      :general_premium -> []
+      :general_donations -> [:meditations]
+      :general_everything -> [:meditations]
+      :general_premium -> [:meditations]
 
       # GUIDES
       :guides_guide -> apmss ++ []
       :guides_summary -> apmss ++ []
-      :guides_neverfap_deluxe_bible -> []
-      :guides_emergency -> []
-      :guides_post_relapse_academy -> []
+      :guides_neverfap_deluxe_bible -> [:meditations]
+      :guides_emergency -> [:meditations]
+      :guides_post_relapse_academy -> [:meditations]
 
       # LEGAL
-      :legal_disclaimer -> []
-      :legal_privacy -> []
-      :legal_terms_and_conditions -> []
+      :legal_disclaimer -> [:meditations]
+      :legal_privacy -> [:meditations]
+      :legal_terms_and_conditions -> [:meditations]
 
       # PROGRAMS
-      :programs_accountability -> []
-      :programs_reddit_guidelines -> []
-      :programs_coaching -> [:contact_form_changeset]
+      :programs_accountability -> [:meditations]
+      :programs_reddit_guidelines -> [:meditations]
+      :programs_coaching -> [:meditations, :contact_form_changeset]
 
       # VOLUNTEER
-      :volunteer_helpful_neverfap_counsel -> []
-      :volunteer_engineering_corps -> []
-      :volunteer_marketing_department -> []
+      :volunteer_helpful_neverfap_counsel -> [:meditations]
+      :volunteer_engineering_corps -> [:meditations]
+      :volunteer_marketing_department -> [:meditations]
 
       # APPS
-      :apps_desktop_app -> []
-      :apps_mobile_app -> []
-      :apps_chrome_extension -> []
-      :apps_open_source -> []
-      :apps_neverfap_deluxe_league -> []
+      :apps_desktop_app -> [:meditations]
+      :apps_mobile_app -> [:meditations]
+      :apps_chrome_extension -> [:meditations]
+      :apps_open_source -> [:meditations]
+      :apps_neverfap_deluxe_league -> [:meditations]
 
       # MISC
-      :misc_never_fap -> []
+      :misc_never_fap -> [:meditations]
 
       # CONTENT
       :articles -> apmss ++ []
@@ -61,7 +61,7 @@ defmodule NfdWeb.FetchAccess do
       :meditations -> apmss ++ []
       :meditation -> apmss ++ ccp ++ [:meditation]
 
-      :courses -> [:courses]
+      :courses -> [:meditations, :courses]
       :course -> apmss ++ [:course]
 
       :podcasts -> apmss ++ [:podcasts]
@@ -70,33 +70,33 @@ defmodule NfdWeb.FetchAccess do
       :quotes -> apmss ++ [:quotes]
       :quote -> apmss ++ ccp ++ [:quotes, :quote]
 
-      :blogs -> [:blogs]
+      :blogs -> [:meditations, :blogs]
       :blog -> apmss ++ ccp ++ [:blogs, :blog]
 
-      :updates -> [:updates]
+      :updates -> [:meditations, :updates]
       :update -> apmss ++ ccp ++ [:updates, :update]
 
       # CONTENT EMAIL
-      :seven_day_kickstarter ->  [:seven_day_kickstarter, :seven_day_kickstarter_changeset]
-      :seven_day_kickstarter_single -> [:seven_day_kickstarter_single, :course]
+      :seven_day_kickstarter ->  [:meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
+      :seven_day_kickstarter_single -> [:meditations, :seven_day_kickstarter_single, :course]
 
-      :ten_day_meditation -> [:ten_day_meditation]
-      :ten_day_meditation_single -> [:ten_day_meditation_single, :course]
+      :ten_day_meditation -> [:meditations, :ten_day_meditation]
+      :ten_day_meditation_single -> [:meditations, :ten_day_meditation_single, :course]
 
-      :twenty_eight_day_awareness -> [:twenty_eight_day_awareness, :twenty_eight_day_awareness_changeset]
-      :twenty_eight_day_awareness_single -> [:twenty_eight_day_awareness_single, :course]
+      :twenty_eight_day_awareness -> [:meditations, :twenty_eight_day_awareness, :twenty_eight_day_awareness_changeset]
+      :twenty_eight_day_awareness_single -> [:meditations, :twenty_eight_day_awareness_single, :course]
 
-      :seven_week_awareness_vol_1 -> [:seven_week_awareness_vol_1, :seven_week_awareness_vol_1_changeset]
-      :seven_week_awareness_vol_1_single -> [:seven_week_awareness_vol_1_single, :course]
+      :seven_week_awareness_vol_1 -> [:meditations, :seven_week_awareness_vol_1, :seven_week_awareness_vol_1_changeset]
+      :seven_week_awareness_vol_1_single -> [:meditations, :seven_week_awareness_vol_1_single, :course]
 
-      :seven_week_awareness_vol_2 -> [:seven_week_awareness_vol_2, :seven_week_awareness_vol_2_changeset]
-      :seven_week_awareness_vol_2_single -> [:seven_week_awareness_vol_2_single, :course]
+      :seven_week_awareness_vol_2 -> [:meditations, :seven_week_awareness_vol_2, :seven_week_awareness_vol_2_changeset]
+      :seven_week_awareness_vol_2_single -> [:meditations, :seven_week_awareness_vol_2_single, :course]
 
-      :seven_week_awareness_vol_3 -> [:seven_week_awareness_vol_3, :seven_week_awareness_vol_3_changeset]
-      :seven_week_awareness_vol_3_single -> [:seven_week_awareness_vol_3_single, :course]
+      :seven_week_awareness_vol_3 -> [:meditations, :seven_week_awareness_vol_3, :seven_week_awareness_vol_3_changeset]
+      :seven_week_awareness_vol_3_single -> [:meditations, :seven_week_awareness_vol_3_single, :course]
 
-      :seven_week_awareness_vol_4 -> [:seven_week_awareness_vol_4, :seven_week_awareness_vol_4_changeset]
-      :seven_week_awareness_vol_4_single -> [:seven_week_awareness_vol_4_single, :course]
+      :seven_week_awareness_vol_4 -> [:meditations, :seven_week_awareness_vol_4, :seven_week_awareness_vol_4_changeset]
+      :seven_week_awareness_vol_4_single -> [:meditations, :seven_week_awareness_vol_4_single, :course]
 
       # DASHBOARD
       :dashboard -> [:courses, :ebooks, :purchased_ebooks, :purchased_courses, :not_purchased_ebooks, :not_purchased_courses, :patreon_auth_url]

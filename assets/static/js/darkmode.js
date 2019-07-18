@@ -1,5 +1,6 @@
 var dark__mode__button = document.querySelector('#dark__mode__button');
 var footer = document.querySelector('#footer');
+var bottom_bar = document.querySelector('#bottom_bar');
 var cookies__popup = document.querySelector('#cookies__popup');
 var general__main__content = document.querySelector('#general__main__content');
 var dark__mode__on = false;
@@ -23,6 +24,7 @@ function unsetDarkMode() {
   general__main__content.classList.remove('main__dark');
   footer.classList.remove('main__dark');
   cookies__popup.classList.remove('main__dark');
+  bottom_bar.classList.remove('main__dark');
 
   dark__mode__button.classList.remove('dark__mode__button__hovered');
   setCookie(isDarkMode, 'false', 90);
@@ -33,6 +35,7 @@ function setDarkMode() {
   general__main__content.classList.add('main__dark');
   footer.classList.add('main__dark');
   cookies__popup.classList.add('main__dark');
+  bottom_bar.classList.add('main__dark');
 
   dark__mode__button.classList.add('dark__mode__button__hovered');
   setCookie(isDarkMode, 'true', 90);

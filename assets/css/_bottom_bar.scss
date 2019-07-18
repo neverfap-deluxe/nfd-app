@@ -32,7 +32,7 @@
 
   background: linear-gradient(-30deg, #FFFFFFE5, #FFFFFFE5 45%, #FFFFFF 45%) #fff;
 
-  // transform: translateY(calc(100% - 35px));
+  transform: translateY(calc(100% - 35px));
 
   .bottom__bar__initial {
     margin: 10px 20px;
@@ -80,7 +80,7 @@
       align-items: center;
       justify-content: space-between;
 
-      width: 100%;
+      // width: 100%;
     }
 
     .bottom__bar__social__first {
@@ -109,13 +109,25 @@
     .bottom__bar__meditation__top {
       display: flex;
       align-items: flex-end;
+      justify-content: space-between;
     }
 
     h5 {
+      position: relative;
       // margin: 0;
       font-size: 1.1rem;
-      margin-bottom: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 1.75rem;
       min-width: 205px;
+
+      .bottom__bar__sub {
+        position: absolute;
+        bottom: -0.9rem;
+        left: 0;
+        font-size: 0.7rem;
+
+        min-width: 205px;
+      }
     }
   }
 
@@ -154,7 +166,20 @@
   display: none;
 }
 
+.bottom__bar__meditation__top {
+  h5, .bottom__bar__social {
+    flex: 1;
+  }
+}
+
+
 @media screen and (min-width: 550px) {
+  .bottom__bar__meditation__top {
+    h5, .bottom__bar__social {
+      flex: none;
+    }
+  }
+  
   .bottom__bar__show {
     .bottom__bar__meditation {
       .header__module {

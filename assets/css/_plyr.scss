@@ -13,4 +13,9 @@
 
 .plyr--audio .plyr__control.plyr__tab-focus, .plyr--audio .plyr__control:hover {
   background: none;
+  color: $cyan;
 }
+
+.plyr--full-ui input[type=range] {
+  color: $cyan;
+} 
