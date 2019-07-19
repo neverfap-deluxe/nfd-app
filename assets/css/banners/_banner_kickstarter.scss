@@ -53,6 +53,7 @@
   display: inline-block;
   // border: 4px solid $black-background;
   box-shadow: -6px 6px 0px 0px $cyan;
+  transition: .2s;
 }
 
 .seven__day__kickstarter__banner__box {
@@ -141,6 +142,11 @@
 
 @media screen and (min-width: 768px) {
   .seven__day__kickstarter__banner {
+    .seven__day__kickstarter__banner__inner {
+      .seven__day__kickstarter__banner__title:hover {
+        box-shadow: -18px 18px 0px 0px $white-text;
+      }
+    }
   }
 
   .seven__day__kickstarter__banner__box {
