@@ -82,6 +82,7 @@ defmodule Nfd.Sitemaps do
         add Helpers.page_path(Endpoint, :misc_never_fap), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :misc_teens), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :misc_porn_addiction), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :misc_porn_addiction_quiz), priority: 0.5, changefreq: "weekly", expires: nil
 
         # CONTENT
         add Helpers.content_path(Endpoint, :articles), priority: 0.5, changefreq: "weekly", expires: nil

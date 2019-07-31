@@ -52,6 +52,7 @@ defmodule NfdWeb.FetchAccess do
       :misc_never_fap -> [:meditations]
       :misc_teens -> [:meditations]
       :misc_porn_addiction -> [:meditations]
+      :misc_porn_addiction_quiz -> [:meditations]
 
       # CONTENT
       :articles -> apmss ++ []

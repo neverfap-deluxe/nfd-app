@@ -72,6 +72,7 @@ defmodule NfdWeb.Router do
     get "/never-fap", PageController, :misc_never_fap
     get "/teens", PageController, :misc_teens
     get "/porn-addiction", PageController, :misc_porn_addiction
+    get "/porn-addiction-quiz", PageController, :misc_porn_addiction_quiz
 
     # LEGAL
     get "/disclaimer", PageController, :legal_disclaimer
