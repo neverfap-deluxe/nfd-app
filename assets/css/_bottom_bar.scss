@@ -1,0 +1,214 @@
+.bottom__bar__container__display__none {
+  // visibility: hidden!important;
+  opacity: 0!important;
+  bottom: -36px!important;
+  z-index: -200;
+  margin: 0 20px;
+  opacity: 0;
+  transform: scaleY(0);
+  transition: .2s;
+}
+
+.bottom__bar__account__buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.bottom__bar__container {
+  transition: .1s opacity;
+  position: fixed;
+  bottom: 0;
+  visibility: visible;
+  left: 0;
+  right: 0;
+  box-shadow: 0 -1px 14px 1px rgba(0,0,0,.1);
+  opacity: 1;
+  display: block;
+
+  z-index: 3000;
+  transition: all .25s ease-in-out;
+  flex-flow: column nowrap;
+
+  background: linear-gradient(-30deg, #FFFFFFE5, #FFFFFFE5 45%, #FFFFFF 45%) #fff;
+
+  transform: translateY(calc(100% - 35px));
+
+  .bottom__bar__initial {
+    margin: 10px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-size: 12px;
+    transition: all .3s ease-in-out;
+    transform-origin: left;
+    // color: #778EB1;
+    color: $black-text;
+  }
+}
+
+.bottom__bar__container:hover .bottom__bar__initial {
+  margin: 0 20px;
+  opacity: 0;
+  transform: scaleY(0);
+}
+
+.bottom__bar__container:hover {
+  transform: translateY(0);
+}
+
+.bottom__bar__show {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0px 20px 15px;
+  text-decoration: none;
+  // flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  .bottom__bar__meditation {
+    width: 100%;
+    align-items: flex-end;
+
+    .account__buttons {
+      position: relative;
+      top: 0.2rem;
+    }
+
+    .bottom__bar__social {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      // width: 100%;
+    }
+
+    .bottom__bar__social__first {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .bottom__bar__social__last {
+      display: none;
+      align-items: center;
+      position: relative;
+      top: 0.2rem;
+    }
+
+    .header__module {
+      display: none;
+      padding: 0.4rem;
+      min-width: 315px;
+    }
+
+    .header__module:hover {
+      box-shadow: none;
+    }
+
+    .bottom__bar__meditation__top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    h5 {
+      position: relative;
+      // margin: 0;
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 1.75rem;
+      min-width: 205px;
+
+      .bottom__bar__sub {
+        position: absolute;
+        bottom: -0.9rem;
+        left: 0;
+        font-size: 0.7rem;
+
+        min-width: 205px;
+      }
+    }
+  }
+
+  .bottom__bar__show__main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    // flex-flow: row nowrap;
+
+
+    .bottom__bar__show__main__section {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding-left: 1rem;
+      padding-right: 1rem;
+
+      .bottom__bar__h5 {
+        margin: 0;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+
+      .bottom__bar__text {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.bottom__bar__paypal {
+  display: none;
+}
+
+.bottom__bar__calendly {
+  display: none;
+}
+
+.bottom__bar__meditation__top {
+  h5, .bottom__bar__social {
+    flex: 1;
+  }
+}
+
+
+@media screen and (min-width: 550px) {
+  .bottom__bar__meditation__top {
+    h5, .bottom__bar__social {
+      flex: none;
+    }
+  }
+  
+  .bottom__bar__show {
+    .bottom__bar__meditation {
+      .header__module {
+        display: block;
+      }
+    }
+  }  
+}
+
+@media screen and (min-width: 800px) {
+  .bottom__bar__calendly {
+    display: flex!important;
+  }
+  // Is already center, before it was flex-end but I feel this works better.
+  .bottom__bar__account__buttons {
+    justify-content: center!important;
+  }
+}
+
+
+@media screen and (min-width: 1000px) {
+  .bottom__bar__paypal {
+    display: flex!important;
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  .bottom__bar__social__last {
+    display: flex!important;
+  }
+}

@@ -2,14 +2,6 @@
 <html lang="en">
   <%= partial "head_general.html", assigns %>
 
-    <!-- Calendly badge widget begin -->
-    <!-- <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-    <script type="text/javascript">Calendly.initBadgeWidget({ url: 'https://calendly.com/neverfap-deluxe', text: '', color: '#00a2ff', textColor: '#ffffff', branding: false });</script> -->
-    <!-- Calendly badge widget end -->
-
-    <!-- TODO: Insert image into calendly. -->
-
   <body>
     <!-- Mobile Menu -->
     <div id="mobile__menu__overlay__background__id" class="mobile__menu__overlay__background"></div>
@@ -29,7 +21,9 @@
       <%= partial "layout/footer.html", assigns %>      
     </div>
     <!-- Bottom Bar -->
-    <%= partial "bottom_bar.html", assigns %>
+    <div id="bottom_bar">
+      <%= partial "bottom_bar.html", assigns %>
+    </div>
     <!-- JavaScript -->
     <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/app.js") %>'></script>
     <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/darkmode.js") %>'></script>

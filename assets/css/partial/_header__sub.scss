@@ -99,6 +99,92 @@
 }
 
 
+.header__discord__button {
+  border: 4px solid $white-text;
+}
+// .header__discord__button:hover {
+//   border: 4px solid $black-background;
+// }
+
+.header__discord__button__logo {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 0.41rem;
+  right: -0.26rem;
+  transition: .2s top;
+}
+.header__discord__button__logo:hover {
+  top: 0.01rem;
+}
+
+.header__reddit__button__logo {
+  position: relative;
+  width: 31px;
+  height: 31px;
+  top: 0;
+  transition: .2s top;
+}
+.header__reddit__button__logo:hover {
+  top: -0.4rem;
+}
+
+.header__youtube__button__logo {
+  position: relative;
+  width: 31px;
+  height: 31px;
+  top: 0;
+  transition: .2s top;
+}
+.header__youtube__button__logo:hover {
+  top: -0.4rem;
+}
+
+.header__patreon__button__logo {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  transition: .2s top;
+}
+.header__patreon__button__logo:hover {
+  top: -0.4rem;
+}
+
+.header__facebook__button__logo {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  transition: .2s top;
+}
+.header__facebook__button__logo:hover {
+  top: -0.4rem;
+}
+
+.header__instagram__button__logo {
+  position: relative;
+  width: 31px;
+  height: 31px;
+  top: 0;
+  transition: .2s top;
+}
+.header__instagram__button__logo:hover {
+  top: -0.4rem;
+}
+
+.header__twitter__button__logo {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  transition: .2s top;
+}
+.header__twitter__button__logo:hover {
+  top: -0.4rem;
+}
+
+
 @media screen and (min-width: 768px) {
   .header__banner__home:hover {
     display: flex;
@@ -152,90 +238,5 @@
     position: absolute;
     bottom: 0;
     left: 26px;
-  }
-
-  .header__discord__button {
-    border: 4px solid $white-text;
-  }
-  // .header__discord__button:hover {
-  //   border: 4px solid $black-background;
-  // }
-
-  .header__discord__button__logo {
-    width: 40px;
-    height: 40px;
-    position: relative;
-    top: 0.41rem;
-    right: -0.26rem;
-    transition: .2s top;
-  }
-  .header__discord__button__logo:hover {
-    top: 0.01rem;
-  }
-
-  .header__reddit__button__logo {
-    position: relative;
-    width: 31px;
-    height: 31px;
-    top: 0;
-    transition: .2s top;
-  }
-  .header__reddit__button__logo:hover {
-    top: -0.4rem;
-  }
-
-  .header__youtube__button__logo {
-    position: relative;
-    width: 31px;
-    height: 31px;
-    top: 0;
-    transition: .2s top;
-  }
-  .header__youtube__button__logo:hover {
-    top: -0.4rem;
-  }
-
-  .header__patreon__button__logo {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    top: 0;
-    transition: .2s top;
-  }
-  .header__patreon__button__logo:hover {
-    top: -0.4rem;
-  }
-
-  .header__facebook__button__logo {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    top: 0;
-    transition: .2s top;
-  }
-  .header__facebook__button__logo:hover {
-    top: -0.4rem;
-  }
-
-  .header__instagram__button__logo {
-    position: relative;
-    width: 31px;
-    height: 31px;
-    top: 0;
-    transition: .2s top;
-  }
-  .header__instagram__button__logo:hover {
-    top: -0.4rem;
-  }
-
-  .header__twitter__button__logo {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    top: 0;
-    transition: .2s top;
-  }
-  .header__twitter__button__logo:hover {
-    top: -0.4rem;
   }
 }

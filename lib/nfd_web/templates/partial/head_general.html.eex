@@ -130,7 +130,8 @@
 
   <!-- SCSS -->
   <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/normalize.css") %>'/>  
-  <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/plyr.css") %>'/>  
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
+  <!-- <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/plyr.css") %>'/>   -->
   <%= if Mix.env() != :dev do %>
     <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/app.css") %>'/>
   <% end %>

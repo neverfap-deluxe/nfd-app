@@ -3,11 +3,11 @@
     NeverFap Deluxe
   </div>
   <div class="bottom__bar__show">
-    <% meditation = @page_collections.meditations |> List.last() %>
+    <% meditation = @page_collections.meditations |> List.first() %>
     <!-- Meditation -->
     <div class="bottom__bar__meditation">
       <div class="bottom__bar__meditation__top">
-        <h5>Latest Guided Meditation</h5>
+        <h5>Latest Guided Meditation <span class="bottom__bar__sub"><%= meditation |> Map.get("title") %></span></h5>
         <div class="bottom__bar__social">
           <div class="bottom__bar__social__first">
             <!-- Social -->
@@ -21,23 +21,27 @@
               <a class="header__discord__button" href="<%= Application.get_env(:nfd, :social_patreon_url) %>"><img class="header__patreon__button__logo" src="/images/patreon__logo.jpg" /></a>
             </div>
             
-            <!-- Paypal -->
-            <div class="account__buttons">
-              <a class="account__paypal__button__container" href="<%= Application.get_env(:nfd, :social_paypal_url) %>">
-                <img class="account__paypal__button__logo" src="/images/paypal__logo.png" />
-                <p class="account__paypal__button__text"><span class="account__paypal__button__text--display">PAYPAL </span>DONATION</p>
-              </a>
+            <div class="bottom__bar__account__buttons">
+              <!-- Paypal -->
+              <div class="account__buttons bottom__bar__paypal">
+                <a class="account__paypal__button__container" href="<%= Application.get_env(:nfd, :social_paypal_url) %>">
+                  <img class="account__paypal__button__logo" src="/images/paypal__logo.png" />
+                  <p class="account__paypal__button__text"><span class="account__paypal__button__text--display">PAYPAL </span>DONATION</p>
+                </a>
+              </div>
+                
+              <!-- Consultation -->
+              <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+              <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+
+              <div class="account__buttons bottom__bar__calendly" style="justify-content: flex-start;">
+                <a class="account__calendly__button__container" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/neverfap-deluxe'});return false;">
+                  <img class="account__calendly__button__logo" src="/images/calendly__logo.png" />
+                  <p class="account__calendly__button__text">FREE <span class="account__calendly__button__text--display">CONSULTATION</span></p>
+                </a>
+              </div>
             </div>
-              
-            <!-- Consultation -->
-            <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-            <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-            <div class="account__buttons" style="justify-content: flex-start;">
-              <a class="account__calendly__button__container" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/neverfap-deluxe'});return false;">
-                <img class="account__calendly__button__logo" src="/images/calendly__logo.png" />
-                <p class="account__calendly__button__text">FREE <span class="account__calendly__button__text--display">CONSULTATION</span></p>
-              </a>
-            </div>
+
           </div>
 
           <div class="bottom__bar__social__last">
@@ -67,15 +71,66 @@
       <div>
         <audio id="player" controls>
           <source src='<%= meditation |> Map.get("mp3Url") %>' type="audio/mp3" />
+          <!-- <source src='/css/meditation.mp3' type="audio/mp3" /> -->
         </audio>
       </div>
-      <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/plyr.min.js") %>'></script>          
-      <!-- <script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>   -->
-      <!-- <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" /> -->
+      <!-- <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/plyr.min.js") %>'></script>           -->
+      <script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>  
+
       <script>
-        const player = new Plyr('#player', {
-          title: '<%= meditation |> Map.get("title") %>'
+        var player = new Plyr('#player', {
+          type: 'audio',
+          title: '<%= meditation |> Map.get("title") %>',
+          // sources: [
+          //     {
+          //         src: '/path/to/audio.mp3',
+          //         type: 'audio/mp3',
+          //     },
+          //     {
+          //         src: '/path/to/audio.ogg',
+          //         type: 'audio/ogg',
+          //     },
+          // ],
         });
+
+        var playerTitleText = document.querySelector('.bottom__bar__initial');
+
+        player.on('play', function() {
+          playerTitleText.textContent = 'Now Playing: <%= meditation |> Map.get("title") %> (0:00)';
+        });
+
+        player.on('timeupdate', function(event) {
+          var roundedCurrentTime = Math.floor(player.currentTime);
+          var formattedCurrentTime = roundedCurrentTime;
+          playerTitleText.textContent = 'Now Playing: <%= meditation |> Map.get("title") %> ' + '(' + fancyTimeFormat(formattedCurrentTime) + ')';
+        });
+
+        const revert = function() {
+          playerTitleText.textContent = 'NeverFap Deluxe';
+        };
+
+        // player.on('pause', revert);
+        player.on('stop', revert);
+        player.on('restart', revert);
+
+        function fancyTimeFormat(time) {   
+          // Hours, minutes and seconds
+          var hrs = ~~(time / 3600);
+          var mins = ~~((time % 3600) / 60);
+          var secs = ~~time % 60;
+
+          // Output like "1:01" or "4:03:59" or "123:03:59"
+          var ret = "";
+
+          if (hrs > 0) {
+              ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
+          }
+
+          ret += "" + mins + ":" + (secs < 10 ? "0" : "");
+          ret += "" + secs;
+          return ret;
+        }
+
       </script>
     </div>
 

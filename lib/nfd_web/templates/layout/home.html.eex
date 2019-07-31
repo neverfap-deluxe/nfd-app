@@ -18,7 +18,9 @@
       <%= partial "layout/footer.html", assigns %>    
     </div>
     <!-- Bottom Bar -->
-    <%= partial "bottom_bar.html", assigns %>
+    <div id="bottom_bar">
+      <%= partial "bottom_bar.html", assigns %>
+    </div>
   </body>
   <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/homepage.js") %>'></script>
   <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/app.js") %>'></script>
