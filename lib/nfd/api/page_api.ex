@@ -36,6 +36,8 @@ defmodule Nfd.API.PageAPI do
 
   # MISC
   def misc_never_fap(client), do: get(client, "/misc_never_fap/index.json")
+  def misc_teens(client), do: get(client, "/misc_teens/index.json")
+  def misc_porn_addiction(client), do: get(client, "/misc_porn_addiction/index.json")
 
   # LEGAL
   def legal_disclaimer(client), do: get(client, "/legal_disclaimer/index.json")

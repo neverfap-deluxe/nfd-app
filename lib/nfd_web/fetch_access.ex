@@ -1,9 +1,9 @@
 defmodule NfdWeb.FetchAccess do
-  defp apmss do 
+  defp apmss do
     [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
   end
 
-  defp ccp do 
+  defp ccp do
     [:comments, :comment_form_changeset, :previous_next]
   end
 
@@ -50,6 +50,8 @@ defmodule NfdWeb.FetchAccess do
 
       # MISC
       :misc_never_fap -> []
+      :misc_teens -> []
+      :misc_porn_addiction -> []
 
       # CONTENT
       :articles -> apmss ++ []
@@ -102,7 +104,7 @@ defmodule NfdWeb.FetchAccess do
       :dashboard -> [:courses, :ebooks, :purchased_ebooks, :purchased_courses, :not_purchased_ebooks, :not_purchased_courses, :patreon_auth_url]
       :dashboard_coaching -> [:stripe_session, :stripe_api_key, :paypal_api_key]
       :dashboard_faq -> []
-      
+
       :dashboard_courses -> [:courses]
       :dashboard_course_collection -> [:courses, :course, :subscription_emails, :subscribed_property, :stripe_session, :paypal_session, :stripe_api_key, :paypal_api_key]
       :dashboard_course_file -> [:courses, :course, :course_file]

@@ -70,6 +70,8 @@ defmodule NfdWeb.Router do
 
     # MISC
     get "/never-fap", PageController, :misc_never_fap
+    get "/teens", PageController, :misc_teens
+    get "/porn-addiction", PageController, :misc_porn_addiction
 
     # LEGAL
     get "/disclaimer", PageController, :legal_disclaimer
@@ -176,7 +178,7 @@ defmodule NfdWeb.Router do
 
   scope "/", NfdWeb do
     pipe_through [:payment]
-    
+
     post "/paypal_payment", PaymentController, :paypal_collection_payment
     post "/stripe_payment", PaymentController, :stripe_collection_payment
   end

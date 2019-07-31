@@ -48,6 +48,8 @@ defmodule NfdWeb.PageController do
 
   # MISC
   def misc_never_fap(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :misc_never_fap, "general.html", FetchAccess.fetch_access_array(:misc_never_fap))
+  def misc_teens(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :misc_teens, "general.html", FetchAccess.fetch_access_array(:misc_teens))
+  def misc_porn_addiction(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :misc_porn_addiction, "general.html", FetchAccess.fetch_access_array(:misc_porn_addiction))
 
   # Images
   def test(conn, _params), do: conn |> render("test.html")
