@@ -47,6 +47,20 @@
   }
 }
 
+.bottom__bar__h3__tiny {
+  position: absolute;
+  bottom: 0.16rem;
+  // left: 50%;
+  // transform: translateX(-50%);
+  // text-shadow: -2px 2px $magenta;
+}
+
+.bottom__bar__h3__tiny--right {
+  position: absolute;
+  bottom: 0.16rem;
+  right: 0;
+}
+
 .bottom__bar__container:hover .bottom__bar__initial {
   margin: 0 20px;
   opacity: 0;
@@ -60,7 +74,7 @@
 .bottom__bar__show {
   display: flex;
   flex-direction: column-reverse;
-  padding: 0px 20px 15px;
+  padding: 0px 20px 20px;
   text-decoration: none;
   // flex-flow: row nowrap;
   justify-content: center;

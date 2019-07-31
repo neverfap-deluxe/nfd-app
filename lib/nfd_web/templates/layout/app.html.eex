@@ -15,12 +15,12 @@
       <%= render @view_module, @view_template, assigns %>
     </main>
     <!-- Bottom Bar -->
-    <div id="bottom_bar">
-      <%= partial "bottom_bar.html", assigns %>
-    </div>
+    <!-- <div id="bottom_bar">
+      <%#= partial "bottom_bar.html", assigns %>
+    </div> -->
     <!-- JavaScript -->
     <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/app.js") %>'></script>
     <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/darkmode.js") %>'></script>
-    <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/bottombar.js") %>'></script>
+    <!-- <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/bottombar.js") %>'></script> -->
   </body>
 </html>
