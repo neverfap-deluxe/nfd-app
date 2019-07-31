@@ -1,2 +1,69 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
+
+<div class="quiz__container">
+
+  <div class="quiz__question__container">
+
+    <div id="quiz__question__first" class="quiz__question__container__inner">
+      <div class="quiz__question">
+        Do you ?
+      </div>
+
+      <div class="quiz__buttons">
+        <div id="quiz__button__yes" class="quiz__button">
+          Yes
+        </div>
+        <div id="quiz__button__no" class="quiz__button">
+          No
+        </div>
+      </div>
+    </div>
+
+    <div id="quiz__question__second">
+      Thanks for answering!
+    </div>
+  </div>
+
+  <div class="quiz__answer__container">
+    <div id="quiz__answer__not__yet" class="quiz__answer">
+      ...aaaaand you need to answer first!
+    </div>
+
+    <div id="quiz__answer__yes" class="quiz__answer">
+    
+    </div>
+
+    <div id="quiz__answer__no" class="quiz__answer">
+
+    </div>
+  </div>
+</div>
+
+<script>
+  var quiz__button__yes = document.querySelector('#quiz__button__yes');
+  var quiz__button__no = document.querySelector('#quiz__button__no');
+
+  var quiz__question__first = document.querySelector('#quiz__question__first');
+  var quiz__question__second = document.querySelector('#quiz__question__second');
+
+  var quiz__answer__not__yet = document.querySelector('#quiz__answer__not__yet');
+  var quiz__answer__yes = document.querySelector('#quiz__answer__yes');
+  var quiz__answer__no = document.querySelector('#quiz__answer__no');
+
+  quiz__button__yes.onclick = function(event) {
+    quiz__question__first.style.display = 'none';
+    quiz__question__second.style.display = 'block';
+
+    quiz__answer__not__yet.style.display = 'none';
+    quiz__answer__yes.style.display = 'block';
+  }
+  quiz__button__no.onclick = function(event) {
+    quiz__question__first.style.display = 'none';
+    quiz__question__second.style.display = 'block';
+
+    quiz__answer__not__yet.style.display = 'none';
+    quiz__answer__no.style.display = 'block';
+  }
+</script>
+
 <%= partial "links/patreon.html", assigns %>

@@ -1,0 +1,30 @@
+.quiz__container {
+  .quiz__question__container {
+    .quiz__question__container__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .quiz__question {
+
+      }
+      .quiz__buttons {
+        .quiz__button {
+          border: 4px solid black;
+        }
+
+      }
+
+    }
+
+  }
+
+  .quiz__answer__container {
+    .quiz__answer {
+
+    }
+
+  }
+
+}
