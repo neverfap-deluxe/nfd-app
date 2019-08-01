@@ -15,32 +15,41 @@
         </div>
       <% end %>
     </span>
-
-    <%# <div class="account__learn__more">
-      <div id="account__learn__moreLabel" class="account__learn__more--label">Learn more.</div>
-      <div id="account__learn__moreDropdown" class="account__learn__more--dropdown">
-        <h3 class="account__learn__more--title">FREE</h3>
-        <div class="account__learn__more--list">
-          <div class="account__learn__more--item">Articles</div>
-          <div class="account__learn__more--item">Practices</div>
-          <div class="account__learn__more--item">7 Week NeverFap Deluxe Kickstarter</div>
-          <div class="account__learn__more--item">Guided Meditation Series</div>
-          <div class="account__learn__more--item">Podcast</div>
-        </div>
-        <h3 class="account__learn__more--title">PAID</h3>
-        <p class="account__learn__more--list">
-          <div class="account__learn__more--item">Articles</div>
-
-          Nothing!
-        </p>
-      </div>
-    </div>
-
-    <script>
-      var account__learn__moreLabel = document.querySelector('#account__learn__moreLabel');
-      var account__learn__moreDropdown = document.querySelector('#account__learn__moreDropdown');
-    </script> %>
-
     <p class="login__top__title">Register or login for additional access to NeverFap Deluxe! </p>
   </div>
 </div>
+
+<div class="account__learn__more">
+  <div id="account__learn__moreLabel" class="account__learn__more--label">Learn more.</div>
+  <div id="account__learn__moreDropdown" class="account__learn__more--dropdown">
+    <h3 class="account__learn__more--title">FREE <!-- (Pretty much everything :3) --></h3>
+    <div class="account__learn__more--list">
+      <div class="account__learn__more--item">NeverFap Deluxe Articles</div>
+      <div class="account__learn__more--item">NeverFap Deluxe Practices</div>
+      <div class="account__learn__more--item">7 Week NeverFap Deluxe Kickstarter</div>
+      <div class="account__learn__more--item">FREE Guided Meditation Series</div>
+      <div class="account__learn__more--item">NeverFap Deluxe Podcast</div>
+      <div class="account__learn__more--item">NeverFap Deluxe Android Application</div>
+    </div>
+    <h3 class="account__learn__more--title">PAID <!-- (Some Meditation and Awareness audio courses) --></h3>
+    <p class="account__learn__more--list">
+      <div class="account__learn__more--item">Absolutely Nothing!</div>
+    </p>
+  </div>
+</div>
+
+<script>
+  var account__learn__moreLabel = document.querySelector('#account__learn__moreLabel');
+  var account__learn__moreDropdown = document.querySelector('#account__learn__moreDropdown');
+  var accountLearnMoreDropdownClosed = true;
+
+  account__learn__moreLabel.onclick = function(event) {
+    if (accountLearnMoreDropdownClosed) {
+      account__learn__moreDropdown.classList.add('account__learn__more__dropdown--open')
+      accountLearnMoreDropdownClosed = false;
+    } else {
+      account__learn__moreDropdown.classList.remove('account__learn__more__dropdown--open')
+      accountLearnMoreDropdownClosed = true;
+    }
+  }
+</script>

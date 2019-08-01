@@ -1,12 +1,23 @@
-<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: "" } %>
+
+<div class="single__wrapper">
+  <div class="single__content">
+    <!-- <h1>Motivation</h1> -->
+    <p>Hey, welcome to the website!</p>
+    <p>NeverFap Deluxe is a comprehensive porn addiction recovery solution for those struggling to stop their self-destructive porn habits.</p>
+    <p>Below I've devised a short quiz which may help you better understand more about your addiction/recovery.</p>
+    <p>It asks one very vital question</p>
+  </div>
+</div>
 
 <div class="quiz__container">
 
   <div class="quiz__question__container">
 
+    <!-- First Question -->
     <div id="quiz__question__first" class="quiz__question__container__inner">
       <div class="quiz__question">
-        Do you ever have the urge to watch porn?
+        Have you ever had a serious urge to watch porn within the past 3 months?
       </div>
 
       <div class="quiz__buttons">
@@ -19,22 +30,32 @@
       </div>
     </div>
 
+    <!-- First Question Response -->
     <div id="quiz__question__second">
       Thanks for answering!
     </div>
   </div>
 
   <div class="quiz__answer__container">
+    <!-- Not Yet Answered -->
     <div id="quiz__answer__not__yet" class="quiz__answer">
       ...aaaaand you need to answer first!
     </div>
 
+    <!-- Answered Yes -->
     <div id="quiz__answer__yes" class="quiz__answer">
-
+      <p>Well, then you're most likely addicted.</p>
+      <p>If you're not addicted to porn then you wouldn't be thinking about porn at all in any capacity what-so-ever.</p>
+      <p>Once you learn to develop full-control over your mind, you literally will not think about porn, nor masturbation, at all.</p>
+      <p>In large part because you'll have a proper understanding of Healthy Coping Mechanisms</p>
+      <p>I have full-control over my mind and I have not thought about porn, nor masturbation</p>
     </div>
 
+    <!-- Answered No -->
     <div id="quiz__answer__no" class="quiz__answer">
-
+      <p>Then chances are that you're not addicted.</p>
+      <p>In large part because if you've managed to remain so long without thinking about porn, then it most likely means that you've developed control over your mind and you're mentally stable.</p>
+      <p></p>
     </div>
   </div>
 </div>
@@ -55,22 +76,32 @@
 
   function answeredYes(event) {
     // hide questions
-    quiz__question__first.style.display = 'none';
-    quiz__question__second.style.display = 'block';
+    // quiz__question__first.style.display = 'none';
+    // quiz__question__second.style.display = 'block';
+
+    // change button style
+    quiz__button__yes.classList.add('quiz__chosen__answer');
+    quiz__button__no.classList.remove('quiz__chosen__answer');
 
     // show answer
     quiz__answer__not__yet.style.display = 'none';
+    quiz__answer__no.style.display = 'none';
     quiz__answer__yes.style.display = 'block';
   }
 
   function answeredNo(event) {
     // hide questions
-    quiz__question__first.style.display = 'none';
-    quiz__question__second.style.display = 'block';
+    // quiz__question__first.style.display = 'none';
+    // quiz__question__second.style.display = 'block';
+
+    // change button style
+    quiz__button__yes.classList.remove('quiz__chosen__answer');
+    quiz__button__no.classList.add('quiz__chosen__answer');
 
     // show answer
     quiz__answer__not__yet.style.display = 'none';
     quiz__answer__no.style.display = 'block';
+    quiz__answer__yes.style.display = 'none';
   }
 </script>
 

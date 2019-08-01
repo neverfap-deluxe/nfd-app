@@ -1,5 +1,52 @@
 .quiz__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   .quiz__question__container {
+    border: 4px solid black;
+    // width: 100%;
+    max-width: 800px;
+
+
+    .quiz__question__first {
+      .quiz__question {
+        font-size: 5rem;
+      }
+    }
+    .quiz__buttons {
+      display: flex;
+      justify-content: space-between;
+
+      width: 250px;
+
+      .quiz__button {
+        border: 4px solid black;
+        padding: 1rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 1.5rem;
+
+        // background: -moz-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
+        // background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, $magenta), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
+        // background: -webkit-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
+        // background: -o-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
+        // background: -ms-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ie10+ */
+        // background: linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* w3c */
+        // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
+        // color: $white-text;
+      }
+
+      .quiz__button:hover {
+        
+      }
+    }
+
+    .quiz__question__second {
+
+    }
+
     .quiz__question__container__inner {
       display: flex;
       flex-direction: column;
@@ -7,23 +54,8 @@
       justify-content: center;
 
       .quiz__question {
-
-      }
-
-      .quiz__buttons {
-        .quiz__button {
-          border: 4px solid black;
-
-          background: -moz-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
-          background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, $magenta), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
-          background: -webkit-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* safari5.1+,chrome10+ */
-          background: -o-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* opera 11.10+ */
-          background: -ms-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ie10+ */
-          background: linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* w3c */
-          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
-          color: $white-text;
-        }
-
+        padding: 2rem;
+        font-size: 3rem;
       }
 
     }
@@ -31,10 +63,25 @@
   }
 
   .quiz__answer__container {
+    border: 4px solid black;
+    padding: 2rem;
+
     .quiz__answer {
 
     }
 
   }
+
+}
+
+#quiz__answer__yes {
+  display: none;
+}
+
+#quiz__answer__no {
+  display: none;
+}
+
+.quiz__chosen__answer {
 
 }
