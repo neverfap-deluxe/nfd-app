@@ -136,3 +136,18 @@
 // @media screen and (min-width: 1280px) {
 
 // }
+
+.account__learn__more {
+  &--label {
+    color: cyan;
+  }
+  &--dropdown {
+    display: block;
+  }
+  &--title {
+
+  }
+  &--list {
+    
+  }
+}

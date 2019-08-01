@@ -1,4 +1,4 @@
-<div class="login__top login__top--without--mobile">  
+<div class="login__top login__top--without--mobile">
   <div class="account__buttons__login">
     <span class="login__top__button__register">
         <%= link to: Routes.pow_registration_path(@conn, :new) do %>
@@ -13,10 +13,34 @@
         <div class="login__top__button__text">
           Sign in
         </div>
-      <% end %>  
-      </span>
+      <% end %>
+    </span>
+
+    <%# <div class="account__learn__more">
+      <div id="account__learn__moreLabel" class="account__learn__more--label">Learn more.</div>
+      <div id="account__learn__moreDropdown" class="account__learn__more--dropdown">
+        <h3 class="account__learn__more--title">FREE</h3>
+        <div class="account__learn__more--list">
+          <div class="account__learn__more--item">Articles</div>
+          <div class="account__learn__more--item">Practices</div>
+          <div class="account__learn__more--item">7 Week NeverFap Deluxe Kickstarter</div>
+          <div class="account__learn__more--item">Guided Meditation Series</div>
+          <div class="account__learn__more--item">Podcast</div>
+        </div>
+        <h3 class="account__learn__more--title">PAID</h3>
+        <p class="account__learn__more--list">
+          <div class="account__learn__more--item">Articles</div>
+
+          Nothing!
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var account__learn__moreLabel = document.querySelector('#account__learn__moreLabel');
+      var account__learn__moreDropdown = document.querySelector('#account__learn__moreDropdown');
+    </script> %>
 
     <p class="login__top__title">Register or login for additional access to NeverFap Deluxe! </p>
   </div>
 </div>
-  

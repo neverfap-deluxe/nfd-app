@@ -6,7 +6,7 @@
 
     <div id="quiz__question__first" class="quiz__question__container__inner">
       <div class="quiz__question">
-        Do you ?
+        Do you ever have the urge to watch porn?
       </div>
 
       <div class="quiz__buttons">
@@ -30,7 +30,7 @@
     </div>
 
     <div id="quiz__answer__yes" class="quiz__answer">
-    
+
     </div>
 
     <div id="quiz__answer__no" class="quiz__answer">
@@ -50,17 +50,25 @@
   var quiz__answer__yes = document.querySelector('#quiz__answer__yes');
   var quiz__answer__no = document.querySelector('#quiz__answer__no');
 
-  quiz__button__yes.onclick = function(event) {
+  quiz__button__yes.onclick = answeredYes;
+  quiz__button__no.onclick = answeredNo;
+
+  function answeredYes(event) {
+    // hide questions
     quiz__question__first.style.display = 'none';
     quiz__question__second.style.display = 'block';
 
+    // show answer
     quiz__answer__not__yet.style.display = 'none';
     quiz__answer__yes.style.display = 'block';
   }
-  quiz__button__no.onclick = function(event) {
+
+  function answeredNo(event) {
+    // hide questions
     quiz__question__first.style.display = 'none';
     quiz__question__second.style.display = 'block';
 
+    // show answer
     quiz__answer__not__yet.style.display = 'none';
     quiz__answer__no.style.display = 'block';
   }
