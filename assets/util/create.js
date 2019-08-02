@@ -74,7 +74,7 @@ const updateSitemapsFile = (pageControllerFilePath, fullType, fullSlug, fullUnde
 
     const regex = `# ${fullTypeEnd}`;
     var result = data.replace(new RegExp(regex, 'gi'),
-    `add Helpers.page_path(Endpoint, :${underscore}), priority: 0.5, changefreq: "weekly", expires: nil\n  # ${fullTypeEnd}`);
+    `add Helpers.page_path(Endpoint, :${underscore}), priority: 0.5, changefreq: "weekly", expires: nil\n        # ${fullTypeEnd}`);
 
     fs.writeFile(pageControllerFilePath, result, 'utf8', function (err) {
        if (err) return console.log(err);
@@ -99,16 +99,16 @@ const createLink = () => {
   // updateFetchAccessFile(fetch_accessFilePath, fullType, fullSlug, fullUnderscoreSlug);
 
   // // Create page_api.ex entry
-  const page_apiFilePath = `../lib/nfd/api/page_api.ex`;
-  updatePageAPIFile(page_apiFilePath, fullType, fullSlug, fullUnderscoreSlug);
+  // const page_apiFilePath = `../lib/nfd/api/page_api.ex`;
+  // updatePageAPIFile(page_apiFilePath, fullType, fullSlug, fullUnderscoreSlug);
 
   // // Create page_controller.ex entry
   // const page_controllerFilePath = `../lib/nfd_web/controllers/page_controller.ex`;
   // updatePageControllerFile(page_controllerFilePath, fullType, fullSlug, fullUnderscoreSlug);
 
   // // Create sitemaps.ex entry
-  // const sitemapsFilePath = `../lib/nfd/sitemaps.ex`;
-  // updateSitemapsFile(sitemapsFilePath, fullType, fullSlug, fullUnderscoreSlug);
+  const sitemapsFilePath = `../lib/nfd/sitemaps.ex`;
+  updateSitemapsFile(sitemapsFilePath, fullType, fullSlug, fullUnderscoreSlug);
 };
 
 createLink();
