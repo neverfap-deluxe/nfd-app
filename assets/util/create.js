@@ -5,10 +5,12 @@ const uuidv4 = require('uuid/v4');
 const updateRouterFile = (routerFilePath, fullType, fullSlug, fullUnderscoreSlug) => {
   fs.readFile(routerFilePath, 'utf8', function (err,data) {
     if (err) return console.log(err);
+    const underscore = `${fullType}_${fullUnderscoreSlug}`;
+    const fullTypeEnd = `${fullType.toUpperCase()} END`;
 
-    const regex = `# ${fullType.toUpperCase()}`;
+    const regex = `# ${fullTypeEnd}`;
     var result = data.replace(new RegExp(regex, 'gi'),
-    `# ${fullType.toUpperCase()}\n    get \"${fullSlug}\", PageController, :${fullUnderscoreSlug}`);
+    `get \"/${fullSlug}\", PageController, :${underscore}\n    # ${fullTypeEnd}`);
 
     fs.writeFile(routerFilePath, result, 'utf8', function (err) {
        if (err) return console.log(err);
@@ -20,10 +22,11 @@ const updateFetchAccessFile = (fetchAccessFilePath, fullType, fullSlug, fullUnde
   fs.readFile(fetchAccessFilePath, 'utf8', function (err,data) {
     if (err) return console.log(err);
     const underscore = `${fullType}_${fullUnderscoreSlug}`;
+    const fullTypeEnd = `${fullType.toUpperCase()} END`;
 
-    const regex = `# ${fullType.toUpperCase()}`;
+    const regex = `# ${fullTypeEnd}`;
     var result = data.replace(new RegExp(regex, 'gi'),
-    `# ${fullType.toUpperCase()}\n      :${underscore} -> [:meditations]`);
+    `:${underscore} -> [:meditations]\n      # ${fullTypeEnd}`);
 
     fs.writeFile(fetchAccessFilePath, result, 'utf8', function (err) {
        if (err) return console.log(err);
@@ -35,10 +38,11 @@ const updatePageAPIFile = (fetchAccessFilePath, fullType, fullSlug, fullUndersco
   fs.readFile(fetchAccessFilePath, 'utf8', function (err,data) {
     if (err) return console.log(err);
     const underscore = `${fullType}_${fullUnderscoreSlug}`;
+    const fullTypeEnd = `${fullType.toUpperCase()} END`;
 
-    const regex = `# ${fullType.toUpperCase()}`;
+    const regex = `# ${fullTypeEnd}`;
     var result = data.replace(new RegExp(regex, 'gi'),
-    `# ${fullType.toUpperCase()}\n  def ${underscore}(client), do: get(client, "/${underscore}/index.json")`);
+    `def ${underscore}(client), do: get(client, "/${underscore}/index.json")\n  # ${fullTypeEnd}`);
 
     fs.writeFile(fetchAccessFilePath, result, 'utf8', function (err) {
        if (err) return console.log(err);
@@ -50,10 +54,11 @@ const updatePageControllerFile = (pageControllerFilePath, fullType, fullSlug, fu
   fs.readFile(pageControllerFilePath, 'utf8', function (err,data) {
     if (err) return console.log(err);
     const underscore = `${fullType}_${fullUnderscoreSlug}`;
+    const fullTypeEnd = `${fullType.toUpperCase()} END`;
 
-    const regex = `# ${fullType.toUpperCase()}`;
+    const regex = `# ${fullTypeEnd}`;
     var result = data.replace(new RegExp(regex, 'gi'),
-    `# ${fullType.toUpperCase()}\n  def ${underscore}(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :${underscore}, "general.html", FetchAccess.fetch_access_array(:${underscore}))`);
+    `def ${underscore}(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :${underscore}, "general.html", FetchAccess.fetch_access_array(:${underscore}))\n  # ${fullTypeEnd}`);
 
     fs.writeFile(pageControllerFilePath, result, 'utf8', function (err) {
        if (err) return console.log(err);
@@ -65,10 +70,11 @@ const updateSitemapsFile = (pageControllerFilePath, fullType, fullSlug, fullUnde
   fs.readFile(pageControllerFilePath, 'utf8', function (err,data) {
     if (err) return console.log(err);
     const underscore = `${fullType}_${fullUnderscoreSlug}`;
+    const fullTypeEnd = `${fullType.toUpperCase()} END`;
 
-    const regex = `# ${fullType.toUpperCase()}`;
+    const regex = `# ${fullTypeEnd}`;
     var result = data.replace(new RegExp(regex, 'gi'),
-    `# ${fullType.toUpperCase()}\n  add Helpers.page_path(Endpoint, :${underscore}), priority: 0.5, changefreq: "weekly", expires: nil`);
+    `add Helpers.page_path(Endpoint, :${underscore}), priority: 0.5, changefreq: "weekly", expires: nil\n  # ${fullTypeEnd}`);
 
     fs.writeFile(pageControllerFilePath, result, 'utf8', function (err) {
        if (err) return console.log(err);
@@ -85,16 +91,16 @@ const createLink = () => {
   console.log(fullType, fullSlug, fullUnderscoreSlug);
 
   // Create router.ex entry
-  const routerFilePath = `../lib/nfd_web/router.ex`;
-  updateRouterFile(routerFilePath, fullType, fullSlug, fullUnderscoreSlug);
+  // const routerFilePath = `../lib/nfd_web/router.ex`;
+  // updateRouterFile(routerFilePath, fullType, fullSlug, fullUnderscoreSlug);
 
   // // Create fetch_access.ex entry
   // const fetch_accessFilePath = `../lib/nfd_web/fetch_access.ex`;
   // updateFetchAccessFile(fetch_accessFilePath, fullType, fullSlug, fullUnderscoreSlug);
 
   // // Create page_api.ex entry
-  // const page_apiFilePath = `../lib/nfd/api/page_api.ex`;
-  // updatePageAPIFile(page_apiFilePath, fullType, fullSlug, fullUnderscoreSlug);
+  const page_apiFilePath = `../lib/nfd/api/page_api.ex`;
+  updatePageAPIFile(page_apiFilePath, fullType, fullSlug, fullUnderscoreSlug);
 
   // // Create page_controller.ex entry
   // const page_controllerFilePath = `../lib/nfd_web/controllers/page_controller.ex`;
