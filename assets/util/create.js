@@ -6,9 +6,9 @@ const updateRouterFile = (routerFilePath, fullType, fullSlug, fullUnderscoreSlug
   fs.readFile(routerFilePath, 'utf8', function (err,data) {
     if (err) return console.log(err);
 
-    const regex = `// ${fullType.toUpperCase()}`;
+    const regex = `# ${fullType.toUpperCase()}`;
     var result = data.replace(new RegExp(regex, 'gi'),
-    `// ${fullType.toUpperCase()}\n    get \"${fullSlug}\", PageController, :${fullUnderscoreSlug}`);
+    `# ${fullType.toUpperCase()}\n    get \"${fullSlug}\", PageController, :${fullUnderscoreSlug}`);
 
     fs.writeFile(routerFilePath, result, 'utf8', function (err) {
        if (err) return console.log(err);
