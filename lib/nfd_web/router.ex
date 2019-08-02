@@ -41,6 +41,7 @@ defmodule NfdWeb.Router do
     get "/donations", PageController, :general_donations
     get "/everything", PageController, :general_everything
     get "/premium", PageController, :general_premium
+    # GENERAL END
 
     # GUIDES
     get "/guide", PageController, :guides_guide
@@ -48,18 +49,21 @@ defmodule NfdWeb.Router do
     get "/neverfap-deluxe-bible", PageController, :guides_neverfap_deluxe_bible
     get "/post-relapse-academy", PageController, :guides_post_relapse_academy
     get "/emergency", PageController, :guides_emergency
+    # GUIDES END
 
     # PROGRAMS
     get "/accountability-program", PageController, :programs_accountability
     get "/new-fap-deluxe-reddit-guidelines", PageController, :programs_reddit_guidelines
     get "/new-neverfapper-reddit-guidelines", PageController, :programs_reddit_guidelines
     get "/coaching", PageController, :programs_coaching
+    # PROGRAMS END
 
     # VOLUNTEER
     get "/helpful-neverfappers-academy", PageController, :volunteer_helpful_neverfap_counsel
     get "/helpful-neverfap-counsel", PageController, :volunteer_helpful_neverfap_counsel
     get "/engineering-corps", PageController, :volunteer_engineering_corps
     get "/marketing-department", PageController, :volunteer_marketing_department
+    # VOLUNTEER END
 
     # APPS
     get "/desktop-app", PageController, :apps_desktop_app
@@ -67,25 +71,30 @@ defmodule NfdWeb.Router do
     get "/chrome-extension", PageController, :apps_chrome_extension
     get "/neverfap-deluxe-league", PageController, :apps_neverfap_deluxe_league
     get "/neverfap-deluxe-open-source", PageController, :apps_open_source
+    # APPS END
 
     # MISC
     get "/never-fap", PageController, :misc_never_fap
     get "/teens", PageController, :misc_teens
     get "/porn-addiction", PageController, :misc_porn_addiction
     get "/porn-addiction-quiz", PageController, :misc_porn_addiction_quiz
+    # MISC END
 
     # LEGAL
     get "/disclaimer", PageController, :legal_disclaimer
     get "/privacy", PageController, :legal_privacy
     get "/terms-and-conditions", PageController, :legal_terms_and_conditions
+    # LEGAL END
 
     # IMAGES
     get "/test", PageController, :test
     get "/season-one", PageController, :season_one
     get "/season-two", PageController, :season_two
+    # IMAGES END
 
     # PODCAST
     get "/apple_podcast.xml", PageController, :apple_podcast_xml
+    # PODCAST END
 
     # CONTENT
     get "/articles", ContentController, :articles
@@ -104,6 +113,7 @@ defmodule NfdWeb.Router do
     get "/blog/:slug", ContentController, :blog
     get "/updates", ContentController, :updates
     get "/updates/:slug", ContentController, :update
+    # CONTENT END
 
     # CONTENT_EMAIL
     get "/seven-day-neverfap-deluxe-kickstarter", ContentEmailController, :seven_day_kickstarter
@@ -123,6 +133,7 @@ defmodule NfdWeb.Router do
     get "/seven-week-awareness-challenge-vol-3/:slug", ContentEmailController, :seven_week_awareness_vol_3_single
     get "/seven-week-awareness-challenge-vol-4", ContentEmailController, :seven_week_awareness_vol_4
     get "/seven-week-awareness-challenge-vol-4/:slug", ContentEmailController, :seven_week_awareness_vol_4_single
+    # CONTENT_EMAIL END
   end
 
   # Functions
