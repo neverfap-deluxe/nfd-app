@@ -3,8 +3,6 @@
     <h1 class="header__logo">NeverFap <span class="deluxe__font">Deluxe</span> <i class="em em-rainbow"></i></h1>
   </a>  %> -->
   <ul class="header__links">
-
-    
     <!-- HOME -->
     <a id="link__home" class="header__link__wrapper" href="/">
       <li class="header__link">Home</li>  

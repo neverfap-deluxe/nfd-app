@@ -22,6 +22,12 @@ defmodule NfdWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :xml do
+    plug :accepts, ["xml"]
+    plug :put_layout, {NfdWeb.LayoutView, :none}
+    plug :put_resp_content_type, "application/xml"
+  end  
+
   scope "/" do
     pipe_through :browser
 
@@ -188,6 +194,12 @@ defmodule NfdWeb.Router do
     pipe_through [:browser]
     forward "/mailbox", Plug.Swoosh.MailboxPreview, base_path: "/dev/mailbox"
   end
+
+  scope "sitemap", HelloWeb do
+    pipe_through :xml
+  
+    get "/", SitemapController, :index
+  end  
 
   pipeline :api do
     plug :accepts, ["json"]

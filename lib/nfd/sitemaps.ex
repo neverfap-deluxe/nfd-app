@@ -16,6 +16,7 @@ defmodule Nfd.Sitemaps do
       host: "https://neverfapdeluxe.com",
       files_path: "priv/static/sitemaps/",
       public_path: "sitemaps/",
+      create_index: false,
       verbose: true,
       compress: false
 
@@ -49,6 +50,7 @@ defmodule Nfd.Sitemaps do
         add Helpers.page_path(Endpoint, :general_donations), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :general_everything), priority: 0.5, changefreq: "weekly", expires: nil
         # add Helpers.page_path(Endpoint, :general_premium), priority: 0.5, changefreq: "weekly", expires: nil
+        # GENERAL END
 
         # GUIDE
         add Helpers.page_path(Endpoint, :guides_guide), priority: 0.5, changefreq: "weekly", expires: nil
@@ -56,33 +58,39 @@ defmodule Nfd.Sitemaps do
         add Helpers.page_path(Endpoint, :guides_neverfap_deluxe_bible), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :guides_post_relapse_academy), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :guides_emergency), priority: 0.5, changefreq: "weekly", expires: nil
+        # GUIDE END
 
         # PROGRAMS
         add Helpers.page_path(Endpoint, :programs_accountability), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :programs_reddit_guidelines), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :programs_coaching), priority: 0.5, changefreq: "weekly", expires: nil
+        # PROGRAMS END
 
         # VOLUNTEER
         add Helpers.page_path(Endpoint, :volunteer_helpful_neverfap_counsel), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :volunteer_engineering_corps), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :volunteer_marketing_department), priority: 0.5, changefreq: "weekly", expires: nil
+        # VOLUNTEER END
 
         # APPS
         add Helpers.page_path(Endpoint, :apps_mobile_app), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :apps_desktop_app), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :apps_chrome_extension), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :apps_neverfap_deluxe_league), priority: 0.5, changefreq: "weekly", expires: nil
+        # APPS END
 
         # LEGAL
         add Helpers.page_path(Endpoint, :legal_disclaimer), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :legal_privacy), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :legal_terms_and_conditions), priority: 0.5, changefreq: "weekly", expires: nil
+        # LEGAL END
 
         # MISC
         add Helpers.page_path(Endpoint, :misc_never_fap), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :misc_teens), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :misc_porn_addiction), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :misc_porn_addiction_quiz), priority: 0.5, changefreq: "weekly", expires: nil
+        # MISC END
 
         # CONTENT
         add Helpers.content_path(Endpoint, :articles), priority: 0.5, changefreq: "weekly", expires: nil
@@ -93,6 +101,7 @@ defmodule Nfd.Sitemaps do
         add Helpers.content_path(Endpoint, :meditations), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.content_path(Endpoint, :blogs), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.content_path(Endpoint, :updates), priority: 0.5, changefreq: "weekly", expires: nil
+        # CONTENT END
 
         # CONTENT SINGLE
         Enum.each(articlesResponse.body["data"]["articles"], fn(article) ->
@@ -126,6 +135,7 @@ defmodule Nfd.Sitemaps do
         Enum.each(updatesResponse.body["data"]["updates"], fn(updateArg) ->
           add Helpers.content_path(Endpoint, :update, updateArg["slug"]), priority: 0.5, changefreq: "weekly", expires: nil
         end)
+        # CONTENT SINGLE END
 
         # CONTENT EMAIL
         add Helpers.content_email_path(Endpoint, :seven_day_kickstarter), priority: 0.5, changefreq: "weekly", expires: nil
@@ -135,6 +145,7 @@ defmodule Nfd.Sitemaps do
         add Helpers.content_email_path(Endpoint, :seven_week_awareness_vol_2), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.content_email_path(Endpoint, :seven_week_awareness_vol_3), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.content_email_path(Endpoint, :seven_week_awareness_vol_4), priority: 0.5, changefreq: "weekly", expires: nil
+        # CONTENT EMAIL END
 
         # add Helpers.content_email_path(Endpoint, :twenty_eight_day_awareness), priority: 0.5, changefreq: "weekly", expires: nil
 

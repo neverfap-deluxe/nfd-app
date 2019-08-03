@@ -16,6 +16,8 @@
 }
 
 .bottom__bar__container {
+  visibility: hidden;
+  animation: fading 1.6s forwards;
   transition: .1s opacity;
   position: fixed;
   bottom: 0;
@@ -24,7 +26,7 @@
   right: 0;
   box-shadow: 0 -1px 14px 1px rgba(0,0,0,.1);
   opacity: 1;
-  display: block;
+  display: none;
 
   z-index: 3000;
   transition: all .25s ease-in-out;
@@ -33,6 +35,12 @@
   background: linear-gradient(-30deg, #FFFFFFE5, #FFFFFFE5 45%, #FFFFFF 45%) #fff;
 
   transform: translateY(calc(100% - 35px));
+
+  .mobile__overlay__close {
+    width: 43px!important;
+    margin-right: 0;
+    margin-bottom: 0.6rem;
+  }
 
   .bottom__bar__initial {
     margin: 10px 20px;
@@ -47,18 +55,22 @@
   }
 }
 
+
 .bottom__bar__h3__tiny {
   position: absolute;
-  bottom: 0.16rem;
+  bottom: -1.08rem;
+  left: 0;
   // left: 50%;
   // transform: translateX(-50%);
   // text-shadow: -2px 2px $magenta;
 }
 
+
 .bottom__bar__h3__tiny--right {
   position: absolute;
-  bottom: 0.16rem;
+  bottom: -1.08rem;
   right: 0;
+  left: initial;
 }
 
 .bottom__bar__container:hover .bottom__bar__initial {
@@ -124,6 +136,8 @@
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
+
+      height: 52px;
     }
 
     h5 {
@@ -188,6 +202,9 @@
 
 
 @media screen and (min-width: 550px) {
+  .bottom__bar__container {
+    display: block;
+  }
   .bottom__bar__meditation__top {
     h5, .bottom__bar__social {
       flex: none;
