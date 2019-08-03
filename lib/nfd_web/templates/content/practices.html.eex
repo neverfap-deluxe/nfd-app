@@ -22,7 +22,7 @@
   </div>
 </div>
 
-<%= partial "links/loginregister_top--without-mobile.html", assigns %>
+<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
 
 <div style="margin-top: 5rem;"></div>
 <%= partial "banners/new_to_nfd_banner.html", assigns %>

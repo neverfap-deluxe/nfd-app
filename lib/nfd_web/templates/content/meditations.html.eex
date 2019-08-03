@@ -17,7 +17,7 @@
   </div>
 </div>
 
-<%= partial "links/loginregister_top--without-mobile.html", assigns %>
+<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
 
 <div style="margin-top: 5rem;"></div>
 <%= partial "banners/new_to_nfd_banner.html", assigns %>
@@ -26,4 +26,4 @@
 <%= partial "home/goodies.html", assigns %>
 <%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @page_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>
 
-<script src='<%= Routes.static_path(@conn, "/js/articles.js") %>'></script>
+
