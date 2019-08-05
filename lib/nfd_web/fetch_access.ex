@@ -18,6 +18,7 @@ defmodule NfdWeb.FetchAccess do
       :general_donations -> [:meditations]
       :general_everything -> [:meditations]
       :general_premium -> [:meditations]
+      # GENERAL END
 
       # GUIDES
       :guides_guide -> apmss ++ []
@@ -25,21 +26,25 @@ defmodule NfdWeb.FetchAccess do
       :guides_neverfap_deluxe_bible -> [:meditations]
       :guides_emergency -> [:meditations]
       :guides_post_relapse_academy -> [:meditations]
+      # GUIDES END
 
       # LEGAL
       :legal_disclaimer -> [:meditations]
       :legal_privacy -> [:meditations]
       :legal_terms_and_conditions -> [:meditations]
+      # LEGAL END
 
       # PROGRAMS
       :programs_accountability -> [:meditations]
       :programs_reddit_guidelines -> [:meditations]
       :programs_coaching -> [:meditations, :contact_form_changeset]
+      # PROGRAMS END
 
       # VOLUNTEER
       :volunteer_helpful_neverfap_counsel -> [:meditations]
       :volunteer_engineering_corps -> [:meditations]
       :volunteer_marketing_department -> [:meditations]
+      # VOLUNTEER END
 
       # APPS
       :apps_desktop_app -> [:meditations]
@@ -47,12 +52,14 @@ defmodule NfdWeb.FetchAccess do
       :apps_chrome_extension -> [:meditations]
       :apps_open_source -> [:meditations]
       :apps_neverfap_deluxe_league -> [:meditations]
+      # APPS END
 
       # MISC
       :misc_never_fap -> [:meditations]
       :misc_teens -> [:meditations]
       :misc_porn_addiction -> [:meditations]
       :misc_porn_addiction_quiz -> [:meditations]
+      # MISC END
 
       # CONTENT
       :articles -> apmss ++ []
@@ -78,6 +85,7 @@ defmodule NfdWeb.FetchAccess do
 
       :updates -> [:meditations, :updates]
       :update -> apmss ++ ccp ++ [:updates, :update]
+      # CONTENT END
 
       # CONTENT EMAIL
       :seven_day_kickstarter ->  [:meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
@@ -100,6 +108,7 @@ defmodule NfdWeb.FetchAccess do
 
       :seven_week_awareness_vol_4 -> [:meditations, :seven_week_awareness_vol_4, :seven_week_awareness_vol_4_changeset]
       :seven_week_awareness_vol_4_single -> [:meditations, :seven_week_awareness_vol_4_single, :course]
+      # CONTENT EMAIL END
 
       # DASHBOARD
       :dashboard -> [:courses, :ebooks, :purchased_ebooks, :purchased_courses, :not_purchased_ebooks, :not_purchased_courses, :patreon_auth_url]
@@ -116,6 +125,8 @@ defmodule NfdWeb.FetchAccess do
 
       :dashboard_profile -> []
       :dashboard_profile_delete_confirmation -> []
+      # DASHBOARD END
+
     end
   end
 end
