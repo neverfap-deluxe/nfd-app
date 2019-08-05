@@ -1,4 +1,4 @@
-<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: "" } %>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 
 <div class="single__wrapper">
   <div class="single__content">
@@ -6,7 +6,7 @@
     <p>Hey, welcome to the website!</p>
     <p>NeverFap Deluxe is a comprehensive porn addiction recovery solution for those struggling to stop their self-destructive porn habits.</p>
     <p>Below I've devised a short quiz which may help you better understand more about your addiction/recovery.</p>
-    <p>It asks one very vital question</p>
+    <p>It asks one very vital question which more-or-less summarises what NeverFap Deluxe is about.</p>
   </div>
 </div>
 
@@ -29,45 +29,42 @@
         </div>
       </div>
     </div>
-
-    <!-- First Question Response -->
-    <div id="quiz__question__second">
-      Thanks for answering!
-    </div>
   </div>
+</div>
 
-  <div class="quiz__answer__container">
-    <!-- Not Yet Answered -->
-    <div id="quiz__answer__not__yet" class="quiz__answer">
-      ...aaaaand you need to answer first!
-    </div>
-
-    <!-- Answered Yes -->
-    <div id="quiz__answer__yes" class="quiz__answer">
-      <p>Well, then you're most likely addicted.</p>
-      <p>If you're not addicted to porn then you wouldn't be thinking about porn at all in any capacity what-so-ever.</p>
-      <p>Once you learn to develop full-control over your mind, you literally will not think about porn, nor masturbation, at all.</p>
-      <p>In large part because you'll have a proper understanding of Healthy Coping Mechanisms</p>
-      <p>I have full-control over my mind and I have not thought about porn, nor masturbation</p>
-    </div>
-
-    <!-- Answered No -->
-    <div id="quiz__answer__no" class="quiz__answer">
-      <p>Then chances are that you're not addicted.</p>
-      <p>In large part because if you've managed to remain so long without thinking about porn, then it most likely means that you've developed control over your mind and you're mentally stable.</p>
-      <p></p>
+<div class="single__wrapper">
+  <div class="single__content">
+    <div id="quiz__answer__container" class="quiz__answer__container">
+      <!-- Answered Yes -->
+      <div id="quiz__answer__yes" class="quiz__answer">
+        <p>Well, then you're most likely addicted!</p>
+        <p>If you weren't addicted then you wouldn't be actively thinking about porn at all under any circumstances what-so-ever.</p>
+        <h3>Which may sound extreme, and I felt the same way too, but now that I've overcome my porn addiction I've come to realise how truly unnatural it is to think about porn.</h3>
+        <p>And this is coming from someone who used to think about porn daily, and now who literally does not think about porn at all.</p>
+        <p>Like, it's not even a thought which enters my mind in any capacity, kind of like how I've literally never thought about flying zebras with eight ears.</p>
+        <p>It's only once you develop control over your mind that you realise how unnatural it is to think about porn as part of your daily routine, or even as something which happens on the weekends.</p>
+        <p>Certainly, this isn't to say that it isn't a managable addiction in a lot of respects, however addiction is still addiction.</p>
+        <p>All I can say is that my life is much better without the need for porn.</p>
+      </div>
+  
+      <!-- Answered No -->
+      <div id="quiz__answer__no" class="quiz__answer">
+        <p>If you haven't thought about porn over the past three months, then chances are that you're not addicted.</p>
+        <p>And that's totally cool.</p>
+      </div>
     </div>
   </div>
 </div>
+
+
 
 <script>
   var quiz__button__yes = document.querySelector('#quiz__button__yes');
   var quiz__button__no = document.querySelector('#quiz__button__no');
 
   var quiz__question__first = document.querySelector('#quiz__question__first');
-  var quiz__question__second = document.querySelector('#quiz__question__second');
 
-  var quiz__answer__not__yet = document.querySelector('#quiz__answer__not__yet');
+  var quiz__answer__container = document.querySelector('#quiz__answer__container');
   var quiz__answer__yes = document.querySelector('#quiz__answer__yes');
   var quiz__answer__no = document.querySelector('#quiz__answer__no');
 
@@ -75,31 +72,23 @@
   quiz__button__no.onclick = answeredNo;
 
   function answeredYes(event) {
-    // hide questions
-    // quiz__question__first.style.display = 'none';
-    // quiz__question__second.style.display = 'block';
-
     // change button style
     quiz__button__yes.classList.add('quiz__chosen__answer');
     quiz__button__no.classList.remove('quiz__chosen__answer');
 
     // show answer
-    quiz__answer__not__yet.style.display = 'none';
+    quiz__answer__container.style.display = 'block';
     quiz__answer__no.style.display = 'none';
     quiz__answer__yes.style.display = 'block';
   }
 
   function answeredNo(event) {
-    // hide questions
-    // quiz__question__first.style.display = 'none';
-    // quiz__question__second.style.display = 'block';
-
     // change button style
     quiz__button__yes.classList.remove('quiz__chosen__answer');
     quiz__button__no.classList.add('quiz__chosen__answer');
 
     // show answer
-    quiz__answer__not__yet.style.display = 'none';
+    quiz__answer__container.style.display = 'block';
     quiz__answer__no.style.display = 'block';
     quiz__answer__yes.style.display = 'none';
   }
