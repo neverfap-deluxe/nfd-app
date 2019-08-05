@@ -17,8 +17,10 @@
         </div>
       </div>
 
-      <%= partial "everything_module.html", %{ is_mobile_menu: false } %>
-
+      <div style="display: flex;justify-content: center;">
+        <%= partial "everything_module.html", %{ is_mobile_menu: false } %>
+      </div>
+      
       <%#= partial "links/patreon.html", assigns %>
 
     </main>
