@@ -11,13 +11,14 @@ defmodule Nfd.API.PageAPI do
   def general_premium(client), do: get(client, "/general_premium/index.json")
   # GENERAL END
 
-  # GUIDE
+  # GUIDES
   def guides_guide(client), do: get(client, "/guides_guide/index.json")
   def guides_summary(client), do: get(client, "/guides_summary/index.json")
   def guides_neverfap_deluxe_bible(client), do: get(client, "/guides_neverfap_deluxe_bible/index.json")
   def guides_post_relapse_academy(client), do: get(client, "/guides_post_relapse_academy/index.json")
   def guides_emergency(client), do: get(client, "/guides_emergency/index.json")
-  # GUIDE END
+  def guides_complete_understanding(client), do: get(client, "/guides_complete_understanding/index.json")
+  # GUIDES END
 
   # PROGRAMS
   def programs_accountability(client), do: get(client, "/programs_accountability/index.json")

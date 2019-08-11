@@ -82,6 +82,11 @@ const updateSitemapsFile = (pageControllerFilePath, fullType, fullSlug, fullUnde
   });
 }
 
+const generateTemplateFile = (templateFilePath, fullType, fullSlug, fullUnderscoreSlug) => {
+  const fullPathFileName = `${templateFilePath}/${fullType}_${fullUnderscoreSlug}.html.eex`;
+  fse.outputFileSync(fullPathFileName, '', [{}]);
+}
+
 const createLink = () => {
   // ex. npm run create misc blogs
   const fullType = process.argv[2];
@@ -109,6 +114,10 @@ const createLink = () => {
   // // Create sitemaps.ex entry
   const sitemapsFilePath = `../lib/nfd/sitemaps.ex`;
   updateSitemapsFile(sitemapsFilePath, fullType, fullSlug, fullUnderscoreSlug);
+
+  // Create template file.
+  const templateFilePath = `../lib/nfd_web/templates/page`;
+  generateTemplateFile(templateFilePath, fullType, fullSlug, fullUnderscoreSlug);
 };
 
 createLink();

@@ -26,6 +26,7 @@ defmodule NfdWeb.FetchAccess do
       :guides_neverfap_deluxe_bible -> [:meditations]
       :guides_emergency -> [:meditations]
       :guides_post_relapse_academy -> [:meditations]
+      :guides_complete_understanding -> [:meditations]
       # GUIDES END
 
       # LEGAL

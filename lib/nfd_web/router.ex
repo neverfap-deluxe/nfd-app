@@ -26,7 +26,7 @@ defmodule NfdWeb.Router do
     plug :accepts, ["xml"]
     plug :put_layout, {NfdWeb.LayoutView, :none}
     plug :put_resp_content_type, "application/xml"
-  end  
+  end
 
   scope "/" do
     pipe_through :browser
@@ -55,6 +55,7 @@ defmodule NfdWeb.Router do
     get "/neverfap-deluxe-bible", PageController, :guides_neverfap_deluxe_bible
     get "/post-relapse-academy", PageController, :guides_post_relapse_academy
     get "/emergency", PageController, :guides_emergency
+    get "/a-complete-understanding-of-the-porn-addiction-recovery-process", PageController, :guides_complete_understanding
     # GUIDES END
 
     # PROGRAMS
@@ -208,9 +209,9 @@ defmodule NfdWeb.Router do
 
   scope "sitemap", HelloWeb do
     pipe_through :xml
-  
+
     get "/", SitemapController, :index
-  end  
+  end
 
   pipeline :api do
     plug :accepts, ["json"]
