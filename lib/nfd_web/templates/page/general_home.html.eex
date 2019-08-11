@@ -1,11 +1,10 @@
 <div class="homepage__content">
-  <%= partial "links/loginregister_top.html", assigns %>
+  <%#= partial "links/loginregister_top.html", assigns %>
   <div class="homepage__hero">
     <%= partial "layout/header.html", assigns %>
     <div class="homepage__hero__sub">
       <h1 class="homepage__hero__title" style="display: inline-block;">NeverFap <span class="deluxe__font">Deluxe</span></h1>
       <h2 class="homepage__hero__title__secondary">The Porn Addiction Recovery Process.</h2>
-
       <!-- <div class="homepage__toggle">
         <div id="new-neverfapper" class="homepage__toggle__button">New NeverFapper?</div>
         <div id="veteran-neverfapper" class="homepage__toggle__button">Veteran View</div>
@@ -16,97 +15,27 @@
 
   <div class="homepage__main">
     <!-- VETERAN NEVERFAPPERS -->
-    <div id="veteran-neverfapper-body">
+    <!-- <div id="veteran-neverfapper-body">
       <%#= partial "home/veteran_neverfappers.html", assigns %>
-    </div>
+    </div> -->
 
     <!-- NEW NEVERFAPPERS -->
     <div id="new-neverfapper-body">
       <%= partial "home/who.html", assigns %>
 
       <div class="homepage__hero homepage__hero--secondary">
-        <h1 class="homepage__hero__title">Here's what I do.</h1>
-        <h2 class="homepage__hero__title__secondary">I explain step-by-step exactly how to give up porn.</h2>
+        <h1 class="homepage__hero__title">Here's the process.</h1>
+        <h2 class="homepage__hero__title__secondary">So you can understand exactly how to give up porn.</h2>
       </div>
 
       <div class="homepage__section">
-        <h3>With the NeverFap Deluxe Method, I explain exactly how and why these steps work.</h3>
-        <p>
-          Because once you intuitively understand how something works, you will
-          <u>commit to it forever.</u> <i class="em em-v"></i>
-        </p>
-        <p>Please keep reading if you'd like to learn more.</p>
-        <p>Sincerely,</p>
-        <p><i class="em em-sparkling_heart"></i> Daddy Reade. <i class="em em-sparkling_heart"></i></p>
-        <!-- <p>Continue below to learn more.</p> -->
-      </div>
 
-      <div class="account__info">
-        <p class="account__info__title">Before we get started on the main course, here is some <span class="delicious__promotion">delicious</span> promotion. <i class="em em-admission_tickets"></i></p>
-      </div>
-      <div class="homepage__splitter">
-        <div class="homepage__splitter__box homepage__splitter__box--top">
-          <div>
-            <h2 class="homepage__splitter__box__title">#accountability program</h2>
-            <p>Maybe you're just lookin' for a "support group" to share cuddles with!? Well, The Reade&copy; has you covered!</p>
-            <p>Join our Discord Server today. It's sexy.</p>
-            <a class="homepage__splitter__box__button homepage__splitter__box__button--pink" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Participate</a>
-          </div>
-        </div>
-        <div class="homepage__splitter__divider">
-        </div>
-        <div class="homepage__splitter__box homepage__splitter__box--discord">
-          <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
-        </div>
-      </div>
-
-      <!-- <div class="account__info account__info--margin-top">
-        <p class="account__info__title">Oh wait, you want more promotion?</p>
-      </div>       -->
-
-      <div class="homepage__splitter homepage__splitter--podcast">
-        <div class="homepage__splitter__box homepage__splitter__box--top homepage__splitter__box--podcast">
-          <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="500" height="500"></iframe>
-        </div>
-        <div class="homepage__splitter__divider">
-        </div>
-        <div class="homepage__splitter__box">
-          <div>
-            <h2 class="homepage__splitter__box__title">The NeverFap Deluxe Podcast</h2>
-            <p>Can't be bothered reading for the next 5 minutes? Well, unfortuately that's just too bad and I'm going to have to ask you to read anyway!</p>
-            <p>Listen to the NeverFap Deluxe Podcast, you slacka!</p>
-            <a class="homepage__splitter__box__button" href="https://neverfapdeluxe.com/podcast">Listen</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="account__info">
-        <p class="account__info__title">OMFG!? You survived the promotion. <i class="em em-confetti_ball"></i> Well done.<i class="em em-confetti_ball"></i></p>
-      </div>
-<!-- 
-      <div class="homepage__understand__nfd__method">
-        <h2>Understanding The NeverFap Deluxe Method</h2>
-        <h3>You know, so you don't think I'm a complete hack. <i class="em em-drooling_face"></i></h3>
-      </div> -->
-  
-      <!-- <div class="homepage__section">
-        <h1>Here's your problem.</h1>
-        <h2>In life there are two things.</h2>
-        <h3>Stress and your ability to cope with it.</h3>
-        <p>Put simply, you don't know how to cope, which is to say that you don't have any healthy coping mechanisms.</p>
-        <p>Instead, you're turning to porn because that's all you know.</p>
-
-      </div> -->
-
-      <div class="homepage__section">
-        <h1>How it works.</h1>  
-
-        <!-- <div class="homepage__feature__box"> -->
+        <div class="homepage__feature__box">
           <h2>It takes approximately 90 days to overcome porn addiction.</h2> <!-- <i class="em em-tent"></i> -->
           <h3>It's called the <u>NeverFap Deluxe 90 Day Rule</u>, because those without healthy coping mechanisms rarely make it past 90 days.</h3>
-          <!-- <div class="homepage__tldr--signature">NeverFap Deluxe.</div>
-        </div> -->
+          <div class="homepage__tldr--signature">NeverFap Deluxe.</div>
+        </div>
+        
         <p>In other words, if you can make it past 90 days without relapsing, then it most likely means you've developed effective control over your mind.</p>
         <p style="margin-top: 2rem; margin-bottom: 1rem;"><span class="articles__link cursor__default" style="text-decoration: none; margin-left:0.7rem;">NeverFap Deluxe aims to teach you this control.</p></span>
 
@@ -480,3 +409,64 @@
   </div>
 
 </div>
+
+
+
+<!-- 
+<div class="homepage__section">
+  <h3>With the NeverFap Deluxe Method, I explain exactly how and why these steps work.</h3>
+  <p>
+    Because once you intuitively understand how something works, you will
+    <u>commit to it forever.</u> <i class="em em-v"></i>
+  </p>
+  <p>Please keep reading if you'd like to learn more.</p>
+  <p>Sincerely,</p>
+  <p><i class="em em-sparkling_heart"></i> Daddy Reade. <i class="em em-sparkling_heart"></i></p>
+
+</div> -->
+
+
+
+
+<!-- PROMOTION  -->
+
+      <!-- <div class="account__info">
+        <p class="account__info__title">Before we get started on the main course, here is some <span class="delicious__promotion">delicious</span> promotion. <i class="em em-admission_tickets"></i></p>
+      </div>
+      <div class="homepage__splitter">
+        <div class="homepage__splitter__box homepage__splitter__box--top">
+          <div>
+            <h2 class="homepage__splitter__box__title">#accountability program</h2>
+            <p>Maybe you're just lookin' for a "support group" to share cuddles with!? Well, The Reade&copy; has you covered!</p>
+            <p>Join our Discord Server today. It's sexy.</p>
+            <a class="homepage__splitter__box__button homepage__splitter__box__button--pink" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Participate</a>
+          </div>
+        </div>
+        <div class="homepage__splitter__divider">
+        </div>
+        <div class="homepage__splitter__box homepage__splitter__box--discord">
+          <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+        </div>
+      </div>
+
+      <div class="homepage__splitter homepage__splitter--podcast">
+        <div class="homepage__splitter__box homepage__splitter__box--top homepage__splitter__box--podcast">
+          <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="500" height="500"></iframe>
+        </div>
+        <div class="homepage__splitter__divider">
+        </div>
+        <div class="homepage__splitter__box">
+          <div>
+            <h2 class="homepage__splitter__box__title">The NeverFap Deluxe Podcast</h2>
+            <p>Can't be bothered reading for the next 5 minutes? Well, unfortuately that's just too bad and I'm going to have to ask you to read anyway!</p>
+            <p>Listen to the NeverFap Deluxe Podcast, you slacka!</p>
+            <a class="homepage__splitter__box__button" href="https://neverfapdeluxe.com/podcast">Listen</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="account__info">
+        <p class="account__info__title">OMFG!? You survived the promotion. <i class="em em-confetti_ball"></i> Well done.<i class="em em-confetti_ball"></i></p>
+      </div> -->
+

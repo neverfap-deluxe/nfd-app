@@ -1,0 +1,24 @@
+<div class="posts">
+  <div class="articles__list__v2">
+    <%= Enum.map(@items, fn(item) -> %>
+      <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
+        <a class="article__item__v2" href='<%= Routes.content_path(@conn, @page_symbol, item["slug"]) %>'>
+          <h3 class="article__item__v2__title"><%= item["title"] %></h3>
+          <h4 class="article__item__v2__description"><%= item["description"] %></h4>
+        </a>
+      <% end %>
+    <% end ) %>
+  </div>
+</div>
+
+
+
+
+<!-- <div class="posts">
+  <div class="articles__list__v2">
+    <a class="article__item__v2" href=''>
+      <h3 class="article__item__v2__title">arst</h3>
+      <h4 class="article__item__v2__description">arst</h4>
+    </a>
+  </div>
+</div> -->

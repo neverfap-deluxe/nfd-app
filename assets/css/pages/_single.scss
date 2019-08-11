@@ -60,6 +60,13 @@
     transition: box-shadow 6s;
   }
 
+  .single__title__v2 {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    font-size: 4rem;
+    line-height: 5.8rem;
+  }
+
   .single__title:hover {
     box-shadow: -30px 30px 0px 0px $black-background;
   }

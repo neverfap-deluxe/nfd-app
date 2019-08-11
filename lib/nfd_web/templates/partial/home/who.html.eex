@@ -1,6 +1,7 @@
 <div class="homepage__section">
   <h1>Who?</h1> <!-- The Reade&copy; -->
   <p style="margin-top: 2.5rem;">My name is Julius Reade and I'm a recovered porn addict. <i class="em em-blush"></i></p>
+  <p style="margin-top: 2rem;">To learn more about my journey <a href="/articles/my-personal-porn-recovery-journey" class="link">click here</a>.</p>
   <ul class="homepage__recovered__porn__addict__list">
     <span><li class="homepage__recovered__porn__addict__item__lead">I no longer crave porn. <i class="em em-white_check_mark"></i></li></span>
     <span><li class="homepage__recovered__porn__addict__item">I no longer watch porn.</li></span>

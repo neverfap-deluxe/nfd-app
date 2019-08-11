@@ -70,7 +70,7 @@
 
 
     <!-- Practices -->
-    <a id="link__practices" class="header__link__wrapper" href="/practices">
+    <!-- <a id="link__practices" class="header__link__wrapper" href="/practices">
       <li class="header__link">Practices</li>
     </a>
     <div class="header__sub header__banner__practices">
@@ -86,7 +86,7 @@
           <span class="h3__tiny">/meditation</span>                        
         </h3>
       </a>
-    </div>
+    </div> -->
       
     <!-- PODCAST -->
     <a id="link__podcast" class="header__link__wrapper header__link__wrapper--disappear" href="/podcast">
