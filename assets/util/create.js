@@ -90,7 +90,7 @@ const createLink = () => {
 
   console.log(fullType, fullSlug, fullUnderscoreSlug);
 
-  Create router.ex entry
+  // Create router.ex entry
   const routerFilePath = `../lib/nfd_web/router.ex`;
   updateRouterFile(routerFilePath, fullType, fullSlug, fullUnderscoreSlug);
 
