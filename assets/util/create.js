@@ -90,21 +90,21 @@ const createLink = () => {
 
   console.log(fullType, fullSlug, fullUnderscoreSlug);
 
-  // Create router.ex entry
-  // const routerFilePath = `../lib/nfd_web/router.ex`;
-  // updateRouterFile(routerFilePath, fullType, fullSlug, fullUnderscoreSlug);
+  Create router.ex entry
+  const routerFilePath = `../lib/nfd_web/router.ex`;
+  updateRouterFile(routerFilePath, fullType, fullSlug, fullUnderscoreSlug);
 
-  // // Create fetch_access.ex entry
-  // const fetch_accessFilePath = `../lib/nfd_web/fetch_access.ex`;
-  // updateFetchAccessFile(fetch_accessFilePath, fullType, fullSlug, fullUnderscoreSlug);
+  // Create fetch_access.ex entry
+  const fetch_accessFilePath = `../lib/nfd_web/fetch_access.ex`;
+  updateFetchAccessFile(fetch_accessFilePath, fullType, fullSlug, fullUnderscoreSlug);
 
-  // // Create page_api.ex entry
-  // const page_apiFilePath = `../lib/nfd/api/page_api.ex`;
-  // updatePageAPIFile(page_apiFilePath, fullType, fullSlug, fullUnderscoreSlug);
+  // Create page_api.ex entry
+  const page_apiFilePath = `../lib/nfd/api/page_api.ex`;
+  updatePageAPIFile(page_apiFilePath, fullType, fullSlug, fullUnderscoreSlug);
 
-  // // Create page_controller.ex entry
-  // const page_controllerFilePath = `../lib/nfd_web/controllers/page_controller.ex`;
-  // updatePageControllerFile(page_controllerFilePath, fullType, fullSlug, fullUnderscoreSlug);
+  // Create page_controller.ex entry
+  const page_controllerFilePath = `../lib/nfd_web/controllers/page_controller.ex`;
+  updatePageControllerFile(page_controllerFilePath, fullType, fullSlug, fullUnderscoreSlug);
 
   // // Create sitemaps.ex entry
   const sitemapsFilePath = `../lib/nfd/sitemaps.ex`;
