@@ -1,4 +1,14 @@
-<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
+<!-- <%#= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %> -->
+
+<div style="margin-top: 2rem!important;" class="single__wrapper practices__wrapper">
+  <a class="article__item__v2" href='<%= Routes.content_path(@conn, :article, @item["slug"]) %>'>
+    <h3 class="article__item__v2__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h3>
+    <a class="homepage__tiny" href='<%= @item["slug"] %>'>/<%= @item["slug"] %></a>
+    <h4 class="article__item__v2__description"><%= @item["description"] %></h4>
+  </a>
+</div>
+
+<%= partial "links/patreon.html", assigns %>
 
 <div class="single__wrapper practices__wrapper">
   <div class="homepage__process single__homepage__process">
@@ -12,10 +22,10 @@
     <%= if @item["tldr4"] do %><p class="homepage__process__text homepage__process__text--practice"><%= raw @item["tldr4"] %></p><% end %>
     <%= if @item["tldr5"] do %><p class="homepage__process__text homepage__process__text--practice"><%= raw @item["tldr5"] %></p><% end %>
   </div>
-  <%# <span><span class="homepage__process__link"><%= @item["date"] %></span></span> %>
+  <span><span class="homepage__process__link"><%= @item["date"] %></span></span>
 </div>
 
-<%#= partial "links/patreon.html", assigns %>
+<%= partial "links/paypal.html", assigns %>
 
 <div id="main__content" class="single__wrapper">
   <div class="single__content">

@@ -1,5 +1,5 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: child_content(@item["children"], "guide-intro") } %>
-<%= partial "links/patreon.html", assigns %>
+<%= partial "links/paypal.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0rem;">
@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<%= partial "links/patreon.html", assigns %>
+<%= partial "links/twitter.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
@@ -37,31 +37,29 @@
 
 <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
 
-
-
 <div class="guide__banner" style="border-bottom: 4px solid black;">
 
   <div class="guide__suggestion__container">
     <div class="black__banner__title__container">
       <h2 class="black__banner__title" style="margin-bottom: 3rem;">Here are my #recommendations</h2>
       <div class="guide__suggestion">
-        <h1 class="guide__suggestion__number">1.</h1>
+        <h1 class="guide__suggestion__number guide__suggestion__number--fat">1.</h1>
         <h1 class="guide__suggestion__title">Join the NeverFap Deluxe Accountability Program</h1>
       </div>
       <div class="guide__suggestion">
-        <h1 class="guide__suggestion__number">2.</h1>
+        <h1 class="guide__suggestion__number guide__suggestion__number--fat">2.</h1>
         <h1 class="guide__suggestion__title">Subscribe to the 7 Day NeverFap Deluxe Kickstarter</h1>
       </div>
       <div class="guide__suggestion">
-        <h1 class="guide__suggestion__number">3.</h1>
+        <h1 class="guide__suggestion__number guide__suggestion__number--fat">3.</h1>
         <h1 class="guide__suggestion__title">Begin reading some NeverFap Deluxe Articles</h1>
       </div>
       <div class="guide__suggestion">
-        <h1 class="guide__suggestion__number">4.</h1>
+        <h1 class="guide__suggestion__number guide__suggestion__number--fat">4.</h1>
         <h1 class="guide__suggestion__title">Begin practicing Awareness and Meditation</h1>
       </div>
       <div class="guide__suggestion">
-        <h1 class="guide__suggestion__number">5.</h1>
+        <h1 class="guide__suggestion__number guide__suggestion__number--fat">5.</h1>
         <h1 class="guide__suggestion__title">Listen to the NeverFap Deluxe Podcast</h1>
       </div>
     </div>

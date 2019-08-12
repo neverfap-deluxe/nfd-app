@@ -27,6 +27,7 @@ defmodule NfdWeb.FetchAccess do
       :guides_emergency -> [:meditations]
       :guides_post_relapse_academy -> [:meditations]
       :guides_complete_understanding -> [:meditations]
+      :guides_curriculum -> [:meditations]
       # GUIDES END
 
       # LEGAL

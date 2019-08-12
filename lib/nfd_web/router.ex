@@ -56,6 +56,7 @@ defmodule NfdWeb.Router do
     get "/post-relapse-academy", PageController, :guides_post_relapse_academy
     get "/emergency", PageController, :guides_emergency
     get "/a-complete-understanding-of-the-porn-addiction-recovery-process", PageController, :guides_complete_understanding
+    get "/curriculum", PageController, :guides_curriculum
     # GUIDES END
 
     # PROGRAMS

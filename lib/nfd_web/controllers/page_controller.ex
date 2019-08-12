@@ -25,6 +25,7 @@ defmodule NfdWeb.PageController do
   def guides_emergency(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :guides_emergency, "home.html", FetchAccess.fetch_access_array(:guides_emergency))
   def guides_post_relapse_academy(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :guides_post_relapse_academy, "home.html", FetchAccess.fetch_access_array(:guides_post_relapse_academy))
   def guides_complete_understanding(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :guides_complete_understanding, "general.html", FetchAccess.fetch_access_array(:guides_complete_understanding))
+  def guides_curriculum(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :guides_curriculum, "general.html", FetchAccess.fetch_access_array(:guides_curriculum))
   # GUIDES END
 
   # PROGRAMS

@@ -1,0 +1,14 @@
+<a class="article__item__v2" href='<%= Routes.content_path(@conn, @page_symbol, @slug) %>'>
+  <h3 class="article__item__v2__title"><%= @title %> <img src="/images/logo.png" class="logo__square" alt=""/></h3>
+  <a class="homepage__tiny" href='<%= @slug %>'>/<%= @slug %></a>
+  <h4 class="article__item__v2__description"><%= @description %></h4>
+</a>
+<p>Summary:</p>
+<ul class="article__item__list">
+  <%= if @tldr1 != "" do %><li><%= @tldr1 %></li><% end %>
+  <%= if @tldr2 != "" do %><li><%= @tldr2 %></li><% end %>
+  <%= if @tldr3 != "" do %><li><%= @tldr3 %></li><% end %>
+</ul>
+
+<div style="margin-top: 2rem; height: 4px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 2rem; height: 4px; background: cyan;"></div>

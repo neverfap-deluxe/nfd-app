@@ -2,6 +2,9 @@ const fse = require('fs-extra');
 const fs = require('fs');
 const uuidv4 = require('uuid/v4');
 
+  // ex. npm run create guides curriculum
+
+
 const updateRouterFile = (routerFilePath, fullType, fullSlug, fullUnderscoreSlug) => {
   fs.readFile(routerFilePath, 'utf8', function (err,data) {
     if (err) return console.log(err);

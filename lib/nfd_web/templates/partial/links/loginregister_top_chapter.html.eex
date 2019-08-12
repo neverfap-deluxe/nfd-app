@@ -1,0 +1,10 @@
+<div class="login__top">  
+  <div class="account__buttons__login">
+    <div id="dark__mode__button" class="button dark__mode__button--homepage">Dark Mode</div>
+
+    <p class="login__top__title">Checkout the /guide to get started! </p>
+
+    <%= partial "mobile_menu_overlay.html", assigns %>
+  </div>
+</div>
+  

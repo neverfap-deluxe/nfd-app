@@ -119,6 +119,11 @@
   display: none;
   color: $black-text;
 }
+
+.guide__suggestion__number--fat {
+  width: 90px!important;
+}
+
 .guide__suggestion__title {
   display: flex;
   align-items: center;
@@ -226,6 +231,10 @@
     min-width: 60px;
     min-height: 60px;
   }
+
+  .guide__suggestion__number--fat {
+    width: 90px!important;
+  }
   .guide__suggestion__number--bottom {
     margin-top: 2rem;
   }
@@ -251,6 +260,11 @@
     font-size: 1.4rem;
     line-height: 3.2rem;
     width: 60px;
+  }
+
+
+  .guide__suggestion__number--fat {
+    width: 140px!important;
   }
 
   .guide__banner {

@@ -1,25 +1,25 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
-<%= partial "links/patreon.html", assigns %>
+<%= partial "links/paypal.html", assigns %>
 
 <div class="single__wrapper">
-  <h3 class="popular__latest__options__title">Practices</h3>
-  <div class="popular__latest__options">
+  <!-- <h3 class="popular__latest__options__title">Practices</h3> -->
+  <!-- <div class="popular__latest__options">
     <h3 class="button__click button__on popular__latest__options--guide" id="practices_latest_plain_click">Latest (plain text)</h3>
     <h3 class="button__click button__off popular__latest__options--guide" id="practices_latest_click">Latest</h3>
     <h3 class="button__click button__off popular__latest__options--guide" id="practices_category_click">Category</h3>
-  </div>
+  </div> -->
 
-  <div class="posts__off posts--guide" id="practices_latest_posts">
-    <%= partial "list/articles_latest.html", %{ conn: @conn, page_symbol: :practice, items: @page_collections.practices, tag_type: "practice" } %>
-  </div>
+  <!-- <div class="posts__off posts--guide" id="practices_latest_posts"> -->
+    <%= partial "list/articles_latest_v2.html", %{ conn: @conn, page_symbol: :practice, items: @page_collections.practices, tag_type: "practice" } %>
+  <!-- </div> -->
 
-  <div class="posts__on posts--guide" id="practices_latest_plain_posts">
+  <!-- <div class="posts__on posts--guide" id="practices_latest_plain_posts">
     <%= partial "list/articles_latest_plain_text.html", %{ conn: @conn, page_symbol: :practice, items: @page_collections.practices, tag_type: "practice" } %>
   </div>
 
   <div class="posts__off posts--guide" id="practices_category_posts">
     <%= partial "list/articles_category.html", %{ conn: @conn, page_symbol: :practice, items: @page_collections.practices, tag_type: "practice" } %>
-  </div>
+  </div> -->
 </div>
 
 <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
@@ -32,3 +32,23 @@
 <%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @page_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>
 
 <script src='<%= Routes.static_path(@conn, "/js/practices.js") %>'></script>
+
+
+  <!-- <h3 class="popular__latest__options__title">Practices</h3> -->
+  <!-- <div class="popular__latest__options">
+    <h3 class="button__click button__on popular__latest__options--guide" id="practices_latest_plain_click">Latest (plain text)</h3>
+    <h3 class="button__click button__off popular__latest__options--guide" id="practices_latest_click">Latest</h3>
+    <h3 class="button__click button__off popular__latest__options--guide" id="practices_category_click">Category</h3>
+  </div> -->
+
+  <!-- <div class="posts__off posts--guide" id="practices_latest_posts"> -->
+    <%= partial "list/articles_latest_v2.html", %{ conn: @conn, page_symbol: :practice, items: @page_collections.practices, tag_type: "practice" } %>
+  <!-- </div> -->
+
+  <!-- <div class="posts__on posts--guide" id="practices_latest_plain_posts">
+    <%= partial "list/articles_latest_plain_text.html", %{ conn: @conn, page_symbol: :practice, items: @page_collections.practices, tag_type: "practice" } %>
+  </div>
+
+  <div class="posts__off posts--guide" id="practices_category_posts">
+    <%= partial "list/articles_category.html", %{ conn: @conn, page_symbol: :practice, items: @page_collections.practices, tag_type: "practice" } %>
+  </div> -->

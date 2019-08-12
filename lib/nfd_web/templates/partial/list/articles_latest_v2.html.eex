@@ -2,16 +2,15 @@
   <div class="articles__list__v2">
     <%= Enum.map(@items, fn(item) -> %>
       <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
-        <a class="article__item__v2" href='<%= Routes.content_path(@conn, @page_symbol, item["slug"]) %>'>
-          <h3 class="article__item__v2__title"><%= item["title"] %></h3>
-          <h4 class="article__item__v2__description"><%= item["description"] %></h4>
-        </a>
+        <%= if @page_symbol == :practice do %>
+          <%= partial "list/practices_item_v2.html", %{ conn: @conn, page_symbol: @page_symbol, slug: item["slug"], title: item["title"], description: item["description"], what: item["what"], how: item["how"], when2: item["when"], duration: item["duration"] } %>
+        <% else %>
+          <%= partial "list/articles_item_v2.html", %{ conn: @conn, page_symbol: @page_symbol, slug: item["slug"], title: item["title"], description: item["description"], tldr1: item["tldr1"], tldr2: item["tldr2"], tldr3: item["tldr3"] } %>
+        <% end %>
       <% end %>
     <% end ) %>
   </div>
 </div>
-
-
 
 
 <!-- <div class="posts">

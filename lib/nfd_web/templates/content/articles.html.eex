@@ -1,6 +1,7 @@
-<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
+<%= partial "links/paypal.html", assigns %>
 
-<div class="single__wrapper">
+<div style="margin-top: 3rem!important;" class="single__wrapper">
   <div class="posts__on posts--guide" id="articles_latest_plain_posts">
     <%= partial "list/articles_latest_v2.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
   </div>

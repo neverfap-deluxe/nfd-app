@@ -70,23 +70,23 @@
 
 
     <!-- Practices -->
-    <!-- <a id="link__practices" class="header__link__wrapper" href="/practices">
-      <li class="header__link">Practices</li>
+    <a id="link__meditation" class="header__link__wrapper" href="/practices">
+      <li class="header__link">Meditation</li>
     </a>
     <div class="header__sub header__banner__practices">
+      <a href="/meditation" class="header__module">
+        <h3 class="h3__yus">
+          NeverFap Deluxe Meditations
+          <span class="h3__tiny">/meditation</span>                        
+        </h3>
+      </a>
       <a href="/practices" class="header__module">
         <h3 class="h3__yus">
           NeverFap Deluxe Practices
           <span class="h3__tiny">/practices</span>                        
         </h3>
       </a>
-      <a href="/meditation" class="header__module">
-        <h3 class="h3__yus">
-          NeverFap Deluxe Guided Meditations
-          <span class="h3__tiny">/meditation</span>                        
-        </h3>
-      </a>
-    </div> -->
+    </div>
       
     <!-- PODCAST -->
     <a id="link__podcast" class="header__link__wrapper header__link__wrapper--disappear" href="/podcast">

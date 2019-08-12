@@ -59,6 +59,7 @@ defmodule Nfd.Sitemaps do
         add Helpers.page_path(Endpoint, :guides_post_relapse_academy), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :guides_emergency), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :guides_complete_understanding), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :guides_curriculum), priority: 0.5, changefreq: "weekly", expires: nil
         # GUIDES END
 
         # PROGRAMS

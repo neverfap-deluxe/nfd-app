@@ -1,0 +1,210 @@
+
+    <!-- <div class="homepage__section">
+      <h3>With the NeverFap Deluxe Method, I explain exactly how and why these steps work.</h3>
+      <p>Because once you intuitively understand how something works, you will <u>commit to it forever.</u> <i class="em em-v"></i></p>
+
+      <div style="margin-top: 2rem; height: 4px; background: rgba(255,46,182,1);"></div>
+      <div style="margin-bottom: 2rem; height: 4px; background: cyan;"></div>
+
+      <h2>The first step is to cover the basics.</h2>
+
+      <div style="margin-top: 2rem; height: 4px; background: rgba(255,46,182,1);"></div>
+      <div style="margin-bottom: 2rem; height: 4px; background: cyan;"></div>
+
+      <h2>The second step is to develop a solid mental health strategy.</h2>
+
+      <div style="margin-top: 2rem; height: 4px; background: rgba(255,46,182,1);"></div>
+      <div style="margin-bottom: 2rem; height: 4px; background: cyan;"></div>
+
+      <h2>The third step is to maintain that strategy.</h2>
+
+      <div style="margin-top: 2rem; height: 4px; background: rgba(255,46,182,1);"></div>
+      <div style="margin-bottom: 2rem; height: 4px; background: cyan;"></div>
+
+      <p>Please keep reading if you'd like to learn more.</p>
+      <p>Sincerely,</p>
+      <p><i class="em em-sparkling_heart"></i> Daddy Reade. <i class="em em-sparkling_heart"></i></p>
+    </div> -->
+
+
+<!-- 
+<div class="guide__banner" style="border-bottom: 4px solid black; border-top: 4px solid black;">
+  <div class="guide__suggestion__container">
+    <div class="black__banner__title__container">
+      <h2 class="black__banner__title" style="margin-bottom: 1rem;">Covering The Basics.</h2>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="homepage__hero homepage__hero--secondary">
+  <h1 class="homepage__hero__title">Covering The Basics.</h1>
+  <h2 class="homepage__hero__title__secondary">You have to understand porn addiction recovery.</h2>
+</div> -->
+  
+<div class="homepage__content">
+    <div class="homepage__main">
+      <div class="homepage__section">
+        <div style="margin-top: 3rem;" class="articles__list__v2 homepage__resources">
+  
+          <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+            <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
+          </div>
+        
+          <a class="article__item__homepage" href='<%= Routes.page_path(@conn, :guides_complete_understanding) %>'>
+            <h3 class="article__item__homepage__title">A Complete Understanding Of The Porn Addiction Recovery Process In 5 Minutes <img src="/images/logo.png" class="logo__square" alt=""/></h3>
+            <a class="homepage__tiny" href="<%= Routes.page_path(@conn, :guides_complete_understanding) %>">/complete-understanding</a>
+            <h4 class="article__item__homepage__description">Fully understand why you're addicted to porn, why you keep relapsing and what you have to do to stop.</h4>
+          </a>
+          <p>Summary:</p>
+          <ul class="article__item__list">
+            <li>If you struggle to get further than 2 months then it's likely because you don't have any Healthy Coping Mechanisms.</li>
+            <li>Healthy Coping Mechanisms include things like meditation and remaining calm, while Unhealthy Coping Mechanisms like distraction and judgemental attitudes.</li>
+          </ul>
+  
+          <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+          <div style="margin-top: 1rem; height: 4px; background: cyan;"></div>
+  
+          <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+            <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
+          </div>    
+          <a class="article__item__homepage" href='/guide'>
+            <h3 class="article__item__homepage__title">A Detailed Guide To The NeverFap Deluxe Method Of Overcoming Porn Addiction<img src="/images/logo.png" class="logo__square" alt=""/></h3>
+            <a class="homepage__tiny" href="<%= Routes.page_path(@conn, :guides_guide) %>">/guide</a>
+            <h4 class="article__item__homepage__description">Learn how to overcome your porn addiction using the NeverFap Deluxe Method Of Overcoming Porn Addiction.</h4>
+          </a>
+          <p>Summary:</p>
+          <ul class="article__item__list">
+            <li>There are three broad categories of Healthy Coping Mechanisms: Awareness, Calmness and Ambition.</li>
+            <li>Maintaining all three categories </li>
+          </ul>
+  
+          <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+          <div style="margin-top: 1rem; height: 4px; background: cyan;"></div>
+  
+          <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+            <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
+          </div>      
+          <a class="article__item__homepage" href='/summary'>
+            <h3 class="article__item__homepage__title">A Comprehensive Summary Of The Core Concepts Of NeverFap Deluxe <img src="/images/logo.png" class="logo__square" alt=""/></h3>
+            <a class="homepage__tiny" href="<%= Routes.page_path(@conn, :guides_summary) %>">/summary</a>
+            <h4 class="article__item__homepage__description">A really awesome summary of the core concepts of NeverFap Deluxe, which serves as an amazing primer of the concepts.</h4>
+          </a>
+          <p>Summary:</p>
+          <ul class="article__item__list">
+            <li>The aim of effective recovery is to maintain balance.</li>
+            <li>Only once you maintain balance will you be able to effortlessly overcome your porn addiction.</li>    
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="account__info">
+      <p class="account__info__title">Before we get started on the main course, here is some <span class="delicious__promotion">delicious</span> promotion. <i class="em em-admission_tickets"></i></p>
+    </div>
+    <div class="homepage__splitter">
+      <div class="homepage__splitter__box homepage__splitter__box--top">
+        <div>
+          <h2 class="homepage__splitter__box__title">#accountability program</h2>
+          <p>Maybe you're just lookin' for a "support group" to share cuddles with!? Well, The Reade&copy; has you covered!</p>
+          <p>Join our Discord Server today. It's sexy.</p>
+          <a class="homepage__splitter__box__button homepage__splitter__box__button--pink" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Participate</a>
+        </div>
+      </div>
+      <div class="homepage__splitter__divider">
+      </div>
+      <div class="homepage__splitter__box homepage__splitter__box--discord">
+        <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+      </div>
+    </div>
+  
+    <div class="homepage__splitter homepage__splitter--podcast">
+      <div class="homepage__splitter__box homepage__splitter__box--top homepage__splitter__box--podcast">
+        <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="500" height="500"></iframe>
+      </div>
+      <div class="homepage__splitter__divider">
+      </div>
+      <div class="homepage__splitter__box">
+        <div>
+          <h2 class="homepage__splitter__box__title">The NeverFap Deluxe Podcast</h2>
+          <p>Can't be bothered reading for the next 5 minutes? Well, unfortuately that's just too bad and I'm going to have to ask you to read anyway!</p>
+          <p>Listen to the NeverFap Deluxe Podcast, you slacka!</p>
+          <a class="homepage__splitter__box__button" href="https://neverfapdeluxe.com/podcast">Listen</a>
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="account__info">
+      <p class="account__info__title">OMFG!? You survived the promotion. <i class="em em-confetti_ball"></i> Well done.<i class="em em-confetti_ball"></i></p>
+    </div>
+  
+  <div class="guide__banner" style="border-bottom: 4px solid black; border-top: 4px solid black;">
+    <div class="guide__suggestion__container">
+      <div class="black__banner__title__container">
+        <h2 class="black__banner__title" style="margin-bottom: 1rem;">Developing A Strategy.</h2>
+        <!-- <h2 class="black__banner__title__alt" style="margin-bottom: 3rem;">Develop a core mental health strategy.</h2> -->
+      </div>
+    </div>
+  </div>
+  
+  <div class="homepage__content">
+    <div class="homepage__main">  
+      <div class="homepage__section">
+  
+        <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
+        </div>
+        <a class="article__item__homepage" href='/summary'>
+          <h3 class="article__item__homepage__title">Developing Your First Solid Meditation Routine <img src="/images/logo.png" class="logo__square" alt=""/></h3>
+          <a class="homepage__tiny" href="<%= Routes.page_path(@conn, :guides_summary) %>">/summary</a>
+          <h4 class="article__item__homepage__description">Learn how to overcome your porn addiction using the NeverFap Deluxe Method Of Overcoming Porn Addiction.</h4>
+        </a>
+        <p>Summary:</p>
+        <ul class="article__item__list">
+          <li>The aim of effective recovery is to maintain balance.</li>
+          <li>Only once you maintain balance will you be able to effortlessly overcome your porn addiction.</li>    
+        </ul>
+  
+        <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
+        </div>
+        <a class="article__item__homepage" href='/summary'>
+          <h3 class="article__item__homepage__title">A Comprehensive Summary Of The Core Concepts Of NeverFap Deluxe <img src="/images/logo.png" class="logo__square" alt=""/></h3>
+          <a class="homepage__tiny" href="<%= Routes.page_path(@conn, :guides_summary) %>">/summary</a>
+          <h4 class="article__item__homepage__description">A really awesome summary of the core concepts of NeverFap Deluxe, which serves as an amazing primer of the concepts.</h4>
+        </a>
+        <p>Summary:</p>
+        <ul class="article__item__list">
+          <li>The aim of effective recovery is to maintain balance.</li>
+          <li>Only once you maintain balance will you be able to effortlessly overcome your porn addiction.</li>    
+        </ul>
+  
+        <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">6.</div>
+        </div>
+        <a class="article__item__homepage" href='/summary'>
+          <h3 class="article__item__homepage__title">The Ultimate Guide On Remaining Calm And Collected <img src="/images/logo.png" class="logo__square" alt=""/></h3>
+          <a class="homepage__tiny" href="<%= Routes.page_path(@conn, :guides_summary) %>">/summary</a>
+          <h4 class="article__item__homepage__description">Only once you maintain balance will you be able to effortlessly overcome your porn addiction.</h4>
+        </a>
+        <p>Summary:</p>
+        <ul class="article__item__list">
+          <li>The aim of effective recovery is to maintain balance.</li>
+          <li>Only once you maintain balance will you be able to effortlessly overcome your porn addiction.</li>    
+        </ul>
+    
+      </div>
+    </div>
+  </div>
+  
+  <div class="guide__banner" style="border-bottom: 4px solid black; border-top: 4px solid black;">
+    <div class="guide__suggestion__container">
+      <div class="black__banner__title__container">
+        <h2 class="black__banner__title" style="margin-bottom: 1rem;">Maintaining Balance.</h2>
+        <!-- <h2 class="black__banner__title__alt" style="margin-bottom: 3rem;">Develop a core mental health strategy.</h2> -->
+      </div>
+    </div>
+  </div>

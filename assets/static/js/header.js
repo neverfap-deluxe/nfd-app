@@ -1,7 +1,7 @@
 var link__home = document.querySelector('#link__home');
 var link__guide = document.querySelector('#link__guide');
 var link__articles = document.querySelector('#link__articles');
-var link__practices = document.querySelector('#link__practices');
+var link__meditation = document.querySelector('#link__meditation');
 var link__podcast = document.querySelector('#link__podcast');
 var link__community = document.querySelector('#link__community');
 var link__about = document.querySelector('#link__about');
@@ -23,8 +23,8 @@ switch(pathnameProper) {
     link__articles.style.borderBottom = '5px solid orange';
     break;
 
-  case 'practices':
-    link__practices.style.borderBottom = '5px solid orange';
+  case 'meditation':
+    link__meditation.style.borderBottom = '5px solid orange';
     break;
 
   case 'podcast':
@@ -57,7 +57,7 @@ switch(pathnameProper) {
 // const banner__community = document.querySelector('.header__banner__community');
 // const banner__about = document.querySelector('.header__banner__about');
 
-// const linkList = [link__home, link__guide, link__articles, link__practices, link__podcast, link__community, link__about];
+// const linkList = [link__home, link__guide, link__articles, link__meditation, link__podcast, link__community, link__about];
 // const bannerList = [banner__home, banner__guide, banner__articles, banner__practices, banner__podcast, banner__community, banner__about];
 
 // let isLinkHover = false;

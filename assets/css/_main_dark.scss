@@ -217,6 +217,31 @@
     color: $white-darkmode-text;
   }
 
+
+  .articles__list__v2 {
+
+  }
+  .article__item__v2__description {
+    color: $white-darkmode-text;
+  }
+
+  .article__item__v2 {
+    opacity: 1;
+    // margin-bottom: 3rem;
+
+    .article__item__v2__title {
+      color: $white-darkmode-text;
+    }
+  }
+  .article__item__list {
+    li {
+      color: $white-darkmode-text;
+    }
+  }
+  .homepage__tiny {
+    color: $white-darkmode-text;
+  }
+
   // NOTE: Maybe shouldn't be in dark mode.
 
   // .bottom__bar__container {
