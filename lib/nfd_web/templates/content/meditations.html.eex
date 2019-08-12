@@ -1,6 +1,6 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
 
-<%= partial "links/patreon.html", assigns %>
+<%= partial "links/paypal.html", assigns %>
 
 <div class="single__wrapper">
   <h1 style="margin-bottom: 3rem;">Guided Meditation List</h1>
