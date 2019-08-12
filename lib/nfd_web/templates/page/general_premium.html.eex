@@ -1,7 +1,10 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: child_content(@item["children"], "premium-intro") } %>
-<%= partial "links/patreon.html", assigns %>
 
-<!-- 
+<%= partial "links/paypal.html", assigns %>
+<%= partial "promotion_footer.html", assigns %>
+
+
+<!--
 <div class="single__wrapper">
   <div class="single__content">
     <h1>Payment Options</h1>

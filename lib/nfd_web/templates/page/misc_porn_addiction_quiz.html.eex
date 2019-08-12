@@ -46,7 +46,7 @@
         <p>Certainly, this isn't to say that it isn't a managable addiction in a lot of respects, however addiction is still addiction.</p>
         <p>All I can say is that my life is much better without the need for porn.</p>
       </div>
-  
+
       <!-- Answered No -->
       <div id="quiz__answer__no" class="quiz__answer">
         <p>If you haven't thought about porn over the past three months, then chances are that you're not addicted.</p>
@@ -94,4 +94,5 @@
   }
 </script>
 
-<%= partial "links/patreon.html", assigns %>
+<%= partial "links/paypal.html", assigns %>
+<%= partial "promotion_footer.html", assigns %>

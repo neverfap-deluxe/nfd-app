@@ -72,4 +72,5 @@
   </div>
 </div>
 
-<%= partial "links/reddit.html", assigns %>
+<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
+<%= partial "promotion_footer.html", assigns %>

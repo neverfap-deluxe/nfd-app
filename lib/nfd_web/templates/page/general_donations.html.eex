@@ -1,5 +1,5 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: child_content(@item["children"], "donations-patreon") } %>
-<%= partial "links/patreon.html", assigns %>
+<%= partial "links/paypal.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
@@ -7,4 +7,5 @@
   </div>
 </div>
 
-<%= partial "links/paypal.html", assigns %>
+<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
+<%= partial "promotion_footer.html", assigns %>

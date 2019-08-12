@@ -1,14 +1,14 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
     <%= raw child_content(@item["children"], "summary-intro") %>
   </div>
 </div>
 
-<%= partial "links/patreon.html", assigns %>
+<%= partial "links/paypal.html", assigns %>
 
-<div class="single__wrapper">  
+<div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
     <h1>Overview</h1>
     <%= raw child_content(@item["children"], "summary-main") %>
@@ -18,7 +18,7 @@
 <!--
 <%= partial "links/patreon.html", assigns %>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
     <h1>Summary</h1>
     <p>There's a few key points to keep note of.</p>

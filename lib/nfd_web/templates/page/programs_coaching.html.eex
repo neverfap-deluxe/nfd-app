@@ -61,7 +61,7 @@
   </div>
 </div>
 
-<%= partial "links/patreon.html", assigns %>
+<%= partial "links/facebook.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
@@ -82,13 +82,13 @@
 
 <%= partial "links/twitter.html", assigns %>
 
-<div class="single__wrapper">   
+<div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
     <h2>Contact</h2>
     <p>I hope you now have a proper understanding of how this all works.</p>
     <p>Feel free to contact me if you have any questions, or would simply like to chat about arranging a time to catch up.</p>
   </div>
-    
+
   <div class="form__wrapper form__wrapper--full-width">
     <form class="form" action="https://formspree.io/admin@neverfapdeluxe.com" method="POST">
       <!-- <h4 class="form__title">THE FORM</h4> -->
@@ -104,4 +104,6 @@
     </form>
   </div>
 </div>
-  
+
+<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
+<%= partial "promotion_footer.html", assigns %>

@@ -1,6 +1,6 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: child_content(@item["children"], "about-intro") } %>
 
-<%= partial "links/patreon.html", assigns %>
+<%= partial "links/paypal.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content">
@@ -29,33 +29,33 @@
 
 <%= partial "links/reddit.html", assigns %>
 
-<div class="single__wrapper" id="contact__form">   
+<div class="single__wrapper" id="contact__form">
   <h1 class="single__title">Contact <img src="/images/logo.png" class="logo__square" alt=""/></h2>
   <div class="single__content">
     <p>If you would like to get in touch, please provide your name, email and message, and I will get back to you as soon as possible!</p>
     <p>I also offer <a class="link" href="<%= Routes.page_path(@conn, :programs_coaching) %>">Personal Coaching</a> for those interested in receiving additional help from someone who's been there before.</p>
     <p>I offer an initial FREE 10 Minute Consultation for those interested in building a relationship and working together in order to help you achieve your goals.</p>
-  </div>    
+  </div>
 
   <!-- Original Contact Form -->
   <div class="form__wrapper form__wrapper--full-width">
-    <form class="form" action="https://formspree.io/admin@neverfapdeluxe.com" method="POST">  
+    <form class="form" action="https://formspree.io/admin@neverfapdeluxe.com" method="POST">
       <div class="form__input__container">
         <input class="form__input" type=text: placeholder="Name" name='name'/>
         <input class="form__input" type="email" placeholder="Email" name='_replyTo'/>
         <textarea class="form__input form__textarea" type=text: placeholder="Message" name='message'></textarea>
       </div>
-    
+
       <div class="form__submission__container">
         <button class="form__button" type="submit" value="Send">Send</button>
       </div>
     </form>
   </div>
 
-  
+
   <!-- New Contact Form -->
   <!-- <div class="form__wrapper form__wrapper--full-width">
-    <%= form_for @changeset_collections.contact_form_changeset, Routes.message_path(@conn, :contact_form_post), fn f -> %> 
+    <%= form_for @changeset_collections.contact_form_changeset, Routes.message_path(@conn, :contact_form_post), fn f -> %>
       <div class="form__input__container">
         <%= error_tag f, :name %>
         <%= text_input f, :name, [placeholder: "Name", class: "form__input"] %>
@@ -66,24 +66,19 @@
         <%= raw Recaptcha.Template.display %>
 
       </div>
-    
+
       <div class="form__submission__container">
         <%= submit "Send", [class: "form__button"]  %>
       </div>
     <% end %>
   </div> -->
-  
+
 </div>
 
 <div style="margin-top: 5rem;"></div>
 <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
 
-<div style="margin-top: 5rem;"></div>
-<%= partial "banners/new_to_nfd_banner.html", assigns %>
-<%= partial "banners/reddit_question_banner.html", assigns %>
-<%= partial "home/veteran_neverfappers.html", assigns %>
-<%= partial "home/goodies.html", assigns %>
-<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @page_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>
+<%= partial "promotion_footer.html", assigns %>
 
 
 <!-- <div class="single__wrapper">
@@ -101,7 +96,7 @@
     <p>Compromising of five fundamental principles, the NeverFap method of eliminating porn addiction could honestly not be any simpler, and we've broken it down so you don't have to.</p>
     <p>These principles will form the basis of everything you will learn, whether you decide to get started with the courses, read the articles or practice the mental health exercises.</p>
     <p>These principles are:</p>
-    
+
     <div class="five__principles__list__main">
       <span><div class="five__principles__item__main">Choice over mind</div></span>
       <span><div class="five__principles__item__main">Balance over reward</div></span>
@@ -109,7 +104,7 @@
       <span><div class="five__principles__item__main">Awareness over all</div></span>
       <span><div class="five__principles__item__main">Uncondition over judgement</div></span>
     </div>
-    
+
     <div class="button__wrapper">
       <a class="button button__secondary" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles Of NeverFap.</a>
     </div>

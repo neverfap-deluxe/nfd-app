@@ -10,6 +10,4 @@
 
 <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
 
-<div style="margin-top: 5rem;"></div>
-<%= partial "banners/new_to_nfd_banner.html", assigns %>
-<%= partial "banners/reddit_question_banner.html", assigns %>
+<%= partial "promotion_footer.html", assigns %>

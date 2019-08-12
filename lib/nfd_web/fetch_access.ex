@@ -15,9 +15,9 @@ defmodule NfdWeb.FetchAccess do
       :general_about -> apmss ++ [:contact_form_changeset]
       :general_contact -> apmss ++ [:contact_form_changeset]
       :general_community -> apmss ++ []
-      :general_donations -> [:meditations]
-      :general_everything -> [:meditations]
-      :general_premium -> [:meditations]
+      :general_donations -> apmss ++ []
+      :general_everything -> apmss ++ []
+      :general_premium -> apmss ++ []
       # GENERAL END
 
       # GUIDES
@@ -37,30 +37,30 @@ defmodule NfdWeb.FetchAccess do
       # LEGAL END
 
       # PROGRAMS
-      :programs_accountability -> [:meditations]
-      :programs_reddit_guidelines -> [:meditations]
-      :programs_coaching -> [:meditations, :contact_form_changeset]
+      :programs_accountability -> apmss ++ []
+      :programs_reddit_guidelines -> apmss ++ []
+      :programs_coaching -> apmss ++ [:contact_form_changeset]
       # PROGRAMS END
 
       # VOLUNTEER
-      :volunteer_helpful_neverfap_counsel -> [:meditations]
-      :volunteer_engineering_corps -> [:meditations]
-      :volunteer_marketing_department -> [:meditations]
+      :volunteer_helpful_neverfap_counsel -> apmss ++ []
+      :volunteer_engineering_corps -> apmss ++ []
+      :volunteer_marketing_department -> apmss ++ []
       # VOLUNTEER END
 
       # APPS
-      :apps_desktop_app -> [:meditations]
-      :apps_mobile_app -> [:meditations]
-      :apps_chrome_extension -> [:meditations]
-      :apps_open_source -> [:meditations]
-      :apps_neverfap_deluxe_league -> [:meditations]
+      :apps_desktop_app -> apmss ++ []
+      :apps_mobile_app -> apmss ++ []
+      :apps_chrome_extension -> apmss ++ []
+      :apps_open_source -> apmss ++ []
+      :apps_neverfap_deluxe_league -> apmss ++ []
       # APPS END
 
       # MISC
-      :misc_never_fap -> [:meditations]
-      :misc_teens -> [:meditations]
-      :misc_porn_addiction -> [:meditations]
-      :misc_porn_addiction_quiz -> [:meditations]
+      :misc_never_fap -> apmss ++ []
+      :misc_teens -> apmss ++ []
+      :misc_porn_addiction -> apmss ++ []
+      :misc_porn_addiction_quiz -> apmss ++ []
       # MISC END
 
       # CONTENT

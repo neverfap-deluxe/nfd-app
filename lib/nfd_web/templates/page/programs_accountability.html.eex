@@ -84,5 +84,5 @@
   </div>
 </div>
 
-
-<%= partial "links/patreon.html", assigns %>
+<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
+<%= partial "promotion_footer.html", assigns %>

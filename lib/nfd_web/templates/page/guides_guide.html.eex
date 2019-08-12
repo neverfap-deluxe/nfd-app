@@ -187,7 +187,7 @@
     <h2>Content List</h2>
     <p>If you'd like to dive into some of our articles, feel free to explore the range of articles, practices and courses sorted by category.</p>
   </div>
-  
+
   <div class="popular__latest__options">
     <h3 class="button__click button__on popular__latest__options--guide" id="introduction_click">Introduction</h3>
     <h3 class="button__click button__off popular__latest__options--guide" id="choice_over_mind_click">Choice over mind</h3>
@@ -223,13 +223,7 @@
 </div>
 
 <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
-<div class="single__wrapper"></div>
-<%= partial "banners/new_to_nfd_banner.html", assigns %>
-<%= partial "banners/reddit_question_banner.html", assigns %>
-<%= partial "home/veteran_neverfappers.html", assigns %>
-
-<%= partial "home/goodies.html", assigns %>
-<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @page_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>
+<%= partial "promotion_footer.html", assigns %>
 
 <script src='/js/guide.js'></script>
 
