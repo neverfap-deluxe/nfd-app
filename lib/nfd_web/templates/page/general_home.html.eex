@@ -19,59 +19,64 @@
     </div>
 
     <div class="homepage__section">
-      <p>NeverFap Deluxe consists of process, strategy and understanding.</p>
       <h3>With the NeverFap Deluxe Method, I explain exactly how and why these steps work.</h3>
       <p>Because once you intuitively understand how something works, you will <u>commit to it forever.</u> <i class="em em-v"></i></p>
       <p>Please keep reading if you'd like to learn more.</p>
       <p>Sincerely,</p>
       <p><i class="em em-sparkling_heart"></i> Daddy Reade. <i class="em em-sparkling_heart"></i></p>
     </div>
+  </div>
+</div>
 
-    <div class="guide__banner" style="border-bottom: 4px solid black;">
-      <div class="guide__suggestion__container">
-        <div class="black__banner__title__container">
-          <h2 class="black__banner__title" style="margin-bottom: 3rem;">The NeverFap Deluxe Method.</h2>
-          <div class="guide__suggestion">
-            <h1 class="guide__suggestion__number">1.</h1>
-            <h1 class="guide__suggestion__title">Understand the fundamentals of porn addiction recovery</h1>
-          </div>
-          <div class="guide__suggestion">
-            <h1 class="guide__suggestion__number">2.</h1>
-            <h1 class="guide__suggestion__title">Develop a core mental health strategy</h1>
-          </div>
-          <div class="guide__suggestion">
-            <h1 class="guide__suggestion__number">3.</h1>
-            <h1 class="guide__suggestion__title">Maintain balance</h1>
-          </div>
-        </div>
-      </div>
+<div class="guide__banner" style="border-bottom: 4px solid black; border-top: 4px solid black;">
+  <div class="guide__suggestion__container">
+    <div class="black__banner__title__container">
+      <h2 class="black__banner__title" style="margin-bottom: 1rem;">Step 1.</h2>
+      <h2 class="black__banner__title__alt" style="margin-bottom: 3rem;">Learn The Fundamental Concepts.</h2>
     </div>
+  </div>
 
+</div>
+
+<div class="homepage__content">
+  <div class="homepage__main">
     <div class="homepage__section">
-      <div class="guide__suggestion">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
-        <h1>Learn The Basics</h1>
-      </div>
       <p>You won't get anywhere until you first understand the basics of porn addiction recovery.</p>
-      <p>Only until you intuitively understand how something works, you will be able to <u>commit to it forever.</u> <i class="em em-v"></i></p>
-      <p>These two guides cover the fundamental basics in around 8 minutes.</p>
+      <p>These three guides comprehensively cover the fundamental basics in around 10 minutes.</p>
 
       <div style="margin-top: 3rem;" class="articles__list__v2 homepage__resources">
-        <%# Understand the basics of porn addiction recovery. %>
-        <a class="article__item__v2" href='<%= Routes.page_path(@conn, :guides_complete_understanding) %>'>
-          <h3 class="article__item__v2__title">A Complete Understanding Of The Porn Addiction Recovery Process In 5 Minutes</h3>
-          <h4 class="article__item__v2__description">Fully understand why you're addicted to porn, why you keep relapsing and what you have to do to stop.</h4>
-        </a>
 
-        <a class="article__item__v2" href='/guide'>
-          <h3 class="article__item__v2__title">Explaining The Core Concepts Of The NeverFap Deluxe Method</h3>
-          <h4 class="article__item__v2__description">Learn how to overcome your porn addiction using the NeverFap Deluxe Method Of Overcoming Porn Addiction.</h4>
+        <div class="guide__suggestion">
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
+        </div>
+      
+        <a class="article__item__homepage" href='<%= Routes.page_path(@conn, :guides_complete_understanding) %>'>
+          <h3 class="article__item__homepage__title">A Complete Understanding Of The Porn Addiction Recovery Process In 5 Minutes <img src="/images/logo.png" class="logo__square" alt=""/></h3>
+          <h4 class="article__item__homepage__description">Fully understand why you're addicted to porn, why you keep relapsing and what you have to do to stop.</h4>
         </a>
+        <p>Summary:</p>
+        <p></p>
 
-        <a class="article__item__v2" href='/summary'>
-          <h3 class="article__item__v2__title">A Comprehensive Summary Of NeverFap Deluxe</h3>
-          <h4 class="article__item__v2__description">A really awesome summary of the core concepts of NeverFap Deluxe, which serves as an amazing primer of the concepts.</h4>
+        <div class="guide__suggestion">
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
+        </div>    
+        <a class="article__item__homepage" href='/guide'>
+          <h3 class="article__item__homepage__title">Explaining The Core Concepts Of The NeverFap Deluxe Method <img src="/images/logo.png" class="logo__square" alt=""/></h3>
+          <h4 class="article__item__homepage__description">Learn how to overcome your porn addiction using the NeverFap Deluxe Method Of Overcoming Porn Addiction.</h4>
         </a>
+        <p>Summary:</p>
+        <p></p>
+
+        <div class="guide__suggestion">
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
+        </div>      
+        <a class="article__item__homepage" href='/summary'>
+          <h3 class="article__item__homepage__title">A Comprehensive Summary Of NeverFap Deluxe <img src="/images/logo.png" class="logo__square" alt=""/></h3>
+          <h4 class="article__item__homepage__description">A really awesome summary of the core concepts of NeverFap Deluxe, which serves as an amazing primer of the concepts.</h4>
+        </a>
+        <p>Summary:</p>
+        <p></p>
+
       </div>
 
       <p>The above resources should provide you with a solid understanding of the dynamics of porn addiction recovery, as well as help you understand what areas you need to focus on.</p>
@@ -86,7 +91,20 @@
       <p>Sincerely,</p>
       <p><i class="em em-sparkling_heart"></i> Daddy Reade. <i class="em em-sparkling_heart"></i></p>
     </div>
+  </div>
+</div>
 
+<div class="guide__banner" style="border-bottom: 4px solid black; border-top: 4px solid black;">
+  <div class="guide__suggestion__container">
+    <div class="black__banner__title__container">
+      <h2 class="black__banner__title" style="margin-bottom: 1rem;">Step 1.</h2>
+      <h2 class="black__banner__title__alt" style="margin-bottom: 3rem;">Develop a core mental health strategy.</h2>
+    </div>
+  </div>
+</div>
+
+<div class="homepage__content">
+  <div class="homepage__main">  
     <div class="homepage__section">
       <div class="guide__suggestion">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
@@ -114,6 +132,8 @@
       <p>Mental health is developed through skills we learn through practice and consistency.</p>
       <p>10 minutes of meditation is enough for most people.</p>
     </div>
+  </div>
+</div>
 
 
 

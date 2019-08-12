@@ -603,7 +603,6 @@
     box-shadow: -3px 3px 0px 0px $black-text;
   }
 
-
   .homepage__process__subtitle {
     font-size: 1rem;
     line-height: 2rem;
@@ -660,6 +659,21 @@
     
   }
 }
+
+.article__item__homepage {
+  .article__item__homepage__title {
+    margin-top: 0rem;
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+  .article__item__homepage__description {
+    
+  }
+  .article__item__homepage__title:hover {
+    opacity: 0.7;
+  }
+}
+
 
 @media screen and (min-width: 420px) {
   .homepage__tldr--last {

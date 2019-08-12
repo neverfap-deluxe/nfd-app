@@ -44,6 +44,13 @@
       // color: $magenta;
     }
   }
+
+  .black__banner__title__alt {
+    background: $white-text;
+    color: $black-text;
+    box-shadow: -5px 5px 0px 0px $black-background;
+    text-shadow: none;
+  }
 }
 
 .last__one {
@@ -76,7 +83,7 @@
   }
 
   .black__banner__title__container {
-    .black__banner__title {
+    .black__banner__title, .black__banner__title__alt {
       width: 600px;
       margin: 0 auto;
       margin-top: 2rem;
