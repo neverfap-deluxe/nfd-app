@@ -1,15 +1,31 @@
 <div class="hovering__banner">
-  <h3 class="hovering__banner__title">Hovering Meditation Technique</h3>
-  <h4 class="hovering__banner__sub__title">New to Meditation? Still don't quite 'get it'?</h4>
-  <p>Try Hovering! </p>
+  <h3 class="hovering__banner__title">Struggle to Meditate?</h3>
+  <h4 class="hovering__banner__sub__title">Thankfully there's a whole new way to meditate which anyone can understand!</h4>
+  <div class="banner__split__container">
+    <div class="banner__split">
+      <p>Try <b>Hovering</b>! It has been designed to be easy to understand, simple to practice, as well as remain acessible to people of all ages.</p>
+      <p>Hovering can be done with a single piece of paper, </p>
+      <p>Available , </p>
 
-  <div class="circle__container cr">
-    <div class="circle cri">
-      Hover
+      <div>
+        <a class="hovering__banner__link" href="https://hovering.neverfapdeluxe.com/">Hovering Web App</a>
+        <a class="hovering__banner__link" href="https://tryhovering.com/">Hovering Website</a>    
+      </div>
     </div>
+
+    <!-- HOVER CIRCLE -->
+    <div class="banner__split">
+      <div class="circle__container cr">
+        <div class="circle cri">
+          Hover
+        </div>
+      </div>        
+    </div>
+    <!-- HOVER CIRCLE END -->
+
   </div>
 
-  <a href="https://hovering.neverfapdeluxe.com/">Web App</a>
+  
 
-  <a class="hovering__banner__link" href="https://tryhovering.com/">Learn More</a>
+
 </div>
