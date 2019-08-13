@@ -1,7 +1,7 @@
 <div class="practices__banner">
-  <h3 class="practices__banner__title">The NeverFap Deluxe Mobile App</h3>
-  <h4 class="practices__banner__sub__title">Read all your favourite NeverFap Deluxe content on your Android mobile device!</h4>
-  <h4 style="width: 400px;" class="practices__banner__sub__title">(sorry, but iOS force you to pay $100USD per month to host an app and The Reade doesn't have that kind of $$$mula!)</h4>
+  <h3 class="practices__banner__title">NeverFap Deluxe Practices</h3>
+  <h4 class="practices__banner__sub__title">Want to develop your awareness?</h4>
+  <h4 class="practices__banner__sub__title"></h4>
 
   <div class="practices__banner__image__container">
     <img src="/mobile_screenshots/1.png" alt="">

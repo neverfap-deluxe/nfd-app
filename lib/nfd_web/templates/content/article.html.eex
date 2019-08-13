@@ -57,4 +57,3 @@
 
 <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
 <%= partial "promotion_footer.html", assigns %>
-]

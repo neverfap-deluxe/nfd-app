@@ -3,7 +3,7 @@
   <%= partial "head_general.html", assigns %>
 
   <body>
-    <%#= partial "layout/header.html", assigns %>
+    <%= partial "layout/header.html", assigns %>
 
     <main role="main" class="main" id="content">
       <div class="single__wrapper">   
@@ -17,14 +17,14 @@
         </div>
       </div>
 
-      <div style="display: flex;justify-content: center;">
+      <%= partial "links/patreon.html", assigns %>
+
+      <div style="display: flex;justify-content: center; margin-bottom: 6rem;">
         <%= partial "everything_module.html", %{ is_mobile_menu: false } %>
       </div>
-      
-      <%#= partial "links/patreon.html", assigns %>
-
     </main>
-    <%#= partial "layout/footer.html", assigns %>
+    
+    <%= partial "layout/footer.html", assigns %>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
 

@@ -53,11 +53,17 @@
     </a>
 
     <!-- @conn.assigns.item -->
-    <div class="header__sub header__banner__articles">
+    <div class="header__sub header__banner__articles">  
       <a href="/articles" class="header__module header__module--flex">
         <h3 class="h3__yus">
           NeverFap Deluxe Articles
           <span class="h3__tiny">/articles</span>
+        </h3>
+      </a>
+      <a href="/practices" class="header__module">
+        <h3 class="h3__yus">
+          NeverFap Deluxe Practices
+          <span class="h3__tiny">/practices</span>
         </h3>
       </a>
       <a href="/quotes" class="header__module header__module--flex">
@@ -68,18 +74,11 @@
       </a>
     </div>
 
-
     <!-- Meditation -->
     <a id="link__meditation" class="header__link__wrapper" href="/meditation">
       <li class="header__link">Meditation</li>
     </a>
     <div class="header__sub header__banner__practices">
-      <a href="/practices" class="header__module">
-        <h3 class="h3__yus">
-          NeverFap Deluxe Practices
-          <span class="h3__tiny">/practices</span>
-        </h3>
-      </a>
       <a href="/meditation" class="header__module">
         <h3 class="h3__yus">
           NeverFap Deluxe Meditations
@@ -146,10 +145,10 @@
       <li class="header__link">About</li>
     </a>
     <div class="header__sub header__banner__about">
-      <a href="/coaching" class="header__module">
+      <a href="/about" class="header__module">
         <h3 class="h3__yus">
-          Personal Coaching
-          <span class="h3__tiny">/coaching</span>
+          About NeverFap Deluxe
+          <span class="h3__tiny">/about</span>
         </h3>
       </a>
       <a href="/contact" class="header__module">
@@ -158,10 +157,10 @@
           <span class="h3__tiny">/contact</span>
         </h3>
       </a>
-      <a href="/about" class="header__module">
+      <a href="/coaching" class="header__module">
         <h3 class="h3__yus">
-          About NeverFap Deluxe
-          <span class="h3__tiny">/about</span>
+          Personal Coaching
+          <span class="h3__tiny">/coaching</span>
         </h3>
       </a>
     </div>
