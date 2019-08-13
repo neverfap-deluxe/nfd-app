@@ -22,3 +22,60 @@
     font-size: 1.6rem;
   }
 }
+
+
+.pricing__banner__container {
+  padding: 2rem;
+  border: 4px solid black;
+
+  .pricing__banner__title {
+    color: white;
+    background: black;
+    box-shadow: -6px 6px 0px 0px $black-background;
+    padding: 1rem;
+    font-size: 1.6rem;
+  }
+  .pricing__banner__description {
+    padding: 0.8rem;
+    font-style: 1.4rem;
+  }
+
+  .pricing__guarantee {
+    margin-top: 1.6rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .pricing__guarantee__item {
+    padding: 1.2rem;
+    font-size: 1.6rem;
+  }
+
+  .pricing__banner__value {
+  }
+
+  .pricing__banner__lifetime {
+    font-size: 1.3rem;
+
+    .pricing-tick {
+      margin-left: 0.4rem;
+    }
+  }
+}
+
+.pricing__sign__in__container {
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 4px solid black;
+
+  .pricing__sign__in__title {
+
+  }
+}
+
+.banner__list {
+  .banner__item {
+    padding: 1.4rem!important;
+  }
+}
+

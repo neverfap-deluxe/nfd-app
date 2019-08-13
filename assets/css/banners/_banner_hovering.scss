@@ -39,8 +39,12 @@
 .banner__split__container {
   display: flex;
   .banner__split {
-    flex: 1;
+    flex: 4;
   }
+}
+
+.banner__split__divider {
+  flex: 1;
 }
 
 .circle__container {

@@ -3,17 +3,17 @@
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
     <h1>Introduction</h1>
-    <p>NeverFap Deluxe offers a wide range of premium Meditation options for those seeking additional help.</p>
+    <p>NeverFap Deluxe offers a wide range of effective Meditation options for those seeking additional help.</p>
     <p>The aim of our meditations is to teach you the fundamental basics of meditation, so you can have the ability to comfortably practice meditation on your own.</p>
-    <h3>It's not within our intention to sell you a monthly meditation subscription like existing options.</h3>
+    <h3>It's not within our intention to sell you a monthly meditation subscription like many existing options.</h3>
     <p>Not only is it a waste of money, however it largely defeats the purpose and aim of NeverFap Deluxe which is to teach you to become truly autonomous in every sense of the word.</p>
-    <p>Instead we offer inexpensive, one-time payment options which provide you with a range of different meditations targeting your skill level.</p>
-    <p>Of course, we also offer a heap of <a class="link" href="/meditation-reading-list">FREE meditation articles</a> which provide tips and advice on how best to meditate.</p>
-    <p>Ultimately however there's no substitute to using Guided Meditations when starting out and certainly it made all the difference to me and my journey starting out.</p>
+    <p>Instead we offer a range of inexpensive, one-time payment options which provide you with a range of different skills dependent upon what you aim to achieve and your skill level.</p>
+    <p>Of course, we also offer a heap of <a class="link" href="/meditation-reading-list">FREE meditation articles</a> which provide invaluable tips and advice on how best to meditate.</p>
+    <p>With that said, there's ultimately no substitution to using Guided Meditations when starting out, and certainly it made all the difference to helping me understand meditation when I was starting out.</p>
     <p>I simply want to provide you with a more effective and more affordable option than what I personally had to go through to reach the same knowledge.</p>
   </div>
 </div>
-    
+
 <%= partial "links/paypal.html", assigns %>
 
 <div class="single__wrapper">
@@ -22,12 +22,26 @@
     <p>As a primary option we offer the <b>The NeverFap Deluxe Meditation Fundamental Series</b> which is a series of 4 meditations which is designed to teach you the absolute core fundamental basics of meditation.</p>
     <p>It is a perfect starting point for those new to meditation, and with this core knowledge you should have the skills in order to meditate on your own.</p>
     <p>As a starting point for your meditation journey, I also wanted it to be cheap enough that anyone can afford it, because I believe basic mental health should be inexpensive.</p>
-    <h3>So it's available for $4 USD.</h3>
+    <h3>It's available for $4 USD.</h3>
     <p>The price of a cup of coffee, and if you can't sacrifice a beverage of the empowerment of your mental health, then I'm not quite sure how to help you.</p>
+    <p>Of course, I've also written <a class="link" href='<%= Routes.content_path(@conn, :practice, "observe-your-senses") %>'>this article</a> if you're wanting to learn the basics of how to meditate, although it's not quite the same as being guided through it from a 3rd person perspective.</p>
   </div>
 </div>
 
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 20px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 16px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 12px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 8px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+
 <%= partial "banners/fdm_banner.html", assigns %>
+
+<div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: #00ffee;"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 8px; background: #00ffee;"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 12px; background: #00ffee;"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 16px; background: #00ffee;"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 20px; background: #00ffee;"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 24px; background: #00ffee;"></div>
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">

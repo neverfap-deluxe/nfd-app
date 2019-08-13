@@ -6,6 +6,8 @@
   </a>
 </div>
 
+<%= partial "links/patreon.html", assigns %>
+
 <%= if @content_collections.collection[:status] == "complete" do %>
   <%= partial "links/patreon.html", assigns %>
 <% end %>
@@ -23,7 +25,7 @@
       <%= if @item["duration"] do %><div class="homepage__process__text homepage__process__text--practice"><b>Duration</b><p><%= raw @item["duration"] %></p></div><% end %>
     <!-- </div> -->
   </div>
-  <%# <span><span class="homepage__process__link"><%= @item["date"] %></span></span> %>
+  <span><span class="homepage__process__link"><%= @item["date"] %></span></span>
 </div>
 
 <%= if @content_collections.collection[:status] == "complete" do %>

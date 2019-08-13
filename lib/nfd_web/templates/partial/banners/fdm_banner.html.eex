@@ -2,21 +2,23 @@
   <h1 class="fdm__banner__title">The NeverFap Deluxe Meditation Fundamental Series</h1>
   <div class="banner__split__container">
     <div class="banner__split">
-      <h4 class="fdm_banner__sub__title">Cover the fundamental basics of meditation so you can comfortably practice on your own.</h4>
-      <ul>
-        <li>1 - Meditation Basics</li>
-        <li>2 - Meditation Basics</li>
+      <h4 class="fdm_banner__sub__title">Cover the fundamental basics of meditation so you can comfortably practice meditation on your own.</h4>
+      <h4 class="fdm_banner__sub__title">Course Topics.</h4>
+
+      <ul class="seven__day__kickstarter__banner__list banner__list">
+        <li class="seven__day__kickstarter__banner__item banner__item">1 - Observe Your Senses</li>
+        <li class="seven__day__kickstarter__banner__item banner__item">2 - Cultivating Awareness</li>
+        <li class="seven__day__kickstarter__banner__item banner__item">3 - Remaining Calm And Calculated</li>
+        <li class="seven__day__kickstarter__banner__item banner__item">4- Learning To Let Go</li>
       </ul>
+
     </div>
-
+    <div class="banner__split__divider"></div>
     <div class="banner__split">
-      <div class="pricing__banner__container">
-        <div class="pricing__banner__value">$4</div>
-
-
-      </div>
-
+      <%= partial "pricing_container.html",
+        %{ price: "$4 USD",
+          title: "The NeverFap Deluxe Meditation Fundamental Series",
+          description: "Fully understand the basics of meditation." } %>
     </div>
   </div>
 </div>
-  

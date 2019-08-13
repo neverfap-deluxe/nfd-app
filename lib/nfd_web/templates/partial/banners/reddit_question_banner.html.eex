@@ -1,10 +1,4 @@
 <div style="margin-bottom: 1rem; margin-top: 1rem; height: 24px; background: rgba(255,46,182,1);"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 20px; background: rgba(255,46,182,1);"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 16px; background: rgba(255,46,182,1);"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 12px; background: rgba(255,46,182,1);"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 8px; background: rgba(255,46,182,1);"></div>
-<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
-
 <div class="reddit__question__banner__container" style="margin-top: 2.5rem; margin-bottom: 2.5rem;">
 
   <!-- <div class="reddit__question__banner" style="margin-bottom: 0.7rem; margin-top: 2rem;">
@@ -22,12 +16,12 @@
       <img class="account__calendly__button__logo" src="/images/calendly__logo.png" />
       <p class="account__calendly__button__text">FREE <span class="account__calendly__button__text--display">CONSULTATION</span></p>
     </a>
-  </div>    
+  </div>
 
   <div class="account__buttons" style="flex-direction: column!important;">
     <div class="calendly-inline-widget" data-url="https://calendly.com/neverfap-deluxe"></div>
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
-    <div style="margin-top: 4rem; display: flex; align-items: center; justify-content: center;"> 
+    <div style="margin-top: 4rem; display: flex; align-items: center; justify-content: center;">
       <a class="link articles__link" style="margin-right: 2rem!important; margin-bottom: 0rem;" href="<%= Routes.page_path(@conn, :programs_coaching)%>">Learn more</a>
     </div>
   </div>
@@ -50,7 +44,7 @@
       <img class="account__discord__button__logo" src="/images/discord__logo.png" />
       <p class="account__discord__button__text">DISCORD <span class="account__discord__button__text--display">CHANNEL</span></p>
     </a>
-  </div>    
+  </div>
 </div>
 
 <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: #00ffee;"></div>
