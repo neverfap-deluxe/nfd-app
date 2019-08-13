@@ -1,4 +1,36 @@
-<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %> <!-- @item["content"] -->
+
+<% practice_length = @page_collections.practices |> length() %>
+<div class="single__wrapper">
+  <div class="single__content" style="margin-bottom: 0;">
+    <p>It costs $49 to access all of the practices on NeverFap Deluxe.</p>
+    <p>This initial investment provides you with <b>lifetime access</b> to existing and future mental health and awareness practices.</p>
+    <p>There are currently <%= practice_length %> detailed practices and there are plans for 3 new practices each month.</p>
+
+    <h2>What You Get</h2>
+
+    <p>Each practice contains:</p>
+    <ul class="practice__list">
+      <li>A brief practice summary card.</li>
+      <li>A section explaining the context of the exercise.</li>
+      <li>A section describing the instructions of how to practice.</li>
+      <li>A section describing how I personally practice the exercise.</li>
+      <li>Essential audio explaining the basis of the practice.</li>
+    </ul>
+
+    <p>Ideally you should be spending a week with each exercise, in order to truly appreciate </p>
+    <p>In addition, these practices are organised into 7 Day Awareness Challenges so they are </p>
+
+    <p>Ultimately mental health is a skill that is learnt through practice, and so these exercises provide you with a structured way to develop your mental health.</p>
+    <p>Furthermore, for your convenience these practices are available to you via.</p>
+
+
+    <p> is a paid feature of NeverFap Deluxe</p>
+
+  </div>
+</div>
+
+
 <%= partial "links/paypal.html", assigns %>
 
 <div class="single__wrapper">
@@ -9,7 +41,6 @@
 <%= partial "promotion_footer.html", assigns %>
 
 <script src='<%= Routes.static_path(@conn, "/js/practices.js") %>'></script>
-
 
   <!-- <h3 class="popular__latest__options__title">Practices</h3> -->
   <!-- <div class="popular__latest__options">

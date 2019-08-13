@@ -1,6 +1,43 @@
-<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %> <!-- @item["content"] -->
 
+<div class="single__wrapper">
+  <div class="single__content" style="margin-bottom: 0;">
+    <h1>Introduction</h1>
+    <p>NeverFap Deluxe offers a wide range of premium Meditation options for those seeking additional help.</p>
+    <p>The aim of our meditations is to teach you the fundamental basics of meditation, so you can have the ability to comfortably practice meditation on your own.</p>
+    <h3>It's not within our intention to sell you a monthly meditation subscription like existing options.</h3>
+    <p>Not only is it a waste of money, however it largely defeats the purpose and aim of NeverFap Deluxe which is to teach you to become truly autonomous in every sense of the word.</p>
+    <p>Instead we offer inexpensive, one-time payment options which provide you with a range of different meditations targeting your skill level.</p>
+    <p>Of course, we also offer a heap of <a class="link" href="/meditation-reading-list">FREE meditation articles</a> which provide tips and advice on how best to meditate.</p>
+    <p>Ultimately however there's no substitute to using Guided Meditations when starting out and certainly it made all the difference to me and my journey starting out.</p>
+    <p>I simply want to provide you with a more effective and more affordable option than what I personally had to go through to reach the same knowledge.</p>
+  </div>
+</div>
+    
 <%= partial "links/paypal.html", assigns %>
+
+<div class="single__wrapper">
+  <div class="single__content" style="margin-bottom: 0;">
+    <h1>The NeverFap Deluxe Meditation Fundamental Series</h1>
+    <p>As a primary option we offer the <b>The NeverFap Deluxe Meditation Fundamental Series</b> which is a series of 4 meditations which is designed to teach you the absolute core fundamental basics of meditation.</p>
+    <p>It is a perfect starting point for those new to meditation, and with this core knowledge you should have the skills in order to meditate on your own.</p>
+    <p>As a starting point for your meditation journey, I also wanted it to be cheap enough that anyone can afford it, because I believe basic mental health should be inexpensive.</p>
+    <h3>So it's available for $4 USD.</h3>
+    <p>The price of a cup of coffee, and if you can't sacrifice a beverage of the empowerment of your mental health, then I'm not quite sure how to help you.</p>
+  </div>
+</div>
+
+<%= partial "banners/fdm_banner.html", assigns %>
+
+<div class="single__wrapper">
+  <div class="single__content" style="margin-bottom: 0;">
+    <h1>Hovering Meditation</h1>
+
+  </div>
+</div>
+
+<%= partial "banners/hovering_banner.html", assigns %>
+
 
 <div class="single__wrapper">
   <h1 style="margin-bottom: 3rem;">Guided Meditation List</h1>
