@@ -1,6 +1,11 @@
 .hovering__banner {
-  .hovering__banner__title {
+  padding: 4rem;
 
+  .hovering__banner__title {
+    font-size: 3rem;
+  }
+  .hovering__banner__sub__title {
+    font-weight: 400;
   }
 }
 
@@ -67,11 +72,11 @@
 
   z-index: 2;
 
-  right: -8rem;
-  bottom: 16rem;
+  // right: -8rem;
+  // bottom: 16rem;
 
   .cri {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
   }
 }
