@@ -7,7 +7,7 @@
       <p>Hovering can be done with a single piece of paper, </p>
       <p>Available , </p>
 
-      <img src="/images/screenshots/hovering_mobile.png" />
+      <img class="hovering__banner__screenshot" src="/images/screenshots/hovering_mobile.png" />
 
       <div>
         <a class="hovering__banner__link" href="https://hovering.neverfapdeluxe.com/">Hovering Web App</a>
@@ -18,8 +18,8 @@
 
     <!-- HOVER CIRCLE -->
     <div class="banner__split">
-      <div class="circle__container cr">
-        <div class="circle cri">
+      <div id="hoverCircleExampleBanner" class="circle__container cr">
+        <div id="hoverCircleTextBanner" class="circle cri">
           Hover
         </div>
       </div>        
@@ -27,8 +27,18 @@
     <!-- HOVER CIRCLE END -->
 
   </div>
-
-  
-
-
 </div>
+
+
+<script>
+  const hoverCircleExampleBanner = document.querySelector('#hoverCircleExampleBanner');
+  const hoverCircleTextBanner = document.querySelector('#hoverCircleTextBanner');
+
+  hoverCircleExampleBanner.onmouseenter = function() {
+    hoverCircleTextBanner.classList.add("hover__text__fade");
+  }
+  hoverCircleExampleBanner.onmouseleave = function() {
+    hoverCircleTextBanner.classList.remove("hover__text__fade");
+  }
+</script>
+  

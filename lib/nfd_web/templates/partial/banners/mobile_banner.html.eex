@@ -10,7 +10,7 @@
     </div>
     <div class="banner__split">
       <div class="mobile__banner__image__container">
-        <img src="/mobile_screenshots/1.png" alt="">
+        <img class="mobile__banner__screenshot" src="/images/screenshots/nfd_mobile_home.png" alt="">
       </div>
     </div>
   </div>
