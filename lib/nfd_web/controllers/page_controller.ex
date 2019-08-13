@@ -46,6 +46,7 @@ defmodule NfdWeb.PageController do
   def apps_chrome_extension(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :apps_chrome_extension, "general.html", FetchAccess.fetch_access_array(:apps_chrome_extension))
   def apps_open_source(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :apps_open_source, "general.html", FetchAccess.fetch_access_array(:apps_open_source))
   def apps_neverfap_deluxe_league(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :apps_neverfap_deluxe_league, "general.html", FetchAccess.fetch_access_array(:apps_neverfap_deluxe_league))
+  def apps_hovering(conn, _params), do: Fetch.fetch_page(conn, NfdWeb.PageView, :apps_hovering, "general.html", FetchAccess.fetch_access_array(:apps_hovering))
   # APPS END
 
   # LEGAL

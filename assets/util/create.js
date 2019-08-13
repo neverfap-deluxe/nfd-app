@@ -29,7 +29,7 @@ const updateFetchAccessFile = (fetchAccessFilePath, fullType, fullSlug, fullUnde
 
     const regex = `# ${fullTypeEnd}`;
     var result = data.replace(new RegExp(regex, 'gi'),
-    `:${underscore} -> [:meditations]\n      # ${fullTypeEnd}`);
+    `:${underscore} -> apmss ++ []\n      # ${fullTypeEnd}`);
 
     fs.writeFile(fetchAccessFilePath, result, 'utf8', function (err) {
        if (err) return console.log(err);

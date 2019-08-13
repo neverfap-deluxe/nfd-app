@@ -79,6 +79,7 @@ defmodule Nfd.Sitemaps do
         add Helpers.page_path(Endpoint, :apps_desktop_app), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :apps_chrome_extension), priority: 0.5, changefreq: "weekly", expires: nil
         add Helpers.page_path(Endpoint, :apps_neverfap_deluxe_league), priority: 0.5, changefreq: "weekly", expires: nil
+        add Helpers.page_path(Endpoint, :apps_hovering), priority: 0.5, changefreq: "weekly", expires: nil
         # APPS END
 
         # LEGAL

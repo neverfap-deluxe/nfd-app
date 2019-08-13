@@ -1,0 +1,13 @@
+<div class="hovering__banner">
+  <h3 class="hovering__banner__title">Hovering </h3>
+  <h4 class="hovering__banner__sub__title">New to Meditation?</h4>
+  <p>Try Hovering! </p>
+  <div class="circle__container">
+    <div class="circle">
+      Hover
+    </div>
+  </div>
+
+  <a href="hovering__banner__link">Hovering Website</a>
+
+</div>

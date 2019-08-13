@@ -54,6 +54,7 @@ defmodule NfdWeb.FetchAccess do
       :apps_chrome_extension -> apmss ++ []
       :apps_open_source -> apmss ++ []
       :apps_neverfap_deluxe_league -> apmss ++ []
+      :apps_hovering -> apmss ++ []
       # APPS END
 
       # MISC

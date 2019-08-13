@@ -1,0 +1,9 @@
+<div class="mobile__banner">
+  <h3 class="mobile__banner__title">The NeverFap Deluxe Mobile App</h3>
+  <h4 class="mobile__banner__sub__title">Read all your favourite NeverFap Deluxe content on your Android mobile device! (sorry, but iOS force you to pay $100USD per month to host an app and The Reade doesn't have that kind of mula!)</h4>
+  <div class="mobile__banner__image__container">
+    <img src="/mobile_screenshots/1.png" alt="">
+  </div>
+
+  <h5></h5>
+</div>

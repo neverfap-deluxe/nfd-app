@@ -56,7 +56,7 @@ defmodule NfdWeb.Router do
     get "/post-relapse-academy", PageController, :guides_post_relapse_academy
     get "/emergency", PageController, :guides_emergency
     get "/a-complete-understanding-of-the-porn-addiction-recovery-process", PageController, :guides_complete_understanding
-    get "/curriculum", PageController, :guides_curriculum
+    get "/neverfap-deluxe-curriculum", PageController, :guides_curriculum
     # GUIDES END
 
     # PROGRAMS
@@ -79,6 +79,7 @@ defmodule NfdWeb.Router do
     get "/chrome-extension", PageController, :apps_chrome_extension
     get "/neverfap-deluxe-league", PageController, :apps_neverfap_deluxe_league
     get "/neverfap-deluxe-open-source", PageController, :apps_open_source
+    get "/hovering", PageController, :apps_hovering
     # APPS END
 
     # MISC

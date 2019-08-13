@@ -39,6 +39,7 @@ defmodule Nfd.API.PageAPI do
   def apps_chrome_extension(client), do: get(client, "/apps_chrome_extension/index.json")
   def apps_neverfap_deluxe_league(client), do: get(client, "/apps_neverfap_deluxe_league/index.json")
   def apps_open_source(client), do: get(client, "/apps_open_source/index.json")
+  def apps_hovering(client), do: get(client, "/apps_hovering/index.json")
   # APPS END
 
   # MISC
