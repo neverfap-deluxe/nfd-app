@@ -23,11 +23,11 @@ defmodule NfdWeb.FetchAccess do
       # GUIDES
       :guides_guide -> apmss ++ []
       :guides_summary -> apmss ++ []
-      :guides_neverfap_deluxe_bible -> [:meditations]
-      :guides_emergency -> [:meditations]
-      :guides_post_relapse_academy -> [:meditations]
-      :guides_complete_understanding -> [:meditations]
-      :guides_curriculum -> [:meditations]
+      :guides_neverfap_deluxe_bible -> apmss ++ []
+      :guides_emergency -> apmss ++ []
+      :guides_post_relapse_academy -> apmss ++ []
+      :guides_complete_understanding -> apmss ++ []
+      :guides_curriculum -> apmss ++ []
       # GUIDES END
 
       # LEGAL
@@ -72,9 +72,9 @@ defmodule NfdWeb.FetchAccess do
       :practice -> apmss ++ ccp ++ [:practice]
 
       :meditations -> apmss ++ []
-      :meditation -> apmss ++ ccp ++ [:meditation]
+      :meditation -> apmss ++ ccp ++ []
 
-      :courses -> [:meditations, :courses]
+      :courses -> apmss ++ [:courses]
       :course -> apmss ++ [:course]
 
       :podcasts -> apmss ++ [:podcasts]
@@ -83,15 +83,15 @@ defmodule NfdWeb.FetchAccess do
       :quotes -> apmss ++ [:quotes]
       :quote -> apmss ++ ccp ++ [:quotes, :quote]
 
-      :blogs -> [:meditations, :blogs]
+      :blogs -> apmss ++ [:blogs]
       :blog -> apmss ++ ccp ++ [:blogs, :blog]
 
-      :updates -> [:meditations, :updates]
+      :updates -> apmss ++ [:updates]
       :update -> apmss ++ ccp ++ [:updates, :update]
       # CONTENT END
 
       # CONTENT EMAIL
-      :seven_day_kickstarter ->  [:meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
+      :seven_day_kickstarter -> [:meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
       :seven_day_kickstarter_single -> [:meditations, :seven_day_kickstarter_single, :course]
 
       :ten_day_meditation -> [:meditations, :ten_day_meditation]

@@ -16,5 +16,5 @@
   </div>
 </div>
 
-
-<%= partial "links/patreon.html", assigns %>
+<%= partial "links/paypal.html", assigns %>
+<%= partial "promotion_footer.html", assigns %>

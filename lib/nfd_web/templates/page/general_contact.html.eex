@@ -1,6 +1,6 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
 
-<div class="single__wrapper" style="padding-top: 0rem!important;">   
+<div class="single__wrapper" style="padding-top: 0rem!important;">
   <div class="form__wrapper form__wrapper--full-width">
     <form class="form" action="https://formspree.io/admin@neverfapdeluxe.com" method="POST">
       <!-- <h4 class="form__title">THE FORM</h4> -->
@@ -20,10 +20,4 @@
 
 <div style="margin-top: 5rem;"></div>
 <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
-
-<div style="margin-top: 5rem;"></div>
-<%= partial "banners/new_to_nfd_banner.html", assigns %>
-<%= partial "banners/reddit_question_banner.html", assigns %>
-<%= partial "home/veteran_neverfappers.html", assigns %>
-<%= partial "home/goodies.html", assigns %>
-<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @page_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>
+<%= partial "promotion_footer.html", assigns %>

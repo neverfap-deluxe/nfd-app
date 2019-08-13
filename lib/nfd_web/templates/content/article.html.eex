@@ -46,22 +46,15 @@
 
 <div class="single__wrapper">
   <div class="single__content">
-
     <h2 style="margin-bottom: 1.9rem;">Latest Posts</h2>
     <%= partial "content/latest_posts.html", %{ conn: @conn, items: @page_collections.articles, type: :article } %>
 
     <div class="button__wrapper">
-      <a
-        class="button"
-        href="<%= Routes.content_path(@conn, :articles) %>"
-        >Want More Articles?</a
-      >
+      <a class="button" href="<%= Routes.content_path(@conn, :articles) %>">Want More Articles?</a>
     </div>
-
   </div>
 </div>
 
 <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
-<%= partial "home/goodies.html", assigns %>
-<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @page_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>
-
+<%= partial "promotion_footer.html", assigns %>
+]

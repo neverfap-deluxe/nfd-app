@@ -1,5 +1,4 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
-<%= partial "links/patreon.html", assigns %>
 
-<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
+<%= partial "links/paypal.html", assigns %>
 <%= partial "promotion_footer.html", assigns %>
