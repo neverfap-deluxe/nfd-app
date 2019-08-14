@@ -10,6 +10,7 @@
 </div>
 
 <%# TODO Add an option so that you can purchase directly from here IF you are already signed in with an account. %>
+
 <div class="pricing__sign__in__container">
   <div class="pricing__sign__in__title">Sign In or Create An Account To Purchase</div>
 

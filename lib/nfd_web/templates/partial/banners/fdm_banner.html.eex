@@ -1,9 +1,9 @@
 <div class="fdm__banner">
   <h1 class="fdm__banner__title">The NeverFap Deluxe Meditation Fundamental Series</h1>
+  <h4 class="fdm__banner__sub__title">Cover the fundamental basics of meditation so you can comfortably practice meditation on your own.</h4>
   <div class="banner__split__container">
     <div class="banner__split">
-      <h4 class="fdm_banner__sub__title">Cover the fundamental basics of meditation so you can comfortably practice meditation on your own.</h4>
-      <h4 class="fdm_banner__sub__title">Course Topics.</h4>
+      <h4 class="fdm__banner__sub__title">Course Topics.</h4>
 
       <ul class="seven__day__kickstarter__banner__list banner__list">
         <li class="seven__day__kickstarter__banner__item banner__item">1 - Observe Your Senses</li>

@@ -1,12 +1,10 @@
 <div class="posts">
   <div class="articles__list__v2">
     <%= Enum.map(@items, fn(item) -> %>
-      <%= if Enum.find(item["tags"], &(&1 == @tag_type)) do %>
-        <%= if @page_symbol == :practice do %>
-          <%= partial "list/practices_item_v2.html", %{ conn: @conn, page_symbol: @page_symbol, slug: item["slug"], title: item["title"], description: item["description"], what: item["what"], how: item["how"], when2: item["when"], duration: item["duration"] } %>
-        <% else %>
-          <%= partial "list/articles_item_v2.html", %{ conn: @conn, page_symbol: @page_symbol, slug: item["slug"], title: item["title"], description: item["description"], tldr1: item["tldr1"], tldr2: item["tldr2"], tldr3: item["tldr3"] } %>
-        <% end %>
+      <%= if @page_symbol == :practice do %>
+        <%= partial "list/practices_item_v2.html", %{ conn: @conn, page_symbol: @page_symbol, slug: item["slug"], title: item["title"], description: item["description"], what: item["what"], how: item["how"], when2: item["when"], duration: item["duration"] } %>
+      <% else %>
+        <%= partial "list/articles_item_v2.html", %{ conn: @conn, page_symbol: @page_symbol, slug: item["slug"], title: item["title"], description: item["description"], tldr1: item["tldr1"], tldr2: item["tldr2"], tldr3: item["tldr3"] } %>
       <% end %>
     <% end ) %>
   </div>

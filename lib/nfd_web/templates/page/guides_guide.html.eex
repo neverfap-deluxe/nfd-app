@@ -44,25 +44,71 @@
       <h2 class="black__banner__title" style="margin-bottom: 3rem;">Here are my #recommendations</h2>
       <div class="guide__suggestion">
         <h1 class="guide__suggestion__number guide__suggestion__number--fat">1.</h1>
-        <h1 class="guide__suggestion__title">Join the NeverFap Deluxe Accountability Program</h1>
+        <h1 class="guide__suggestion__title">Develop an Effective Daily Meditation Routine</h1>
       </div>
       <div class="guide__suggestion">
         <h1 class="guide__suggestion__number guide__suggestion__number--fat">2.</h1>
-        <h1 class="guide__suggestion__title">Subscribe to the 7 Day NeverFap Deluxe Kickstarter</h1>
+        <h1 class="guide__suggestion__title">Increase your capacity for Awareness and Calmness</h1>
       </div>
       <div class="guide__suggestion">
         <h1 class="guide__suggestion__number guide__suggestion__number--fat">3.</h1>
-        <h1 class="guide__suggestion__title">Begin reading some NeverFap Deluxe Articles</h1>
+        <h1 class="guide__suggestion__title">Join the NeverFap Deluxe Accountability Program</h1>
       </div>
       <div class="guide__suggestion">
         <h1 class="guide__suggestion__number guide__suggestion__number--fat">4.</h1>
-        <h1 class="guide__suggestion__title">Begin practicing Awareness and Meditation</h1>
+        <h1 class="guide__suggestion__title">Subscribe to the 7 Day NeverFap Deluxe Kickstarter</h1>
       </div>
       <div class="guide__suggestion">
         <h1 class="guide__suggestion__number guide__suggestion__number--fat">5.</h1>
+        <h1 class="guide__suggestion__title">Begin reading some NeverFap Deluxe Articles</h1>
+      </div>
+      <div class="guide__suggestion">
+        <h1 class="guide__suggestion__number guide__suggestion__number--fat">6.</h1>
         <h1 class="guide__suggestion__title">Listen to the NeverFap Deluxe Podcast</h1>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="single__wrapper">
+  <div class="single__content" style="margin-bottom: 0;">
+    <div class="guide__suggestion">
+      <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+      <h1>Daily Meditation Routine</h1>
+    </div>
+    <%= raw child_content(@item["children"], "guide-meditation-routine") %>
+
+    <p class="guide__link__container"><a class="guide__link" href="/articles/my-personal-porn-recovery-journey/">The NeverFap Deluxe Meditation Fundamental Series</a></br>
+      Learn the basic fundamentals of meditation .</p>
+    <p class="guide__link__container"><a class="guide__link" href="practices/observe-your-senses/">The NeverFap Deluxe Guide To Effective Meditation</a></br>
+      Learn more about meditation with our Meditation Essential Reading List of NeverFap Deluxe Articles.</p>
+    <p class="guide__link__container"><a class="guide__link" href="/articles/introduction-to-the-neverfap-deluxe-guide/">Hovering Meditation Technique</a></br>
+      A Meditation techinque I created to assist those who struggle to meditate via traditional means.</p>
+    <p class="guide__link__container"><a class="guide__link" href="articles/the-importance-of-meditation-for-porn-addiction/">Meditation Essential Reading</a></br>
+      Learn more about meditation with our Meditation Essential Reading List of NeverFap Deluxe Articles.</p>
+  </div>
+</div>
+
+<div class="single__wrapper">
+  <div class="single__content" style="margin-bottom: 0;">
+    <div class="guide__suggestion">
+      <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+      <h1>NeverFap Deluxe Practices</h1>
+    </div>
+    <%= raw child_content(@item["children"], "guide-develop-awareness") %>
+
+    <p class="guide__link__container"><a class="guide__link" href="/practices/observe-your-senses">Observe Your Senses</a></br>
+      Our primary meditation exercise, which is the sole exercise we recommend that you practice every day.</p>
+    <p class="guide__link__container"><a class="guide__link" href="/practices/slow-down-time">Slow Down Time</a></br>
+      This exercise is great as an introduction to calmness.</p>
+    <p class="guide__link__container"><a class="guide__link" href="/practices/dissolve-your-visual-field">Dissolve Your Visual Field</a></br>
+      This is an excellent visual exercise which is designed to shatter your ego.</p>
+  </div>
+</div>
+
+<div class="cyan__banner">
+  <div style="background: white;">
+    <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Practices Index.", link: "/practices" } %>
   </div>
 </div>
 
@@ -110,29 +156,6 @@
 <div class="cyan__banner">
   <div style="background: white;">
     <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Articles Index.", link: "/articles" } %>
-  </div>
-</div>
-
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <div class="guide__suggestion">
-      <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
-      <h1>NeverFap Deluxe Practices</h1>
-    </div>
-    <%= raw child_content(@item["children"], "guide-never-fap-deluxe-practices") %>
-
-    <p class="guide__link__container"><a class="guide__link" href="/practices/observe-your-senses">Observe Your Senses</a></br>
-      Our primary meditation exercise, which is the sole exercise we recommend that you practice every day.</p>
-    <p class="guide__link__container"><a class="guide__link" href="/practices/slow-down-time">Slow Down Time</a></br>
-      This exercise is great as an introduction to calmness.</p>
-    <p class="guide__link__container"><a class="guide__link" href="/practices/dissolve-your-visual-field">Dissolve Your Visual Field</a></br>
-      This is an excellent visual exercise which is designed to shatter your ego.</p>
-  </div>
-</div>
-
-<div class="cyan__banner">
-  <div style="background: white;">
-    <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Practices Index.", link: "/practices" } %>
   </div>
 </div>
 
