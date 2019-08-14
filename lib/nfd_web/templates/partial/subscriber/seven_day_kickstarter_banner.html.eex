@@ -6,6 +6,7 @@
   <div class="seven__day__kickstarter__banner__inner">
     <h1 class="seven__day__kickstarter__banner__title">7 Day NeverFap Deluxe Kickstarter</h1>
     <h2 class="seven__day__kickstarter__banner__sub__title">Boost your knowledge of NeverFap Deluxe with our FREE 7 day email series.</h2>
+    
     <div class="seven__day__kickstarter__banner__box">
       <div class="seven__day__kickstarter__banner__list">
         <%= Enum.map(@item["days"], fn(item) -> %>
