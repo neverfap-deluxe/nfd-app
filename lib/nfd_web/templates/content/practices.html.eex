@@ -1,13 +1,16 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %> <!-- @item["content"] -->
 
+<!-- INTRODUCTION -->
 <% practice_length = @page_collections.practices |> length() %>
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
+    <h1>Introduction</h1>
     <p>It costs $49 to access all of the practices on NeverFap Deluxe.</p>
-    <p>This initial investment provides you with <b>lifetime access</b> to existing and future mental health and awareness practices.</p>
-    <p>There are currently <%= practice_length %> detailed practices and there are plans for 3 new practices each month.</p>
+    <p>This investment provides you with <b>lifetime access</b> to all future and existing mental health and awareness practices, and is a great way to ensure you're fully committed to your mental health.</p>
+    <p>There are currently <%= practice_length %> detailed mental health and awareness practices on NeverFap Deluxe, with 3+ new practices released each month.</p>
+    <p>Furthermore, these practices have been organised into a series of 7 Week Awareness Challenges that are delivered straight to your email on a weekly basis, so you can get the most out of these practices.</p>
 
-    <h2>What You Get</h2>
+    <!-- Maybe mention if any of the exercises are free for the user? -->
 
     <p>Each practice contains:</p>
     <ul class="practice__list">
@@ -18,24 +21,40 @@
       <li>Essential audio explaining the basis of the practice.</li>
     </ul>
 
-    <p>Ideally you should be spending a week with each exercise, in order to truly appreciate </p>
+  </div>
+</div>
+<!-- INTRODUCTION -->
+
+<!-- SEVEN WEEK AWARENESS CHALLENGES -->
+<div class="single__wrapper">
+  <div class="single__content" style="margin-bottom: 0;">
+    <h1>Seven Week Awareness Challenge</h1>
+
+    <p>Ideally you should be spending a week with each exercise, in order to truly appreciate and engrain the knowledge of what you're learning.</p>
     <p>In addition, these practices are organised into 7 Day Awareness Challenges so they are </p>
 
     <p>Ultimately mental health is a skill that is learnt through practice, and so these exercises provide you with a structured way to develop your mental health.</p>
     <p>Furthermore, for your convenience these practices are available to you via.</p>
 
-
-    <p> is a paid feature of NeverFap Deluxe</p>
-
   </div>
 </div>
+<!-- SEVEN WEEK AWARENESS CHALLENGES END -->
 
 
+<!-- PRACTICES LIST BY VOLUME -->
 <%= partial "links/paypal.html", assigns %>
 
 <div class="single__wrapper">
-  <%= partial "list/articles_latest_v2.html", %{ conn: @conn, page_symbol: :practice, items: @page_collections.practices, tag_type: "practice" } %>
+  <div class="single__content" style="margin-bottom: 0;">
+    <%= partial "list/practices_by_volume_v2.html", %{ conn: @conn, items: @page_collections.practices } %>
+  </div>
 </div>
+<!-- PRACTICES LIST BY VOLUME END -->
+    
+<!-- 
+<div class="single__wrapper">
+  <%= partial "list/articles_latest_v2.html", %{ conn: @conn, page_symbol: :practice, items: @page_collections.practices, tag_type: "practice" } %>
+</div> -->
 
 <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
 <%= partial "promotion_footer.html", assigns %>
