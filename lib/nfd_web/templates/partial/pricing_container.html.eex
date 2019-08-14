@@ -6,7 +6,15 @@
     <div class="pricing__guarantee__item pricing__banner__lifetime">Lifetime Access Guarantee <i class="pricing-tick fas fa-check"></i></div>
   </div>
 
-  <div class="pricing__banner__description"><%= @description %></div>
+  <%= if @description != nil do %>
+    <div class="pricing__banner__description"><%= @description %></div>
+  <% end %>
+
+  <div class="pricing__banner__points">
+    <%= Enum.map(@points, fn(point) -> %>
+        <div class="pricing__banner__point"><%= point %></div>
+    <% end ) %>
+  </div>
 </div>
 
 <%# TODO Add an option so that you can purchase directly from here IF you are already signed in with an account. %>

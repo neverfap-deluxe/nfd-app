@@ -16,9 +16,16 @@
     <div class="banner__split__divider"></div>
     <div class="banner__split">
       <%= partial "pricing_container.html",
-        %{ price: "$4 USD",
+        %{
+          conn: @conn,
+          price: "$4 USD",
           title: "The NeverFap Deluxe Meditation Fundamental Series",
-          description: "Fully understand the basics of meditation." } %>
+          points: [
+            "Fully understand the fundamentals of effective Meditation",
+            "4 part Meditation audio series"
+          ],
+          description: nil
+        } %>
     </div>
   </div>
 </div>

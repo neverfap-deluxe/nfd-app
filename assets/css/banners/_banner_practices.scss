@@ -63,7 +63,19 @@
   }
 }
 
+.pricing__banner__points {
+  display: flex;
+  .pricing__banner__point {
+
+  }
+}
+
 .pricing__sign__in__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   margin-top: 2rem;
   padding: 2rem;
   border: 4px solid black;
