@@ -1,28 +1,62 @@
-<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: child_content(@item["children"], "about-intro") } %>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
+
+<div class="single__wrapper">
+  <div class="page__index">
+    <h1 class="page__index__title">Index</h1>
+  
+    <ol class="index__items">
+      <a href="#introduction"><li class="index__item">Introduction</li></a>
+      <a href="#motivation"><li class="index__item">Motivation</li></a>
+      <a href="#philosophy"><li class="index__item">Philosophy</li></a>
+      <a href="#next_steps"><li class="index__item">Next Steps</li></a>
+    </ol>
+  </div>
+</div>
 
 <%= partial "links/paypal.html", assigns %>
 
 <div class="single__wrapper">
   <div class="single__content">
-    <h1>Motivation</h1>
+    <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+      <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
+    </div>    
+    <h1 class="single__sub__header">Introduction</h1>
+    <%= raw child_content(@item["children"], "about-intro") %>
+  </div>
+</div>
+
+<%= partial "links/paypal.html", assigns %>
+
+<div id="motivation" class="single__wrapper">
+  <div class="single__content">
+    <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+      <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
+    </div>    
+    <h1 class="single__sub__header">Motivation</h1>
     <%= raw child_content(@item["children"], "about-main-1") %>
   </div>
 </div>
 
 <%= partial "links/loginregister.html", assigns %>
 
-<div class="single__wrapper">
+<div id="philosophy" class="single__wrapper">
   <div class="single__content">
-    <h1>Philosophy</h1>
+    <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+      <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
+    </div>    
+    <h1 class="single__sub__header">Philosophy</h1>
     <%= raw child_content(@item["children"], "about-main-2") %>
   </div>
 </div>
 
 <%= partial "links/discord.html", assigns %>
 
-<div class="single__wrapper">
+<div id="next_steps" class="single__wrapper">
   <div class="single__content">
-    <h1><%= raw child_title(@item["children"], "about-next-steps") %></h1>
+    <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+      <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
+    </div>    
+    <h1 class="single__sub__header">Next Steps</h1>
     <%= raw child_content(@item["children"], "about-next-steps") %>
   </div>
 </div>

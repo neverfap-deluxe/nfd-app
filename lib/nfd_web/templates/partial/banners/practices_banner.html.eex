@@ -1,13 +1,25 @@
 <div class="practices__banner">
   <div class="banner__split__container">
     <div class="banner__split">
-      <h3 class="banner__title practices__banner__title">NeverFap Deluxe Practices</h3>
+      <!-- PRACTICES TITLE -->
+      <div class="principles__banner">
+        <div class="principles__banner__item__cont">
+          <h3 style="width: 83%;" class="banner__title principles__banner__item practices__banner__title">NeverFap Deluxe</h3>
+        </div>
+      </div>
+      <div class="principles__banner">
+        <div class="principles__banner__item__cont">
+          <h3 style="width: 44%; margin-top: 0rem;" class="banner__title principles__banner__item practices__banner__title">Practices</h3>
+        </div>
+      </div>
+      <!-- PRACTICES TITLE END -->
+
       <h4 class="practices__banner__sub__title">Want to take your mental health to the next level?</h4>
 
       <h4 class="practices__banner__sub__title">Develop your capacity for conscious awareness with our NeverFap Deluxe Practices.</h4>
       <ul class="practices__banner__list">
         <li class="practices__banner__item">Lifetime access to all practices on the NeverFap Deluxe.</li>
-        <li class="practices__banner__item">3 new practices each month.</li>
+        <li class="practices__banner__item">3+ new practices each month.</li>
         <li class="practices__banner__item">Practices come with a summary cards, context sections, instruction sections, personal practice sections and practice audio.</li>
       </ul>
     </div>

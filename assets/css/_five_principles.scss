@@ -104,6 +104,32 @@
 
 
 // PRINCIPLES GUIDE
+.principles__banner {
+  margin-top: 0.5rem!important;
+  padding: 0;
+
+  .principles__banner__item__cont {
+    // background: $black-background;
+  }
+
+  .principles__banner__item {
+    @include principle__item();
+    width: 90%;
+    margin-top: 1rem;
+    border-bottom: 5px solid $magenta;
+    // color: $white-text;
+  }
+
+  .principles__banner__item::before {
+    @include principle__item__before();
+    width: 100%;
+    background-color: $cyan;
+    height: 8px;
+  }
+}
+
+
+// PRINCIPLES GUIDE - BANNER
 .five__principles__guide {
   margin-top: 0.5rem!important;
 
@@ -132,6 +158,7 @@
     height: 8px;
   }
 }
+
 
 .five__principles__guide--mobile {
   display: block;

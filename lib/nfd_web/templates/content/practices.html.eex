@@ -5,7 +5,7 @@
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">
     <h1>Introduction</h1>
-    <p>It costs $49 to access all of the practices on NeverFap Deluxe.</p>
+    <p>It costs $89 to access all of the practices on NeverFap Deluxe.</p>
     <p>This investment provides you with <b>lifetime access</b> to all future and existing mental health and awareness practices, and is a great way to ensure you're fully committed to your mental health.</p>
     <p>There are currently <%= practice_length %> detailed mental health and awareness practices on NeverFap Deluxe, with 3+ new practices released each month.</p>
     <p>Furthermore, these practices have been organised into a series of 7 Week Awareness Challenges that are delivered straight to your email on a weekly basis, so you can get the most out of these practices.</p>
@@ -59,6 +59,8 @@
 
 <!-- PRACTICES LIST BY VOLUME -->
 <%= partial "links/paypal.html", assigns %>
+
+<!-- TODO: Put the locks on these, ya'll know. -->
 
 <div class="single__wrapper">
   <div class="single__content" style="margin-bottom: 0;">

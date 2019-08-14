@@ -78,7 +78,7 @@
     </div>
     <%= raw child_content(@item["children"], "guide-meditation-routine") %>
 
-    <p class="guide__link__container"><a class="guide__link" href="/articles/my-personal-porn-recovery-journey/">The NeverFap Deluxe Meditation Fundamental Series</a></br>
+    <p class="guide__link__container"><a class="guide__link" href="/articles/my-personal-porn-recovery-journey/">NeverFap Deluxe Fundamental Meditation Series</a></br>
       Learn the basic fundamentals of meditation .</p>
     <p class="guide__link__container"><a class="guide__link" href="practices/observe-your-senses/">The NeverFap Deluxe Guide To Effective Meditation</a></br>
       Learn more about meditation with our Meditation Essential Reading List of NeverFap Deluxe Articles.</p>
