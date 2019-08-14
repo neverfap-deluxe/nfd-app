@@ -6,8 +6,7 @@
   </a>
 </div>
 
-<!-- TODO: It should actually be ==, it has just been changed for development purposes -->
-<%= if @content_collections.collection[:status] != "complete" do %>
+<%= if @content_collections.collection[:status] == "complete" do %>
   <%= partial "links/patreon.html", assigns %>
 <% end %>
 
@@ -27,7 +26,7 @@
   <span><span class="homepage__process__link"><%= @item["date"] %></span></span>
 </div>
 
-<%= if @content_collections.collection[:status] != "complete" do %>
+<%= if @content_collections.collection[:status] == "complete" do %>
   <div style="margin-bottom: 1rem; margin-top: 1rem; height: 24px; background: rgba(255,46,182,1);"></div>
   <div style="margin-bottom: 1rem; margin-top: 1rem; height: 20px; background: rgba(255,46,182,1);"></div>
   <div style="margin-bottom: 1rem; margin-top: 1rem; height: 16px; background: rgba(255,46,182,1);"></div>

@@ -13,13 +13,7 @@
     </div>
     <div class="banner__split__divider"></div>
     <div class="banner__split">
-      <%= partial "pricing_container.html", %{
-        conn: @conn,
-        price: "$49 USD",
-        title: "NeverFap Deluxe Practices",
-        points: [],
-        description: "Gain access to all the NeverFap Deluxe Practices on the website."
-      } %>
+      <%= partial "pricing/pricing_practices.html", %{ conn: @conn } %>
     </div>
   </div>
 
