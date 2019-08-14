@@ -18,7 +18,8 @@
         price: "$49 USD",
         title: "NeverFap Deluxe Practices",
         points: [],
-        description: "Gain access to all the NeverFap Deluxe Practices on the website." } %>
+        description: "Gain access to all the NeverFap Deluxe Practices on the website."
+      } %>
     </div>
   </div>
 
