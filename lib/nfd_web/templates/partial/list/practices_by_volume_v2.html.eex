@@ -3,12 +3,14 @@ list_of_sections =
   Enum.reduce(
     @items,
     [],
-    fn practice, acc -> 
-      does_volume_exist = Enum.find(acc, fn item -> item["vol"] == practice["vol"] end)
-
+    fn practice, acc ->
+      IO.inspect length(acc)
+      does_volume_exist = Enum.find(acc, fn item -> item.vol == practice["vol"] end)
+      IO.inspect does_volume_exist["vol"]
+      
       if !!does_volume_exist do
         new_volume = 
-          does_volume_exist |> Map.put(does_volume_exist.practices ++ practice)
+          does_volume_exist |> Map.put(:practices, does_volume_exist.practices ++ practice)
 
         Enum.map(acc, fn volume ->
           if volume["vol"] == practice["vol"] do 
@@ -18,10 +20,10 @@ list_of_sections =
           end
         end)
       else 
-        acc ++ %{
-          vol: practice["vol"],
-          practices: [] ++ practice
-        }
+      [%{
+        vol: practice["vol"],
+        practices: [practice]
+      } | acc]
       end
     end) |> Enum.sort(fn(a, b) -> a.vol > b.vol end)
 %>
@@ -35,7 +37,7 @@ list_of_sections =
         <div class="practices__section__collection">
           <%= Enum.map(section.practices, fn(practice) -> %>
             <div class="practices__section__collection__item">
-              <%= practice.name %>
+              <%= practice["title"] %>
             </div>
           <% end ) %>
         </div>

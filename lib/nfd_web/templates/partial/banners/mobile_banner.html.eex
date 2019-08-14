@@ -1,16 +1,16 @@
 <div class="mobile__banner">
-  <h3 class="mobile__banner__title">The NeverFap Deluxe Mobile App</h3>
-  <h4 class="mobile__banner__sub__title">Read all your favourite NeverFap Deluxe content on your Android mobile device!</h4>
-
   <div class="banner__split__container">
     <div class="banner__split">
-      <h4 class="mobile__banner__sub__title mobile__banner__sub__title--ios">(Sorry iOS fans, but it's $100 USD per year to host an app on the App Store and The Reade doesn't have that kind of $$$mula!)</h4>
+      <h3 class="banner__title mobile__banner__title">The NeverFap Deluxe Mobile App</h3>
+        <h4 class="mobile__banner__sub__title">Read all your favourite NeverFap Deluxe content on your Android mobile device!</h4>
+
+      <h4 class="mobile__banner__sub__title mobile__banner__sub__title--ios">(Sorry iOS fans, but it's $100 USD per year to host an app on the App Store and <b>The Reade &copy;</b> doesn't have that kind of $$$mula!)</h4>
       <p>Download it today.</p>
       <a class="mobile__android__link" href='https://play.google.com/store/apps/details?id=com.ueno.nfdmobilev2&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img class="mobile__android__link__image" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
     </div>
-    <div class="banner__split">
+    <div class="banner__split banner__split--right">
       <div class="mobile__banner__image__container">
-        <img src="/mobile_screenshots/1.png" alt="">
+        <img src="/images/screenshots/nfd_mobile_home.png" alt="">
       </div>
     </div>
   </div>

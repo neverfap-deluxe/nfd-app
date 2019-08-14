@@ -5,11 +5,12 @@
 <%= partial "banners/mobile_banner.html", assigns %>
 <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
 <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
-<%#= partial "banners/hovering_banner.html", assigns %>
-<div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
-<div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
 <%= partial "banners/practices_banner.html", assigns %>
 <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
 <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
-<%= partial "home/goodies.html", assigns %>
+<%= partial "banners/hovering_banner.html", assigns %>
+<div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
 <%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @page_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>
+<%= partial "home/goodies.html", assigns %>
+<%#= partial "banners/ending_banner.html", assigns %>

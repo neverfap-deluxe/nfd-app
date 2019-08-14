@@ -1,4 +1,10 @@
 <div style="margin-bottom: 1rem; margin-top: 1rem; height: 24px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 20px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 16px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 12px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 8px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+
 <div class="reddit__question__banner__container" style="margin-top: 2.5rem; margin-bottom: 2.5rem;">
 
   <!-- <div class="reddit__question__banner" style="margin-bottom: 0.7rem; margin-top: 2rem;">

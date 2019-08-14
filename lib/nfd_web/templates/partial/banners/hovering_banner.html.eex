@@ -1,23 +1,25 @@
 <div class="hovering__banner">
-  <h3 class="hovering__banner__title">Struggle to Meditate?</h3>
-  <h4 class="hovering__banner__sub__title">Thankfully there's a whole new way to meditate which anyone can understand!</h4>
   <div class="banner__split__container">
     <div class="banner__split">
-      <p>Try <b>Hovering</b>! It has been designed to be easy to understand, simple to practice, as well as remain acessible to people of all ages.</p>
-      <p>Hovering can be done with a single piece of paper, </p>
-      <p>Available , </p>
+      <h3 class="banner__title hovering__banner__title">Struggle to Meditate?</h3>
+      <h4 class="hovering__banner__sub__title">Thankfully there's a whole new way to meditate which anyone can understand!</h4>
+
+      <p><b>Try Hovering</b>! It has been designed to be easy to understand, simple to practice, as well as remain acessible to people of all ages.</p>
+      <p>Hovering can be done with a single piece of paper, however it's recommend that you use the Hovering Web App or Hovering Android App.</p>
 
       <%# <img src="/images/screenshots/hovering_mobile.png" /> %>
 
       <div>
-        <a class="hovering__banner__link" href="https://hovering.neverfapdeluxe.com/">Hovering Web App</a>
-        <a class="hovering__banner__link" href="https://tryhovering.com/">Hovering Website</a>
         <a class="mobile__android__link" href='https://play.google.com/store/apps/details?id=com.nfd.hovering&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img class="mobile__android__link__image" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
+        <div style="display: flex; margin-top: 1rem;">
+          <a class="hovering__banner__link" href="https://hovering.neverfapdeluxe.com/">Hovering Web App</a>
+          <a class="hovering__banner__link" href="https://tryhovering.com/">Hovering Website</a>    
+        </div>
       </div>
     </div>
 
     <!-- HOVER CIRCLE -->
-    <div class="banner__split">
+    <div class="banner__split banner__split--right">
       <div class="circle__container cr">
         <div class="circle cri">
           Hover
@@ -27,8 +29,4 @@
     <!-- HOVER CIRCLE END -->
 
   </div>
-
-
-
-
 </div>

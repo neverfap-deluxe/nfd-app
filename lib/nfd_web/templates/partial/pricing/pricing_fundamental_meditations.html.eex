@@ -1,11 +1,11 @@
-<%= partial "pricing_container.html",
+<%= partial "pricing/pricing_container.html",
   %{
     conn: @conn,
-    price: "$4 USD",
+    price: "$7 USD",
     title: "The NeverFap Deluxe Meditation Fundamental Series",
     points: [
-      "Fully understand the fundamentals of effective Meditation",
-      "4 part Meditation audio series"
+      "Fully Understand The Fundamentals Of Effective Meditation",
+      "4 Part Meditation Audio Series"
     ],
     description: nil
   }

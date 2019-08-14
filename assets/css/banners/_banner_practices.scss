@@ -1,18 +1,24 @@
-.mobile__banner {
+.banner__title {
+  font-size: 3rem;
+  line-height: 4.4rem;
+  margin-top: 0rem;
+}
+
+.practices__banner {
   padding: 4rem;
-  .mobile__banner__title {
-    font-size: 3rem;
+  .practices__banner__title {
+    
   }
 
-  .mobile__banner__sub__title--ios {
+  .practices__banner__sub__title--ios {
     width: 500px;
   }
 
-  .mobile__banner__sub__title {
+  .practices__banner__sub__title {
     font-weight: 400;
   }
 
-  .mobile__banner__image__container {
+  .practices__banner__image__container {
 
   }
 }
@@ -25,6 +31,7 @@
 
 
 .pricing__banner__container {
+  position: relative;
   padding: 2rem;
   border: 4px solid black;
 
@@ -44,17 +51,21 @@
     margin-top: 1.6rem;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   .pricing__guarantee__item {
-    padding: 1.2rem;
     font-size: 1.6rem;
   }
 
   .pricing__banner__value {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
   }
 
   .pricing__banner__lifetime {
+    padding: 1.2rem;
+
     font-size: 1.3rem;
 
     .pricing-tick {
@@ -63,9 +74,26 @@
   }
 }
 
+.practices__banner__list {
+  .practices__banner__item {
+    
+  }
+}
+
 .pricing__banner__points {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 1rem;
+
   .pricing__banner__point {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    margin-bottom: 1rem;
 
   }
 }
@@ -81,7 +109,41 @@
   border: 4px solid black;
 
   .pricing__sign__in__title {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+}
 
+.pricing__payment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // position: absolute;
+  // left: 0;
+  // bottom: 0;
+  .pricing__payment__image {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.nfd__payment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // position: absolute;
+  // right: 0;
+  // bottom: 0;
+  img {
+    width: 28px;
+    height: 28px;
+  }
+  p {
+    margin: 0!important;
+    font-size: 0.7rem;
   }
 }
 
@@ -100,6 +162,5 @@
 
 .practices__section__collection {
   .practices__section__collection__item {
-  
   }  
 }

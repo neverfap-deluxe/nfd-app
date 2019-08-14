@@ -3,7 +3,7 @@
 
   <div class="pricing__guarantee">
     <div class="pricing__guarantee__item pricing__banner__value"><%= @price %></div>
-    <div class="pricing__guarantee__item pricing__banner__lifetime">Lifetime Access Guarantee <i class="pricing-tick fas fa-check"></i></div>
+    <div class="pricing__guarantee__item pricing__banner__lifetime">Lifetime Access Guarantee <i class="pricing-tick fas fa-check"></i></div> <!-- <i class="em em-white_check_mark"></i> -->
   </div>
 
   <%= if @description != nil do %>
@@ -12,15 +12,24 @@
 
   <div class="pricing__banner__points">
     <%= Enum.map(@points, fn(point) -> %>
-        <div class="pricing__banner__point"><%= point %></div>
+        <div class="pricing__banner__point">
+          <!-- <i style="position: relative; left: -0.4rem;" class="em em-cake"></i> -->
+          <%= point %>
+          <!-- <i style="position: relative; right: -0.4rem;" class="em em-cake"></i> -->
+        </div>
     <% end ) %>
+  </div>
+
+  <div class="nfd__payment">
+    <img src="/images/logo.png" alt="">
+    <p>NeverFap Deluxe</p>
   </div>
 </div>
 
 <%# TODO Add an option so that you can purchase directly from here IF you are already signed in with an account. %>
 
 <div class="pricing__sign__in__container">
-  <div class="pricing__sign__in__title">Sign In or Create An Account To Purchase</div>
+  <div class="pricing__sign__in__title">Register or Sign in to purchase <b><%= @title %></b></div>
 
   <!-- Register/Login -->
   <div class="account__buttons__login">
@@ -39,5 +48,9 @@
         </div>
       <% end %>
     </span>
-  </div>
+    <div class="pricing__payment">
+      <img style="margin-right: 0.6rem;"class="pricing__payment__image" src="/images/paypal__logo.png" alt="">
+      <img class="pricing__payment__image" src="/images/stripe__square.png" alt="">
+    </div>  
+  </div>  
 </div>
