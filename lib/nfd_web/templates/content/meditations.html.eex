@@ -1,161 +1,143 @@
-<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %> <!-- @item["content"] -->
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 
-<div class="single__wrapper">
-  <div class="page__index">
-    <h1 class="page__index__title">Index</h1>
-  
-    <ol class="index__items">
-      <a href="#introduction"><li class="index__item">Introduction</li></a>
-      <a href="#fundamental_series"><li class="index__item">NeverFap Deluxe Fundamental Meditation Series</li></a>
-      <a href="#hovering_meditation"><li class="index__item">Hovering Meditation</li></a>
-      <a href="#essential_reading"><li class="index__item">Meditation Essential Reading</li></a>
-      <a href="#next_steps"><li class="index__item">Next Steps</li></a>
-    </ol>
+<%# INDEX %>
+  <div class="single__wrapper">
+    <div class="page__index">
+      <h1 class="page__index__title">Index</h1>
+
+      <ol class="index__items">
+        <a href="#introduction"><li class="index__item">Introduction</li></a>
+        <a href="#fundamental_series"><li class="index__item">NeverFap Deluxe Fundamental Meditation Series</li></a>
+        <a href="#hovering_meditation"><li class="index__item">Hovering Meditation</li></a>
+        <a href="#essential_reading"><li class="index__item">Meditation Essential Reading</li></a>
+        <a href="#next_steps"><li class="index__item">Next Steps</li></a>
+      </ol>
+    </div>
   </div>
-</div>
 
-<%= partial "links/paypal.html", assigns %>
+  <%= partial "links/paypal.html", assigns %>
+<%# INDEX END %>
+
 
 <%# INTRODUCTION %>
-<div id="introduction" class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
-      <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
+  <div id="introduction" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
+      </div>
+      <h1 class="single__sub__header">Introduction</h1>
+      <p>NeverFap Deluxe offers a wide range of effective Meditation solutions and options for those seeking additional help.</p>
+      <p>The aim of our meditations is to teach you the fundamental basics of meditation, so you can have the ability to comfortably practice meditation on your own.</p>
+      <h3>It's not within our intention to sell you a monthly meditation subscription like many existing options.</h3>
+      <p>Not only is it a waste of money, however it largely defeats the purpose and aim of NeverFap Deluxe which is to teach you to become truly autonomous in every sense of the word.</p>
+      <p>Instead we offer a range of inexpensive, one-time payment options which provide you with a range of different skills dependent upon what you aim to achieve and your skill level.</p>
+      <p>Of course, we also offer a heap of <a class="link" href="/meditation-reading-list">FREE meditation articles</a> which provide invaluable tips and advice on how best to meditate.</p>
+      <p>With that said, there's ultimately no substitution to using Guided Meditations when starting out, and certainly it made all the difference to helping me understand meditation when I was starting out.</p>
+      <p>I simply want to provide you with a more effective and more affordable option than what I personally had to go through to reach the same knowledge.</p>
     </div>
-    <h1 class="single__sub__header">Introduction</h1>
-    <p>NeverFap Deluxe offers a wide range of effective Meditation solutions and options for those seeking additional help.</p>
-    <p>The aim of our meditations is to teach you the fundamental basics of meditation, so you can have the ability to comfortably practice meditation on your own.</p>
-    <h3>It's not within our intention to sell you a monthly meditation subscription like many existing options.</h3>
-    <p>Not only is it a waste of money, however it largely defeats the purpose and aim of NeverFap Deluxe which is to teach you to become truly autonomous in every sense of the word.</p>
-    <p>Instead we offer a range of inexpensive, one-time payment options which provide you with a range of different skills dependent upon what you aim to achieve and your skill level.</p>
-    <p>Of course, we also offer a heap of <a class="link" href="/meditation-reading-list">FREE meditation articles</a> which provide invaluable tips and advice on how best to meditate.</p>
-    <p>With that said, there's ultimately no substitution to using Guided Meditations when starting out, and certainly it made all the difference to helping me understand meditation when I was starting out.</p>
-    <p>I simply want to provide you with a more effective and more affordable option than what I personally had to go through to reach the same knowledge.</p>
   </div>
-</div>
+
+  <%= partial "links/twitter.html", assigns %>
 <%# INTRODUCTION END %>
 
-<%= partial "links/twitter.html", assigns %>
 
-<%# NeverFap Deluxe Fundamental Meditation Series %>
-<div id="fundamental_series" class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
-      <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
+<%# FUNDAMENTAL SERIES %>
+  <div id="fundamental_series" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
+      </div>
+      <h1 class="single__sub__header">NeverFap Deluxe Fundamental Meditation Series</h1>
+      <p>As a primary option we offer the <b>NeverFap Deluxe Fundamental Meditation Series</b> which is a series of 4 meditations which is designed to teach you the absolute core fundamental basics of meditation.</p>
+      <p>It is a perfect starting point for those new to meditation, and with this core knowledge you should have the skills in order to meditate on your own.</p>
+      <p>As a starting point for your meditation journey, I also wanted it to be cheap enough that anyone can afford it, because I believe basic mental health should be inexpensive.</p>
+      <h3>It's available for $9 USD.</h3>
+      <p>The price of a nice meal, and if you can't sacrifice a meal for the empowerment of your mental health, then I'm not quite sure how to help you.</p>
+      <p>Of course, I've also written <a class="link" href='<%= Routes.content_path(@conn, :practice, "observe-your-senses") %>'>A Definitive Guide On How To Meditate Properly</a> if you're wanting to learn the basics of how to meditate, although it's not quite the same as being guided through it from a 3rd person perspective.</p>
     </div>
-    <h1 class="single__sub__header">NeverFap Deluxe Fundamental Meditation Series</h1>
-    <p>As a primary option we offer the <b>NeverFap Deluxe Fundamental Meditation Series</b> which is a series of 4 meditations which is designed to teach you the absolute core fundamental basics of meditation.</p>
-    <p>It is a perfect starting point for those new to meditation, and with this core knowledge you should have the skills in order to meditate on your own.</p>
-    <p>As a starting point for your meditation journey, I also wanted it to be cheap enough that anyone can afford it, because I believe basic mental health should be inexpensive.</p>
-    <h3>It's available for $9 USD.</h3>
-    <p>The price of a nice meal, and if you can't sacrifice a meal for the empowerment of your mental health, then I'm not quite sure how to help you.</p>
-    <p>Of course, I've also written <a class="link" href='<%= Routes.content_path(@conn, :practice, "observe-your-senses") %>'>A Definitive Guide On How To Meditate Properly</a> if you're wanting to learn the basics of how to meditate, although it's not quite the same as being guided through it from a 3rd person perspective.</p>
   </div>
-</div>
 
-<div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
-<div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+  <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
+  <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
 
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <%= partial "pricing/pricing_fundamental_meditations.html", %{ conn: @conn } %>
+  <div class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <%= partial "pricing/pricing_fundamental_meditations.html", %{ conn: @conn } %>
+    </div>
   </div>
-</div>
 
-<div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
-<div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
-<%# NeverFap Deluxe Fundamental Meditation Series END %>
+  <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
+  <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+<%# FUNDAMENTAL SERIES END %>
 
 
 <%# HOVERING MEDITATION %>
-<div id="hovering_meditation" class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
-      <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
+  <div id="hovering_meditation" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
+      </div>
+      <h1 class="single__sub__header">Hovering Meditation</h1>
+      <p>One thing I've noticed is that a lot of people struggle to meditate via traditional means.</p>
+      <p>In part due to poor mental health or "brain fog" which makes it incredibly difficult to engage with our minds in a meaningful way.</p>
+      <p>That's why I created Hovering: A meditation technique which aims to bridge the gap between traditional meditation and simply not meditating at all.</p>
+      <p>It has been designed to be easy to understand, simple to practice, as well as remain acessible to people of all ages.</p>
+      <p>If you would like to learn more about Hovering I highly encourage you to visit the <a class="link" href="/hovering">NeverFap Deluxe Hovering page</a> which provides a basics overview of the practice.</p>
+
+      <p>Alternatively you can visit the <a class="link" href="https://tryhovering.com/">Hovering Website</a> which provides a much more comprehensive.</p>
+
+      <img style="width: 100%;" src="https://neverfapdeluxe.netlify.com/images/hovering_web.png"/>
     </div>
-    <h1 class="single__sub__header">Hovering Meditation</h1>
-    <p>One thing I've noticed is that a lot of people struggle to meditate via traditional means.</p>
-    <p>In part due to poor mental health or "brain fog" which makes it incredibly difficult to engage with our minds in a meaningful way.</p>
-    <p>That's why I created Hovering: A meditation technique which aims to bridge the gap between traditional meditation and simply not meditating at all.</p>
-    <p>It has been designed to be easy to understand, simple to practice, as well as remain acessible to people of all ages.</p>
-    <p>If you would like to learn more about Hovering I highly encourage you to visit the <a class="link" href="/hovering">NeverFap Deluxe Hovering page</a> which provides a basics overview of the practice.</p>
-
-    <p>Alternatively you can visit the <a class="link" href="https://tryhovering.com/">Hovering Website</a> which provides a much more comprehensive.</p>
-
-    <img style="width: 100%;" src="https://neverfapdeluxe.netlify.com/images/hovering_web.png"/>
   </div>
-</div>
 
-<div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
-<div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+  <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
+  <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
 
-<%= partial "banners/hovering_banner.html", assigns %>
+  <%= partial "banners/hovering_banner.html", assigns %>
 
-<div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
-<div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+  <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
+  <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
 <%# HOVERING MEDITATION END %>
 
+
 <%# MEDITATION ESSENTIAL READING %>
-<div id="essential_reading" class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
-      <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
+  <div id="essential_reading" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
+      </div>
+      <h1 class="single__sub__header">Meditation Essential Reading</h1>
+      <p></p>
+      <p>NeverFap Deluxe offers a wide range of articles which explain how best to practice effective Meditation.</p>
+      <p>In addition, I've also written <a class="link" href="/observe-your-senses">Here Is How To Meditate Properly</a> which goes into detail as to how meditation works.</p>
+      <p>Of course, most of the articles touch upon meditation in some way, especially the NeverFap Deluxe Guide and NeverFap Deluxe Homepage which explains these concepts in more detail.</p>
     </div>
-    <h1 class="single__sub__header">Meditation Essential Reading</h1>
-    <p></p>
-    <p>NeverFap Deluxe offers a wide range of articles which explain how best to practice effective Meditation.</p>
-    <p>In addition, I've also written <a class="link" href="/observe-your-senses">Here Is How To Meditate Properly</a> which goes into detail as to how meditation works.</p>
-    <p>Of course, most of the articles touch upon meditation in some way, especially the NeverFap Deluxe Guide and NeverFap Deluxe Homepage which explains these concepts in more detail.</p>
+    <div style="margin-top: 3rem; height: 4px; background: rgba(255,46,182,1);"></div>
+    <div style="margin-bottom: 3rem; height: 4px; background: cyan;"></div>
+
+    <%= partial "list/articles_latest_meditation_v2.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles } %>
   </div>
-  <div style="margin-top: 3rem; height: 4px; background: rgba(255,46,182,1);"></div>
-  <div style="margin-bottom: 3rem; height: 4px; background: cyan;"></div>
-  
-  <%= partial "list/articles_latest_meditation_v2.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles } %>
-</div>
+
+  <%= partial "links/facebook.html", assigns %>
 <%# MEDITATION ESSENTIAL READING END %>
 
-<%= partial "links/facebook.html", assigns %>
 
-<%# CONCLUSION ARTICLES %>
-<div id="conclusion" class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
-      <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
-    </div>
-    <h1 class="single__sub__header">Next Steps</h1>
-    <p></p>
-    <p>Those resources should be more-than-enough for you to .</p>
-  </div>
-  <%= partial "list/articles_latest_meditation_v2.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles } %>
-</div>
-<%# CONCLUSION ARTICLES END %>
-
-
-<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
-<%= partial "promotion_footer.html", assigns %>
-
-
-<%# MEDITATION PILOTS %>
-<!-- <div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <h1>Meditation Essential Reading</h1>
-    <p>Of course, it's also important that you educate yourself and </p>
-    <p>.</p>
-  </div>
-</div> -->
-
-<!-- <div class="single__wrapper">
-  <h1 style="margin-bottom: 3rem;">Guided Meditation List</h1>
-  <div class="podcast__item__container">
-    <%#= Enum.map(@page_collections.meditations, fn(meditation) -> %>
-      <div class="podcast__item">
-        <a href='<%#= Routes.content_path(@conn, :meditation, meditation["slug"]) %>'><h1 style="margin-bottom: 0;"><%#= meditation["title"] %></h1></a>
-        <h3 style="margin-bottom: 1rem;"><%#= raw meditation["content"] %></h3>
-        <div class="podcast__item__bottom">
-          <a class="link articles__link" href='<%#= meditation["podcast_url"] %>'>episode link</a>
-        </div>
+<%# NEXT STEPS ARTICLES %>
+  <div id="next_steps" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
       </div>
-    <%# end ) %>
+      <h1 class="single__sub__header">Next Steps</h1>
+      <p></p>
+      <p>Those resources should be more-than-enough for you to .</p>
+    </div>
+    <%= partial "list/articles_latest_meditation_v2.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles } %>
   </div>
-</div> -->
-<%# MEDITATION PILOTS END %> 
+<%# NEXT STEPS ARTICLES END %>
+
+
+<%# FOOTER %>
+  <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
+  <%= partial "promotion_footer.html", assigns %>
+<%# FOOTER END %>

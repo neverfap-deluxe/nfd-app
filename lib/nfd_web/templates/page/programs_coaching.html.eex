@@ -1,109 +1,157 @@
-<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: child_content(@item["children"], "coaching-intro") } %>
-<%= partial "links/discord.html", assigns %>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some viable reasons</u> to consider personal coaching.</h1>
+<%# INDEX %>
+  <div class="single__wrapper">
+    <div class="page__index">
+      <h1 class="page__index__title">Index</h1>
 
-    <p>There are many reasons why you may want to consider personal coaching.</p>
-    <p>Here are just a few of them.</p>
-
-    <div style="border-top: 3px solid #00ffee;"></div>
-    <h2 class="banner__points banner__points--coaching">You want to beat this thing quicker, and are happy to pay a premium for it.</h2>
-    <div style="border-top: 3px solid #00ffee;"></div>
-    <h2 class="banner__points banner__points--coaching">You require another person to help understand and empathise with your situation.</h2>
-    <div style="border-top: 3px solid #00ffee;"></div>
-    <h2 class="banner__points banner__points--coaching">You struggle to understand how to effectively practice meditation and other awareness exercises.</h2>
-    <div style="border-top: 3px solid #00ffee;"></div>
-    <h2 class="banner__points banner__points--coaching">You want to ask questions face-to-face.</h2>
-    <div style="border-top: 3px solid #00ffee;"></div>
-    <h2 class="banner__points banner__points--coaching">You require additional perspective, and need help understanding the fundamentals.</h2>
-    <!-- <div class="show__large" style="border-top: 3px solid #00ffee;"></div> -->
-    <div style="border-top: 3px solid #00ffee;"></div>
-
-    <p>Ultimately, only you can decide whether you beleive it's worth your time and money.</p>
-    <p>No different to this website and all these wonderful materials I offer to the public for free, I'm just another resource for you to utilise during your journey.</p>
-  </div>
-</div>
-
-<%= partial "links/reddit.html", assigns %>
-
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some of the services</u> which can help you become your best self.</h1>
-
-    <p>There are many different ways I can personally help you achieve your goals.</p>
-    <p>Below is a list which largely applies to most of my clients.</p>
-
-    <div style="border-top: 3px solid #00ffee;"></div>
-    <h2 class="banner__points banner__points--coaching">I can provide you with a detailed mental health plan which covers the day-to-day.</h2>
-    <div style="border-top: 3px solid #00ffee;"></div>
-    <h2 class="banner__points banner__points--coaching">I can help identify which areas you need to work on and improve.</h2>
-    <div style="border-top: 3px solid #00ffee;"></div>
-    <h2 class="banner__points banner__points--coaching">I can recommend suggested practices which will best suit your situation.</h2>
-    <div style="border-top: 3px solid #00ffee;"></div>
-    <h2 class="banner__points banner__points--coaching">I can perform on-the-spot guided meditations in person.</h2>
-    <div style="border-top: 3px solid #00ffee;"></div>
-    <h2 class="banner__points banner__points--coaching">I can help you become more aware of yourself and your behaviours.</h2>
-    <div style="border-top: 3px solid #00ffee;"></div>
-  </div>
-</div>
-
-<div class="magenta__banner">
-  <div class="magenta__banner__title__container">
-    <h2 class="magenta__banner__title">Pricing.</br>Pricing.</br>Pricing.</br></h2>
-  </div>
-</div>
-
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <%= raw child_content(@item["children"], "coaching-cost") %>
-  </div>
-</div>
-
-<%= partial "links/facebook.html", assigns %>
-
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <h2>Next Steps</h2>
-    <p>If you're still interested in having me coach and guide you, then next steps are to organise an initial consultation so we can learn a bit more about each other in fabulous fashion.</p>
-    <!-- <p>Firstly, you'll need to create a NeverFap Deluxe Account. There are links in the banner below.</p> -->
-    <!-- <p>This first step is important, because it's essentially how you'll pay for the coaching in the beautifully designed dashboard that I've put together.</p> -->
-
-    <!-- Calendly inline widget begin -->
-    <div class="calendly-inline-widget" data-url="https://calendly.com/neverfap-deluxe" style="min-width:320px;"></div>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
-    <!-- Calendly inline widget end -->
-
-    <p>You can personally get in touch with me via <a class="link" href="mailto:admin@neverfapdeluxe.com">email</a> (or via <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Discord</a>) so I can learn a bit more about you, as well as so we can arrange a time.</p>
-    <p>I'm personally located in Melbourne Australia. (GMT+11:00)</p>
-  </div>
-</div>
-
-<%= partial "links/twitter.html", assigns %>
-
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <h2>Contact</h2>
-    <p>I hope you now have a proper understanding of how this all works.</p>
-    <p>Feel free to contact me if you have any questions, or would simply like to chat about arranging a time to catch up.</p>
+      <ol class="index__items">
+        <a href="#introduction"><li class="index__item">Introduction</li></a>
+        <a href="#reasons"><li class="index__item">Reasons To Consider Personal Coaching</li></a>
+        <a href="#achieve_goals"><li class="index__item">How I Can Help You Achieve Your Goals</li></a>
+        <a href="#pricing"><li class="index__item">Personal Coaching Pricing</li></a>
+        <a href="#next_steps"><li class="index__item">Next Steps / Book A Meeting</li></a>
+        <a href="#contact"><li class="index__item">Contact</li></a>
+      </ol>
+    </div>
   </div>
 
-  <div class="form__wrapper form__wrapper--full-width">
-    <form class="form" action="https://formspree.io/admin@neverfapdeluxe.com" method="POST">
-      <!-- <h4 class="form__title">THE FORM</h4> -->
-      <div class="form__input__container">
-        <input class="form__input" type=text: placeholder="Name" name='name'/>
-        <input class="form__input" type="email" placeholder="Email" name='_replyTo'/>
-        <textarea class="form__input form__textarea" type=text: placeholder="Message" name='message'></textarea>
-      </div>
+  <%= partial "links/paypal.html", assigns %>
+<%# INDEX END %>
 
-      <div class="form__submission__container">
-        <button class="form__button" type="submit" value="Send">Send</button>
-      </div>
-    </form>
+
+<%# INTRODUCTION %>
+  <div id="introduction" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <h1>Introduction</h1>
+      <%= child_content(@item["children"], "coaching-intro") %>
+    </div>
   </div>
-</div>
 
-<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
-<%= partial "promotion_footer.html", assigns %>
+  <%= partial "links/discord.html", assigns %>
+<%# INTRODUCTION END %>
+
+
+<%# REASONS TO CONSIDER COACHING %>
+  <div id="reasons" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some viable reasons</u> to consider personal coaching.</h1>
+
+      <p>There are many reasons why you may want to consider personal coaching.</p>
+      <p>Here are just a few of them.</p>
+
+      <div style="border-top: 3px solid #00ffee;"></div>
+      <h2 class="banner__points banner__points--coaching">You want to beat this thing quicker, and are happy to pay a premium for it.</h2>
+      <div style="border-top: 3px solid #00ffee;"></div>
+      <h2 class="banner__points banner__points--coaching">You require another person to help understand and empathise with your situation.</h2>
+      <div style="border-top: 3px solid #00ffee;"></div>
+      <h2 class="banner__points banner__points--coaching">You struggle to understand how to effectively practice meditation and other awareness exercises.</h2>
+      <div style="border-top: 3px solid #00ffee;"></div>
+      <h2 class="banner__points banner__points--coaching">You want to ask questions face-to-face.</h2>
+      <div style="border-top: 3px solid #00ffee;"></div>
+      <h2 class="banner__points banner__points--coaching">You require additional perspective, and need help understanding the fundamentals.</h2>
+      <!-- <div class="show__large" style="border-top: 3px solid #00ffee;"></div> -->
+      <div style="border-top: 3px solid #00ffee;"></div>
+
+      <p>Ultimately, only you can decide whether you beleive it's worth your time and money.</p>
+      <p>No different to this website and all these wonderful materials I offer to the public for free, I'm just another resource for you to utilise during your journey.</p>
+    </div>
+  </div>
+
+  <%= partial "links/reddit.html", assigns %>
+<%# REASONS TO CONSIDER COACHING END %>
+
+
+<%# HOW I CAN HELP YOU %>
+  <div id="achieve_goals" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some of the services</u> which can help you become your best self.</h1>
+
+      <p>There are many different ways I can personally help you achieve your goals.</p>
+      <p>Below is a list which largely applies to most of my clients.</p>
+
+      <div style="border-top: 3px solid #00ffee;"></div>
+      <h2 class="banner__points banner__points--coaching">I can provide you with a detailed mental health plan which covers the day-to-day.</h2>
+      <div style="border-top: 3px solid #00ffee;"></div>
+      <h2 class="banner__points banner__points--coaching">I can help identify which areas you need to work on and improve.</h2>
+      <div style="border-top: 3px solid #00ffee;"></div>
+      <h2 class="banner__points banner__points--coaching">I can recommend suggested practices which will best suit your situation.</h2>
+      <div style="border-top: 3px solid #00ffee;"></div>
+      <h2 class="banner__points banner__points--coaching">I can perform on-the-spot guided meditations in person.</h2>
+      <div style="border-top: 3px solid #00ffee;"></div>
+      <h2 class="banner__points banner__points--coaching">I can help you become more aware of yourself and your behaviours.</h2>
+      <div style="border-top: 3px solid #00ffee;"></div>
+    </div>
+  </div>
+<%# HOW I CAN HELP YOU END %>
+
+
+<%# PRICING %>
+  <div id="pricing" class="magenta__banner">
+    <div class="magenta__banner__title__container">
+      <h2 class="magenta__banner__title">Pricing.</br>Pricing.</br>Pricing.</br></h2>
+    </div>
+  </div>
+
+  <div class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <%= raw child_content(@item["children"], "coaching-cost") %>
+    </div>
+  </div>
+
+  <%= partial "links/facebook.html", assigns %>
+<%# PRICING END %>
+
+
+<%# NEXT STEPS %>
+  <div id="next_steps" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <h2>Next Steps</h2>
+      <p>If you're still interested in having me coach and guide you, then next steps are to organise an initial consultation so we can learn a bit more about each other in fabulous fashion.</p>
+      <!-- <p>Firstly, you'll need to create a NeverFap Deluxe Account. There are links in the banner below.</p> -->
+      <!-- <p>This first step is important, because it's essentially how you'll pay for the coaching in the beautifully designed dashboard that I've put together.</p> -->
+
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/neverfap-deluxe" style="min-width:320px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+      <!-- Calendly inline widget end -->
+
+      <p>You can personally get in touch with me via <a class="link" href="mailto:admin@neverfapdeluxe.com">email</a> (or via <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Discord</a>) so I can learn a bit more about you, as well as so we can arrange a time.</p>
+      <p>I'm personally located in Melbourne Australia. (GMT+11:00)</p>
+    </div>
+  </div>
+
+  <%= partial "links/twitter.html", assigns %>
+<%# NEXT STEPS END %>
+
+
+<%# CONTACT %>
+  <div class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <h2>Contact</h2>
+      <p>I hope you now have a proper understanding of how this all works.</p>
+      <p>Feel free to contact me if you have any questions, or would simply like to chat about arranging a time to catch up.</p>
+    </div>
+
+    <div class="form__wrapper form__wrapper--full-width">
+      <form class="form" action="https://formspree.io/admin@neverfapdeluxe.com" method="POST">
+        <!-- <h4 class="form__title">THE FORM</h4> -->
+        <div class="form__input__container">
+          <input class="form__input" type=text: placeholder="Name" name='name'/>
+          <input class="form__input" type="email" placeholder="Email" name='_replyTo'/>
+          <textarea class="form__input form__textarea" type=text: placeholder="Message" name='message'></textarea>
+        </div>
+
+        <div class="form__submission__container">
+          <button class="form__button" type="submit" value="Send">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+<%# CONTACT %>
+
+
+<%# FOOTER %>
+  <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
+  <%= partial "promotion_footer.html", assigns %>
+<%# FOOTER END %>

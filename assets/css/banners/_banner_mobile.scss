@@ -14,7 +14,7 @@
   .mobile__banner__image__container {
     img {
       display: inline-block;
-      width: 320px; 
+      width: 320px;
       border: 4px solid black;
       box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.22), 0 17px 17px 0 rgba(0, 0, 0, 0.22);
       transition: .4s box-shadow;
@@ -32,4 +32,17 @@
   .mobile__android__link__image {
     width: 200px;
   }
+}
+
+
+@media screen and (min-width: 420px) {
+
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
 }

@@ -5,10 +5,10 @@
 }
 
 .practices__banner {
-  padding: 4rem;
+  padding: 1rem;
   .practices__banner__title {
-    font-size: 3rem!important;
-    
+    font-size: 1.6rem!important;
+
     // box-shadow: -5px 5px 0px 0px $black-background;
 
     // color: $white-text;
@@ -27,10 +27,6 @@
     // transition: 6s box-shadow;
   }
 
-  .practices__banner__sub__title--ios {
-    width: 500px;
-  }
-
   .practices__banner__sub__title {
     font-weight: 400;
   }
@@ -45,7 +41,6 @@
     font-size: 1.6rem;
   }
 }
-
 
 .pricing__banner__container {
   position: relative;
@@ -179,5 +174,24 @@
 
 .practices__section__collection {
   .practices__section__collection__item {
-  }  
+  }
+}
+
+
+
+@media screen and (min-width: 420px) {
+
+}
+
+@media screen and (min-width: 768px) {
+  .practices__banner {
+    padding: 4rem;
+    .practices__banner__title {
+      font-size: 3rem!important;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
 }

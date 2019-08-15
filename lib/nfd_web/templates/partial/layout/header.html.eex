@@ -21,7 +21,7 @@
     </div>
 
 
-    <!-- Guide -->
+    <!-- GUIDE -->
     <a id="link__guide" class="header__link__wrapper header__link__wrapper--main" href="/guide">
       <li class="header__link">Guide</li>
     </a>
@@ -47,13 +47,12 @@
     </div>
 
 
-    <!-- Articles -->
+    <!-- ARTICLES -->
     <a id="link__articles" class="header__link__wrapper" href="/articles">
       <li id='articles__click' class="header__link">Articles</li>
     </a>
 
-    <!-- @conn.assigns.item -->
-    <div class="header__sub header__banner__articles">  
+    <div class="header__sub header__banner__articles">
       <a href="/articles" class="header__module header__module--flex">
         <h3 class="h3__yus">
           NeverFap Deluxe Articles
@@ -74,7 +73,7 @@
       </a>
     </div>
 
-    <!-- Meditation -->
+    <!-- MEDITATION -->
     <a id="link__meditation" class="header__link__wrapper" href="/meditation">
       <li class="header__link">Meditation</li>
     </a>
@@ -139,7 +138,6 @@
       </a>
     </div>
 
-
     <!-- ABOUT -->
     <a id="link__about" class="header__link__wrapper header__link__wrapper--disappear" href="/about">
       <li class="header__link">About</li>
@@ -174,3 +172,5 @@
 <!-- Home | Guide | Articles | Podcast | Community | About -->
 
 <script src='<%= Routes.static_path(@conn, "/js/header.js") %>'></script>
+
+<!-- @conn.assigns.item -->

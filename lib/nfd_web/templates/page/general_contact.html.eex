@@ -1,22 +1,23 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
 
-<div class="single__wrapper" style="padding-top: 0rem!important;">
-  <div class="form__wrapper form__wrapper--full-width">
-    <form class="form" action="https://formspree.io/admin@neverfapdeluxe.com" method="POST">
-      <!-- <h4 class="form__title">THE FORM</h4> -->
-    <div class="form__input__container">
-      <input class="form__input" type=text: placeholder="Name" name='name'/>
-      <input class="form__input" type="email" placeholder="Email" name='_replyTo'/>
-      <textarea class="form__input form__textarea" type=text: placeholder="Message" name='message'></textarea>
-    </div>
+<%# CONTACT FORM %>
+  <div class="single__wrapper" style="padding-top: 0rem!important;">
+    <div class="form__wrapper form__wrapper--full-width">
+      <form class="form" action="https://formspree.io/admin@neverfapdeluxe.com" method="POST">
+        <!-- <h4 class="form__title">THE FORM</h4> -->
+      <div class="form__input__container">
+        <input class="form__input" type=text: placeholder="Name" name='name'/>
+        <input class="form__input" type="email" placeholder="Email" name='_replyTo'/>
+        <textarea class="form__input form__textarea" type=text: placeholder="Message" name='message'></textarea>
+      </div>
 
-    <div class="form__submission__container">
-      <button class="form__button" type="submit" value="Send">Send</button>
+      <div class="form__submission__container">
+        <button class="form__button" type="submit" value="Send">Send</button>
+      </div>
+      </form>
     </div>
-    </form>
   </div>
-</div>
-
+<%# CONTACT FORM END %>
 
 <div style="margin-top: 5rem;"></div>
 <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>

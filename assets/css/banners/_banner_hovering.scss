@@ -38,6 +38,7 @@
 
 .banner__split__container {
   display: flex;
+  flex-direction: column;
   .banner__split {
     flex: 4;
   }
@@ -51,6 +52,7 @@
 
 .banner__split__divider {
   flex: 1;
+  display: none;
 }
 
 .circle__container {
@@ -122,4 +124,32 @@
 #contentText {
   font-size: 2rem;
   opacity: 0;
+}
+
+@media screen and (min-width: 420px) {
+
+}
+
+@media screen and (min-width: 768px) {
+  .banner__split__container {
+    flex-direction: row;
+    .banner__split {
+      flex: 4;
+    }
+
+    .banner__split--right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .banner__split__divider {
+    display: block;
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
 }
