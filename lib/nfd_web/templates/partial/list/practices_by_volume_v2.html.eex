@@ -1,5 +1,5 @@
 <%
-list_of_sections = 
+list_of_sections =
   Enum.reduce(
     @items,
     [],
@@ -7,19 +7,19 @@ list_of_sections =
       IO.inspect length(acc)
       does_volume_exist = Enum.find(acc, fn item -> item.vol == practice["vol"] end)
       IO.inspect does_volume_exist["vol"]
-      
+
       if !!does_volume_exist do
-        new_volume = 
+        new_volume =
           does_volume_exist |> Map.put(:practices, does_volume_exist.practices ++ practice)
 
         Enum.map(acc, fn volume ->
-          if volume["vol"] == practice["vol"] do 
+          if volume["vol"] == practice["vol"] do
             new_volume
-          else 
+          else
             volume
           end
         end)
-      else 
+      else
       [%{
         vol: practice["vol"],
         practices: [practice]
@@ -36,8 +36,15 @@ list_of_sections =
 
         <div class="practices__section__collection">
           <%= Enum.map(section.practices, fn(practice) -> %>
-            <div class="practices__section__collection__item">
-              <%= practice["title"] %>
+            <div class="practices__section__collection__item dashboard__collection__file">
+            <%# TODO: This really should be a  %>
+              <span class="dashboard__collection__file__info" style="cursor: pointer;">
+                <p class="dashboard__collection__file__title"><%= practice["title"] %></p>
+              </span>
+              <a class="dashboard__collection__file__download" href="<%= @file.b2_file_url %>">
+                <span class='new__collection__item new__collection__item--alter' style="cursor: pointer;">MP3</span>
+                <i class="fa fa-file-audio" aria-hidden="true"></i>
+              </a>
             </div>
           <% end ) %>
         </div>

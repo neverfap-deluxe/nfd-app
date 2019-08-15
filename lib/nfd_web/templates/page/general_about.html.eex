@@ -3,7 +3,7 @@
 <div class="single__wrapper">
   <div class="page__index">
     <h1 class="page__index__title">Index</h1>
-  
+
     <ol class="index__items">
       <a href="#introduction"><li class="index__item">Introduction</li></a>
       <a href="#motivation"><li class="index__item">Motivation</li></a>
@@ -19,7 +19,7 @@
   <div class="single__content">
     <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
       <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
-    </div>    
+    </div>
     <h1 class="single__sub__header">Introduction</h1>
     <%= raw child_content(@item["children"], "about-intro") %>
   </div>
@@ -31,7 +31,7 @@
   <div class="single__content">
     <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
       <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
-    </div>    
+    </div>
     <h1 class="single__sub__header">Motivation</h1>
     <%= raw child_content(@item["children"], "about-main-1") %>
   </div>
@@ -43,7 +43,7 @@
   <div class="single__content">
     <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
       <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
-    </div>    
+    </div>
     <h1 class="single__sub__header">Philosophy</h1>
     <%= raw child_content(@item["children"], "about-main-2") %>
   </div>
@@ -55,7 +55,7 @@
   <div class="single__content">
     <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
       <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
-    </div>    
+    </div>
     <h1 class="single__sub__header">Next Steps</h1>
     <%= raw child_content(@item["children"], "about-next-steps") %>
   </div>

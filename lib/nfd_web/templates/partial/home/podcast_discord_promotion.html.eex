@@ -1,0 +1,37 @@
+<div class="account__info">
+  <p class="account__info__title">I would absolutely love to introduce you to some <span class="delicious__promotion">delicious</span> promotion. <i class="em em-admission_tickets"></i></p>
+</div>
+
+<div class="homepage__splitter">
+  <div class="homepage__splitter__box homepage__splitter__box--top">
+    <div>
+      <h2 class="homepage__splitter__box__title">#accountability program</h2>
+      <p>Maybe you're just lookin' for a "support group" to share cuddles with!? Well, The Reade&copy; has you covered!</p>
+      <p>Join our Discord Server today. It's sexy.</p>
+      <a class="homepage__splitter__box__button homepage__splitter__box__button--pink" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Participate</a>
+    </div>
+  </div>
+  <div class="homepage__splitter__divider"></div>
+  <div class="homepage__splitter__box homepage__splitter__box--discord">
+    <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+  </div>
+</div>
+
+<div class="homepage__splitter homepage__splitter--podcast">
+  <div class="homepage__splitter__box homepage__splitter__box--top homepage__splitter__box--podcast">
+    <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="500" height="500"></iframe>
+  </div>
+  <div class="homepage__splitter__divider"></div>
+  <div class="homepage__splitter__box">
+    <div>
+      <h2 class="homepage__splitter__box__title">The NeverFap Deluxe Podcast</h2>
+      <p>Can't be bothered reading for the next 5 minutes? Well, unfortuately that's just too bad and I'm going to have to ask you to read anyway!</p>
+      <p>Listen to the NeverFap Deluxe Podcast, you slacka!</p>
+      <a class="homepage__splitter__box__button" href="https://neverfapdeluxe.com/podcast">Listen</a>
+    </div>
+  </div>
+</div>
+
+<div class="account__info">
+  <p class="account__info__title">OMFG!? You survived the promotion. <i class="em em-confetti_ball"></i> Well done.<i class="em em-confetti_ball"></i></p>
+</div>

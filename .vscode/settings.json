@@ -1,0 +1,21 @@
+{
+  "files.autoSave": "afterDelay",
+  "editor.tabSize": 2,
+  "files.trimTrailingWhitespace": true,
+
+  "eslint.enable": true,
+  "window.zoomLevel": 0,
+  "dart.flutterSdkPath": "/Users/juliusreade/flutter",
+  "files.exclude": {
+    "deps": true,
+    "assets/node_modules": true
+  },
+  "files.associations": {
+    "*.notes": "markdown",
+    "*.eex": "HTML (Eex)"
+  },
+  "emmet.syntaxProfiles": {
+    "HTML (Eex)": "html"
+  },
+  "emmet.includeLanguages": {"HTML (Eex)": "html"},
+}

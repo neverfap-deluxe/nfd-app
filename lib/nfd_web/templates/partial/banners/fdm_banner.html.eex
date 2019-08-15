@@ -3,19 +3,18 @@
 
   <div class="banner__split__container">
     <div class="banner__split">
-      <div style="margin-bottom: 3rem; height: 4px; background: cyan;"></div>    
+      <div style="margin-bottom: 3rem; height: 4px; background: cyan;"></div>
       <h1 class="fdm__banner__title">NeverFap Deluxe Fundamental Meditation Series</h1>
       <div style="margin-top: 3rem; height: 4px; background: rgba(255,46,182,1);"></div>
       <h4 class="fdm__banner__sub__title">The only Meditation course you'll ever need.</h4>
       <h4 class="fdm__banner__sub__title">Cover the absolute fundamentals of effective Meditation so you can comfortably practice Meditation on your own.</h4>
-      
+
       <ul class="practices__banner__list">
         <li class="practices__banner__item">Learn how to observe your senses without expectations.</li>
         <li class="practices__banner__item">Understand the power of conscious awareness.</li>
         <li class="practices__banner__item">Train yourself to actively remain calm and let go.</li>
       </ul>
   
-
       <!-- <h4 class="fdm__banner__sub__title">Course Topics.</h4>
 
       <ul class="seven__day__kickstarter__banner__list banner__list">

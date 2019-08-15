@@ -1,42 +1,31 @@
-<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
-<%= partial "links/paypal.html", assigns %>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 
-<div style="margin-top: 3rem!important;" class="single__wrapper">
-  <div class="posts__on posts--guide" id="articles_latest_plain_posts">
-    <%= partial "list/articles_latest_v2.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
-  </div>
-</div>
-
-<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
-<%= partial "promotion_footer.html", assigns %>
-
-<script src='<%= Routes.static_path(@conn, "/js/articles.js") %>'></script>
-
-<!-- <%= partial "links/patreon.html", assigns %> -->
-
-<!-- v1 -->
-<!--
-
+<%# INTRODUCTION %>
 <div class="single__wrapper">
-  <h3 class="popular__latest__options__title">Articles</h3>
-
-  <div class="popular__latest__options">
-    <h3 class="button__click button__on popular__latest__options--guide" id="articles_latest_plain_click">Latest (plain text)</h3>
-    <h3 class="button__click button__off popular__latest__options--guide" id="articles_latest_click">Latest</h3>
-    <h3 class="button__click button__off popular__latest__options--guide" id="articles_category_click">Category</h3>
-  </div>
-
-  <div class="posts__off posts--guide" id="articles_latest_posts">
-    <%= partial "list/articles_latest.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
-  </div>
-
-  <div class="posts__on posts--guide" id="articles_latest_plain_posts">
-    <%= partial "list/articles_latest_plain_text.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
-  </div>
-
-  <div class="posts__off posts--guide" id="articles_category_posts">
-    <%= partial "list/articles_category.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
+  <div class="single__content" style="margin-bottom: 0;">
+    <h1>Introduction</h1>
+    <%= @item["content"] %>
   </div>
 </div>
 
--->
+<%= partial "links/paypal.html", assigns %>
+<%# INTRODUCTION END %>
+
+
+<%# ARTICLES LIST %>
+  <div style="margin-top: 3rem!important;" class="single__wrapper">
+    <h1>Articles List</h1>
+    <div class="posts__on posts--guide" id="articles_latest_plain_posts">
+      <%= partial "list/articles_latest_v2.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
+    </div>
+  </div>
+<%# ARTICLES LIST END %>
+
+
+<%# FOOTER %>
+  <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
+  <%= partial "promotion_footer.html", assigns %>
+
+  <script src='<%= Routes.static_path(@conn, "/js/articles.js") %>'></script>
+<%# FOOTER %>
+
