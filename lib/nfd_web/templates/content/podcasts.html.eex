@@ -26,11 +26,7 @@
   </div>
 </div>
 
-<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
-
-<div style="margin-top: 5rem;"></div>
-<%= partial "banners/new_to_nfd_banner.html", assigns %>
-<%= partial "banners/reddit_question_banner.html", assigns %>
-<%= partial "home/veteran_neverfappers.html", assigns %>
-<%= partial "home/goodies.html", assigns %>
-<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @page_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>
+<%# FOOTER %>
+  <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
+  <%= partial "promotion_footer.html", assigns %>
+<%# FOOTER END %>

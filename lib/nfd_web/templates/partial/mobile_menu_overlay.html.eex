@@ -3,15 +3,13 @@
   <span class="mobile__span"></span>
   <span class="mobile__span"></span>
 </div>
-  
+
 <div id="mobile__menu__overlay__id" class="mobile__menu__overlay">
   <%= partial "everything_module.html", %{ is_mobile_menu: true } %>
 </div>
-  
+
 <div class="overlay__within">
 
 </div>
-
-
 
 <script src='/js/overlay.js'></script>

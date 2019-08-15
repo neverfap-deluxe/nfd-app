@@ -22,12 +22,12 @@
       <%= if Enum.find(article["categories"], &(&1 == "choice-over-mind")) do %>
         <%= if Enum.find(article["tags"], &(&1 == @tag_type)) do %>
           <span><a class="link articles__link" href='<%= Routes.content_path(@conn, :article, article["slug"]) %>'><%= @item["date"] %> | <%= @item["title"] %></a></span>
-        <% end %>       
+        <% end %>
       <% end %>
     <% end ) %>
   </div>
 
-    
+
   <ul class="five__principles__list__page">
     <span><li class="five__principles__item__page">Balance Over Reward</li></span>
   </ul>
@@ -41,7 +41,7 @@
     <% end ) %>
   </div>
 
-    
+
   <ul class="five__principles__list__page">
     <span><li class="five__principles__item__page">Struggle Over None</li></span>
   </ul>
@@ -55,7 +55,7 @@
     <% end ) %>
   </div>
 
-          
+
   <ul class="five__principles__list__page">
     <span><li class="five__principles__item__page">Awareness Over All</li></span>
   </ul>
