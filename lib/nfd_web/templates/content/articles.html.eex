@@ -1,25 +1,57 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 
-<%# INTRODUCTION %>
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <h1>Introduction</h1>
-    <%= @item["content"] %>
-  </div>
-</div>
+<%# INDEX %>
+  <div class="single__wrapper">
+    <div class="page__index">
+      <h1 class="page__index__title">Index</h1>
 
-<%= partial "links/paypal.html", assigns %>
+      <ol class="index__items">
+        <h3><i class="page__index__emoji__left em em-ledger"></i> Articles <i class="page__index__emoji__right em em-ledger"></i></h3>
+        <a href="#introduction"><li class="index__item">Introduction</li></a>
+        <a href="#articles_list"><li class="index__item">NeverFap Deluxe Articles List</li></a>
+        <a href="#next_steps"><li class="index__item">Next Steps</li></a>
+      </ol>
+    </div>
+  </div>
+
+  <%= partial "links/paypal.html", assigns %>
+<%# INDEX END %>
+
+
+<%# INTRODUCTION %>
+  <div id="introduction" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <h1>Introduction</h1>
+      <%= raw @item["content"] %>
+    </div>
+  </div>
+
+  <%= partial "links/twitter.html", assigns %>
 <%# INTRODUCTION END %>
 
 
 <%# ARTICLES LIST %>
-  <div style="margin-top: 3rem!important;" class="single__wrapper">
+  <div id="articles_list" style="margin-top: 3rem!important;" class="single__wrapper">
     <h1>Articles List</h1>
     <div class="posts__on posts--guide" id="articles_latest_plain_posts">
       <%= partial "list/articles_latest_v2.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
     </div>
   </div>
+
+  <%= partial "links/discord.html", assigns %>
 <%# ARTICLES LIST END %>
+
+
+<%# NEXT STEPS %>
+  <div id="next_steps" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <h1>Next Steps</h1>
+      <!-- TODO -->
+      <p></p>
+      <p></p>
+    </div>
+  </div>
+<%# NEXT STEPS END %>
 
 
 <%# FOOTER %>

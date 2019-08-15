@@ -7,8 +7,8 @@
 
       <ol class="index__items">
         <a href="#introduction"><li class="index__item">Introduction</li></a>
-        <a href="#accountability_process"><li class="index__item">The Accountability Process</li></a>
-        <a href="#nfd_bot"><li class="index__item">NeverFap Deluxe Bot</li></a>
+        <a href="#accountability_process"><li class="index__item">Accountability Process</li></a>
+        <a href="#neverfap_deluxe_bot"><li class="index__item">NeverFap Deluxe Bot</li></a>
         <a href="#accountability_examples"><li class="index__item">Accountability Examples</li></a>
         <a href="#next_steps"><li class="index__item">Next Steps</li></a>
       </ol>
@@ -23,7 +23,7 @@
   <div id="introduction" class="single__wrapper">
     <div class="single__content">
       <h1>Introduction</h1>
-      <%= child_content(@item["children"], "accountability-intro") %>
+      <%= raw child_content(@item["children"], "accountability-intro") %>
     </div>
   </div>
 
@@ -66,7 +66,7 @@
 
 
 <%# NEVERFAP DELUXE BOT %>
-  <div id="nfd_bot" class="single__wrapper">
+  <div id="neverfap_deluxe_bot" class="single__wrapper">
     <div class="single__content">
       <h1>The NeverFap Deluxe Discord Bot</h1>
       <p>A large part of what makes the <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel effective is the NeverFap Deluxe Bot which has been designed to help assist you with your porn addiction recovery journey.</p>

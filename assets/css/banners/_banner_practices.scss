@@ -43,6 +43,7 @@
 }
 
 .pricing__banner__container {
+  background: white;
   position: relative;
   padding: 2rem;
   border: 4px solid black;
@@ -62,6 +63,7 @@
   .pricing__guarantee {
     margin-top: 1.6rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
@@ -73,10 +75,12 @@
   .pricing__banner__value {
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
+    min-width: 88px;
   }
 
   .pricing__banner__lifetime {
     padding: 1.2rem;
+    min-width: 320px;
 
     font-size: 1.3rem;
 
@@ -111,6 +115,7 @@
 }
 
 .pricing__sign__in__container {
+  background: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,7 +166,8 @@
 
 .banner__list {
   .banner__item {
-    padding: 1.4rem!important;
+    padding: 0.6rem!important;
+    line-height: 1.6rem;
   }
 }
 
@@ -187,11 +193,28 @@
   .practices__banner {
     padding: 4rem;
     .practices__banner__title {
-      font-size: 3rem!important;
+      font-size: 2rem!important;
     }
   }
 }
 
 @media screen and (min-width: 1024px) {
 
+}
+
+@media screen and (min-width: 1160px) {
+  .practices__banner {
+    padding: 4rem;
+    .practices__banner__title {
+      font-size: 3rem!important;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .pricing__banner__container {
+    .pricing__guarantee {
+      flex-direction: row;
+    }
+  }
 }

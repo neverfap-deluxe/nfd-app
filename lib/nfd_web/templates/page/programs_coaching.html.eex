@@ -6,11 +6,12 @@
       <h1 class="page__index__title">Index</h1>
 
       <ol class="index__items">
+        <h3><i class="page__index__emoji__left em em-male-technologist"></i> Personal Coaching <i class="page__index__emoji__right em em-male-technologist"></i></h3>
         <a href="#introduction"><li class="index__item">Introduction</li></a>
-        <a href="#reasons"><li class="index__item">Reasons To Consider Personal Coaching</li></a>
-        <a href="#achieve_goals"><li class="index__item">How I Can Help You Achieve Your Goals</li></a>
-        <a href="#pricing"><li class="index__item">Personal Coaching Pricing</li></a>
-        <a href="#next_steps"><li class="index__item">Next Steps / Book A Meeting</li></a>
+        <a href="#reasons_to_consider_personal_coaching"><li class="index__item">Reasons To Consider Personal Coaching</li></a>
+        <a href="#how_i_can_help_you_achieve_your_goals"><li class="index__item">How I Can Help You Achieve Your Goals</li></a>
+        <a href="#personal_coaching_pricing"><li class="index__item">Personal Coaching Pricing</li></a>
+        <a href="#book_a_meeting"><li class="index__item">Book A Meeting</li></a>
         <a href="#contact"><li class="index__item">Contact</li></a>
       </ol>
     </div>
@@ -24,7 +25,7 @@
   <div id="introduction" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <h1>Introduction</h1>
-      <%= child_content(@item["children"], "coaching-intro") %>
+      <%= raw child_content(@item["children"], "coaching-intro") %>
     </div>
   </div>
 
@@ -33,7 +34,7 @@
 
 
 <%# REASONS TO CONSIDER COACHING %>
-  <div id="reasons" class="single__wrapper">
+  <div id="reasons_to_consider_personal_coaching" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some viable reasons</u> to consider personal coaching.</h1>
 
@@ -63,7 +64,7 @@
 
 
 <%# HOW I CAN HELP YOU %>
-  <div id="achieve_goals" class="single__wrapper">
+  <div id="how_i_can_help_you_achieve_your_goals" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some of the services</u> which can help you become your best self.</h1>
 
@@ -87,7 +88,7 @@
 
 
 <%# PRICING %>
-  <div id="pricing" class="magenta__banner">
+  <div id="personal_coaching_pricing" class="magenta__banner">
     <div class="magenta__banner__title__container">
       <h2 class="magenta__banner__title">Pricing.</br>Pricing.</br>Pricing.</br></h2>
     </div>
@@ -103,10 +104,10 @@
 <%# PRICING END %>
 
 
-<%# NEXT STEPS %>
-  <div id="next_steps" class="single__wrapper">
+<%# BOOK A MEETING %>
+  <div id="book_a_meeting" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <h2>Next Steps</h2>
+      <h1>Book A Meeting</h1>
       <p>If you're still interested in having me coach and guide you, then next steps are to organise an initial consultation so we can learn a bit more about each other in fabulous fashion.</p>
       <!-- <p>Firstly, you'll need to create a NeverFap Deluxe Account. There are links in the banner below.</p> -->
       <!-- <p>This first step is important, because it's essentially how you'll pay for the coaching in the beautifully designed dashboard that I've put together.</p> -->
@@ -122,11 +123,11 @@
   </div>
 
   <%= partial "links/twitter.html", assigns %>
-<%# NEXT STEPS END %>
+<%# BOOK A MEETING END %>
 
 
 <%# CONTACT %>
-  <div class="single__wrapper">
+  <div id="contact" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <h2>Contact</h2>
       <p>I hope you now have a proper understanding of how this all works.</p>

@@ -4,7 +4,7 @@
   border-bottom: 4px solid $black-text;
 
   .seven__day__kickstarter__banner__inner {
-    padding: 1.4rem;
+    padding: 1rem;
   }
 
   .banner__empty {
@@ -57,12 +57,28 @@
 }
 
 .seven__day__kickstarter__banner__sub__title {
+  max-width: 800px;
+  // padding-left: 2rem;
+  // padding-right: 2rem;
+  padding-bottom: 1rem;
+}
+
+.seven__day__kickstarter__banner__sub__title-top {
+  max-width: 700px;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 1.8rem;
+
 }
 
 .seven__day__kickstarter__banner__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.seven__day__kickstarter__banner__box__v2 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -114,6 +130,16 @@
   }
 }
 
+.seven__day__kickstarter__banner__form--text {
+  position: relative;
+  top: -1rem;
+  flex: 1;
+  padding: 1rem;
+  max-width: 400px;
+
+  margin-top: 2.5rem;
+}
+
 .seven__day__kickstarter__banner__form {
   flex: 1;
   padding: 1rem;
@@ -149,6 +175,7 @@
 @media screen and (min-width: 768px) {
   .seven__day__kickstarter__banner {
     .seven__day__kickstarter__banner__inner {
+      padding: 4rem;
       .seven__day__kickstarter__banner__title:hover {
         box-shadow: -18px 18px 0px 0px $white-text;
       }
@@ -158,11 +185,21 @@
   .seven__day__kickstarter__banner__box {
     flex-direction: row;
   }
+  .seven__day__kickstarter__banner__box__v2 {
+    flex-direction: row;
+  }
   .seven__day__kickstarter__banner__form {
     margin-top: 0rem;
     margin-bottom: 0rem;
     margin-left: 3rem;
   }
+
+  .seven__day__kickstarter__banner__form--text {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    margin-left: 3rem;
+  }
+
 
   .seven__day__kickstarter__banner__list {
 

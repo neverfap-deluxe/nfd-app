@@ -36,8 +36,18 @@
       <div style="margin-bottom: 2rem; height: 4px; background: cyan;"></div>
       <div style="margin-top: 2rem; height: 4px; background: rgba(255,46,182,1);"></div>
       <div style="margin-bottom: 2rem; height: 4px; background: cyan;"></div>
-      <div style="margin-top: 2rem; height: 4px; background: rgba(255,46,182,1);"></div>
-      <div style="margin-bottom: 2rem; height: 4px; background: cyan;"></div>
+
+      <div class="account__info" style="border-top: 4px solid rgba(255,46,182,1);">
+        <p class="account__info__title">Here's a link to every <i class="em em-tada"></i> single <i class="em em-beers"></i> page <i class="em em-blue_book"></i> on NeverFap Deluxe.</p>
+        <div class="account__buttons">
+          <a class="account__info__button account__info__button--link" href='/everything'>
+            <div class="account__info__button__text">
+              Everything
+            </div>
+          </a>
+        </div>
+      </div>
+
       <div style="margin-top: 2rem; height: 4px; background: rgba(255,46,182,1);"></div>
       <div style="margin-bottom: 2rem; height: 4px; background: cyan;"></div>
       <div style="margin-top: 2rem; height: 4px; background: rgba(255,46,182,1);"></div>
@@ -51,28 +61,32 @@
           <h1 class="page__index__title">Index</h1>
 
           <ol class="index__items">
+            <h3><i class="page__index__emoji__left em em-100"></i> How It Works <i class="page__index__emoji__right em em-100"></i></h3>
             <a href="#90_day_rule"><li class="index__item">NeverFap Deluxe 90 Day Rule</li></a>
-            <a href="#ucm_crumble"><li class="index__item">Why Unhealthy Coping Mechanisms Crumble</li></a>
-            <a href="#devloping_control"><li class="index__item">Developing Control Over Your Mind With Healthy Coping Mechanisms</li></a>
-            <a href="#list_ucm"><li class="index__item">List Of Unhealthy Coping Mechanisms</li></a>
-            <a href="#list_hcm"><li class="index__item">List Of Healthy Coping Mechanisms</li></a>
+            <a href="#unhealthy_coping_mechanisms_crumble"><li class="index__item">Why Unhealthy Coping Mechanisms Crumble</li></a>
+            <a href="#devloping_control_over_your_mind"><li class="index__item">Developing Control Over Your Mind With Healthy Coping Mechanisms</li></a>
+            <a href="#list_unhealthy_coping_mechanisms"><li class="index__item">List Of Unhealthy Coping Mechanisms</li></a>
+            <a href="#list_healthy_coping_mechanisms"><li class="index__item">List Of Healthy Coping Mechanisms</li></a>
             <a href="#practice_and_consistency"><li class="index__item">The Value Of Practice And Consistency</li></a>
-            <a href="#meditation_routine"><li class="index__item">Developing A 10 Minute Meditation Routine</li></a>
+            <a href="#ten_minute_meditation_routine"><li class="index__item">Developing A 10 Minute Meditation Routine</li></a>
             <a href="#newneverfapper"><li class="index__item">#NewNeverFapper Reddit Submission</li></a>
-            <a href="#aca"><li class="index__item">Three Areas: Awareness/Calmness/Ambition</li></a>
+            <a href="#awareness_calmness_amdition"><li class="index__item">Three Areas: Awareness/Calmness/Ambition</li></a>
+            <h3><i class="page__index__emoji__left em em-books"></i> NeverFap Deluxe Resources <i class="page__index__emoji__right em em-books"></i></h3>
             <a href="#nfd_guide"><li class="index__item">The NeverFap Deluxe Guide</li></a>
             <a href="#five_fundamentals"><li class="index__item">The Five Fundmental Principles of NeverFap Deluxe</li></a>
-            <a href="#poddiscord"><li class="index__item">NeverFap Deluxe Podcast And Discord</li></a>
+            <a href="#nfd_podcast_discord"><li class="index__item">NeverFap Deluxe Podcast And Discord</li></a>
             <a href="#nfd_articles"><li class="index__item">NeverFap Deluxe Articles</li></a>
           </ol>
         </div>
       </div>
+
+    <%= partial "links/paypal.html", assigns %>
     <%# INDEX END %>
 
 
     <div class="homepage__section">
 
-      <%# 90 DAY RULE %>
+      <%# HOW IT WORKS %>
         <h1 id="90_day_rule">How it works</h1>
           <%# <div class="homepage__feature__box"> %>
             <h2>It takes approximately 90 days to overcome porn addiction.</h2> <%# <i class="em em-tent"></i> %>
@@ -91,11 +105,11 @@
         </div>
 
         <%= partial "home/a_lot_of_bad_over_90_days.html", assigns %>
-      <%# 90 DAY RULE END %>
+      <%# HOW IT WORKS END %>
 
 
       <%# UCM CRUMBLE %>
-        <div id="ucm_crumble" class="homepage__section">
+        <div id="unhealthy_coping_mechanisms_crumble" class="homepage__section">
           <h1>...and it's these situations where <span style="color: rgba(255,46,182,1);">unhealthy coping mechanisms</span> crumble.</h1>
           <h2>This is where 90% of relapse happens.</h2>
           <h3>Because unhealthy coping mechanisms don't help you deal with your emotions. They only help you successfully ignore them until they become unmanagable.</h3>
@@ -111,7 +125,7 @@
 
 
       <%# DEVELOPING CONTROL %>
-        <div id="devloping_control">
+        <div id="devloping_control_over_your_mind">
           <%= partial "home/is_not_really_about_porn.html", assigns %>
         </div>
 
@@ -149,7 +163,7 @@
 
 
       <%# UCM LIST %>
-        <div id="list_ucm" class="unhealthy__banner">
+        <div id="list_unhealthy_coping_mechanisms" class="unhealthy__banner">
           <h2 class="margin__top__mobile">So you may be wondering.</h2>
           <h1 class="unhealthy__banner__title">What are some of these <span style="color: white;">unhealthy coping mechanisms</span>?</h1>
 
@@ -178,7 +192,7 @@
 
 
       <%# HCM LIST %>
-        <div id="list_hcm" class="homepage__section">
+        <div id="list_healthy_coping_mechanisms" class="homepage__section">
           <h2 class="margin__top__mobile">Which is why.</h2>
           <h1>We want to be adopting some <span style="color: #00ffee;">healthy coping mechanisms</span> instead.</h1>
             <p>Skills and abilities which have been designed to help us deal with our feelings and emotions, in a concise and effective manner. Like smashing ice with a sledgehammer.</p>
@@ -229,7 +243,7 @@
 
 
       <%# MEDITATION ROUTINE %>
-        <div id="meditation_routine" class="homepage__hero homepage__hero--secondary">
+        <div id="ten_minute_meditation_routine" class="homepage__hero homepage__hero--secondary">
           <h1 class="homepage__hero__title">Yeeaaaah, but what do I practice?</h1>
           <h2 class="homepage__hero__title__secondary"><i class="em em-laughing"></i> Daddy Reade!?!? <i class="em em-gift_heart"></i></h2>
         </div>
@@ -292,7 +306,7 @@
 
 
       <%# AWARENESS CALMNESS AMBITION %>
-        <div id="aca">
+        <div id="awareness_calmness_amdition">
           <%= partial "home/healthy_coping_mechanisms_guidelines.html", assigns %>
         </div>
 
@@ -363,7 +377,7 @@
 
 
     <%# PODCAST AND DISCORD %>
-      <div id="poddiscord">
+      <div id="nfd_podcast_discord">
         <%= partial "home/podcast_discord_promotion.html", %{ conn: @conn, items: @page_collections.articles } %>
       </div>
     <%# PODCAST AND DISCORD END %>

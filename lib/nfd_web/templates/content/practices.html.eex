@@ -7,32 +7,36 @@
       <h1 class="page__index__title">Index</h1>
 
       <ol class="index__items">
+        <h3><i class="page__index__emoji__left em em-martial_arts_uniform"></i> Practices <i class="page__index__emoji__right em em-martial_arts_uniform"></i></h3>
         <a href="#introduction"><li class="index__item">Introduction</li></a>
-        <a href="#motivation"><li class="index__item">NeverFap Deluxe Practice Overview</li></a>
-        <a href="#philosophy"><li class="index__item">Seven Week Awareness Challenges</li></a>
-        <a href="#next_steps"><li class="index__item">NeverFap Deluxe Practices List</li></a>
+        <a href="#practice_overview"><li class="index__item">Practices Overview</li></a>
+        <a href="#practices_list"><li class="index__item">NeverFap Deluxe Practices List</li></a>
+        <a href="#seven_week_awareness_challenges"><li class="index__item">Seven Week Awareness Challenges</li></a>
         <a href="#next_steps"><li class="index__item">Next Steps</li></a>
       </ol>
     </div>
   </div>
+
+  <%= partial "links/paypal.html", assigns %>
 <%# INDEX END %>
 
 
 <%# PRACTICES INTRODUCTION %>
-  <div class="single__wrapper">
+  <div id="introduction" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <h1>Introduction</h1>
       <p>It costs $89 to access all of the practices on NeverFap Deluxe.</p>
       <p>This investment provides you with <b>lifetime access</b> to all future and existing mental health and awareness practices, and is a great way to ensure you're fully committed to your mental health.</p>
       <p>There are currently <%= practice_length %> detailed mental health and awareness practices on NeverFap Deluxe, with 3+ new practices released each month.</p>
       <p>Furthermore, these practices have been organised into a series of <b>7 Week Awareness Challenges</b> that are delivered straight to your email on a weekly basis, so you can get the most out of these practices.</p>
+      <p>Most people who commit to a daily routine of mental health practices will notice changes within days.</p>
     </div>
   </div>
 
   <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
   <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
 
-  <div class="single__wrapper">
+  <div id="motivation" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <%= partial "pricing/pricing_practices.html", %{ conn: @conn } %>
     </div>
@@ -44,9 +48,9 @@
 
 
 <%# PRACTICE OVERVIEW %>
-  <div class="single__wrapper">
+  <div id="practice_overview" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <h1>NeverFap Deluxe Practice Overview</h1>
+      <h1>Practices Overview</h1>
       <%# TODO: Maybe mention if any of the exercises are free for the user? %>
       <p></p>
 
@@ -60,11 +64,25 @@
       </ul>
     </div>
   </div>
+
+  <%= partial "links/twitter.html", assigns %>
 <%# PRACTICE OVERVIEW END %>
 
 
+<%# PRACTICES LIST %>
+  <div id="practices_list" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <h1>Practices List</h1>
+      <%= partial "list/practices_by_volume_v2.html", %{ conn: @conn, items: @page_collections.practices } %>
+    </div>
+  </div>
+
+  <%= partial "links/patreon.html", assigns %>
+<%# PRACTICES LIST END %>
+
+
 <%# SEVEN WEEK AWARENESS CHALLENGES %>
-  <div class="single__wrapper">
+  <div id="seven_week_awareness_challenges" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <h1>Seven Week Awareness Challenges</h1>
 
@@ -76,25 +94,15 @@
     </div>
   </div>
 
-  <%= partial "links/paypal.html", assigns %>
+  <%= partial "links/facebook.html", assigns %>
 <%# SEVEN WEEK AWARENESS CHALLENGES END %>
 
 
-<%# PRACTICES LIST %>
-  <div class="single__wrapper">
-    <div class="single__content" style="margin-bottom: 0;">
-      <h1>Practices List</h1>
-      <%= partial "list/practices_by_volume_v2.html", %{ conn: @conn, items: @page_collections.practices } %>
-    </div>
-  </div>
-<%# PRACTICES LIST END %>
-
-
 <%# NEXT STEPS %>
-  <div class="single__wrapper">
+  <div id="next_steps" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <h1>Next Steps</h1>
-
+      <!-- TODO -->
     </div>
   </div>
 <%# NEXT STEPS END %>

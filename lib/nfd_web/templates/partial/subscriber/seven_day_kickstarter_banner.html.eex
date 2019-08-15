@@ -5,8 +5,9 @@
 
   <div class="seven__day__kickstarter__banner__inner">
     <h1 class="seven__day__kickstarter__banner__title">7 Day NeverFap Deluxe Kickstarter</h1>
-    <h2 class="seven__day__kickstarter__banner__sub__title">Boost your knowledge of NeverFap Deluxe with our FREE 7 day email series.</h2>
-    
+    <!-- <h3 class="seven__day__kickstarter__banner__sub__title-top">Curious to learn more about NeverFap Deluxe?</h3> -->
+    <h2 class="seven__day__kickstarter__banner__sub__title">Boost your knowledge of meditation and awareness best practices with our FREE NeverFap Deluxe 7 day email series.</h2>
+
     <div class="seven__day__kickstarter__banner__box">
       <div class="seven__day__kickstarter__banner__list">
         <%= Enum.map(@item["days"], fn(item) -> %>
@@ -14,17 +15,20 @@
         <% end) %>
       </div>
 
-      <div class="seven__day__kickstarter__banner__form">
-        <p>Receive an email each day covering the basics of the NeverFap Deluxe Method!</p>
-        <%= form_for @seven_day_kickstarter_changeset, Routes.subscription_path(@conn, :add_subscription_validate_matrix), [target: "_blank"], fn f -> %>
-          <%= text_input f, :subscriber_email, [placeholder: "email", class: "banner__input"] %>
-          <%= submit "Submit", [class: "banner__submit"]  %>
-          <!-- First matrix is general, second matrix is seven day. -->
-          <%= hidden_input f, :multiple_matrix, [value: "0h1-1h1"] %>
-          <%= hidden_input f, :main_matrix, [value: "1h1"] %>
-        <% end %>
-        <a class="seven__day__kickstarter__learn__more" href="<%= Routes.content_email_path(@conn, :seven_day_kickstarter) %>">Click here to learn more.</a>
+      <div>
+        <p class="seven__day__kickstarter__banner__form--text">Receive an email each day covering the basics of the <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">NeverFap Deluxe Method</u>!</p>
+        <div class="seven__day__kickstarter__banner__form">
+          <%= form_for @seven_day_kickstarter_changeset, Routes.subscription_path(@conn, :add_subscription_validate_matrix), [target: "_blank"], fn f -> %>
+            <%= text_input f, :subscriber_email, [placeholder: "email", class: "banner__input"] %>
+            <%= submit "Submit", [class: "banner__submit"]  %>
+            <!-- First matrix is general, second matrix is seven day. -->
+            <%= hidden_input f, :multiple_matrix, [value: "0h1-1h1"] %>
+            <%= hidden_input f, :main_matrix, [value: "1h1"] %>
+          <% end %>
+          <a class="seven__day__kickstarter__learn__more" href="<%= Routes.content_email_path(@conn, :seven_day_kickstarter) %>">Click here to learn more.</a>
+        </div>
       </div>
+
     </div>
   </div>
 

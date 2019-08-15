@@ -1,6 +1,6 @@
 .main__dark {
   background: $black-darkmode-background;
-  transition: .2s;
+  transition: 1s background, 1s color;
 
   .page__index__title {
     color: $black-darkmode-background!important;
@@ -12,7 +12,7 @@
 
   // main
   .link {
-    color: $white-darkmode-text;
+    color: $cyan;
     text-decoration-line: underline;
     text-decoration-color: $magenta;
     cursor: pointer;
@@ -159,11 +159,11 @@
     .single__title {
       color: $white-text;
     }
-    
+
     h1, h2 {
       color: $white-text;
     }
-    
+
     p {
       color: $white-darkmode-text;
     }
@@ -247,10 +247,10 @@
   // .bottom__bar__container {
   //   background: $black-darkmode-background;
   //   .header__module {
-  //     background: $black-darkmode-background;    
+  //     background: $black-darkmode-background;
 
   //     .header__discord__button {
-  //       border: 4px solid $black-darkmode-background;    
+  //       border: 4px solid $black-darkmode-background;
   //     }
   //   }
 
@@ -258,4 +258,32 @@
   // .bottom__bar__meditation__top {
   //   color: $white-darkmode-text;
   // }
+
+  .banner__title,
+  .banner__sub__title,
+  .banner__item
+  // .pricing__banner__title,
+  // .pricing__guarantee__item,
+  // .pricing__banner__description,
+  // .pricing__banner__point,
+  // .pricing__sign__in__title,
+  // .nfd__payment p
+  {
+    color: $white-darkmode-text!important;
+  }
+
+  // .mobile__banner {
+  //   .mobile__banner__image__container {
+  //     img {
+  //       box-shadow: 0 27px 55px 0 rgba(255, 255, 255, 0.22), 0 17px 17px 0 rgba(255, 255, 255, 0.22);
+  //     }
+  //     img:hover {
+  //       box-shadow: 0 47px 85px 0 rgba(255, 255, 255, 0.26), 0 37px 37px 0 rgba(255, 255, 255, 0.22);
+  //     }
+  //   }
+  // }
+
+  .account__learn__more--title {
+    color: $white-darkmode-text;
+  }
 }

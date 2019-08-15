@@ -2,11 +2,11 @@
   <div class="banner__split__container">
     <div class="banner__split">
       <h3 class="banner__title hovering__banner__title">Struggle to Meditate?</h3>
-      <h4 class="hovering__banner__sub__title">Thankfully there's a whole new way to meditate which anyone can understand!</h4>
+      <h4 class="banner__sub__title hovering__banner__sub__title">Thankfully there's a whole new way to meditate which anyone can understand!</h4>
 
-      <h4 class="hovering__banner__sub__title"><b>Try Hovering</b>! It has been designed to be easy to understand, simple to practice, as well as remain acessible to people of all ages.</h4>
-      <h4 class="hovering__banner__sub__title">Hovering can be practiced with a single piece of paper, however it's recommend that you make use of the official Hovering Web App or Hovering Android App.</h4>
-      <h4 class="hovering__banner__sub__title"><a class="link" href="https://tryhovering.com/">tryhovering.com/</a></h4>
+      <h4 class="banner__sub__title hovering__banner__sub__title"><b>Try Hovering</b>! It has been designed to be easy to understand, simple to practice, as well as remain acessible to people of all ages.</h4>
+      <h4 class="banner__sub__title hovering__banner__sub__title">Hovering can be practiced with a single piece of paper, however it's recommend that you make use of the official Hovering Web App or Hovering Android App.</h4>
+      <h4 class="banner__sub__title hovering__banner__sub__title"><a class="link" href="https://tryhovering.com/">tryhovering.com/</a></h4>
 
       <%# <img src="/images/screenshots/hovering_mobile.png" /> %>
 
@@ -18,11 +18,15 @@
       </div>
     </div>
 
+    <div class="banner__split__divider"></div>
+
     <!-- HOVER CIRCLE -->
     <div class="banner__split banner__split--right">
-      <div id="hoverCircleExampleYo" class="circle__container cr">
-        <div id="hoverCircleTextYo" class="circle cri">
-          Hover
+      <div class="circle__container cr">
+        <div class="circle cri" id="hoverCircleExampleYo">
+          <div class="circle__text" id="hoverCircleTextYo">
+            Hover
+          </div>
         </div>
       </div>
     </div>
@@ -33,9 +37,11 @@
 
       hoverCircleExampleYo.onmouseenter = function() {
         hoverCircleTextYo.classList.add("hover__text__fade");
+        document.body.classList.add("main__dark");
       }
       hoverCircleExampleYo.onmouseleave = function() {
         hoverCircleTextYo.classList.remove("hover__text__fade");
+        document.body.classList.remove("main__dark");
       }
     </script>
     <!-- HOVER CIRCLE END -->

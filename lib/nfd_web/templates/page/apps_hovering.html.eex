@@ -1,4 +1,51 @@
-<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 
-<%= partial "links/paypal.html", assigns %>
+<%# INDEX %>
+  <div class="single__wrapper">
+    <div class="page__index">
+      <h1 class="page__index__title">Index</h1>
+
+      <ol class="index__items">
+        <h3><i class="page__index__emoji__left em em-dart"></i> Hovering <i class="page__index__emoji__right em em-dart"></i></h3>
+        <a href="#introduction"><li class="index__item">Introduction</li></a>
+        <a href="#hovering_website"><li class="index__item">Hovering Website</li></a>
+        <a href="#hovering_web_application"><li class="index__item">Hovering Web Application</li></a>
+        <a href="#hovering_android_application"><li class="index__item">Hovering Android Application</li></a>
+        <a href="#next_steps"><li class="index__item">Next Steps</li></a>
+      </ol>
+    </div>
+  </div>
+
+  <%= partial "links/paypal.html", assigns %>
+<%# INDEX END %>
+
+
+<%# HOVERING CONTENT %>
+  <div class="single__wrapper">
+    <div class="single__content">
+      <%= raw @item["content"] %>
+    </div>
+  </div>
+
+  <%= partial "links/twitter.html", assigns %>
+<%# HOVERING CONTENT END %>
+
+
+<div id="next_steps" class="single__wrapper">
+  <div class="single__content">
+    <!-- TODO -->
+    <h1>Next Steps</h1>
+    <p>What's important with these things is to be consistent with your practice. It doesn't matter if you're hovering or practicing traditional meditation, the basic fundamentals of practice and consistency maintain.</p>
+    <p>I've put a lot of effort into creating these resources and I genuinely hope they serve you well.</p>
+
+    <p>Sincerely,</p>
+    <p>The Reade</p>
+  </div>
+</div>
+
+
+
+
+
+<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
 <%= partial "promotion_footer.html", assigns %>

@@ -1,8 +1,17 @@
-<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 
-<!-- NFD Mobile App -->
-<img src="/images/screenshots/nfd_mobile_home.png" />
-<a class="mobile__android__link" href='https://play.google.com/store/apps/details?id=com.ueno.nfdmobilev2&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img class="mobile__android__link__image" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
+<div class="single__wrapper">
+  <div class="single__content">
+    <%= raw @item["content"] %>
+
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <h1>App Screenshots</h1>
+      <img style="border: 4px solid black; width: 300px; margin-bottom: 2rem;" src="/images/screenshots/nfd_mobile_home.png" />
+      <img style="border: 4px solid black; width: 300px; margin-bottom: 2rem;" src="/images/screenshots/nfd_mobile_article.png" />
+      <a class="mobile__android__link" href='https://play.google.com/store/apps/details?id=com.ueno.nfdmobilev2&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img class="mobile__android__link__image" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
+    </div>
+  </div>
+</div>
 
 <%= partial "links/paypal.html", assigns %>
 <%= partial "promotion_footer.html", assigns %>

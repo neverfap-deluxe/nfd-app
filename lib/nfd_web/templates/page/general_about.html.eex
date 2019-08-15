@@ -6,6 +6,7 @@
       <h1 class="page__index__title">Index</h1>
 
       <ol class="index__items">
+        <h3><i class="page__index__emoji__left em em-clap"></i> About <i class="page__index__emoji__right em em-clap"></i></h3>
         <a href="#introduction"><li class="index__item">Introduction</li></a>
         <a href="#motivation"><li class="index__item">Motivation</li></a>
         <a href="#philosophy"><li class="index__item">Philosophy</li></a>

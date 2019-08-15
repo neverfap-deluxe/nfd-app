@@ -17,6 +17,16 @@
     margin: 0!important;
   }
 
+  .page__index__emoji__left {
+    position: relative;
+    left: -0.3rem;
+  }
+
+  .page__index__emoji__right {
+    position: relative;
+    right: -0.3rem;
+  }
+
   .index__items {
     .index__item--nfd {
       // margin-bottom: -0.4rem!important;
@@ -37,6 +47,7 @@
       border-top: 5px solid $white-text;
       border-bottom: 5px solid $white-text;
 
+      line-height: 1.6rem;
       // transition: 0.4s border-bottom, 0.4s box-shadow;
 
       .discord__text {

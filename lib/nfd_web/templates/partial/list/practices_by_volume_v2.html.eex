@@ -4,13 +4,14 @@ list_of_sections =
     @items,
     [],
     fn practice, acc ->
-      IO.inspect length(acc)
       does_volume_exist = Enum.find(acc, fn item -> item.vol == practice["vol"] end)
-      IO.inspect does_volume_exist["vol"]
 
       if !!does_volume_exist do
+
         new_volume =
-          does_volume_exist |> Map.put(:practices, does_volume_exist.practices ++ practice)
+          does_volume_exist |> Map.put(:practices, does_volume_exist.practices ++ [practice])
+
+          IO.inspect new_volume
 
         Enum.map(acc, fn volume ->
           if volume["vol"] == practice["vol"] do
@@ -20,31 +21,33 @@ list_of_sections =
           end
         end)
       else
-      [%{
-        vol: practice["vol"],
-        practices: [practice]
-      } | acc]
+        [%{
+          vol: practice["vol"],
+          practices: [practice]
+        } | acc]
       end
-    end) |> Enum.sort(fn(a, b) -> a.vol > b.vol end)
+    end) |> Enum.sort(fn(a, b) -> a.vol < b.vol end)
 %>
 
 <div class="posts">
   <div class="articles__list__v2">
     <%= Enum.map(list_of_sections, fn(section) -> %>
+
       <div class="practices__section">
-        <div class="practices__section__title"></div>
+        <div class="practices__section__title"><%= section.vol %></div>
 
         <div class="practices__section__collection">
           <%= Enum.map(section.practices, fn(practice) -> %>
             <div class="practices__section__collection__item dashboard__collection__file">
-            <%# TODO: This really should be a  %>
+
               <span class="dashboard__collection__file__info" style="cursor: pointer;">
                 <p class="dashboard__collection__file__title"><%= practice["title"] %></p>
               </span>
-              <a class="dashboard__collection__file__download" href="<%= @file.b2_file_url %>">
+              <span class="dashboard__collection__file__download">
                 <span class='new__collection__item new__collection__item--alter' style="cursor: pointer;">MP3</span>
                 <i class="fa fa-file-audio" aria-hidden="true"></i>
-              </a>
+              </span>
+
             </div>
           <% end ) %>
         </div>
