@@ -10,8 +10,8 @@
         <a href="#introduction"><li class="index__item">Introduction</li></a>
         <a href="#motivation"><li class="index__item">Motivation</li></a>
         <a href="#philosophy"><li class="index__item">Philosophy</li></a>
-        <a href="#next_steps"><li class="index__item">Next Steps</li></a>
         <a href="#contact"><li class="index__item">Contact</li></a>
+        <a href="#next_steps"><li class="index__item">Next Steps</li></a>
       </ol>
     </div>
   </div>
@@ -31,7 +31,7 @@
     </div>
   </div>
 
-  <%= partial "links/paypal.html", assigns %>
+  <%= partial "links/twitter.html", assigns %>
 <%# INTRODUCTION END %>
 
 
@@ -65,28 +65,13 @@
 <%# PHILOSOPHY END %>
 
 
-<%# NEXT STEPS %>
-  <div id="next_steps" class="single__wrapper">
-    <div class="single__content">
-      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
-        <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
-      </a>
-      <h1 class="single__sub__header">Next Steps</h1>
-      <%= raw child_content(@item["children"], "about-next-steps") %>
-    </div>
-  </div>
-
-  <%= partial "links/reddit.html", assigns %>
-<%# NEXT STEPS END %>
-
-
 <%# CONTACT %>
   <div id="contact" class="single__wrapper" id="contact__form">
     <a href="#contact" class="guide__suggestion guide__suggestion__padding">
-      <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
+      <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
     </a>
+    <h1>Contact</h1>
 
-    <h1 class="single__title">Contact <img src="/images/logo.png" class="logo__square" alt=""/></h1>
     <div class="single__content">
       <p>If you would like to get in touch, please provide your name, email and message, and I will get back to you as soon as possible!</p>
       <p>I also offer <a class="link" href="<%= Routes.page_path(@conn, :programs_coaching) %>">Personal Coaching</a> for those interested in receiving additional help from someone who's been there before.</p>
@@ -108,11 +93,25 @@
       </form>
     </div>
   </div>
+
+  <%= partial "links/reddit.html", assigns %>
 <%# CONTACT END %>
 
 
+<%# NEXT STEPS %>
+  <div id="next_steps" class="single__wrapper">
+    <div class="single__content">
+      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
+      </a>
+      <h1 class="single__sub__header">Next Steps</h1>
+      <%= raw child_content(@item["children"], "about-next-steps") %>
+    </div>
+  </div>
+<%# NEXT STEPS END %>
+
+
 <%# FOOTER %>
-  <div style="margin-top: 5rem;"></div>
   <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
   <%= partial "promotion_footer.html", assigns %>
 <%# FOOTER END %>

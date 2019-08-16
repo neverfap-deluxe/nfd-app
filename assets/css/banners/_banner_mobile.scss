@@ -1,6 +1,13 @@
+.banner {
+  padding: 1rem;
+}
+
 .mobile__banner {
-  padding: 4rem;
   .mobile__banner__title {
+    font-size: 6rem;
+    line-height: 8rem;
+    text-shadow: 0px 1px black;
+    margin-bottom: 0rem;
   }
 
   .mobile__banner__sub__title {
@@ -36,7 +43,9 @@
 }
 
 @media screen and (min-width: 768px) {
-
+  .banner {
+    padding: 4rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {

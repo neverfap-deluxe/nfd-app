@@ -1,18 +1,19 @@
-<div class="bible__banner">
+<div class="banner bible__banner">
   <div class="banner__split__container">
     <div class="banner__split">
       <h3 class="banner__title bible__banner__title">NeverFap Deluxe Bible</h3>
 
       <h4 class="banner__sub__title bible__banner__sub__title">A complete collection of all the website's content in convenient ebook format!</h4>
       <h4 class="banner__sub__title bible__banner__sub__title">You know, because reading is cool!</h4>
-      
+      <h4 class="banner__sub__title bible__banner__sub__title">!</h4>
+
     </div>
 
     <div class="banner__split__divider"></div>
 
     <div class="banner__split banner__split--right">
-      <div class="mobile__banner__image__container">
-        <img src="/images/screenshots/bible-ebook-cover-600-900.png" alt="">
+      <div class="bible__banner__image__container">
+        <img src="/images/ebook_covers/bible-ebook-cover-600-900.png" alt="">
       </div>
     </div>
   </div>

@@ -23,9 +23,9 @@
 <%# INTRODUCTION %>
   <div id="introduction" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
+      <a href="introduction" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
-      </div>
+      </a>
       <h1 class="single__sub__header">Introduction</h1>
       <p>NeverFap Deluxe offers a wide range of effective Meditation solutions and options for those seeking additional help.</p>
       <p>The aim of our meditations is to teach you the fundamental basics of meditation, so you can have the ability to comfortably practice meditation on your own.</p>
@@ -45,9 +45,9 @@
 <%# FUNDAMENTAL SERIES %>
   <div id="neverfap_deluxe_fundamental_meditation_series" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
+      <a href="neverfap_deluxe_fundamental_meditation_series" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
-      </div>
+      </a>
       <h1 class="single__sub__header">NeverFap Deluxe Fundamental Meditation Series</h1>
       <p>As a primary option we offer the <b>NeverFap Deluxe Fundamental Meditation Series</b> which is a series of 4 meditations which is designed to teach you the absolute core fundamental basics of meditation.</p>
       <p>It is a perfect starting point for those new to meditation, and with this core knowledge you should have the skills in order to meditate on your own.</p>
@@ -75,9 +75,9 @@
 <%# HOVERING MEDITATION %>
   <div id="hovering_meditation" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
+      <a href="hovering_meditation" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
-      </div>
+      </a>
       <h1 class="single__sub__header">Hovering Meditation</h1>
       <p>One thing I've noticed is that a lot of people struggle to meditate via traditional means.</p>
       <p>In part due to poor mental health or "brain fog" which makes it incredibly difficult to engage with our minds in a meaningful way.</p>
@@ -104,9 +104,9 @@
 <%# MEDITATION ESSENTIAL READING %>
   <div id="meditation_essential_reading" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
+      <a href="meditation_essential_reading" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
-      </div>
+      </a>
       <h1 class="single__sub__header">Meditation Essential Reading</h1>
       <p></p>
       <p>NeverFap Deluxe offers a wide range of articles which explain how best to practice effective Meditation.</p>
@@ -126,9 +126,9 @@
 <%# NEXT STEPS ARTICLES %>
   <div id="next_steps" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
+      <a href="next_steps" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
-      </div>
+      </a>
       <h1 class="single__sub__header">Next Steps</h1>
       <!-- TODO -->
       <p>Those resources should be more-than-enough for you to .</p>

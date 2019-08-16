@@ -70,7 +70,7 @@
             <a href="#practice_and_consistency"><li class="index__item">The Value Of Practice And Consistency</li></a>
             <a href="#ten_minute_meditation_routine"><li class="index__item">Developing A 10 Minute Meditation Routine</li></a>
             <a href="#newneverfapper"><li class="index__item">#NewNeverFapper Reddit Submission</li></a>
-            <a href="#awareness_calmness_amdition"><li class="index__item">Three Areas: Awareness/Calmness/Ambition</li></a>
+            <a href="#awareness_calmness_ambition"><li class="index__item">Three Areas: Awareness/Calmness/Ambition</li></a>
             <h3><i class="page__index__emoji__left em em-books"></i> NeverFap Deluxe Resources <i class="page__index__emoji__right em em-books"></i></h3>
             <a href="#nfd_guide"><li class="index__item">The NeverFap Deluxe Guide</li></a>
             <a href="#five_fundamentals"><li class="index__item">The Five Fundmental Principles of NeverFap Deluxe</li></a>
@@ -263,13 +263,13 @@
 
 
     <%# MEDITATION ROUTINE %>
-      <div id="practice_and_consistency" class="homepage__hero homepage__hero--secondary">
+      <div id="ten_minute_meditation_routine" class="homepage__hero homepage__hero--secondary">
         <h1 class="homepage__hero__title">Yeeaaaah, but what do I practice?</h1>
         <h2 class="homepage__hero__title__secondary"><i class="em em-laughing"></i> Daddy Reade!?!? <i class="em em-gift_heart"></i></h2>
       </div>
 
       <div class="homepage__section">
-        <a href="#practice_and_consistency" class="guide__suggestion guide__suggestion__padding">
+        <a href="#ten_minute_meditation_routine" class="guide__suggestion guide__suggestion__padding">
           <h1 class="guide__suggestion__number guide__suggestion__number--bottom">7.</h1>
         </a>
 
@@ -296,11 +296,11 @@
 
 
     <%# NEW NEVERFAPPERS %>
-      <div id="newneverfapper">
+      <div>
         <%= partial "home/three_healthy_coping_mechanisms.html", assigns %>
       </div>
 
-      <div class="homepage__section">
+      <div id="newneverfapper" class="homepage__section">
         <a href="#newneverfapper" class="guide__suggestion guide__suggestion__padding">
           <h1 class="guide__suggestion__number guide__suggestion__number--bottom">8.</h1>
         </a>
@@ -310,9 +310,9 @@
         <h3>Since I don't know you (although I'm sure you're lovely), it's difficult for me to take you down a particular path to help you develop control over your mind.</h3>
         <h3>However, I am willing to offer personalised advice if you post in our subreddit with the tag <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewNeverFapper</a> in your title.</h3>
       </div>
-        <!-- <div style="margin-top: 2rem; margin-bottom: 2rem;"> -->
-          <%= partial "links/reddit--homepage.html", assigns %>
-        <!-- </div> -->
+
+      <%= partial "links/reddit--homepage.html", assigns %>
+
       <div class="homepage__section">
 
         <p>Not only does it help us build the NeverFap Deluxe Community, however it's a great opportunity for you to receive help and ask questions from someone who's been there before.</p>
@@ -328,19 +328,19 @@
 
         <p>There's simply too much useful content on this website that it's hard to know where you should focus.</p>
         <p>Not to mention, everyone is truly different in terms of their life circumstances and a strong focus of NeverFap Deluxe is helping you get it right the first time.</p>
-        <h2>Regardless, here are some basic guidelines. <i class="em em-golfer"></i></h2>
+
+
+        <a id="awareness_calmness_ambition" href="#awareness_calmness_ambition" class="guide__suggestion guide__suggestion__padding">
+          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">9.</h1>
+        </a>
+
+        <h2 style="margin-top: 2rem;">Regardless, here are some basic guidelines. <i class="em em-golfer"></i></h2>
       </div>
     <%# NEW NEVERFAPPERS %>
 
 
     <%# AWARENESS CALMNESS AMBITION %>
-      <div id="awareness_calmness_amdition">
-        <a href="#awareness_calmness_amdition" class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">9.</h1>
-        </a>
-
-        <%= partial "home/healthy_coping_mechanisms_guidelines.html", assigns %>
-      </div>
+      <%= partial "home/healthy_coping_mechanisms_guidelines.html", assigns %>
 
       <div class="homepage__section">
         <p>On the other hand, if you haven't seen a pair of pants in weeks because you've been glued to your computer screen in a haze of dysphoria and pre-cum. <i class="em em-wilted_flower"></i></p>
@@ -355,12 +355,12 @@
 
 
     <%# NFD GUIDE %>
-      <a href="#nfd_guide" id="nfd_guide" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">10.</h1>
-      </a>
-
       <div class="homepage__section">
-        <h2>So without further ado...</h2>
+        <a href="#nfd_guide" id="nfd_guide" class="guide__suggestion guide__suggestion__padding">
+          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">10.</h1>
+        </a>
+
+        <h2 style="margin-top: 2rem;">So without further ado...</h2>
       </div>
 
       <%= partial "home/the_neverfap_deluxe_guide_special.html", assigns %>
@@ -412,16 +412,17 @@
             >Learn More About The Five Principles.</a
           >
         </div>
+
+        <a href="#nfd_podcast_discord"  class="guide__suggestion guide__suggestion__padding">
+          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">12.</h1>
+        </a>
+
       </div>
     <%# FIVE FUNDAMENTALS END %>
 
 
     <%# PODCAST AND DISCORD %>
       <div id="nfd_podcast_discord">
-        <a href="#nfd_podcast_discord"  class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">12.</h1>
-        </a>
-
         <%= partial "home/podcast_discord_promotion.html", %{ conn: @conn, items: @page_collections.articles } %>
       </div>
     <%# PODCAST AND DISCORD END %>

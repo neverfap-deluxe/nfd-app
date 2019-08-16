@@ -1,11 +1,11 @@
-<div class="fdm__banner">
+<div class="banner fdm__banner">
   <div class="banner__split__container">
     <div class="banner__split">
       <div style="margin-bottom: 3rem; height: 4px; background: cyan;"></div>
-      <h1 class="banner__title fdm__banner__title">NeverFap Deluxe Fundamental Meditation Series</h1>
-      <div style="margin-top: 3rem; height: 4px; background: rgba(255,46,182,1);"></div>
+      <h1 class="banner__title fdm__banner__title">NeverFap Deluxe Fundamental <span>Meditation</span></br> Series</h1>
+      <div style="margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
       <h4 class="banner__sub__title fdm__banner__sub__title">The only Meditation course you'll ever need. <i class="em em-grinning"></i></h4>
-      <h4 class="banner__sub__title fdm__banner__sub__title">Cover the absolute fundamentals of effective Meditation so you can comfortably practice Meditation on your own.</h4>
+      <h4 class="banner__sub__title fdm__banner__sub__title">Cover the absolute fundamentals of effective Meditation so you can comfortably practice Meditation within the realm of your own mind.</h4>
 
       <ul class="banner__list practices__banner__list">
         <li class="banner__item practices__banner__item">Learn how to observe your senses without expectations.</li>
@@ -15,7 +15,8 @@
 
     </div>
     <div class="banner__split__divider"></div>
-    <div class="banner__split">
+
+    <div class="banner__split" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
       <%= partial "pricing/pricing_fundamental_meditations.html", %{ conn: @conn } %>
     </div>
   </div>

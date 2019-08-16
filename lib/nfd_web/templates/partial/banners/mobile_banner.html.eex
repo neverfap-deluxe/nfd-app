@@ -1,7 +1,7 @@
-<div class="mobile__banner">
+<div class="banner mobile__banner">
   <div class="banner__split__container">
     <div class="banner__split">
-      <h3 class="banner__title mobile__banner__title">NeverFap Deluxe Mobile App</h3>
+      <h3 class="banner__title mobile__banner__title"><span style="text-decoration: underline cyan;">NeverFap Deluxe</span> <span style="text-decoration: underline rgba(255,46,182,1);">Mobile App</span></h3>
       <h4 class="banner__sub__title mobile__banner__sub__title">Read all your favourite NeverFap Deluxe content on your Android mobile device!</h4>
 
       <h4 class="banner__sub__title mobile__banner__sub__title">(Sorry iOS fans, but it's $100 USD per year to host an app on the App Store and <b>The Reade &copy;</b> doesn't have that kind of $$$mula!)</h4>
