@@ -12,7 +12,8 @@
         <a href="#how_i_can_help_you_achieve_your_goals"><li class="index__item">How I Can Help You Achieve Your Goals</li></a>
         <a href="#personal_coaching_pricing"><li class="index__item">Personal Coaching Pricing</li></a>
         <a href="#book_a_meeting"><li class="index__item">Book A Meeting</li></a>
-        <a href="#contact"><li class="index__item">Contact</li></a>
+        <a href="#contact_me"><li class="index__item">Contact Me</li></a>
+        <a href="#next_steps"><li class="index__item">Next Steps</li></a>
       </ol>
     </div>
   </div>
@@ -24,6 +25,10 @@
 <%# INTRODUCTION %>
   <div id="introduction" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+      </a>
+
       <h1>Introduction</h1>
       <%= raw child_content(@item["children"], "coaching-intro") %>
     </div>
@@ -36,6 +41,10 @@
 <%# REASONS TO CONSIDER COACHING %>
   <div id="reasons_to_consider_personal_coaching" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
+      <a href="#reasons_to_consider_personal_coaching" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+      </a>
+
       <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some viable reasons</u> to consider personal coaching.</h1>
 
       <p>There are many reasons why you may want to consider personal coaching.</p>
@@ -66,6 +75,10 @@
 <%# HOW I CAN HELP YOU %>
   <div id="how_i_can_help_you_achieve_your_goals" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
+      <a href="#how_i_can_help_you_achieve_your_goals" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+      </a>
+
       <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some of the services</u> which can help you become your best self.</h1>
 
       <p>There are many different ways I can personally help you achieve your goals.</p>
@@ -88,14 +101,18 @@
 
 
 <%# PRICING %>
-  <div id="personal_coaching_pricing" class="magenta__banner">
+  <div id="personal_coaching_pricing" style="margin-top: 4rem;" class="magenta__banner">
     <div class="magenta__banner__title__container">
-      <h2 class="magenta__banner__title">Pricing.</br>Pricing.</br>Pricing.</br></h2>
+      <h1 class="magenta__banner__title">Pricing.</br>Pricing.</br>Pricing.</br></h1>
     </div>
   </div>
 
   <div class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
+      <a href="#personal_coaching_pricing" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+      </a>
+      <h1>Pricing</h1>
       <%= raw child_content(@item["children"], "coaching-cost") %>
     </div>
   </div>
@@ -107,6 +124,10 @@
 <%# BOOK A MEETING %>
   <div id="book_a_meeting" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
+      <a href="#book_a_meeting" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
+      </a>
+
       <h1>Book A Meeting</h1>
       <p>If you're still interested in having me coach and guide you, then next steps are to organise an initial consultation so we can learn a bit more about each other in fabulous fashion.</p>
       <!-- <p>Firstly, you'll need to create a NeverFap Deluxe Account. There are links in the banner below.</p> -->
@@ -127,9 +148,13 @@
 
 
 <%# CONTACT %>
-  <div id="contact" class="single__wrapper">
+  <div id="contact_me" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <h2>Contact</h2>
+      <a href="#contact_me" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">6.</h1>
+      </a>
+
+      <h1>Contact</h1>
       <p>I hope you now have a proper understanding of how this all works.</p>
       <p>Feel free to contact me if you have any questions, or would simply like to chat about arranging a time to catch up.</p>
     </div>
@@ -149,7 +174,23 @@
       </form>
     </div>
   </div>
+
+  <%= partial "links/discord.html", assigns %>
 <%# CONTACT %>
+
+
+<%# NEXT STEPS %>
+  <div id="next_steps" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">7.</h1>
+      </a>
+      <!-- TODO -->
+      <h1>Next Steps</h1>
+      <p></p>
+    </div>
+  </div>
+<%# NEXT STEPS END %>
 
 
 <%# FOOTER %>

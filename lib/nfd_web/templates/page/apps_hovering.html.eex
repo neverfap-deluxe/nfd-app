@@ -31,20 +31,18 @@
 <%# HOVERING CONTENT END %>
 
 
-<div id="next_steps" class="single__wrapper">
-  <div class="single__content">
-    <!-- TODO -->
-    <h1>Next Steps</h1>
-    <p>What's important with these things is to be consistent with your practice. It doesn't matter if you're hovering or practicing traditional meditation, the basic fundamentals of practice and consistency maintain.</p>
-    <p>I've put a lot of effort into creating these resources and I genuinely hope they serve you well.</p>
+<%# NEXT STEPS %>
+  <div id="next_steps" class="single__wrapper">
+    <div class="single__content">
+      <h1>Next Steps</h1>
+      <p>What's important with these things is to be consistent with your practice. It doesn't matter if you're hovering or practicing traditional meditation, the basic fundamentals of practice and consistency maintain.</p>
+      <p>I've put a lot of effort into creating these resources and I genuinely hope they serve you well.</p>
 
-    <p>Sincerely,</p>
-    <p>The Reade</p>
+      <p>Sincerely,</p>
+      <p>The Reade</p>
+    </div>
   </div>
-</div>
-
-
-
+<%# NEXT STEPS END %>
 
 
 <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>

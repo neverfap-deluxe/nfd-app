@@ -18,16 +18,19 @@
 
 
 <%# INTRODUCTION %>
-  <div class="single__wrapper">
+  <div id="introduction" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+      </a>
+
       <h1>Introduction</h1>
         <p>The NeverFap Deluxe Bible is a complete collection of all the essential articles and guides here on the website in ebook format.</p>
         <p>It's a different way for people to experience NeverFap Deluxe, especially if you prefer using an ebook reader as opposed to a web browser.</p>
         <p>To my surprise the website translates incredible well into ebook format, in large part due to the fabulous Content API I've build which stores everything conveniently in Markdown format.</p>
         <p>Like, crazily well. As in you wouldn't have even known it was a website to begin with.</p>
-        <h3>It is priced at $12 USD.</h3>
         <p>So if you're looking to experience the website as an ebook, this is an excellent option that is also entirely portable.</p>
-        <p>In addition, it also helps support the growth and development of NeverFap Deluxe which is always an excellent thing.</p>
+        <p>Oh, and did I mention that it's completely FREE?</p>
     </div>
   </div>
 
@@ -36,7 +39,7 @@
 
   <div class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <%= partial "pricing/pricing_nfd_bible.html.html", %{ conn: @conn } %>
+      <%= partial "pricing/pricing_nfd_bible.html", %{ conn: @conn } %>
     </div>
   </div>
 
@@ -46,33 +49,40 @@
 
 
 <%# OVERVIEW %>
-  <div class="single__wrapper">
+  <div id="overview" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
+      <a href="#overview" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+      </a>
+
       <h1>Overview</h1>
       <p>The NeverFap Deluxe Bible covers the following sections of the website.</p>
       <h3>NeverFap Deluxe Articles</h3>
       <h3>NeverFap Deluxe Summary</h3>
       <h3>NeverFap Deluxe Guide</h3>
 
-      <p>The ebook is available for purchase in the backend of the website once you sign up for a NeverFap Deluxe account.</p>
-      <p>In addition, the ebook automatically updates whenever the content on the website changes, so all you have to do is download a new copy if you'd like a more up-to-date version of the website.</p>
+      <p>The ebook is available for download from the NeverFap Deluxe website dashboard once you sign up for a FREE NeverFap Deluxe account.</p>
+      <p>In addition, the ebook automatically updates whenever the content on the website changes, so all you have to do is download a new copy if you'd like a more up-to-date version of the website!</p>
     </div>
   </div>
 
-  <%= partial "links/twitter.html", assigns %>
+  <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
 <%# OVERVIEW END %>
 
 
 <%# NEXT STEPS %>
-  <div class="single__wrapper">
+  <div id="next_steps" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
+      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+      </a>
+
+      <!-- TODO -->
       <h1>Next Steps</h1>
       <p>In addition, we also offer a <a class="link" href="<%= Routes.page_path(@conn, :apps_mobile_app) %>">NeverFap Deluxe Mobile Application</a> if you're interested in reading the content on NeverFap Deluxe on your Android device!</p>
       <p>Of course, more important than having a more convenient copy of NeverFap Deluxe is actually commiting to a daily routine of meditation and mental health best practice.</p>
       <p>Without working on your menta health everyday, literally nothing will change.</p>
       <p>To learn more about how you can develop a solid meditation routine, I would recommend visiting the <a href="<%= Routes.page_path(@conn, :meditations) %>">NeverFap Deluxe</a> section of the website.</p>
-
-      <p></p>
     </div>
   </div>
 

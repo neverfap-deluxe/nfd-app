@@ -6,6 +6,7 @@
       <h1 class="page__index__title">Index</h1>
 
       <ol class="index__items">
+        <h3><i class="page__index__emoji__left em em-mortar_board"></i> Accountability Program <i class="page__index__emoji__right em em-mortar_board"></i></h3>
         <a href="#introduction"><li class="index__item">Introduction</li></a>
         <a href="#accountability_process"><li class="index__item">Accountability Process</li></a>
         <a href="#neverfap_deluxe_bot"><li class="index__item">NeverFap Deluxe Bot</li></a>
@@ -22,6 +23,10 @@
 <%# INTRODUCTION %>
   <div id="introduction" class="single__wrapper">
     <div class="single__content">
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+      </a>
+
       <h1>Introduction</h1>
       <%= raw child_content(@item["children"], "accountability-intro") %>
     </div>
@@ -34,6 +39,10 @@
 <%# ACCOUNTABILITY PROCESS %>
   <div id="accountability_process" class="single__wrapper">
     <div class="single__content">
+      <a href="#accountability_process" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+      </a>
+
       <h1>The Accountability Process</h1>
       <p>Here's how the process works.</p>
       <p>Once a day you will post in the <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel of our Discord Server with an update of the healthy coping mechanisms you committed to for that day.</p>
@@ -68,6 +77,10 @@
 <%# NEVERFAP DELUXE BOT %>
   <div id="neverfap_deluxe_bot" class="single__wrapper">
     <div class="single__content">
+      <a href="#neverfap_deluxe_bot" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+      </a>
+
       <h1>The NeverFap Deluxe Discord Bot</h1>
       <p>A large part of what makes the <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel effective is the NeverFap Deluxe Bot which has been designed to help assist you with your porn addiction recovery journey.</p>
       <p>The bot has been designed to do a number of amazing things:</p>
@@ -93,6 +106,10 @@
 <%# ACCOUNTABILITY EXAMPLES %>
   <div id="accountability_examples" class="single__wrapper">
     <div class="single__content">
+      <a href="#accountability_examples" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+      </a>
+
       <h1>Accountability Examples</h1>
 
       <p>Here are some examples of some thoughtful and helpful posts that you could post in the Discord <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel:</p>
@@ -125,8 +142,13 @@
 <%# NEXT STEPS %>
   <div id="next_steps" class="single__wrapper">
     <div class="single__content">
+      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
+      </a>
+      <!-- TODO -->
       <h1>Next Steps</h1>
-      <%# TODO %>
+      <p></p>
+      <p></p>
     </div>
   </div>
 

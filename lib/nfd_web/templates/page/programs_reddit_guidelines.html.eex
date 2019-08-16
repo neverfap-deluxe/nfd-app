@@ -1,76 +1,128 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 <!-- <%= partial "links/reddit.html", assigns %> -->
 
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <p>As part of my initiative to help as many people as possible, I am willing to offer personalised advice if you post in our subreddit with the tag <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewNeverFapper</a> in your title.</p>
-    <p>Obviously there's quite a lot of information here on NeverFap Deluxe and it can be confusing knowing how to start, especially when you're already struggling with existing issues.</p>
-    <p>However, with personalised advice you will be able to better understand exactly what it is you need to do in order to succeed with your recovery.</p>
-    <p>Alternatively, I also offer <a class="link" href="<%= Routes.page_path(@conn, :programs_coaching) %>">Personal Coaching</a> for those interested in receiving additional help from someone who's already been there before.</p>
-    <p>I offer an initial FREE 10 Minute Consultation for those interested in building a relationship and working together in order to help you achieve your goals.</p>
-  </div>
-</div>
+<%# INDEX %>
+  <div class="single__wrapper">
+    <div class="page__index">
+      <h1 class="page__index__title">Index</h1>
 
-<%= partial "links/reddit.html", assigns %>
-
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <h1>Recommendations</h1>
-    <p>What information you choose to post is entirely up to you, and I encourage you to write as little or as much as you want!</p>
-    <p>Obviously the more information you provide, the easier it will be to understand where you're coming from, as well as better understand what you need help with.</p>
-    <p>Here are some helpful suggestions.</p>
-  </div>
-</div>
-
-<div class="guide__banner" style="border-top: 4px solid black; border-bottom: 4px solid black;">
-  <div class="guide__suggestion__container">
-    <div class="black__banner__title__container">
-      <h2 class="black__banner__title black__banner__title--reddit__guidelines">Information:</h2>
-      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">A brief description of who you are.</p>
-      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">Your background and history with porn addiction.</p>
-      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">Your progress with porn addiction recovery so far.</p>
-      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">A list of some of the things you personally struggle with.</p>
-      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">A list of the coping mechanisms you rely on.</p>
-      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">Where you would like to see yourself in the future.</p>
+      <ol class="index__items">
+        <h3><i class="page__index__emoji__left em em-man_in_tuxedo"></i> #NewNeverFapper <i class="page__index__emoji__right em em-man_in_tuxedo"></i></h3>
+        <a href="#introduction"><li class="index__item">Introduction</li></a>
+        <a href="#guidelines"><li class="index__item">Guidelines</li></a>
+        <a href="#community"><li class="index__item">Community</li></a>
+        <a href="#next_steps"><li class="index__item">Next Steps</li></a>
+      </ol>
     </div>
   </div>
-</div>
 
-<!-- <div style="margin-top: 2rem; margin-bottom: 2rem;"> -->
+  <%= partial "links/paypal.html", assigns %>
+<%# INDEX END %>
+
+
+<%# INTRODUCTION %>
+  <div id="introduction" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+      </a>
+
+      <h1>Introduction</h1>
+      <p>As part of my initiative to help as many people as possible, I am willing to offer personalised advice if you post in our subreddit with the tag <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewNeverFapper</a> in your title.</p>
+      <p>Obviously there's quite a lot of information here on NeverFap Deluxe and it can be confusing knowing how to start, especially when you're already struggling with existing issues.</p>
+      <p>However, with personalised advice you will be able to better understand exactly what it is you need to do in order to succeed with your recovery.</p>
+      <p>Alternatively, I also offer <a class="link" href="<%= Routes.page_path(@conn, :programs_coaching) %>">Personal Coaching</a> for those interested in receiving additional help from someone who's already been there before.</p>
+      <p>I offer an initial FREE 10 Minute Consultation for those interested in building a relationship and working together in order to help you achieve your goals.</p>
+    </div>
+  </div>
+
   <%= partial "links/reddit.html", assigns %>
-<!-- </div> -->
+<%# INTRODUCTION END %>
 
-<div class="guide__banner" style="border-top: 4px solid black; border-bottom: 4px solid black;">
-  <div class="guide__suggestion__container">
-    <div class="black__banner__title__container">
-      <h2 class="black__banner__title black__banner__title--reddit__guidelines">Example Titles:</h2>
-      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">3 Days PMO FREE. #NewNeverFapper</p>
-      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">How do I get started with meditation? #NewNeverFapper</p>
-      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">Male 16 new to NeverFap Deluxe! #NewNeverFapper</p>
-      <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">Struggling to get past a two weeks. #NewNeverFapper</p>
+
+<%# GUIDELINES %>
+  <div id="guidelines" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <a href="#guidelines" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+      </a>
+
+      <h1>Guidelines</h1>
+      <p>What information you choose to post is entirely up to you, and I encourage you to write as little or as much as you want!</p>
+      <p>Obviously the more information you provide, the easier it will be to understand where you're coming from, as well as better understand what you need help with.</p>
+      <p>Here are some helpful suggestions.</p>
     </div>
   </div>
-</div>
 
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <h1>Community</h1>
-
-    <p>My intention with the NeverFap Deluxe subreddit is to create a thriving community of informed citizens, who as a collective are approaching their porn addiction recovery in the most efficient way possible.</p>
-    <p>Which is to say that I want people to be approaching their porn addiction recovery the right way from day 1 of their journey.</p>
-    <p>This is what I believe will separate r/NeverFapDeluxe from other communities such as r/NoFap which do not have a firm strategy in place to actually help people overcome their porn addiction.</p>
-    <p>More often than not, I see hopelessness and poor mental health practice become the main narrative that dominates the conversation, with other porn addicts.</p>
-
-    <p>Because we're starting out as a small community of dedicated individuals, we'll be able to combat this helpless with healthy and empowering coping mechanisms, in order to educate others correctly.</p>
-
-<!--
-    #LOLFap
-    #NewNeverFapper
-    #MeditationMotivation
-    #HealthyCopingMechanismCrack -->
-
+  <div class="guide__banner" style="border-top: 4px solid black; border-bottom: 4px solid black;">
+    <div class="guide__suggestion__container">
+      <div class="black__banner__title__container">
+        <h2 class="black__banner__title black__banner__title--reddit__guidelines">Information:</h2>
+        <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">A brief description of who you are.</p>
+        <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">Your background and history with porn addiction.</p>
+        <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">Your progress with porn addiction recovery so far.</p>
+        <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">A list of some of the things you personally struggle with.</p>
+        <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">A list of the coping mechanisms you rely on.</p>
+        <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">Where you would like to see yourself in the future.</p>
+      </div>
+    </div>
   </div>
-</div>
+
+  <%= partial "links/reddit.html", assigns %>
+
+  <div class="guide__banner" style="border-top: 4px solid black; border-bottom: 4px solid black;">
+    <div class="guide__suggestion__container">
+      <div class="black__banner__title__container">
+        <h2 class="black__banner__title black__banner__title--reddit__guidelines">Example Titles:</h2>
+        <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">3 Days PMO FREE. #NewNeverFapper</p>
+        <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">How do I get started with meditation? #NewNeverFapper</p>
+        <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">Male 16 new to NeverFap Deluxe! #NewNeverFapper</p>
+        <p class="articles__link cursor__default" style="background: #f5f6f6; font-size: 1.2rem;">Struggling to get past a two weeks. #NewNeverFapper</p>
+      </div>
+    </div>
+  </div>
+<%# GUIDELINES END %>
+
+
+<%# COMMUNITY %>
+  <div id="community" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <a href="#community" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+      </a>
+
+      <h1>Community</h1>
+
+      <p>My intention with the NeverFap Deluxe subreddit is to create a thriving community of informed citizens, who as a collective are approaching their porn addiction recovery in the most efficient way possible.</p>
+      <p>Which is to say that I want people to be approaching their porn addiction recovery the right way from day 1 of their journey.</p>
+      <p>This is what I believe will separate r/NeverFapDeluxe from other communities such as r/NoFap which do not have a firm strategy in place to actually help people overcome their porn addiction.</p>
+      <p>More often than not, I see hopelessness and poor mental health practice become the main narrative that dominates the conversation, with other porn addicts.</p>
+
+      <p>Because we're starting out as a small community of dedicated individuals, we'll be able to combat this helpless with healthy and empowering coping mechanisms, in order to educate others correctly.</p>
+
+  <!--
+      #LOLFap
+      #NewNeverFapper
+      #MeditationMotivation
+      #HealthyCopingMechanismCrack -->
+
+    </div>
+  </div>
+<%# COMMUNITY END %>
+
+
+<%# NEXT STEPS %>
+  <div id="next_steps" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+      </a>
+      <!-- TODO -->
+      <h1>Next Steps</h1>
+      <p></p>
+    </div>
+  </div>
+<%# NEXT STEPS END %>
 
 <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
 <%= partial "promotion_footer.html", assigns %>

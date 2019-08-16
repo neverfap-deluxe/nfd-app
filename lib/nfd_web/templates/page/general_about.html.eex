@@ -10,7 +10,7 @@
         <a href="#introduction"><li class="index__item">Introduction</li></a>
         <a href="#motivation"><li class="index__item">Motivation</li></a>
         <a href="#philosophy"><li class="index__item">Philosophy</li></a>
-        <a href="#contact"><li class="index__item">Contact</li></a>
+        <a href="#contact_me"><li class="index__item">Contact Me</li></a>
         <a href="#next_steps"><li class="index__item">Next Steps</li></a>
       </ol>
     </div>
@@ -66,8 +66,8 @@
 
 
 <%# CONTACT %>
-  <div id="contact" class="single__wrapper" id="contact__form">
-    <a href="#contact" class="guide__suggestion guide__suggestion__padding">
+  <div id="contact_me" class="single__wrapper" id="contact__form">
+    <a href="#contact_me" class="guide__suggestion guide__suggestion__padding">
       <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
     </a>
     <h1>Contact</h1>

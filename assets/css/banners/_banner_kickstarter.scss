@@ -40,6 +40,8 @@
 }
 
 .seven__day__kickstarter__banner__title {
+  margin-top: 0rem;
+  
   text-shadow: 2px -2px $cyan;
   background: -moz-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
   background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, $magenta), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
