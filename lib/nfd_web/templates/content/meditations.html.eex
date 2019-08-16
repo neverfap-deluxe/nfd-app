@@ -23,7 +23,7 @@
 <%# INTRODUCTION %>
   <div id="introduction" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
       </div>
       <h1 class="single__sub__header">Introduction</h1>
@@ -45,7 +45,7 @@
 <%# FUNDAMENTAL SERIES %>
   <div id="neverfap_deluxe_fundamental_meditation_series" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
       </div>
       <h1 class="single__sub__header">NeverFap Deluxe Fundamental Meditation Series</h1>
@@ -75,7 +75,7 @@
 <%# HOVERING MEDITATION %>
   <div id="hovering_meditation" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
       </div>
       <h1 class="single__sub__header">Hovering Meditation</h1>
@@ -104,7 +104,7 @@
 <%# MEDITATION ESSENTIAL READING %>
   <div id="meditation_essential_reading" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
       </div>
       <h1 class="single__sub__header">Meditation Essential Reading</h1>
@@ -126,7 +126,7 @@
 <%# NEXT STEPS ARTICLES %>
   <div id="next_steps" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
       </div>
       <h1 class="single__sub__header">Next Steps</h1>

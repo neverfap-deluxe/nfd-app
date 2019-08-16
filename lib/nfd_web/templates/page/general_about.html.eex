@@ -22,7 +22,7 @@
 <%# INTRODUCTION %>
   <div class="single__wrapper">
     <div class="single__content">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
       </div>
       <h1 class="single__sub__header">Introduction</h1>
@@ -37,7 +37,7 @@
 <%# MOTIVATION %>
   <div id="motivation" class="single__wrapper">
     <div class="single__content">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
       </div>
       <h1 class="single__sub__header">Motivation</h1>
@@ -52,7 +52,7 @@
 <%# PHILOSOPHY %>
   <div id="philosophy" class="single__wrapper">
     <div class="single__content">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
       </div>
       <h1 class="single__sub__header">Philosophy</h1>
@@ -67,7 +67,7 @@
 <%# NEXT STEPS %>
   <div id="next_steps" class="single__wrapper">
     <div class="single__content">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
       </div>
       <h1 class="single__sub__header">Next Steps</h1>

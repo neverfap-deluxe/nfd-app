@@ -34,7 +34,7 @@
 <%# INTRODUCTION %>
   <div id="introduction" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0rem;">
-      <div class="guide__suggestion">
+      <div class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
         <h1>Introduction</h1>
       </div>
@@ -49,7 +49,7 @@
 <%# PREFACE %>
   <div id="preface" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0rem;">
-      <div class="guide__suggestion">
+      <div class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
         <h1>Preface</h1>
       </div>
@@ -64,7 +64,7 @@
 <%# CORE CONCEPTS %>
   <div id="core_concepts" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div class="guide__suggestion">
+      <div class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
         <h1>Core Concepts</h1>
       </div>
@@ -77,7 +77,7 @@
 <%# SUMMARY %>
   <!-- <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div> -->
   <div id="summary" class="guide__banner" style="border-top: 4px solid black;">
-    <div class="guide__suggestion">
+    <div class="guide__suggestion guide__suggestion__padding">
       <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
     </div>
 
@@ -135,7 +135,7 @@
 <%# RECOMMENDATION 1 %>
   <div id="develop_a_solid_meditation_routine" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div class="guide__suggestion">
+      <div class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
         <h1>Daily Meditation Routine</h1>
       </div>
@@ -166,7 +166,7 @@
 <%# RECOMMENDATION 2 %>
   <div id="increase_your_capacity_for_awareness" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div class="guide__suggestion">
+      <div class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
         <h1>NeverFap Deluxe Practices</h1>
       </div>
@@ -198,7 +198,7 @@
 <%# RECOMMENDATION 3 %>
   <div id="participate_in_our_discord_accountability_program" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div class="guide__suggestion">
+      <div class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
         <h1>Accountability Program</h1>
       </div>
@@ -213,7 +213,7 @@
 <%# RECOMMENDATION 4 %>
   <div id="7_day_neverfap_deluxe_kickstarter" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div class="guide__suggestion">
+      <div class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
         <h1>7 Day NeverFap Deluxe Kickstarter</h1>
       </div>
@@ -228,7 +228,7 @@
 <%# RECOMMENDATION 5 %>
   <div id="neverfap_deluxe_articles" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div class="guide__suggestion">
+      <div class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
         <h1>NeverFap Deluxe Articles</h1>
       </div>
@@ -254,7 +254,7 @@
 <%# RECOMMENDATION 6 %>
   <div id="neverfap_deluxe_podcast" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div class="guide__suggestion">
+      <div class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">6.</h1>
         <h1>NeverFap Deluxe Podcast</h1>
       </div>
@@ -275,7 +275,7 @@
 <%# RECOMMENDATION 7 %>
   <div id="neverfap_deluxe_mobile_app" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <div class="guide__suggestion">
+      <div class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">7.</h1>
         <h1>NeverFap Deluxe Mobile Application</h1>
       </div>

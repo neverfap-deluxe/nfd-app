@@ -79,6 +79,9 @@
     flex-direction: column;
   }
 }
+.guide__suggestion__padding {
+  padding-top: 2rem!important;
+}
 
 .guide__banner__title {
   text-align: center;
@@ -107,7 +110,7 @@
   box-shadow: -5px 5px 0px 0px $cyan;
   margin-right: 1.4rem;
   padding: 0.4rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem!important;
   font-weight: 900;
   line-height: 2.4rem;
   width: 50px;
