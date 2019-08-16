@@ -20,7 +20,7 @@
 
 <%# INTRODUCTION %>
   <div class="single__wrapper">
-    <div class="single__content" style="margin-bottom: 0;">
+    <div class="single__content">
       <h1>Introduction</h1>
       <%= raw child_content(@item["children"], "summary-intro") %>
     </div>
@@ -32,7 +32,7 @@
 
 <%# OVERVIEW %>
   <div class="single__wrapper">
-    <div class="single__content" style="margin-bottom: 0;">
+    <div class="single__content">
       <h1>Overview</h1>
       <%= raw child_content(@item["children"], "summary-main") %>
     </div>
@@ -44,12 +44,17 @@
 
 <%# KEY POINTS %>
   <div class="single__wrapper">
-    <div class="single__content" style="margin-bottom: 0;">
+    <div class="single__content">
       <h1>Key Points</h1>
-        <p>There's a few key points to keep note of.</p>
-        <p>- Balance is key to making the porn recovery process easy.</p>
-        <p>- You develop balance by adopting Healthy Coping Mechanisms.</p>
+        <p>- Effective recovery comes from maintaining balance.</p>
+        <p>- Healthy Coping Mechanisms help maintain balance, Unhealthy Coping Mechanisms do not.</p>
+        <p>- Unhealthy Coping Mechanisms include things like being judgemental and </p>
+        <p>- Unhealthy Coping Mechanisms are learnt behaviours which likely have been developed since childhood.</p>
+        <p>- Healthy Coping Mechanisms include things like meditating and remaining calm.</p>
         <p>- Healthy Coping Mechanisms allow you to develop control over your mind.</p>
+        <p>- Recovery is a hard process of replacing negative habits with positive ones.</p>
+        <p>- There are no cheap hacks, only practice and consistency matter to your recovery.</p>
+        <p>- Meditation is arguably the most effective means of maintaining balance.</p>
     </div>
   </div>
 

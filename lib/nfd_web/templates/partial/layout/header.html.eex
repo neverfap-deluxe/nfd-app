@@ -20,7 +20,6 @@
       </div>
     </div>
 
-
     <!-- GUIDE -->
     <a id="link__guide" class="header__link__wrapper header__link__wrapper--main" href="/guide">
       <li class="header__link">Guide</li>
