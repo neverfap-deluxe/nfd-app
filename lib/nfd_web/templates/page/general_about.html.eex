@@ -11,6 +11,7 @@
         <a href="#motivation"><li class="index__item">Motivation</li></a>
         <a href="#philosophy"><li class="index__item">Philosophy</li></a>
         <a href="#next_steps"><li class="index__item">Next Steps</li></a>
+        <a href="#contact"><li class="index__item">Contact</li></a>
       </ol>
     </div>
   </div>
@@ -20,11 +21,11 @@
 
 
 <%# INTRODUCTION %>
-  <div class="single__wrapper">
+  <div id="introduction" class="single__wrapper">
     <div class="single__content">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
-      </div>
+      </a>
       <h1 class="single__sub__header">Introduction</h1>
       <%= raw child_content(@item["children"], "about-intro") %>
     </div>
@@ -37,9 +38,9 @@
 <%# MOTIVATION %>
   <div id="motivation" class="single__wrapper">
     <div class="single__content">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
+      <a href="#motivation" motivationclass="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
-      </div>
+      </a>
       <h1 class="single__sub__header">Motivation</h1>
       <%= raw child_content(@item["children"], "about-main-1") %>
     </div>
@@ -52,9 +53,9 @@
 <%# PHILOSOPHY %>
   <div id="philosophy" class="single__wrapper">
     <div class="single__content">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
+      <a href="#philosophy" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
-      </div>
+      </a>
       <h1 class="single__sub__header">Philosophy</h1>
       <%= raw child_content(@item["children"], "about-main-2") %>
     </div>
@@ -67,9 +68,9 @@
 <%# NEXT STEPS %>
   <div id="next_steps" class="single__wrapper">
     <div class="single__content">
-      <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
+      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
-      </div>
+      </a>
       <h1 class="single__sub__header">Next Steps</h1>
       <%= raw child_content(@item["children"], "about-next-steps") %>
     </div>
@@ -80,8 +81,12 @@
 
 
 <%# CONTACT %>
-  <div class="single__wrapper" id="contact__form">
-    <h1 class="single__title">Contact <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+  <div id="contact" class="single__wrapper" id="contact__form">
+    <a href="#contact" class="guide__suggestion guide__suggestion__padding">
+      <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
+    </a>
+
+    <h1 class="single__title">Contact <img src="/images/logo.png" class="logo__square" alt=""/></h1>
     <div class="single__content">
       <p>If you would like to get in touch, please provide your name, email and message, and I will get back to you as soon as possible!</p>
       <p>I also offer <a class="link" href="<%= Routes.page_path(@conn, :programs_coaching) %>">Personal Coaching</a> for those interested in receiving additional help from someone who's been there before.</p>
