@@ -25,6 +25,10 @@
 <%# PREFACE %>
   <div id="preface" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
+      <a href="#preface" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+      </a>
+
       <h1>Preface</h1>
       <p>NeverFap Deluxe Practices focus on developing your capacity for awareness, as well as other important skills related to remaining calm and collected at all times.</p>
       <p>However, it's not substitute for a solid daily Meditation routine </p>
@@ -47,6 +51,10 @@
 <%# PRACTICES INTRODUCTION %>
   <div id="introduction" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+      </a>
+
       <h1>Introduction</h1>
       <p>It costs $89 to access all of the practices on NeverFap Deluxe.</p>
       <p>This investment provides you with <b>lifetime access</b> to all future and existing mental health and awareness practices, and is a great way to ensure you're fully committed to your mental health.</p>
@@ -73,6 +81,10 @@
 <%# PRACTICE OVERVIEW %>
   <div id="practice_overview" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
+      <a href="#practice_overview" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+      </a>
+
       <h1>Practices Overview</h1>
       <%# TODO: Maybe mention if any of the exercises are free for the user? %>
       <p></p>
@@ -95,6 +107,10 @@
 <%# PRACTICES LIST %>
   <div id="practices_list" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
+      <a href="#practices_list" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+      </a>
+
       <h1>Practices List</h1>
       <%= partial "list/practices_by_volume_v2.html", %{ conn: @conn, items: @page_collections.practices } %>
     </div>
@@ -107,6 +123,10 @@
 <%# SEVEN WEEK AWARENESS CHALLENGES %>
   <div id="seven_week_awareness_challenges" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
+      <a href="#seven_week_awareness_challenges" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
+      </a>
+
       <h1>Seven Week Awareness Challenges</h1>
 
       <p>Ideally you should be spending a week with each exercise, in order to truly appreciate and engrain the knowledge of what you're learning.</p>
@@ -124,8 +144,13 @@
 <%# NEXT STEPS %>
   <div id="next_steps" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <h1>Next Steps</h1>
+      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">6.</h1>
+      </a>
+
       <!-- TODO -->
+      <h1>Next Steps</h1>
+      <p></p>
     </div>
   </div>
 <%# NEXT STEPS END %>

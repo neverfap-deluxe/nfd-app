@@ -21,6 +21,10 @@
 <%# INTRODUCTION %>
   <div id="introduction" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+      </a>
+
       <h1>Introduction</h1>
       <%= raw @item["content"] %>
     </div>
@@ -32,6 +36,10 @@
 
 <%# ARTICLES LIST %>
   <div id="articles_list" style="margin-top: 3rem!important;" class="single__wrapper">
+    <a href="#articles_list" class="guide__suggestion guide__suggestion__padding">
+      <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+    </a>
+
     <h1>Articles List</h1>
     <div class="posts__on posts--guide" id="articles_latest_plain_posts">
       <%= partial "list/articles_latest_v2.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
@@ -45,6 +53,10 @@
 <%# NEXT STEPS %>
   <div id="next_steps" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
+      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+      </a>
+
       <h1>Next Steps</h1>
       <!-- TODO -->
       <p></p>

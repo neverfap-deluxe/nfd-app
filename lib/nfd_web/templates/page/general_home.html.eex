@@ -110,9 +110,9 @@
 
     <%# UCM CRUMBLE %>
       <div class="homepage__section">
-        <div id="unhealthy_coping_mechanisms_crumble" class="guide__suggestion guide__suggestion__padding">
+        <a href="#unhealthy_coping_mechanisms_crumble" id="unhealthy_coping_mechanisms_crumble" class="guide__suggestion guide__suggestion__padding">
           <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
-        </div>
+        </a>
 
         <h1>...and it's these situations where <span style="color: rgba(255,46,182,1);">unhealthy coping mechanisms</span> crumble.</h1>
         <h2>This is where 90% of relapse happens.</h2>
@@ -134,6 +134,10 @@
       </div>
 
       <div class="homepage__section">
+        <a href="#devloping_control_over_your_mind" class="guide__suggestion guide__suggestion__padding">
+          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+        </a>
+
         <h1>It's about <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">developing control</u> over your mind.</h1>
         <h2>...and that's really all healthy coping mechanisms are.</h2>
         <h3>Skills and abilities which provide you with control over your mind, so that when your mind is feeling lost and under pressure, it won't fumble and collapse like a tower of cards. <i class="em em-woman_in_lotus_position"></i></i></h3>
@@ -168,6 +172,10 @@
 
     <%# UCM LIST %>
       <div id="list_unhealthy_coping_mechanisms" class="unhealthy__banner">
+        <a href="#list_unhealthy_coping_mechanisms" class="guide__suggestion guide__suggestion__padding">
+          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+        </a>
+
         <h2 class="margin__top__mobile">So you may be wondering.</h2>
         <h1 class="unhealthy__banner__title">What are some of these <span style="color: white;">unhealthy coping mechanisms</span>?</h1>
 
@@ -197,6 +205,10 @@
 
     <%# HCM LIST %>
       <div id="list_healthy_coping_mechanisms" class="homepage__section">
+        <a href="#list_healthy_coping_mechanisms" class="guide__suggestion guide__suggestion__padding">
+          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
+        </a>
+
         <h2 class="margin__top__mobile">Which is why.</h2>
         <h1>We want to be adopting some <span style="color: #00ffee;">healthy coping mechanisms</span> instead.</h1>
           <p>Skills and abilities which have been designed to help us deal with our feelings and emotions, in a concise and effective manner. Like smashing ice with a sledgehammer.</p>
@@ -234,7 +246,11 @@
       </div>
 
       <div class="homepage__section">
-        <h2>It's simple.</h2>
+        <a href="#practice_and_consistency" class="guide__suggestion guide__suggestion__padding">
+          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">6.</h1>
+        </a>
+
+        <h2 style="margin-top: 3rem;">It's simple.</h2>
         <h1 class="h1__black">With <span class="cyan__box__border" style="z-index: 400;">Practice</span> and <span class="cyan__box__border">Consistency</span><span class="home__dot">.</span> </i> <div class="box__abs">NeverFap Deluxe.</div></h1> <!-- <i class="em em-man_climbing"> -->
         <h2>Don't even think about cheap work arounds. <span style="color: rgba(255,46,182,1);">I will hurt you.</span> <i class="em em-right_anger_bubble"></i></h2>
         <h2>Practice and Consistency are the only two things which matter to your recovery.</h2>
@@ -247,12 +263,16 @@
 
 
     <%# MEDITATION ROUTINE %>
-      <div id="ten_minute_meditation_routine" class="homepage__hero homepage__hero--secondary">
+      <div id="practice_and_consistency" class="homepage__hero homepage__hero--secondary">
         <h1 class="homepage__hero__title">Yeeaaaah, but what do I practice?</h1>
         <h2 class="homepage__hero__title__secondary"><i class="em em-laughing"></i> Daddy Reade!?!? <i class="em em-gift_heart"></i></h2>
       </div>
 
       <div class="homepage__section">
+        <a href="#practice_and_consistency" class="guide__suggestion guide__suggestion__padding">
+          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">7.</h1>
+        </a>
+
         <h1>Well, tldr.</h1>
         <h2>Here's what you do. <i class="em em-child"></i></h2>
       </div>
@@ -276,11 +296,15 @@
 
 
     <%# NEW NEVERFAPPERS %>
-      <div  id="newneverfapper">
+      <div id="newneverfapper">
         <%= partial "home/three_healthy_coping_mechanisms.html", assigns %>
       </div>
 
       <div class="homepage__section">
+        <a href="#newneverfapper" class="guide__suggestion guide__suggestion__padding">
+          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">8.</h1>
+        </a>
+
         <h1>Most people are <u style="border-bottom: 4px solid rgba(255,46,182,1); padding-bottom: 0rem;">severely deficient</u> in one or two of these areas.</h1>
         <h2>Now, this is where it gets hard.</h2>
         <h3>Since I don't know you (although I'm sure you're lovely), it's difficult for me to take you down a particular path to help you develop control over your mind.</h3>
@@ -311,6 +335,10 @@
 
     <%# AWARENESS CALMNESS AMBITION %>
       <div id="awareness_calmness_amdition">
+        <a href="#awareness_calmness_amdition" class="guide__suggestion guide__suggestion__padding">
+          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">9.</h1>
+        </a>
+
         <%= partial "home/healthy_coping_mechanisms_guidelines.html", assigns %>
       </div>
 
@@ -327,7 +355,11 @@
 
 
     <%# NFD GUIDE %>
-      <div id="nfd_guide" class="homepage__section">
+      <a href="#nfd_guide" id="nfd_guide" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">10.</h1>
+      </a>
+
+      <div class="homepage__section">
         <h2>So without further ado...</h2>
       </div>
 
@@ -337,6 +369,10 @@
 
     <%# FIVE FUNDAMENTALS %>
       <div id="five_fundamentals" class="homepage__section">
+        <a href="#five_fundamentals" class="guide__suggestion guide__suggestion__padding">
+          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">11.</h1>
+        </a>
+
         <h3 style="margin-top: 2.5rem;">Oh.</h3>
         <h2>And one last thing. <i class="em em-aerial_tramway"></i></h2>
         <h2>I created these <u style="border-bottom: 4px solid yellow; padding-bottom: 0rem;">fundamental principles</u> that you might find useful.</h2>
@@ -382,6 +418,10 @@
 
     <%# PODCAST AND DISCORD %>
       <div id="nfd_podcast_discord">
+        <a href="#nfd_podcast_discord"  class="guide__suggestion guide__suggestion__padding">
+          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">12.</h1>
+        </a>
+
         <%= partial "home/podcast_discord_promotion.html", %{ conn: @conn, items: @page_collections.articles } %>
       </div>
     <%# PODCAST AND DISCORD END %>
@@ -393,6 +433,10 @@
       </div>
 
       <div class="homepage__section">
+        <a href="#nfd_articles" class="guide__suggestion guide__suggestion__padding">
+          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">13.</h1>
+        </a>
+
         <h2>Here are a selection of our top articles to help get you started.</h2>
         <hr style="margin-top: 2.5rem; margin-bottom: 2rem;"/>
 
