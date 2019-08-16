@@ -65,10 +65,10 @@
           <span class="h3__tiny">/practices</span>
         </h3>
       </a>
-      <a href="/quotes" class="header__module header__module--flex">
+      <a href="/neverfap-deluxe-bible" class="header__module">
         <h3 class="h3__yus">
-          NeverFap Deluxe Image Quotes
-          <span class="h3__tiny">/quotes</span>
+          NeverFap Deluxe Bible
+          <span class="h3__tiny">/bible</span>
         </h3>
       </a>
     </div>
@@ -80,7 +80,7 @@
     <div class="header__sub header__banner__practices">
       <a href="/meditation" class="header__module">
         <h3 class="h3__yus">
-          NeverFap Deluxe Meditations
+          NeverFap Deluxe Meditation
           <span class="h3__tiny">/meditation</span>
         </h3>
       </a>

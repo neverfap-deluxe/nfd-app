@@ -1,0 +1,12 @@
+<%= partial "pricing/pricing_container.html",
+  %{
+    conn: @conn,
+    price: "$12 USD",
+    title: "NeverFap Deluxe Bible",
+    points: [
+      "A Complete Copy Of NeverFap Deluxe In Ebook Format",
+      "Articles, Summary And Guide"
+    ],
+    description: nil
+  }
+%>

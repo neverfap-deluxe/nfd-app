@@ -8,6 +8,7 @@
 
       <ol class="index__items">
         <h3><i class="page__index__emoji__left em em-martial_arts_uniform"></i> Practices <i class="page__index__emoji__right em em-martial_arts_uniform"></i></h3>
+        <a href="#preface"><li class="index__item">Preface</li></a>
         <a href="#introduction"><li class="index__item">Introduction</li></a>
         <a href="#practice_overview"><li class="index__item">Practices Overview</li></a>
         <a href="#practices_list"><li class="index__item">NeverFap Deluxe Practices List</li></a>
@@ -19,6 +20,28 @@
 
   <%= partial "links/paypal.html", assigns %>
 <%# INDEX END %>
+
+
+<%# PREFACE %>
+  <div id="preface" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <h1>Preface</h1>
+      <p>NeverFap Deluxe Practices focus on developing your capacity for awareness, as well as other important skills related to remaining calm and collected at all times.</p>
+      <p>However, it's not substitute for a solid daily Meditation routine </p>
+      <p>Instead these practices can serve as an excellent supplementary activity in order to enhance your mental health and learn new things about yourself.</p>
+      <p>And can form an exte</p>
+      <p>Certainly, the easiest and most effective way to </p>
+    </div>
+  </div>
+
+  <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
+  <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+
+  <%= partial "banners/fdm_banner.html", assigns %>
+
+  <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
+  <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+<%# PREFACE END %>
 
 
 <%# PRACTICES INTRODUCTION %>

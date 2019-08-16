@@ -6,7 +6,7 @@
       <h1 class="page__index__title">Index</h1>
 
       <ol class="index__items">
-        <h3><i class="page__index__emoji__left em em-dart"></i> Hovering <i class="page__index__emoji__right em em-dart"></i></h3>
+        <h3><i class="page__index__emoji__left em em-o"></i> Hovering <i class="page__index__emoji__right em em-o"></i></h3>
         <a href="#introduction"><li class="index__item">Introduction</li></a>
         <a href="#hovering_website"><li class="index__item">Hovering Website</li></a>
         <a href="#hovering_web_application"><li class="index__item">Hovering Web Application</li></a>

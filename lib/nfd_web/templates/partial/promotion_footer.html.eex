@@ -31,4 +31,8 @@
   </div>
 </div>
 
-<%#= partial "banners/ending_banner.html", assigns %>
+<div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+
+<%= partial "banners/bible_banner.html", assigns %>
+<%= partial "banners/ending_banner.html", assigns %>

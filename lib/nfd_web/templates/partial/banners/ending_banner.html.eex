@@ -1,3 +1,7 @@
-<div class="ending__banner">
-  <div class="ending__banner__title">NeverFap Deluxe</div>
+<div class="ending__banner banner__new__to__nfd">
+  <h1>You made it to the end!</h1>
+  <a style="background: inherit;" href="/"><h3 class="banner__new__to__nfd__title">Thank you for reading NeverFap Deluxe!</h3></a>
+  <h3 class="banner__new__to__nfd__title--2nd">Feel free to share this website with your friends :D</h3>
+  <p class="ending__banner__text">Sincerely,</p>
+  <p class="ending__banner__text">The Reade</p>
 </div>

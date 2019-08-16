@@ -1,37 +1,68 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <%= raw child_content(@item["children"], "summary-intro") %>
+<%# INDEX %>
+  <div class="single__wrapper">
+    <div class="page__index">
+      <h1 class="page__index__title">Index</h1>
+      <ol class="index__items">
+        <h3><i class="page__index__emoji__left em em-page_facing_up"></i> Summary <i class="page__index__emoji__right em em-page_facing_up"></i></h3>
+        <a href="#introduction"><li class="index__item">Introduction</li></a>
+        <a href="#overview"><li class="index__item">Overview</li></a>
+        <a href="#key_points"><li class="index__item">Key Points</li></a>
+        <a href="#next_steps"><li class="index__item">Next Steps</li></a>
+      </ol>
+    </div>
   </div>
-</div>
 
-<%= partial "links/paypal.html", assigns %>
+  <%= partial "links/paypal.html", assigns %>
+<%# INDEX END %>
 
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <h1>Overview</h1>
-    <%= raw child_content(@item["children"], "summary-main") %>
+
+<%# INTRODUCTION %>
+  <div class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <h1>Introduction</h1>
+      <%= raw child_content(@item["children"], "summary-intro") %>
+    </div>
   </div>
-</div>
 
-<!--
-<%= partial "links/patreon.html", assigns %>
+  <%= partial "links/twitter.html", assigns %>
+<%# INTRODUCTION END %>
 
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <h1>Summary</h1>
-    <p>There's a few key points to keep note of.</p>
-    <p>- Balance is key to making the porn recovery process easy.</p>
-    <p>- You develop balance by adopting Healthy Coping Mechanisms.</p>
-    <p>- Healthy Coping Mechanisms allow you to develop control over your mind.</p>
+
+<%# OVERVIEW %>
+  <div class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <h1>Overview</h1>
+      <%= raw child_content(@item["children"], "summary-main") %>
+    </div>
   </div>
-</div> -->
 
-<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
-<%= partial "promotion_footer.html", assigns %>
+  <%= partial "links/reddit.html", assigns %>
+<%# OVERVIEW END %>
 
-<script src='/js/guide.js'></script>
+
+<%# KEY POINTS %>
+  <div class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <h1>Key Points</h1>
+        <p>There's a few key points to keep note of.</p>
+        <p>- Balance is key to making the porn recovery process easy.</p>
+        <p>- You develop balance by adopting Healthy Coping Mechanisms.</p>
+        <p>- Healthy Coping Mechanisms allow you to develop control over your mind.</p>
+    </div>
+  </div>
+
+  <%= partial "links/facebook.html", assigns %>
+<%# KEY POINTS %>
+
+
+<%# FOOTER %>
+  <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
+  <%= partial "promotion_footer.html", assigns %>
+
+  <script src='/js/guide.js'></script>
+<%# FOOTER END %>
 
 
 
