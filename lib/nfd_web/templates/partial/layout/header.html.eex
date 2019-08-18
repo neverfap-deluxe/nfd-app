@@ -52,6 +52,12 @@
     </a>
 
     <div class="header__sub header__banner__articles">
+      <a href="/neverfap-deluxe-bible" class="header__module">
+        <h3 class="h3__yus">
+          NeverFap Deluxe Bible
+          <span class="h3__tiny">/bible</span>
+        </h3>
+      </a>
       <a href="/articles" class="header__module header__module--flex">
         <h3 class="h3__yus">
           NeverFap Deluxe Articles
@@ -62,12 +68,6 @@
         <h3 class="h3__yus">
           NeverFap Deluxe Practices
           <span class="h3__tiny">/practices</span>
-        </h3>
-      </a>
-      <a href="/neverfap-deluxe-bible" class="header__module">
-        <h3 class="h3__yus">
-          NeverFap Deluxe Bible
-          <span class="h3__tiny">/bible</span>
         </h3>
       </a>
     </div>

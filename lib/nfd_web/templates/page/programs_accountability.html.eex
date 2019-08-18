@@ -136,6 +136,8 @@
       </div>
     </div>
   </div>
+
+  <%= partial "links/discord.html", assigns %>
 <%# ACCOUNTABILITY EXAMPLES END %>
 
 
@@ -145,14 +147,16 @@
       <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
       </a>
-      <!-- TODO -->
       <h1>Next Steps</h1>
-      <p></p>
-      <p></p>
+      <p>Of course, while personal support can help you stick with the recovery process, there really is no alternative to putting in the hard work and committing to the recovery process itself i.e. meditating daily.</p>
+      <p>Which is to say that it's really up to you at the end of the day to recover and no amount of support changes this fact. It's your brain at the end of the day and it's up to you to learn to use it effectively.</p>
+      <p>So you don't yet have a daily routine of meditation, now's the time to start. A lot of these concepts are explained in the <a href="/meditation" class="link">NeverFap Deluxe Meditation</a> section of the website and are literally invaluable to your recovery.</p>
+      <p>If you do not meditate daily and you do not commit to your mental health in a meaningful way, then literally nothing will change.</p>
+      <p>Godspeed, and miao.</p>
+      <p>(=^･ｪ･^=))ﾉ彡☆</p>
     </div>
   </div>
 
-  <%= partial "links/discord.html", assigns %>
 <%# NEXT STEPS END %>
 
 

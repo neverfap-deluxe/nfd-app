@@ -9,7 +9,7 @@
       <ol class="index__items">
         <h3><i class="page__index__emoji__left em em-man_in_tuxedo"></i> #NewNeverFapper <i class="page__index__emoji__right em em-man_in_tuxedo"></i></h3>
         <a href="#introduction"><li class="index__item">Introduction</li></a>
-        <a href="#guidelines"><li class="index__item">Guidelines</li></a>
+        <a href="#reddit_guidelines"><li class="index__item">Reddit Guidelines</li></a>
         <a href="#community"><li class="index__item">Community</li></a>
         <a href="#next_steps"><li class="index__item">Next Steps</li></a>
       </ol>
@@ -41,13 +41,13 @@
 
 
 <%# GUIDELINES %>
-  <div id="guidelines" class="single__wrapper">
+  <div id="reddit_guidelines" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <a href="#guidelines" class="guide__suggestion guide__suggestion__padding">
+      <a href="#reddit_guidelines" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
       </a>
 
-      <h1>Guidelines</h1>
+      <h1>Reddit Guidelines</h1>
       <p>What information you choose to post is entirely up to you, and I encourage you to write as little or as much as you want!</p>
       <p>Obviously the more information you provide, the easier it will be to understand where you're coming from, as well as better understand what you need help with.</p>
       <p>Here are some helpful suggestions.</p>
@@ -108,6 +108,8 @@
 
     </div>
   </div>
+
+  <%= partial "links/reddit.html", assigns %>
 <%# COMMUNITY END %>
 
 
@@ -117,10 +119,14 @@
       <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
       </a>
-      <!-- TODO -->
       <h1>Next Steps</h1>
-      <p></p>
-    </div>
+      <p>Well, what are you waiting for?</p>
+      <p>In addition to asking me questions, it's probably a good idea to go over the NeverFap Deluxe website since I'm pretty much going to be regurgitating what's written here.</p>
+      <p>Our wonderful selection of <a href="/articles" class="link">NeverFap Deluxe Articles</a> are a great place to start in terms of binging on the knowledge of what is <i>clearly</i> anti-porn propaganda funded by the Mormon Church.</p>
+      <p>Oh, not to mention the <a href="/guide" class="link">NeverFap Deluxe Guide</a> which has been wholly funded by extreme Catholic radicalists, drenched in the blood of the Eucharist.</p>
+      <p>I actually have no idea what I'm talking about, but have an apple.</p>
+      <p><i class="em em-pineapple"></i></p>
+   </div>
   </div>
 <%# NEXT STEPS END %>
 

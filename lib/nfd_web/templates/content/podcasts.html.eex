@@ -56,24 +56,27 @@
 
 <%# PODCAST LIST %>
   <div id="podcast_list" class="single__wrapper">
-    <a href="#podcast_player" class="guide__suggestion guide__suggestion__padding">
-      <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
-    </a>
-    <h1 style="margin-bottom: 3rem;">Podcast List</h1>
+    <div class="single__content">
+      <a href="#podcast_player" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+      </a>
+      <h1>Podcast List</h1>
+      <p>Here's a complete list of all the episodes of The NeverFap Deluxe Podcast.</p>
 
-    <div class="podcast__item__container">
-      <%= Enum.map(@page_collections.podcasts, fn(podcast) -> %>
-        <div class="podcast__item">
-          <a href='/podcast/<%= podcast["slug"] %>'><h1 class="podcast__item__title"><%= podcast["title"] %></h1></a>
-          <h3 style="margin-bottom: 1rem;"><%= raw podcast["content"] %></h3>
-          <div class="podcast__item__bottom">
-            <a class="link articles__link" href='<%= podcast["podcast_url"] %>'>episode link</a>
-            <!-- <audio controls src='<%= podcast["podcast_url"] %>'>
-              Your browser does not support the <code>audio</code> element.
-            </audio>   -->
+      <div class="podcast__item__container">
+        <%= Enum.map(@page_collections.podcasts, fn(podcast) -> %>
+          <div class="podcast__item">
+            <a href='/podcast/<%= podcast["slug"] %>'><h1 class="podcast__item__title"><%= podcast["title"] %></h1></a>
+            <h3 style="margin-bottom: 1rem;"><%= raw podcast["content"] %></h3>
+            <div class="podcast__item__bottom">
+              <a class="link articles__link" href='<%= podcast["podcast_url"] %>'>episode link</a>
+              <!-- <audio controls src='<%= podcast["podcast_url"] %>'>
+                Your browser does not support the <code>audio</code> element.
+              </audio>   -->
+            </div>
           </div>
-        </div>
-      <% end ) %>
+        <% end ) %>
+      </div>
     </div>
   </div>
 
@@ -91,9 +94,10 @@
       <h1>Next Steps</h1>
       <p>While the podcast is a great place to hear me waffle about the finer things in life, your predominant focus should be on developing a solid mental health routine.</p>
       <p>Only through conscious action can we hope to change the behaviours which hold our life ransom.</p>
-      <p>To learn more, I would highly recommend reading through the <a href="/meditation" class="link">NeverFap Deluxe Meditation</a> section of the website which explains a lot of these concepts in detail.</p>
+      <p>To learn more about developing a solid mental health routine, I would highly recommend reading through the <a href="/meditation" class="link">NeverFap Deluxe Meditation</a> section of the website which explains a lot of these concepts in detail.</p>
       <p>In addition if you enjoy listening to the podcast I would highly recommend subscribing to it via iTunes, Castbox or Spotify.</p>
       <p>Stay safe, my friend.</p>
+      <p><i class="em em-smile"></i></p>
     </div>
   </div>
 <%# NEXT STEPS END %>

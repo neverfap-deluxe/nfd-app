@@ -24,7 +24,7 @@
 
 <div class="single__wrapper">
   <div class="single__content">
-    <h2 style="margin-bottom: 1.9rem; text-decoration: underline;">Latest Articles</h2>
+    <h1 class="single__latest__articles__title">Latest Articles</h1>
     <%= partial "content/latest_posts.html", %{ conn: @conn, items: @page_collections.articles, type: :article } %>
 
     <div class="button__wrapper">

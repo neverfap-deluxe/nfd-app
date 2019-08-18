@@ -10,9 +10,9 @@
     </div>
     <div class="banner__split__divider"></div>
     <div class="banner__split banner__split--right">
-      <div class="mobile__banner__image__container">
+      <a href="/mobile-app" class="mobile__banner__image__container">
         <img src="/images/screenshots/nfd_mobile_home.png" alt="">
-      </div>
+      </a>
     </div>
   </div>
 </div>

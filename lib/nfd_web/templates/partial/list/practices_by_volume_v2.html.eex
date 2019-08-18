@@ -35,14 +35,14 @@ list_of_sections =
         <div class="practices__section__collection dashboard__collection__files">
           <%= Enum.map(section.practices, fn(practice) -> %>
             <div class="practices__section__collection__item dashboard__collection__file">
-              <a href='<%= Routes.content_path(@conn, :practice, practice["slug"]) %>' class="dashboard__collection__file__info" style="cursor: pointer;">
+              <a href='' class="dashboard__collection__file__info" style="cursor: pointer;">
                 <p class="dashboard__collection__file__title"><%= practice["title"] %></p>
               </a>
-              <a href="" class="dashboard__collection__file__download">
+              <a href='' class="dashboard__collection__file__download">
                 <span class='new__collection__item new__collection__item--alter' style="cursor: pointer;">MP3</span>
                 <i class="fa fa-file-audio" aria-hidden="true"></i>
               </a>
-
+              <!-- <%= Routes.content_path(@conn, :practice, practice["slug"]) %> -->
             </div>
           <% end ) %>
         </div>

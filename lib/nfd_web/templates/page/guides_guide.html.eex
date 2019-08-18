@@ -98,33 +98,35 @@
     <div class="guide__suggestion__container">
       <div class="black__banner__title__container">
         <h2 class="black__banner__title" style="margin-bottom: 3rem;">Here are my #recommendations</h2>
-        <div class="guide__suggestion">
-          <h1 class="guide__suggestion__number guide__suggestion__number--fat">1.</h1>
-          <h1 class="guide__suggestion__title">Develop an Effective Daily Meditation Routine</h1>
-        </div>
-        <div class="guide__suggestion">
-          <h1 class="guide__suggestion__number guide__suggestion__number--fat">2.</h1>
-          <h1 class="guide__suggestion__title">Increase your capacity for Awareness and Calmness</h1>
-        </div>
-        <div class="guide__suggestion">
-          <h1 class="guide__suggestion__number guide__suggestion__number--fat">3.</h1>
-          <h1 class="guide__suggestion__title">Join the NeverFap Deluxe Accountability Program</h1>
-        </div>
-        <div class="guide__suggestion">
-          <h1 class="guide__suggestion__number guide__suggestion__number--fat">4.</h1>
-          <h1 class="guide__suggestion__title">Subscribe to the 7 Day NeverFap Deluxe Kickstarter</h1>
-        </div>
-        <div class="guide__suggestion">
-          <h1 class="guide__suggestion__number guide__suggestion__number--fat">5.</h1>
-          <h1 class="guide__suggestion__title">Begin reading some NeverFap Deluxe Articles</h1>
-        </div>
-        <div class="guide__suggestion">
-          <h1 class="guide__suggestion__number guide__suggestion__number--fat">6.</h1>
-          <h1 class="guide__suggestion__title">Listen to the NeverFap Deluxe Podcast</h1>
-        </div>
-        <div class="guide__suggestion">
-          <h1 class="guide__suggestion__number guide__suggestion__number--fat">7.</h1>
-          <h1 class="guide__suggestion__title">Download the NeverFap Deluxe Mobile App</h1>
+        <div class="guide__suggestion__list">
+          <div class="guide__suggestion">
+            <h1 class="guide__suggestion__number guide__suggestion__number--fat">1.</h1>
+            <h1 class="guide__suggestion__title">Develop a Daily Meditation Routine</h1>
+          </div>
+          <div class="guide__suggestion">
+            <h1 class="guide__suggestion__number guide__suggestion__number--fat">2.</h1>
+            <h1 class="guide__suggestion__title">Increase your capacity for Awareness and Calmness</h1>
+          </div>
+          <div class="guide__suggestion">
+            <h1 class="guide__suggestion__number guide__suggestion__number--fat">3.</h1>
+            <h1 class="guide__suggestion__title">Join the NeverFap Deluxe Accountability Program</h1>
+          </div>
+          <div class="guide__suggestion">
+            <h1 class="guide__suggestion__number guide__suggestion__number--fat">4.</h1>
+            <h1 class="guide__suggestion__title">Subscribe to the 7 Day NeverFap Deluxe Kickstarter</h1>
+          </div>
+          <div class="guide__suggestion">
+            <h1 class="guide__suggestion__number guide__suggestion__number--fat">5.</h1>
+            <h1 class="guide__suggestion__title">Begin reading some NeverFap Deluxe Articles</h1>
+          </div>
+          <div class="guide__suggestion">
+            <h1 class="guide__suggestion__number guide__suggestion__number--fat">6.</h1>
+            <h1 class="guide__suggestion__title">Listen to the NeverFap Deluxe Podcast</h1>
+          </div>
+          <div class="guide__suggestion">
+            <h1 class="guide__suggestion__number guide__suggestion__number--fat">7.</h1>
+            <h1 class="guide__suggestion__title">Download the NeverFap Deluxe Mobile App</h1>
+          </div>
         </div>
       </div>
     </div>
@@ -141,13 +143,11 @@
       </a>
       <%= raw child_content(@item["children"], "guide-meditation-routine") %>
 
-      <p class="guide__link__container"><a class="guide__link" href="/articles/my-personal-porn-recovery-journey/">NeverFap Deluxe Fundamental Meditation Series</a></br>
-        Learn the basic fundamentals of meditation .</p>
-      <p class="guide__link__container"><a class="guide__link" href="practices/observe-your-senses/">The NeverFap Deluxe Guide To Effective Meditation</a></br>
-        Learn more about meditation with our Meditation Essential Reading List of NeverFap Deluxe Articles.</p>
-      <p class="guide__link__container"><a class="guide__link" href="/articles/introduction-to-the-neverfap-deluxe-guide/">Hovering Meditation Technique</a></br>
-        A Meditation techinque I created to assist those who struggle to meditate via traditional means.</p>
-      <p class="guide__link__container"><a class="guide__link" href="articles/the-importance-of-meditation-for-porn-addiction/">Meditation Essential Reading</a></br>
+      <p class="guide__link__container"><a class="guide__link" href="/meditation#neverfap_deluxe_fundamental_meditation_series">NeverFap Deluxe Fundamental Meditation Series</a></br>
+        Learn the basic fundamentals of meditation with our 4-part meditation audio series.</p>
+      <p class="guide__link__container"><a class="guide__link" href="/hovering/">Hovering Meditation Technique</a></br>
+        Hovering is a meditation techinque I created to assist those who struggle to meditate via traditional means.</p>
+      <p class="guide__link__container"><a class="guide__link" href="/meditation#meditation_essential_reading/">Meditation Essential Reading</a></br>
         Learn more about meditation with our Meditation Essential Reading List of NeverFap Deluxe Articles.</p>
     </div>
   </div>
@@ -155,9 +155,6 @@
   <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
   <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
   <%= partial "banners/fdm_banner.html", assigns %>
-  <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
-  <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
-  <%= partial "banners/hovering_banner.html", assigns %>
   <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
   <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
 <%# RECOMMENDATION 1 END %>
@@ -171,13 +168,6 @@
         <h1>NeverFap Deluxe Practices</h1>
       </a>
       <%= raw child_content(@item["children"], "guide-develop-awareness") %>
-
-      <p class="guide__link__container"><a class="guide__link" href="/practices/observe-your-senses">Observe Your Senses</a></br>
-        Our primary meditation exercise, which is the sole exercise we recommend that you practice every day.</p>
-      <p class="guide__link__container"><a class="guide__link" href="/practices/slow-down-time">Slow Down Time</a></br>
-        This exercise is great as an introduction to calmness.</p>
-      <p class="guide__link__container"><a class="guide__link" href="/practices/dissolve-your-visual-field">Dissolve Your Visual Field</a></br>
-        This is an excellent visual exercise which is designed to shatter your ego.</p>
     </div>
   </div>
 
@@ -206,6 +196,21 @@
     </div>
   </div>
 
+  <%= partial "links/discord.html", assigns %>
+  <div class="homepage__splitter">
+    <div class="homepage__splitter__box homepage__splitter__box--top">
+      <div>
+        <h2 class="homepage__splitter__box__title">#accountability program</h2>
+        <p>Maybe you're just lookin' for a "support group" to share cuddles with!? Well, The Reade&copy; has you covered!</p>
+        <p>Join our Discord Server today. It's sexy.</p>
+        <a class="homepage__splitter__box__button homepage__splitter__box__button--pink" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Participate</a>
+      </div>
+    </div>
+    <div class="homepage__splitter__divider"></div>
+    <div class="homepage__splitter__box homepage__splitter__box--discord">
+      <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+    </div>
+  </div>
   <%= partial "links/discord.html", assigns %>
 <%# RECOMMENDATION 3 END %>
 
@@ -262,13 +267,24 @@
     </div>
   </div>
 
-  <%= partial "banners/podcast_banner.html", assigns %>
 
-  <div class="cyan__banner">
-    <div style="background: white;">
-      <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Podcast.", link: "/podcast" } %>
+  <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Podcast.", link: "/podcast" } %>
+  <div class="homepage__splitter homepage__splitter--podcast">
+    <div class="homepage__splitter__box homepage__splitter__box--top homepage__splitter__box--podcast">
+      <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="500" height="500"></iframe>
+    </div>
+    <div class="homepage__splitter__divider"></div>
+    <div class="homepage__splitter__box">
+      <div>
+        <h2 class="homepage__splitter__box__title">The NeverFap Deluxe Podcast</h2>
+        <p>Can't be bothered reading for the next 5 minutes? Well, unfortuately that's just too bad and I'm going to have to ask you to read anyway!</p>
+        <p>Listen to the NeverFap Deluxe Podcast, you slacka!</p>
+        <a class="homepage__splitter__box__button" href="https://neverfapdeluxe.com/podcast">Listen</a>
+      </div>
     </div>
   </div>
+  <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Podcast.", link: "/podcast" } %>
+
 <%# RECOMMENDATION 6 END %>
 
 
@@ -283,13 +299,8 @@
     </div>
   </div>
 
-  <%= partial "banners/podcast_banner.html", assigns %>
+  <%= partial "banners/mobile_banner.html", assigns %>
 
-  <div class="cyan__banner">
-    <div style="background: white;">
-      <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Podcast.", link: "/podcast" } %>
-    </div>
-  </div>
 <%# RECOMMENDATION 7 END %>
 
 

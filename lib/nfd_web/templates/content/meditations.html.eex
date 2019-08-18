@@ -6,7 +6,8 @@
       <h1 class="page__index__title">Index</h1>
 
       <ol class="index__items">
-        <h3><i class="page__index__emoji__left em em-man_in_lotus_position"></i> Meditations <i class="page__index__emoji__right em em-man_in_lotus_position"></i></h3>
+        <h3><i class="page__index__emoji__left em em-man_in_lotus_position"></i> Meditation <i class="page__index__emoji__right em em-man_in_lotus_position"></i></h3>
+        <!-- TODO: Add a how-to-meditate section in here -->
         <a href="#introduction"><li class="index__item">Introduction</li></a>
         <a href="#neverfap_deluxe_fundamental_meditation_series"><li class="index__item">NeverFap Deluxe Fundamental Meditation Series</li></a>
         <a href="#hovering_meditation"><li class="index__item">Hovering Meditation</li></a>
@@ -23,7 +24,7 @@
 <%# INTRODUCTION %>
   <div id="introduction" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <a href="introduction" class="guide__suggestion guide__suggestion__padding">
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
       </a>
       <h1 class="single__sub__header">Introduction</h1>
@@ -45,7 +46,7 @@
 <%# FUNDAMENTAL SERIES %>
   <div id="neverfap_deluxe_fundamental_meditation_series" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <a href="neverfap_deluxe_fundamental_meditation_series" class="guide__suggestion guide__suggestion__padding">
+      <a href="#neverfap_deluxe_fundamental_meditation_series" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
       </a>
       <h1 class="single__sub__header">NeverFap Deluxe Fundamental Meditation Series</h1>
@@ -61,11 +62,13 @@
   <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
   <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
 
-  <div class="single__wrapper">
+  <%= partial "banners/fdm_banner.html", assigns %>
+
+  <!-- <div class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <%= partial "pricing/pricing_fundamental_meditations.html", %{ conn: @conn } %>
+      <%#= partial "pricing/pricing_fundamental_meditations.html", %{ conn: @conn } %>
     </div>
-  </div>
+  </div> -->
 
   <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
   <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
@@ -75,7 +78,7 @@
 <%# HOVERING MEDITATION %>
   <div id="hovering_meditation" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <a href="hovering_meditation" class="guide__suggestion guide__suggestion__padding">
+      <a href="#hovering_meditation" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
       </a>
       <h1 class="single__sub__header">Hovering Meditation</h1>
@@ -83,11 +86,11 @@
       <p>In part due to poor mental health or "brain fog" which makes it incredibly difficult to engage with our minds in a meaningful way.</p>
       <p>That's why I created Hovering: A meditation technique which aims to bridge the gap between traditional meditation and simply not meditating at all.</p>
       <p>It has been designed to be easy to understand, simple to practice, as well as remain acessible to people of all ages.</p>
-      <p>If you would like to learn more about Hovering I highly encourage you to visit the <a class="link" href="/hovering">NeverFap Deluxe Hovering page</a> which provides a basics overview of the practice.</p>
-
-      <p>Alternatively you can visit the <a class="link" href="https://tryhovering.com/">Hovering Website</a> which provides a much more comprehensive.</p>
+      <p>If you would like to learn more about Hovering I highly encourage you to visit the <a class="link" href="/hovering">NeverFap Deluxe Hovering</a> section which provides a basics overview of the practice.</p>
 
       <img style="width: 100%;" src="https://neverfapdeluxe.netlify.com/images/hovering_web.png"/>
+
+      <p>Alternatively you can visit the <a class="link" href="https://tryhovering.com/">Hovering Website</a> which provides a much more comprehensive overview of Hovering.</p>
     </div>
   </div>
 
@@ -104,7 +107,7 @@
 <%# MEDITATION ESSENTIAL READING %>
   <div id="meditation_essential_reading" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <a href="meditation_essential_reading" class="guide__suggestion guide__suggestion__padding">
+      <a href="#meditation_essential_reading" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
       </a>
       <h1 class="single__sub__header">Meditation Essential Reading</h1>
@@ -126,12 +129,20 @@
 <%# NEXT STEPS ARTICLES %>
   <div id="next_steps" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <a href="next_steps" class="guide__suggestion guide__suggestion__padding">
+      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
       </a>
       <h1 class="single__sub__header">Next Steps</h1>
-      <!-- TODO -->
-      <p>Those resources should be more-than-enough for you to .</p>
+      <p>The resources on this page should be more-than-enough for you to develop a solid meditation routine.</p>
+      <p>In most cases, all it takes is 10 minutes of meditation each night before bed, and that should be enough for most people to be able to remain calm and maintain balance throughout the day.</p>
+      <p>Of course, like all things, meditation is simply a tool to help you maintain balance in your daily life. If you're not eating healthily or respecting boundaries, then no amount of meditation will help you improve.</p>
+      <p>Once you're comfortable with your meditation routine, I would highly recommend checking out of our <a href="/practices" class="link">NeverFap Deluxe Practices</a> in order to spend some time working on your awareness and mental health.</p>
+      <p>They consist of a series of exercises, much like meditation, which are designed to teach you mental health best practice, as well as offer perspective throughout your day.</p>
+      <p>There is also the <a href="/articles" class="link">NeverFap Deluxe Articles</a> section on the website which consists of a large range of in-depth articles explaining the porn addiction recovery process.</p>
+      <p>Just remember that no matter what, as a human being you absolutely have the capacity to overcome your porn addiction.</p>
+      <p>It's simply a matter of process and education, two things which NeverFap Deluxe offers whole-heartedly.</p>
+      <p>Oh, and here's an emoji of a dog to keep you motivated.</p>
+      <p>U・ᴥ・U</p>
     </div>
   </div>
 <%# NEXT STEPS ARTICLES END %>

@@ -12,7 +12,6 @@
         <a href="#how_i_can_help_you_achieve_your_goals"><li class="index__item">How I Can Help You Achieve Your Goals</li></a>
         <a href="#personal_coaching_pricing"><li class="index__item">Personal Coaching Pricing</li></a>
         <a href="#book_a_meeting"><li class="index__item">Book A Meeting</li></a>
-        <a href="#contact_me"><li class="index__item">Contact Me</li></a>
         <a href="#next_steps"><li class="index__item">Next Steps</li></a>
       </ol>
     </div>
@@ -24,7 +23,7 @@
 
 <%# INTRODUCTION %>
   <div id="introduction" class="single__wrapper">
-    <div class="single__content" style="margin-bottom: 0;">
+    <div class="single__content">
       <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
       </a>
@@ -40,7 +39,7 @@
 
 <%# REASONS TO CONSIDER COACHING %>
   <div id="reasons_to_consider_personal_coaching" class="single__wrapper">
-    <div class="single__content" style="margin-bottom: 0;">
+    <div class="single__content">
       <a href="#reasons_to_consider_personal_coaching" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
       </a>
@@ -74,7 +73,7 @@
 
 <%# HOW I CAN HELP YOU %>
   <div id="how_i_can_help_you_achieve_your_goals" class="single__wrapper">
-    <div class="single__content" style="margin-bottom: 0;">
+    <div class="single__content">
       <a href="#how_i_can_help_you_achieve_your_goals" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
       </a>
@@ -108,7 +107,7 @@
   </div>
 
   <div class="single__wrapper">
-    <div class="single__content" style="margin-bottom: 0;">
+    <div class="single__content">
       <a href="#personal_coaching_pricing" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
       </a>
@@ -123,7 +122,7 @@
 
 <%# BOOK A MEETING %>
   <div id="book_a_meeting" class="single__wrapper">
-    <div class="single__content" style="margin-bottom: 0;">
+    <div class="single__content">
       <a href="#book_a_meeting" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
       </a>
@@ -147,19 +146,19 @@
 <%# BOOK A MEETING END %>
 
 
-<%# CONTACT %>
-  <div id="contact_me" class="single__wrapper">
-    <div class="single__content" style="margin-bottom: 0;">
-      <a href="#contact_me" class="guide__suggestion guide__suggestion__padding">
+<%# NEXT STEPS %>
+  <div id="next_steps" class="single__wrapper">
+    <div class="single__content">
+      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">6.</h1>
       </a>
 
-      <h1>Contact</h1>
+      <h1>Next Steps</h1>
       <p>I hope you now have a proper understanding of how this all works.</p>
       <p>Feel free to contact me if you have any questions, or would simply like to chat about arranging a time to catch up.</p>
     </div>
 
-    <div class="form__wrapper form__wrapper--full-width">
+    <div style="margin-bottom: 2.5rem;" class="form__wrapper form__wrapper--full-width">
       <form class="form" action="https://formspree.io/admin@neverfapdeluxe.com" method="POST">
         <!-- <h4 class="form__title">THE FORM</h4> -->
         <div class="form__input__container">
@@ -172,22 +171,6 @@
           <button class="form__button" type="submit" value="Send">Send</button>
         </div>
       </form>
-    </div>
-  </div>
-
-  <%= partial "links/discord.html", assigns %>
-<%# CONTACT %>
-
-
-<%# NEXT STEPS %>
-  <div id="next_steps" class="single__wrapper">
-    <div class="single__content" style="margin-bottom: 0;">
-      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">7.</h1>
-      </a>
-      <!-- TODO -->
-      <h1>Next Steps</h1>
-      <p></p>
     </div>
   </div>
 <%# NEXT STEPS END %>

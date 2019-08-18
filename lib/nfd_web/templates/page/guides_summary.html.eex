@@ -8,7 +8,7 @@
         <h3><i class="page__index__emoji__left em em-page_facing_up"></i> Summary <i class="page__index__emoji__right em em-page_facing_up"></i></h3>
         <a href="#introduction"><li class="index__item">Introduction</li></a>
         <a href="#overview"><li class="index__item">Overview</li></a>
-        <a href="#key_points"><li class="index__item">Key Points</li></a>
+        <a href="#overview_key_points"><li class="index__item">Overview Key Points</li></a>
         <a href="#next_steps"><li class="index__item">Next Steps</li></a>
       </ol>
     </div>
@@ -51,23 +51,30 @@
 
 
 <%# KEY POINTS %>
-  <div id="key_points" class="single__wrapper">
+  <div id="overview_key_points" class="single__wrapper">
     <div class="single__content">
-      <a href="#key_points" class="guide__suggestion guide__suggestion__padding">
+      <a href="#overview_key_points" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
       </a>
 
-      <h1>Key Points</h1>
-      <ul>
-        <li>Effective recovery comes from maintaining balance.</li>
-        <li>Healthy Coping Mechanisms help maintain balance, Unhealthy Coping Mechanisms do not.</li>
-        <li>Unhealthy Coping Mechanisms include things like being judgemental and </li>
-        <li>Unhealthy Coping Mechanisms are learnt behaviours which likely have been developed since childhood.</li>
-        <li>Healthy Coping Mechanisms include things like meditating and remaining calm.</li>
-        <li>Healthy Coping Mechanisms allow you to develop control over your mind.</li>
-        <li>Recovery is a hard process of replacing negative habits with positive ones.</li>
-        <li>There are no cheap hacks, only practice and consistency matter to your recovery.</li>
-        <li>Meditation is arguably the most effective means of maintaining balance.</li>
+      <h1>Overview Key Points</h1>
+      <p>Here is a summary of the key points from the overview.</p>
+
+      <ul class="summary__key_points">
+        <li><b style="display: inline;"><u>Recovery</u></b> is all about maintaining balance.</li>
+        <li><b style="display: inline;"><u>Balance</u></b> allows you to develop control over your mind.</li>
+          <div style="margin-bottom: 0.4rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+          <div style="margin-bottom: 1rem; margin-top: 0.4rem; height: 4px; background: #00ffee;"></div>
+        <li><b style="display: inline;"><u>Healthy Coping Mechanisms</u></b> help maintain balance.</li>
+        <li><b style="display: inline;"><u>Healthy Coping Mechanisms</u></b> include things like meditating and remaining calm.</li>
+          <div style="margin-bottom: 0.4rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+          <div style="margin-bottom: 1rem; margin-top: 0.4rem; height: 4px; background: #00ffee;"></div>
+        <li><b style="display: inline;"><u>Unhealthy Coping Mechanisms</u></b> derail balance.</li>
+        <li><b style="display: inline;"><u>Unhealthy Coping Mechanisms</u></b> include things like being self-critical and distracting yourself from your emotions.</li>
+          <div style="margin-bottom: 0.4rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+          <div style="margin-bottom: 1rem; margin-top: 0.4rem; height: 4px; background: #00ffee;"></div>
+        <li><b style="display: inline;"><u>Recovery</u></b> is a hard process of replacing Unhealthy Coping Mechanisms with Healthy Coping Mechanisms.</li>
+        <li><b style="display: inline;"><u>Meditation</u></b> is a Healthy Coping Mechanism and is arguably the most effective means of maintaining balance.</li>
       </ul>
     </div>
   </div>
@@ -85,11 +92,14 @@
 
       <h1>Next Steps</h1>
       <p>Now that you have the basics down, it's really (and I mean, REALLY) important that you take the time to develop a solid mental health routine.</p>
-      <p>What does this actually mean? Well, it means developing a practice routine of daily meditation that you can practice each day.</p>
-      <p>An important thing to note about porn addiction recovery is that it's not a matter of "knowing" what it's all about, and then you're sudden relieved of ever thinking about porn or masturbation again.</p>
-      <p>It is a hard process of committing to practices and exercises which will slowly train your brain not to pursue these self-destructive behaviours.</p>
-      <p>Which is to say that without practice, literally nothing will improve and you'll continue to falter. So head on down to the <a href="/meditation" class="link">NeverFap Deluxe Meditation</a> section and understand the verifiable steps you need to take each day.</p>
-      <p>In order to ensure effective change in your life. Pronto. Now.</p>
+      <p>What does this mean? Well, it means developing a daily routine of Meditation that you can practice each day, along with other Healthy Coping Mechanisms to help you become your best person.</p>
+      <p>An important thing to note about porn addiction recovery is that it's not a process of "knowing" what you need to do, which then suddenly that knowledge relieves you of ever thinking about porn or masturbation again.</p>
+      <p>It's a hard process of committing to consistent mental health practice, which will slowly train your brain not to pursue these self-destructive behaviours any longer.</p>
+      <p>Which is to say that without practice, literally nothing will improve and you'll continue to falter, and no one likes a wiltered flower. <i class="em em-wilted_flower"></i></p>
+      <p>So head on down to the <a href="/meditation" class="link">NeverFap Deluxe Meditation</a> section and understand the verifiable steps you need to take each day.</p>
+      <p>In order to ensure effective change in your life.</p>
+      <p>Pronto. Now.</p>
+      <p>=＾● ⋏ ●＾=</p>
     </div>
   </div>
 <%# NEXT STEPS END %>
