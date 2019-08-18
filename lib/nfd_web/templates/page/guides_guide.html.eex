@@ -144,11 +144,11 @@
       <%= raw child_content(@item["children"], "guide-meditation-routine") %>
 
       <p class="guide__link__container"><a class="guide__link" href="/meditation#neverfap_deluxe_fundamental_meditation_series">NeverFap Deluxe Fundamental Meditation Series</a></br>
-        Learn the basic fundamentals of meditation with our 4-part meditation audio series.</p>
+        Cover the basics of effective meditation with our 4-part meditation audio series.</p>
       <p class="guide__link__container"><a class="guide__link" href="/hovering/">Hovering Meditation Technique</a></br>
         Hovering is a meditation techinque I created to assist those who struggle to meditate via traditional means.</p>
       <p class="guide__link__container"><a class="guide__link" href="/meditation#meditation_essential_reading/">Meditation Essential Reading</a></br>
-        Learn more about meditation with our Meditation Essential Reading List of NeverFap Deluxe Articles.</p>
+        Learn more about meditation with our list of meditation-related NeverFap Deluxe Articles.</p>
     </div>
   </div>
 

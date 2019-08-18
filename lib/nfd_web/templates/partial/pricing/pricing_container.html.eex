@@ -29,7 +29,7 @@
 <%# TODO Add an option so that you can purchase directly from here IF you are already signed in with an account. %>
 
 <div class="pricing__sign__in__container">
-  <div class="pricing__sign__in__title">Register or Sign in to purchase <b><%= @title %></b></div>
+  <div class="pricing__sign__in__title">Register or Sign in to purchase the <b><%= @title %></b></div>
 
   <!-- Register/Login -->
   <div class="account__buttons__login">
