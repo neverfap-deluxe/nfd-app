@@ -1,6 +1,6 @@
 .page__index {
   background: $white-text;
-  padding: 2rem;
+  padding: 1rem;
   border: 4px solid $black-background;
 
   margin-bottom: 2rem;
@@ -15,6 +15,7 @@
 
   .page__index__title {
     margin: 0!important;
+    padding: 1rem;
   }
 
   .page__index__emoji__left {
@@ -129,6 +130,16 @@
     .index__item:hover {
       // background: lightgrey;
       text-shadow: -2px 2px $magenta;
+    }
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .page__index {
+    padding: 2rem;
+
+    .page__index__title {
+      padding: 0rem;
     }
   }
 }

@@ -306,4 +306,14 @@
   .single__latest__articles__title {
     color: $black-text!important;
   }
+
+  .everything__container {
+    background: $black-darkmode-background!important;
+  }
+  .everything__sub__title, .everything__item__title {
+    color: $white-darkmode-text!important;
+  }
+  .everything__item:hover {
+    color: $black-text;
+  }
 }

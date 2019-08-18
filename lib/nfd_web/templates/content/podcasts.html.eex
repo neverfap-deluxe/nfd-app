@@ -36,17 +36,19 @@
 
 
 <%# PODCAST PLAYER %>
-  <div id="podcast_player" class="single__wrapper" style="padding-top: 0!important;">
-    <a href="#podcast_player" class="guide__suggestion guide__suggestion__padding">
-      <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
-    </a>
+  <div id="podcast_player" class="single__wrapper">
+    <div class="single__content">
+      <a href="#podcast_player" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+      </a>
 
-    <h1>Podcast Player</h1>
-    <p>Here is a simple audio player via Castbox if you'd like to listen to the podcast on the NeverFap Deluxe website.</p>
-    <p>You know, if you're reeaaaaaally desperate to hear my voice right now.</p>
+      <h1>Podcast Player</h1>
+      <p>Here is a simple audio player via Castbox if you'd like to listen to the podcast on the NeverFap Deluxe website.</p>
+      <p>You know, if you're reeaaaaaally desperate to hear my voice right now.</p>
 
-    <div style="border: 4px solid black; margin-top: 2rem; margin-bottom: 1rem;">
-      <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="100%" height="485"></iframe>
+      <div style="border: 4px solid black; margin-top: 2rem; margin-bottom: 1rem;">
+        <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="100%" height="485"></iframe>
+      </div>
     </div>
   </div>
 
