@@ -7,8 +7,8 @@
 
       <ol class="index__items">
         <h3><i class="page__index__emoji__left em em-book"></i> Guide <i class="page__index__emoji__right em em-book"></i></h3>
-        <a href="#introduction"><li class="index__item">Introduction</li></a>
         <a href="#preface"><li class="index__item">Preface</li></a>
+        <a href="#introduction"><li class="index__item">Introduction</li></a>
         <a href="#core_concepts"><li class="index__item">Core Concepts</li></a>
         <a href="#summary"><li class="index__item">Summary</li></a>
         <h3><i class="page__index__emoji__left em em-gift_heart"></i> Recommendations <i class="page__index__emoji__right em em-gift_heart"></i></i></h3>
@@ -31,34 +31,34 @@
 <%# INDEX END %>
 
 
-<%# INTRODUCTION %>
-  <div id="introduction" class="single__wrapper">
-    <div class="single__content" style="margin-bottom: 0rem;">
-      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
+<%# PREFACE %>
+  <div id="preface" class="single__wrapper">
+    <div class="single__content">
+      <a href="#preface" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
-        <h1>Introduction</h1>
+        <h1>Preface</h1>
       </a>
-      <%= raw child_content(@item["children"], "guide-intro") %>
+      <%= raw child_content(@item["children"], "guide-preface") %>
     </div>
   </div>
 
   <%= partial "links/facebook.html", assigns %>
-<%# INTRODUCTION END %>
+<%# PREFACE END %>
 
 
-<%# PREFACE %>
-  <div id="preface" class="single__wrapper">
-    <div class="single__content" style="margin-bottom: 0rem;">
-      <a href="#preface" class="guide__suggestion guide__suggestion__padding">
+<%# INTRODUCTION %>
+  <div id="introduction" class="single__wrapper">
+    <div class="single__content">
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
-        <h1>Preface</h1>
+        <h1>Introduction</h1>
       </a>
       <%= raw child_content(@item["children"], "guide-trust-the-process") %>
     </div>
   </div>
 
   <%= partial "links/twitter.html", assigns %>
-<%# PREFACE END  %>
+<%# INTRODUCTION END  %>
 
 
 <%# CORE CONCEPTS %>

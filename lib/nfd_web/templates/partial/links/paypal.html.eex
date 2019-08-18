@@ -1,5 +1,5 @@
 <div class="account__info">
-  <p class="account__info__title">Support the consistent growth of NeverFap Deluxe!</p>
+  <p class="account__info__title">Help us support the growth of NeverFap Deluxe!</p>
   <div class="account__buttons">
     <a class="account__paypal__button__container" href="<%= Application.get_env(:nfd, :social_paypal_url) %>">
       <img class="account__paypal__button__logo" src="/images/paypal__logo.png" />
