@@ -126,6 +126,11 @@
   }
 
   .banner__new__to__nfd {
+
+    .ending__banner__text {
+      background: $black-darkmode-background!important;
+      color: $white-darkmode-text!important;
+    }
     h2, h4, h3, h5, p, a {
       background: $white-text;
       color: $black-darkmode-background!important;;
@@ -133,6 +138,10 @@
     .banner__new__to__nfd__title--2nd {
       background: initial!important;
       color: $white-darkmode-text!important;
+    }
+    .banner__new__to__nfd__title--2nd__link {
+      background: $white-darkmode-text!important;
+      color: $black-text!important;
     }
     h1 {
       color: $white-text!important;
@@ -287,7 +296,14 @@
     color: $white-darkmode-text;
   }
 
-  .ending__banner__text {
-    color: $white-darkmode-text;
+  .pricing__banner__container {
+    border: 4px solid black;
+  }
+  .nfd__payment {
+    margin-bottom: 1.2rem;
+  }
+
+  .single__latest__articles__title {
+    color: $black-text!important;
   }
 }

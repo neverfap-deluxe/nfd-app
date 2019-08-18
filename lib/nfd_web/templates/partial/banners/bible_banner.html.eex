@@ -30,9 +30,9 @@
       </div>
     </div>
 
-    <div class="banner__split__divider"></div>
+    <div class="banner__split__divider mobile__remove__emoji"></div>
 
-    <div class="banner__split banner__split--right">
+    <div class="banner__split banner__split--right mobile__remove__emoji">
       <div class="bible__banner__image__container">
         <img src="/images/ebook_covers/bible-ebook-cover-600-900.png" alt="">
       </div>

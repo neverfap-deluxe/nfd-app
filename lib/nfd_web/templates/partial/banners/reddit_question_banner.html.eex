@@ -27,13 +27,13 @@
   <!-- REDDIT QUESTION END -->
 
   <!-- DIVIDER -->
-    <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
-    <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+    <div class="line__top line__top__reddit__question__banner"></div>
+    <div class="line__bottom line__bottom__reddit__question__banner"></div>
   <!-- DIVIDER END -->
 
   <!-- PERSONAL COACHING -->
     <div class="reddit__question__banner" style="margin-bottom: 0.7rem;">
-      <h2 style="height: 3rem;"><i class="em em-confetti_ball" style="margin-right: 0.3rem;"></i> Personal Coaching? <i class="em em-tada" style="margin-left: 0.3rem;"></i></h2>
+      <h2 style="height: 3rem;"><i class="em em-confetti_ball mobile__remove__emoji" style="margin-right: 0.3rem;"></i> Personal Coaching? <i class="em em-tada mobile__remove__emoji" style="margin-left: 0.3rem;"></i></h2>
       <div class="reddit__question__banner__box">
         <p>Let's organise a 10 Minute FREE Consultation so you can understand how <b>The Reade&copy;</b> can help you achieve your goals.</p>
       </div>
@@ -45,7 +45,7 @@
     <div class="account__buttons" style="flex-direction: row!important; align-items: center;">
       <a class="account__calendly__button__container" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/neverfap-deluxe'});return false;">
         <img class="account__calendly__button__logo" src="/images/calendly__logo.png" />
-        <p class="account__calendly__button__text">FREE <span class="account__calendly__button__text--display">CONSULTATION</span></p>
+        <p class="account__calendly__button__text"><span class="account__calendly__button__text--display">FREE CONSULTATION</span><span class="flipper">CALENDLY</span></p>
       </a>
     </div>
     <!--

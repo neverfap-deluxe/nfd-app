@@ -100,12 +100,12 @@
   animation: floatPure 6s ease-in-out infinite;
   z-index: 2;
 
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
 
   .cri {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
   }
 }
 
@@ -126,12 +126,37 @@
   opacity: 0;
 }
 
+.hovering__button__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 @media screen and (min-width: 420px) {
 
 }
 
 @media screen and (min-width: 768px) {
+  .hovering__button__container {
+    flex-direction: row;
+  }
 
+  .cr {
+    width: 300px;
+    height: 300px;
+    .cri {
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  .hovering__banner {
+    .hovering__banner__title {
+      // text-shadow: 20px 20px $magenta;
+      // font-size: 4rem;
+      // line-height: 6rem;
+    }
+  }
 }
 
 @media screen and (min-width: 1024px) {

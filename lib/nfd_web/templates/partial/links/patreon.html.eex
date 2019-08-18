@@ -1,10 +1,10 @@
 <div class="account__info">
   <p class="account__info__title">Check out my Patreon for updates on NeverFap Deluxe!</p>
   <div class="account__buttons">
-    
+
     <a class="account__patreon__button__container" href="<%= Application.get_env(:nfd, :social_patreon_url) %>">
       <img class="account__patreon__button__logo" src="/images/patreon__logo.jpg" />
-      <p class="account__patreon__button__text"><span class="account__patreon__button__text--display">BECOME A </span>PATRON</p>
+      <p class="account__patreon__button__text"><span class="account__patreon__button__text--display">BECOME A </span>PATR<span class="flipper">E</span>ON</p>
     </a>
   </div>
 </div>

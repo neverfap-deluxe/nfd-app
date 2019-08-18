@@ -10,16 +10,16 @@
 
       <%# <img src="/images/screenshots/hovering_mobile.png" /> %>
 
-      <div style="display: flex; margin-top: 1rem;">
+      <div class="hovering__button__container" style="margin-top: 1rem;">
         <a class="hovering__banner__link" href="https://hovering.neverfapdeluxe.com/">Hovering Web App</a>
         <a class="mobile__android__link" href='https://play.google.com/store/apps/details?id=com.nfd.hovering&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img class="mobile__android__link__image" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
       </div>
     </div>
 
-    <div class="banner__split__divider"></div>
+    <div class="banner__split__divider mobile__remove__emoji"></div>
 
     <!-- HOVER CIRCLE -->
-    <div class="banner__split banner__split--right">
+    <div class="banner__split banner__split--right mobile__remove__emoji">
       <div class="circle__container cr">
         <div class="circle cri" id="hoverCircleExampleYo">
           <div class="circle__text" id="hoverCircleTextYo">
@@ -33,13 +33,36 @@
       const hoverCircleExampleYo = document.querySelector('#hoverCircleExampleYo');
       const hoverCircleTextYo = document.querySelector('#hoverCircleTextYo');
 
+      // NOTE: This doesn't work for dark mode
+      // It removes the class, but the styles don't change.
       hoverCircleExampleYo.onmouseenter = function() {
         hoverCircleTextYo.classList.add("hover__text__fade");
-        document.body.classList.add("main__dark");
+        if (getCookie('isDarkMode')) {
+          document.body.classList.remove("main__dark");
+        } else {
+          document.body.classList.add("main__dark");
+        }
       }
       hoverCircleExampleYo.onmouseleave = function() {
         hoverCircleTextYo.classList.remove("hover__text__fade");
-        document.body.classList.remove("main__dark");
+        if (getCookie('isDarkMode')) {
+          document.body.classList.add("main__dark");
+        } else {
+          document.body.classList.remove("main__dark");
+        }
+      }
+
+
+
+      function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
       }
     </script>
     <!-- HOVER CIRCLE END -->

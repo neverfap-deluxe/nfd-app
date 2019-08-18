@@ -11,7 +11,10 @@
 .practices__banner {
   padding: 1rem;
   .practices__banner__title {
-    font-size: 1.6rem!important;
+    font-size: 2.2rem!important;
+    line-height: 3.2rem;
+
+    // font-size: 2rem!important;
 
     // box-shadow: -5px 5px 0px 0px $black-background;
 
@@ -49,8 +52,6 @@
 .pricing__banner__container {
   background: white;
   position: relative;
-  padding: 2rem;
-  border: 4px solid black;
 
   .pricing__banner__title {
     color: white;
@@ -126,8 +127,7 @@
   justify-content: center;
 
   margin-top: 2rem;
-  padding: 2rem;
-  border: 4px solid black;
+  padding: 0.5rem;
 
   .pricing__sign__in__title {
     font-size: 1rem;
@@ -200,33 +200,58 @@
 }
 
 @media screen and (min-width: 420px) {
-
+  .practices__banner {
+    .practices__banner__title {
+    }
+  }
 }
+
+@media screen and (min-width: 575px) {
+  .practices__banner {
+    .practices__banner__title {
+      font-size: 2.8rem!important;
+      line-height: 3.8rem;
+    }
+  }
+}
+
 
 @media screen and (min-width: 768px) {
   .practices__banner {
     padding: 4rem;
     .practices__banner__title {
-      font-size: 2.5rem!important;
+      font-size: 3.8rem!important;
     }
+  }
+
+  .pricing__sign__in__container {
+    padding: 2rem;
+    border: 4px solid black;
   }
 }
 
 @media screen and (min-width: 1024px) {
-
-}
-
-@media screen and (min-width: 1160px) {
   .practices__banner {
     padding: 4rem;
     .practices__banner__title {
-      font-size: 3rem!important;
+      font-size: 2.6rem!important;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .practices__banner {
+    .practices__banner__title {
+      font-size: 3.1rem!important;
     }
   }
 }
 
 @media screen and (min-width: 1280px) {
   .pricing__banner__container {
+    padding: 2rem;
+    border: 4px solid black;
+
     .pricing__guarantee {
       flex-direction: row;
     }

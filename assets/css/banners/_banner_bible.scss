@@ -1,7 +1,7 @@
 .bible__banner {
   .bible__banner__title {
-    font-size: 4rem;
-    line-height: 6rem;
+    font-size: 3.4rem;
+    line-height: 5.4rem;
     margin-bottom: 0;
 
     border-top: 60px solid;
@@ -25,6 +25,15 @@
       box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.22), 0 17px 17px 0 rgba(0, 0, 0, 0.22);
       transition: .4s box-shadow;
       cursor: pointer;
+    }
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .bible__banner {
+    .bible__banner__title {
+      font-size: 4rem;
+      line-height: 6rem;
     }
   }
 }

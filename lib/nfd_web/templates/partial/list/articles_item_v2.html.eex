@@ -10,5 +10,5 @@
   <%= if @tldr3 != "" do %><li><%= @tldr3 %></li><% end %>
 </ul>
 
-<div style="margin-top: 3rem; height: 4px; background: rgba(255,46,182,1);"></div>
-<div style="margin-bottom: 3rem; height: 4px; background: cyan;"></div>
+<div class="line__top__articles__item"></div>
+<div class="line__bottom__articles__item"></div>

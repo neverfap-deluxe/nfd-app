@@ -427,6 +427,15 @@
   margin: 1rem;
 }
 
+.homepage__section__more__margin {
+  margin-top: 4rem!important;
+}
+
+.homepage__section__more__margin__with__bottom {
+  margin-top: 4rem!important;
+  margin-bottom: 4rem!important;
+}
+
 .homepage__section__closer {
   // margin: 1rem;
 }
@@ -656,7 +665,7 @@
 
 .homepage__resources {
   .homepage__resource {
-    
+
   }
 }
 
@@ -673,7 +682,7 @@
     margin-bottom: 0;
   }
   .article__item__homepage__description {
-    
+
   }
   .article__item__homepage__title:hover {
     opacity: 0.7;
@@ -681,7 +690,7 @@
 }
 
 .article__item__divider {
-  // border: 
+  // border:
 }
 
 .article__item__list {
@@ -767,6 +776,10 @@
 
 
 @media screen and (min-width: 768px) {
+  // .homepage__section__more__margin {
+  //   // margin-top: 2rem;
+  // }
+
   .homepage__tldr--signature {
     display: block;
     position: absolute;

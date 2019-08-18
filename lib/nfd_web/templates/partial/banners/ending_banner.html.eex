@@ -3,9 +3,9 @@
 
   <a style="background: inherit;" href="/"><h3 class="banner__new__to__nfd__title">Thank you for reading NeverFap Deluxe!</h3></a>
   <h3 class="banner__new__to__nfd__title--2nd">Feel free to share
-    <a style="margin-left: 0.4rem; margin-right: 0.4rem;"class="link articles__link banner__new__to__nfd__title--2nd" href="https://neverfapdeluxe.com/">https://neverfapdeluxe.com/</a>
+    <a class="link articles__link banner__new__to__nfd__title--2nd banner__new__to__nfd__title--2nd__link" href="https://neverfapdeluxe.com/">https://neverfapdeluxe.com/</a>
     with the world :D</h3>
-  <p style="margin-bottom: 1.6rem; margin-top: -0.2rem;" class="ending__banner__text">ฅ(＾・ω・＾ฅ) <span style="margin-left: 0.9rem; margin-right: 0.1rem;">Sincerely</span> （＾・ω・＾✿）</p>
+  <p style="margin-bottom: 1.6rem; margin-top: -0.2rem;" class="ending__banner__text"><span class="mobile__remove__emoji">ฅ(＾・ω・＾ฅ)</span> <span style="margin-left: 0.9rem; margin-right: 0.1rem;">Sincerely</span> <span class="mobile__remove__emoji">（＾・ω・＾✿）</span></p>
   <p class="ending__banner__text"><i class="em em-sparkling_heart"></i> The Reade <i class="em em-sparkling_heart"></i></p>
 </div>
 

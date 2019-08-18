@@ -34,8 +34,8 @@
     </div>
   </div>
 
-  <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
-  <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+  <div class="line__top"></div>
+  <div class="line__bottom"></div>
 
 
   <%= partial "banners/bible_banner.html", assigns %>
@@ -46,8 +46,8 @@
     </div>
   </div> -->
 
-  <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
-  <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+  <div class="line__top"></div>
+  <div class="line__bottom"></div>
 <%# INTRODUCTION END %>
 
 

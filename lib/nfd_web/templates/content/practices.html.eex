@@ -38,13 +38,13 @@
     </div>
   </div>
 
-  <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
-  <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+  <div class="line__top"></div>
+  <div class="line__bottom"></div>
 
   <%= partial "banners/fdm_banner.html", assigns %>
 
-  <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
-  <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+  <div class="line__top"></div>
+  <div class="line__bottom"></div>
 <%# PREFACE END %>
 
 
@@ -64,8 +64,8 @@
     </div>
   </div>
 
-  <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
-  <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+  <div class="line__top"></div>
+  <div class="line__bottom"></div>
 
   <%= partial "banners/practices_banner.html", assigns %>
 
@@ -75,8 +75,8 @@
     </div>
   </div> -->
 
-  <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
-  <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
+  <div class="line__top"></div>
+  <div class="line__bottom"></div>
 <%# PRACTICES INTRODUCTION END %>
 
 
@@ -92,11 +92,19 @@
       <p></p>
 
       <p>Each practice contains:</p>
-      <ul class="practice__list">
+      <ul class="practice__list summary__key_points">
         <li>A brief practice summary card.</li>
+        <div style="margin-bottom: 0.4rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+        <div style="margin-bottom: 1rem; margin-top: 0.4rem; height: 4px; background: #00ffee;"></div>
         <li>A section explaining the context of the exercise.</li>
+        <div style="margin-bottom: 0.4rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+        <div style="margin-bottom: 1rem; margin-top: 0.4rem; height: 4px; background: #00ffee;"></div>
         <li>A section describing the instructions of how to practice the exercise.</li>
+        <div style="margin-bottom: 0.4rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+        <div style="margin-bottom: 1rem; margin-top: 0.4rem; height: 4px; background: #00ffee;"></div>
         <li>A section describing how I personally practice the exercise.</li>
+        <div style="margin-bottom: 0.4rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+        <div style="margin-bottom: 1rem; margin-top: 0.4rem; height: 4px; background: #00ffee;"></div>
         <li>Essential audio explaining the basis of the practice.</li>
       </ul>
       <p>For an example of a free practice that I've made available to the public, please check out the <a href="/practices/observe-your-senses" class="link">Observe Your Senses</a> exercise which explains the basis of basic meditation.</p>

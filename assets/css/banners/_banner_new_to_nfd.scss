@@ -23,18 +23,49 @@
     margin-top: 2.6rem;
     transition: 2s box-shadow;
     cursor: pointer;
+
+    font-size: 1.7rem;
+    line-height: 2.4rem;
+    text-align: center;
   }
 
   .banner__new__to__nfd__title:hover {
     box-shadow: -35px 35px 0px 0px $white-text;
   }
 
-  .banner__new__to__nfd__title--2nd {
-    margin-top: 0rem;
-  }
-
   .new__to__nfd__link {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+  }
+}
+
+.banner__new__to__nfd__title--2nd {
+  margin-top: 0.4rem;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+
+  text-align: center;
+}
+
+.banner__new__to__nfd__title--2nd__link {
+  margin-top: 0.4rem;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+}
+
+
+@media screen and (min-width: 786px) {
+  .banner__new__to__nfd {
+
+    .banner__new__to__nfd__title {
+      text-align: left;
+
+      font-size: 1.4rem;
+      line-height: 2rem;
+    }
+  }
+
+  .banner__new__to__nfd__title--2nd {
+    text-align: left;
   }
 }

@@ -52,22 +52,16 @@
     </a>
 
     <div class="header__sub header__banner__articles">
-      <a href="/neverfap-deluxe-bible" class="header__module">
-        <h3 class="h3__yus">
-          NeverFap Deluxe Bible
-          <span class="h3__tiny">/bible</span>
-        </h3>
-      </a>
       <a href="/articles" class="header__module header__module--flex">
         <h3 class="h3__yus">
           NeverFap Deluxe Articles
           <span class="h3__tiny">/articles</span>
         </h3>
       </a>
-      <a href="/practices" class="header__module">
+      <a href="/neverfap-deluxe-bible" class="header__module">
         <h3 class="h3__yus">
-          NeverFap Deluxe Practices
-          <span class="h3__tiny">/practices</span>
+          NeverFap Deluxe Bible
+          <span class="h3__tiny">/bible</span>
         </h3>
       </a>
     </div>
@@ -83,6 +77,12 @@
           <span class="h3__tiny">/meditation</span>
         </h3>
       </a>
+      <a href="/practices" class="header__module">
+        <h3 class="h3__yus">
+          NeverFap Deluxe Practices
+          <span class="h3__tiny">/practices</span>
+        </h3>
+      </a>
       <a href="/hovering" class="header__module">
         <h3 class="h3__yus">
           Hovering Meditation
@@ -90,6 +90,7 @@
         </h3>
       </a>
     </div>
+
 
     <!-- PODCAST -->
     <a id="link__podcast" class="header__link__wrapper header__link__wrapper--disappear" href="/podcast">
@@ -107,6 +108,7 @@
         <p>Available on iTunes, Spotify and Castbox.</p>
       </div>
     </div>
+
 
     <!-- COMMUNITY -->
     <a id="link__community" class="header__link__wrapper header__link__wrapper--disappear" href="/community">

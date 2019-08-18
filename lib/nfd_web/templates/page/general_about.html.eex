@@ -38,9 +38,10 @@
 <%# MOTIVATION %>
   <div id="motivation" class="single__wrapper">
     <div class="single__content">
-      <a href="#motivation" motivationclass="guide__suggestion guide__suggestion__padding">
+      <a href="#motivation" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
       </a>
+
       <h1 class="single__sub__header">Motivation</h1>
       <%= raw child_content(@item["children"], "about-main-1") %>
     </div>
