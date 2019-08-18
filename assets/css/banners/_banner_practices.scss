@@ -177,17 +177,27 @@
 
 
 .practices__section {
+  margin-bottom: 1rem;
   .practices__section__title {
-
+    text-decoration: underline $magenta;
+    // border-left: 1rem solid $magenta;
+    // padding-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    font-size: 2rem;
   }
 }
 
 .practices__section__collection {
+  margin-bottom: 4rem;
   .practices__section__collection__item {
+    margin-bottom: 1rem;
   }
 }
 
-
+.banner__emoji {
+  position: relative; right: -0.2rem;
+}
 
 @media screen and (min-width: 420px) {
 

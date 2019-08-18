@@ -10,11 +10,9 @@
 
       <%# <img src="/images/screenshots/hovering_mobile.png" /> %>
 
-      <div>
-        <div style="display: flex; margin-top: 1rem;">
-          <a class="hovering__banner__link" href="https://hovering.neverfapdeluxe.com/">Hovering Web App</a>
-          <a class="mobile__android__link" href='https://play.google.com/store/apps/details?id=com.nfd.hovering&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img class="mobile__android__link__image" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
-        </div>
+      <div style="display: flex; margin-top: 1rem;">
+        <a class="hovering__banner__link" href="https://hovering.neverfapdeluxe.com/">Hovering Web App</a>
+        <a class="mobile__android__link" href='https://play.google.com/store/apps/details?id=com.nfd.hovering&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img class="mobile__android__link__image" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
       </div>
     </div>
 

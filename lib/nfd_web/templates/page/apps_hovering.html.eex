@@ -23,23 +23,124 @@
 <%# HOVERING CONTENT %>
   <div class="single__wrapper">
     <div class="single__content">
-      <%= raw @item["content"] %>
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+      </a>
+
+      <h1>Introduction</h1>
+      <p>Hovering is a meditation technique that I created to assist people new to meditation. It significantly helps those who struggle to meditate via traditional means.</p>
+      <p>It has been designed to be easy to understand, simple to practice, as well as remain acessible to people of all ages.</p>
+      <p>Unlike traditional meditation, Hovering aims to be highly concrete as opposed to highly abstract so you can have that 'ah-ha' moment of clarity a lot sooner, rather than later.</p>
+      <p>Essentially how it works is that you hover your cursor over the hover button and you use this as a tool to help ground your mind.</p>
+
+      <div style="display: flex; justify-content: center; align-items: center; margin-top: 3.6rem; margin-bottom: 3.6rem;">
+        <div class="circle__container cr">
+          <div id="hoverCircleExampleHover" class="circle cri">
+            <div id="hoverCircleTextHover" class="circle__text">
+              Hover
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        const hoverCircleExampleHover = document.querySelector('#hoverCircleExampleHover');
+        const hoverCircleTextHover = document.querySelector('#hoverCircleTextHover');
+
+        hoverCircleExampleHover.onmouseenter = function() {
+          hoverCircleTextHover.classList.add("hover__text__fade");
+          document.body.classList.add("main__dark");
+        }
+        hoverCircleExampleHover.onmouseleave = function() {
+          hoverCircleTextHover.classList.remove("hover__text__fade");
+          document.body.classList.remove("main__dark");
+        }
+      </script>
+
+      <p>Of course, that's just the basics of it.</p>
+      <p>It's actually quite a lot more involved. For example, it's important that you keep your hand attached to your cursor while you practice Hovering.</p>
     </div>
   </div>
 
   <%= partial "links/twitter.html", assigns %>
 <%# HOVERING CONTENT END %>
 
+<%# HOVERING WEBSITE %>
+  <div id="hovering_android_application" class="single__wrapper">
+    <div class="single__content">
+      <a href="#hovering_website" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+      </a>
+
+      <h1>Hovering Website</h1>
+      <p>If you would like to learn more about Hovering, I've written an extensive website/guide which explains the concept of Hovering in a lot more detail.</p>
+
+      <img style="width: 100%;" src="https://neverfapdeluxe.netlify.com/images/hovering_web.png"/>
+
+      <a style="display: inline-block; margin-top: 2rem;" class="link articles__link" href='https://tryhovering.com/'>Hovering Website</a>
+    </div>
+  </div>
+
+  <%= partial "links/twitter.html", assigns %>
+<%# HOVERING WEBSITE END %>
+
+
+<%# HOVERING WEB APP %>
+  <div id="hovering_android_application" class="single__wrapper">
+    <div class="single__content">
+      <a href="#hovering_web_application" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+      </a>
+
+      <h1>Hovering Web Application</h1>
+      <p>Hovering Meditation is available as an online Web Application. It's simple and easy to use.</p>
+
+      <img style="width: 100%;" src="https://neverfapdeluxe.netlify.com/images/hovering_app.png"/>
+
+      <a style="display: inline-block; margin-top: 2rem;" class="link articles__link" href='https://hovering.neverfapdeluxe.com/'>Hovering Web Application</a>
+    </div>
+  </div>
+
+  <%= partial "links/reddit.html", assigns %>
+<%# HOVERING WEB APP END %>
+
+
+<%# HOVERING ANDROID APP %>
+  <div id="hovering_android_application" class="single__wrapper">
+    <div class="single__content">
+      <a href="#hovering_android_application" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+      </a>
+
+      <h1>Hovering Android Application</h1>
+      <p>Hovering Meditation is also available on Android.</p>
+
+      <img style="width: 350px;" src="https://neverfapdeluxe.netlify.com/images/hovering_mobile.png"/>
+
+      <a style="display: inline-block; margin-top: 2rem;" class="link articles__link" href='https://hovering.neverfapdeluxe.com/'>Hovering Android Application</a>
+    </div>
+  </div>
+
+  <%= partial "links/facebook.html", assigns %>
+<%# HOVERING ANDROID APP END %>
+
 
 <%# NEXT STEPS %>
   <div id="next_steps" class="single__wrapper">
     <div class="single__content">
-      <h1>Next Steps</h1>
-      <p>What's important with these things is to be consistent with your practice. It doesn't matter if you're hovering or practicing traditional meditation, the basic fundamentals of practice and consistency maintain.</p>
-      <p>I've put a lot of effort into creating these resources and I genuinely hope they serve you well.</p>
+      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
+      </a>
 
+      <h1>Next Steps</h1>
+      <p>In most cases, the reason why people struggle with meditation is because they have it explained poorly to them.</p>
+      <p>Which leads people to think that it's pointless, which is a huge shame because it really is one of the most important things you can do for your porn addiction recovery.</p>
+      <p>If you're interested in learning more about meditation best practice, I would visit the <a href="/meditation" class="link">NeverFap Deluxe Meditation</a> section of the website which explains how best to develop a solid meditation routine.</p>
+      <p>Of course, what's truly important with these things is learning to be consistent. It doesn't matter if you're hovering or listening to guided meditation, the basic fundamentals of practice and consistency remain.</p>
+      <p>The longer you commit to these exercises, the more you'll influence your brain and the quicker you'll become porn addiction free.</p>
+      <p>I've put a lot of effort into creating these resources and I genuinely hope they serve you well.</p>
       <p>Sincerely,</p>
-      <p>The Reade</p>
+      <p>The Reade <i class="em em-v"></i></p>
     </div>
   </div>
 <%# NEXT STEPS END %>

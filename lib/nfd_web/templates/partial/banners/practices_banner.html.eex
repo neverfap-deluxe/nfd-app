@@ -14,13 +14,13 @@
       </div>
       <!-- PRACTICES TITLE END -->
 
-      <h4 class="banner__sub__title practices__banner__sub__title">Want to take your mental health to the next level?</h4>
+      <h4 class="banner__sub__title practices__banner__sub__title">It's time to take your mental health seriously.</h4>
 
       <h4 class="banner__sub__title practices__banner__sub__title">Develop your capacity for conscious awareness with our NeverFap Deluxe Practices.</h4>
       <ul class="banner__list practices__banner__list">
         <li class="banner__item practices__banner__item">Lifetime access to all practices on the NeverFap Deluxe.</li>
-        <li class="banner__item practices__banner__item">3+ new practices each month.</li>
-        <li class="banner__item practices__banner__item">Practices come with a summary cards, context sections, instruction sections, personal practice sections and practice audio.</li>
+        <!-- <li class="banner__item practices__banner__item">3+ new practices each month.</li> -->
+        <li class="banner__item practices__banner__item">Practices come with summary cards, context sections, instruction sections, personal practice sections and practice audio.</li>
       </ul>
     </div>
     <div class="banner__split__divider"></div>

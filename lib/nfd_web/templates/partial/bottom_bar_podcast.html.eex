@@ -3,12 +3,12 @@
     NeverFap Deluxe
   </div>
   <div class="bottom__bar__show">
-    <% meditation = @page_collections.meditations |> List.first() %>
+    <% podcast = @page_collections.podcasts |> List.first() %>
 
     <!-- Meditation -->
     <div class="bottom__bar__meditation">
       <div class="bottom__bar__meditation__top">
-        <h5>Latest Guided Meditation <span class="bottom__bar__sub"><%= meditation |> Map.get("title") %></span></h5>
+        <h5>Latest NeverFap Deluxe Podcast <span class="bottom__bar__sub"><%= podcast |> Map.get("title") %></span></h5>
         <div class="bottom__bar__social">
           <div class="bottom__bar__social__first">
             <!-- Social -->
@@ -76,7 +76,7 @@
 
       <div style="position: relative;">
         <audio id="player" controls>
-          <source src='<%= meditation |> Map.get("mp3Url") %>' type="audio/mp3" />
+          <source src='<%= podcast |> Map.get("mp3Url") %>' type="audio/mp3" />
         </audio>
 
         <span class="bottom__bar__h3__tiny h3__tiny">Available on iTunes, Spotify and Castbox.</span>
@@ -89,7 +89,7 @@
       <script>
         var player = new Plyr('#player', {
           type: 'audio',
-          title: '<%= meditation |> Map.get("title") %>',
+          title: '<%= podcast |> Map.get("title") %>',
           // sources: [
           //     {
           //         src: '/path/to/audio.mp3',
@@ -105,13 +105,13 @@
         var playerTitleText = document.querySelector('.bottom__bar__initial');
 
         player.on('play', function() {
-          playerTitleText.textContent = 'Now Playing: <%= meditation |> Map.get("title") %> (0:00)';
+          playerTitleText.textContent = 'Now Playing: <%= podcast |> Map.get("title") %> (0:00)';
         });
 
         player.on('timeupdate', function(event) {
           var roundedCurrentTime = Math.floor(player.currentTime);
           var formattedCurrentTime = roundedCurrentTime;
-          playerTitleText.textContent = 'Now Playing: <%= meditation |> Map.get("title") %> ' + '(' + fancyTimeFormat(formattedCurrentTime) + ')';
+          playerTitleText.textContent = 'Now Playing: <%= podcast |> Map.get("title") %> ' + '(' + fancyTimeFormat(formattedCurrentTime) + ')';
         });
 
         const revert = function() {

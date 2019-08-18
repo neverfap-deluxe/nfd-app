@@ -51,6 +51,6 @@
     <div class="pricing__payment">
       <img style="margin-right: 0.6rem;"class="pricing__payment__image" src="/images/paypal__logo.png" alt="">
       <img class="pricing__payment__image" src="/images/stripe__square.png" alt="">
-    </div>  
-  </div>  
+    </div>
+  </div>
 </div>

@@ -443,103 +443,108 @@
 
         <h3 class="popular__latest__options__title">Articles</h3>
         <div class="popular__latest__options">
-          <h3 class="button__click button__on" id="popular">Introduction</h3>
-          <h3 class="button__click button__off" id="latest">Latest</h3>
+          <h3 class="button__click button__on" id="latest">Latest</h3>
+          <h3 class="button__click button__off" id="popular">Introduction</h3>
         </div>
-        <div class="post__on" id="popular__posts">
+        <div class="post__off" id="popular__posts">
           <%= partial "home/introduction_posts.html", %{ conn: @conn, items: @page_collections.articles } %>
         </div>
-        <div class="post__off" id="latest__posts">
+        <div class="post__oon" id="latest__posts">
           <%= partial "content/latest_posts.html", %{ conn: @conn, items: @page_collections.articles, type: :article } %>
         </div>
       </div>
+
+      <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
+      <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
     <%# NFD ARTICLES END %>
 
-    <%= partial "banners/podcast_banner.html", assigns %>
-
-    <div class="homepage__section"  style="margin-bottom: 4rem;">
-      <h2>Warning! <i class="em em-warning"></i></h2>
-      <h3>
-        Chances are that you may have been going about porn recovery the wrong
-        way.
-      </h3>
-      <hr />
-    </div>
-
-    <div class="homepage__hero homepage__hero--third">
-      <h1 class="homepage__hero__title">If you believe you have limited control over your mind.</h1>
-      <ul class="homepage__hero__principle__wrapper">
-        <li class="homepage__hero__principle__item">Choice over mind</li>
-      </ul>
-    </div>
-
-    <div class="homepage__section">
-      <h3>You're doing it wrong. <i class="em em-x"></i></h3>
-      <hr />
-    </div>
-
-    <div class="homepage__hero homepage__hero--third">
-      <h1 class="homepage__hero__title">If you struggle to get further than two months.</h1>
-      <ul class="homepage__hero__principle__wrapper">
-        <li class="homepage__hero__principle__item">Balance over reward</li>
-      </ul>
-    </div>
-
-    <div class="homepage__section">
-      <h3>You're doing it wrong. <i class="em em-x"></i></h3>
-      <hr />
-    </div>
-
-    <div class="homepage__hero homepage__hero--third">
-      <h1 class="homepage__hero__title">If you consistently fight your emotions.</h1>
-      <ul class="homepage__hero__principle__wrapper">
-        <li class="homepage__hero__principle__item">Struggle over none</li>
-      </ul>
-    </div>
-
-    <div class="homepage__section">
-      <h3>You're doing it wrong. <i class="em em-x"></i></h3>
-      <hr />
-    </div>
-
-    <div class="homepage__hero homepage__hero--third">
-      <h1 class="homepage__hero__title">If you don't practice meditation.</h1>
-      <ul class="homepage__hero__principle__wrapper">
-        <li class="homepage__hero__principle__item">Awareness over all</li>
-      </ul>
-    </div>
-
-    <div class="homepage__section">
-      <h3>You're doing it wrong. <i class="em em-x"></i></h3>
-      <hr />
-    </div>
-
-    <div class="homepage__hero homepage__hero--third">
-      <h1 class="homepage__hero__title">If you're critical of yourself and others.</h1>
-      <ul class="homepage__hero__principle__wrapper">
-        <li class="homepage__hero__principle__item">Uncondition over judgement</li>
-      </ul>
-    </div>
-
-    <div class="homepage__section">
-      <h3>You get the drift. <i class="em em-anguished"></i></h3>
-      <hr />
-    </div>
-
-    <div class="homepage__section" style="margin-bottom: 0!important; padding-bottom: 2rem;">
-      <h3>Listen...</h3>
-      <h1>I've spent most my life doing it wrong.</h1>
-      <h2>So you don't have to waste your time like I did. <i class="em em-innocent"></i></h2>
-      <hr />
-      <p>Click on the link below to get started with your NeverFap journey.</p>
-
-      <div class="homepage__hero homepage__guide__wrapper">
-        <a class="homepage__guide" href="/guide">NeverFap Deluxe Guide</a>
-      </div>
-    </div>
+    <%= partial "promotion_footer.html", assigns %>
 </div>
 
 
+
+<!-- <%#= partial "banners/podcast_banner.html", assigns %> -->
+
+<!-- <div class="homepage__section"  style="margin-bottom: 4rem;">
+  <h2>Warning! <i class="em em-warning"></i></h2>
+  <h3>
+    Chances are that you may have been going about porn recovery the wrong
+    way.
+  </h3>
+  <hr />
+</div>
+
+<div class="homepage__hero homepage__hero--third">
+  <h1 class="homepage__hero__title">If you believe you have limited control over your mind.</h1>
+  <ul class="homepage__hero__principle__wrapper">
+    <li class="homepage__hero__principle__item">Choice over mind</li>
+  </ul>
+</div>
+
+<div class="homepage__section">
+  <h3>You're doing it wrong. <i class="em em-x"></i></h3>
+  <hr />
+</div>
+
+<div class="homepage__hero homepage__hero--third">
+  <h1 class="homepage__hero__title">If you struggle to get further than two months.</h1>
+  <ul class="homepage__hero__principle__wrapper">
+    <li class="homepage__hero__principle__item">Balance over reward</li>
+  </ul>
+</div>
+
+<div class="homepage__section">
+  <h3>You're doing it wrong. <i class="em em-x"></i></h3>
+  <hr />
+</div>
+
+<div class="homepage__hero homepage__hero--third">
+  <h1 class="homepage__hero__title">If you consistently fight your emotions.</h1>
+  <ul class="homepage__hero__principle__wrapper">
+    <li class="homepage__hero__principle__item">Struggle over none</li>
+  </ul>
+</div>
+
+<div class="homepage__section">
+  <h3>You're doing it wrong. <i class="em em-x"></i></h3>
+  <hr />
+</div>
+
+<div class="homepage__hero homepage__hero--third">
+  <h1 class="homepage__hero__title">If you don't practice meditation.</h1>
+  <ul class="homepage__hero__principle__wrapper">
+    <li class="homepage__hero__principle__item">Awareness over all</li>
+  </ul>
+</div>
+
+<div class="homepage__section">
+  <h3>You're doing it wrong. <i class="em em-x"></i></h3>
+  <hr />
+</div>
+
+<div class="homepage__hero homepage__hero--third">
+  <h1 class="homepage__hero__title">If you're critical of yourself and others.</h1>
+  <ul class="homepage__hero__principle__wrapper">
+    <li class="homepage__hero__principle__item">Uncondition over judgement</li>
+  </ul>
+</div>
+
+<div class="homepage__section">
+  <h3>You get the drift. <i class="em em-anguished"></i></h3>
+  <hr />
+</div>
+
+<div class="homepage__section" style="margin-bottom: 0!important; padding-bottom: 2rem;">
+  <h3>Listen...</h3>
+  <h1>I've spent most my life doing it wrong.</h1>
+  <h2>So you don't have to waste your time like I did. <i class="em em-innocent"></i></h2>
+  <hr />
+  <p>Click on the link below to get started with your NeverFap journey.</p>
+
+  <div class="homepage__hero homepage__guide__wrapper">
+    <a class="homepage__guide" href="/guide">NeverFap Deluxe Guide</a>
+  </div>
+</div> -->
 
 
 <!-- PROMOTION  -->

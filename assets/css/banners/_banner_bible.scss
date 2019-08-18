@@ -1,6 +1,20 @@
 .bible__banner {
   .bible__banner__title {
+    font-size: 4rem;
+    line-height: 6rem;
+    margin-bottom: 0;
 
+    border-top: 60px solid;
+    // border-left: 60px solid;
+    border-left: 60px solid;
+    border-bottom: 60px solid;
+    border-image-source: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%);
+    border-image-slice: 1;
+
+    padding: 1rem;
+
+    // color: #DF5E7D;
+    // text-shadow: -5px 6px black;
   }
 
   .bible__banner__image__container {

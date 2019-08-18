@@ -45,7 +45,7 @@
     </div>
     <h3 class="account__learn__more--title">PAID <!-- (Some Meditation and Awareness audio courses) --></h3>
     <div class="account__learn__more--list">
-      <a class="account__learn__more--item" href="/meditations">Fundamental Meditation Series</a>
+      <a class="account__learn__more--item" href="/meditation">Fundamental Meditation Series</a>
       <a class="account__learn__more--item" href="/practices">Practices</a>
 
     </div>

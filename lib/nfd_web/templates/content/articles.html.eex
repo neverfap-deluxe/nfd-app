@@ -20,7 +20,7 @@
 
 <%# INTRODUCTION %>
   <div id="introduction" class="single__wrapper">
-    <div class="single__content" style="margin-bottom: 0;">
+    <div class="single__content">
       <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
       </a>
@@ -52,15 +52,16 @@
 
 <%# NEXT STEPS %>
   <div id="next_steps" class="single__wrapper">
-    <div class="single__content" style="margin-bottom: 0;">
+    <div class="single__content">
       <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
       </a>
 
       <h1>Next Steps</h1>
-      <!-- TODO -->
-      <p></p>
-      <p></p>
+      <p>If you enjoy reading these articles online on the NeverFap Deluxe website then golly gosh, you're in for a real treat!</p>
+      <p>In addition to the website, these articles are available to read on any Android device for FREE via the official <a class="link" href="https://neverfapdeluxe.com/meditation">NeverFap Deluxe Mobile Application</a> available on the Google Play Store.</p>
+      <p>They are also available as a convenient ebook (also known as the <a href="/neverfap-deluxe-bible" class="link">NeverFap Deluxe Bible</a>) when you sign up for a FREE NeverFap Deluxe Account, where it is available for download in epub format.</p>
+      <p>What a wonderful time to be alive.</p>
     </div>
   </div>
 <%# NEXT STEPS END %>

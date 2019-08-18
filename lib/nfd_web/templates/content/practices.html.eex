@@ -30,11 +30,11 @@
       </a>
 
       <h1>Preface</h1>
-      <p>NeverFap Deluxe Practices focus on developing your capacity for awareness, as well as other important skills related to remaining calm and collected at all times.</p>
-      <p>However, it's not substitute for a solid daily Meditation routine </p>
-      <p>Instead these practices can serve as an excellent supplementary activity in order to enhance your mental health and learn new things about yourself.</p>
-      <p>And can form an exte</p>
-      <p>Certainly, the easiest and most effective way to </p>
+      <p>NeverFap Deluxe Practices focus on developing your capacity for awareness, as well as other important skills related calmness and engaging with mental health best practice.</p>
+      <p>However, they're in no way a substitute for a solid Meditation routine that you practice daily, as it's arguably the most important thing you can do for your awareness in any capacity.</p>
+      <p>Instead, it can help to think of these practices as an excellent supplementary activity in order to enhance your mental health and learn entirely new things about yourself and your potential as a human being.</p>
+      <p>Until then, I would highly recommend checking out the <a class="link" href="Routes.page_path(conn, :meditations)">NeverFap Deluxe Meditation</a> section of the website for further instruction on developing a practical meditation routine.</p>
+      <p>It's the easiest and most effective way to implement real change in your daily routine.</p>
     </div>
   </div>
 
@@ -58,20 +58,22 @@
       <h1>Introduction</h1>
       <p>It costs $89 to access all of the practices on NeverFap Deluxe.</p>
       <p>This investment provides you with <b>lifetime access</b> to all future and existing mental health and awareness practices, and is a great way to ensure you're fully committed to your mental health.</p>
-      <p>There are currently <%= practice_length %> detailed mental health and awareness practices on NeverFap Deluxe, with 3+ new practices released each month.</p>
+      <p>There are currently <%= practice_length %> detailed mental health and awareness practices on NeverFap Deluxe.</p> <!--  with 3+ new practices released each month -->
       <p>Furthermore, these practices have been organised into a series of <b>7 Week Awareness Challenges</b> that are delivered straight to your email on a weekly basis, so you can get the most out of these practices.</p>
-      <p>Most people who commit to a daily routine of mental health practices will notice changes within days.</p>
+      <p>Most people who commit to a daily routine of mental health practices will notice changes within days, especially in regards to their ability to wield control over their minds.</p>
     </div>
   </div>
 
   <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
   <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
 
-  <div id="motivation" class="single__wrapper">
+  <%= partial "banners/practices_banner.html", assigns %>
+
+  <!-- <div id="motivation" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <%= partial "pricing/pricing_practices.html", %{ conn: @conn } %>
+      <%#= partial "pricing/pricing_practices.html", %{ conn: @conn } %>
     </div>
-  </div>
+  </div> -->
 
   <div style="margin-bottom: 1rem; margin-top: 4rem; height: 4px; background: rgba(255,46,182,1);"></div>
   <div style="margin-bottom: 3rem; margin-top: 1rem; height: 4px; background: #00ffee;"></div>
@@ -93,10 +95,11 @@
       <ul class="practice__list">
         <li>A brief practice summary card.</li>
         <li>A section explaining the context of the exercise.</li>
-        <li>A section describing the instructions of how to practice.</li>
+        <li>A section describing the instructions of how to practice the exercise.</li>
         <li>A section describing how I personally practice the exercise.</li>
         <li>Essential audio explaining the basis of the practice.</li>
       </ul>
+      <p>For an example of a free practice that I've made available to the public, please check out the <a href="/practices/observe-your-senses" class="link">Observe Your Senses</a> exercise which explains the basis of basic meditation.</p>
     </div>
   </div>
 
@@ -112,6 +115,9 @@
       </a>
 
       <h1>Practices List</h1>
+      <p>Here is a complete list of all NeverFap Deluxe Practices organised by weekly challenge.</p>
+      <p>You can learn more about the NeverFap Deluxe Seven Week Awareness Challenges in the next section below.</p>
+
       <%= partial "list/practices_by_volume_v2.html", %{ conn: @conn, items: @page_collections.practices } %>
     </div>
   </div>
@@ -129,11 +135,11 @@
 
       <h1>Seven Week Awareness Challenges</h1>
 
-      <p>Ideally you should be spending a week with each exercise, in order to truly appreciate and engrain the knowledge of what you're learning.</p>
-      <p>In addition, these practices are organised into 7 Day Awareness Challenges so they are </p>
-
-      <p>Ultimately mental health is a skill that is learnt through practice, and so these exercises provide you with a structured way to develop your mental health.</p>
-      <p>Furthermore, for your convenience these practices are available to you via.</p>
+      <p>In addition, each of these practices have been organised into 5 separate Seven Week Awareness Challenges in order to maximise your learning from these exercises.</p>
+      <p>Ideally you should be spending a week with each exercise, in order to truly appreciate and engrain the knowledge of what you're learning, and that's what these challenges essentially do.</p>
+      <p>When you sign up for a challenge, it will automatically send you an email each week with instructions and access to the practice for that week.</p>
+      <p>Ultimately it can help to understand that mental health is a skill that is learnt through practice, and so these exercises provide you with a structured way to develop your mental health.</p>
+      <p>Only by dedicating solid time to learn these skills can we hope to improve and change as individuals.</p>
     </div>
   </div>
 
@@ -147,10 +153,14 @@
       <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">6.</h1>
       </a>
-
-      <!-- TODO -->
       <h1>Next Steps</h1>
-      <p></p>
+      <p>As mentioned in the beginning of the NeverFap Deluxe Practices section, these practices are less fundamental than having a solid Meditation routine in place.</p>
+      <p>However what a lot of people find is that these exercises help to better understand how to meditate, as well as remain calm and collected in everyday situations.</p>
+      <p>I would also dedicate a portion of time towards reading through our extensive list of <a href="/articles" class="link">NeverFap Deluxe Articles</a> which are provided for FREE and which cover a lot of the theory and context behind why these practices are effective.</p>
+      <p>Otherwise the <a href="/guide" class="link">NeverFap Deluxe Guide</a> is also an excellent place to learn more about what exactly it is you need to do in order to over your porn addiction.</p>
+      <p>Just remember that irrespective of what you know about your addiction, the only thing which truly matters are the exercises which you practice on a daily basis.</p>
+      <p>Whether that be something as simple as going for a walk each day or spending 10 minutes practicing meditation before bed.</p>
+      <p>Without action there cannot be change.</p>
     </div>
   </div>
 <%# NEXT STEPS END %>

@@ -1,30 +1,103 @@
-<%= partial "single_title_content.html", %{ conn: @conn, title: "NeverFap Deluxe Podcast", content: @item["content"] } %>
+<%= partial "single_title_content.html", %{ conn: @conn, title: "NeverFap Deluxe Podcast", content: nil } %>
 
-<div class="single__wrapper" style="padding-top: 0!important;">
-  <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="100%" height="300"></iframe>
-</div>
+<%# INDEX %>
+  <div class="single__wrapper">
+    <div class="page__index">
+      <h1 class="page__index__title">Index</h1>
 
-<div class="links__mobile__margin">
-  <%= partial "links/paypal.html", assigns %>
-</div>
-
-<div class="single__wrapper">
-  <h1 style="margin-bottom: 3rem;">Episode List</h1>
-  <div class="podcast__item__container">
-    <%= Enum.map(@page_collections.podcasts, fn(podcast) -> %>
-      <div class="podcast__item">
-        <a href='/podcast/<%= podcast["slug"] %>'><h1 style="margin-bottom: 0;"><%= podcast["title"] %></h1></a>
-        <h3 style="margin-bottom: 1rem;"><%= raw podcast["content"] %></h3>
-        <div class="podcast__item__bottom">
-          <a class="link articles__link" href='<%= podcast["podcast_url"] %>'>episode link</a>
-          <!-- <audio controls src='<%= podcast["podcast_url"] %>'>
-            Your browser does not support the <code>audio</code> element.
-          </audio>   -->
-        </div>
-      </div>
-    <% end ) %>
+      <ol class="index__items">
+        <h3><i class="page__index__emoji__left em em-studio_microphone"></i> NeverFap Deluxe Podcast <i class="page__index__emoji__right em em-studio_microphone"></i></h3>
+        <a href="#introduction"><li class="index__item">Introduction</li></a>
+        <a href="#podcast_player"><li class="index__item">NeverFap Deluxe Podcast Player</li></a>
+        <a href="#podcast_list"><li class="index__item">NeverFap Deluxe Podcast List</li></a>
+        <a href="#next_steps"><li class="index__item">Next Steps</li></a>
+      </ol>
+    </div>
   </div>
-</div>
+
+  <%= partial "links/paypal.html", assigns %>
+<%# INDEX END %>
+
+
+<%# INTRODUCTION %>
+  <div id="introduction" class="single__wrapper">
+    <div class="single__content">
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+      </a>
+
+      <h1>Introduction</h1>
+      <%= raw @item["content"] %>
+    </div>
+  </div>
+
+  <%= partial "links/twitter.html", assigns %>
+<%# INTRODUCTION END %>
+
+
+<%# PODCAST PLAYER %>
+  <div id="podcast_player" class="single__wrapper" style="padding-top: 0!important;">
+    <a href="#podcast_player" class="guide__suggestion guide__suggestion__padding">
+      <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+    </a>
+
+    <h1>Podcast Player</h1>
+    <p>Here is a simple audio player via Castbox if you'd like to listen to the podcast on the NeverFap Deluxe website.</p>
+    <p>You know, if you're reeaaaaaally desperate to hear my voice right now.</p>
+
+    <div style="border: 4px solid black; margin-top: 2rem; margin-bottom: 1rem;">
+      <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="100%" height="485"></iframe>
+    </div>
+  </div>
+
+  <%= partial "links/reddit.html", assigns %>
+<%# PODCAST PLAYER END %>
+
+
+<%# PODCAST LIST %>
+  <div id="podcast_list" class="single__wrapper">
+    <a href="#podcast_player" class="guide__suggestion guide__suggestion__padding">
+      <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+    </a>
+    <h1 style="margin-bottom: 3rem;">Podcast List</h1>
+
+    <div class="podcast__item__container">
+      <%= Enum.map(@page_collections.podcasts, fn(podcast) -> %>
+        <div class="podcast__item">
+          <a href='/podcast/<%= podcast["slug"] %>'><h1 class="podcast__item__title"><%= podcast["title"] %></h1></a>
+          <h3 style="margin-bottom: 1rem;"><%= raw podcast["content"] %></h3>
+          <div class="podcast__item__bottom">
+            <a class="link articles__link" href='<%= podcast["podcast_url"] %>'>episode link</a>
+            <!-- <audio controls src='<%= podcast["podcast_url"] %>'>
+              Your browser does not support the <code>audio</code> element.
+            </audio>   -->
+          </div>
+        </div>
+      <% end ) %>
+    </div>
+  </div>
+
+  <%= partial "links/discord.html", assigns %>
+<%# PODCAST LIST END %>
+
+
+<%# NEXT STEPS %>
+  <div id="next_steps" class="single__wrapper">
+    <div class="single__content">
+      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+      </a>
+
+      <h1>Next Steps</h1>
+      <p>While the podcast is a great place to hear me waffle about the finer things in life, your predominant focus should be on developing a solid mental health routine.</p>
+      <p>Only through conscious action can we hope to change the behaviours which hold our life ransom.</p>
+      <p>To learn more, I would highly recommend reading through the <a href="/meditation" class="link">NeverFap Deluxe Meditation</a> section of the website which explains a lot of these concepts in detail.</p>
+      <p>In addition if you enjoy listening to the podcast I would highly recommend subscribing to it via iTunes, Castbox or Spotify.</p>
+      <p>Stay safe, my friend.</p>
+    </div>
+  </div>
+<%# NEXT STEPS END %>
+
 
 <%# FOOTER %>
   <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
