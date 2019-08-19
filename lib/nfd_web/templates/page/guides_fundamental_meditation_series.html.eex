@@ -58,6 +58,7 @@
       <ul class="summary__key_points">
         <li><b style="display: inline;"><u>Observe Your Senses</u></b></li>
         <li>Learning to observe your senses is arguably the fundamental basis of meditation and I walk-through the basics of how to do this and think about observation.</li>
+        <%# TODO: Maybe include the link / file with audio here  %>
         <div style="margin-bottom: 0.4rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
         <div style="margin-bottom: 1rem; margin-top: 0.4rem; height: 4px; background: #00ffee;"></div>
         <li><b style="display: inline;"><u>Conscious Awareness</u></b></li>
@@ -91,7 +92,9 @@
         <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
       </a>
       <h2 class="single__sub__header">Next Steps</h2>
-      <p>Another thing which I highly recommend is to look into the <a href=""></a> Hovering Meditation Technique </p>
+      <p>Another thing which I highly recommend is to looking into the <a href="/hovering">Hovering Meditation Technique</a> which I've devised for people who struggle with traditional meditation.</p>
+      <p>It's a technological solution which essentially provides you with a more concrete set of guidelines in order to help you meditate, and it is particularly effective for those with existing mental health issues.</p>
+      <p></p>
     </div>
   </div>
 <%# NEXT STEPS END %>
