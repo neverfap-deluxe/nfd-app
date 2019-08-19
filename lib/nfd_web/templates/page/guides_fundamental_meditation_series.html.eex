@@ -1,0 +1,104 @@
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
+
+<%# INDEX %>
+  <div class="single__wrapper">
+    <div class="page__index">
+      <h2 class="page__index__title">Index</h1>
+
+      <ol class="index__items">
+        <h3><i class="page__index__emoji__left em em-camping"></i> Fundamental Meditation Series <i class="page__index__emoji__right em em-camping"></i></h3>
+        <a href="#introduction"><li class="index__item">Introduction</li></a>
+        <a href="#course_overview"><li class="index__item">Course Overview</li></a>
+        <a href="#next_steps"><li class="index__item">Next Steps</li></a>
+      </ol>
+    </div>
+  </div>
+
+  <%= partial "links/paypal.html", assigns %>
+<%# INDEX END %>
+
+
+<%# INTRODUCTION %>
+  <div id="introduction" class="single__wrapper">
+    <div class="single__content">
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
+      </a>
+      <h2 class="single__sub__header">Introduction</h2>
+      <p>The NeverFap Deluxe Meditation Fundamental Series is a meditation series I've created which aims to provide you with the fundamentals of effective meditation so you can go out and practice it on your own.</p>
+      <p>A trend I'm noticing with a lot of different meditation apps and meditation services (for example, Headspace, Calm, 10% Happier etc.) is that they rely on you to pay a subscription in order to continually access a series of guided meditations.</p>
+      <p>Well, there's something about that which doesn't sit right with me.</p>
+      <p>For starters, people need a continual stream of guided meditations in order to function and I don't think it's something which people have ever questioned, largely because most the large providers only offer subscription services.</p>
+      <p>Instead, I would argue that it defeats the fundamental purpose of meditation, which is to become largely independent and be able to autonomously use our minds.</p>
+      <h3>It's a bit like paying someone to feed you.</h3>
+      <p>I mean. It's super convenient, but it's also not that hard to hold a spoon and feed yourself. Not to mention, you save yourself a heap of money in the long-haul.</p>
+      <p>Furthermore, sufficient mental health shouldn't cost an arm or a leg. Like, people spend thousands on all sorts of services and therapists and literally get nowhere.</p>
+      <p>Ultimately the focus of NeverFap Deluxe and the NeverFap Deluxe Meditation Fundamental Series is to teach you the basics so that you can do it on your own.</p>
+    </div>
+  </div>
+
+  <%= partial "links/twitter.html", assigns %>
+<%# INTRODUCTION END %>
+
+
+<%# COURSE OVERVIEW %>
+  <div id="course_overview" class="single__wrapper">
+    <div class="single__content">
+      <a href="#course_overview" class="guide__suggestion guide__suggestion__padding">
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
+      </a>
+      <h2 class="single__sub__header">Course Overview</h2>
+      <p>The NeverFap Deluxe Fundamental Meditation Series is a series of 4 meditations which is designed to teach you the absolute core fundamental basics of meditation.</p>
+
+      <p>It is a perfect starting point for those new to meditation, and with this core knowledge you should have the skills in order to meditate on your own.</p>
+      <p>As a starting point for your meditation journey, I also wanted it to be cheap enough that anyone can afford it, because I believe basic mental health should be inexpensive.</p>
+
+      <p>Each of the meditations focus on a particular area which cover </p>
+
+      <ul class="summary__key_points">
+        <li><b style="display: inline;"><u>Observe Your Senses</u></b></li>
+        <li>Learning to observe your senses is arguably the fundamental basis of meditation and I walk-through the basics of how to do this and think about observation.</li>
+        <div style="margin-bottom: 0.4rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+        <div style="margin-bottom: 1rem; margin-top: 0.4rem; height: 4px; background: #00ffee;"></div>
+        <li><b style="display: inline;"><u>Conscious Awareness</u></b></li>
+        <li>Remaining consciously aware is such an important part of the meditation process, and is one which most people completely overlook.</li>
+        <div style="margin-bottom: 0.4rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+        <div style="margin-bottom: 1rem; margin-top: 0.4rem; height: 4px; background: #00ffee;"></div>
+        <li><b style="display: inline;"><u>Active Calmness</u></b></li>
+        <li>Teach yourself to actively remain calm in the most effective way possible.</li>
+        <div style="margin-bottom: 0.4rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+        <div style="margin-bottom: 1rem; margin-top: 0.4rem; height: 4px; background: #00ffee;"></div>
+        <li><b style="display: inline;"><u>Letting Go</u></b></li>
+        <li>Finally to tie all this knowledge together, you will always be learning to fundamentally let go.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="line__top"></div>
+  <div class="line__bottom"></div>
+
+  <%= partial "banners/fdm_banner.html", assigns %>
+
+  <div class="line__top"></div>
+  <div class="line__bottom"></div>
+<%# COURSE OVERVIEW END %>
+
+
+<%# NEXT STEPS %>
+  <div id="next_steps" class="single__wrapper">
+    <div class="single__content">
+      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
+      </a>
+      <h2 class="single__sub__header">Next Steps</h2>
+      <p>Another thing which I highly recommend is to look into the <a href=""></a> Hovering Meditation Technique </p>
+    </div>
+  </div>
+<%# NEXT STEPS END %>
+
+
+<%# FOOTER %>
+  <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
+  <%= partial "promotion_footer.html", assigns %>
+<%# FOOTER END %>
+

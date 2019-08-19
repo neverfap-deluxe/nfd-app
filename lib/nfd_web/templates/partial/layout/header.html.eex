@@ -1,8 +1,8 @@
-<nav class="header">
+<header class="header">
   <!-- <%#=/*  <a href="/" class="header__logo__wrapper">
     <h1 class="header__logo">NeverFap <span class="deluxe__font">Deluxe</span> <i class="em em-rainbow"></i></h1>
   </a>  %> -->
-  <ul class="header__links">
+  <div class="header__links">
     <!-- HOME -->
     <a id="link__home" class="header__link__wrapper" href="/">
       <li class="header__link">Home</li>
@@ -163,11 +163,11 @@
         </h3>
       </a>
     </div>
-  </ul>
+  </div>
 
   <%= partial "darkmode_button.html", assigns %>
   <%= partial "mobile_menu_overlay.html", assigns %>
-</nav>
+</header>
 
 
 <!-- Home | Guide | Articles | Podcast | Community | About -->

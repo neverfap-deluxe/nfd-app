@@ -3,7 +3,7 @@
 <%# INDEX %>
   <div class="single__wrapper">
     <div class="page__index">
-      <h1 class="page__index__title">Index</h1>
+      <h2 class="page__index__title">Index</h1>
 
       <ol class="index__items">
         <h3><i class="page__index__emoji__left em em-male-technologist"></i> Personal Coaching <i class="page__index__emoji__right em em-male-technologist"></i></h3>

@@ -2,7 +2,7 @@
 
 <div style="margin-top: 2rem!important;" class="single__wrapper practices__wrapper">
   <a class="article__item__v2" href='<%= Routes.content_path(@conn, :article, @item["slug"]) %>'>
-    <h3 class="article__item__v2__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h3>
+    <h1 class="article__item__v2__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h3>
     <a class="homepage__tiny" href='<%= @item["slug"] %>'>/<%= @item["slug"] %></a>
     <h4 class="article__item__v2__description"><%= @item["description"] %></h4>
   </a>
@@ -12,9 +12,9 @@
 
 <div class="single__wrapper practices__wrapper">
   <div class="homepage__process single__homepage__process">
-    <span><h3 class="homepage__process__title">
+    <span><div class="homepage__process__title">
       tldr;
-    </h3></span>
+    </div></span>
 
     <%= if @item["tldr1"] do %><p class="homepage__process__text homepage__process__text--practice"><%= raw @item["tldr1"] %></p><% end %>
     <%= if @item["tldr2"] do %><p class="homepage__process__text homepage__process__text--practice"><%= raw @item["tldr2"] %></p><% end %>
@@ -27,13 +27,13 @@
 
 <%= partial "links/paypal.html", assigns %>
 
-<div id="main__content" class="single__wrapper">
+<article id="main__content" class="single__wrapper">
   <div class="single__content">
     <%= raw @item["content"] %>
   </div>
 
   <%= partial "content/share_buttons.html", %{permalink: @item["permalink"] } %>
-</div>
+</article>
 
 <div class="single__wrapper">
   <%= partial "comments/comments_list.html", %{conn: @conn, item: @item, changeset_collections: @changeset_collections, content_collections: @content_collections, user_collections: @user_collections} %>

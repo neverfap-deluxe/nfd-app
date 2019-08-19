@@ -3,7 +3,7 @@
 <%# INDEX %>
   <div class="single__wrapper">
     <div class="page__index">
-      <h1 class="page__index__title">Index</h1>
+      <h2 class="page__index__title">Index</h1>
 
       <ol class="index__items">
         <h3><i class="page__index__emoji__left em em-man_in_lotus_position"></i> Meditation <i class="page__index__emoji__right em em-man_in_lotus_position"></i></h3>
@@ -27,7 +27,7 @@
       <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
       </a>
-      <h1 class="single__sub__header">Introduction</h1>
+      <h2 class="single__sub__header">Introduction</h2>
       <p>NeverFap Deluxe offers a wide range of effective Meditation solutions and options for those seeking additional help.</p>
       <p>The aim of our meditations is to teach you the fundamental basics of meditation, so you can have the ability to comfortably practice meditation on your own.</p>
       <h3>It's not within our intention to sell you a monthly meditation subscription like many existing options.</h3>
@@ -49,7 +49,7 @@
       <a href="#neverfap_deluxe_fundamental_meditation_series" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
       </a>
-      <h1 class="single__sub__header">NeverFap Deluxe Fundamental Meditation Series</h1>
+      <h2 class="single__sub__header">NeverFap Deluxe Fundamental Meditation Series</h2>
       <p>As a primary option we offer the <b>NeverFap Deluxe Fundamental Meditation Series</b> which is a series of 4 meditations which is designed to teach you the absolute core fundamental basics of meditation.</p>
       <p>It is a perfect starting point for those new to meditation, and with this core knowledge you should have the skills in order to meditate on your own.</p>
       <p>As a starting point for your meditation journey, I also wanted it to be cheap enough that anyone can afford it, because I believe basic mental health should be inexpensive.</p>
@@ -81,7 +81,7 @@
       <a href="#hovering_meditation" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
       </a>
-      <h1 class="single__sub__header">Hovering Meditation</h1>
+      <h2 class="single__sub__header">Hovering Meditation</h2>
       <p>One thing I've noticed is that a lot of people struggle to meditate via traditional means.</p>
       <p>In part due to poor mental health or "brain fog" which makes it incredibly difficult to engage with our minds in a meaningful way.</p>
       <p>That's why I created Hovering: A meditation technique which aims to bridge the gap between traditional meditation and simply not meditating at all.</p>
@@ -110,7 +110,7 @@
       <a href="#meditation_essential_reading" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
       </a>
-      <h1 class="single__sub__header">Meditation Essential Reading</h1>
+      <h2 class="single__sub__header">Meditation Essential Reading</h2>
       <p></p>
       <p>NeverFap Deluxe offers a wide range of articles which explain how best to practice effective Meditation.</p>
       <p>In addition, I've also written <a class="link" href="/observe-your-senses">Here Is How To Meditate Properly</a> which goes into detail as to how meditation works.</p>
@@ -132,7 +132,7 @@
       <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
       </a>
-      <h1 class="single__sub__header">Next Steps</h1>
+      <h2 class="single__sub__header">Next Steps</h2>
       <p>The resources on this page should be more-than-enough for you to develop a solid meditation routine.</p>
       <p>In most cases, all it takes is 10 minutes of meditation each night before bed, and that should be enough for most people to be able to remain calm and maintain balance throughout the day.</p>
       <p>Of course, like all things, meditation is simply a tool to help you maintain balance in your daily life. If you're not eating healthily or respecting boundaries, then no amount of meditation will help you improve.</p>

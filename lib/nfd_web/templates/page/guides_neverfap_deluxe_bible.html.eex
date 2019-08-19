@@ -3,7 +3,7 @@
 <%# INDEX %>
   <div class="single__wrapper">
     <div class="page__index">
-      <h1 class="page__index__title">Index</h1>
+      <h2 class="page__index__title">Index</h1>
       <ol class="index__items">
         <h3><i class="page__index__emoji__left em em-notebook_with_decorative_cover"></i> Bible <i class="page__index__emoji__right em em-notebook_with_decorative_cover"></i></h3>
         <a href="#introduction"><li class="index__item">Introduction</li></a>

@@ -3,7 +3,7 @@
 <%# INDEX %>
   <div class="single__wrapper">
     <div class="page__index">
-      <h1 class="page__index__title">Index</h1>
+      <h2 class="page__index__title">Index</h1>
 
       <ol class="index__items">
         <a href="#nfd_com"><li class="index__item index__item--nfd"><img class="account__nfd__button__logo" src="/images/logo.png" alt=""/> NFD Account</li></a>

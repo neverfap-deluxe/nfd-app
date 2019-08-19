@@ -3,7 +3,7 @@
 <%# INDEX %>
   <div class="single__wrapper">
     <div class="page__index">
-      <h1 class="page__index__title">Index</h1>
+      <h2 class="page__index__title">Index</h1>
 
       <ol class="index__items">
         <h3><i class="page__index__emoji__left em em-clap"></i> About <i class="page__index__emoji__right em em-clap"></i></h3>
@@ -26,7 +26,7 @@
       <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
       </a>
-      <h1 class="single__sub__header">Introduction</h1>
+      <h2 class="single__sub__header">Introduction</h2>
       <%= raw child_content(@item["children"], "about-intro") %>
     </div>
   </div>
@@ -42,7 +42,7 @@
         <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
       </a>
 
-      <h1 class="single__sub__header">Motivation</h1>
+      <h2 class="single__sub__header">Motivation</h2>
       <%= raw child_content(@item["children"], "about-main-1") %>
     </div>
   </div>
@@ -57,7 +57,7 @@
       <a href="#philosophy" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
       </a>
-      <h1 class="single__sub__header">Philosophy</h1>
+      <h2 class="single__sub__header">Philosophy</h2>
       <%= raw child_content(@item["children"], "about-main-2") %>
     </div>
   </div>
@@ -105,7 +105,7 @@
       <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
       </a>
-      <h1 class="single__sub__header">Next Steps</h1>
+      <h2 class="single__sub__header">Next Steps</h2>
       <%= raw child_content(@item["children"], "about-next-steps") %>
     </div>
   </div>
