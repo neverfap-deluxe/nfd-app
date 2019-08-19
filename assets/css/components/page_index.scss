@@ -14,8 +14,11 @@
   // color: $white-text;
 
   .page__index__title {
+    font-size: 3rem!important;
+    line-height: 4rem!important;
+    color: $black-header-text!important;
     margin: 0!important;
-    padding: 1rem;
+    padding: 1rem!important;
   }
 
   .page__index__emoji__left {
