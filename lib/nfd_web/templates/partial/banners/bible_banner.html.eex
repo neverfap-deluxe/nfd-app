@@ -1,3 +1,41 @@
-<div class="bible__banner">
-  <h3 class="bible__banner__title">The NeverFap Deluxe Bible</h3>
+<div class="banner bible__banner">
+  <div class="banner__split__container">
+    <div class="banner__split">
+      <div style="display: flex; justify-content: center; align-items: center; transform: translateX(-25%)">
+        <h3 style="width: 50%;" class="banner__title bible__banner__title"><span style="position: relative; right: -0.6rem;">The</br>NeverFap Deluxe Bible</span></h3>
+      </div>
+
+      <h4 class="banner__sub__title bible__banner__sub__title">A complete collection of all the website's content in convenient ebook format! NeverFap Deluxe Articles, Summary and Guide!</h4>
+      <h4 class="banner__sub__title bible__banner__sub__title">You know, because reading is cool! <i class="em em-stuck_out_tongue_closed_eyes"></i></h4>
+      <h4 class="banner__sub__title bible__banner__sub__title">Login to the NeverFap Deluxe Dashboard to download your FREE copy!</h4>
+
+      <div style="display: flex; margin-top: 1rem;">
+        <div class="account__buttons__login">
+          <span class="login__top__button__register">
+              <%= link to: Routes.pow_registration_path(@conn, :new) do %>
+              <div class="login__top__button__text">
+                Register
+              </div>
+            <% end %>
+          </span>
+
+          <span class="login__top__button__register">
+            <%= link to: Routes.pow_session_path(@conn, :new) do %>
+              <div class="login__top__button__text">
+                Sign in
+              </div>
+            <% end %>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner__split__divider mobile__remove__emoji"></div>
+
+    <div class="banner__split banner__split--right mobile__remove__emoji">
+      <div class="bible__banner__image__container">
+        <img src="/images/ebook_covers/bible-ebook-cover-600-900.png" alt="">
+      </div>
+    </div>
+  </div>
 </div>

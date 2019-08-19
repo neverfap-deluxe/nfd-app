@@ -80,6 +80,16 @@
   }
 }
 
+.guide__suggestion__list {
+ margin-right: 2rem;
+}
+
+.guide__suggestion__padding {
+  display: inline-block;
+  // color: black;
+  padding-top: 2rem!important;
+}
+
 .guide__banner__title {
   text-align: center;
   text-shadow: -3px 3px $white-text;
@@ -95,8 +105,8 @@
 }
 
 .guide__suggestion__number--bottom {
-
-  margin-top: 4rem;
+  margin-top: -1rem;
+  margin-right: 1.4rem;
 
   display: flex!important;
   align-items: center;
@@ -105,9 +115,8 @@
   border: 4px solid $black-background;
   background: $white-text;
   box-shadow: -5px 5px 0px 0px $cyan;
-  margin-right: 1.4rem;
   padding: 0.4rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem!important;
   font-weight: 900;
   line-height: 2.4rem;
   width: 50px;
@@ -235,9 +244,6 @@
   .guide__suggestion__number--fat {
     width: 130px!important;
   }
-  .guide__suggestion__number--bottom {
-    margin-top: 2rem;
-  }
 }
 
 
@@ -262,6 +268,9 @@
     width: 60px;
   }
 
+  .guide__suggestion__number--bottom {
+    margin-top: 3rem;
+  }
 
   .guide__suggestion__number--fat {
     width: 130px!important;

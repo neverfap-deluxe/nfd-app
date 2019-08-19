@@ -1,179 +1,214 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 
-<div class="single__wrapper">
-  <div class="page__index">
-    <h1 class="page__index__title">Index</h1>
+<%# INDEX %>
+  <div class="single__wrapper">
+    <div class="page__index">
+      <h2 class="page__index__title">Index</h1>
 
-    <ol class="index__items">
-      <a href="#nfd_com"><li class="index__item index__item--nfd"><img class="account__nfd__button__logo" src="/images/logo.png" alt=""/> NFD Account</li></a>
-      <a href="#discord_com"><li class="index__item"><img class="account__discord__button__logo" src="/images/discord__logo.png"/> <span class="discord__text">Discord</span></li></a>
-      <a href="#reddit_com"><li class="index__item"><img class="account__reddit__button__logo" src="/images/reddit__logo.png" />  Reddit</li></a>
-      <a href="#patreon_com"><li class="index__item"><img class="account__patreon__button__logo" src="/images/patreon__logo.jpg" />  Patreon</li></a>
-      <a href="#instagram_com"><li class="index__item"><img class="account__instagram__button__logo" src="/images/instagram__logo.png"/>  Instagram</li></a>
-      <a href="#facebook_com"><li class="index__item"><img class="account__facebook__button__logo" src="/images/facebook__logo.png"/>  Facebook</li></a>
-      <a href="#twitter_com"><li class="index__item"><img class="account__twitter__button__logo" src="/images/twitter__logo__blue.png" />  Twitter</li></a>
-      <a href="#youtube_com"><li class="index__item"><img class="account__youtube__button__logo" src="/images/youtube__logo__rounded.png" />  YouTube</li></a>
-      <a href="#tumblr_com"><li class="index__item"><img class="account__tumblr__button__logo" src="/images/tumblr__logo__blue.png"/>  Tumblr</li></a>
-      <a href="#pinterest_com"><li class="index__item"><img class="account__pinterest__button__logo" src="/images/pinterest__logo.png"/>  Pinterest</li></a>
-      <a href="#paypal_com"><li class="index__item"><img class="account__paypal__button__logo" src="/images/paypal__logo.png"/>  Paypal</li></a>
-    </ol>
+      <ol class="index__items">
+        <a href="#nfd_com"><li class="index__item index__item--nfd"><img class="account__nfd__button__logo" src="/images/logo.png" alt=""/> NFD Account</li></a>
+        <a href="#discord_com"><li class="index__item"><img class="account__discord__button__logo" src="/images/discord__logo.png"/> <span class="discord__text">Discord</span></li></a>
+        <a href="#reddit_com"><li class="index__item"><img class="account__reddit__button__logo" src="/images/reddit__logo.png" />  Reddit</li></a>
+        <a href="#patreon_com"><li class="index__item"><img class="account__patreon__button__logo" src="/images/patreon__logo.jpg" />  Patreon</li></a>
+        <a href="#instagram_com"><li class="index__item"><img class="account__instagram__button__logo" src="/images/instagram__logo.png"/>  Instagram</li></a>
+        <a href="#facebook_com"><li class="index__item"><img class="account__facebook__button__logo" src="/images/facebook__logo.png"/>  Facebook</li></a>
+        <a href="#twitter_com"><li class="index__item"><img class="account__twitter__button__logo" src="/images/twitter__logo__blue.png" />  Twitter</li></a>
+        <a href="#youtube_com"><li class="index__item"><img class="account__youtube__button__logo" src="/images/youtube__logo__rounded.png" />  YouTube</li></a>
+        <a href="#tumblr_com"><li class="index__item"><img class="account__tumblr__button__logo" src="/images/tumblr__logo__blue.png"/>  Tumblr</li></a>
+        <a href="#pinterest_com"><li class="index__item"><img class="account__pinterest__button__logo" src="/images/pinterest__logo.png"/>  Pinterest</li></a>
+        <a href="#paypal_com"><li class="index__item"><img class="account__paypal__button__logo" src="/images/paypal__logo.png"/>  Paypal</li></a>
+      </ol>
+    </div>
+
+    <div class="single__content" style="margin-bottom: 0;">
+      <%= raw child_content(@item["children"], "community-intro") %>
+    </div>
+  </div>
+<%# INDEX END %>
+
+
+<%# NFD ACCOUNT %>
+  <div class="account__info account__info--margin-top">
+    <p class="account__info__title">Thank you for coming to the website! Does that make us best friends now!? <i class="em em-sparkling_heart"></i><i class="em em-sparkling_heart"></i><i class="em em-sparkling_heart"></i></p>
   </div>
 
-  <div class="single__content" style="margin-bottom: 0;">
-    <%= raw child_content(@item["children"], "community-intro") %>
+  <div class="single__wrapper single__wrapper--community">
+    <div id="nfd_com" class="single__content" >
+      <h2>NeverFap Deluxe Account</h2>
+      <p>When you sign up for a NeverFap Deluxe Account, you gain access to a variety of free and premium email campaigns.</p>
+
+      <h3>Furthermore, it's completely FREE to register.</h3>
+
+      <h3 class="articles__link cursor__default">7 Day NeverFap Deluxe Kickstarter</h3>
+      <p>With our FREE 7 Day NeverFap Deluxe Kickstarter, we explain the ropes of how you can get started with the NeverFap Deluxe Method of overcoming porn addiction.</p>
+
+      <p>...aaaand that's about it.</p>
+      <p>I have additional courses planned for 2019, although they haven't yet been created. One step at a time, baby!</p>
+      <!-- <h3 class="articles__link cursor__default">10 Day Meditation Primer</h3>
+      <p>Feeling a bit confused about meditation? The 10 Day Meditation Primer is designed to explain what meditation is, how it works, as well as what you can do to get started and practicing straight-away.</p>
+
+      <h3 class="articles__link cursor__default">28 Day Awareness Challenge</h3>
+      <p>The 28 Day Awareness Challenge consists of a series of challenges which you can focus on each day, designed to increase your awareness.</p> -->
+
+    </div>
   </div>
-</div>
 
-<div class="account__info account__info--margin-top">
-  <p class="account__info__title">Thank you for coming to the website! Does that make us best friends now!? <i class="em em-sparkling_heart"></i><i class="em em-sparkling_heart"></i><i class="em em-sparkling_heart"></i></p>
-</div>
+  <%= partial "links/loginregister.html", assigns %>
+<%# NFD ACCOUNT END %>
 
-<div class="single__wrapper single__wrapper--community">
-  <div id="nfd_com" class="single__content" >
-    <h2>NeverFap Deluxe Account</h2>
-    <p>When you sign up for a NeverFap Deluxe Account, you gain access to a variety of free and premium email campaigns.</p>
 
-    <h3>Furthermore, it's completely FREE to register.</h3>
+<%# DISCORD %>
+  <div class="single__wrapper single__wrapper--community">
+    <div id="discord_com" class="single__content">
+      <h2>Discord</h2>
+      <p>I've setup a Discord channel if you're interested in having a chat or if you have any questions about NeverFap Deluxe. It's also a great opportunity to introduce yourself and get to know our small but active community.</p>
+      <p>In addition, I also offer an accountability program via our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel that has been designed to help you commit to your mental health, and motivate you by seeing what others are doing.</p>
+      <p>You can learn more about the program <a class="link" href="/accountability-program">here</a>.</p>
+      <p>Obviously we all live in different time zones, however I check it frequently and respond as promptly as I can.</p>
+      <p>I'm personally located in Melbourne, Australia. (GMT+11:00)</p>
 
-    <h3 class="articles__link cursor__default">7 Day NeverFap Deluxe Kickstarter</h3>
-    <p>With our FREE 7 Day NeverFap Deluxe Kickstarter, we explain the ropes of how you can get started with the NeverFap Deluxe Method of overcoming porn addiction.</p>
+      <!-- <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe> -->
 
-    <p>...aaaand that's about it.</p>
-    <p>I have additional courses planned for 2019, although they haven't yet been created. One step at a time, baby!</p>
-    <!-- <h3 class="articles__link cursor__default">10 Day Meditation Primer</h3>
-    <p>Feeling a bit confused about meditation? The 10 Day Meditation Primer is designed to explain what meditation is, how it works, as well as what you can do to get started and practicing straight-away.</p>
-
-    <h3 class="articles__link cursor__default">28 Day Awareness Challenge</h3>
-    <p>The 28 Day Awareness Challenge consists of a series of challenges which you can focus on each day, designed to increase your awareness.</p> -->
-
+    </div>
   </div>
-</div>
 
-<%= partial "links/loginregister.html", assigns %>
+  <%= partial "links/discord.html", assigns %>
+<%# DISCORD END %>
 
-<div class="single__wrapper single__wrapper--community">
-  <div id="discord_com" class="single__content">
-    <h2>Discord</h2>
-    <p>I've setup a Discord channel if you're interested in having a chat or if you have any questions about NeverFap Deluxe. It's also a great opportunity to introduce yourself and get to know our small but active community.</p>
-    <p>In addition, I also offer an accountability program via our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel that has been designed to help you commit to your mental health, and motivate you by seeing what others are doing.</p>
-    <p>You can learn more about the program <a class="link" href="/accountability-program">here</a>.</p>
-    <p>Obviously we all live in different time zones, however I check it frequently and respond as promptly as I can.</p>
-    <p>I'm personally located in Melbourne, Australia. (GMT+11:00)</p>
 
-    <!-- <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe> -->
+<%# REDDIT %>
+  <div class="single__wrapper single__wrapper--community">
+    <div id="reddit_com" class="single__content">
+      <h2>Reddit</h2>
+      <p>Yes, that's right.</p>
+      <p>We have our very own subreddit.</p>
+      <p>Perhaps you'd like to receive some personal advice via our <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewNeverFapper</a> initiative or even ask an important question in regards to one of the articles or practies on the website.</p>
+      <p>Feel free to follow my account in order to catch a trickle of my comments, or even just to say:</p>
+      <p><b>"Heyyyy 21F Aus, looking to hook up ;)</b>"</p>
 
+      <!-- #LOLFap
+      #NewNeverFapper
+      #MeditationMotivation
+      #HealthyCopingMechanismCrack
+        -->
+    </div>
   </div>
-</div>
 
-<%= partial "links/discord.html", assigns %>
+  <%= partial "links/reddit.html", assigns %>
+<%# REDDIT END %>
 
-<div class="single__wrapper single__wrapper--community">
-  <div id="reddit_com" class="single__content">
-    <h2>Reddit</h2>
-    <p>Yes, that's right.</p>
-    <p>We have our very own subreddit.</p>
-    <p>Perhaps you'd like to receive some personal advice via our <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">#NewNeverFapper</a> initiative or even ask an important question in regards to one of the articles or practies on the website.</p>
-    <p>Feel free to follow my account in order to catch a trickle of my comments, or even just to say:</p>
-    <p><b>"Heyyyy 21F Aus, looking to hook up ;)</b>"</p>
 
-    <!-- #LOLFap
-    #NewNeverFapper
-    #MeditationMotivation
-    #HealthyCopingMechanismCrack
-      -->
+<%# PATREON %>
+  <div class="single__wrapper single__wrapper--community">
+    <div id="patreon_com" class="single__content">
+      <h2>Patreon</h2>
+      <p>I recommend checking out my Patreon if you're looking to track the progress I make on the website.</p>
+      <!-- MAYBE: Here's an example of an update I post -->
+      <p>I post weekly updates of all the work I put towards NeverFap Deluxe, so it's an amazing place to keep up-to-date with all the essential happenings of this wonderful resource.</p>
+      <p>In addition, you're more than welcome to commit a monthly financial contribution towards the website if you so please.</p>
+    </div>
   </div>
-</div>
 
-<%= partial "links/reddit.html", assigns %>
+  <%= partial "links/patreon.html", assigns %>
+<%# PATREON END %>
 
 
-<div class="single__wrapper single__wrapper--community">
-  <div id="patreon_com" class="single__content">
-    <h2>Patreon</h2>
-    <p>I recommend checking out my Patreon if you're looking to track the progress I make on the website.</p>
-    <!-- MAYBE: Here's an example of an update I post -->
-    <p>I post weekly updates of all the work I put towards NeverFap Deluxe, so it's an amazing place to keep up-to-date with all the essential happenings of this wonderful resource.</p>
-    <p>In addition, you're more than welcome to commit a monthly financial contribution towards the website if you so please.</p>
+<%# INSTAGRAM %>
+  <div class="single__wrapper single__wrapper--community">
+    <div id="instagram_com" class="single__content">
+      <h2>Instagram</h2>
+      <p>So yes, I have an Instagram account.</p>
+      <p>I essentially use it to post the visual elements that I create for the website, so if you're into flashy colours with quotes written by The Reade&copy; himself then please feel free to check it out.</p>
+      <p>Don't worry, it's kosher.</p>
+    </div>
   </div>
-</div>
 
-<%= partial "links/patreon.html", assigns %>
+  <%= partial "links/instagram.html", assigns %>
+<%# INSTAGRAM END %>
 
 
-<div class="single__wrapper single__wrapper--community">
-  <div id="instagram_com" class="single__content">
-    <h2>Instagram</h2>
-    <p>So yes, I have an Instagram account.</p>
-    <p>I essentially use it to post the visual elements that I create for the website, so if you're into flashy colours with quotes written by The Reade&copy; himself then please feel free to check it out.</p>
-    <p>Don't worry, it's kosher.</p>
+<%# FACEBOOK %>
+  <div class="single__wrapper single__wrapper--community">
+    <div id="facebook_com" class="single__content">
+      <h2>Facebook</h2>
+      <p>Wanna join the Facebook page?</p>
+      <p>Sorry, what's that?</p>
+      <p>Oh, you silly little duckling. I can't hear you because this is the internet and this is only a webpage. Although seriously, you should stop talking to your computer screen and seek professional help.</p>
+    </div>
   </div>
-</div>
 
-<%= partial "links/instagram.html", assigns %>
+  <%= partial "links/facebook.html", assigns %>
+<%# FACEBOOK END %>
 
-<div class="single__wrapper single__wrapper--community">
-  <div id="facebook_com" class="single__content">
-    <h2>Facebook</h2>
-    <p>Wanna join the Facebook page?</p>
-    <p>Sorry, what's that?</p>
-    <p>Oh, you silly little duckling. I can't hear you because this is the internet and this is only a webpage. Although seriously, you should stop talking to your computer screen and seek professional help.</p>
+
+<%# TWITTER %>
+  <div class="single__wrapper single__wrapper--community">
+    <div id="twitter_com" class="single__content">
+      <h2>Twitter</h2>
+      <p>Maybe you enjoy a lighter shade of blue, than compared to a darker shade of blue.</p>
+      <p>Maybe you're colour blind.</p>
+      <p>Regardless of your sexual preference, feel free to follow our Twitter account and <a class="link">#NeverFapDeluxe</a>.</p>
+    </div>
   </div>
-</div>
 
-<%= partial "links/facebook.html", assigns %>
+  <%= partial "links/twitter.html", assigns %>
+<%# TWITTER END %>
 
-<div class="single__wrapper single__wrapper--community">
-  <div id="twitter_com" class="single__content">
-    <h2>Twitter</h2>
-    <p>Maybe you enjoy a lighter shade of blue, than compared to a darker shade of blue.</p>
-    <p>Maybe you're colour blind.</p>
-    <p>Regardless of your sexual preference, feel free to follow our Twitter account and <a class="link">#NeverFapDeluxe</a>.</p>
+
+<%# YOUTUBE %>
+  <div class="single__wrapper single__wrapper--community">
+    <div id="youtube_com" class="single__content">
+      <h2>YouTube</h2>
+      <p>NeverFap Deluxe has a YouTube Channel!</p>
+      <p>At this point it mostly features the NeverFap Deluxe Podcast as well as the Guided Meditation Series, however I hope to make some proper videos at some point.</p>
+      <p>Please subscribe!</p>
+    </div>
   </div>
-</div>
 
-<%= partial "links/twitter.html", assigns %>
+  <%= partial "links/youtube.html", assigns %>
+<%# YOUTUBE END %>
 
-<div class="single__wrapper single__wrapper--community">
-  <div id="youtube_com" class="single__content">
-    <h2>YouTube</h2>
-    <p>NeverFap Deluxe has a YouTube Channel!</p>
-    <p>At this point it mostly features the NeverFap Deluxe Podcast as well as the Guided Meditation Series, however I hope to make some proper videos at some point.</p>
-    <p>Please subscribe!</p>
+
+<%# TUMBLR %>
+  <div class="single__wrapper single__wrapper--community">
+    <div id="tumblr_com" class="single__content">
+      <h2>Tumblr</h2>
+      <p>Tumblr used to be my thing back in the day.</p>
+      <p>I actually used solely to find women and in fact, it's how I met my current partner of 5+ years so there ya go. You sick pervert, wanting to know more about my very intimate relationship.</p>
+      <p>You know, I really should write a guide to Tumblr dating, I think that would sell really well on the interwebs.</p>
+    </div>
   </div>
-</div>
 
-<%= partial "links/youtube.html", assigns %>
+  <%= partial "links/tumblr.html", assigns %>
+<%# TUMBLR END %>
 
 
-<div class="single__wrapper single__wrapper--community">
-  <div id="tumblr_com" class="single__content">
-    <h2>Tumblr</h2>
-    <p>Tumblr used to be my thing back in the day.</p>
-    <p>I actually used solely to find women and in fact, it's how I met my current partner of 5+ years so there ya go. You sick pervert, wanting to know more about my very intimate relationship.</p>
-    <p>You know, I really should write a guide to Tumblr dating, I think that would sell really well on the interwebs.</p>
+<%# PINTEREST %>
+  <div class="single__wrapper single__wrapper--community">
+    <div id="pinterest_com" class="single__content">
+      <h2>Pinterest</h2>
+      <p>Sooooo, yeah we have a Pinterest account.</p>
+      <p>I put the visual elements on the website there, so if that's your kind of thing then go crazy and just like, sit in front of a screen and just stare at them, or whatever floats your boat.</p>
+      <p>You know, I've never really used Pinterest before, so who knows. I have no idea what the appeal is, but gud for you buddy.</p>
+    </div>
   </div>
-</div>
 
-<%= partial "links/tumblr.html", assigns %>
+  <%= partial "links/pinterest.html", assigns %>
+<%# PINTEREST END %>
 
-<div class="single__wrapper single__wrapper--community">
-  <div id="pinterest_com" class="single__content">
-    <h2>Pinterest</h2>
-    <p>Sooooo, yeah we have a Pinterest account.</p>
-    <p>I put the visual elements on the website there, so if that's your kind of thing then go crazy and just like, sit in front of a screen and just stare at them, or whatever floats your boat.</p>
-    <p>You know, I've never really used Pinterest before, so who knows. I have no idea what the appeal is, but gud for you buddy.</p>
+
+<%# PAYPAL %>
+  <div class="single__wrapper single__wrapper--community">
+    <div id="paypal_com" class="single__content">
+      <h2>PayPal</h2>
+      <p>I do have a PayPal account for those who would like to donate to NeverFap Deluxe! A pretty penny, goes a very long way!</p>
+      <p>Every little bit counts, and helps grow NeverFap Deluxe into the sprawling empire it deserves.</p>
+    </div>
   </div>
-</div>
+<%# PAYPAL END %>
 
-<%= partial "links/pinterest.html", assigns %>
 
-<div class="single__wrapper single__wrapper--community">
-  <div id="paypal_com" class="single__content">
-    <h2>PayPal</h2>
-    <p>I do have a PayPal account for those who would like to donate to NeverFap Deluxe! A pretty penny, goes a very long way!</p>
-    <p>Every little bit counts, and helps grow NeverFap Deluxe into the sprawling empire it deserves.</p>
-  </div>
-</div>
-
-<%= partial "links/paypal.html", assigns %>
-<%= partial "promotion_footer.html", assigns %>
+<%# FOOTER %>
+  <%= partial "links/paypal.html", assigns %>
+  <%= partial "promotion_footer.html", assigns %>
+<%# FOOTER END %>

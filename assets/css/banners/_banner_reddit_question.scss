@@ -1,5 +1,5 @@
 .reddit__question__banner {
-  display: flex; 
+  display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
@@ -20,6 +20,22 @@
   }
 }
 
+.mobile__remove__emoji {
+  display: none!important;
+}
+
+.black__banner__title--reddit__guidelines {
+  margin: 0!important;
+  margin-top: 2rem!important;
+  margin-bottom: 2rem!important;
+}
+
+.reddit__question__banner__container {
+  .account__buttons {
+    margin-right: 0rem!important;
+  }
+}
+
 
 @media screen and (min-width: 420px) {
   .reddit__question__banner {
@@ -35,26 +51,20 @@
   }
 }
 
+@media screen and (min-width: 575px) {
+  .mobile__remove__emoji {
+    display: inline-block!important;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .reddit__question__banner {
     min-width : 700px;
     margin: 0 auto;
-  
+
     .reddit__question__banner__box {
 
     }
   }
 }
 
-
-.black__banner__title--reddit__guidelines {
-  margin: 0!important;
-  margin-top: 2rem!important;
-  margin-bottom: 2rem!important;
-}
-
-.reddit__question__banner__container {
-  .account__buttons {
-    margin-right: 0rem!important;
-  }
-}

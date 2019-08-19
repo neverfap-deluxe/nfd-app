@@ -1,4 +1,5 @@
 .podcast__item__container {
+  margin-top: 3rem;
   margin-bottom: 2rem;
 }
 
@@ -14,6 +15,7 @@
   h1 {
     cursor: pointer;
     color: $black-text;
+    margin-bottom: 0!important;
   }
 
   h1:hover {

@@ -21,9 +21,9 @@
 
 <div id="account__learn__more" class="account__learn__more">
   <div id="account__learn__moreLabel" class="account__learn__more--label">
-    <i id="down1" class="fas fa-angle-down" style="margin-right: 0.3rem;"></i> 
-    <i id="up1" class="fas fa-angle-up" style="margin-right: 0.3rem; display: none;"></i> 
-      Learn more. 
+    <i id="down1" class="fas fa-angle-down" style="margin-right: 0.3rem;"></i>
+    <i id="up1" class="fas fa-angle-up" style="margin-right: 0.3rem; display: none;"></i>
+      Learn more.
     <i id="down2" class="fas fa-angle-down" style="margin-left: 0.3rem;"></i>
     <i id="up2" class="fas fa-angle-up" style="margin-left: 0.3rem; display: none;"></i>
   </div>
@@ -35,7 +35,7 @@
       <a class="account__learn__more--item" href="/practices">Practices</a>
       <a class="account__learn__more--item" href="/seven-day-neverfap-deluxe-kickstarter">7 Day Kickstarter</a>
       <a class="account__learn__more--item" href="/podcast">Podcast</a>
-      <a class="account__learn__more--item" href="/meditations">FREE Guided Meditation Series</a>
+      <a class="account__learn__more--item" href="/meditation">FREE Guided Meditation Series</a>
       <a class="account__learn__more--item" href="/accountability-program">#accountability Program</a>
       <a class="account__learn__more--item" href="/neverfap-deluxe-bible">NeverFap Deluxe Bible</a>
       <a class="account__learn__more--item" href="/mobile-app">Android App</a>
@@ -60,7 +60,7 @@
   // var account__learn__more = document.querySelector('#account__learn__more');
   var account__learn__moreLabel = document.querySelector('#account__learn__moreLabel');
   var account__learn__moreDropdown = document.querySelector('#account__learn__moreDropdown');
-  
+
   var accountLearnMoreDropdownClosed = true;
 
   account__learn__moreLabel.onclick = function(event) {

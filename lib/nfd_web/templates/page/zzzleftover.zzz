@@ -1,3 +1,23 @@
+<!-- <div style="margin-top: 2rem; height: 4px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 2rem; height: 4px; background: cyan;"></div>
+
+<h2>The first step is to cover the basics.</h2>
+
+<div style="margin-top: 2rem; height: 4px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 2rem; height: 4px; background: cyan;"></div>
+
+<h2>The second step is to develop a solid mental health strategy.</h2>
+
+<div style="margin-top: 2rem; height: 4px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 2rem; height: 4px; background: cyan;"></div>
+
+<h2>The third step is to maintain that strategy.</h2>
+
+<div style="margin-top: 2rem; height: 4px; background: rgba(255,46,182,1);"></div>
+<div style="margin-bottom: 2rem; height: 4px; background: cyan;"></div> -->
+
+
+
 
   <%#  Once I think of a list for each course.  %>
   <%#  <div class="five__principles__guide">
@@ -289,3 +309,190 @@
 </div> -->
 
 <!-- <%= partial "links/loginregister.html", assigns %> -->
+
+
+
+
+
+
+
+
+<!-- <%= partial "links/patreon.html", assigns %> -->
+
+<!-- v1 -->
+<!--
+
+<div class="single__wrapper">
+  <h3 class="popular__latest__options__title">Articles</h3>
+
+  <div class="popular__latest__options">
+    <h3 class="button__click button__on popular__latest__options--guide" id="articles_latest_plain_click">Latest (plain text)</h3>
+    <h3 class="button__click button__off popular__latest__options--guide" id="articles_latest_click">Latest</h3>
+    <h3 class="button__click button__off popular__latest__options--guide" id="articles_category_click">Category</h3>
+  </div>
+
+  <div class="posts__off posts--guide" id="articles_latest_posts">
+    <%= partial "list/articles_latest.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
+  </div>
+
+  <div class="posts__on posts--guide" id="articles_latest_plain_posts">
+    <%= partial "list/articles_latest_plain_text.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
+  </div>
+
+  <div class="posts__off posts--guide" id="articles_category_posts">
+    <%= partial "list/articles_category.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
+  </div>
+</div>
+
+-->
+
+
+
+
+
+
+  <!-- <h3 class="popular__latest__options__title">Practices</h3> -->
+  <!-- <div class="popular__latest__options">
+    <h3 class="button__click button__on popular__latest__options--guide" id="practices_latest_plain_click">Latest (plain text)</h3>
+    <h3 class="button__click button__off popular__latest__options--guide" id="practices_latest_click">Latest</h3>
+    <h3 class="button__click button__off popular__latest__options--guide" id="practices_category_click">Category</h3>
+  </div> -->
+
+  <!-- <div class="posts__off posts--guide" id="practices_latest_posts"> -->
+    <%#= partial "list/articles_latest_v2.html", %{ conn: @conn, page_symbol: :practice, items: @page_collections.practices, tag_type: "practice" } %>
+  <!-- </div> -->
+
+  <!-- <div class="posts__on posts--guide" id="practices_latest_plain_posts">
+    <%= partial "list/articles_latest_plain_text.html", %{ conn: @conn, page_symbol: :practice, items: @page_collections.practices, tag_type: "practice" } %>
+  </div>
+
+  <div class="posts__off posts--guide" id="practices_category_posts">
+    <%= partial "list/articles_category.html", %{ conn: @conn, page_symbol: :practice, items: @page_collections.practices, tag_type: "practice" } %>
+  </div> -->
+
+
+
+
+
+  <!-- <%= if @file.specific_type == "mp3" do %>
+    <div class="dashboard__collection__file__specific">
+      <i class="fa fa-file-audio" aria-hidden="true"></i>
+    </div>
+  <% end %>
+  <%= if @file.specific_type == "epub" do %>
+    <div class="dashboard__collection__file__specific">
+      <i class="fas fa-book-open" aria-hidden="true"></i>
+    </div>
+  <% end %>
+  <%= if @file.specific_type == "email" do %>
+    <div class="dashboard__collection__file__specific">
+      <i class="fas fa-envelope" aria-hidden="true"></i>
+    </div>
+  <% end %> -->
+
+
+
+<!-- <div class="single__wrapper">
+  <div class="single__content">
+    <h2>Our Mission</h2>
+    <p>We have a really simple goal.</p>
+
+    <hr class="hr3"/>
+    <h3>We want you to change the way you think about porn addiction.</h3>
+    <hr class="hr3__bottom"/>
+
+    <p>The truth is that overcoming pornography addiction is deceptively simple.</p>
+
+    <h2>The Five Fundamental Principles of NeverFap</h2>
+    <p>Compromising of five fundamental principles, the NeverFap method of eliminating porn addiction could honestly not be any simpler, and we've broken it down so you don't have to.</p>
+    <p>These principles will form the basis of everything you will learn, whether you decide to get started with the courses, read the articles or practice the mental health exercises.</p>
+    <p>These principles are:</p>
+
+    <div class="five__principles__list__main">
+      <span><div class="five__principles__item__main">Choice over mind</div></span>
+      <span><div class="five__principles__item__main">Balance over reward</div></span>
+      <span><div class="five__principles__item__main">Struggle over none</div></span>
+      <span><div class="five__principles__item__main">Awareness over all</div></span>
+      <span><div class="five__principles__item__main">Uncondition over judgement</div></span>
+    </div>
+
+    <div class="button__wrapper">
+      <a class="button button__secondary" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles Of NeverFap.</a>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
+
+Guides
+
+<div class="single__wrapper">
+  <div class="single__content">
+    <h2>Content List</h2>
+    <p>If you'd like to dive into some of our articles, feel free to explore the range of articles, practices and courses sorted by category.</p>
+  </div>
+
+  <div class="popular__latest__options">
+    <h3 class="button__click button__on popular__latest__options--guide" id="introduction_click">Introduction</h3>
+    <h3 class="button__click button__off popular__latest__options--guide" id="choice_over_mind_click">Choice over mind</h3>
+    <h3 class="button__click button__off popular__latest__options--guide" id="balance_over_reward_click">Balance over reward</h3>
+    <h3 class="button__click button__off popular__latest__options--guide" id="struggle_over_none_click">Struggle over none</h3>
+    <h3 class="button__click button__off popular__latest__options--guide" id="awareness_over_all_click">Awareness over all</h3>
+    <h3 class="button__click button__off popular__latest__options--guide" id="uncondition_over_judgement_click">Uncondition over judgement</h3>
+  </div>
+
+  <div class="post__on posts--guide" id="introduction_posts">
+    <%= partial "guide/category_posts.html", %{ conn: @conn, items: @page_collections.articles, post_category: "introduction" } %>
+  </div>
+
+  <div class="post__off posts--guide" id="choice_over_mind_posts">
+    <%= partial "guide/category_posts.html", %{ conn: @conn, items: @page_collections.articles, post_category: "choice-over-mind" } %>
+  </div>
+
+  <div class="post__off posts--guide" id="balance_over_reward_posts">
+    <%= partial "guide/category_posts.html", %{ conn: @conn, items: @page_collections.articles, post_category: "balance-over-reward" } %>
+  </div>
+
+  <div class="post__off posts--guide" id="strugle_over_none_posts">
+    <%= partial "guide/category_posts.html", %{ conn: @conn, items: @page_collections.articles, post_category: "struggle-over-none" } %>
+  </div>
+
+  <div class="post__off posts--guide" id="awareness_over_all_posts">
+    <%= partial "guide/category_posts.html", %{ conn: @conn, items: @page_collections.articles, post_category: "awareness-over-all" } %>
+  </div>
+
+  <div class="post__off posts--guide" id="uncondition_over_judgement_posts">
+    <%= partial "guide/category_posts.html", %{ conn: @conn, items: @page_collections.articles, post_category: "uncondition-over-judgement" } %>
+  </div>
+</div>
+
+
+
+
+<%# MEDITATION PILOTS %>
+<!-- <div class="single__wrapper">
+  <div class="single__content" style="margin-bottom: 0;">
+    <h1>Meditation Essential Reading</h1>
+    <p>Of course, it's also important that you educate yourself and </p>
+    <p>.</p>
+  </div>
+</div> -->
+
+<!-- <div class="single__wrapper">
+  <h1 style="margin-bottom: 3rem;">Guided Meditation List</h1>
+  <div class="podcast__item__container">
+    <%#= Enum.map(@page_collections.meditations, fn(meditation) -> %>
+      <div class="podcast__item">
+        <a href='<%#= Routes.content_path(@conn, :meditation, meditation["slug"]) %>'><h1 style="margin-bottom: 0;"><%#= meditation["title"] %></h1></a>
+        <h3 style="margin-bottom: 1rem;"><%#= raw meditation["content"] %></h3>
+        <div class="podcast__item__bottom">
+          <a class="link articles__link" href='<%#= meditation["podcast_url"] %>'>episode link</a>
+        </div>
+      </div>
+    <%# end ) %>
+  </div>
+</div> -->
+<%# MEDITATION PILOTS END %>

@@ -1,6 +1,6 @@
 defmodule NfdWeb.FetchAccess do
   defp apmss do
-    [:articles, :practices, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
+    [:articles, :practices, :podcasts, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
   end
 
   defp ccp do
@@ -28,12 +28,13 @@ defmodule NfdWeb.FetchAccess do
       :guides_post_relapse_academy -> apmss ++ []
       :guides_complete_understanding -> apmss ++ []
       :guides_curriculum -> apmss ++ []
+      :guides_fundamental_meditation_series -> apmss ++ []
       # GUIDES END
 
       # LEGAL
-      :legal_disclaimer -> [:meditations]
-      :legal_privacy -> [:meditations]
-      :legal_terms_and_conditions -> [:meditations]
+      :legal_disclaimer -> [:podcasts]
+      :legal_privacy -> [:podcasts]
+      :legal_terms_and_conditions -> [:podcasts]
       # LEGAL END
 
       # PROGRAMS
@@ -71,14 +72,14 @@ defmodule NfdWeb.FetchAccess do
       :practices -> apmss ++ []
       :practice -> apmss ++ ccp ++ [:practice]
 
-      :meditations -> apmss ++ []
+      :meditations -> apmss ++ [:meditations]
       :meditation -> apmss ++ ccp ++ []
 
       :courses -> apmss ++ [:courses]
       :course -> apmss ++ [:course]
 
-      :podcasts -> apmss ++ [:podcasts]
-      :podcast -> apmss ++ ccp ++ [:podcasts, :podcast]
+      :podcasts -> apmss ++ []
+      :podcast -> apmss ++ ccp ++ [:podcast]
 
       :quotes -> apmss ++ [:quotes]
       :quote -> apmss ++ ccp ++ [:quotes, :quote]

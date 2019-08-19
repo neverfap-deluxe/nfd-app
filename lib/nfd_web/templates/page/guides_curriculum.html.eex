@@ -27,7 +27,7 @@
     </div> -->
 
 
-<!-- 
+<!--
 <div class="guide__banner" style="border-bottom: 4px solid black; border-top: 4px solid black;">
   <div class="guide__suggestion__container">
     <div class="black__banner__title__container">
@@ -40,16 +40,16 @@
   <h1 class="homepage__hero__title">Covering The Basics.</h1>
   <h2 class="homepage__hero__title__secondary">You have to understand porn addiction recovery.</h2>
 </div> -->
-  
+
 <div class="homepage__content">
     <div class="homepage__main">
       <div class="homepage__section">
         <div style="margin-top: 3rem;" class="articles__list__v2 homepage__resources">
-  
-          <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+
+          <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
             <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
           </div>
-        
+
           <a class="article__item__homepage" href='<%= Routes.page_path(@conn, :guides_complete_understanding) %>'>
             <h3 class="article__item__homepage__title">A Complete Understanding Of The Porn Addiction Recovery Process In 5 Minutes <img src="/images/logo.png" class="logo__square" alt=""/></h3>
             <a class="homepage__tiny" href="<%= Routes.page_path(@conn, :guides_complete_understanding) %>">/complete-understanding</a>
@@ -60,13 +60,13 @@
             <li>If you struggle to get further than 2 months then it's likely because you don't have any Healthy Coping Mechanisms.</li>
             <li>Healthy Coping Mechanisms include things like meditation and remaining calm, while Unhealthy Coping Mechanisms like distraction and judgemental attitudes.</li>
           </ul>
-  
+
           <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
           <div style="margin-top: 1rem; height: 4px; background: cyan;"></div>
-  
-          <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+
+          <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
             <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
-          </div>    
+          </div>
           <a class="article__item__homepage" href='/guide'>
             <h3 class="article__item__homepage__title">A Detailed Guide To The NeverFap Deluxe Method Of Overcoming Porn Addiction<img src="/images/logo.png" class="logo__square" alt=""/></h3>
             <a class="homepage__tiny" href="<%= Routes.page_path(@conn, :guides_guide) %>">/guide</a>
@@ -77,13 +77,13 @@
             <li>There are three broad categories of Healthy Coping Mechanisms: Awareness, Calmness and Ambition.</li>
             <li>Maintaining all three categories </li>
           </ul>
-  
+
           <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
           <div style="margin-top: 1rem; height: 4px; background: cyan;"></div>
-  
-          <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+
+          <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
             <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
-          </div>      
+          </div>
           <a class="article__item__homepage" href='/summary'>
             <h3 class="article__item__homepage__title">A Comprehensive Summary Of The Core Concepts Of NeverFap Deluxe <img src="/images/logo.png" class="logo__square" alt=""/></h3>
             <a class="homepage__tiny" href="<%= Routes.page_path(@conn, :guides_summary) %>">/summary</a>
@@ -92,15 +92,15 @@
           <p>Summary:</p>
           <ul class="article__item__list">
             <li>The aim of effective recovery is to maintain balance.</li>
-            <li>Only once you maintain balance will you be able to effortlessly overcome your porn addiction.</li>    
+            <li>Only once you maintain balance will you be able to effortlessly overcome your porn addiction.</li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-  
-  
-  
+
+
+
   <div class="account__info">
       <p class="account__info__title">Before we get started on the main course, here is some <span class="delicious__promotion">delicious</span> promotion. <i class="em em-admission_tickets"></i></p>
     </div>
@@ -119,7 +119,7 @@
         <iframe src="https://discordapp.com/widget?id=548970920115699742&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
       </div>
     </div>
-  
+
     <div class="homepage__splitter homepage__splitter--podcast">
       <div class="homepage__splitter__box homepage__splitter__box--top homepage__splitter__box--podcast">
         <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="500" height="500"></iframe>
@@ -135,12 +135,12 @@
         </div>
       </div>
     </div>
-  
-  
+
+
     <div class="account__info">
       <p class="account__info__title">OMFG!? You survived the promotion. <i class="em em-confetti_ball"></i> Well done.<i class="em em-confetti_ball"></i></p>
     </div>
-  
+
   <div class="guide__banner" style="border-bottom: 4px solid black; border-top: 4px solid black;">
     <div class="guide__suggestion__container">
       <div class="black__banner__title__container">
@@ -149,12 +149,12 @@
       </div>
     </div>
   </div>
-  
+
   <div class="homepage__content">
-    <div class="homepage__main">  
+    <div class="homepage__main">
       <div class="homepage__section">
-  
-        <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+
+        <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
           <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
         </div>
         <a class="article__item__homepage" href='/summary'>
@@ -165,10 +165,10 @@
         <p>Summary:</p>
         <ul class="article__item__list">
           <li>The aim of effective recovery is to maintain balance.</li>
-          <li>Only once you maintain balance will you be able to effortlessly overcome your porn addiction.</li>    
+          <li>Only once you maintain balance will you be able to effortlessly overcome your porn addiction.</li>
         </ul>
-  
-        <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+
+        <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
           <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
         </div>
         <a class="article__item__homepage" href='/summary'>
@@ -179,10 +179,10 @@
         <p>Summary:</p>
         <ul class="article__item__list">
           <li>The aim of effective recovery is to maintain balance.</li>
-          <li>Only once you maintain balance will you be able to effortlessly overcome your porn addiction.</li>    
+          <li>Only once you maintain balance will you be able to effortlessly overcome your porn addiction.</li>
         </ul>
-  
-        <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion">
+
+        <div style="margin-top: 1rem; margin-bottom: 3rem;" class="guide__suggestion guide__suggestion__padding">
           <div class="guide__suggestion__number guide__suggestion__number--bottom">6.</div>
         </div>
         <a class="article__item__homepage" href='/summary'>
@@ -193,13 +193,13 @@
         <p>Summary:</p>
         <ul class="article__item__list">
           <li>The aim of effective recovery is to maintain balance.</li>
-          <li>Only once you maintain balance will you be able to effortlessly overcome your porn addiction.</li>    
+          <li>Only once you maintain balance will you be able to effortlessly overcome your porn addiction.</li>
         </ul>
-    
+
       </div>
     </div>
   </div>
-  
+
   <div class="guide__banner" style="border-bottom: 4px solid black; border-top: 4px solid black;">
     <div class="guide__suggestion__container">
       <div class="black__banner__title__container">

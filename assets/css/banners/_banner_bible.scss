@@ -1,5 +1,39 @@
 .bible__banner {
   .bible__banner__title {
+    font-size: 3.4rem;
+    line-height: 5.4rem;
+    margin-bottom: 0;
 
+    border-top: 60px solid;
+    // border-left: 60px solid;
+    border-left: 60px solid;
+    border-bottom: 60px solid;
+    border-image-source: linear-gradient(45deg, rgba(255,46,182,1) 0%, rgba(227,152,2,1) 100%);
+    border-image-slice: 1;
+
+    padding: 1rem;
+
+    // color: #DF5E7D;
+    // text-shadow: -5px 6px black;
+  }
+
+  .bible__banner__image__container {
+    img {
+      display: inline-block;
+      width: 320px;
+      border: 4px solid black;
+      box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.22), 0 17px 17px 0 rgba(0, 0, 0, 0.22);
+      transition: .4s box-shadow;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .bible__banner {
+    .bible__banner__title {
+      font-size: 4rem;
+      line-height: 6rem;
+    }
   }
 }

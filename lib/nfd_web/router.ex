@@ -57,6 +57,7 @@ defmodule NfdWeb.Router do
     get "/emergency", PageController, :guides_emergency
     get "/a-complete-understanding-of-the-porn-addiction-recovery-process", PageController, :guides_complete_understanding
     get "/neverfap-deluxe-curriculum", PageController, :guides_curriculum
+    get "/fundamental_meditation_series", PageController, :guides_fundamental_meditation_series
     # GUIDES END
 
     # PROGRAMS

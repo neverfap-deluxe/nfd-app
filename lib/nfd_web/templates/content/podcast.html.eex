@@ -1,15 +1,17 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
-  
-<div class="single__wrapper practices__wrapper">
-  <div style="margin-top: 1.4rem;">
-    <%= raw @item["podcast_player"] %>
-  </div>
 
-  <h3 style="margin-bottom: 2rem;"><%= raw @item["content"] %></h3>
-  <div class="podcast__item__bottom">
-    <a class="link articles__link" href='<%= @item["podcast_url"] %>'>episode link</a>
+<%# MEDITATION MAIN %>
+  <div class="single__wrapper practices__wrapper">
+    <div style="margin-top: 1.4rem;">
+      <%= raw @item["podcast_player"] %>
+    </div>
+
+    <h3 style="margin-bottom: 2rem;"><%= raw @item["content"] %></h3>
+    <div class="podcast__item__bottom">
+      <a class="link articles__link" href='<%= @item["podcast_url"] %>'>episode link</a>
+    </div>
   </div>
-</div>
+<%# MEDITATION MAIN END %>
 
 <div class="single__wrapper">
   <%= partial "content/share_buttons.html", %{permalink: @item["permalink"] } %>
@@ -17,8 +19,5 @@
   <%= partial "content/next_prev_buttons.html", %{conn: @conn, page_symbol: :podcast, next_item: @content_collections.next_item, previous_item: @content_collections.previous_item } %>
 </div>
 
-<%= partial "banners/new_to_nfd_banner.html", assigns %>
-<%= partial "banners/reddit_question_banner.html", assigns %>
-<%= partial "home/veteran_neverfappers.html", assigns %>
-<%= partial "home/goodies.html", assigns %>
-<%= partial "subscriber/seven_day_kickstarter_banner.html", %{ conn: @conn, item: @page_collections.seven_day_kickstarter, seven_day_kickstarter_changeset: @changeset_collections.seven_day_kickstarter_changeset } %>
+<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
+<%= partial "promotion_footer.html", assigns %>

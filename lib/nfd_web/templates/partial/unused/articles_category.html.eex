@@ -15,7 +15,7 @@
                 </div>
               </div>
               <h5 class="post__date"><%=item["date"] %></h5>
-              <h4 class="post__title"><%=item["title"] %></h4>    
+              <h4 class="post__title"><%=item["title"] %></h4>
             </div>
           </a>
         <% end %>
@@ -38,15 +38,15 @@
                 </div>
               </div>
               <h5 class="post__date"><%= item["date"] %></h5>
-              <h4 class="post__title"><%= item["title"] %></h4>    
+              <h4 class="post__title"><%= item["title"] %></h4>
             </div>
           </a>
-        <% end %>       
+        <% end %>
       <% end %>
     <% end ) %>
   </div>
 
-    
+
   <ul class="five__principles__list__page">
     <span><li class="five__principles__item__page">Balance Over Reward</li></span>
   </ul>
@@ -62,7 +62,7 @@
                   </div>
                 </div>
                 <h5 class="post__date"><%= item["date"] %></h5>
-                <h4 class="post__title"><%= item["title"] %></h4>    
+                <h4 class="post__title"><%= item["title"] %></h4>
               </div>
             </a>
         <% end %>
@@ -70,7 +70,7 @@
     <% end ) %>
   </div>
 
-    
+
   <ul class="five__principles__list__page">
     <span><li class="five__principles__item__page">Struggle Over None</li></span>
   </ul>
@@ -86,7 +86,7 @@
                   </div>
                 </div>
                 <h5 class="post__date"><%= item["date"] %></h5>
-                <h4 class="post__title"><%= item["title"] %></h4>    
+                <h4 class="post__title"><%= item["title"] %></h4>
               </div>
             </a>
         <% end %>
@@ -94,7 +94,7 @@
     <% end ) %>
   </div>
 
-          
+
   <ul class="five__principles__list__page">
     <span><li class="five__principles__item__page">Awareness Over All</li></span>
   </ul>
@@ -110,7 +110,7 @@
                 </div>
               </div>
               <h5 class="post__date"><%= item["date"] %></h5>
-              <h4 class="post__title"><%= item["title"] %></h4>    
+              <h4 class="post__title"><%= item["title"] %></h4>
             </div>
           </a>
         <% end %>
@@ -133,7 +133,7 @@
                 </div>
               </div>
               <h5 class="post__date"><%= item["date"] %></h5>
-              <h4 class="post__title"><%= item["title"] %></h4>    
+              <h4 class="post__title"><%= item["title"] %></h4>
             </div>
           </a>
         <% end %>

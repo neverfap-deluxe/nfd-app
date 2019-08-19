@@ -1,0 +1,52 @@
+<%
+list_of_sections =
+  Enum.reduce(
+    @items,
+    [],
+    fn practice, acc ->
+      does_volume_exist = Enum.find(acc, fn item -> item.vol == practice["vol"] end)
+
+      if !!does_volume_exist do
+        new_volume = does_volume_exist |> Map.put(:practices, [practice | does_volume_exist.practices])
+
+        Enum.map(acc, fn volume ->
+          if volume.vol == practice["vol"] do
+            new_volume
+          else
+            volume
+          end
+        end)
+      else
+        [%{
+          vol: practice["vol"],
+          practices: [practice]
+        } | acc]
+      end
+    end) |> Enum.sort(fn(a, b) -> a.vol < b.vol end)
+%>
+
+<div class="posts">
+  <div class="articles__list__v2">
+    <%= Enum.map(list_of_sections, fn(section) -> %>
+
+      <div class="practices__section">
+        <div class="practices__section__title">Seven Week Awareness Challenge <%= section.vol %></div>
+
+        <div class="practices__section__collection dashboard__collection__files">
+          <%= Enum.map(section.practices, fn(practice) -> %>
+            <div class="practices__section__collection__item dashboard__collection__file">
+              <a href='' class="dashboard__collection__file__info" style="cursor: pointer;">
+                <p class="dashboard__collection__file__title"><%= practice["title"] %></p>
+              </a>
+              <a href='' class="dashboard__collection__file__download">
+                <span class='new__collection__item new__collection__item--alter' style="cursor: pointer;">MP3</span>
+                <i class="fa fa-file-audio" aria-hidden="true"></i>
+              </a>
+              <!-- <%= Routes.content_path(@conn, :practice, practice["slug"]) %> -->
+            </div>
+          <% end ) %>
+        </div>
+      </div>
+    <% end ) %>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 <div class="posts">
   <div class="articles__list__v2">
     <!-- NOTE: this is incorrect, it should sort by latest date first :) -->
-    <%= @items |> Enum.take(10) |> Enum.map(fn(item) -> %>
+    <%= @items |> Enum.take(7) |> Enum.map(fn(item) -> %>
       <%= partial "list/articles_item_v2.html", %{ conn: @conn, page_symbol: :article, slug: item["slug"], title: item["title"], description: item["description"], tldr1: item["tldr1"], tldr2: item["tldr2"], tldr3: item["tldr3"] } %>
   <% end ) %>
   </div>

@@ -1,88 +1,166 @@
-<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: child_content(@item["children"], "accountability-intro") } %>
-<%= partial "links/discord.html", assigns %>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 
-<div class="single__wrapper">
-  <div class="single__content">
-    <h1>The Accountability Process</h1>
-    <p>Here's how the process works.</p>
-    <p>Once a day you will post in the <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel of our Discord Server with an update of the healthy coping mechanisms you committed to for that day.</p>
-    <p><b>Then I will acknowledge the post with an emoji or some comments of recommendation.</b></p>
-    <p>It could have been your daily routine of meditation. It could have been something positive you did or achieved. It could have been physical exercise. It could have been one of the NeverFap Deluxe Practices.</p>
-    <p>It could even have been an epiphany of awareness which sparked positive change in your life.</p>
-    <p>The idea is that we want to be focusing on positive change, because that is ultimately that the process of recovery is about.</p>
-    <p>Replacing negative habits with positive habits.</p>
-    <p>Therefore, in order for this to be effective you will need to provide a few key details:</p>
+<%# INDEX %>
+  <div class="single__wrapper">
+    <div class="page__index">
+      <h2 class="page__index__title">Index</h1>
 
-    <hr class="hrul"/>
-      <ul>
-        <li>- Today's date</li>
-        <li>- A list of healthy coping mechanisms you practiced for that day.</li>
-        <li>- A list of things you're going to do differently tomorrow.</li>
-      </ul>
-    <hr class="hrul__bottom"/>
-
-    <p>One thing you'll notice is that we don't report our current streak.</p>
-    <p>I have come to the conclusion that it does not work as a motivator, not only through extensive trialing, however also observing the progress of others over in r/NoFap.</p>
-    <p>In fact, it almost always hinders progress and ends up demotivating people, as they inevitably relapse due to inexperience with the porn recovery process.</p>
-    <p>On the other hand, positive action and healthy coping mechanisms are tangible things we can track, which do not set expectations on our porn recovery journey.</p>
-    <p>In essence, what this system does is encourage you to make positive change by having you focus solely on the changes you make in your life, as well as from observing other people's posts.</p>
-    <p>Not only it is simple, however it's also very effective.</p>
+      <ol class="index__items">
+        <h3><i class="page__index__emoji__left em em-mortar_board"></i> Accountability Program <i class="page__index__emoji__right em em-mortar_board"></i></h3>
+        <a href="#introduction"><li class="index__item">Introduction</li></a>
+        <a href="#accountability_process"><li class="index__item">Accountability Process</li></a>
+        <a href="#neverfap_deluxe_bot"><li class="index__item">NeverFap Deluxe Bot</li></a>
+        <a href="#accountability_examples"><li class="index__item">Accountability Examples</li></a>
+        <a href="#next_steps"><li class="index__item">Next Steps</li></a>
+      </ol>
+    </div>
   </div>
-</div>
 
-<%= partial "links/discord.html", assigns %>
+  <%= partial "links/paypal.html", assigns %>
+<%# INDEX END %>
 
-<div class="single__wrapper">
-  <div class="single__content">
-    <h1>The NeverFap Deluxe Discord Bot</h1>
-    <p>A large part of what makes the <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel effective is the NeverFap Deluxe Bot which has been designed to help assist you with your porn addiction recovery journey.</p>
-    <p>The bot has been designed to do a number of amazing things:</p>
-    <hr class="hrul"/>
-      <ul>
-        <li>- It will automatically keep track of all your <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> posts.</li>
-        <li>- It will send you a reminder of yesterday's post, so that you don't forget what you set out to improve.</li>
-        <li>- It will message you on key milestones with advice, as well as remind you if you haven't been posting in a while.</li>
-        <li>- It will let you know if people have reacted to your post.</li>
-        <li>- It will post a daily tally of people's posts and what day they're up to.</li>
-        <li>- And so much more!</li>
-      </ul>
-    <hr class="hrul__bottom"/>
-    <p>I've put literal months into developing this thing, and for good reason. The bot has statistically increased engagement on the Discord channel, and it genuinely helps keep you on track.</p>
-    <p>Thank you NeverFap Deluxe Bot!</p>
+
+<%# INTRODUCTION %>
+  <div id="introduction" class="single__wrapper">
+    <div class="single__content">
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+      </a>
+
+      <h1>Introduction</h1>
+      <%= raw child_content(@item["children"], "accountability-intro") %>
+    </div>
   </div>
-</div>
 
-<%= partial "links/discord.html", assigns %>
+  <%= partial "links/discord.html", assigns %>
+<%# INTRODUCTION END %>
 
-<div class="single__wrapper">
-  <div class="single__content">
-    <h1>Accountability Examples</h1>
 
-    <p>Here are some examples of some thoughtful and helpful posts that you could post in the Discord <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel:</p>
+<%# ACCOUNTABILITY PROCESS %>
+  <div id="accountability_process" class="single__wrapper">
+    <div class="single__content">
+      <a href="#accountability_process" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+      </a>
 
-    <!-- MAYBE: Need to flesh out, or copy and paste examples from discord. -->
-    <div class="accountability__example__container">
-      <h2>Date: 21-03-19</h2>
-      <h3>Day 1</h3>
-      <div class="accountability__text__container">
-        <p>- Made the decision to commit to NeverFap Deluxe.</p>
-        <p>- Read the NeverFap Deluxe Homepage.</p>
+      <h1>The Accountability Process</h1>
+      <p>Here's how the process works.</p>
+      <p>Once a day you will post in the <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel of our Discord Server with an update of the healthy coping mechanisms you committed to for that day.</p>
+      <p><b>Then I will acknowledge the post with an emoji or some comments of recommendation.</b></p>
+      <p>It could have been your daily routine of meditation. It could have been something positive you did or achieved. It could have been physical exercise. It could have been one of the NeverFap Deluxe Practices.</p>
+      <p>It could even have been an epiphany of awareness which sparked positive change in your life.</p>
+      <p>The idea is that we want to be focusing on positive change, because that is ultimately that the process of recovery is about.</p>
+      <p>Replacing negative habits with positive habits.</p>
+      <p>Therefore, in order for this to be effective you will need to provide a few key details:</p>
+
+      <hr class="hrul"/>
+        <ul>
+          <li>- Today's date</li>
+          <li>- A list of healthy coping mechanisms you practiced for that day.</li>
+          <li>- A list of things you're going to do differently tomorrow.</li>
+        </ul>
+      <hr class="hrul__bottom"/>
+
+      <p>One thing you'll notice is that we don't report our current streak.</p>
+      <p>I have come to the conclusion that it does not work as a motivator, not only through extensive trialing, however also observing the progress of others over in r/NoFap.</p>
+      <p>In fact, it almost always hinders progress and ends up demotivating people, as they inevitably relapse due to inexperience with the porn recovery process.</p>
+      <p>On the other hand, positive action and healthy coping mechanisms are tangible things we can track, which do not set expectations on our porn recovery journey.</p>
+      <p>In essence, what this system does is encourage you to make positive change by having you focus solely on the changes you make in your life, as well as from observing other people's posts.</p>
+      <p>Not only it is simple, however it's also very effective.</p>
+    </div>
+  </div>
+
+  <%= partial "links/discord.html", assigns %>
+<%# ACCOUNTABILITY PROCESS END %>
+
+
+<%# NEVERFAP DELUXE BOT %>
+  <div id="neverfap_deluxe_bot" class="single__wrapper">
+    <div class="single__content">
+      <a href="#neverfap_deluxe_bot" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+      </a>
+
+      <h1>The NeverFap Deluxe Discord Bot</h1>
+      <p>A large part of what makes the <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel effective is the NeverFap Deluxe Bot which has been designed to help assist you with your porn addiction recovery journey.</p>
+      <p>The bot has been designed to do a number of amazing things:</p>
+      <hr class="hrul"/>
+        <ul>
+          <li>- It will automatically keep track of all your <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> posts.</li>
+          <li>- It will send you a reminder of yesterday's post, so that you don't forget what you set out to improve.</li>
+          <li>- It will message you on key milestones with advice, as well as remind you if you haven't been posting in a while.</li>
+          <li>- It will let you know if people have reacted to your post.</li>
+          <li>- It will post a daily tally of people's posts and what day they're up to.</li>
+          <li>- And so much more!</li>
+        </ul>
+      <hr class="hrul__bottom"/>
+      <p>I've put literal months into developing this thing, and for good reason. The bot has statistically increased engagement on the Discord channel, and it genuinely helps keep you on track.</p>
+      <p>Thank you NeverFap Deluxe Bot!</p>
+    </div>
+  </div>
+
+  <%= partial "links/discord.html", assigns %>
+<%# NEVERFAP DELUXE BOT END %>
+
+
+<%# ACCOUNTABILITY EXAMPLES %>
+  <div id="accountability_examples" class="single__wrapper">
+    <div class="single__content">
+      <a href="#accountability_examples" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+      </a>
+
+      <h1>Accountability Examples</h1>
+
+      <p>Here are some examples of some thoughtful and helpful posts that you could post in the Discord <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel:</p>
+
+      <!-- MAYBE: Need to flesh out, or copy and paste examples from discord. -->
+      <div class="accountability__example__container">
+        <h2>Date: 21-03-19</h2>
+        <h3>Day 1</h3>
+        <div class="accountability__text__container">
+          <p>- Made the decision to commit to NeverFap Deluxe.</p>
+          <p>- Read the NeverFap Deluxe Homepage.</p>
+        </div>
+      </div>
+
+      <div class="accountability__example__container">
+        <h2>Date: 13-10-18</h2>
+        <h3>Meditation streak: 21 days</h3>
+        <div class="accountability__text__container">
+          <p>- Meditated 10 minutes before bed.</p>
+          <p>- Meditated 15 minutes on the way to work.</p>
+          <p>- Practiced <a class="link" href="/practices/observe-your-senses">Observe Your Senses</a> for 20 minutes.</p>
+          <p>- Made a conscious effort not to stare at women in public.</p>
+        </div>
       </div>
     </div>
-
-    <div class="accountability__example__container">
-      <h2>Date: 13-10-18</h2>
-      <h3>Meditation streak: 21 days</h3>
-      <div class="accountability__text__container">
-        <p>- Meditated 10 minutes before bed.</p>
-        <p>- Meditated 15 minutes on the way to work.</p>
-        <p>- Practiced <a class="link" href="/practices/observe-your-senses">Observe Your Senses</a> for 20 minutes.</p>
-        <p>- Made a conscious effort not to stare at women in public.</p>
-      </div>
-    </div>
-
   </div>
-</div>
 
-<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
-<%= partial "promotion_footer.html", assigns %>
+  <%= partial "links/discord.html", assigns %>
+<%# ACCOUNTABILITY EXAMPLES END %>
+
+
+<%# NEXT STEPS %>
+  <div id="next_steps" class="single__wrapper">
+    <div class="single__content">
+      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
+      </a>
+      <h1>Next Steps</h1>
+      <p>Of course, while personal support can help you stick with the recovery process, there really is no alternative to putting in the hard work and committing to the recovery process itself i.e. meditating daily.</p>
+      <p>Which is to say that it's really up to you at the end of the day to recover and no amount of support changes this fact. It's your brain at the end of the day and it's up to you to learn to use it effectively.</p>
+      <p>So you don't yet have a daily routine of meditation, now's the time to start. A lot of these concepts are explained in the <a href="/meditation" class="link">NeverFap Deluxe Meditation</a> section of the website and are literally invaluable to your recovery.</p>
+      <p>If you do not meditate daily and you do not commit to your mental health in a meaningful way, then literally nothing will change.</p>
+      <p>Godspeed, and miao.</p>
+      <p>(=^･ｪ･^=))ﾉ彡☆</p>
+    </div>
+  </div>
+
+<%# NEXT STEPS END %>
+
+
+<%# FOOTER %>
+  <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
+  <%= partial "promotion_footer.html", assigns %>
+<%# FOOTER END %>

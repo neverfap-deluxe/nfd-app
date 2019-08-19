@@ -63,14 +63,14 @@
                   </div>
                 <% end %>
               </span>
-            </div>            
+            </div>
           </div>
 
           <!-- Close Button -->
           <!-- <div id="mobile__bottom__bar__close__id" class="mobile__overlay__close">
             <span class="mobile__overlay__close__text">x</span>
           </div> -->
-            
+
         </div>
       </div>
 

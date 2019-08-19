@@ -1,0 +1,12 @@
+<%= partial "pricing/pricing_container.html",
+  %{
+    conn: @conn,
+    price: "$89 USD",
+    title: "NeverFap Deluxe Practices",
+    points: [
+      "Gain Access To All The NeverFap Deluxe Practices",
+      "Essential Audio Explaining Practices And Technique"
+    ],
+    description: nil
+  }
+%>

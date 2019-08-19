@@ -1,42 +1,76 @@
-<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
-<%= partial "links/paypal.html", assigns %>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 
-<div style="margin-top: 3rem!important;" class="single__wrapper">
-  <div class="posts__on posts--guide" id="articles_latest_plain_posts">
-    <%= partial "list/articles_latest_v2.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
-  </div>
-</div>
+<%# INDEX %>
+  <div class="single__wrapper">
+    <div class="page__index">
+      <h2 class="page__index__title">Index</h1>
 
-<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
-<%= partial "promotion_footer.html", assigns %>
-
-<script src='<%= Routes.static_path(@conn, "/js/articles.js") %>'></script>
-
-<!-- <%= partial "links/patreon.html", assigns %> -->
-
-<!-- v1 -->
-<!--
-
-<div class="single__wrapper">
-  <h3 class="popular__latest__options__title">Articles</h3>
-
-  <div class="popular__latest__options">
-    <h3 class="button__click button__on popular__latest__options--guide" id="articles_latest_plain_click">Latest (plain text)</h3>
-    <h3 class="button__click button__off popular__latest__options--guide" id="articles_latest_click">Latest</h3>
-    <h3 class="button__click button__off popular__latest__options--guide" id="articles_category_click">Category</h3>
+      <ol class="index__items">
+        <h3><i class="page__index__emoji__left em em-ledger"></i> Articles <i class="page__index__emoji__right em em-ledger"></i></h3>
+        <a href="#introduction"><li class="index__item">Introduction</li></a>
+        <a href="#articles_list"><li class="index__item">NeverFap Deluxe Articles List</li></a>
+        <a href="#next_steps"><li class="index__item">Next Steps</li></a>
+      </ol>
+    </div>
   </div>
 
-  <div class="posts__off posts--guide" id="articles_latest_posts">
-    <%= partial "list/articles_latest.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
+  <%= partial "links/paypal.html", assigns %>
+<%# INDEX END %>
+
+
+<%# INTRODUCTION %>
+  <div id="introduction" class="single__wrapper">
+    <div class="single__content">
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+      </a>
+
+      <h1>Introduction</h1>
+      <%= raw @item["content"] %>
+    </div>
   </div>
 
-  <div class="posts__on posts--guide" id="articles_latest_plain_posts">
-    <%= partial "list/articles_latest_plain_text.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
+  <%= partial "links/twitter.html", assigns %>
+<%# INTRODUCTION END %>
+
+
+<%# ARTICLES LIST %>
+  <div id="articles_list" style="margin-top: 3rem!important;" class="single__wrapper">
+    <a href="#articles_list" class="guide__suggestion guide__suggestion__padding">
+      <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+    </a>
+
+    <h1>Articles List</h1>
+    <div class="posts__on posts--guide" id="articles_latest_plain_posts">
+      <%= partial "list/articles_latest_v2.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
+    </div>
   </div>
 
-  <div class="posts__off posts--guide" id="articles_category_posts">
-    <%= partial "list/articles_category.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
-  </div>
-</div>
+  <%= partial "links/discord.html", assigns %>
+<%# ARTICLES LIST END %>
 
--->
+
+<%# NEXT STEPS %>
+  <div id="next_steps" class="single__wrapper">
+    <div class="single__content">
+      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+      </a>
+
+      <h1>Next Steps</h1>
+      <p>If you enjoy reading these articles online on the NeverFap Deluxe website then golly gosh, you're in for a real treat!</p>
+      <p>In addition to the website, these articles are available to read on any Android device for FREE via the official <a class="link" href="https://neverfapdeluxe.com/meditation">NeverFap Deluxe Mobile Application</a> available on the Google Play Store.</p>
+      <p>They are also available as a convenient ebook (also known as the <a href="/neverfap-deluxe-bible" class="link">NeverFap Deluxe Bible</a>) when you sign up for a FREE NeverFap Deluxe Account, where it is available for download in epub format.</p>
+      <p>What a wonderful time to be alive.</p>
+    </div>
+  </div>
+<%# NEXT STEPS END %>
+
+
+<%# FOOTER %>
+  <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
+  <%= partial "promotion_footer.html", assigns %>
+
+  <script src='<%= Routes.static_path(@conn, "/js/articles.js") %>'></script>
+<%# FOOTER %>
+

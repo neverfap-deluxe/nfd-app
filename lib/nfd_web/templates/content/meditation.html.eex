@@ -1,15 +1,19 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 
-<div class="single__wrapper practices__wrapper">
-  <div style="margin-top: 1.4rem;">
-    <%= raw @item["podcast_player"] %>
+
+<%# PODCAST INFORMATION %>
+  <div class="single__wrapper practices__wrapper">
+    <div style="margin-top: 1.4rem;">
+      <%= raw @item["podcast_player"] %>
+    </div>
+
+    <h3 style="margin-bottom: 2rem;"><%= raw @item["content"] %></h3>
+    <div class="podcast__item__bottom">
+      <a class="link articles__link" href='<%= @item["podcast_url"] %>'>episode link</a>
+    </div>
   </div>
-    
-  <h3 style="margin-bottom: 2rem;"><%= raw @item["content"] %></h3>
-  <div class="podcast__item__bottom">
-    <a class="link articles__link" href='<%= @item["podcast_url"] %>'>episode link</a>
-  </div>
-</div>
+<%# PODCAST INFORMATION END %>
+
 
 <div class="single__wrapper">
   <%= partial "content/share_buttons.html", %{permalink: @item["permalink"] } %>

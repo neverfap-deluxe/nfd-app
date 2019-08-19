@@ -26,9 +26,9 @@
   }
 
   .button__secondary {
-    padding: 0.7rem!important; 
+    padding: 0.7rem!important;
   }
-  
+
   .button {
     background: -moz-linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* ff3.6+ */
     background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, $magenta), color-stop(100%, rgba(227,152,2,1))); /* safari4+,chrome */
@@ -38,27 +38,38 @@
     background: linear-gradient(45deg, $magenta 0%, rgba(227,152,2,1) 100%); /* w3c */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39802', endColorstr='#FF2EB6',GradientType=1 ); /* ie6-9 */
     color: $white-text;
-  
+
     box-shadow: -5px 5px 0px 0px $cyan;
-  
+
     color: $white-text;
     border: 4px solid $white-text;
-  
-    padding: 0.8rem; 
+
+    padding: 0.8rem;
     cursor: pointer;
-  
+
     transition: box-shadow .3s, bottom .3s, left .3s;
 
     font-size: 1.4rem;
     line-height: 2.15rem;
   }
-  
+  .button__v2 {
+    background: white;
+    color: black;
+    box-shadow: -5px 5px 0px 0px $black-text;
+    border: 4px solid $black-text;
+  }
+  .button__v2:hover {
+    box-shadow: -10px 10px 0px 0px $black-text!important;
+    bottom: -5px;
+    left: -5px;
+  }
+
   .button:hover {
     box-shadow: -10px 10px 0px 0px $cyan;
     bottom: -5px;
     left: -5px;
   }
-  
+
   .button:focus {
     outline: 0;
   }
@@ -66,18 +77,18 @@
 
 @media screen and (min-width: 420px) {
   .button__wrapper {
-    justify-content: left;
+    // justify-content: left;
     margin-top: 3rem;
     margin-bottom: 3rem;
     .button {
-      padding: 1rem; 
-      // font-size: 1.4rem;  
+      padding: 1rem;
+      // font-size: 1.4rem;
     }
 
     .button__secondary {
       font-size: 1.1rem!important;
     }
-  
+
   }
 }
 
@@ -85,7 +96,7 @@
 @media screen and (min-width: 768px) {
   .button__wrapper {
     .button {
-      font-size: 1.7rem;  
+      font-size: 1.7rem;
       padding: 1.25rem;
     }
   }

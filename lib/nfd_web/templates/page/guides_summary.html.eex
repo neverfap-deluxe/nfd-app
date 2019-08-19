@@ -1,37 +1,116 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <%= raw child_content(@item["children"], "summary-intro") %>
+<%# INDEX %>
+  <div class="single__wrapper">
+    <div class="page__index">
+      <h2 class="page__index__title">Index</h1>
+      <ol class="index__items">
+        <h3><i class="page__index__emoji__left em em-page_facing_up"></i> Summary <i class="page__index__emoji__right em em-page_facing_up"></i></h3>
+        <a href="#introduction"><li class="index__item">Introduction</li></a>
+        <a href="#overview"><li class="index__item">Overview</li></a>
+        <a href="#overview_key_points"><li class="index__item">Overview Key Points</li></a>
+        <a href="#next_steps"><li class="index__item">Next Steps</li></a>
+      </ol>
+    </div>
   </div>
-</div>
 
-<%= partial "links/paypal.html", assigns %>
+  <%= partial "links/paypal.html", assigns %>
+<%# INDEX END %>
 
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <h1>Overview</h1>
-    <%= raw child_content(@item["children"], "summary-main") %>
+
+<%# INTRODUCTION %>
+  <div id="introduction" class="single__wrapper">
+    <div class="single__content">
+      <a href="#preface" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+      </a>
+
+      <h1>Introduction</h1>
+      <%= raw child_content(@item["children"], "summary-intro") %>
+    </div>
   </div>
-</div>
 
-<!--
-<%= partial "links/patreon.html", assigns %>
+  <%= partial "links/twitter.html", assigns %>
+<%# INTRODUCTION END %>
 
-<div class="single__wrapper">
-  <div class="single__content" style="margin-bottom: 0;">
-    <h1>Summary</h1>
-    <p>There's a few key points to keep note of.</p>
-    <p>- Balance is key to making the porn recovery process easy.</p>
-    <p>- You develop balance by adopting Healthy Coping Mechanisms.</p>
-    <p>- Healthy Coping Mechanisms allow you to develop control over your mind.</p>
+
+<%# OVERVIEW %>
+  <div id="overview" class="single__wrapper">
+    <div class="single__content">
+      <a href="#overview" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+      </a>
+
+      <h1>Overview</h1>
+      <%= raw child_content(@item["children"], "summary-main") %>
+    </div>
   </div>
-</div> -->
 
-<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
-<%= partial "promotion_footer.html", assigns %>
+  <%= partial "links/reddit.html", assigns %>
+<%# OVERVIEW END %>
 
-<script src='/js/guide.js'></script>
+
+<%# KEY POINTS %>
+  <div id="overview_key_points" class="single__wrapper">
+    <div class="single__content">
+      <a href="#overview_key_points" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+      </a>
+
+      <h1>Overview Key Points</h1>
+      <p>Here is a summary of the key points from the overview.</p>
+
+      <ul class="summary__key_points">
+        <li><b style="display: inline;"><u>Recovery</u></b> is all about maintaining balance.</li>
+        <li><b style="display: inline;"><u>Balance</u></b> allows you to develop control over your mind.</li>
+          <div style="margin-bottom: 0.4rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+          <div style="margin-bottom: 1rem; margin-top: 0.4rem; height: 4px; background: #00ffee;"></div>
+        <li><b style="display: inline;"><u>Healthy Coping Mechanisms</u></b> help maintain balance.</li>
+        <li><b style="display: inline;"><u>Healthy Coping Mechanisms</u></b> include things like meditating and remaining calm.</li>
+          <div style="margin-bottom: 0.4rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+          <div style="margin-bottom: 1rem; margin-top: 0.4rem; height: 4px; background: #00ffee;"></div>
+        <li><b style="display: inline;"><u>Unhealthy Coping Mechanisms</u></b> derail balance.</li>
+        <li><b style="display: inline;"><u>Unhealthy Coping Mechanisms</u></b> include things like being self-critical and distracting yourself from your emotions.</li>
+          <div style="margin-bottom: 0.4rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div>
+          <div style="margin-bottom: 1rem; margin-top: 0.4rem; height: 4px; background: #00ffee;"></div>
+        <li><b style="display: inline;"><u>Recovery</u></b> is a hard process of replacing Unhealthy Coping Mechanisms with Healthy Coping Mechanisms.</li>
+        <li><b style="display: inline;"><u>Meditation</u></b> is arguably the most effective means of maintaining balance.</li>
+      </ul>
+    </div>
+  </div>
+
+  <%= partial "links/facebook.html", assigns %>
+<%# KEY POINTS %>
+
+
+<%# NEXT STEPS %>
+  <div id="next_steps" class="single__wrapper">
+    <div class="single__content">
+      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
+        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+      </a>
+
+      <h1>Next Steps</h1>
+      <p>Now that you have the basics down, it's really (and I mean, REALLY) important that you take the time to develop a solid mental health routine.</p>
+      <p>What does this mean? Well, it means developing a daily routine of Meditation that you can practice each day, along with other Healthy Coping Mechanisms to help you become your best person.</p>
+      <p>An important thing to note about porn addiction recovery is that it's not a process of "knowing" what you need to do, which then suddenly that knowledge relieves you of ever thinking about porn or masturbation again.</p>
+      <p>It's a hard process of committing to consistent mental health practice, which will slowly train your brain not to pursue these self-destructive behaviours any longer.</p>
+      <p>Which is to say that without practice, literally nothing will improve and you'll continue to falter, and no one likes a wiltered flower. <i class="em em-wilted_flower"></i></p>
+      <p>So head on down to the <a href="/meditation" class="link">NeverFap Deluxe Meditation</a> section and understand the verifiable steps you need to take each day.</p>
+      <p>In order to ensure effective change in your life.</p>
+      <p>Pronto. Now.</p>
+      <p>=＾● ⋏ ●＾=</p>
+    </div>
+  </div>
+<%# NEXT STEPS END %>
+
+
+<%# FOOTER %>
+  <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
+  <%= partial "promotion_footer.html", assigns %>
+
+  <script src='/js/guide.js'></script>
+<%# FOOTER END %>
 
 
 

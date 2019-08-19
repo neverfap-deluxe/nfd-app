@@ -1,56 +1,121 @@
-<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: child_content(@item["children"], "about-intro") } %>
+<%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: nil } %>
 
-<%= partial "links/paypal.html", assigns %>
+<%# INDEX %>
+  <div class="single__wrapper">
+    <div class="page__index">
+      <h2 class="page__index__title">Index</h1>
 
-<div class="single__wrapper">
-  <div class="single__content">
-    <h1>Motivation</h1>
-    <%= raw child_content(@item["children"], "about-main-1") %>
-  </div>
-</div>
-
-<%= partial "links/loginregister.html", assigns %>
-
-<div class="single__wrapper">
-  <div class="single__content">
-    <h1>Philosophy</h1>
-    <%= raw child_content(@item["children"], "about-main-2") %>
-  </div>
-</div>
-
-<%= partial "links/discord.html", assigns %>
-
-<div class="single__wrapper">
-  <div class="single__content">
-    <h1><%= raw child_title(@item["children"], "about-next-steps") %></h1>
-    <%= raw child_content(@item["children"], "about-next-steps") %>
-  </div>
-</div>
-
-<%= partial "links/reddit.html", assigns %>
-
-<div class="single__wrapper" id="contact__form">
-  <h1 class="single__title">Contact <img src="/images/logo.png" class="logo__square" alt=""/></h2>
-  <div class="single__content">
-    <p>If you would like to get in touch, please provide your name, email and message, and I will get back to you as soon as possible!</p>
-    <p>I also offer <a class="link" href="<%= Routes.page_path(@conn, :programs_coaching) %>">Personal Coaching</a> for those interested in receiving additional help from someone who's been there before.</p>
-    <p>I offer an initial FREE 10 Minute Consultation for those interested in building a relationship and working together in order to help you achieve your goals.</p>
+      <ol class="index__items">
+        <h3><i class="page__index__emoji__left em em-clap"></i> About <i class="page__index__emoji__right em em-clap"></i></h3>
+        <a href="#introduction"><li class="index__item">Introduction</li></a>
+        <a href="#motivation"><li class="index__item">Motivation</li></a>
+        <a href="#philosophy"><li class="index__item">Philosophy</li></a>
+        <a href="#contact_me"><li class="index__item">Contact Me</li></a>
+        <a href="#next_steps"><li class="index__item">Next Steps</li></a>
+      </ol>
+    </div>
   </div>
 
-  <!-- Original Contact Form -->
-  <div class="form__wrapper form__wrapper--full-width">
-    <form class="form" action="https://formspree.io/admin@neverfapdeluxe.com" method="POST">
-      <div class="form__input__container">
-        <input class="form__input" type=text: placeholder="Name" name='name'/>
-        <input class="form__input" type="email" placeholder="Email" name='_replyTo'/>
-        <textarea class="form__input form__textarea" type=text: placeholder="Message" name='message'></textarea>
-      </div>
+  <%= partial "links/paypal.html", assigns %>
+<%# INDEX END %>
 
-      <div class="form__submission__container">
-        <button class="form__button" type="submit" value="Send">Send</button>
-      </div>
-    </form>
+
+<%# INTRODUCTION %>
+  <div id="introduction" class="single__wrapper">
+    <div class="single__content">
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
+      </a>
+      <h2 class="single__sub__header">Introduction</h2>
+      <%= raw child_content(@item["children"], "about-intro") %>
+    </div>
   </div>
+
+  <%= partial "links/twitter.html", assigns %>
+<%# INTRODUCTION END %>
+
+
+<%# MOTIVATION %>
+  <div id="motivation" class="single__wrapper">
+    <div class="single__content">
+      <a href="#motivation" class="guide__suggestion guide__suggestion__padding">
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
+      </a>
+
+      <h2 class="single__sub__header">Motivation</h2>
+      <%= raw child_content(@item["children"], "about-main-1") %>
+    </div>
+  </div>
+
+  <%= partial "links/loginregister.html", assigns %>
+<%# MOTIVATION END %>
+
+
+<%# PHILOSOPHY %>
+  <div id="philosophy" class="single__wrapper">
+    <div class="single__content">
+      <a href="#philosophy" class="guide__suggestion guide__suggestion__padding">
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
+      </a>
+      <h2 class="single__sub__header">Philosophy</h2>
+      <%= raw child_content(@item["children"], "about-main-2") %>
+    </div>
+  </div>
+
+  <%= partial "links/discord.html", assigns %>
+<%# PHILOSOPHY END %>
+
+
+<%# CONTACT %>
+  <div id="contact_me" class="single__wrapper" id="contact__form">
+    <a href="#contact_me" class="guide__suggestion guide__suggestion__padding">
+      <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
+    </a>
+    <h1>Contact</h1>
+
+    <div class="single__content">
+      <p>If you would like to get in touch, please provide your name, email and message, and I will get back to you as soon as possible!</p>
+      <p>I also offer <a class="link" href="<%= Routes.page_path(@conn, :programs_coaching) %>">Personal Coaching</a> for those interested in receiving additional help from someone who's been there before.</p>
+      <p>I offer an initial FREE 10 Minute Consultation for those interested in building a relationship and working together in order to help you achieve your goals.</p>
+    </div>
+
+    <!-- Original Contact Form -->
+    <div class="form__wrapper form__wrapper--full-width">
+      <form class="form" action="https://formspree.io/admin@neverfapdeluxe.com" method="POST">
+        <div class="form__input__container">
+          <input class="form__input" type=text: placeholder="Name" name='name'/>
+          <input class="form__input" type="email" placeholder="Email" name='_replyTo'/>
+          <textarea class="form__input form__textarea" type=text: placeholder="Message" name='message'></textarea>
+        </div>
+
+        <div class="form__submission__container">
+          <button class="form__button" type="submit" value="Send">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <%= partial "links/reddit.html", assigns %>
+<%# CONTACT END %>
+
+
+<%# NEXT STEPS %>
+  <div id="next_steps" class="single__wrapper">
+    <div class="single__content">
+      <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
+      </a>
+      <h2 class="single__sub__header">Next Steps</h2>
+      <%= raw child_content(@item["children"], "about-next-steps") %>
+    </div>
+  </div>
+<%# NEXT STEPS END %>
+
+
+<%# FOOTER %>
+  <%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
+  <%= partial "promotion_footer.html", assigns %>
+<%# FOOTER END %>
 
 
   <!-- New Contact Form -->
@@ -72,40 +137,3 @@
       </div>
     <% end %>
   </div> -->
-
-</div>
-
-<div style="margin-top: 5rem;"></div>
-<%= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
-<%= partial "promotion_footer.html", assigns %>
-
-
-<!-- <div class="single__wrapper">
-  <div class="single__content">
-    <h2>Our Mission</h2>
-    <p>We have a really simple goal.</p>
-
-    <hr class="hr3"/>
-    <h3>We want you to change the way you think about porn addiction.</h3>
-    <hr class="hr3__bottom"/>
-
-    <p>The truth is that overcoming pornography addiction is deceptively simple.</p>
-
-    <h2>The Five Fundamental Principles of NeverFap</h2>
-    <p>Compromising of five fundamental principles, the NeverFap method of eliminating porn addiction could honestly not be any simpler, and we've broken it down so you don't have to.</p>
-    <p>These principles will form the basis of everything you will learn, whether you decide to get started with the courses, read the articles or practice the mental health exercises.</p>
-    <p>These principles are:</p>
-
-    <div class="five__principles__list__main">
-      <span><div class="five__principles__item__main">Choice over mind</div></span>
-      <span><div class="five__principles__item__main">Balance over reward</div></span>
-      <span><div class="five__principles__item__main">Struggle over none</div></span>
-      <span><div class="five__principles__item__main">Awareness over all</div></span>
-      <span><div class="five__principles__item__main">Uncondition over judgement</div></span>
-    </div>
-
-    <div class="button__wrapper">
-      <a class="button button__secondary" href="/articles/the-five-fundamental-principles-of-neverfap">The Five Fundamental Principles Of NeverFap.</a>
-    </div>
-  </div>
-</div> -->

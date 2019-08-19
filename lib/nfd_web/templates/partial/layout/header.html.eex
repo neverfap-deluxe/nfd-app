@@ -1,8 +1,8 @@
-<nav class="header">
+<header class="header">
   <!-- <%#=/*  <a href="/" class="header__logo__wrapper">
     <h1 class="header__logo">NeverFap <span class="deluxe__font">Deluxe</span> <i class="em em-rainbow"></i></h1>
   </a>  %> -->
-  <ul class="header__links">
+  <div class="header__links">
     <!-- HOME -->
     <a id="link__home" class="header__link__wrapper" href="/">
       <li class="header__link">Home</li>
@@ -20,8 +20,8 @@
       </div>
     </div>
 
-    <!-- Guide -->
-    <a id="link__guide" class="header__link__wrapper header__link__wrapper--main" href="/guide">
+    <!-- GUIDE -->
+    <a id="link__guide" class="header__link__wrapper" href="/guide">
       <li class="header__link">Guide</li>
     </a>
     <div class="header__sub header__banner__guide">
@@ -46,42 +46,41 @@
     </div>
 
 
-    <!-- Articles -->
-    <a id="link__articles" class="header__link__wrapper" href="/articles">
+    <!-- ARTICLES -->
+    <a id="link__articles" class="header__link__wrapper header__link__wrapper--main" href="/articles">
       <li id='articles__click' class="header__link">Articles</li>
     </a>
 
-    <!-- @conn.assigns.item -->
-    <div class="header__sub header__banner__articles">  
+    <div class="header__sub header__banner__articles">
       <a href="/articles" class="header__module header__module--flex">
         <h3 class="h3__yus">
           NeverFap Deluxe Articles
           <span class="h3__tiny">/articles</span>
         </h3>
       </a>
-      <a href="/practices" class="header__module">
+      <a href="/neverfap-deluxe-bible" class="header__module">
         <h3 class="h3__yus">
-          NeverFap Deluxe Practices
-          <span class="h3__tiny">/practices</span>
-        </h3>
-      </a>
-      <a href="/quotes" class="header__module header__module--flex">
-        <h3 class="h3__yus">
-          NeverFap Deluxe Image Quotes
-          <span class="h3__tiny">/quotes</span>
+          NeverFap Deluxe Bible
+          <span class="h3__tiny">/bible</span>
         </h3>
       </a>
     </div>
 
-    <!-- Meditation -->
+    <!-- MEDITATION -->
     <a id="link__meditation" class="header__link__wrapper" href="/meditation">
       <li class="header__link">Meditation</li>
     </a>
     <div class="header__sub header__banner__practices">
       <a href="/meditation" class="header__module">
         <h3 class="h3__yus">
-          NeverFap Deluxe Meditations
+          NeverFap Deluxe Meditation
           <span class="h3__tiny">/meditation</span>
+        </h3>
+      </a>
+      <a href="/practices" class="header__module">
+        <h3 class="h3__yus">
+          NeverFap Deluxe Practices
+          <span class="h3__tiny">/practices</span>
         </h3>
       </a>
       <a href="/hovering" class="header__module">
@@ -91,6 +90,7 @@
         </h3>
       </a>
     </div>
+
 
     <!-- PODCAST -->
     <a id="link__podcast" class="header__link__wrapper header__link__wrapper--disappear" href="/podcast">
@@ -108,6 +108,7 @@
         <p>Available on iTunes, Spotify and Castbox.</p>
       </div>
     </div>
+
 
     <!-- COMMUNITY -->
     <a id="link__community" class="header__link__wrapper header__link__wrapper--disappear" href="/community">
@@ -138,7 +139,6 @@
       </a>
     </div>
 
-
     <!-- ABOUT -->
     <a id="link__about" class="header__link__wrapper header__link__wrapper--disappear" href="/about">
       <li class="header__link">About</li>
@@ -163,13 +163,15 @@
         </h3>
       </a>
     </div>
-  </ul>
+  </div>
 
   <%= partial "darkmode_button.html", assigns %>
   <%= partial "mobile_menu_overlay.html", assigns %>
-</nav>
+</header>
 
 
 <!-- Home | Guide | Articles | Podcast | Community | About -->
 
 <script src='<%= Routes.static_path(@conn, "/js/header.js") %>'></script>
+
+<!-- @conn.assigns.item -->

@@ -1,18 +1,259 @@
-.mobile__banner {
-  padding: 4rem;
-  .mobile__banner__title {
-    font-size: 3rem;
+.banner__title {
+  font-size: 3rem;
+  line-height: 4.4rem;
+  margin-top: 0rem;
+}
+
+.banner__sub__title {
+  font-weight: 400;
+}
+
+.practices__banner {
+  padding: 1rem;
+  .practices__banner__title {
+    font-size: 2.2rem!important;
+    line-height: 3.2rem;
+
+    // font-size: 2rem!important;
+
+    // box-shadow: -5px 5px 0px 0px $black-background;
+
+    // color: $white-text;
+    // border: 4px solid $white-text;
+    // background: $black-background;
+
+    // padding: 1rem;
+
+    // padding-left: 1.8rem;
+    // padding-right: 1.8rem;
+
+    // text-align: center;
+    // font-size: 2.9rem;
+    // line-height: 4rem;
+
+    // transition: 6s box-shadow;
   }
 
-  .mobile__banner__sub__title--ios {
-    width: 500px;
-  }
-
-  .mobile__banner__sub__title {
+  .practices__banner__sub__title {
     font-weight: 400;
   }
 
-  .mobile__banner__image__container {
+  .practices__banner__image__container {
 
+  }
+}
+
+.practice__list {
+  li {
+    font-size: 1.6rem;
+  }
+}
+
+.pricing__banner__container {
+  background: white;
+  position: relative;
+
+  .pricing__banner__title {
+    color: white;
+    background: black;
+    box-shadow: -6px 6px 0px 0px $black-background;
+    padding: 1rem;
+    font-size: 1.6rem;
+  }
+  .pricing__banner__description {
+    padding: 0.8rem;
+    font-style: 1.4rem;
+  }
+
+  .pricing__guarantee {
+    margin-top: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pricing__guarantee__item {
+    font-size: 1.6rem;
+  }
+
+  .pricing__banner__value {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    min-width: 88px;
+  }
+
+  .pricing__banner__lifetime {
+    padding: 1.2rem;
+    min-width: 320px;
+
+    font-size: 1.3rem;
+
+    .pricing-tick {
+      margin-left: 0.4rem;
+    }
+  }
+}
+
+.practices__banner__list {
+  .practices__banner__item {
+
+  }
+}
+
+.pricing__banner__points {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 1rem;
+
+  .pricing__banner__point {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    margin-bottom: 1rem;
+
+  }
+}
+
+.pricing__sign__in__container {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 2rem;
+  padding: 0.5rem;
+
+  .pricing__sign__in__title {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+}
+
+.pricing__payment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // position: absolute;
+  // left: 0;
+  // bottom: 0;
+  .pricing__payment__image {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.nfd__payment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // position: absolute;
+  // right: 0;
+  // bottom: 0;
+  img {
+    width: 28px;
+    height: 28px;
+  }
+  p {
+    margin: 0!important;
+    font-size: 0.7rem;
+  }
+}
+
+.banner__list {
+  .banner__item {
+    padding: 0.6rem!important;
+    line-height: 1.6rem;
+  }
+}
+
+
+.practices__section {
+  margin-bottom: 1rem;
+  .practices__section__title {
+    text-decoration: underline $magenta;
+    // border-left: 1rem solid $magenta;
+    // padding-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+  }
+}
+
+.practices__section__collection {
+  margin-bottom: 4rem;
+  .practices__section__collection__item {
+    margin-bottom: 1rem;
+  }
+}
+
+.banner__emoji {
+  position: relative; right: -0.2rem;
+}
+
+@media screen and (min-width: 420px) {
+  .practices__banner {
+    .practices__banner__title {
+    }
+  }
+}
+
+@media screen and (min-width: 575px) {
+  .practices__banner {
+    .practices__banner__title {
+      font-size: 2.8rem!important;
+      line-height: 3.8rem;
+    }
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .practices__banner {
+    padding: 4rem;
+    .practices__banner__title {
+      font-size: 3.8rem!important;
+    }
+  }
+
+  .pricing__sign__in__container {
+    padding: 2rem;
+    border: 4px solid black;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .practices__banner {
+    padding: 4rem;
+    .practices__banner__title {
+      font-size: 2.6rem!important;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .practices__banner {
+    .practices__banner__title {
+      font-size: 3.1rem!important;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .pricing__banner__container {
+    padding: 2rem;
+    border: 4px solid black;
+
+    .pricing__guarantee {
+      flex-direction: row;
+    }
   }
 }

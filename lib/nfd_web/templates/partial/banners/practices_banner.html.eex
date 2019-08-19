@@ -1,13 +1,32 @@
 <div class="practices__banner">
-  <h3 class="practices__banner__title">NeverFap Deluxe Practices</h3>
-  <h4 class="practices__banner__sub__title">Want to develop your awareness?</h4>
-  <h4 class="practices__banner__sub__title"></h4>
+  <div class="banner__split__container">
+    <div class="banner__split">
+      <!-- PRACTICES TITLE -->
+      <div class="principles__banner">
+        <div class="principles__banner__item__cont">
+          <h3 style="width: 83%;" class="banner__title principles__banner__item practices__banner__title">NeverFap Deluxe</h3>
+        </div>
+      </div>
+      <div class="principles__banner">
+        <div class="principles__banner__item__cont">
+          <h3 style="width: 44%; margin-top: 0rem;" class="banner__title principles__banner__item practices__banner__title">Practices</h3>
+        </div>
+      </div>
+      <!-- PRACTICES TITLE END -->
 
-  <div class="practices__banner__image__container">
-    <img src="/mobile_screenshots/1.png" alt="">
+      <h4 class="banner__sub__title practices__banner__sub__title">It's time to take your mental health seriously.</h4>
+
+      <h4 class="banner__sub__title practices__banner__sub__title">Develop your capacity for conscious awareness with our NeverFap Deluxe Practices.</h4>
+      <ul class="banner__list practices__banner__list">
+        <li class="banner__item practices__banner__item">Lifetime access to all practices on the NeverFap Deluxe.</li>
+        <!-- <li class="banner__item practices__banner__item">3+ new practices each month.</li> -->
+        <li class="banner__item practices__banner__item">Practices come with summary cards, context sections, instruction sections, personal practice sections and practice audio.</li>
+      </ul>
+    </div>
+    <div class="banner__split__divider"></div>
+    <div class="banner__split">
+      <%= partial "pricing/pricing_practices.html", %{ conn: @conn } %>
+    </div>
   </div>
-
-  <p>Download it today.</p>
-
-  <a href='https://play.google.com/store/apps/details?id=com.ueno.nfdmobilev2&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
 </div>
+

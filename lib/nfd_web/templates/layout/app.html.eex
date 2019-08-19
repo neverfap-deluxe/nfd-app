@@ -7,7 +7,7 @@
     <div id="mobile__menu__overlay__background__id" class="mobile__menu__overlay__background"></div>
     <!-- Cookies Popup -->
     <div id="cookies__popup">
-      <%= partial "cookies_popup.html",%{ conn: @conn } %>      
+      <%= partial "cookies_popup.html",%{ conn: @conn } %>
       <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/cookiepopup.js") %>'></script>
     </div>
     <!-- Main -->
@@ -16,7 +16,7 @@
     </main>
     <!-- Bottom Bar -->
     <!-- <div id="bottom_bar">
-      <%#= partial "bottom_bar.html", assigns %>
+      <%#= partial "bottom_bar_podcast.html", assigns %>
     </div> -->
     <!-- JavaScript -->
     <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/app.js") %>'></script>

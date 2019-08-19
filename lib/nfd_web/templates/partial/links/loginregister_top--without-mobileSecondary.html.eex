@@ -21,9 +21,9 @@
 
 <div id="sec_account__learn__more" class="account__learn__more">
   <div id="sec_account__learn__moreLabel" class="account__learn__more--label">
-    <i id="sec_down1" class="fas fa-angle-down" style="margin-right: 0.3rem;"></i> 
-    <i id="sec_up1" class="fas fa-angle-up" style="margin-right: 0.3rem; display: none;"></i> 
-      Learn more. 
+    <i id="sec_down1" class="fas fa-angle-down" style="margin-right: 0.3rem;"></i>
+    <i id="sec_up1" class="fas fa-angle-up" style="margin-right: 0.3rem; display: none;"></i>
+      Learn more.
     <i id="sec_down2" class="fas fa-angle-down" style="margin-left: 0.3rem;"></i>
     <i id="sec_up2" class="fas fa-angle-up" style="margin-left: 0.3rem; display: none;"></i>
   </div>
@@ -31,21 +31,23 @@
   <div id="sec_account__learn__moreDropdown" class="account__learn__more--dropdown">
     <h3 class="account__learn__more--title">FREE <!-- (Pretty much everything :3) --></h3>
     <div class="account__learn__more--list">
+      <a class="account__learn__more--item" href="/guides">Guides</a>
       <a class="account__learn__more--item" href="/articles">Articles</a>
-      <a class="account__learn__more--item" href="/practices">Practices</a>
       <a class="account__learn__more--item" href="/seven-day-neverfap-deluxe-kickstarter">7 Day Kickstarter</a>
       <a class="account__learn__more--item" href="/podcast">Podcast</a>
-      <a class="account__learn__more--item" href="/meditations">FREE Guided Meditation Series</a>
       <a class="account__learn__more--item" href="/accountability-program">#accountability Program</a>
-      <a class="account__learn__more--item" href="/neverfap-deluxe-bible">NeverFap Deluxe Bible</a>
       <a class="account__learn__more--item" href="/mobile-app">Android App</a>
+      <a class="account__learn__more--item" href="/hovering">Hovering App</a>
       <a class="account__learn__more--item" href="/chrome-extension">Chrome Extension</a>
       <a class="account__learn__more--item" href="/r/NeverFapDeluxe">Discord/Reddit</a>
+      <a class="account__learn__more--item" href="/neverfap-deluxe-bible">NeverFap Deluxe Bible</a>
       <div class="account__learn__more--item">...aaaaand so much more!</div>
     </div>
     <h3 class="account__learn__more--title">PAID <!-- (Some Meditation and Awareness audio courses) --></h3>
     <div class="account__learn__more--list">
-      <div class="account__learn__more--item">Nothing!</div>
+      <a class="account__learn__more--item" href="/meditation">Fundamental Meditation Series</a>
+      <a class="account__learn__more--item" href="/practices">Practices</a>
+
     </div>
   </div>
 </div>
@@ -60,7 +62,7 @@
   // var sec_account__learn__more = document.querySelector('#sec_account__learn__more');
   var sec_account__learn__moreLabel = document.querySelector('#sec_account__learn__moreLabel');
   var sec_account__learn__moreDropdown = document.querySelector('#sec_account__learn__moreDropdown');
-  
+
   var sec_accountLearnMoreDropdownClosed = true;
 
   sec_account__learn__moreLabel.onclick = function(event) {

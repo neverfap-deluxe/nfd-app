@@ -14,7 +14,7 @@
 
 <%= partial "links/patreon.html", assigns %>
 
-<%#= partial "links/loginregister_top--without-mobile.html", assigns %>
+<%#= partial "links/loginregister_top--without-mobileSecondary.html", assigns %>
 
 <%= if @content != nil do %>
   <div class="single__wrapper">
