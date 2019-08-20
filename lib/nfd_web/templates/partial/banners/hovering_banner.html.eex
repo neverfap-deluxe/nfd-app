@@ -4,13 +4,9 @@
       <h3 class="banner__title hovering__banner__title">Struggle to Meditate?</h3>
       <h4 class="banner__sub__title hovering__banner__sub__title">Thankfully there's a whole new way to meditate which anyone can understand!</h4>
 
-<<<<<<< HEAD
-      <img class="hovering__banner__screenshot" src="/images/screenshots/hovering_mobile.png" />
-=======
       <h4 class="banner__sub__title hovering__banner__sub__title"><b>Try Hovering</b>! It has been designed to be easy to understand, simple to practice, as well as remain acessible to people of all ages.</h4>
       <h4 class="banner__sub__title hovering__banner__sub__title">Hovering can be practiced with a single piece of paper, however it's recommend that you make use of the official Hovering Web App or Hovering Android App.</h4>
       <h4 class="banner__sub__title hovering__banner__sub__title"><a class="link" href="https://tryhovering.com/">tryhovering.com/</a></h4>
->>>>>>> v2
 
       <%# <img src="/images/screenshots/hovering_mobile.png" /> %>
 
@@ -56,21 +52,6 @@
         }
       }
 
-
-<script>
-  const hoverCircleExampleBanner = document.querySelector('#hoverCircleExampleBanner');
-  const hoverCircleTextBanner = document.querySelector('#hoverCircleTextBanner');
-
-<<<<<<< HEAD
-  hoverCircleExampleBanner.onmouseenter = function() {
-    hoverCircleTextBanner.classList.add("hover__text__fade");
-  }
-  hoverCircleExampleBanner.onmouseleave = function() {
-    hoverCircleTextBanner.classList.remove("hover__text__fade");
-  }
-</script>
-
-=======
       function getCookie(name) {
         var nameEQ = name + "=";
         var ca = document.cookie.split(';');
@@ -86,4 +67,3 @@
 
   </div>
 </div>
->>>>>>> v2

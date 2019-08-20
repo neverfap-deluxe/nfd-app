@@ -21,7 +21,7 @@
 
 
 <%# HOVERING CONTENT %>
-  <div class="single__wrapper">
+  <div id="introduction" class="single__wrapper">
     <div class="single__content">
       <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
@@ -66,7 +66,7 @@
 <%# HOVERING CONTENT END %>
 
 <%# HOVERING WEBSITE %>
-  <div id="hovering_android_application" class="single__wrapper">
+  <div id="hovering_website" class="single__wrapper">
     <div class="single__content">
       <a href="#hovering_website" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
@@ -86,7 +86,7 @@
 
 
 <%# HOVERING WEB APP %>
-  <div id="hovering_android_application" class="single__wrapper">
+  <div id="hovering_web_application" class="single__wrapper">
     <div class="single__content">
       <a href="#hovering_web_application" class="guide__suggestion guide__suggestion__padding">
         <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
