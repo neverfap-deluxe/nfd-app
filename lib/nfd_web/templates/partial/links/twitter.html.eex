@@ -1,5 +1,5 @@
 <div class="account__info">
-  <p class="account__info__title">Wanna keep up to date with NeverFap Deluxe? Check out our Twitter account.</p>
+  <p class="account__info__title">Wanna keep up-to-date with NeverFap Deluxe? Check out our Twitter account.</p>
   <div class="account__buttons">
     <a class="account__twitter__button__container" href="<%= Application.get_env(:nfd, :social_twitter_url) %>">
       <img class="account__twitter__button__logo" src="/images/twitter__logo__blue.png" />

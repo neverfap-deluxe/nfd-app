@@ -123,14 +123,19 @@
       </a>
 
       <h1>Practices List</h1>
-      <p>Here is a complete list of all NeverFap Deluxe Practices organised by weekly challenge.</p>
-      <p>You can learn more about the NeverFap Deluxe Seven Week Awareness Challenges in the next section below.</p>
+      <!-- <p>Here is a complete list of all NeverFap Deluxe Practices organised by weekly challenge.</p>
+      <p>You can learn more about the NeverFap Deluxe Seven Week Awareness Challenges in the next section below.</p> -->
 
-      <%= partial "list/practices_by_volume_v2.html", %{ conn: @conn, items: @page_collections.practices } %>
+      <div class="posts__on posts--guide" id="articles_latest_plain_posts">
+        <%= partial "list/articles_latest_v2.html", %{ conn: @conn, page_symbol: :practice, items: @page_collections.practices, tag_type: "context" } %>
+      </div>
+
+      <%#= partial "list/practices_by_volume_v2.html", %{ conn: @conn, items: @page_collections.practices } %>
     </div>
   </div>
 
-  <%= partial "links/patreon.html", assigns %>
+  <%#= partial "links/patreon.html", assigns %>
+  <%= partial "links/reddit.html", assigns %>
 <%# PRACTICES LIST END %>
 
 

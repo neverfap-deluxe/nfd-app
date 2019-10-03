@@ -1,9 +1,10 @@
 <div class="account__info">
-  <p class="account__info__title">Wanna discuss all things strategy? Check out the NeverFap Deluxe Reddit account.</p>
+  <!-- <p class="account__info__title">Wanna discuss all things strategy? Check out the NeverFap Deluxe Reddit account.</p> -->
+  <p class="account__info__title">Check out r/NeverFapDeluxe <span class="account__reddit__button__text--display"> for all news, gossip and updates on NeverFap Deluxe</span>!</p>
   <div class="account__buttons">
     <a class="account__reddit__button__container" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">
       <img class="account__reddit__button__logo" src="/images/reddit__logo.png" />
-      <p class="account__reddit__button__text">NEVERFAP <span class="account__reddit__button__text--display">REDDIT</span></p>
+      <p class="account__reddit__button__text">SUBREDDIT<!--  <span class="account__reddit__button__text--display">REDDIT</span> --></p>
     </a>
   </div>
 </div>

@@ -14,7 +14,7 @@
     // padding: 0.8rem;
     margin: 0!important;
     cursor: pointer;
-  
+
     .account__reddit__button__text {
       color: $white-text;
       margin: 0;
@@ -26,13 +26,13 @@
       font-family: 'Lato', sans-serif;
       font-weight: 700;
     }
-  }  
+  }
 
   .account__reddit__button__container:hover {
     opacity: 0.9;
   }
 }
-  
+
 .account__reddit__button__logo {
   width: 27px;
   height: 27px;
@@ -53,7 +53,7 @@
   .account__buttons {
 
     .account__reddit__button__container {
-      width: 11.5rem;
+      width: 9rem;
     }
   }
 }

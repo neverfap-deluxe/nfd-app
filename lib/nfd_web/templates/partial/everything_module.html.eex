@@ -21,15 +21,15 @@
 
     <h2 class="everything__sub__title">Guides</h2>
     <div class="everything__section">
-      <%= partial "everything_item.html", %{ wip: false, title: "NeverFap Deluxe Guide", url: "/guide", description: "Learn more about the NeverFap Deluxe Method of overcoming porn addiction with our keenly comprehensive NeverFap Deluxe Guide." } %>  
       <%= partial "everything_item.html", %{ wip: false, title: "NeverFap Deluxe Summary", url: "/summary", description: "A concise summary of the entire NeverFap Deluxe Method of overcoming porn addiction, delivered by Le Reade himself." } %>
-      <%= partial "everything_item.html", %{ wip: false, title: "NeverFap Deluxe Bible", url: "/neverfap-deluxe-bible", description: "Gain access to the complete collection of NeverFap Deluxe guides and resources in one, convenient format." } %>  
+      <%= partial "everything_item.html", %{ wip: false, title: "NeverFap Deluxe Guide", url: "/guide", description: "Learn more about the NeverFap Deluxe Method of overcoming porn addiction with our keenly comprehensive NeverFap Deluxe Guide." } %>
+      <%= partial "everything_item.html", %{ wip: false, title: "NeverFap Deluxe Bible", url: "/neverfap-deluxe-bible", description: "Gain access to the complete collection of NeverFap Deluxe guides and resources in one, convenient format." } %>
       <%= partial "everything_item.html", %{ wip: false, title: "7 Day NeverFap Deluxe Kickstarter", url: "/seven-day-neverfap-deluxe-kickstarter", description: "Learn more about NeverFap Deluxe and how the whole she-bang works with our 7 Day NeverFap Deluxe Kickstarter." } %>
       <%#= partial "everything_item.html", %{ wip: true, title: "10 Day Meditation Primer", url: "/ten-day-meditation-primer", description: "An primer into the practice of meditation." } %>
       <%#= partial "everything_item.html", %{ wip: true, title: "28 Day Awareness Challenge", url: "/twenty-eight-day-awareness-challenge", description: "Learn more about awareness and the power of your mind." } %>
       <%#= partial "everything_item.html", %{ wip: true, title: "NeverFap Deluxe Emergency", url: "/emergency", description: "Need to calm down? Check out our NeverFap Deluxe Emergency page for more instructions. Remember, relaxation is key." } %>
       <%#= partial "everything_item.html", %{ wip: true, title: "Post Relapse Academy", url: "/post-relapse-academy", description: "Maybe you're struggling with the NeverFap Deluxe Method of overcoming porn addiction? Well, perhaps there is something deeper going on." } %>
-    </div>  
+    </div>
 
     <h2 class="everything__sub__title">Content</h2>
     <div class="everything__section">

@@ -22,7 +22,7 @@
     </div>
     <!-- Bottom Bar -->
     <div id="bottom_bar">
-      <%= partial "bottom_bar_podcast.html", assigns %>
+      <%= partial "bottom_bar.html", assigns %>
     </div>
     <!-- JavaScript -->
     <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/app.js") %>'></script>

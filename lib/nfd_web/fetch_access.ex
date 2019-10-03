@@ -1,6 +1,6 @@
 defmodule NfdWeb.FetchAccess do
   defp apmss do
-    [:articles, :practices, :podcasts, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
+    [:articles, :practices, :podcasts, :meditations, :seven_day_kickstarter, :seven_day_kickstarter_changeset]
   end
 
   defp ccp do

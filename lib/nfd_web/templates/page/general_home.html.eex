@@ -10,7 +10,7 @@
       </div>
     </div>
 
-    <%= partial "links/patreon.html", assigns %>
+    <%= partial "links/reddit.html", assigns %>
   <%# HERO END %>
 
   <div class="homepage__main">

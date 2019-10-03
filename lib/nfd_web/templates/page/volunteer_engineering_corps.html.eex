@@ -1,5 +1,5 @@
 <%= partial "single_title_content.html", %{ conn: @conn, title: @item["title"], content: @item["content"] } %>
-<%= partial "links/patreon.html", assigns %>
+<%= partial "links/paypal.html", assigns %>
 
 <div class="guide__banner" style="border-bottom: 4px solid black;">
   <div class="guide__suggestion__container">

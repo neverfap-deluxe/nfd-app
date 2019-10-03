@@ -9,6 +9,7 @@
         <h3><i class="page__index__emoji__left em em-man_in_lotus_position"></i> Meditation <i class="page__index__emoji__right em em-man_in_lotus_position"></i></h3>
         <!-- TODO: Add a how-to-meditate section in here -->
         <a href="#introduction"><li class="index__item">Introduction</li></a>
+        <a href="#neverfap_deluxe_free_guided_meditation_series"><li class="index__item">NeverFap Deluxe Free Guided Meditation Series</li></a>
         <a href="#neverfap_deluxe_fundamental_meditation_series"><li class="index__item">NeverFap Deluxe Fundamental Meditation Series</li></a>
         <a href="#hovering_meditation"><li class="index__item">Hovering Meditation</li></a>
         <a href="#meditation_essential_reading"><li class="index__item">Meditation Essential Reading</li></a>
@@ -43,11 +44,37 @@
 <%# INTRODUCTION END %>
 
 
+<%# FREE GUIDED MEDITATION SERIES %>
+  <div id="neverfap_deluxe_free_guided_meditation_series" class="single__wrapper">
+    <div class="single__content" style="margin-bottom: 0;">
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
+      </a>
+
+      <h1 style="margin-bottom: 3rem;">Free Guided Meditation Series</h1>
+      <div class="podcast__item__container">
+        <%#= Enum.map(@page_collections.meditations, fn(meditation) -> %>
+          <div class="podcast__item">
+            <a href='<%#= Routes.content_path(@conn, :meditation, meditation["slug"]) %>'><h1 style="margin-bottom: 0;"><%#= meditation["title"] %></h1></a>
+            <h3 style="margin-bottom: 1rem;"><%#= raw meditation["content"] %></h3>
+            <div class="podcast__item__bottom">
+              <a class="link articles__link" href='<%#= meditation["podcast_url"] %>'>episode link</a>
+            </div>
+          </div>
+        <%# end ) %>
+      </div>
+    </div>
+  </div>
+
+
+<%# FREE GUIDED MEDITATION SERIES END %>
+
+
 <%# FUNDAMENTAL SERIES %>
   <div id="neverfap_deluxe_fundamental_meditation_series" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <a href="#neverfap_deluxe_fundamental_meditation_series" class="guide__suggestion guide__suggestion__padding">
-        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
       </a>
       <h2 class="single__sub__header">NeverFap Deluxe Fundamental Meditation Series</h2>
       <p>As a primary option we offer the <b>NeverFap Deluxe Fundamental Meditation Series</b> which is a series of 4 meditations which is designed to teach you the absolute core fundamental basics of meditation.</p>
@@ -79,7 +106,7 @@
   <div id="hovering_meditation" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <a href="#hovering_meditation" class="guide__suggestion guide__suggestion__padding">
-        <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
       </a>
       <h2 class="single__sub__header">Hovering Meditation</h2>
       <p>One thing I've noticed is that a lot of people struggle to meditate via traditional means.</p>
@@ -108,7 +135,7 @@
   <div id="meditation_essential_reading" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <a href="#meditation_essential_reading" class="guide__suggestion guide__suggestion__padding">
-        <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
       </a>
       <h2 class="single__sub__header">Meditation Essential Reading</h2>
       <p></p>
