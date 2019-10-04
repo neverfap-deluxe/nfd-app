@@ -20,7 +20,7 @@
 <%# INDEX END %>
 
 
-<%# PREFACE %>
+<%# INTRODUCTION %>
   <div id="introduction" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
@@ -43,7 +43,7 @@
 
   <div class="line__top"></div>
   <div class="line__bottom"></div>
-<%# PREFACE END %>
+<%# INTRODUCTION END %>
 
 
 <%# PRACTICES OVERVIEW %>
