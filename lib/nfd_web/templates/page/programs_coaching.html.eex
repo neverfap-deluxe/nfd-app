@@ -25,7 +25,7 @@
   <div id="introduction" class="single__wrapper">
     <div class="single__content">
       <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
       </a>
 
       <h1>Introduction</h1>
@@ -41,7 +41,7 @@
   <div id="reasons_to_consider_personal_coaching" class="single__wrapper">
     <div class="single__content">
       <a href="#reasons_to_consider_personal_coaching" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
       </a>
 
       <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some viable reasons</u> to consider personal coaching.</h1>
@@ -63,7 +63,7 @@
       <div style="border-top: 3px solid #00ffee;"></div>
 
       <p>Ultimately, only you can decide whether you beleive it's worth your time and money.</p>
-      <p>No different to this website and all these wonderful materials I offer to the public for free, I'm just another resource for you to utilise during your journey.</p>
+      <p>No different to this website, I'm just another resource for you to utilise throughout your journey.</p>
     </div>
   </div>
 
@@ -75,7 +75,7 @@
   <div id="how_i_can_help_you_achieve_your_goals" class="single__wrapper">
     <div class="single__content">
       <a href="#how_i_can_help_you_achieve_your_goals" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
       </a>
 
       <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some of the services</u> which can help you become your best self.</h1>
@@ -86,7 +86,7 @@
       <div style="border-top: 3px solid #00ffee;"></div>
       <h2 class="banner__points banner__points--coaching">I can provide you with a detailed mental health plan which covers the day-to-day.</h2>
       <div style="border-top: 3px solid #00ffee;"></div>
-      <h2 class="banner__points banner__points--coaching">I can help identify which areas you need to work on and improve.</h2>
+      <h2 class="banner__points banner__points--coaching">I can help identify which areas you need to work and improve on.</h2>
       <div style="border-top: 3px solid #00ffee;"></div>
       <h2 class="banner__points banner__points--coaching">I can recommend suggested practices which will best suit your situation.</h2>
       <div style="border-top: 3px solid #00ffee;"></div>
@@ -109,7 +109,7 @@
   <div class="single__wrapper">
     <div class="single__content">
       <a href="#personal_coaching_pricing" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
       </a>
       <h1>Pricing</h1>
       <%= raw child_content(@item["children"], "coaching-cost") %>
@@ -124,7 +124,7 @@
   <div id="book_a_meeting" class="single__wrapper">
     <div class="single__content">
       <a href="#book_a_meeting" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
       </a>
 
       <h1>Book A Meeting</h1>
@@ -150,7 +150,7 @@
   <div id="next_steps" class="single__wrapper">
     <div class="single__content">
       <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">6.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">6.</div>
       </a>
 
       <h1>Next Steps</h1>

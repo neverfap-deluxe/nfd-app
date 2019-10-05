@@ -24,14 +24,14 @@
   <div id="introduction" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
       </a>
 
-      <h1>Introduction</h1>
+      <h2 class="single__sub__header">Introduction</h2>
       <p>NeverFap Deluxe Practices focus on developing your capacity for awareness, as well as other important skills related calmness and engaging with mental health best practice.</p>
       <p>However, they're in no way a substitute for a solid Meditation routine that you practice daily, as it's arguably the most important thing you can do for your awareness in any capacity.</p>
       <p>Instead, it can help to think of these practices as an excellent supplementary activity in order to enhance your mental health and learn entirely new things about yourself and your potential as a human being.</p>
-      <p>Until then, I would highly recommend checking out the <a class="link" href="Routes.page_path(conn, :meditations)">NeverFap Deluxe Meditation</a> section of the website for further instruction on developing a practical meditation routine.</p>
+      <p>Until then, I would highly recommend checking out the <a class="link" href="<%= Routes.content_path(@conn, :meditations) %>">NeverFap Deluxe Meditation</a> section of the website for further instruction on developing a practical meditation routine.</p>
       <p>It's the easiest and most effective way to implement real change in your daily routine.</p>
     </div>
   </div>
@@ -51,10 +51,10 @@
   <div id="practices_overview" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <a href="#practices_overview" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
       </a>
 
-      <h1>Practices Overview</h1>
+      <h2 class="single__sub__header">Practices Overview</h2>
 
       <p>Each practice contains:</p>
       <ul class="practice__list summary__key_points">
@@ -82,10 +82,10 @@
   <div id="practices_list" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <a href="#practices_list" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
       </a>
 
-      <h1>Practices List</h1>
+      <h2 class="single__sub__header">Practices List</h2>
 
       <div class="posts__on posts--guide" id="articles_latest_plain_posts">
         <%= partial "list/articles_latest_v2.html", %{ conn: @conn, page_symbol: :practice, items: @page_collections.practices, tag_type: "context" } %>
@@ -102,9 +102,9 @@
   <div id="next_steps" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
       </a>
-      <h1>Next Steps</h1>
+      <h2 class="single__sub__header">Next Steps</h2>
       <p>As mentioned in the beginning of the NeverFap Deluxe Practices section, these practices are less fundamental than having a solid Meditation routine in place.</p>
       <p>However what a lot of people find is that these exercises help to better understand how to meditate, as well as remain calm and collected in everyday situations.</p>
       <p>I would also dedicate a portion of time towards reading through our extensive list of <a href="/articles" class="link">NeverFap Deluxe Articles</a> which are provided for FREE and which cover a lot of the theory and context behind why these practices are effective.</p>
@@ -132,10 +132,10 @@
     <div id="practice_overview" class="single__wrapper">
       <div class="single__content" style="margin-bottom: 0;">
         <a href="#practice_overview" class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
         </a>
 
-        <h1>Practices Overview</h1>
+        <h2 class="single__sub__header">Practices Overview</h2>
 
         <p>Each practice contains:</p>
         <ul class="practice__list summary__key_points">
@@ -167,10 +167,10 @@
     <div id="introduction" class="single__wrapper">
       <div class="single__content" style="margin-bottom: 0;">
         <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
         </a>
 
-        <h1>Introduction</h1>
+        <h2 class="single__sub__header">Introduction</h2>
         <p>It costs $89 to access all of the practices on NeverFap Deluxe.</p>
         <p>This investment provides you with <b>lifetime access</b> to all future and existing mental health and awareness practices, and is a great way to ensure you're fully committed to your mental health.</p>
         <p>There are currently <%= practice_length %> detailed mental health and awareness practices on NeverFap Deluxe.</p>
@@ -195,10 +195,10 @@
     <div id="seven_week_awareness_challenges" class="single__wrapper">
       <div class="single__content" style="margin-bottom: 0;">
         <a href="#seven_week_awareness_challenges" class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
         </a>
 
-        <h1>Seven Week Awareness Challenges</h1>
+        <h2 class="single__sub__header">Seven Week Awareness Challenges</h2>
 
         <p>In addition, each of these practices have been organised into 5 separate Seven Week Awareness Challenges in order to maximise your learning from these exercises.</p>
         <p>Ideally you should be spending a week with each exercise, in order to truly appreciate and engrain the knowledge of what you're learning, and that's what these challenges essentially do.</p>

@@ -22,10 +22,10 @@
   <div id="introduction" class="single__wrapper">
     <div class="single__content">
       <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
       </a>
 
-      <h1>Introduction</h1>
+      <h2 class="single__sub__header">Introduction</h2>
       <%= raw @item["content"] %>
     </div>
   </div>
@@ -37,10 +37,10 @@
 <%# ARTICLES LIST %>
   <div id="articles_list" style="margin-top: 3rem!important;" class="single__wrapper">
     <a href="#articles_list" class="guide__suggestion guide__suggestion__padding">
-      <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+      <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
     </a>
 
-    <h1>Articles List</h1>
+    <h2 class="single__sub__header">Articles List</h2>
     <div class="posts__on posts--guide" id="articles_latest_plain_posts">
       <%= partial "list/articles_latest_v2.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
     </div>
@@ -54,10 +54,10 @@
   <div id="next_steps" class="single__wrapper">
     <div class="single__content">
       <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
       </a>
 
-      <h1>Next Steps</h1>
+      <h2 class="single__sub__header">Next Steps</h2>
       <p>If you enjoy reading these articles online on the NeverFap Deluxe website then golly gosh, you're in for a real treat!</p>
       <p>In addition to the website, these articles are available to read on any Android device for FREE via the official <a class="link" href="https://neverfapdeluxe.com/meditation">NeverFap Deluxe Mobile Application</a> available on the Google Play Store.</p>
       <p>They are also available as a convenient ebook (also known as the <a href="/neverfap-deluxe-bible" class="link">NeverFap Deluxe Bible</a>) when you sign up for a FREE NeverFap Deluxe Account, where it is available for download in epub format.</p>

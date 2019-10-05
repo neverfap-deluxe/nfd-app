@@ -22,7 +22,7 @@
   <div id="introduction" class="single__wrapper">
     <div class="single__content">
       <a href="#preface" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
       </a>
 
       <h1>Introduction</h1>
@@ -38,7 +38,7 @@
   <div id="overview" class="single__wrapper">
     <div class="single__content">
       <a href="#overview" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
       </a>
 
       <h1>Overview</h1>
@@ -54,7 +54,7 @@
   <div id="overview_key_points" class="single__wrapper">
     <div class="single__content">
       <a href="#overview_key_points" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
       </a>
 
       <h1>Overview Key Points</h1>
@@ -87,7 +87,7 @@
   <div id="next_steps" class="single__wrapper">
     <div class="single__content">
       <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
       </a>
 
       <h1>Next Steps</h1>

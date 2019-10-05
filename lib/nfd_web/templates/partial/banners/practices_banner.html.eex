@@ -22,11 +22,22 @@
         <!-- <li class="banner__item practices__banner__item">3+ new practices each month.</li> -->
         <li class="banner__item practices__banner__item">Practices come with summary cards, context sections, instruction sections, personal practice sections and practice audio.</li>
       </ul>
+      <div style="display: flex; margin-top: 1rem;">
+        <div class="account__buttons__login">
+          <span class="login__top__button__register">
+              <%= link to: Routes.content_path(@conn, :practices) do %>
+              <div class="login__top__button__text">
+                Practices
+              </div>
+            <% end %>
+          </span>
+        </div>
+      </div>
     </div>
-    <div class="banner__split__divider"></div>
+    <!-- <div class="banner__split__divider"></div>
     <div class="banner__split">
-      <%= partial "pricing/pricing_practices.html", %{ conn: @conn } %>
-    </div>
+      <%#= partial "pricing/pricing_practices.html", %{ conn: @conn } %>
+    </div> -->
   </div>
 </div>
 

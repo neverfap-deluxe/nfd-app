@@ -24,7 +24,7 @@
   <div id="introduction" class="single__wrapper">
     <div class="single__content">
       <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
       </a>
 
       <h1>Introduction</h1>
@@ -40,7 +40,7 @@
   <div id="accountability_process" class="single__wrapper">
     <div class="single__content">
       <a href="#accountability_process" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
       </a>
 
       <h1>The Accountability Process</h1>
@@ -78,7 +78,7 @@
   <div id="neverfap_deluxe_bot" class="single__wrapper">
     <div class="single__content">
       <a href="#neverfap_deluxe_bot" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
       </a>
 
       <h1>The NeverFap Deluxe Discord Bot</h1>
@@ -107,7 +107,7 @@
   <div id="accountability_examples" class="single__wrapper">
     <div class="single__content">
       <a href="#accountability_examples" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
       </a>
 
       <h1>Accountability Examples</h1>
@@ -145,7 +145,7 @@
   <div id="next_steps" class="single__wrapper">
     <div class="single__content">
       <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
       </a>
       <h1>Next Steps</h1>
       <p>Of course, while personal support can help you stick with the recovery process, there really is no alternative to putting in the hard work and committing to the recovery process itself i.e. meditating daily.</p>

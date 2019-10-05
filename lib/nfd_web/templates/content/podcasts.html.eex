@@ -23,10 +23,10 @@
   <div id="introduction" class="single__wrapper">
     <div class="single__content">
       <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
       </a>
 
-      <h1>Introduction</h1>
+      <h2 class="single__sub__header">Introduction</h2>
       <%= raw @item["content"] %>
     </div>
   </div>
@@ -39,10 +39,10 @@
   <div id="podcast_player" class="single__wrapper">
     <div class="single__content">
       <a href="#podcast_player" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
       </a>
 
-      <h1>Podcast Player</h1>
+      <h2 class="single__sub__header">Podcast Player</h2>
       <p>Here is a simple audio player via Castbox if you'd like to listen to the podcast on the NeverFap Deluxe website.</p>
       <p>You know, if you're reeaaaaaally desperate to hear my voice right now.</p>
 
@@ -60,9 +60,9 @@
   <div id="podcast_list" class="single__wrapper">
     <div class="single__content">
       <a href="#podcast_player" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
       </a>
-      <h1>Podcast List</h1>
+      <h2 class="single__sub__header">Podcast List</h2>
       <p>Here's a complete list of all the episodes of The NeverFap Deluxe Podcast.</p>
 
       <div class="podcast__item__container">
@@ -90,10 +90,10 @@
   <div id="next_steps" class="single__wrapper">
     <div class="single__content">
       <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
       </a>
 
-      <h1>Next Steps</h1>
+      <h2 class="single__sub__header">Next Steps</h2>
       <p>While the podcast is a great place to hear me waffle about the finer things in life, your predominant focus should be on developing a solid mental health routine.</p>
       <p>Only through conscious action can we hope to change the behaviours which hold our life ransom.</p>
       <p>To learn more about developing a solid mental health routine, I would highly recommend reading through the <a href="/meditation" class="link">NeverFap Deluxe Meditation</a> section of the website which explains a lot of these concepts in detail.</p>

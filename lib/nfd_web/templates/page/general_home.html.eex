@@ -87,7 +87,7 @@
     <%# HOW IT WORKS %>
       <div class="homepage__section">
         <a href="#90_day_rule" id="90_day_rule" class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
         </a>
 
         <h1>How it works</h1>
@@ -111,7 +111,7 @@
     <%# UCM CRUMBLE %>
       <div class="homepage__section">
         <a href="#unhealthy_coping_mechanisms_crumble" id="unhealthy_coping_mechanisms_crumble" class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
         </a>
 
         <h1>...and it's these situations where <span style="color: rgba(255,46,182,1);">unhealthy coping mechanisms</span> crumble.</h1>
@@ -135,7 +135,7 @@
 
       <div class="homepage__section">
         <a href="#devloping_control_over_your_mind" class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
         </a>
 
         <h1>It's about <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">developing control</u> over your mind.</h1>
@@ -173,7 +173,7 @@
     <%# UCM LIST %>
       <div id="list_unhealthy_coping_mechanisms" class="unhealthy__banner">
         <a href="#list_unhealthy_coping_mechanisms" class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
         </a>
 
         <h2 class="margin__top__mobile">So you may be wondering.</h2>
@@ -206,7 +206,7 @@
     <%# HCM LIST %>
       <div id="list_healthy_coping_mechanisms" class="homepage__section">
         <a href="#list_healthy_coping_mechanisms" class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
         </a>
 
         <h2 class="margin__top__mobile">Which is why.</h2>
@@ -247,7 +247,7 @@
 
       <div class="homepage__section">
         <a href="#practice_and_consistency" class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">6.</h1>
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">6.</div>
         </a>
 
         <h2 style="margin-top: 3rem;">It's simple.</h2>
@@ -270,7 +270,7 @@
 
       <div class="homepage__section">
         <a href="#ten_minute_meditation_routine" class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">7.</h1>
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">7.</div>
         </a>
 
         <h1>Well, tldr.</h1>
@@ -302,7 +302,7 @@
 
       <div id="newneverfapper" class="homepage__section">
         <a href="#newneverfapper" class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">8.</h1>
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">8.</div>
         </a>
 
         <h1>Most people are <u style="border-bottom: 4px solid rgba(255,46,182,1); padding-bottom: 0rem;">severely deficient</u> in one or two of these areas.</h1>
@@ -331,7 +331,7 @@
 
 
         <a id="awareness_calmness_ambition" href="#awareness_calmness_ambition" class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">9.</h1>
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">9.</div>
         </a>
 
         <h2 style="margin-top: 2rem;">Regardless, here are some basic guidelines. <i class="em em-golfer"></i></h2>
@@ -357,7 +357,7 @@
     <%# NFD GUIDE %>
       <div class="homepage__section">
         <a href="#nfd_guide" id="nfd_guide" class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">10.</h1>
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">10.</div>
         </a>
 
         <h2 style="margin-top: 2rem;">So without further ado...</h2>
@@ -370,7 +370,7 @@
     <%# FIVE FUNDAMENTALS %>
       <div id="five_fundamentals" class="homepage__section">
         <a href="#five_fundamentals" class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">11.</h1>
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">11.</div>
         </a>
 
         <h3 style="margin-top: 2.5rem;">Oh.</h3>
@@ -414,7 +414,7 @@
         </div>
 
         <a href="#nfd_podcast_discord"  class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">12.</h1>
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">12.</div>
         </a>
 
       </div>
@@ -435,7 +435,7 @@
 
       <div class="homepage__section">
         <a href="#nfd_articles" class="guide__suggestion guide__suggestion__padding">
-          <h1 class="guide__suggestion__number guide__suggestion__number--bottom">13.</h1>
+          <div class="guide__suggestion__number guide__suggestion__number--bottom">13.</div>
         </a>
 
         <h2>Here are a selection of our top articles to help get you started.</h2>

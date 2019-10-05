@@ -24,10 +24,10 @@
   <div id="introduction" class="single__wrapper">
     <div class="single__content">
       <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
       </a>
 
-      <h1>Introduction</h1>
+      <h2 class="single__sub__header">Introduction</h2>
       <p>Hovering is a meditation technique that I created to assist people new to meditation. It significantly helps those who struggle to meditate via traditional means.</p>
       <p>It has been designed to be easy to understand, simple to practice, as well as remain acessible to people of all ages.</p>
       <p>Unlike traditional meditation, Hovering aims to be highly concrete as opposed to highly abstract so you can have that 'ah-ha' moment of clarity a lot sooner, rather than later.</p>
@@ -69,10 +69,10 @@
   <div id="hovering_website" class="single__wrapper">
     <div class="single__content">
       <a href="#hovering_website" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
       </a>
 
-      <h1>Hovering Website</h1>
+      <h2 class="single__sub__header">Hovering Website</h2>
       <p>If you would like to learn more about Hovering, I've written an extensive website/guide which explains the concept of Hovering in a lot more detail.</p>
 
       <img style="width: 100%;" src="https://neverfapdeluxe.netlify.com/images/hovering_web.png"/>
@@ -89,10 +89,10 @@
   <div id="hovering_web_application" class="single__wrapper">
     <div class="single__content">
       <a href="#hovering_web_application" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
       </a>
 
-      <h1>Hovering Web Application</h1>
+      <h2 class="single__sub__header">Hovering Web Application</h2>
       <p>Hovering Meditation is available as an online Web Application. It's simple and easy to use.</p>
 
       <img style="width: 100%;" src="https://neverfapdeluxe.netlify.com/images/hovering_app.png"/>
@@ -109,10 +109,10 @@
   <div id="hovering_android_application" class="single__wrapper">
     <div class="single__content">
       <a href="#hovering_android_application" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
       </a>
 
-      <h1>Hovering Android Application</h1>
+      <h2 class="single__sub__header">Hovering Android Application</h2>
       <p>Hovering Meditation is also available on Android.</p>
 
       <img style="width: 350px;" src="https://neverfapdeluxe.netlify.com/images/hovering_mobile.png"/>
@@ -129,10 +129,10 @@
   <div id="next_steps" class="single__wrapper">
     <div class="single__content">
       <a href="#next_steps" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
       </a>
 
-      <h1>Next Steps</h1>
+      <h2 class="single__sub__header">Next Steps</h2>
       <p>In most cases, the reason why people struggle with meditation is because they have it explained poorly to them.</p>
       <p>Which leads people to think that it's pointless, which is a huge shame because it really is one of the most important things you can do for your porn addiction recovery.</p>
       <p>If you're interested in learning more about meditation best practice, I would visit the <a href="/meditation" class="link">NeverFap Deluxe Meditation</a> section of the website which explains how best to develop a solid meditation routine.</p>

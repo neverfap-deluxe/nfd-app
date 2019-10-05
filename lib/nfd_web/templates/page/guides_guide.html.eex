@@ -35,8 +35,8 @@
   <div id="preface" class="single__wrapper">
     <div class="single__content">
       <a href="#preface" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
-        <h1>Preface</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
+        <h2 class="single__sub__header">Preface</h2>
       </a>
       <%= raw child_content(@item["children"], "guide-preface") %>
     </div>
@@ -50,8 +50,8 @@
   <div id="introduction" class="single__wrapper">
     <div class="single__content">
       <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
-        <h1>Introduction</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
+        <h2 class="single__sub__header">Introduction</h2>
       </a>
       <%= raw child_content(@item["children"], "guide-trust-the-process") %>
     </div>
@@ -65,8 +65,8 @@
   <div id="core_concepts" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <a href="#core_concepts" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
-        <h1>Core Concepts</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
+        <h2 class="single__sub__header">Core Concepts</h2>
       </a>
       <%= raw child_content(@item["children"], "guide-meat") %>
     </div>
@@ -78,7 +78,7 @@
   <!-- <div style="margin-bottom: 1rem; margin-top: 1rem; height: 4px; background: rgba(255,46,182,1);"></div> -->
   <div id="summary" class="guide__banner" style="border-top: 4px solid black;">
     <a href="#summary" class="guide__suggestion guide__suggestion__padding">
-      <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
+      <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
     </a>
 
     <h2>In Summary</h2>
@@ -138,8 +138,8 @@
   <div id="develop_a_solid_meditation_routine" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <a href="#develop_a_solid_meditation_routine" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">1.</h1>
-        <h1>Daily Meditation Routine</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
+        <h2 class="single__sub__header">Daily Meditation Routine</h2>
       </a>
       <%= raw child_content(@item["children"], "guide-meditation-routine") %>
 
@@ -164,8 +164,8 @@
   <div id="increase_your_capacity_for_awareness" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <a href="#increase_your_capacity_for_awareness" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">2.</h1>
-        <h1>NeverFap Deluxe Practices</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
+        <h2 class="single__sub__header">NeverFap Deluxe Practices</h2>
       </a>
       <%= raw child_content(@item["children"], "guide-develop-awareness") %>
     </div>
@@ -189,8 +189,8 @@
   <div id="participate_in_our_discord_accountability_program" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <a href="#participate_in_our_discord_accountability_program" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">3.</h1>
-        <h1>Accountability Program</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
+        <h2 class="single__sub__header">Accountability Program</h2>
       </a>
       <%= raw child_content(@item["children"], "guide-accountability-program") %>
     </div>
@@ -219,8 +219,8 @@
   <div id="7_day_neverfap_deluxe_kickstarter" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <a href="#7_day_neverfap_deluxe_kickstarter" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">4.</h1>
-        <h1>7 Day NeverFap Deluxe Kickstarter</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
+        <h2 class="single__sub__header">7 Day NeverFap Deluxe Kickstarter</h2>
       </a>
       <%= raw child_content(@item["children"], "guide-seven-day-kickstarter") %>
     </div>
@@ -234,8 +234,8 @@
   <div id="neverfap_deluxe_articles" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <a href="#neverfap_deluxe_articles" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">5.</h1>
-        <h1>NeverFap Deluxe Articles</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">5.</div>
+        <h2 class="single__sub__header">NeverFap Deluxe Articles</h2>
       </a>
       <%= raw child_content(@item["children"], "guide-never-fap-deluxe-articles") %>
 
@@ -260,8 +260,8 @@
   <div id="neverfap_deluxe_podcast" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <a href="#neverfap_deluxe_podcast" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">6.</h1>
-        <h1>NeverFap Deluxe Podcast</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">6.</div>
+        <h2 class="single__sub__header">NeverFap Deluxe Podcast</h2>
       </a>
       <%= raw child_content(@item["children"], "guide-never-fap-deluxe-podcast") %>
     </div>
@@ -292,8 +292,8 @@
   <div id="neverfap_deluxe_mobile_app" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <a href="#neverfap_deluxe_mobile_app" class="guide__suggestion guide__suggestion__padding">
-        <h1 class="guide__suggestion__number guide__suggestion__number--bottom">7.</h1>
-        <h1>NeverFap Deluxe Mobile Application</h1>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">7.</div>
+        <h2 class="single__sub__header">NeverFap Deluxe Mobile Application</h2>
       </a>
       <%= raw child_content(@item["children"], "guide-never-fap-deluxe-podcast") %>
     </div>
@@ -307,7 +307,7 @@
 <%# NEXT STEPS %>
   <div id="next_steps" class="single__wrapper">
     <div class="single__content">
-      <h1>Next Steps</h1>
+      <h2 class="single__sub__header">Next Steps</h2>
       <p>If that isn't enough for you, then feel free to get involved with our <a class="link" href="<%= Application.get_env(:nfd, :social_reddit_url) %>">r/NeverFapDeluxe</a> Reddit Community!</p>
       <p>We even have hilariously terrible memes such as this one:</p>
       <img style="width: 100%;" src="/images/one-does-not-simply.jpg" />
@@ -321,7 +321,7 @@
 <%# NOT SURE %>
   <div class="single__wrapper">
     <div class="single__content">
-      <h1>Still not sure?</h1>
+      <h2 class="single__sub__header">Still not sure?</h2>
       <p>If you're still not sure what to do, then that's okay.</p>
       <p>I'm currently willing to offer a detailed break-down of next steps which you can take if you post in our </p>
       <p>In addition, I also offer personal coaching </p>
