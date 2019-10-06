@@ -41,6 +41,9 @@
     font-size: 3rem;
     line-height: 4.3rem;
   }
+  .article__item__v2__title::after {
+    background-image: url('/images/logo.png');
+  }
   .article__item__v2__description {
     font-weight: 400;
   }

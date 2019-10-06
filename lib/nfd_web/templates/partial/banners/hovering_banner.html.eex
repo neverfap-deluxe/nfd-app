@@ -37,19 +37,11 @@
       // It removes the class, but the styles don't change.
       hoverCircleExampleYo.onmouseenter = function() {
         hoverCircleTextYo.classList.add("hover__text__fade");
-        if (getCookie('isDarkMode')) {
-          document.body.classList.remove("main__dark");
-        } else {
-          document.body.classList.add("main__dark");
-        }
+        document.body.classList.add("main__dark");
       }
       hoverCircleExampleYo.onmouseleave = function() {
         hoverCircleTextYo.classList.remove("hover__text__fade");
-        if (getCookie('isDarkMode')) {
-          document.body.classList.add("main__dark");
-        } else {
-          document.body.classList.remove("main__dark");
-        }
+        document.body.classList.remove("main__dark");
       }
 
       function getCookie(name) {
