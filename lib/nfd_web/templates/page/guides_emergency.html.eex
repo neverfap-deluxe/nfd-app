@@ -1,5 +1,5 @@
 <div class="emergency__page">
-  <h1 class="emergency__title">Emergency <img src="/images/logo.png" class="logo__square" alt=""/></h1>
+  <h1 class="emergency__title">Emergency <!-- <img src="/images/logo.png" class="logo__square" alt=""/> --></h1>
 
   <div class="single__wrapper">
     <div class="single__content" >
@@ -34,6 +34,6 @@
       </div>
     </div>
   </div>
-  
-  
+
+
 </div>

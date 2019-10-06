@@ -30,19 +30,34 @@
     </div>
   </div>
 
-  <%= partial "links/twitter.html", assigns %>
+  <div class="line__top"></div>
+  <div class="line__bottom"></div>
+
+  <%= partial "banners/fdm_banner.html", assigns %>
+
+  <div class="line__top"></div>
+  <div class="line__bottom"></div>
 <%# INTRODUCTION END %>
 
 
 <%# ARTICLES LIST %>
   <div id="articles_list" style="margin-top: 3rem!important;" class="single__wrapper">
-    <a href="#articles_list" class="guide__suggestion guide__suggestion__padding">
-      <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
-    </a>
+    <div class="single__content">
+      <a href="#articles_list" class="guide__suggestion guide__suggestion__padding">
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
+      </a>
 
-    <h2 class="single__sub__header">Articles List</h2>
-    <div class="posts__on posts--guide" id="articles_latest_plain_posts">
-      <%= partial "list/articles_latest_v2.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
+      <h2 class="single__sub__header single__latest__articles__title">Articles List</h2>
+      <p>Here are a complete list of all of the contextual articles here on my amazingly useful website, NeverFap Deluxe!</p>
+      <p>If instead if you're looking for a more structured approach towards addressing your porn addiction, then I recommend checking out our <a class="link" href="/courses">NeverFap Deluxe Courses</a> section!</p>
+      <p>If however you were interested in browsing the complete list of mental health practices here on NeverFap Deluxe, please check out the suitably-named <a class="link" href="/practices">NeverFap Deluxe Practices</a> page.</p>
+
+      <div class="line__top__articles__item"></div>
+      <div class="line__bottom__articles__item"></div>
+
+      <div class="posts__on posts--guide" id="articles_latest_plain_posts">
+        <%= partial "list/articles_latest_v2.html", %{ conn: @conn, page_symbol: :article, items: @page_collections.articles, tag_type: "context" } %>
+      </div>
     </div>
   </div>
 

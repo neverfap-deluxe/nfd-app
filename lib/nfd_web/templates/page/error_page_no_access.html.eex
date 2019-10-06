@@ -1,5 +1,5 @@
 <div class="single__wrapper">
-  <h1 class="single__title">Please Purchase <img src="/images/logo.png" class="logo__square" alt=""/></h1>
+  <h1 class="single__title">Please Purchase <!-- <img src="/images/logo.png" class="logo__square" alt=""/> --></h1>
   <div class="single__content" style="margin-bottom: 0;">
     <h2>I'm sorry buddy!</h2>
 

@@ -1,5 +1,5 @@
 <div class="post__relapse__page">
-  <h1 class="post__relapse__title">Post Relapse Academy <img src="/images/logo.png" class="logo__square" alt=""/></h1>
+  <h1 class="post__relapse__title">Post Relapse Academy <!-- <img src="/images/logo.png" class="logo__square" alt=""/> --></h1>
   <div class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <h3>Here you are.</h3>

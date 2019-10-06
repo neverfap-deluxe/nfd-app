@@ -1,5 +1,5 @@
 <a class="article__item__v2" href='<%= Routes.content_path(@conn, @page_symbol, @slug) %>'>
-  <h3 class="article__item__v2__title"><%= @title %> <img src="/images/logo.png" class="logo__square" alt=""/></h3>
+  <h3 class="article__item__v2__title"><%= @title %> <!-- <img src="/images/logo.png" class="logo__square" alt=""/> --></h3>
   <a class="homepage__tiny" href='<%= Routes.content_path(@conn, @page_symbol, @slug) %>'>/<%= @slug %></a>
   <h4 class="article__item__v2__description"><%= @description %></h4>
 </a>

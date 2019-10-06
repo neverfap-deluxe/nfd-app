@@ -6,8 +6,8 @@
     <%= partial "layout/header.html", assigns %>
 
     <main role="main" class="main" id="content">
-      <div class="single__wrapper">   
-        <h1 class="single__title">404 <img src="/images/logo.png" class="logo__square" alt=""/></h2>
+      <div class="single__wrapper">
+        <h1 class="single__title">404 <!-- <img src="/images/logo.png" class="logo__square" alt=""/> --></h2>
         <div class="single__content" style="margin-bottom: 0;">
           <p>Unfortunately, the page you're looking for doesn't exist.</p>
           <p>That's okay. You're still no less of an amazing individual. Here are a complete list of all the pages on the website so I can help you find what you're looking for ^^</p>
@@ -23,7 +23,7 @@
         <%= partial "everything_module.html", %{ is_mobile_menu: false } %>
       </div>
     </main>
-    
+
     <%= partial "layout/footer.html", assigns %>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>

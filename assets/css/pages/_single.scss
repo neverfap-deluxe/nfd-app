@@ -67,6 +67,19 @@
     line-height: 5.8rem;
   }
 
+  .single__title__v2:after {
+    background-image: url('/images/logo.png');
+    background-size: 14px 14px;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    content:"";
+
+    position: relative;
+    right: 0rem;
+    top: -1.8rem;
+  }
+
   .single__title:hover {
     box-shadow: -30px 30px 0px 0px $black-background;
   }

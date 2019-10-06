@@ -2,7 +2,7 @@
 
 <div style="margin-top: 2rem!important;" class="single__wrapper practices__wrapper">
   <a class="article__item__v2" href='<%= Routes.content_path(@conn, :article, @item["slug"]) %>'>
-    <h1 class="article__item__v2__title"><%= @item["title"] %> <img src="/images/logo.png" class="logo__square" alt=""/></h3>
+    <h1 class="article__item__v2__title"><%= @item["title"] %> <!-- <img src="/images/logo.png" class="logo__square" alt=""/> --></h3>
     <a class="homepage__tiny" href='<%= @item["slug"] %>'>/<%= @item["slug"] %></a>
     <h4 class="article__item__v2__description"><%= @item["description"] %></h4>
   </a>
