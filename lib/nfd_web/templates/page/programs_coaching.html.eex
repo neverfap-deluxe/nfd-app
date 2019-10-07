@@ -54,11 +54,11 @@
       <div style="border-top: 3px solid #00ffee;"></div>
       <h2 class="banner__points banner__points--coaching">You require another person to help understand and empathise with your situation.</h2>
       <div style="border-top: 3px solid #00ffee;"></div>
-      <h2 class="banner__points banner__points--coaching">You struggle to understand how to effectively practice meditation and other awareness exercises.</h2>
+      <h2 class="banner__points banner__points--coaching">You struggle to understand how to effectively practice meditation, along with other awareness exercises.</h2>
       <div style="border-top: 3px solid #00ffee;"></div>
       <h2 class="banner__points banner__points--coaching">You want to ask questions face-to-face.</h2>
       <div style="border-top: 3px solid #00ffee;"></div>
-      <h2 class="banner__points banner__points--coaching">You require additional perspective, and need help understanding the fundamentals.</h2>
+      <h2 class="banner__points banner__points--coaching">You require additional perspective, and require a further understanding the fundamentals.</h2>
       <!-- <div class="show__large" style="border-top: 3px solid #00ffee;"></div> -->
       <div style="border-top: 3px solid #00ffee;"></div>
 
@@ -78,10 +78,10 @@
         <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
       </a>
 
-      <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some of the services</u> which can help you become your best self.</h1>
+      <h1>Here are <u style="border-bottom: 4px solid #00ffee; padding-bottom: 0rem;">some of the services</u> which I provide for clients.</h1>
 
       <p>There are many different ways I can personally help you achieve your goals.</p>
-      <p>Below is a list which largely applies to most of my clients.</p>
+      <p>The below list is largely applicable to most clients.</p>
 
       <div style="border-top: 3px solid #00ffee;"></div>
       <h2 class="banner__points banner__points--coaching">I can provide you with a detailed mental health plan which covers the day-to-day.</h2>
@@ -94,6 +94,9 @@
       <div style="border-top: 3px solid #00ffee;"></div>
       <h2 class="banner__points banner__points--coaching">I can help you become more aware of yourself and your behaviours.</h2>
       <div style="border-top: 3px solid #00ffee;"></div>
+
+      <p>I can help you as little or as much as you want.</p>
+      <p>This is why it's important to first establish a relationship so we can discuss how best you would like to be assisted.</p>
     </div>
   </div>
 <%# HOW I CAN HELP YOU END %>
