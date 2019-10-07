@@ -6,6 +6,8 @@
   </a>
 </div>
 
+<%= partial "links/reddit.html", assigns %>
+
 <%= if @content_collections.collection[:status] == "complete" do %>
   <%= partial "links/reddit.html", assigns %>
 <% end %>
@@ -25,6 +27,8 @@
   </div>
   <span><span class="homepage__process__link"><%= @item["date"] %></span></span>
 </div>
+
+<%= partial "links/paypal.html", assigns %>
 
 <%= if @content_collections.collection[:status] == "complete" do %>
   <div style="margin-bottom: 1rem; margin-top: 1rem; height: 24px; background: rgba(255,46,182,1);"></div>
