@@ -1,7 +1,7 @@
 <%= partial "pricing/pricing_container.html",
   %{
     conn: @conn,
-    price: "$9 USD",
+    price: "$7 USD",
     title: "NeverFap Deluxe Fundamental Meditation Series",
     points: [
       "Fully Understand The Fundamentals Of Effective Meditation",

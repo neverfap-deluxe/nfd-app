@@ -10,7 +10,7 @@
         <!-- TODO: Add a how-to-meditate section in here -->
         <a href="#introduction"><li class="index__item">Introduction</li></a>
         <a href="#free_guided_meditation_series"><li class="index__item">Free Guided Meditation Series</li></a>
-        <a href="#fundamental_meditation_series"><li class="index__item">Fundamental Meditation Series</li></a>
+        <a href="#fundamental_guided_meditation_series"><li class="index__item">Fundamental Meditation Series</li></a>
         <a href="#hovering_meditation"><li class="index__item">Hovering Meditation</li></a>
         <a href="#meditation_essential_reading"><li class="index__item">Meditation Essential Reading</li></a>
         <a href="#next_steps"><li class="index__item">Next Steps</li></a>
@@ -29,14 +29,14 @@
         <div class="guide__suggestion__number guide__suggestion__number--bottom">1.</div>
       </a>
       <h2 class="single__sub__header">Introduction</h2>
-      <p>NeverFap Deluxe offers a wide range of effective Meditation solutions and options for those seeking additional help.</p>
-      <p>The aim of our meditations is to teach you the fundamental basics of meditation, so you can have the ability to comfortably practice meditation on your own.</p>
-      <h3>It's not within our intention to sell you a monthly meditation subscription like many existing options.</h3>
+      <p>NeverFap Deluxe offers a wide range of effective meditation solutions for those seeking advice on how best to approach meditation.</p>
+      <p>Our <a class="link" href="#free_guided_meditation_series">Free Guided Meditation Series</a> aims to offer the community on-going audio meditations to assist you throughout your meditation journey.</p>
+      <p>Our <a class="link" href="#fundamental_guided_meditation_series">Fundamental Guided Meditation Series</a> aims to explain the fundamental basics of meditation so you can comfortably practice meditation on your own.</p>
+      <h3>It's not within our interest to sell you a monthly meditation subscription like many existing options.</h3>
       <p>Not only is it a waste of money, however it largely defeats the purpose and aim of NeverFap Deluxe which is to teach you to become truly autonomous in every sense of the word.</p>
-      <p>Instead we offer a range of inexpensive, one-time payment options which provide you with a range of different skills dependent upon what you aim to achieve and your skill level.</p>
+      <p>Instead, we offer a range of inexpensive, one-time payment options which provide you with an effective toolbox of different skills dependent upon your skill level and what you aim to achieve.</p>
       <p>Of course, we also offer a heap of <a class="link" href="/meditation-reading-list">FREE meditation articles</a> which provide invaluable tips and advice on how best to meditate.</p>
-      <p>With that said, there's ultimately no substitution to using Guided Meditations when starting out, and certainly it made all the difference to helping me understand meditation when I was starting out.</p>
-      <p>I simply want to provide you with a more effective and more affordable option than what I personally had to go through to reach the same knowledge.</p>
+      <p>With that said, there's really no substitution to using guided meditations when starting out, and it certainly made all the difference helping me understand meditation when I was starting out.</p>
     </div>
   </div>
 
@@ -52,8 +52,9 @@
       </a>
 
       <h2 class="single__sub__header">Free Guided Meditation Series</h2>
-      <p>Below are our series of free guided meditations for those looking for some assistance with their daily meditation practice.</p>
-      <p>Unfortunately I don't have the time, money, nor resources to produce them frequently - although I try to create them when the time arises.</p>
+      <p>The Free Guided Meditation Series is our series of free guided meditations for those looking for some assistance with their daily meditation practice.</p>
+      <p>My aim is to produce them on a weekly basis, although as an adult with a wide variety of more urgent responsibilities, I am unfortunately unable to produce them as frequently as I would like to.</p>
+      <p>"I'm just a kid, doc!"</p>
       <p></p>
       <div class="podcast__item__container">
         <%= Enum.map(@page_collections.meditations, fn(meditation) -> %>
@@ -73,18 +74,18 @@
 <%# FREE GUIDED MEDITATION SERIES END %>
 
 
-<%# FUNDAMENTAL SERIES %>
-  <div id="fundamental_meditation_series" class="single__wrapper">
+<%# FUNDAMENTAL GUIDED MEDITATION SERIES %>
+  <div id="fundamental_guided_meditation_series" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <a href="#fundamental_meditation_series" class="guide__suggestion guide__suggestion__padding">
+      <a href="#fundamental_guided_meditation_series" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
       </a>
-      <h2 class="single__sub__header">Fundamental Meditation Series</h2>
-      <p>As a primary option we offer the <b>Fundamental Meditation Series</b> which is a series of 4 meditations which is designed to teach you the absolute core fundamental basics of meditation.</p>
-      <p>It is a perfect starting point for those new to meditation, and with this core knowledge you should have the skills in order to meditate on your own.</p>
+      <h2 class="single__sub__header">Fundamental Guided Meditation Series</h2>
+      <p>The Fundamental Guided Meditation Series is our series of four guided meditations which have been designed to teach you the absolute fundamentals of effective meditation.</p>
+      <p>It is a perfect starting point for those new to meditation, and with this knowledge you should have the skills in order to meditate on your own.</p>
       <p>As a starting point for your meditation journey, I also wanted it to be cheap enough that anyone can afford it, because I believe basic mental health should be inexpensive.</p>
-      <h3>It's available for $9 USD.</h3>
-      <p>The price of a nice meal, and if you can't sacrifice a meal for the empowerment of your mental health, then I'm not quite sure how to help you.</p>
+      <h3>It's available for $7 USD.</h3>
+      <p>The price of an average meal, and if you can't sacrifice a meal for the empowerment of your mental health, then I'm not quite sure how to help you.</p>
       <p>Of course, I've also written <a class="link" href='<%= Routes.content_path(@conn, :practice, "observe-your-senses") %>'>A Definitive Guide On How To Meditate Properly</a> if you're wanting to learn the basics of how to meditate, although it's not quite the same as being guided through it from a 3rd person perspective.</p>
     </div>
   </div>
@@ -102,7 +103,7 @@
 
   <div class="line__top"></div>
   <div class="line__bottom"></div>
-<%# FUNDAMENTAL SERIES END %>
+<%# FUNDAMENTAL GUIDED MEDITATION SERIES END %>
 
 
 <%# HOVERING MEDITATION %>

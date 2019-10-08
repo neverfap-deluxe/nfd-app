@@ -40,10 +40,10 @@
       <h3>Furthermore, it's completely FREE to register.</h3>
 
       <h3 class="articles__link cursor__default">7 Day NeverFap Deluxe Kickstarter</h3>
-      <p>With our FREE 7 Day NeverFap Deluxe Kickstarter, we explain the ropes of how you can get started with the NeverFap Deluxe Method of overcoming porn addiction.</p>
+      <p>With our FREE 7 Day NeverFap Deluxe Kickstarter, we explain how you can get started with NeverFap Deluxe and it's deliciously zany mantras and philosophies.</p>
 
       <p>...aaaand that's about it.</p>
-      <p>I have additional courses planned for 2019, although they haven't yet been created. One step at a time, baby!</p>
+      <p>I have additional courses planned for 2020, although they haven't yet been created. One step at a time, baby!</p>
       <!-- <h3 class="articles__link cursor__default">10 Day Meditation Primer</h3>
       <p>Feeling a bit confused about meditation? The 10 Day Meditation Primer is designed to explain what meditation is, how it works, as well as what you can do to get started and practicing straight-away.</p>
 
@@ -61,9 +61,9 @@
   <div class="single__wrapper single__wrapper--community">
     <div id="discord_com" class="single__content">
       <h2>Discord</h2>
-      <p>I've setup a Discord channel if you're interested in having a chat or if you have any questions about NeverFap Deluxe. It's also a great opportunity to introduce yourself and get to know our small but active community.</p>
-      <p>In addition, I also offer an accountability program via our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel that has been designed to help you commit to your mental health, and motivate you by seeing what others are doing.</p>
-      <p>You can learn more about the program <a class="link" href="/accountability-program">here</a>.</p>
+      <p>NeverFap Deluxe has an official Discord server for anyone interested in having a chat, where myself and community are more-than-happy to answer your questions about porn addiction recovery.</p>
+      <p>The Discord server also offers an accountability program via our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel that has been designed to help you commit to your mental health, and motivate you by seeing what others are doing.</p>
+      <p>You can learn more about our <a class="link" href="/accountability-program">#accountability program</a> by clicking on the fabulously highlighted hyperlink, which explains what it is, how it works, as well as why it works.</p>
       <p>Obviously we all live in different time zones, however I check it frequently and respond as promptly as I can.</p>
       <p>I'm personally located in Melbourne, Australia. (GMT+11:00)</p>
 
