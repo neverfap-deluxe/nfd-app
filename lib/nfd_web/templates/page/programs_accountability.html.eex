@@ -45,7 +45,7 @@
 
       <h1>The Accountability Process</h1>
       <p>Here's how it works.</p>
-      <p>Once a day you will post in the <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel of our Discord Server with an update of the healthy coping mechanisms you committed to for that day.</p>
+      <p>Once a day you will post in the <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">#accountability</a> channel of our Discord Server with an update of the Healthy Coping Mechanisms you committed to for that day.</p>
       <!-- <p><b>Then I will acknowledge the post with an emoji or some comments of recommendation.</b></p> -->
       <p>It could have been your daily routine of meditation. It could have been something positive you did or achieved. It could have been physical exercise. It could have been one of the NeverFap Deluxe Practices. It could even have been an epiphany of awareness which sparked positive change in your life.</p>
       <p>The idea is that we want to be focusing on positive change, because that's ultimately what the recovery process is all about.</p>
@@ -55,7 +55,7 @@
       <hr class="hrul"/>
         <ul>
           <li>- Today's date</li>
-          <li>- A list of healthy coping mechanisms you practiced for that day.</li>
+          <li>- A list of Healthy Coping Mechanisms you practiced for that day.</li>
           <li>- A list of things you're going to do differently tomorrow.</li>
         </ul>
       <hr class="hrul__bottom"/>
@@ -63,7 +63,7 @@
       <p>One thing you'll notice is that we don't report the progress of our current streak.</p>
       <p>I have come to the conclusion that it does not work as a motivator, as discovered observing the thousands of people who have participated in our program.</p>
       <p>In fact, it almost always hinders progress and ends up demotivating people, as they inevitably relapse due to inexperience with the recovery process.</p>
-      <p>On the other hand, positive action and healthy coping mechanisms are tangible things we can track, which do not set expectations on our porn recovery journey.</p>
+      <p>On the other hand, positive action and Healthy Coping Mechanisms are tangible things we can track, which do not set expectations on our porn recovery journey.</p>
       <p>And which provide much-needed direction in our daily lives.</p>
       <p>In essence, what this system does is encourage you to make positive changes by having you focus solely on your actions and decisions. It is a very simple and effective way to keep yourself accountable.</p>
     </div>
