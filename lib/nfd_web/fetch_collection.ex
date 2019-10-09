@@ -96,7 +96,7 @@ defmodule NfdWeb.FetchCollection do
             # FUTURE: Also put in the actual practice here, so we don't need to collect it in the fetch thing via apply()
             file_with_collection = Content.get_file_slug_with_collection(content_slug)
 
-            if file_with_collection do   
+            if file_with_collection do
               files = Content.list_files_with_collection_id_and_type(file_with_collection.collection.id, "audio_file")
 
               content_collections = %{
@@ -112,12 +112,12 @@ defmodule NfdWeb.FetchCollection do
                 {:error, _error} ->
                   acc |> Map.merge(%{ files: files, collection: file_with_collection.collection |> Map.merge(content_collections) |> Map.merge(%{ additional_item: %{}}) })
               end
-            else 
+            else
               acc |> Map.merge(%{ collection: nil })
             end
 
           :previous_next ->
-            page_symbol = FetchCollectionUtil.content_symbol_to_page_symbol(page_symbol)            
+            page_symbol = FetchCollectionUtil.content_symbol_to_page_symbol(page_symbol)
             { previous_item, next_item } = Map.get(page_collections, page_symbol) |> Page.previous_next_item(item)
             acc |> Map.merge(%{ previous_item: previous_item, next_item: next_item })
 
@@ -170,9 +170,9 @@ defmodule NfdWeb.FetchCollection do
 
   def dashboard_collections_collection(client, collection_array, user_collections, collection_slug) do
     # NOTE: Can maybe do some validation here, to see if it even gets the valid collection based on the collection_slug that has been passed.
-    collection = 
+    collection =
       Content.get_collection_slug_with_files!(collection_slug)
-        
+
     Enum.reduce(
       collection_array,
       %{},

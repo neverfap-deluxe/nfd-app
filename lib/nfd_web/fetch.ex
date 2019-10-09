@@ -29,7 +29,7 @@ defmodule NfdWeb.Fetch do
         user_collections = FetchCollection.user_collections(conn, [:user, :subscriber, :patreon_access, :collections_access_list])
         page_collections = FetchCollection.page_collections(client, collection_array)
         changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array)
-        
+
         conn
           |> FetchConn.check_api_response_for_404(response.status)
           |> Page.increment_visit_count(response.body["data"])
@@ -55,7 +55,9 @@ defmodule NfdWeb.Fetch do
 
         # TODO: Figure out how String.replace works.
         # cake = FetchCollectionUtil.string_replace(response.body["data"])
-        # IO.inspect cake 
+        # IO.inspect cake
+
+        IO.inspect content_collections
 
         conn
           |> FetchConn.is_file_paid_for(page_symbol, user_collections, content_collections.collection, NfdWeb.PageView, "general.html", "error_page_no_access.html")

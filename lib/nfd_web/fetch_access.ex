@@ -72,8 +72,8 @@ defmodule NfdWeb.FetchAccess do
       :practices -> apmss ++ []
       :practice -> apmss ++ ccp ++ [:practice]
 
-      :meditations -> apmss ++ [:meditations]
-      :meditation -> apmss ++ ccp ++ []
+      :meditations -> apmss ++ []
+      :meditation -> apmss ++ ccp ++ [:meditation]
 
       :courses -> apmss ++ [:courses]
       :course -> apmss ++ [:course]
