@@ -32,11 +32,11 @@
       <p>NeverFap Deluxe offers a wide range of effective meditation solutions for those seeking advice on how best to approach meditation.</p>
       <p>Our <a class="link" href="#free_guided_meditation_series">Free Guided Meditation Series</a> aims to offer the community on-going audio meditations to assist you throughout your meditation journey.</p>
       <p>Our <a class="link" href="#fundamental_guided_meditation_series">Fundamental Guided Meditation Series</a> aims to explain the fundamental basics of meditation so you can comfortably practice meditation on your own.</p>
-      <h3>It's not within our interest to sell you a monthly meditation subscription like many existing options.</h3>
+      <h3>It's not within our interest to sell you a monthly meditation subscription like many other existing options.</h3>
       <p>Not only is it a waste of money, however it largely defeats the purpose and aim of NeverFap Deluxe which is to teach you to become truly autonomous in every sense of the word.</p>
-      <p>Instead, we offer a range of inexpensive, one-time payment options which provide you with an effective toolbox of different skills dependent upon your skill level and what you aim to achieve.</p>
+      <p>Instead, we offer a range of inexpensive, one-time payment options which provide you with an effective toolbox of different skills dependent upon what you aim to achieve.</p>
       <p>Of course, we also offer a heap of <a class="link" href="/meditation-reading-list">FREE meditation articles</a> which provide invaluable tips and advice on how best to meditate.</p>
-      <p>With that said, there's really no substitution to using guided meditations when starting out, and it certainly made all the difference helping me understand meditation when I was starting out.</p>
+      <p>With that said, there really is no substitution to using guided meditations when starting out, and it certainly made all the difference in helping me understand how to meditate when I was starting out.</p>
     </div>
   </div>
 
@@ -52,8 +52,8 @@
       </a>
 
       <h2 class="single__sub__header">Free Guided Meditation Series</h2>
-      <p>The Free Guided Meditation Series is our series of free guided meditations for those looking for some assistance with their daily meditation practice.</p>
-      <p>My aim is to produce them on a weekly basis, although as an adult with a wide variety of more urgent responsibilities, I am unfortunately unable to produce them as frequently as I would like to.</p>
+      <p>The Free Guided Meditation Series is our series of free guided meditations for those looking for assistance with their daily meditation practice.</p>
+      <p>My aim is to produce them on a weekly basis, although as an adult with a wide variety of responsibilities, I am unfortunately unable to produce them as frequently as I would like to.</p>
       <p>"I'm just a kid, doc!"</p>
       <p></p>
       <div class="podcast__item__container">
@@ -82,10 +82,11 @@
       </a>
       <h2 class="single__sub__header">Fundamental Guided Meditation Series</h2>
       <p>The Fundamental Guided Meditation Series is our series of four guided meditations which have been designed to teach you the absolute fundamentals of effective meditation.</p>
-      <p>It is a perfect starting point for those new to meditation, and with this knowledge you should have the skills in order to meditate on your own.</p>
-      <p>As a starting point for your meditation journey, I also wanted it to be cheap enough that anyone can afford it, because I believe basic mental health should be inexpensive.</p>
+      <p>It's a perfect starting point for those new to meditation, and it will provide you with all the knowledge necessary to be able to meditate effectively on your own.</p>
+      <p>In addition, I also wanted it to be cheap enough for anyone to afford, because I believe basic mental health should be inexpensive.</p>
       <h3>It's available for $7 USD.</h3>
       <p>The price of an average meal, and if you can't sacrifice a meal for the empowerment of your mental health, then I'm not quite sure how to help you.</p>
+      <!-- NOTE: This title is most likely not reflective of what it actually is -->
       <p>Of course, I've also written <a class="link" href='<%= Routes.content_path(@conn, :practice, "observe-your-senses") %>'>A Definitive Guide On How To Meditate Properly</a> if you're wanting to learn the basics of how to meditate, although it's not quite the same as being guided through it from a 3rd person perspective.</p>
     </div>
   </div>
@@ -113,10 +114,11 @@
         <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
       </a>
       <h2 class="single__sub__header">Hovering Meditation</h2>
-      <p>One thing I've noticed is that a lot of people struggle to meditate via traditional means.</p>
-      <p>In part due to poor mental health or "brain fog" which makes it incredibly difficult to engage with our minds in a meaningful way.</p>
-      <p>That's why I created Hovering: A meditation technique which aims to bridge the gap between traditional meditation and simply not meditating at all.</p>
-      <p>It has been designed to be easy to understand, simple to practice, as well as remain acessible to people of all ages.</p>
+      <p>Having provided advice for NeverFap Deluxe for quite some time now, one thing I've noticed is that a lot of people tend to struggle to meditate via traditional means.</p>
+      <p>In part due to poor mental health and in some cases, due to what is commonly known as "brain fog" which can make it incredibly difficult to engage with our minds in any meaningful way.</p>
+      <p>This is why I decided to create Hovering.</p>
+      <p>I wanted to design a meditation technique which could help bridge the gap between traditional meditation, and simply not meditating at all. As is often the case for those who simply struggle to use their minds effectively.</p>
+      <p>Ultimately Hovering has been designed to be easy to understand, simple to practice, as well as remain acessible to people of all ages.</p>
       <p>If you would like to learn more about Hovering I highly encourage you to visit the <a class="link" href="/hovering">NeverFap Deluxe Hovering</a> section which provides a basics overview of the practice.</p>
 
       <img style="width: 100%;" src="https://neverfapdeluxe.netlify.com/images/hovering_web.png"/>
@@ -143,9 +145,9 @@
       </a>
       <h2 class="single__sub__header">Meditation Essential Reading</h2>
       <p></p>
-      <p>NeverFap Deluxe offers a wide range of articles which explain how best to practice effective Meditation.</p>
-      <p>In addition, I've also written <a class="link" href="/practices/observe-your-senses">Here Is How To Meditate Properly</a> which goes into detail as to how meditation works.</p>
-      <p>Of course, most of the articles touch upon meditation in some way, especially the NeverFap Deluxe Guide and NeverFap Deluxe Homepage which explains these concepts in more detail.</p>
+      <p>NeverFap Deluxe offers a wide range of articles which explain how best to incorporate effective meditation into your daily routine.</p>
+      <p>In addition, I've also written <a class="link" href="/practices/observe-your-senses">A Definitive Guide On How To Meditate Properly</a> which explains how to meditate effectively.</p>
+      <p>Of course, it's worth noting that most of the articles on this website touch upon meditation in some way, especially the NeverFap Deluxe Guide and NeverFap Deluxe Homepage which explains these concepts in detail.</p>
     </div>
     <div style="margin-top: 3rem; height: 4px; background: rgba(255,46,182,1);"></div>
     <div style="margin-bottom: 3rem; height: 4px; background: cyan;"></div>
