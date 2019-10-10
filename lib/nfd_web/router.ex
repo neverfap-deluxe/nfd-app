@@ -170,6 +170,7 @@ defmodule NfdWeb.Router do
 
     get "/change_subscription_dashboard_func", FunctionController, :change_subscription_dashboard_func
     get "/reset_subscription_dashboard_func", FunctionController, :reset_subscription_dashboard_func
+    get "/nfd_bible", FunctionController, :generate_bible
   end
 
   scope "/", NfdWeb do
