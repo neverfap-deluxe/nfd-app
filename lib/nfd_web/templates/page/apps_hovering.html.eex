@@ -65,6 +65,7 @@
   <%= partial "links/twitter.html", assigns %>
 <%# HOVERING CONTENT END %>
 
+
 <%# HOVERING WEBSITE %>
   <div id="hovering_website" class="single__wrapper">
     <div class="single__content">

@@ -68,12 +68,12 @@ defmodule NfdWeb.FunctionController do
     end
   end
 
-  client = Tesla.client([
-    {Tesla.Middleware.BaseUrl, "https://198.199.67.180:2002"}, # https://league.neverfapdeluxe.com:2002
-    Tesla.Middleware.JSON,
-  ])
-
   def generate_bible(conn, _params) do
+    client = Tesla.client([
+      {Tesla.Middleware.BaseUrl, "https://198.199.67.180:2002"}, # https://league.neverfapdeluxe.com:2002
+      Tesla.Middleware.JSON,
+    ])
+
     case Tesla.get(client, "/") do
       {:ok, response} ->
         conn
@@ -84,14 +84,19 @@ defmodule NfdWeb.FunctionController do
     end
   end
 
-  def generate_seven_day(conn, _params) do
-    case Tesla.get(client, "/") do
-      {:ok, response} ->
-        conn
-          |> put_resp_content_type("application/epub+zip")
-          |> send_file(200, "https://198.199.67.180:2002/static/bible.epub")
-      {:error, error} ->
-        IO.inspect "hello"
-    end
-  end
+  # def generate_seven_day(conn, _params) do
+  #   client = Tesla.client([
+  #     {Tesla.Middleware.BaseUrl, "https://198.199.67.180:2002"}, # https://league.neverfapdeluxe.com:2002
+  #     Tesla.Middleware.JSON,
+  #   ])
+
+  #   case Tesla.get(client, "/") do
+  #     {:ok, response} ->
+  #       conn
+  #         |> put_resp_content_type("application/epub+zip")
+  #         |> send_file(200, "https://198.199.67.180:2002/static/bible.epub")
+  #     {:error, error} ->
+  #       IO.inspect "hello"
+  #   end
+  # end
 end
