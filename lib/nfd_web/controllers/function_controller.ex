@@ -31,7 +31,7 @@ defmodule NfdWeb.FunctionController do
         redirect_back(conn, 1)
 
       subscriber ->
-        if subscribed_property_atom == :subscribed do 
+        if subscribed_property_atom == :subscribed do
           if subscribed == "true", do: Account.update_subscriber(subscriber, %{subscribed_property_atom => false})
           if subscribed == "false", do: Account.update_subscriber(subscriber, %{subscribed_property_atom => true})
           redirect_back(conn, 1)
@@ -67,4 +67,20 @@ defmodule NfdWeb.FunctionController do
         redirect_back(conn, 1)
     end
   end
+
+  # def generate_bible(conn, _params) do
+  #   # client = Tesla.client([
+  #   #   {Tesla.Middleware.BaseUrl, "https://198.199.67.180:2002"}, # https://league.neverfapdeluxe.com:2002
+  #   #   Tesla.Middleware.JSON,
+  #   # ])
+
+  #   # case Tesla.get(client, "/") do
+  #   #   {:ok, response} ->
+  #       conn
+  #         |> put_resp_content_type("application/epub+zip")
+  #         |> send_file(200, "https://198.199.67.180:2002/static/bible.epub")
+  #   #   {:error, error} ->
+  #   #     IO.inspect "hello"
+  #   # end
+  # end
 end
