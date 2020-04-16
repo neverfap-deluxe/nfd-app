@@ -109,7 +109,7 @@ config :nfd, NfdWeb.Endpoint,
   ]
 
 # Do not include metadata nor timestamps in development logs
-config :logger, :console, 
+config :logger, :console,
   level: :info,
   format: "[$level] $message\n"
 

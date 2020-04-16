@@ -2,9 +2,9 @@
 
 Website: https://neverfapdeluxe.com/
 
-This is the official repository for the NeverFap Deluxe website. 
+This is the official repository for the NeverFap Deluxe website.
 
-Please feel free to learn from the codebase, I wanted to release the source-code so others can learn from how it's all built! 
+Please feel free to learn from the codebase, I wanted to release the source-code so others can learn from how it's all built!
 
 Released under the [GNU GPLv3 licence](https://github.com/neverfap-deluxe/nfd-app/blob/master/LICENSE).
 
@@ -24,7 +24,7 @@ There's a heap of additional tech, libraries and different complex generators un
 NOTE: Rewrite these instructions.
 
 - You'll need to download node.js, postgres and phoenix framework to your computer in order to run this project.
-- You'll need to download, setup and run the nfd-api application on your local environment as well, since that's where all the content is stored. 
+- You'll need to download, setup and run the nfd-api application on your local environment as well, since that's where all the content is stored.
 - Once this is setup, go into `/assets` and run `npm install` in order to download all the frontend dependencies.
 
 - In order to run this, go into the project root folder.
@@ -52,3 +52,14 @@ We are actively looking for people to help build NeverFap Deluxe! If you're inte
 - Build stuff that you think might be useful
 
 Pitch your ideas and I'll be more than happy to listen :D
+
+
+## Create nfd_dev postgres database
+
+- Setup postgres
+- `psql -U postgres`
+- `CREATE DB nfd_dev;`
+- mix ecto.migrate
+
+## Migrate
+
