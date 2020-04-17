@@ -18,7 +18,6 @@ Deployment: Travis CI, Docker, Digital Ocean
 
 There's a heap of additional tech, libraries and different complex generators under the hood, however that's the basics of it!
 
-
 ## Local Setup
 
 NOTE: Rewrite these instructions.
@@ -31,6 +30,19 @@ NOTE: Rewrite these instructions.
 - `mix ecto.reset` will setup the database with the correct tables.
 - `mix phx.server` will run the application.
 
+## Create nfd_dev postgres database
+
+- Setup postgres
+- `psql -U postgres`
+- `CREATE DB nfd_dev;`
+- mix ecto.migrate
+
+## Deployment.
+
+- Work on `master` push on `production` branches.
+- First setup travis encryption https://github.com/dwyl/learn-travis/blob/master/encrypted-ssh-keys-deployment.md
+- Make changes to `production` branch.
+- Push to master.
 
 ## How It Works
 
@@ -52,14 +64,4 @@ We are actively looking for people to help build NeverFap Deluxe! If you're inte
 - Build stuff that you think might be useful
 
 Pitch your ideas and I'll be more than happy to listen :D
-
-
-## Create nfd_dev postgres database
-
-- Setup postgres
-- `psql -U postgres`
-- `CREATE DB nfd_dev;`
-- mix ecto.migrate
-
-## Migrate
 
