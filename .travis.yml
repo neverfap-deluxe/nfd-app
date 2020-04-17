@@ -1,9 +1,8 @@
 language: elixir
 elixir:
-  - '1.8.2'
+- 1.8.2
 otp_release:
-  - '22.0'
-
+- '22.0'
 sudo: enabled
 addons:
   ssh_known_hosts: 198.199.67.180
@@ -31,7 +30,7 @@ script:
 after_script:
 - docker images
 before_deploy:
-- openssl aes-256-cbc -K $encrypted_989cc8ced1db_key -iv $encrypted_989cc8ced1db_iv
+- openssl aes-256-cbc -K $encrypted_dfdcfd5172af_key -iv $encrypted_dfdcfd5172af_iv
   -in deploy_key.enc -out ./deploy_key -d
 - eval "$(ssh-agent -s)"
 - chmod 600 ./deploy_key
@@ -46,4 +45,3 @@ deploy:
   script: bash nginx/deploy.sh
   on:
     branch: production
-
