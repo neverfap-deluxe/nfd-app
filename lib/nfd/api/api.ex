@@ -4,8 +4,8 @@ defmodule Nfd.API do
   def is_localhost(host) do
     if host == "localhost" do 
       "http://localhost:1313"
-    else 
-      "https://neverfapdeluxe.netlify.com"      
+    else
+      "https://neverfapdeluxe.netlify.app"
     end
   end
 

@@ -20,14 +20,14 @@ const getHead = (fileContents, type) => {
     return {
       head,
       content: rawWithHTMLContent,
-    }  
+    }
   }
 
   if (type === 'awareness' || type === 'meditation') {
     return {
       head,
       content: rawWithHTMLContent.split('## Script')[0],
-    }  
+    }
   }
   // const rawWithMDContent = turndownService.turndown(rawWithHTMLContent);
   // const content = filterContent(rawWithMDContent);
@@ -35,7 +35,7 @@ const getHead = (fileContents, type) => {
 
 const generateEmails = async (type, collection, item, template_item, contentParser) => {
   try {
-    const baseUrl = 'https://neverfapdeluxe.netlify.com/md';
+    const baseUrl = 'https://neverfapdeluxe.netlify.app/md';
     // const baseUrl = 'http://localhost:1313/md';
 
     const fileName = `${baseUrl}/${collection}/${item}.md`;
