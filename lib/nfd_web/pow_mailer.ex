@@ -9,7 +9,7 @@ defmodule NfdWeb.PowMailer do
   def cast(%{user: user, subject: subject, text: text, html: html}) do
     Nfd.EmailLogs.pow_email_log(subject, user.email)
 
-    %Swoosh.Email{} 
+    %Swoosh.Email{}
       |> to({user.email, user.email}) # user.email
       |> from({"NeverFap Deluxe", "admin@neverfapdeluxe.com"})
       |> subject(subject)
@@ -20,5 +20,5 @@ defmodule NfdWeb.PowMailer do
   def process(email) do
     Nfd.SwooshMailer.deliver(email)
     Logger.debug("E-mail sent")
-  end  
+  end
 end

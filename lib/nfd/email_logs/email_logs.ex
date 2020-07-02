@@ -53,7 +53,7 @@ defmodule Nfd.EmailLogs do
   def cast_log(subject, message) do
     %Swoosh.Email{}
       |> to({"Julius Reade", "julius.reade@gmail.com"})
-      |> from({"NeverFap Deluxe", "neverfapdeluxe@gmail.com"})
+      |> from({"NeverFap Deluxe", "admin@neverfapdeluxe.com"})
       |> subject(subject)
       |> text_body(message)
   end

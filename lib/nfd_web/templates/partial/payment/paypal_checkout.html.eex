@@ -41,7 +41,7 @@
             window.location.replace(`/purchase_success?display_name=${display_name}`);
           })
           .catch(function(error) {
-            alert('The payment has not been successful. Please contact me if you believe there is a problem: admin@neverfapdeluxe.com');
+            alert('The payment has not been successful. Please contact me if you believe there is a problem: neverfapdeluxe@gmail.com');
             console.log(JSON.stringify(error));
           });
         });
@@ -58,6 +58,6 @@
   </script>
 <% else %>
   <div>
-    <h3>The Paypal Session has not loaded. Please contact admin@neverfapdeluxe.com </h3>
+    <h3>The Paypal Session has not loaded. Please contact neverfapdeluxe@gmail.com </h3>
   </div>
 <% end %>
