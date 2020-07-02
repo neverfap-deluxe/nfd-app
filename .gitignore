@@ -43,6 +43,9 @@ npm-debug.log
 /secrets/*
 
 .env
+deployment/environment/.env.example
+deployment/environment/.env.production
+
 config/docker.env
 docker-compose.yml
 deploy_key

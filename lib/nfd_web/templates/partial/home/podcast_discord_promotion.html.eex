@@ -19,6 +19,21 @@
 
 <div class="homepage__splitter homepage__splitter--podcast">
   <div class="homepage__splitter__box homepage__splitter__box--top homepage__splitter__box--podcast">
+    <iframe src="https://castbox.fm/app/castbox/player/id2979644?v=4.1.0&autoplay=0" frameborder="0" width="500" height="500"></iframe>
+  </div>
+  <div class="homepage__splitter__divider"></div>
+  <div class="homepage__splitter__box">
+    <div>
+      <h2 class="homepage__splitter__box__title">The NeverFap Deluxe Daily Podcast</h2>
+      <p>Allow me to teach you and entertain!</p>
+      <p>The NeverFap Deluxe Daily Podcast is delivered Monday to Friday!</p>
+      <a class="homepage__splitter__box__button" href="https://theneverfapdeluxedaily.juliusreade.com">Listen</a>
+    </div>
+  </div>
+</div>
+
+<div class="homepage__splitter homepage__splitter--podcast">
+  <div class="homepage__splitter__box homepage__splitter__box--top homepage__splitter__box--podcast">
     <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="500" height="500"></iframe>
   </div>
   <div class="homepage__splitter__divider"></div>

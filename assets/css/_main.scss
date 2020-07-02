@@ -1,4 +1,4 @@
-* {
+ * {
   font-family: 'Lato', 'Monserrat', sans-serif;
 
   // Maybe Open Sans for just h1 or h2
@@ -368,6 +368,48 @@ ul {
 }
 
 
+.login__top__title__tndd {
+  display: none;
+}
+
+.account__info__title__tndd {
+  margin-bottom: 2rem;
+}
+
+.link__mini {
+  color: $magenta;
+  text-decoration-line: underline;
+  text-decoration-color: $cyan;
+  cursor: pointer;
+  // border: 4px solid $magenta;
+  // box-shadow: -5px 5px 0px 0px $cyan;
+  // padding: 0.2rem;
+}
+
+.tndd__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tndd__logo {
+  // display: none;
+  width: 90px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid black;
+}
+
+@media screen and (min-width: 420px) {
+  .login__top__title__tndd {
+    display: block;
+  }
+  .account__info__title__tndd {
+    margin-bottom: 0;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .line__top__articles__item {
     margin-top: 3rem;
@@ -389,5 +431,9 @@ ul {
   .line__bottom, line__bottom__reddit__question__banner {
     margin-bottom: 3rem;
     margin-top: 1rem;
+  }
+
+  .tndd__logo {
+    // display: block;
   }
 }

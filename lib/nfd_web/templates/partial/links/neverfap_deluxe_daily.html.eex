@@ -1,0 +1,36 @@
+<%# <div class="login__top">
+  <div class="account__buttons__login">
+    <div id="dark__mode__button" class="button dark__mode__button--homepage">Dark Mode</div>
+
+    <a class="login__top__title" href="https://theneverfapdeluxedaily.juliusreade.com/">
+      <img class="tndd__logo" src="/images/logo__tndd.png">
+    </a>
+
+    <div class="tndd__container">
+      <p class="login__top__title" style="margin-right: 2rem; margin-left: 2rem; margin-bottom: 0;">The NeverFap Deluxe Daily Podcast! <b>(Monday - Friday. 7am.)</b></p>
+      <p class="login__top__title">
+        <a href="https://castbox.fm/channel/id2979644" style="margin-left: 0.3rem; margin-right: 0.3rem;" class="link">Castbox</a>
+        <a href="https://podcasts.apple.com/au/podcast/the-neverfap-deluxe-daily-podcast/id1521174188/" style="margin-left: 0.3rem; margin-right: 0.3rem;" class="link">iTunes</a>
+        <a href="https://open.spotify.com/show/3Nt9MmWEjUh6mmSXa6B5KA?si=efRPGNsOSoypBsqisURqsw" style="margin-left: 0.3rem; margin-right: 0.3rem;" class="link">Spotify</a>
+      </p>
+    </div>
+
+    <a class="login__top__title" href="https://theneverfapdeluxedaily.juliusreade.com/">
+      <img class="tndd__logo" src="/images/logo__tndd.png">
+    </a>
+  </div>
+</div> %>
+
+<div class="account__info">
+  <%# <p class="account__info__title">Help us support the growth of our wonderful NeverFap Deluxe!</p> %>
+  <div class="account__buttons">
+    <div class="tndd__container">
+      <p class="login__top__title" style="margin-right: 2rem; margin-left: 2rem; margin-bottom: 0;">The NeverFap Deluxe Daily Podcast! <b>(Monday - Friday. 7am.)</b></p>
+      <p class="login__top__title">
+        <a href="https://castbox.fm/channel/id2979644" style="margin-left: 0.3rem; margin-right: 0.3rem;" class="link">Castbox</a>
+        <a href="https://podcasts.apple.com/au/podcast/the-neverfap-deluxe-daily-podcast/id1521174188/" style="margin-left: 0.3rem; margin-right: 0.3rem;" class="link">iTunes</a>
+        <a href="https://open.spotify.com/show/3Nt9MmWEjUh6mmSXa6B5KA?si=efRPGNsOSoypBsqisURqsw" style="margin-left: 0.3rem; margin-right: 0.3rem;" class="link">Spotify</a>
+      </p>
+    </div>
+  </div>
+</div>

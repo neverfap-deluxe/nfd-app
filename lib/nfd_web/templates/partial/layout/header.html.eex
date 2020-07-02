@@ -97,6 +97,13 @@
       <li class="header__link">Podcast</li>
     </a>
     <div class="header__sub header__banner__podcast">
+          <a href="https://theneverfapdeluxedaily.juliusreade.com/" class="header__module">
+        <h3 class="h3__yus">
+          The NeverFap Deluxe Daily Podcast
+          <span class="h3__tiny">/podcast-daily</span>
+        </h3>
+      </a>
+
       <a href="/podcast" class="header__module">
         <h3 class="h3__yus">
           NeverFap Deluxe Podcast

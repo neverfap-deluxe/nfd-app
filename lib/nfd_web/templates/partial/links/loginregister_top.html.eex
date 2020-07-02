@@ -1,4 +1,4 @@
-<div class="login__top">  
+<div class="login__top">
   <div class="account__buttons__login">
     <div id="dark__mode__button" class="button dark__mode__button--homepage">Dark Mode</div>
 
@@ -15,7 +15,7 @@
         <div class="login__top__button__text">
           Sign in
         </div>
-      <% end %>  
+      <% end %>
     </span>
 
     <p class="login__top__title">Register or login for additional access to NeverFap Deluxe! </p>
@@ -23,4 +23,3 @@
     <%= partial "mobile_menu_overlay.html", assigns %>
   </div>
 </div>
-  

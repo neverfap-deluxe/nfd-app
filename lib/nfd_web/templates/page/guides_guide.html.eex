@@ -263,11 +263,35 @@
         <div class="guide__suggestion__number guide__suggestion__number--bottom">6.</div>
         <h2 class="single__sub__header">NeverFap Deluxe Podcast</h2>
       </a>
-      <%= raw child_content(@item["children"], "guide-never-fap-deluxe-podcast") %>
+
+<p>There are two podcasts.</p>
+<p><b>The NeverFap Deluxe Daily</b> which is the current podcast.</p>
+<p><b>The NeverFap Deluxe Podcast</b> which is the previous podcast.</p>
+<p>One is a daily motivation podcast, while the other is more of an in-depth discussion of various mental health topics.</p>
+<p>They're both quite different, but both are very useful. I recommend checking them both out.</p>
+
+<p>They're both available on iTunes, Castbox and Spotify.</p>
+      <%#= raw child_content(@item["children"], "guide-never-fap-deluxe-podcast") %>
     </div>
   </div>
 
 
+  <%= partial "links/custom.html", %{ title: "Link.", text: "The NeverFap Deluxe Daily.", link: "/podcast" } %>
+
+  <div class="homepage__splitter homepage__splitter--podcast">
+    <div class="homepage__splitter__box homepage__splitter__box--top homepage__splitter__box--podcast">
+      <iframe src="https://castbox.fm/app/castbox/player/id2979644?v=4.1.0&autoplay=0" frameborder="0" width="500" height="500"></iframe>
+    </div>
+    <div class="homepage__splitter__divider"></div>
+    <div class="homepage__splitter__box">
+      <div>
+        <h2 class="homepage__splitter__box__title">The NeverFap Deluxe Daily Podcast</h2>
+        <p>Allow me to teach and entertain you!</p>
+        <p>The NeverFap Deluxe Daily Podcast is delivered Monday to Friday!</p>
+        <a class="homepage__splitter__box__button" href="https://theneverfapdeluxedaily.juliusreade.com">Listen</a>
+      </div>
+    </div>
+  </div>
   <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Podcast.", link: "/podcast" } %>
   <div class="homepage__splitter homepage__splitter--podcast">
     <div class="homepage__splitter__box homepage__splitter__box--top homepage__splitter__box--podcast">
@@ -283,7 +307,6 @@
       </div>
     </div>
   </div>
-  <%= partial "links/custom.html", %{ title: "Link.", text: "NeverFap Deluxe Podcast.", link: "/podcast" } %>
 
 <%# RECOMMENDATION 6 END %>
 

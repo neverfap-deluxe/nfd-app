@@ -1,4 +1,5 @@
 <div class="homepage__content">
+<%# TODO: Change this to a  %>
   <%= partial "links/loginregister_top.html", assigns %>
 
   <%# HERO %>

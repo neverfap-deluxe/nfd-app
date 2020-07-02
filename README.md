@@ -29,8 +29,28 @@ NOTE: Rewrite these instructions.
 
 - In order to run this, go into the project root folder.
 - `mix ecto.reset` will setup the database with the correct tables.
+- `source .env` will set it up (for whatever reason, I need to keep doing it.)
 - `mix phx.server` will run the application.
+- (with your .env file that you source, don't forget to make it export VAR='arstarst')
 
+<<<<<<< Updated upstream
+=======
+## Create nfd_dev postgres database
+
+- Setup postgres
+- `psql -U postgres`
+- `CREATE DATABASE nfd_dev;`
+<!-- - `CREATE USER nfd WITH ENCRYPTED PASSWORD 'nfd_password';`
+- `GRANT ALL PRIVILEGES ON DATABASE nfd_dev TO nfd;` -->
+- mix ecto.migrate
+
+## Deployment.
+
+- Work on `master` push on `production` branches.
+- First setup travis encryption https://github.com/dwyl/learn-travis/blob/master/encrypted-ssh-keys-deployment.md
+- Make changes to `production` branch.
+- Push to master.
+>>>>>>> Stashed changes
 
 ## How It Works
 

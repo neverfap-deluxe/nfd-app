@@ -8,6 +8,8 @@
       <ol class="index__items">
         <h3><i class="page__index__emoji__left em em-studio_microphone"></i> NeverFap Deluxe Podcast <i class="page__index__emoji__right em em-studio_microphone"></i></h3>
         <a href="#introduction"><li class="index__item">Introduction</li></a>
+        <a href="#nfdd_podcast"><li class="index__item">The NeverFap Deluxe Daily</li></a>
+        <a href="#nfd_podcast"><li class="index__item">The NeverFap Deluxe Podcast</li></a>
         <a href="#podcast_player"><li class="index__item">NeverFap Deluxe Podcast Player</li></a>
         <a href="#podcast_list"><li class="index__item">NeverFap Deluxe Podcast List</li></a>
         <a href="#next_steps"><li class="index__item">Next Steps</li></a>
@@ -27,19 +29,82 @@
       </a>
 
       <h2 class="single__sub__header">Introduction</h2>
-      <%= raw @item["content"] %>
+      <p>There are two podcasts.</p>
+      <p><b>The NeverFap Deluxe Daily</b> which is the current podcast.</p>
+      <p><b>The NeverFap Deluxe Podcast</b> which is the previous podcast.</p>
+      <p>One is a daily motivation podcast, while the other is more of an in-depth discussion of various mental health topics. They're both quite different, but both are very useful. I recommend checking them both out.</p>
     </div>
   </div>
 
   <%= partial "links/twitter.html", assigns %>
 <%# INTRODUCTION END %>
 
+<%# NFDD PODCAST %>
+  <div id="nfdd_podcast" class="single__wrapper">
+    <div class="single__content">
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
+      </a>
+
+      <h2 class="single__sub__header">The NeverFap Deluxe Daily</h2>
+      <p>The NeverFap Deluxe Daily is a daily motivational podcast.</p>
+      <p><b>It is being actively worked on.</b></p>
+      <p>One thing I noticed with running NeverFap Deluxe is that we get a lot of young people who simply cannot afford counseling or therapy.</p>
+      <p>In other cases they simply do not have access to these services at all, in part due to religious or cultural reasons.</p>
+      <p>So I thought, why not create a podcast that's kind of like a daily motivational talk, that you might get from a mentor or a therapist?</p>
+      <p>That's essentially what The NeverFap Deluxe Daily is. It's a daily motivational pep-talk where I check up on my favourite porn addict (you!) to see how you're faring with life.</p>
+      <p>The podcast is released 7AM EST Monday to Friday weekdays.</p>
+      <p>It's available on iTunes, Castbox and Spotify.</p>
+
+      <h3>Links</h3>
+      <a href="https://castbox.fm/channel/id2979644" style="margin-left: 0.3rem; margin-right: 0.3rem;" class="articles__link">Castbox</a>
+      <a href="https://podcasts.apple.com/au/podcast/the-neverfap-deluxe-daily-podcast/id1521174188/" style="margin-left: 0.3rem; margin-right: 0.3rem;" class="articles__link">iTunes</a>
+      <a href="https://open.spotify.com/show/3Nt9MmWEjUh6mmSXa6B5KA?si=efRPGNsOSoypBsqisURqsw" style="margin-left: 0.3rem; margin-right: 0.3rem;" class="articles__link">Spotify</a>
+
+      <h3>Player</h3>
+
+      <div style="border: 4px solid black; margin-top: 2rem; margin-bottom: 1rem;">
+        <iframe src="https://castbox.fm/app/castbox/player/id2979644?v=4.1.0&autoplay=0" frameborder="0" width="100%" height="485"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <%= partial "links/twitter.html", assigns %>
+<%# NFDD PODCAST END %>
+
+<%# NFD PODCAST %>
+  <div id="nfd_podcast" class="single__wrapper">
+    <div class="single__content">
+      <a href="#introduction" class="guide__suggestion guide__suggestion__padding">
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
+      </a>
+
+      <h2 class="single__sub__header">The NeverFap Deluxe Podcast</h2>
+      <p>The NeverFap Deluxe Podcast is a fortnightly podcast about porn addiction recovery. It aims to be informative, silly and somewhat hopelessly chic.</p>
+      <p><b>It's no longer actively worked on, but it's still very informative.</b></p>
+      <p>It's a light-hearted take on what you can do to help yourself overcome porn addiction, as I offer hilariously inappropriate advice based on my own experiences with the fap.</p>
+      <p>Although in all seriousness, it also does cover a wide range of serious topics in an approachable way, so there's certainly a lot to learn in terms of appreciable recovery advice and mental health best practice.</p>
+      <p>It's available on iTunes, Castbox and Spotify.</p>
+      <h3>Links</h3>
+      <a href="https://castbox.fm/channel/id2045024" style="margin-left: 0.3rem; margin-right: 0.3rem;" class="articles__link">Castbox</a>
+      <a href="https://podcasts.apple.com/us/podcast/the-neverfap-deluxe-podcast/id1461687730/" style="margin-left: 0.3rem; margin-right: 0.3rem;" class="articles__link">iTunes</a>
+      <a href="https://open.spotify.com/show/77WUSDwY3yBgUYhCSAe3k4?si=PTY0DaPGSHG4JV2S-QKgEA" style="margin-left: 0.3rem; margin-right: 0.3rem;" class="articles__link">Spotify</a>
+
+      <h3>Player</h3>
+      <div style="border: 4px solid black; margin-top: 2rem; margin-bottom: 1rem;">
+        <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="100%" height="485"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <%= partial "links/twitter.html", assigns %>
+<%# NFD PODCAST END %>
 
 <%# PODCAST PLAYER %>
-  <div id="podcast_player" class="single__wrapper">
+  <%# <div id="podcast_player" class="single__wrapper">
     <div class="single__content">
       <a href="#podcast_player" class="guide__suggestion guide__suggestion__padding">
-        <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
       </a>
 
       <h2 class="single__sub__header">Podcast Player</h2>
@@ -51,9 +116,9 @@
         <iframe src="https://castbox.fm/app/castbox/player/id2045024?v=4.1.0&autoplay=0" frameborder="0" width="100%" height="485"></iframe>
       </div>
     </div>
-  </div>
+  </div> %>
 
-  <%= partial "links/reddit.html", assigns %>
+  <%#= partial "links/reddit.html", assigns %>
 <%# PODCAST PLAYER END %>
 
 
@@ -61,7 +126,7 @@
   <div id="podcast_list" class="single__wrapper">
     <div class="single__content">
       <a href="#podcast_player" class="guide__suggestion guide__suggestion__padding">
-        <div class="guide__suggestion__number guide__suggestion__number--bottom">3.</div>
+        <div class="guide__suggestion__number guide__suggestion__number--bottom">4.</div>
       </a>
       <h2 class="single__sub__header">Podcast List</h2>
       <p>Here's a complete list of all the episodes of The NeverFap Deluxe Podcast.</p>

@@ -1,9 +1,36 @@
 <div class="account__info">
-  <p class="account__info__title">Help us support the growth of our wonderful NeverFap Deluxe!</p>
   <div class="account__buttons">
-    <a class="account__paypal__button__container" href="<%= Application.get_env(:nfd, :social_paypal_url) %>">
-      <img class="account__paypal__button__logo" src="/images/paypal__logo.png" />
-      <p class="account__paypal__button__text"><span class="account__paypal__button__text--display">PAYPAL </span>DONATION</p>
-    </a>
+    <div class="tndd__container">
+      <p class="account__info__title account__info__title__tndd" style="padding-bottom: 0; margin-right: 1rem; margin-left: 1rem;">The NeverFap Deluxe Daily! <b>(Monday - Friday. 7am.)</b></p>
+      <p class="login__top__title login__top__title__tndd" style="margin-top: 0;">
+        <a href="https://castbox.fm/channel/id2979644" style="margin-left: 0.3rem; margin-right: 0.3rem; font-size: 1rem;" class="link__mini">Castbox</a>
+        <a href="https://podcasts.apple.com/au/podcast/the-neverfap-deluxe-daily-podcast/id1521174188/" style="margin-left: 0.3rem; margin-right: 0.3rem; font-size: 1rem;" class="link__mini">iTunes</a>
+        <a href="https://open.spotify.com/show/3Nt9MmWEjUh6mmSXa6B5KA?si=efRPGNsOSoypBsqisURqsw" style="margin-left: 0.3rem; margin-right: 0.3rem; font-size: 1rem;" class="link__mini">Spotify</a>
+      </p>
+    </div>
   </div>
+  <a href="https://theneverfapdeluxedaily.juliusreade.com/">
+    <img class="tndd__logo" style="margin-right: 2rem;" src="/images/logo__tndd.png" alt="">
+  </a>
 </div>
+
+
+<%# TODO This was created toarst  replace all the paypal links with the podcast %>
+
+<%# <div class="account__info">
+  <p class="account__info__title">The NeverFap Deluxe Daily Podcast! <b>(Monday - Friday. 7am.)</p>
+  <img class="tndd__logo" src="/images/logo__tndd.png" alt="">
+  <div class="account__buttons">
+    <div class="tndd__container">
+      <p class="login__top__title" style="margin-right: 2rem; margin-left: 2rem; margin-bottom: 0;">The NeverFap Deluxe Daily Podcast! <b>(Monday - Friday. 7am.)</b></p>
+      <p class="login__top__title">
+        <a href="https://castbox.fm/channel/id2979644" style="margin-left: 0.3rem; margin-right: 0.3rem;" class="link">Castbox</a>
+        <a href="https://podcasts.apple.com/au/podcast/the-neverfap-deluxe-daily-podcast/id1521174188/" style="margin-left: 0.3rem; margin-right: 0.3rem;" class="link">iTunes</a>
+        <a href="https://open.spotify.com/show/3Nt9MmWEjUh6mmSXa6B5KA?si=efRPGNsOSoypBsqisURqsw" style="margin-left: 0.3rem; margin-right: 0.3rem;" class="link">Spotify</a>
+      </p>
+    </div>
+  </div>
+  <img class="tndd__logo" src="/images/logo__tndd.png" alt="">
+</div>
+
+TODO This was created to replace all the paypal links with the podcast %>
