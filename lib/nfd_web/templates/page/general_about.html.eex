@@ -81,7 +81,7 @@
 
     <!-- Original Contact Form -->
     <div class="form__wrapper form__wrapper--full-width">
-      <form class="form" action="https://formspree.io/admin@neverfapdeluxe.com" method="POST">
+      <form class="form" action="https://formspree.io/neverfapdeluxe@gmail.com" method="POST">
         <div class="form__input__container">
           <input class="form__input" type=text: placeholder="Name" name='name'/>
           <input class="form__input" type="email" placeholder="Email" name='_replyTo'/>
