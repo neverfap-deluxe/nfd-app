@@ -46,6 +46,7 @@ npm-debug.log
 deployment/environment/.env.example
 deployment/environment/.env.development
 deployment/environment/.env.production
+deployment/environment/*
 
 config/docker.env
 docker-compose.yml
