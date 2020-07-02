@@ -33,8 +33,6 @@ NOTE: Rewrite these instructions.
 - `mix phx.server` will run the application.
 - (with your .env file that you source, don't forget to make it export VAR='arstarst')
 
-<<<<<<< Updated upstream
-=======
 ## Create nfd_dev postgres database
 
 - Setup postgres
@@ -50,7 +48,6 @@ NOTE: Rewrite these instructions.
 - First setup travis encryption https://github.com/dwyl/learn-travis/blob/master/encrypted-ssh-keys-deployment.md
 - Make changes to `production` branch.
 - Push to master.
->>>>>>> Stashed changes
 
 ## How It Works
 
@@ -83,3 +80,4 @@ Pitch your ideas and I'll be more than happy to listen :D
 
 ## Migrate
 
+TODO
