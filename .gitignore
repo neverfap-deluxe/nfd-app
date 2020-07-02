@@ -49,7 +49,6 @@ deployment/environment/.env.production
 deployment/environment/*
 
 config/docker.env
-docker-compose.yml
 deploy_key
 /nginx/.env
 
