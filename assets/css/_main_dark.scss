@@ -11,15 +11,20 @@
   }
 
   // main
-  .link {
-    color: $cyan;
+  .link, .link__mini {
+    color: $cyan!important;
     text-decoration-line: underline;
     text-decoration-color: $magenta;
     cursor: pointer;
   }
 
-  .link:hover {
+  .link:hover, .link__mini {
     border-bottom: 2px solid $white-darkmode-text;
+  }
+
+  // TODO tests if this actually works in https://neverfapdeluxe.com/articles/the-one-rule-of-neverfap
+  ul, li {
+    color: $white-darkmode-text;
   }
 
   // homepage
@@ -114,6 +119,10 @@
     h2, h3, h4, p {
       color: $white-darkmode-text;
     }
+  }
+
+  .account__info__title__tndd {
+    color: $black-text!important;
   }
 
   .reddit__question__banner, .account__buttons {

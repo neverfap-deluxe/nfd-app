@@ -209,6 +209,6 @@
 
 
 <%# FOOTER %>
-  <%= partial "links/paypal.html", assigns %>
+  <%= partial "links/paypal_actual.html", assigns %>
   <%= partial "promotion_footer.html", assigns %>
 <%# FOOTER END %>
