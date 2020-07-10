@@ -32,9 +32,9 @@ defmodule NfdWeb.FetchAccess do
       # GUIDES END
 
       # LEGAL
-      :legal_disclaimer -> [:podcasts]
-      :legal_privacy -> [:podcasts]
-      :legal_terms_and_conditions -> [:podcasts]
+      :legal_disclaimer -> [:podcasts, :meditations]
+      :legal_privacy -> [:podcasts, :meditations]
+      :legal_terms_and_conditions -> [:podcasts, :meditations]
       # LEGAL END
 
       # PROGRAMS
