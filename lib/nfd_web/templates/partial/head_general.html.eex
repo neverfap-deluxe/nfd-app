@@ -19,18 +19,18 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content='<%= title %>'>
     <meta property="og:title" content='<%= title %>'>
-    <meta property="og:image" content="<%= Application.get_env(:nfd, :logo__small) %>">
+    <meta property="og:image" content="<%= Application.get_env(:nfd, :logo) %>">
 
     <%= if @conn.assigns.item do %>
       <meta name="description" content='<%= @conn.assigns.item["description"] %>'>
       <meta property="og:description" content='<%= @conn.assigns.item["description"] %>'>
       <meta name="twitter:description" content='<%= @conn.assigns.item["description"] %>'>
-      <meta name="twitter:image:alt" content='<%= Application.get_env(:nfd, :logo__small) %>'>
+      <meta name="twitter:image:alt" content='<%= Application.get_env(:nfd, :logo) %>'>
     <% else %>
       <meta name="description" content="<%= Application.get_env(:nfd, :website_description) %>">
       <meta property="og:description" content="<%= Application.get_env(:nfd, :website_description) %>">
       <meta name="twitter:description" content="<%= Application.get_env(:nfd, :website_description) %>">
-      <meta name="twitter:image:alt" content="<%= Application.get_env(:nfd, :logo__small) %>">
+      <meta name="twitter:image:alt" content="<%= Application.get_env(:nfd, :logo) %>">
     <% end %>
 
     <meta name="keywords" content='<%= iterate_json_collection @conn.assigns.item["categories"] %>'>
@@ -38,7 +38,7 @@
     <link rel="canonical" href='<%= @conn.assigns.item["permalink"] %>' />
     <meta property="og:url" content='<%= @conn.assigns.item["permalink"] %>'>
 
-    <meta name="twitter:image" content="<%= Application.get_env(:nfd, :logo__small) %>">
+    <meta name="twitter:image" content="<%= Application.get_env(:nfd, :logo) %>">
 
     <!-- facebook things -->
     <meta property="og:site_name" content="<%= Application.get_env(:nfd, :website_name) %>">
