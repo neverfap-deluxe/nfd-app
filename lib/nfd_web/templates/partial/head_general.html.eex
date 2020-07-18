@@ -35,8 +35,8 @@
 
     <meta name="keywords" content='<%= iterate_json_collection @conn.assigns.item["categories"] %>'>
     <!-- Will need to check this -->
-    <link rel="canonical" href='<%= @conn.assigns.item["permalink"] %>' />
-    <meta property="og:url" content='<%= @conn.assigns.item["permalink"] %>'>
+    <link rel="canonical" href='<%= page_permalink @conn.assigns.item["section"], @conn.assigns.item["slug"] %>' />
+    <meta property="og:url" content='<%= @conn.assigns.item["slug"] %>'>
 
     <meta name="twitter:image" content="<%= Application.get_env(:nfd, :logo) %>">
 
@@ -70,7 +70,7 @@
           "copyrightYear" : "<%= @conn.assigns.item["date"] %>",
           "datePublished": "<%= @conn.assigns.item["date"] %>",
           "dateModified" : "<%= @conn.assigns.item["date"] %>",
-          "url" : "<%= @conn.assigns.item["permalink"] %>",
+          "url" : "<%= page_permalink @conn.assigns.item["section"], @conn.assigns.item["slug"] %>",
           "keywords" : "<%= iterate_json_collection @conn.assigns.item["tags"] %>",
           "genre": "<%= hd @conn.assigns.item["categories"] %>",
           "image": {
@@ -93,7 +93,7 @@
         {
           "@context": "http://schema.org",
           "@type": "WebSite",
-          "url": "<%= @conn.assigns.item["permalink"] %>",
+          "url": "<%= page_permalink @conn.assigns.item["section"], @conn.assigns.item["slug"] %>",
           "name": "<%= title %>",
           "author": {
             "@type": "Person",

@@ -54,6 +54,40 @@ defmodule NfdWeb do
         render(NfdWeb.PartialView, template, assigns)
       end
 
+      def page_permalink(section, slug) do
+        pre_title =
+          case section do
+            "content_articles" ->
+              "https://neverfapdeluxe.com/" <> "articles/" <> slug
+
+            "content_practices" ->
+              "https://neverfapdeluxe.com/" <> "practices/" <> slug
+
+            "content_courses" ->
+              "https://neverfapdeluxe.com/" <> "courses/" <> slug
+
+            "content_podcast" ->
+              "https://neverfapdeluxe.com/" <> "podcast/" <> slug
+
+            "content_quotes" ->
+              "https://neverfapdeluxe.com/" <> "quotes/" <> slug
+
+            "content_meditations" ->
+              "https://neverfapdeluxe.com/" <> "meditation/" <> slug
+
+            "content_blogs" ->
+              "https://neverfapdeluxe.com/" <> "blogs/" <> slug
+
+            "content_updates" ->
+              "https://neverfapdeluxe.com/" <> "updates/" <> slug
+
+            _ ->
+              "https://neverfapdeluxe.com/"
+          end
+
+          pre_title
+      end
+
       def page_title(section, title) do
         pre_title =
           case section do
@@ -114,7 +148,7 @@ defmodule NfdWeb do
         end
       end
 
-      def has_premium_access(collection, user_collections, access_type) do        
+      def has_premium_access(collection, user_collections, access_type) do
         if collection.has_paid_for_collection != nil || patreon_access_list(user_collections, access_type) || !collection.premium, do: true, else: false
       end
 
