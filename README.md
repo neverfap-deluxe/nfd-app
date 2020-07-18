@@ -9,6 +9,10 @@ Please feel free to learn from the codebase, I wanted to release the source-code
 Released under the [GNU GPLv3 licence](https://github.com/neverfap-deluxe/nfd-app/blob/master/LICENSE).
 
 
+## TODO
+
+- Completely change NFD deployment, especially with secrets. Just deploy it directly to the serve, using CI is a huge pain because of how complex it is and how quickly it's evolving. Of course, is it really worth the effort? Probably not.
+
 ## Tech
 
 Frontend: HTML, SCSS, Vanilla Javascript, Eex Templating
@@ -17,7 +21,6 @@ Authentication: Pow
 Deployment: Travis CI, Docker, Digital Ocean
 
 There's a heap of additional tech, libraries and different complex generators under the hood, however that's the basics of it!
-
 
 ## Local Setup
 

@@ -346,7 +346,7 @@
     <div class="single__content">
       <h2 class="single__sub__header">Still not sure?</h2>
       <p>If you're still not sure what to do, then that's okay.</p>
-      <p>I'm currently willing to offer a detailed break-down of next steps which you can take if you post in our </p>
+      <p>I'm currently willing to offer a detailed break-down of next steps which you can take if you post in our r/NeverFapDeluxe subreddit.</p>
       <p>In addition, I also offer personal coaching </p>
       <p>Just slowly make your way through the content on the website, and feel free to ask any questions in our <a class="link" href="<%= Application.get_env(:nfd, :social_discord_url) %>">Discord channel</a>. I'm usually around (assuming it's within my timezone) and I'm more than happy to respond.</p>
       <p>Remember that you're essentially adopting an entirely new way of thinking, so it's not necessarily going to be easy, nor make complete sense overnight.</p>

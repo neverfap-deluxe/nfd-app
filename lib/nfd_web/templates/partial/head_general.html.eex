@@ -10,15 +10,16 @@
 
   <%= if Map.has_key?(@conn.assigns, :item) do %>
     <% title = page_title @conn.assigns.item["section"], @conn.assigns.item["title"] %>
-    
+
     <!-- Page title -->
     <title><%= title %></title>
 
     <meta name="twitter:site" content="<%= Application.get_env(:nfd, :website_twitter) %>">
     <meta name="twitter:creator" content="<%= Application.get_env(:nfd, :website_twitter) %>">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content='<%= title %>'>
     <meta property="og:title" content='<%= title %>'>
-    <meta name="twitter:title" content='<%= title %>'>    
+    <meta property="og:image" content="<%= Application.get_env(:nfd, :logo__small) %>">
 
     <%= if @conn.assigns.item do %>
       <meta name="description" content='<%= @conn.assigns.item["description"] %>'>
@@ -27,14 +28,15 @@
       <meta name="twitter:image:alt" content='<%= Application.get_env(:nfd, :logo__small) %>'>
     <% else %>
       <meta name="description" content="<%= Application.get_env(:nfd, :website_description) %>">
-      <meta property="og:description" content="<%= Application.get_env(:nfd, :website_description) %>">    
+      <meta property="og:description" content="<%= Application.get_env(:nfd, :website_description) %>">
       <meta name="twitter:description" content="<%= Application.get_env(:nfd, :website_description) %>">
-      <meta name="twitter:image:alt" content="<%= Application.get_env(:nfd, :logo__small) %>">    
+      <meta name="twitter:image:alt" content="<%= Application.get_env(:nfd, :logo__small) %>">
     <% end %>
-    
+
     <meta name="keywords" content='<%= iterate_json_collection @conn.assigns.item["categories"] %>'>
     <!-- Will need to check this -->
     <link rel="canonical" href='<%= @conn.assigns.item["permalink"] %>' />
+    <meta property="og:url" content='<%= @conn.assigns.item["permalink"] %>'>
 
     <meta name="twitter:image" content="<%= Application.get_env(:nfd, :logo__small) %>">
 
@@ -59,7 +61,7 @@
           "articleSection" : "<%= @conn.assigns.item["section"] %>",
           "name" : "<%= title %>",
           "headline" : "<%= title %>",
-          "description" : "<%= @conn.assigns.item["description"] %>", 
+          "description" : "<%= @conn.assigns.item["description"] %>",
           "inLanguage" : "en-US",
           "author" : "<%= Application.get_env(:nfd, :author) %>",
           "creator" : "<%= Application.get_env(:nfd, :author) %>",
@@ -68,7 +70,7 @@
           "copyrightYear" : "<%= @conn.assigns.item["date"] %>",
           "datePublished": "<%= @conn.assigns.item["date"] %>",
           "dateModified" : "<%= @conn.assigns.item["date"] %>",
-          "url" : "<%= @conn.assigns.item["permalink"] %>",  
+          "url" : "<%= @conn.assigns.item["permalink"] %>",
           "keywords" : "<%= iterate_json_collection @conn.assigns.item["tags"] %>",
           "genre": "<%= hd @conn.assigns.item["categories"] %>",
           "image": {
@@ -76,7 +78,7 @@
             "height": "400",
             "width": "400",
             "url": "https://neverfapdeluxe.com/images/logo.png"
-          },  
+          },
           "publisher": {
             "@type": "Organization",
             "logo": {
@@ -84,7 +86,7 @@
               "url": "https://neverfapdeluxe.com/images/logo.png"
             },
             "name": "<%= Application.get_env(:nfd, :website_name) %>"
-          },  
+          },
           "articleBody": "<%= @conn.assigns.item["content"] %>"
         }
       <% else %>
@@ -100,7 +102,7 @@
           "description": "<%= @conn.assigns.item["description"] %>"
         }
       <% end %>
-    </script>    
+    </script>
   <% end %>
 
   <% if length(@conn.path_info) > 1 do %>
@@ -129,7 +131,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
   <!-- SCSS -->
-  <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/normalize.css") %>'/>  
+  <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/normalize.css") %>'/>
   <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
   <!-- <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/plyr.css") %>'/>   -->
   <%= if Mix.env() != :dev do %>
