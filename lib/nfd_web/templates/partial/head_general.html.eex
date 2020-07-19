@@ -14,8 +14,8 @@
     <!-- Page title -->
     <title><%= title %></title>
 
-    <meta name="twitter:site" content="<%= Application.get_env(:nfd, :website_twitter) %>">
-    <meta name="twitter:creator" content="<%= Application.get_env(:nfd, :website_twitter) %>">
+    <meta name="twitter:site" content="neverfapdeluxe">
+    <meta name="twitter:creator" content="<%= Application.get_env(:nfd, :author) %>">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content='<%= title %>'>
     <meta property="og:title" content='<%= title %>'>
