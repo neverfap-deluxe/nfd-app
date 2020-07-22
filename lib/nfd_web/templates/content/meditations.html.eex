@@ -10,7 +10,7 @@
         <!-- TODO: Add a how-to-meditate section in here -->
         <a href="#introduction"><li class="index__item">Introduction</li></a>
         <a href="#free_guided_meditation_series"><li class="index__item">Free Guided Meditation Series</li></a>
-        <a href="#fundamental_guided_meditation_series"><li class="index__item">Fundamental Guided Meditation Series</li></a>
+        <%# <a href="#fundamental_guided_meditation_series"><li class="index__item">Fundamental Guided Meditation Series</li></a> %>
         <a href="#hovering_meditation"><li class="index__item">Hovering Meditation</li></a>
         <a href="#meditation_essential_reading"><li class="index__item">Meditation Essential Reading</li></a>
         <a href="#next_steps"><li class="index__item">Next Steps</li></a>
@@ -31,13 +31,16 @@
       <h2 class="single__sub__header">Introduction</h2>
       <p>NeverFap Deluxe offers a wide range of solutions for those seeking solid meditation advice.</p>
       <p>Our <a class="link" href="#free_guided_meditation_series">Free Guided Meditation Series</a> aims to offer on-going audio meditations to assist you throughout your meditation journey.</p>
-      <p>Our <a class="link" href="#fundamental_guided_meditation_series">Fundamental Guided Meditation Series</a> aims to explain the fundamental basics of meditation so you can comfortably practice meditation on your own.</p>
-      <p>Both options are equally valid and in my opinion there really is no substitute to using guided meditations when starting out.</p>
-      <p>It certainly made all the difference in helping me understand how to meditate when I was getting started, otherwise I probably would have dismissed meditation as something pointless.</p>
+      <p>We also have our <a class="link" href="#hovering_meditation">Hovering Meditation Technique</a> which is designed to assist those completely unfamiliar with meditation.</p>
+      <%# <p>Our <a class="link" href="#fundamental_guided_meditation_series">Fundamental Guided Meditation Series</a> aims to explain the fundamental basics of meditation so you can comfortably practice meditation on your own.</p> %>
+      <%# <p>Both options are equally valid and in my opinion there really is no substitute to using guided meditations when starting out.</p> %>
+      <%# <p>It certainly made all the difference in helping me understand how to meditate when I was getting started, otherwise I probably would have dismissed meditation as something pointless.</p>
       <h3>It's not within our interest to sell you a monthly meditation subscription like many other existing options.</h3>
       <p>Not only are they rediculously expensive for the amount of content they offer, however they largely defeat the purpose and aim of NeverFap Deluxe which is to teach you to become truly autonomous in every sense of the word.</p>
-      <p>Instead, we offer a range of inexpensive, one-time payment options which provide you with an effective toolbox of different skills dependent upon what you aim to achieve.</p>
-      <p>Of course, we also offer a heap of <a class="link" href="/meditation-reading-list">FREE meditation articles</a> which provide invaluable tips and advice on how best to meditate.</p>
+      <p>Instead, we offer a range of inexpensive, one-time payment options which provide you with an effective toolbox of different skills dependent upon what you aim to achieve.</p> %>
+      <%# <p>Of course, we also offer a heap of <a class="link" href="/meditation-reading-list">FREE meditation articles</a> which provide invaluable tips and advice on how best to meditate.</p> %>
+      <p>We also offer a heap of <a class="link" href="#meditation_essential_reading">Free Meditation Articles</a> which provide invaluable advice on how best to approach meditation.</p>
+      <p>Alternatively our <a class="link" href="/practices">NeverFap Deluxe Practices</a> are a fantastic way to grow and develop your awareness.</p>
     </div>
   </div>
 
@@ -76,6 +79,7 @@
 
 
 <%# FUNDAMENTAL GUIDED MEDITATION SERIES %>
+<!--
   <div id="fundamental_guided_meditation_series" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <a href="#fundamental_guided_meditation_series" class="guide__suggestion guide__suggestion__padding">
@@ -87,26 +91,24 @@
       <p>In addition, I also wanted it to be cheap enough for anyone to afford, because I believe basic mental health should be inexpensive.</p>
       <h3>Available for $7 USD.</h3>
       <p>The price of an average meal, and if you can't sacrifice a meal for the empowerment of your mental health, then I'm not quite sure how to help you.</p>
-      <!-- NOTE: This title is most likely not reflective of what it actually is -->
-      <p>Of course, I've also written <a class="link" href='<%= Routes.content_path(@conn, :practice, "observe-your-senses") %>'>A Definitive Guide On How To Meditate Properly</a> if you're wanting to learn the basics of how to meditate, although it's not quite the same as being guided through the process from a 3rd person perspective.</p>
+      <p>Of course, I've also written <a class="link" href='<%#= Routes.content_path(@conn, :practice, "observe-your-senses") %>'>A Definitive Guide On How To Meditate Properly</a> if you're wanting to learn the basics of how to meditate, although it's not quite the same as being guided through the process from a 3rd person perspective.</p>
     </div>
   </div>
 
   <div class="line__top"></div>
   <div class="line__bottom"></div>
 
-  <%= partial "banners/fdm_banner.html", assigns %>
-
+  <%#= partial "banners/fdm_banner.html", assigns %>
+-->
   <!-- <div class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
       <%#= partial "pricing/pricing_fundamental_meditations.html", %{ conn: @conn } %>
     </div>
-  </div> -->
+  </div>
 
   <div class="line__top"></div>
-  <div class="line__bottom"></div>
+  <div class="line__bottom"></div>-->
 <%# FUNDAMENTAL GUIDED MEDITATION SERIES END %>
-
 
 <%# HOVERING MEDITATION %>
   <div id="hovering_meditation" class="single__wrapper">

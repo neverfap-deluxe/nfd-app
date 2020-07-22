@@ -29,16 +29,17 @@
       <%= raw @item["content"] %>
     </div>
   </div>
-
+<!--
   <div class="line__top"></div>
   <div class="line__bottom"></div>
 
-  <%= partial "banners/fdm_banner.html", assigns %>
+  <%#= partial "banners/fdm_banner.html", assigns %>
 
   <div class="line__top"></div>
   <div class="line__bottom"></div>
 <%# INTRODUCTION END %>
-
+-->
+<%= partial "links/paypal_actual.html", assigns %>
 
 <%# ARTICLES LIST %>
   <div id="articles_list" style="margin-top: 3rem!important;" class="single__wrapper">

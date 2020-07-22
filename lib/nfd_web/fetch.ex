@@ -53,19 +53,15 @@ defmodule NfdWeb.Fetch do
         content_collections = FetchCollection.content_collections(client, response.body["data"], page_symbol, content_slug, user_collections, page_collections, collection_array)
         changeset_collections = FetchCollection.changeset_collections(response.body["data"], user_collections[:user], collection_array)
 
-        # TODO: Figure out how String.replace works.
-        # cake = FetchCollectionUtil.string_replace(response.body["data"])
-        # IO.inspect cake
-
-        IO.inspect content_collections
+        new_body_data = Map.replace!(response.body["data"], "content", FetchCollectionUtil.string_replace(response.body["data"]["content"]))
 
         conn
           |> FetchConn.is_file_paid_for(page_symbol, user_collections, content_collections.collection, NfdWeb.PageView, "general.html", "error_page_no_access.html")
-          |> FetchConn.are_they_up_to_day(page_symbol, response.body["data"], user_collections, content_collections.collection, NfdWeb.PageView, "general.html", "error_page_not_up_to.html")
+          |> FetchConn.are_they_up_to_day(page_symbol, new_body_data, user_collections, content_collections.collection, NfdWeb.PageView, "general.html", "error_page_not_up_to.html")
           |> FetchConn.check_api_response_for_404(response.status)
-          |> Page.increment_visit_count(response.body["data"])
+          |> Page.increment_visit_count(new_body_data)
           |> put_view(page_view)
-          |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: response.body["data"], user_collections: user_collections, page_collections: page_collections, content_collections: content_collections, changeset_collections: changeset_collections, page_type: "content")
+          |> render("#{Atom.to_string(page_symbol)}.html", layout: { NfdWeb.LayoutView, page_layout }, item: new_body_data, user_collections: user_collections, page_collections: page_collections, content_collections: content_collections, changeset_collections: changeset_collections, page_type: "content")
 
       {:error, error} ->
         FetchConn.render_404_page(conn, error)

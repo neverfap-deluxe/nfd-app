@@ -1,3 +1,4 @@
+<%# TODO / BUG: This doesn't work if there are more than two of these on the same page. %>
 <div class="banner hovering__banner">
   <div class="banner__split__container">
     <div class="banner__split">

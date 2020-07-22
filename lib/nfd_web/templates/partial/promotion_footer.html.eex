@@ -5,9 +5,11 @@
 <%= partial "banners/mobile_banner.html", assigns %>
 <div class="line__top"></div>
 <div class="line__bottom"></div>
-<%= partial "banners/fdm_banner.html", assigns %>
+<!--
+<%#= partial "banners/fdm_banner.html", assigns %>
 <div class="line__top"></div>
 <div class="line__bottom"></div>
+-->
 <%= partial "banners/hovering_banner.html", assigns %>
 <div class="line__top"></div>
 <div class="line__bottom"></div>

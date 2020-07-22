@@ -143,21 +143,26 @@
       </a>
       <%= raw child_content(@item["children"], "guide-meditation-routine") %>
 
-      <p class="guide__link__container"><a class="guide__link" href="/meditation#neverfap_deluxe_fundamental_meditation_series">NeverFap Deluxe Fundamental Meditation Series</a></br>
-        Cover the basics of effective meditation with our 4-part meditation audio series.</p>
+      <%# <p class="guide__link__container"><a class="guide__link" href="/meditation#neverfap_deluxe_fundamental_meditation_series">NeverFap Deluxe Fundamental Meditation Series</a></br>
+        Cover the basics of effective meditation with our 4-part meditation audio series.</p> %>
+      <p class="guide__link__container"><a class="guide__link" href="/meditation#free_guided_meditation_series">NeverFap Deluxe Free Guided Meditation Series</a></br>
+        Cover the basics of effective meditation with free meditation audio series.</p>
       <p class="guide__link__container"><a class="guide__link" href="/hovering/">Hovering Meditation Technique</a></br>
         Hovering is a meditation techinque I created to assist those who struggle to meditate via traditional means.</p>
       <p class="guide__link__container"><a class="guide__link" href="/meditation#meditation_essential_reading/">Meditation Essential Reading</a></br>
         Learn more about meditation with our list of meditation-related NeverFap Deluxe Articles.</p>
     </div>
   </div>
+<!--
+  <div class="line__top"></div>
+  <div class="line__bottom"></div>
+  <%#= partial "banners/fdm_banner.html", assigns %>
+  <div class="line__top"></div>
+  <div class="line__bottom"></div>
 
-  <div class="line__top"></div>
-  <div class="line__bottom"></div>
-  <%= partial "banners/fdm_banner.html", assigns %>
-  <div class="line__top"></div>
-  <div class="line__bottom"></div>
+-->
 <%# RECOMMENDATION 1 END %>
+<%= partial "links/paypal_actual.html", assigns %>
 
 
 <%# RECOMMENDATION 2 %>

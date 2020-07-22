@@ -19,7 +19,7 @@ defmodule Nfd.API.PageAPI do
   def guides_emergency(client), do: get(client, "/guides_emergency/index.json")
   def guides_complete_understanding(client), do: get(client, "/guides_complete_understanding/index.json")
   def guides_curriculum(client), do: get(client, "/guides_curriculum/index.json")
-  def guides_fundamental_meditation_series(client), do: get(client, "/guides_fundamental_meditation_series/index.json")
+  # def guides_fundamental_meditation_series(client), do: get(client, "/guides_fundamental_meditation_series/index.json")
   # GUIDES END
 
   # PROGRAMS

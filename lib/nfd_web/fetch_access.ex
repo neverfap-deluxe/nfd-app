@@ -28,7 +28,7 @@ defmodule NfdWeb.FetchAccess do
       :guides_post_relapse_academy -> apmss ++ []
       :guides_complete_understanding -> apmss ++ []
       :guides_curriculum -> apmss ++ []
-      :guides_fundamental_meditation_series -> apmss ++ []
+      # :guides_fundamental_meditation_series -> apmss ++ []
       # GUIDES END
 
       # LEGAL
