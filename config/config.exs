@@ -17,6 +17,7 @@ config :nfd,
   logo: "https://neverfapdeluxe.com/images/logo.png",
   logo__small: "https://neverfapdeluxe.com/images/logo__small.png",
   logo__summary__large: "https://neverfapdeluxe.com/images/logo_summary_card.png",
+  google_analytics_url: "UA-132863786-1",
 
   social_facebook_url: "https://www.facebook.com/NeverFapDeluxe",
   social_twitter_url: "https://twitter.com/NeverFapDeluxe",
