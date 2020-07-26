@@ -1,0 +1,74 @@
+<div id="sec_account__learn__more" class="account__learn__more">
+  <div id="sec_account__learn__moreLabel" class="account__learn__more--label">
+    <i id="sec_down1" class="fas fa-angle-down" style="margin-right: 0.3rem;"></i>
+    <i id="sec_up1" class="fas fa-angle-up" style="margin-right: 0.3rem; display: none;"></i>
+      Learn more.
+    <i id="sec_down2" class="fas fa-angle-down" style="margin-left: 0.3rem;"></i>
+    <i id="sec_up2" class="fas fa-angle-up" style="margin-left: 0.3rem; display: none;"></i>
+  </div>
+
+  <div id="sec_account__learn__moreDropdown" class="account__learn__more--dropdown account__learn__more__dropdown--open">
+    <h3 class="account__learn__more--title">FREE <!-- (Pretty much everything :3) --></h3>
+    <div class="account__learn__more--list">
+      <a class="account__learn__more--item" href="/articles">Articles</a>
+      <a class="account__learn__more--item" href="/articles">Practices</a>
+      <a class="account__learn__more--item" href="/guide">Guide</a>
+      <a class="account__learn__more--item" href="/summary">Summary</a>
+      <a class="account__learn__more--item" href="/meditation">Guided Meditation Series</a>
+      <a class="account__learn__more--item" href="/podcast">Daily Podcast</a>
+      <a class="account__learn__more--item" href="/seven-day-neverfap-deluxe-kickstarter">7 Day Kickstarter</a>
+      <a class="account__learn__more--item" href="/accountability-program">#accountability Program</a>
+      <a class="account__learn__more--item" href="/hovering">Hovering Meditation</a>
+      <a class="account__learn__more--item" href="/mobile-app">Android App</a>
+      <a class="account__learn__more--item" href="/r/NeverFapDeluxe">Discord</a>
+      <a class="account__learn__more--item" href="/r/NeverFapDeluxe">Reddit</a>
+      <a class="account__learn__more--item" href="/chrome-extension">Chrome Extension</a>
+      <a class="account__learn__more--item" href="/neverfap-deluxe-bible">NeverFap Deluxe Bible</a>
+      <a class="account__learn__more--item" href="/everything">...aaaaand so much more!</a>
+    </div>
+    <h3 class="account__learn__more--title">PAID <!-- (Some Meditation and Awareness audio courses) --></h3>
+    <div class="account__learn__more--list">
+      <!-- <a class="account__learn__more--item" href="/meditation">Fundamental Meditation Series</a>
+      <a class="account__learn__more--item" href="/practices">Practices</a> -->
+      <div class="account__learn__more--item" href="/">Nothing!</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var sec_up1 = document.querySelector('#sec_up1');
+  var sec_up2 = document.querySelector('#sec_up2');
+
+  var sec_down1 = document.querySelector('#sec_down1');
+  var sec_down2 = document.querySelector('#sec_down2');
+
+  // var sec_account__learn__more = document.querySelector('#sec_account__learn__more');
+  var sec_account__learn__moreLabel = document.querySelector('#sec_account__learn__moreLabel');
+  var sec_account__learn__moreDropdown = document.querySelector('#sec_account__learn__moreDropdown');
+
+  var sec_accountLearnMoreDropdownClosed = false;
+
+  sec_account__learn__moreLabel.onclick = function(event) {
+    if (sec_accountLearnMoreDropdownClosed) {
+      sec_up1.style.display = 'none';
+      sec_up2.style.display = 'none';
+      sec_down1.style.display = 'inline';
+      sec_down2.style.display = 'inline';
+
+      // account__learn__more.classList.add('account__learn__more--visible')
+      sec_account__learn__moreDropdown.classList.remove('account__learn__more__dropdown--close')
+      sec_account__learn__moreDropdown.classList.add('account__learn__more__dropdown--open')
+      sec_accountLearnMoreDropdownClosed = false;
+    } else {
+      sec_up1.style.display = 'inline';
+      sec_up2.style.display = 'inline';
+      sec_down1.style.display = 'none';
+      sec_down2.style.display = 'none';
+
+      // account__learn__more.classList.remove('account__learn__more--visible')
+      sec_account__learn__moreDropdown.classList.add('account__learn__more__dropdown--close')
+      sec_account__learn__moreDropdown.classList.remove('account__learn__more__dropdown--open')
+      sec_accountLearnMoreDropdownClosed = true;
+    }
+  }
+</script>

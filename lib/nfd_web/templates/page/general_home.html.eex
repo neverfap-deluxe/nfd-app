@@ -15,6 +15,9 @@
   <%# HERO END %>
 
   <div class="homepage__main">
+
+    <%= partial "links/free_banner.html", assigns %>
+
     <%# WHO %>
       <%= partial "home/who.html", assigns %>
     <%# WHO END %>
