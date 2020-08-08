@@ -11,7 +11,7 @@ Released under the [GNU GPLv3 licence](https://github.com/neverfap-deluxe/nfd-ap
 
 ## TODO
 
-- Completely change NFD deployment, especially with secrets. Just deploy it directly to the serve, using CI is a huge pain because of how complex it is and how quickly it's evolving. Of course, is it really worth the effort? Probably not.
+- Completely change NFD deployment, especially with secrets. Just deploy it directly to the serve, using CI is a huge pain because of how complex it is and how quickly it's evolving. Of course, is it really worth the effort? Probably not. WOAH.
 
 ## Tech
 
