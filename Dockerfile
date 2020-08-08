@@ -1,4 +1,4 @@
-FROM elixir:1.10.4-alpine as build
+FROM elixir:1.8.2-alpine as build
 
 ENV MIX_ENV=prod
 ENV PORT=4000

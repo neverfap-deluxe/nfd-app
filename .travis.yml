@@ -1,8 +1,8 @@
 language: elixir
 elixir:
-- 1.10.4
+- 1.8.2
 otp_release:
-- '23.0'
+- '22.0'
 sudo: enabled
 addons:
   ssh_known_hosts: 198.199.67.180
