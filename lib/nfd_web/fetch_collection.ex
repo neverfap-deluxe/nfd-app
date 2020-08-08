@@ -16,7 +16,7 @@ defmodule NfdWeb.FetchCollection do
   alias Nfd.Account.ContactForm
   alias Nfd.Account.CollectionAccess
 
-  alias Nfd.BackBlaze
+  # alias Nfd.BackBlaze
   alias Nfd.Patreon
   alias Nfd.Stripe
   alias Nfd.Paypal

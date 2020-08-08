@@ -21,7 +21,7 @@ config :recaptcha,
   public_key: System.get_env("GOOGLE_RECAPTCHA_CLIENT"),
   secret: System.get_env("GOOGLE_RECAPTCHA_SECRET")
 
-config :upstream, :upload, timeout: 600_000
+# config :upstream, :upload, timeout: 600_000
 
 # config :upstream, :storage,
 #   account_id: System.get_env("B2_ACCOUNT_ID"),

@@ -60,7 +60,7 @@ defmodule Nfd.MixProject do
       # stripe
       {:stripity_stripe, "~> 2.4.0"},
       {:pay_pal, "~> 0.0.5"},
-      {:upstream, "~> 2.1.4"},
+      # {:upstream, "~> 2.1.4"},
 
       # Because pay_pal and upstream conflict
       {:httpoison, "~> 1.0", override: true},
