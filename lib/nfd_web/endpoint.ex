@@ -13,7 +13,7 @@ defmodule NfdWeb.Endpoint do
     at: "/",
     from: :nfd,
     gzip: false,
-    only: ~w(css fonts images sitemaps sitemaps/sitemap.xml sitemaps/sitemap1.xml js favicon.ico robots.txt podcast.xml)
+    only: ~w(css fonts images sitemaps ebooks sitemaps/sitemap.xml sitemaps/sitemap1.xml js favicon.ico robots.txt podcast.xml)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
