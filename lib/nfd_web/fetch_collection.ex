@@ -204,8 +204,8 @@ defmodule NfdWeb.FetchCollection do
       fn symbol, acc ->
         case symbol do
           symbol when symbol in [:ebook_file, :course_file] ->
-            b2_file_url = BackBlaze.get_file_contents(file_with_collection.b2_file_name)
-            # b2_file_url = ""
+            # b2_file_url = BackBlaze.get_file_contents(file_with_collection.b2_file_name)
+            b2_file_url = ""
 
             if file_with_collection.type == "ebook_file" do
               acc |> Map.merge(%{ file: file_with_collection |> Map.merge(%{ b2_file_url: b2_file_url }), file_content: %{} })
