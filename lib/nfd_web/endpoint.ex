@@ -6,13 +6,13 @@ defmodule NfdWeb.Endpoint do
     longpoll: false
 
   # Serve at "/" the static files from "priv/static" directory.
-  #
+  # yes
   # You should set gzip to true if you are running phx.digest
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
     from: :nfd,
-    gzip: false,
+    gzip: true,
     only: ~w(css fonts images sitemaps ebooks sitemaps/sitemap.xml sitemaps/sitemap1.xml js favicon.ico robots.txt podcast.xml)
 
   # Code reloading can be explicitly enabled under the
