@@ -7,7 +7,7 @@
       <ol class="index__items">
         <h3><i class="page__index__emoji__left em em-notebook_with_decorative_cover"></i> Bible <i class="page__index__emoji__right em em-notebook_with_decorative_cover"></i></h3>
         <a href="#introduction"><li class="index__item">Introduction</li></a>
-        <a href="#overview"><li class="index__item">Overview</li></a>
+        <a href="#links"><li class="index__item">Links</li></a>
         <a href="#next_steps"><li class="index__item">Next Steps</li></a>
       </ol>
     </div>
@@ -25,11 +25,11 @@
       </a>
 
       <h1>Introduction</h1>
-        <p>The NeverFap Deluxe Bible is a complete collection of all the essential articles and guides here on the website in ebook format.</p>
+        <p>The NeverFap Deluxe Bible is a complete collection of all the essential guides, articles and practices on the NeverFap Deluxe website in ebook format.</p>
         <p>It's a different way for people to experience NeverFap Deluxe, especially if you prefer using an ebook reader as opposed to a web browser.</p>
         <p>To my surprise the website translates incredible well into ebook format, in large part due to the fabulous Content API I've build which stores everything conveniently in Markdown format.</p>
-        <p>Like, crazily well. As in you wouldn't have even known it was a website to begin with.</p>
-        <p>So if you're looking to experience the website as an ebook, this is an excellent option that is also entirely portable.</p>
+        <p>Like, crazily well. As in, you wouldn't have even known it was a website to begin with.</p>
+        <p>So if you're looking to experience the website as an ebook, then this is an excellent option that is also entirely portable.</p>
         <h3>Oh, and did I mention that it's completely FREE?</h3>
     </div>
   </div>
@@ -52,38 +52,43 @@
 
 
 <%# OVERVIEW %>
-  <div id="overview" class="single__wrapper">
+  <div id="links" class="single__wrapper">
     <div class="single__content" style="margin-bottom: 0;">
-      <a href="#overview" class="guide__suggestion guide__suggestion__padding">
+      <a href="#links" class="guide__suggestion guide__suggestion__padding">
         <div class="guide__suggestion__number guide__suggestion__number--bottom">2.</div>
       </a>
 
-      <h1>Overview</h1>
-      <p>The NeverFap Deluxe Bible covers the following sections of the website.</p>
-      <h3>NeverFap Deluxe Articles, Summary and Guide</h3>
-      <p>The ebook is available for download from the NeverFap Deluxe website dashboard once you sign up for a FREE NeverFap Deluxe account.</p>
-      <p>In addition, the ebook automatically updates whenever the content on the website changes, so all you have to do is download a new copy if you'd like a more up-to-date version of the website!</p>
+      <h1>Links</h1>
+      <p>Here are the links to the NeverFap Deluxe Bible!</p>
+      <p>The Reade</p>
+      <p>ฅ(• ɪ •)ฅ</p>
 
       <div style="display: flex; margin-top: 1rem;">
-          <div class="account__buttons__login">
-            <span class="login__top__button__register">
-                <%= link to: Routes.pow_registration_path(@conn, :new) do %>
+        <div class="account__buttons__login">
+          <span class="login__top__button__register">
+              <%#= link to: Routes.pow_registration_path(@conn, :new) do %>
+              <a href="https://neverfapdeluxe.com/ebooks/neverfap-deluxe-bible.pdf">
                 <div class="login__top__button__text">
-                  Register
+                  <%# Register %>
+                  PDF
                 </div>
-              <% end %>
-            </span>
+              </a>
+            <%# end %>
+          </span>
 
-            <span class="login__top__button__register">
-              <%= link to: Routes.pow_session_path(@conn, :new) do %>
+          <span class="login__top__button__register">
+            <%#= link to: Routes.pow_session_path(@conn, :new) do %>
+              <a href="https://neverfapdeluxe.com/ebooks/neverfap-deluxe-bible.epub">
                 <div class="login__top__button__text">
-                  Sign in
+                  EPUB
+                  <%# Sign in %>
                 </div>
-              <% end %>
-            </span>
-          </div>
+              </a>
+            <%# end %>
+          </span>
         </div>
       </div>
+
     </div>
   </div>
 

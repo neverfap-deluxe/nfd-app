@@ -12,19 +12,25 @@
       <div style="display: flex; margin-top: 1rem;">
         <div class="account__buttons__login">
           <span class="login__top__button__register">
-              <%= link to: Routes.pow_registration_path(@conn, :new) do %>
-              <div class="login__top__button__text">
-                Register
-              </div>
-            <% end %>
+              <%#= link to: Routes.pow_registration_path(@conn, :new) do %>
+              <a href="https://neverfapdeluxe.com/ebooks/neverfap-deluxe-bible.pdf">
+                <div class="login__top__button__text">
+                  <%# Register %>
+                  PDF
+                </div>
+              </a>
+            <%# end %>
           </span>
 
           <span class="login__top__button__register">
-            <%= link to: Routes.pow_session_path(@conn, :new) do %>
-              <div class="login__top__button__text">
-                Sign in
-              </div>
-            <% end %>
+            <%#= link to: Routes.pow_session_path(@conn, :new) do %>
+              <a href="https://neverfapdeluxe.com/ebooks/neverfap-deluxe-bible.epub">
+                <div class="login__top__button__text">
+                  EPUB
+                  <%# Sign in %>
+                </div>
+              </a>
+            <%# end %>
           </span>
         </div>
       </div>
