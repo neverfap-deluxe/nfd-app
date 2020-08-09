@@ -1,6 +1,16 @@
 <div class="homepage__section homepage__section__more__margin__with__bottom">
   <h1>Who?</h1> <!-- The Reade&copy; -->
-  <p style="margin-top: 2.5rem;">My name is Julius Reade and I'm a recovered porn addict. <i class="em em-blush"></i></p>
+
+  <p style="margin-top: 1.5rem;">My name is Julius Reade and I'm a recovered porn addict. <i class="em em-blush"></i></p>
+  <p>NeverFap Deluxe is a comprehensive porn addiction recovery process which aims to help people overcome porn addiction through meditation, awareness and healthy coping mechanisms.</p>
+  <p>Ultimately it comes down to 10 minutes of meditation each day, and the homepage explains in extensive detail why.</p>
+  <p>Otherwise, feel free to jump straight into the <a class="link" href="<%= Routes.page_path(@conn, :guides_summary) %>">Summary</a> or <a class="link" href="<%= Routes.page_path(@conn, :guides_guide) %>">Guide</a>.</p>
+  <p>The core of the website's 100+ guides, articles and practices are also available as a free <a class="link" href="/ebooks/neverfap-deluxe-bible.pdf">PDF</a> or <a class="link" href="/ebooks/neverfap-deluxe-bible.epub">EPUB</a> download.</p>
+  <p>Oh, and don't forget to have fun!</p>
+  <p>(=^ ◡ ^=)</p>
+
+  <h1 style="margin-top: 4rem;">What you can expect!</h1> <!-- The Reade&copy; -->
+
   <ul class="homepage__recovered__porn__addict__list">
     <span><li class="homepage__recovered__porn__addict__item__lead">I no longer crave porn. <i class="em em-white_check_mark"></i></li></span>
     <span><li class="homepage__recovered__porn__addict__item">I no longer watch porn.</li></span>

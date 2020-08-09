@@ -28,11 +28,11 @@ defmodule Nfd.Account.CollectionAccess do
   end
 
   def create_collection_access_for_free_courses(nil), do: nil
+  def create_collection_access_for_free_courses(%{}), do: nil
   def create_collection_access_for_free_courses(user) do
     ["seven-day-neverfap-deluxe-kickstarter"]
     |> Enum.each(fn slug ->
       collection = Content.get_collection_slug_with_files!(slug)
-
       case Account.get_collection_access_by_user_id_and_collection_id(Map.get(user, :id), collection.id) do
         nil ->
           case Account.create_collection_access(%{user_id: user.id, collection_id: collection.id, amount_paid: 0.0}) do
