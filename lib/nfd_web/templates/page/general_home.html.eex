@@ -24,7 +24,7 @@
 
     <%# HERE IS WHAT I DO %>
       <div class="homepage__hero homepage__hero--secondary">
-        <h1 class="homepage__hero__title">Here's what I do.</h1>
+        <h1 class="homepage__hero__title">Here's the deal.</h1>
         <h2 class="homepage__hero__title__secondary">I explain step-by-step exactly how to give up porn.</h2>
       </div>
 

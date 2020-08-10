@@ -9,9 +9,9 @@
     </div>
     <div class="homepage__process__text homepage__process__text--practice">
       <b>What you will learn</b>
-      <%= if @item["Learn1"] do %><p><%= raw @item["Learn1"] %></p><% end %>
-      <%= if @item["Learn2"] do %><p><%= raw @item["Learn2"] %></p><% end %>
-      <%= if @item["Learn3"] do %><p><%= raw @item["Learn3"] %></p><% end %>
+      <%= if @item["learn1"] do %><p><%= raw @item["learn1"] %></p><% end %>
+      <%= if @item["learn2"] do %><p><%= raw @item["learn2"] %></p><% end %>
+      <%= if @item["learn3"] do %><p><%= raw @item["learn3"] %></p><% end %>
     </div>
   </div>
   <span><span class="homepage__process__link homepage__process__link--courses--single">Course <%= @item["Number"] %> of six.</span></span>
