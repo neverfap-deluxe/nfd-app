@@ -31,9 +31,10 @@ defmodule NfdWeb.Router do
   scope "/" do
     pipe_through :browser
 
-    pow_routes()
-    pow_extension_routes()
-    pow_assent_routes()
+    # I have decided to disable the pow routes, because it doesn't have recaptcha and someone keeps spamming this. So that's why.
+    # pow_routes()
+    # pow_extension_routes()
+    # pow_assent_routes()
   end
 
   scope "/", NfdWeb do
