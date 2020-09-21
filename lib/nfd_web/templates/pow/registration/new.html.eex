@@ -6,16 +6,16 @@
   <h1 class="accounts__wrapper__title">Register</h1>
 
   <div class="accounts__body">
-    <div class="accounts__text__container"> 
+    <div class="accounts__text__container">
       <h3 class="account__main__description__initial">NeverFap Deluxe Account!</h3>
-  
-      <ul> 
+
+      <ul>
         <li class="articles__link--register">It's FREE to create an account.</li>
         <li class="articles__link--register">Receive regular updates on the latest NeverFap Deluxe products.</li>
         <li class="articles__link--register">Gain access to a wide variety of courses, email campaigns and guided meditations.</li>
       </ul>
     </div>
-  
+
     <div class="form__wrapper session__form__wrapper">
       <%= form_for @changeset, @action, [as: :user], fn f -> %>
         <%= if @changeset.action do %>
@@ -23,10 +23,10 @@
             <p style="color: white;">Oops, something went wrong! Please check the errors below.</p>
           </div>
         <% end %>
-    
+
         <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
         <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-  
+
         <div class="form__input__container">
           <div class="form__auth__container">
             <%#= for link <- PowAssent.Phoenix.ViewHelpers.provider_links(@conn) do %>
@@ -34,35 +34,37 @@
               <%#= partial "auth/discord_button.html" %>
             <%# end %>
           </div>
-        
+
           <hr class="form__auth__hr"/>
 
+          <!--
           <div class="error__label__combo">
             <%= label f, @changeset.data.__struct__.pow_user_id_field(), class: "form__label" %>
             <%= error_tag f, @changeset.data.__struct__.pow_user_id_field() %>
           </div>
-          <%= text_input f, @changeset.data.__struct__.pow_user_id_field() %>
-              
+          <%#= text_input f, @changeset.data.__struct__.pow_user_id_field() %>
+
           <div class="error__label__combo">
             <%= label f, :password, class: "form__label" %>
             <%= error_tag f, :password %>
           </div>
-          <%= password_input f, :password %>
-    
+          <%#= password_input f, :password %>
+
           <div class="error__label__combo">
             <%= label f, :confirm_password, class: "form__label" %>
             <%= error_tag f, :confirm_password %>
           </div>
-          <%= password_input f, :confirm_password %>
+          <%#= password_input f, :confirm_password %>
         </div>
-    
+
         <div class="form__submission__container">
-          <%= submit "Register" %>
-  
+          <%#= submit "Register" %>
+
           <div class="form__extra">
-            <span><%= link "Sign in", to: Routes.pow_session_path(@conn, :new) %></span>    
+            <span><%= link "Sign in", to: Routes.pow_session_path(@conn, :new) %></span>
           </div>
         </div>
+        -->
       <% end %>
     </div>
   </div>
