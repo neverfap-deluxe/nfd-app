@@ -1,7 +1,6 @@
 <div class="homepage__section homepage__section__more__margin__with__bottom">
   <h1>Who?</h1> <!-- The Reade&copy; -->
 
-  <p style="margin-top: 1.5rem;">My name is Julius Reade and I'm a recovered porn addict. <i class="em em-blush"></i></p>
   <p>NeverFap Deluxe is a comprehensive porn addiction recovery process which aims to help people overcome porn addiction through meditation, awareness and healthy coping mechanisms.</p>
   <p><b>10 minutes of meditation each day.</b></p>
   <p>That's all it takes, and this homepage explains in extensive detail why meditation fundamentally provides us with effortless control over our minds. Otherwise, feel free to jump into the <a class="link" href="<%= Routes.page_path(@conn, :guides_summary) %>">Summary</a> or <a class="link" href="<%= Routes.page_path(@conn, :guides_guide) %>">Guide</a>.</p>
