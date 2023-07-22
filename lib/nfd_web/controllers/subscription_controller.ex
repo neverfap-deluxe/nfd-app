@@ -42,14 +42,14 @@ defmodule NfdWeb.SubscriptionController do
   end
 
   defp add_subscription_subscriber_does_not_exist(conn, subscriber_email, multiple_matrix, main_matrix, course_name) do
-    Emails.cast_confirmation_url(
-      subscriber_email,
-      Email.generate_confirmation_url(subscriber_email, multiple_matrix, main_matrix),
-      Email.generate_unsubscribe_url(main_matrix, subscriber_email),
-      course_name,
-      "Confirm Your #{course_name} Subscription",
-      "template_email_subscription_confirmation.html"
-    ) |> Emails.process("Confirm your subscription E-mail sent: " <> subscriber_email)
+    # Emails.cast_confirmation_url(
+    #   subscriber_email,
+    #   Email.generate_confirmation_url(subscriber_email, multiple_matrix, main_matrix),
+    #   Email.generate_unsubscribe_url(main_matrix, subscriber_email),
+    #   course_name,
+    #   "Confirm Your #{course_name} Subscription",
+    #   "template_email_subscription_confirmation.html"
+    # ) |> Emails.process("Confirm your subscription E-mail sent: " <> subscriber_email)
 
     render(conn, "confirm_subscription_page.html", course_name: course_name)
   end
